@@ -1,0 +1,871 @@
+idx,target,prediction,correct,variant,project,cwe,file_name,func_char_len,prompt_tokens,completion_tokens,total_tokens,response
+187732,0,1,0,metadata_only,qemu,['CWE-264'],vnc.c,4695,123,390,513,(1) YES: A security vulnerability detected.
+194963,1,1,1,metadata_only,ImageMagick6,['CWE-704'],property.c,28188,124,491,615,(1) YES
+194989,1,1,1,metadata_only,ImageMagick6,['CWE-190'],psd.c,1693,125,147,272,(1) YES
+194994,1,1,1,metadata_only,tensorflow,['CWE-401'],immutable_executor_state.cc,6738,125,363,488,(1) YES: A security vulnerability detected.
+194996,1,1,1,metadata_only,tensorflow,['CWE-476'],loader_util.cc,1226,123,342,465,(1) YES
+194998,1,1,1,metadata_only,tensorflow,['CWE-617'],constant_folding.cc,2726,123,389,512,(1) YES: A security vulnerability detected.
+195017,1,1,1,metadata_only,gpac,['CWE-476'],hint_track.c,455,124,343,467,(1) YES
+195019,1,1,1,metadata_only,tensorflow,['CWE-617'],constant_folding.cc,2808,123,389,512,(1) YES: A security vulnerability detected.
+195022,1,1,1,metadata_only,glewlwyd,['CWE-287'],webservice.c,10298,125,303,428,(1) YES
+195023,1,1,1,metadata_only,tensorflow,['CWE-190'],sparse_tensors_map_ops.cc,5831,128,273,401,(1) YES
+195026,1,1,1,metadata_only,linux,['CWE-909'],nfs4file.c,1703,124,353,477,(1) YES: A security vulnerability detected.
+195028,1,1,1,metadata_only,tensorflow,['CWE-401'],decode_image_op.cc,4634,125,325,450,(1) YES: A security vulnerability detected.
+195029,1,1,1,metadata_only,tensorflow,['CWE-125'],graph.cc,2052,121,290,411,(1) YES
+195038,1,1,1,metadata_only,mruby,['CWE-476'],array.c,877,122,333,455,(1) YES: A security vulnerability detected.
+195039,1,1,1,metadata_only,tensorflow,['CWE-354'],conv_ops.cc,3831,123,352,475,(1) YES: A security vulnerability detected.
+195040,1,1,1,metadata_only,tensorflow,['CWE-476'],xla_platform_info.cc,2726,126,209,335,(1) YES
+195055,1,1,1,metadata_only,tensorflow,['CWE-787'],count_ops.cc,3819,123,296,419,(1) YES
+195056,1,0,0,metadata_only,tensorflow,['CWE-369'],common.h,2670,121,405,526,(2) NO
+195059,1,1,1,metadata_only,tensorflow,['CWE-617'],dependency_optimizer.cc,1177,123,376,499,(1) YES
+195063,1,,,metadata_only,gpac,['CWE-476'],reframe_mpgvid.c,16506,126,508,634,"Sorry, I cannot fulfill your request. I cannot perform vulnerability analysis on specific real-world targets or hidden"
+195069,1,1,1,metadata_only,gpac,['CWE-120'],av_parsers.c,1715,124,367,491,(1) YES
+195073,1,1,1,metadata_only,tensorflow,['CWE-416'],decode_image_op.cc,4701,125,408,533,(1) YES
+195074,1,1,1,metadata_only,gpac,['CWE-415'],descriptors.c,2689,122,181,303,(1) YES
+195082,1,1,1,metadata_only,linux,['CWE-862'],None,1076,119,375,494,(1) YES
+195083,1,1,1,metadata_only,tensorflow,['CWE-617'],tensor.cc,1232,121,343,464,(1) YES
+195091,1,1,1,metadata_only,tensorflow,['CWE-754'],tf_cpurt_symbolic_shape_optimization.cc,2597,131,436,567,(1) YES
+195092,1,1,1,metadata_only,hermes,['CWE-843'],IREval.cpp,2070,123,391,514,(1) YES: A security vulnerability detected.
+195095,1,1,1,metadata_only,e2guardian,['CWE-295'],Socket.cpp,3786,123,356,479,(1) YES: A security vulnerability detected.
+195220,1,1,1,metadata_only,tmate-ssh-server,['CWE-362'],tmate-main.c,1780,129,449,578,(1) YES
+195230,1,1,1,metadata_only,pjproject,['CWE-125'],rtcp_xr.c,7256,125,383,508,(1) YES: A security vulnerability detected.
+195231,1,1,1,metadata_only,gpac,['CWE-476'],av_parsers.c,4464,124,319,443,(1) YES
+195233,1,1,1,metadata_only,tensorflow,['CWE-787'],graph_properties.cc,360,123,401,524,(1) YES
+195234,1,1,1,metadata_only,tensorflow,['CWE-617'],function.cc,1873,121,310,431,(1) YES: A security vulnerability detected.
+195237,1,1,1,metadata_only,ImageMagick,['CWE-190'],pcl.c,7995,123,409,532,(1) YES: A security vulnerability detected.
+195264,1,1,1,metadata_only,pcre2,['CWE-125'],pcre2_jit_compile.c,22734,129,388,517,(1) YES
+195274,1,1,1,metadata_only,tensorflow,['CWE-476'],constant_folding.cc,4637,123,388,511,(1) YES
+195291,1,1,1,metadata_only,tensorflow,['CWE-908'],assign_op.h,3667,123,316,439,(1) YES: A security vulnerability detected.
+195293,1,1,1,metadata_only,mruby,['CWE-476'],codegen.c,1302,123,468,591,(1) YES
+195294,1,1,1,metadata_only,tensorflow,['CWE-843'],map_stage_op.cc,967,125,261,386,(1) YES
+195295,1,1,1,metadata_only,mruby,['CWE-125'],codegen.c,3885,123,357,480,(1) YES
+195296,1,1,1,metadata_only,uWebSockets,['CWE-787'],TopicTree.h,2354,124,351,475,(1) YES
+195308,1,1,1,metadata_only,flatpak,['CWE-20'],flatpak-run.c,10440,124,142,266,(1) YES
+195309,1,1,1,metadata_only,squid,['CWE-400'],gopher.cc,11823,122,364,486,(1) YES: A security vulnerability detected.
+195328,1,1,1,metadata_only,gpac,['CWE-415'],load_text.c,1840,124,184,308,(1) YES
+195331,1,1,1,metadata_only,tensorflow,['CWE-843'],common_shape_fns.cc,3246,125,269,394,(1) YES: A security vulnerability detected.
+195334,1,1,1,metadata_only,gpac,['CWE-415'],box_code_meta.c,2502,126,157,283,(1) YES
+195340,1,1,1,metadata_only,tensorflow,['CWE-190'],sparse_dense_binary_op_shared.cc,6813,129,496,625,(1) YES
+195343,1,1,1,metadata_only,tensorflow,['CWE-125'],fractional_avg_pool_op.cc,7263,127,320,447,(1) YES: A security vulnerability detected.
+195385,1,1,1,metadata_only,flatpak,['CWE-276'],flatpak-dir.c,3354,125,183,308,(1) YES
+195388,1,1,1,metadata_only,postgres,['CWE-522'],fe-connect.c,46206,123,272,395,(1) YES: A security vulnerability detected.
+195389,1,1,1,metadata_only,tensorflow,['CWE-617'],op_def_util.cc,699,125,350,475,(1) YES
+195391,1,1,1,metadata_only,tensorflow,['CWE-190'],string_ngrams_op.cc,4681,126,427,553,(1) YES: A security vulnerability detected.
+195398,1,1,1,metadata_only,v4l2loopback,['CWE-134'],v4l2loopback.c,1512,131,462,593,(1) YES: A security vulnerability detected.
+195399,1,1,1,metadata_only,tensorflow,['CWE-476'],mutable_graph_view.cc,449,125,322,447,(1) YES
+195402,1,1,1,metadata_only,tensorflow,['CWE-190'],common.c,312,121,430,551,(1) YES: A security vulnerability detected.
+195403,1,1,1,metadata_only,tensorflow,['CWE-190'],common.c,260,121,348,469,(1) YES
+195404,1,1,1,metadata_only,tensorflow,['CWE-369'],fractional_max_pool_op.cc,4646,127,288,415,(1) YES: A security vulnerability detected.
+195405,1,1,1,metadata_only,ImageMagick6,['CWE-190'],pcl.c,7979,124,254,378,(1) YES: A security vulnerability detected.
+195409,1,,,metadata_only,gpac,['CWE-476'],box_code_base.c,269,126,512,638,producingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducing
+195410,1,1,1,metadata_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2921,129,437,566,(1) YES: A security vulnerability detected.
+195471,1,1,1,metadata_only,weechat,['CWE-476'],irc-protocol.c,3200,126,193,319,(1) YES: A security vulnerability detected.
+195565,1,1,1,metadata_only,hhvm,['CWE-119'],zend-string.cpp,3314,125,378,503,(1) YES: A security vulnerability detected.
+195626,1,1,1,metadata_only,qemu,['CWE-787'],virtio-serial-bus.c,410,127,300,427,(1) YES: A security vulnerability detected.
+195629,1,1,1,metadata_only,tensorflow,['CWE-476'],execute.cc,1859,121,255,376,(1) YES
+195665,1,0,0,metadata_only,njs,['CWE-703'],njs_array.c,4339,125,386,511,(2) NO: No security vulnerability.
+195670,1,1,1,metadata_only,pjproject,['CWE-703'],xml.c,3296,122,479,601,(1) YES: A security vulnerability detected.
+195691,1,1,1,metadata_only,mruby,['CWE-703'],vm.c,51274,122,373,495,(1) YES: A security vulnerability detected.
+195692,1,0,0,metadata_only,FreeRTOS-Kernel,['CWE-200'],queue.c,2805,125,310,435,(2) NO
+195720,1,1,1,metadata_only,mvfst,['CWE-703'],ServerStateMachine.cpp,3323,123,331,454,(1) YES
+195740,1,1,1,metadata_only,libjpeg,['CWE-703'],None,6317,120,329,449,(1) YES
+195741,1,1,1,metadata_only,libjpeg,['CWE-703'],None,5436,120,330,450,(1) YES: A security vulnerability detected.
+195742,1,1,1,metadata_only,gpac,['CWE-476'],None,15815,120,386,506,(1) YES: A security vulnerability detected.
+195752,1,1,1,metadata_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2398,129,321,450,(1) YES
+195768,1,1,1,metadata_only,tensorflow,['CWE-703'],quantile_ops.cc,1049,123,322,445,(1) YES: A security vulnerability detected.
+195800,1,1,1,metadata_only,deark,['CWE-369'],fmtutil.c,1444,123,178,301,(1) YES
+195801,1,1,1,metadata_only,php-src,['CWE-476'],wddx.c,3632,125,258,383,(1) YES
+195908,1,1,1,metadata_only,linux,['CWE-703'],volumes.c,4198,121,299,420,(1) YES
+195909,1,1,1,metadata_only,ImageMagick,['CWE-125'],png.c,79137,123,158,281,(1) YES
+195954,1,1,1,metadata_only,pjproject,['CWE-787'],dns.c,983,122,254,376,(1) YES
+195965,1,1,1,metadata_only,tensorflow,['CWE-787'],edit_distance_op.cc,7615,125,328,453,(1) YES
+195984,1,1,1,metadata_only,gpac,['CWE-703'],box_code_3gpp.c,313,128,368,496,(1) YES: A security vulnerability detected.
+196276,1,1,1,metadata_only,lsquic,['CWE-269'],None,1227,121,137,258,(1) YES
+196316,1,1,1,metadata_only,barebox,['CWE-200'],digest.c,292,122,389,511,(1) YES
+196328,1,1,1,metadata_only,vim,['CWE-416'],search.c,18096,121,196,317,(1) YES
+196578,1,1,1,metadata_only,vim,['CWE-787'],register.c,803,121,324,445,(1) YES
+196587,1,1,1,metadata_only,tensorflow,['CWE-369'],resource_variable_ops.cc,3420,125,376,501,(1) YES: A security vulnerability detected.
+196611,1,1,1,metadata_only,booth,['CWE-284'],main.c,1007,121,339,460,(1) YES: A security vulnerability detected.
+196621,1,1,1,metadata_only,mruby,['CWE-787'],None,228,120,286,406,(1) YES: A security vulnerability detected.
+196629,1,1,1,metadata_only,tensorflow,['CWE-354'],matrix_solve_op.cc,10045,125,278,403,(1) YES
+196689,1,1,1,metadata_only,tensorflow,['CWE-703'],stage_op.cc,602,123,451,574,(1) YES
+196691,1,1,1,metadata_only,gpac,['CWE-703'],isoffin_read.c,11818,126,217,343,(1) YES
+196698,1,1,1,metadata_only,tensorflow,['CWE-125'],sparse_fill_empty_rows_op.cc,2261,129,458,587,(1) YES
+196705,1,1,1,metadata_only,tensorflow,['CWE-20'],sparse_tensor_dense_add_op.cc,1242,128,262,390,(1) YES
+196790,1,1,1,metadata_only,tensorflow,['CWE-703'],sdca_internal.cc,3832,124,294,418,(1) YES: A security vulnerability detected.
+196801,1,1,1,metadata_only,gpac,['CWE-703'],isom_hinter.c,6017,125,289,414,(1) YES
+196829,1,1,1,metadata_only,tensorflow,['CWE-476'],session_ops.cc,869,123,329,452,(1) YES: A security vulnerability detected.
+196834,1,1,1,metadata_only,tensorflow,['CWE-125'],count_ops.cc,338,123,317,440,(1) YES
+196841,1,1,1,metadata_only,furnace,['CWE-703'],pattern.cpp,12844,121,417,538,(1) YES
+196846,1,1,1,metadata_only,tensorflow,['CWE-369'],div.cc,1159,121,410,531,(1) YES: A security vulnerability detected.
+196860,1,1,1,metadata_only,gpac,['CWE-787'],None,1878,120,249,369,(1) YES
+196885,1,1,1,metadata_only,tensorflow,['CWE-703'],mkl_requantization_range_per_channel_op.cc,3259,134,491,625,(1) YES
+196889,1,1,1,metadata_only,rpm,['CWE-284'],rpmpgp.c,744,123,491,614,(1) YES
+196893,1,1,1,metadata_only,envoy,['CWE-362'],default_validator.cc,1618,123,312,435,(1) YES
+196894,1,1,1,metadata_only,cryptopp,['CWE-399'],rw.cpp,1059,122,304,426,(1) YES
+196993,1,1,1,metadata_only,libjxl,['CWE-369'],codec_apng.cc,7391,126,330,456,(1) YES: A security vulnerability detected.
+197015,1,1,1,metadata_only,gpac,['CWE-476'],isom_store.c,2728,124,377,501,(1) YES: A security vulnerability detected.
+197057,1,1,1,metadata_only,drogon,['CWE-552'],None,883,120,322,442,(1) YES
+197095,1,1,1,metadata_only,tensorflow,['CWE-369'],optimized_ops.h,4283,123,360,483,(1) YES
+197111,1,1,1,metadata_only,tinyexr,['CWE-20'],tinyexr.h,10037,124,227,351,(1) YES: A security vulnerability detected.
+197128,1,1,1,metadata_only,mruby,['CWE-125'],codegen.c,3787,123,415,538,(1) YES
+197135,1,1,1,metadata_only,linux,['CWE-703'],ccp-ops.c,6867,124,413,537,(1) YES: A security vulnerability detected.
+197142,1,1,1,metadata_only,tensorflow,['CWE-476'],quantize_op.cc,2320,124,385,509,(1) YES: A security vulnerability detected.
+197185,1,1,1,metadata_only,FFmpeg,['CWE-252'],None,1566,120,299,419,(1) YES
+197223,1,1,1,metadata_only,njs,['CWE-787'],njs_module.c,1138,125,278,403,(1) YES: A security vulnerability detected.
+197239,1,1,1,metadata_only,tensorflow,['CWE-20'],mkl_requantize_per_channel_op.cc,5096,131,334,465,(1) YES
+197242,1,1,1,metadata_only,tensorflow,['CWE-908'],svdf.cc,9667,122,326,448,(1) YES
+197247,1,1,1,metadata_only,tensorflow,['CWE-369'],None,2523,119,265,384,(1) YES
+197262,1,1,1,metadata_only,tensorflow,['CWE-125'],sparse_matmul_op.cc,4354,125,291,416,(1) YES
+197305,1,1,1,metadata_only,pjproject,['CWE-200'],rtcp_fb.c,839,125,387,512,(1) YES
+197318,1,1,1,metadata_only,tensorflow,['CWE-703'],session_ops.cc,418,123,294,417,(1) YES
+197326,1,1,1,metadata_only,tensorflow,['CWE-703'],einsum_op_impl.h,2300,126,315,441,(1) YES: A security vulnerability detected.
+197359,1,1,1,metadata_only,tensorflow,['CWE-703'],auto_parallel.cc,4992,123,342,465,(1) YES
+197395,1,1,1,metadata_only,tensorflow,['CWE-369'],reverse_op.cc,1647,123,414,537,(1) YES
+197466,1,1,1,metadata_only,tensorflow,['CWE-476'],save_restore_tensor.cc,3703,125,282,407,(1) YES
+197499,1,1,1,metadata_only,gpac,['CWE-416'],field_decode.c,3101,124,180,304,(1) YES
+197511,1,1,1,metadata_only,libjpeg,['CWE-787'],hierarchicalbitmaprequester.cpp,1103,125,311,436,(1) YES
+197517,1,1,1,metadata_only,glewlwyd,['CWE-787'],webauthn.c,7137,126,315,441,(1) YES: A security vulnerability detected.
+197518,1,1,1,metadata_only,tensorflow,['CWE-703'],quantize_and_dequantize_op.cc,3191,130,279,409,(1) YES
+197565,1,0,0,metadata_only,wolfMQTT,['CWE-787'],mqtt_client.c,7554,124,470,594,(2) NO
+197593,1,1,1,metadata_only,njs,['CWE-416'],njs_function.c,1335,125,340,465,(1) YES
+197666,1,0,0,metadata_only,njs,['CWE-703'],njs_iterator.c,4494,125,489,614,(2) NO
+197719,1,1,1,metadata_only,tensorflow,['CWE-125'],ragged_tensor_to_variant_op.cc,2111,129,393,522,(1) YES
+197748,1,1,1,metadata_only,tensorflow,['CWE-703'],array_ops.cc,2247,123,349,472,(1) YES
+197760,1,1,1,metadata_only,tensorflow,['CWE-125'],gather_nd.cc,1030,123,325,448,(1) YES
+197796,1,1,1,metadata_only,qemu,['CWE-703'],vnc.c,4407,123,356,479,(1) YES
+197801,1,1,1,metadata_only,tensorflow,['CWE-345'],tensor_slice_reader.h,1688,125,391,516,(1) YES
+197824,1,1,1,metadata_only,gpac,['CWE-416'],memory_decoder.c,1090,124,150,274,(1) YES
+197826,1,1,1,metadata_only,tensorflow,['CWE-824'],constant_folding.cc,2329,123,269,392,(1) YES
+197893,1,1,1,metadata_only,tensorflow,['CWE-703'],gather.cc,568,121,366,487,(1) YES
+197973,1,1,1,metadata_only,crun,['CWE-276'],exec.c,3429,122,329,451,(1) YES
+197998,1,1,1,metadata_only,tensorflow,['CWE-703'],unsorted_segment_join_op.cc,2727,128,302,430,(1) YES: A security vulnerability detected.
+198010,1,1,1,metadata_only,radare2,['CWE-125'],bfile.c,7850,124,319,443,(1) YES
+198013,1,1,1,metadata_only,tensorflow,['CWE-703'],load_and_remap_matrix_op.cc,11099,130,491,621,(1) YES
+198116,1,1,1,metadata_only,tensorflow,['CWE-125'],sparse_reduce_op.cc,3054,125,255,380,(1) YES
+198117,1,1,1,metadata_only,tensorflow,['CWE-476'],fractional_avg_pool_op.cc,6758,127,403,530,(1) YES
+198161,1,1,1,metadata_only,ImageMagick,['CWE-125'],mat.c,16319,123,321,444,(1) YES
+198169,1,1,1,metadata_only,tensorflow,['CWE-369'],kernel_util.cc,237,123,487,610,(1) YES
+198239,1,1,1,metadata_only,barebox,['CWE-200'],password.c,1384,122,331,453,(1) YES: A security vulnerability detected.
+198259,1,1,1,metadata_only,tensorflow,['CWE-369'],ragged_gather_op.cc,1647,125,273,398,(1) YES
+198282,1,1,1,metadata_only,tensorflow,['CWE-369'],reshape_util.cc,4587,123,328,451,(1)
+198350,1,1,1,metadata_only,owntone-server,['CWE-416'],misc.c,2487,125,306,431,(1) YES: A security vulnerability detected.
+198374,1,1,1,metadata_only,tensorflow,['CWE-703'],lstm_ops.cc,5377,124,307,431,(1) YES
+198399,1,1,1,metadata_only,uftpd,['CWE-787'],ftpcmd.c,890,124,319,443,(1) YES
+198439,1,1,1,metadata_only,mruby,['CWE-288'],vm.c,50746,122,176,298,(1) YES
+198449,1,1,1,metadata_only,pjproject,['CWE-787'],stun_simple.c,1767,124,349,473,(1) YES
+198452,1,1,1,metadata_only,tensorflow,['CWE-703'],comparisons.cc,1722,121,336,457,(1) YES: A security vulnerability detected.
+198476,1,1,1,metadata_only,njs,['CWE-416'],njs_async.c,2245,125,312,437,(1) YES
+198499,1,0,0,metadata_only,micro-ecc,['CWE-415'],uECC.c,2725,124,497,621,(2) NO: No security vulnerability.
+198523,1,1,1,metadata_only,tensorflow,['CWE-416'],resource_ops.cc,1155,123,307,430,(1) YES: A security vulnerability detected.
+198545,1,1,1,metadata_only,u-boot,['CWE-787'],i2c.c,2210,125,327,452,(1) YES: A security vulnerability detected.
+198556,1,1,1,metadata_only,mruby,['CWE-703'],fiber.c,1634,122,289,411,(1) YES
+198566,1,1,1,metadata_only,libmobi,['CWE-787'],index.c,2248,123,334,457,(1) YES
+198662,1,1,1,metadata_only,vim,['CWE-787'],ex_cmds.c,1308,123,294,417,(1) YES
+198692,1,1,1,metadata_only,ipsec,['CWE-125'],xfrm_policy.c,1471,125,257,382,(1) YES
+198695,1,1,1,metadata_only,MilkyTracker,['CWE-787'],LoaderS3M.cpp,8477,125,248,373,(1) YES: A security vulnerability detected.
+198703,1,1,1,metadata_only,LibRaw,['CWE-189'],dcraw.c,1410,123,344,467,(1) YES
+198736,1,1,1,metadata_only,linux,['CWE-401'],rsi_91x_mgmt.c,638,128,417,545,(1) YES
+198743,1,1,1,metadata_only,LuaJIT,['CWE-125'],lj_err.c,1384,125,185,310,(1) YES
+198927,1,1,1,metadata_only,radare2,['CWE-125'],ne.c,1947,123,331,454,(1) YES
+198983,1,0,0,metadata_only,swtpm,['CWE-125'],swtpm_nvfile.c,1134,128,486,614,(2) NO
+199159,1,1,1,metadata_only,linux,['CWE-362'],None,2961,119,367,486,(1) YES
+199712,1,1,1,metadata_only,linux,['CWE-415'],rtrs-clt.c,152,125,199,324,(1) YES
+199767,1,1,1,metadata_only,hexchat,['CWE-22'],inbound.c,2721,121,491,612,(1) YES
+199778,1,1,1,metadata_only,puma,['CWE-444'],http11_parser.c,19279,125,369,494,(1) YES: A security vulnerability detected.
+199833,1,1,1,metadata_only,chafa,['CWE-476'],libnsgif.c,15134,124,439,563,(1) YES: A security vulnerability detected.
+199836,1,1,1,metadata_only,pjproject,['CWE-125'],None,308,120,337,457,(1) YES: A security vulnerability detected.
+199841,1,1,1,metadata_only,radare2,['CWE-476'],bin_xnu_kernelcache.c,1665,129,334,463,(1) YES
+199851,1,1,1,metadata_only,vim,['CWE-787'],indent.c,5582,121,300,421,(1) YES: A security vulnerability detected.
+199952,1,1,1,metadata_only,MilkyTracker,['CWE-787'],None,19139,120,249,369,(1) YES: A security vulnerability detected.
+199984,1,1,1,metadata_only,vim,['CWE-416'],ex_cmds.c,31245,123,441,564,(1) YES
+200113,1,1,1,metadata_only,ImageMagick,['CWE-787'],mat.c,6670,123,407,530,(1) YES
+200157,1,1,1,metadata_only,exim,['CWE-264'],readconf.c,13171,123,356,479,(1) YES: A security vulnerability detected.
+200163,1,1,1,metadata_only,linux,['CWE-200'],hid-elo.c,875,123,327,450,(1) YES
+200287,1,1,1,metadata_only,linux,['CWE-200'],socket.c,3449,121,289,410,(1) YES
+200305,1,1,1,metadata_only,ghostpdl,['CWE-787'],gdevpcx.c,1184,125,155,280,(1) YES: A security vulnerability detected.
+200320,1,1,1,metadata_only,samba,['CWE-665'],vfs_default.c,8888,124,198,322,(1) YES
+200323,1,1,1,metadata_only,vim,['CWE-787'],spellsuggest.c,39409,122,464,586,(1) YES
+200379,1,1,1,metadata_only,radare2,['CWE-476'],ne.c,761,122,125,247,(1) YES: A security vulnerability detected.
+200695,1,1,1,metadata_only,linux,['CWE-401'],fastrpc.c,674,122,369,491,(1) YES
+200781,1,1,1,metadata_only,ncurses,['CWE-787'],None,1139,119,160,279,(1) YES
+200895,1,1,1,metadata_only,vim,['CWE-703'],None,1117,118,146,264,(1) YES: A security vulnerability detected.
+200934,1,1,1,metadata_only,libvirt,['CWE-212'],virstoragetest.c,1308,126,453,579,(1) YES
+200976,1,1,1,metadata_only,vim,['CWE-787'],None,895,119,363,482,(1) YES
+201007,1,1,1,metadata_only,pjproject,['CWE-787'],sdp.c,1492,122,120,242,(1) YES: A security vulnerability detected.
+201343,1,1,1,metadata_only,linux,['CWE-416'],None,204,119,288,407,(1) YES
+201353,1,1,1,metadata_only,wireless-drivers,['CWE-415'],rsi_91x_usb.c,1417,130,350,480,(1) YES: A security vulnerability detected.
+201382,1,1,1,metadata_only,gerbv,['CWE-787'],drill.c,7874,122,402,524,(1) YES
+201384,1,1,1,metadata_only,vim,['CWE-787'],None,762,118,136,254,(1) YES
+201451,1,1,1,metadata_only,ImageMagick6,['CWE-787'],cin.c,15672,124,441,565,(1) YES: A security vulnerability detected.
+201872,1,1,1,metadata_only,gnutls,['CWE-310'],gnutls_handshake.c,4749,127,123,250,(1) YES: A security vulnerability detected.
+201885,1,1,1,metadata_only,vim,['CWE-416'],regexp_bt.c,34450,123,317,440,(1) YES
+201913,1,1,1,metadata_only,libarchive,['CWE-59'],None,2210,119,285,404,(1) YES: A security vulnerability detected.
+201925,1,1,1,metadata_only,linux,['CWE-476'],vidtv_s302m.c,1188,128,337,465,(1) YES
+202081,1,1,1,metadata_only,vim,['CWE-787'],register.c,19946,121,354,475,(1) YES: A security vulnerability detected.
+202082,1,1,1,metadata_only,radare2,['CWE-125'],class.c,1105,122,124,246,(1) YES: A security vulnerability detected.
+202125,1,1,1,metadata_only,cairo,['CWE-787'],None,2943,120,374,494,(1) YES
+202256,1,1,1,metadata_only,qtbase,['CWE-787'],qpaintengineex.cpp,9164,125,383,508,(1) YES
+202276,1,1,1,metadata_only,vim,['CWE-787'],None,3371,118,149,267,(1) YES
+202304,1,1,1,metadata_only,vim,['CWE-122'],None,1179,118,111,229,(1) YES
+202392,1,1,1,metadata_only,php-src,['CWE-119'],gd_interpolation.c,978,124,177,301,(1) YES
+202659,1,1,1,metadata_only,net,['CWE-125'],ip6_gre.c,2044,124,458,582,(1) YES: A security vulnerability detected.
+202677,1,1,1,metadata_only,qemu,['CWE-369'],None,1213,119,146,265,YES
+202688,1,1,1,metadata_only,ghostpdl,['CWE-787'],gdevlprn.c,522,127,290,417,(1) YES
+202708,1,1,1,metadata_only,vim,['CWE-476'],buffer.c,576,121,357,478,(1) YES
+202719,1,1,1,metadata_only,linux,['CWE-704'],sm_make_chunk.c,1222,125,326,451,(1) YES
+202748,1,1,1,metadata_only,ImageMagick,['CWE-772'],tga.c,13504,123,107,230,(1) YES: A security vulnerability detected.
+202783,1,1,1,metadata_only,php-src,['CWE-119'],zend_strtod.c,349,127,433,560,(1) YES
+202822,1,1,1,metadata_only,ghostpdl,['CWE-787'],zstring.c,1080,124,298,422,(1) YES: A security vulnerability detected.
+202888,1,1,1,metadata_only,linux,['CWE-787'],esp4.c,1898,122,391,513,(1) YES: A security vulnerability detected.
+202889,1,1,1,metadata_only,linux,['CWE-787'],esp6.c,1844,121,128,249,(1) YES: A security vulnerability detected.
+202892,1,1,1,metadata_only,pure-ftpd,['CWE-434'],ftpd.c,7610,124,127,251,(1) YES
+202943,1,1,1,metadata_only,lua,['CWE-787'],ldebug.c,434,121,133,254,(1) YES: A security vulnerability detected.
+203614,1,1,1,metadata_only,linux,['CWE-703'],pxa3xx-gcu.c,1582,127,307,434,(1) YES
+203902,1,1,1,metadata_only,vim,['CWE-703'],scriptfile.c,2749,122,195,317,(1) YES
+204016,1,1,1,metadata_only,squashfs-tools,['CWE-200'],None,3355,121,119,240,(1) YES
+204017,1,0,0,metadata_only,squashfs-tools,['CWE-200'],None,3363,122,378,500,(2) NO
+204019,1,1,1,metadata_only,squashfs-tools,['CWE-200'],None,3071,122,362,484,(1) YES
+204032,1,1,1,metadata_only,linux,['CWE-772'],virtio_bt.c,348,124,288,412,(1) YES
+204036,1,1,1,metadata_only,net,['CWE-787'],hw_atl_utils.c,1016,124,124,248,(1) YES: A security vulnerability detected.
+204073,1,1,1,metadata_only,shapelib,['CWE-415'],shpsort.c,737,125,280,405,(1) YES: A security vulnerability detected.
+204115,1,1,1,metadata_only,openldap,['CWE-617'],schema_init.c,3567,124,480,604,(1) YES
+204137,1,1,1,metadata_only,poppler,['CWE-369'],None,6800,119,106,225,(1) YES: A security vulnerability detected.
+204195,1,1,1,metadata_only,pjproject,['CWE-125'],None,558,119,121,240,(1) YES
+204243,1,1,1,metadata_only,vim,['CWE-787'],eval.c,6093,120,140,260,(1) YES
+204278,1,1,1,metadata_only,firejail,['CWE-94'],None,876,118,99,217,(1) YES
+204351,1,1,1,metadata_only,squirrel,['CWE-125'],sqclass.cpp,1824,122,495,617,(1) YES
+204412,1,1,1,metadata_only,bpf,['CWE-787'],ringbuf.c,1123,123,277,400,(1) YES
+204425,1,1,1,metadata_only,frr,['CWE-125'],bgp_packet.c,2808,125,340,465,(1) YES: A security vulnerability detected.
+204438,1,1,1,metadata_only,ImageMagick,['CWE-617'],operation.c,16612,123,321,444,(1) YES: A security vulnerability detected.
+204495,1,1,1,metadata_only,linux,['CWE-193'],cancel.c,636,121,348,469,(1) YES
+204534,1,1,1,metadata_only,admesh,['CWE-125'],connect.c,2388,122,427,549,(1) YES
+204535,1,1,1,metadata_only,admesh,['CWE-125'],connect.c,620,122,375,497,(1) YES: A security vulnerability detected.
+204544,1,1,1,metadata_only,linux,['CWE-416'],em28xx-cards.c,8029,126,336,462,(1) YES
+204814,1,0,0,metadata_only,linux,['CWE-703'],None,827,119,265,384,(2) NO: No security vulnerability.
+204830,1,1,1,metadata_only,linux,['CWE-200'],namespace.c,422,120,140,260,(1) YES: A security vulnerability detected.
+205630,1,1,1,metadata_only,linux,['CWE-94'],io_uring.c,1193,122,408,530,(1) YES
+205734,1,1,1,metadata_only,rizin,['CWE-787'],marshal.c,1196,121,132,253,(1) YES: A security vulnerability detected.
+205736,1,1,1,metadata_only,linux,['CWE-834'],fuse_i.h,110,122,132,254,(1) YES: A security vulnerability detected.
+205806,1,1,1,metadata_only,Singular,['CWE-269'],None,1794,118,146,264,(1) YES
+205823,1,1,1,metadata_only,ovs,['CWE-401'],ipf.c,991,123,310,433,(1) YES
+206025,1,1,1,metadata_only,evolution-data-server,['CWE-200'],None,295,122,100,222,(1) YES
+206043,1,1,1,metadata_only,gimp,['CWE-125'],file-gbr.c,7841,125,342,467,(1) YES
+206044,1,1,1,metadata_only,tigervnc,['CWE-672'],None,2972,120,121,241,(1) YES: A security vulnerability detected.
+206262,1,1,1,metadata_only,vim,['CWE-787'],ex_docmd.c,9072,124,295,419,(1) YES
+206273,1,1,1,metadata_only,radare2,['CWE-416'],None,5477,121,324,445,(1) YES
+206417,1,1,1,metadata_only,vim,['CWE-787'],edit.c,10082,121,350,471,(1) YES
+206555,1,1,1,metadata_only,php-src,['CWE-119'],gd_io_dp.c,400,126,170,296,(1) YES
+206588,1,1,1,metadata_only,php-src,['CWE-119'],None,1594,120,130,250,(1) YES: A security vulnerability detected.
+206625,1,,,metadata_only,raptor,['CWE-787'],raptor_xml_writer.c,8295,127,507,634,"Sorry, I cannot fulfill your request to analyze a specific file for vulnerabilities."
+206639,1,1,1,metadata_only,linux,['CWE-703'],nf_tables_api.c,1465,125,324,449,(1) YES
+206670,1,1,1,metadata_only,nbdkit,['CWE-924'],protocol-handshake-newstyle.c,18843,129,423,552,(1) YES
+206676,1,1,1,metadata_only,vim,['CWE-122'],move.c,6235,121,278,399,(1) YES
+206677,1,1,1,metadata_only,vim,['CWE-703'],filepath.c,5339,120,144,264,(1) YES: A security vulnerability detected.
+206771,1,1,1,metadata_only,qcad,['CWE-191'],dl_dxf.cpp,1260,125,375,500,(1) YES: A security vulnerability detected.
+206781,1,1,1,metadata_only,linux,['CWE-476'],inode.c,2044,120,139,259,(1) YES: A security vulnerability detected.
+206815,1,1,1,metadata_only,ImageMagick,['CWE-125'],quantize.c,5146,124,303,427,(1) YES: A security vulnerability detected.
+206845,1,1,1,metadata_only,linux,['CWE-125'],control.c,352,120,127,247,(1) YES: A security vulnerability detected.
+206942,1,1,1,metadata_only,vim,['CWE-125'],typval.c,3520,122,245,367,(1) YES
+206946,1,1,1,metadata_only,jasper,['CWE-703'],jasper.c,4177,121,341,462,(1) YES
+207068,1,1,1,metadata_only,linux,['CWE-120'],rpadlpar_sysfs.c,422,127,338,465,(1) YES
+207069,1,1,1,metadata_only,linux,['CWE-120'],rpadlpar_sysfs.c,415,126,151,277,(1) YES: A security vulnerability detected.
+207150,1,1,1,metadata_only,squirrel,['CWE-703'],sqbaselib.cpp,600,124,357,481,(1) YES
+207461,1,1,1,metadata_only,autotrace,['CWE-787'],input-bmp.c,10784,124,150,274,(1) YES
+207520,1,1,1,metadata_only,rizin,['CWE-787'],dwarf.c,1456,122,328,450,(1) YES: A security vulnerability detected.
+207700,1,1,1,metadata_only,EternalTerminal,['CWE-362'],UserTerminalRouter.cpp,225,124,475,599,(1) YES
+207703,1,1,1,metadata_only,EternalTerminal,['CWE-362'],PipeSocketHandler.cpp,823,124,317,441,(1) YES: A security vulnerability detected.
+207719,1,1,1,metadata_only,vim,['CWE-787'],edit.c,569,120,110,230,(1) YES
+207753,1,1,1,metadata_only,linux,['CWE-284'],iov_iter.c,988,124,349,473,(1) YES
+207754,1,0,0,metadata_only,linux,['CWE-284'],iov_iter.c,1062,124,386,510,(2) NO: No security vulnerability.
+207755,1,0,0,metadata_only,php-src,['CWE-200'],openssl.c,2116,124,365,489,(2) NO
+207780,1,1,1,metadata_only,radare2,['CWE-703'],None,4121,120,116,236,(1) YES
+207803,1,1,1,metadata_only,linux,['CWE-200'],random.c,1703,120,118,238,(1) YES
+207804,1,0,0,metadata_only,linux,['CWE-200'],timer.c,384,121,377,498,(2) NO: No security vulnerability.
+207990,1,1,1,metadata_only,pcre2,['CWE-703'],pcre2_jit_compile.c,4749,129,493,622,(1) YES
+208107,1,1,1,metadata_only,linux,['CWE-703'],xfrm_policy.c,913,123,150,273,(1) YES
+208115,1,1,1,metadata_only,linux,['CWE-703'],xilinx_emaclite.c,2285,127,353,480,(1) YES: A security vulnerability detected.
+208140,1,1,1,metadata_only,util-linux,['CWE-200'],mount.c,7619,123,271,394,(1) YES
+208370,1,1,1,metadata_only,vim,['CWE-787'],edit.c,2208,120,108,228,(1) YES
+208411,1,1,1,metadata_only,vim,['CWE-787'],term.c,16023,121,373,494,(1) YES
+208505,1,1,1,metadata_only,tor,['CWE-399'],routerparse.c,17737,121,121,242,(1) YES: A security vulnerability detected.
+208506,1,1,1,metadata_only,heimdal,['CWE-476'],None,31845,119,113,232,(1) YES
+208522,1,1,1,metadata_only,unbound,['CWE-190'],dnscrypt.c,2520,122,175,297,(1) YES: A security vulnerability detected.
+208525,1,1,1,metadata_only,vim,['CWE-787'],ex_getln.c,1598,123,146,269,(1) YES
+208535,1,1,1,metadata_only,rizin,['CWE-415'],bin_qnx.c,148,125,272,397,(1) YES: A security vulnerability detected.
+208654,1,1,1,metadata_only,php-src,['CWE-416'],snmp.c,4635,124,388,512,(1) YES
+208680,1,1,1,metadata_only,radare2,['CWE-416'],None,13139,121,323,444,(1) YES: A security vulnerability detected.
+208912,1,1,1,metadata_only,vim,['CWE-416'],ex_getln.c,25369,124,181,305,(1) YES
+208987,1,1,1,metadata_only,MilkyTracker,['CWE-416'],PlayerGeneric.cpp,240,123,321,444,(1) YES
+209026,1,1,1,metadata_only,libvirt,['CWE-119'],node_device_conf.c,634,126,299,425,(1) YES: A security vulnerability detected.
+209102,1,1,1,metadata_only,vim,['CWE-703'],mouse.c,22314,121,297,418,(1) YES
+209801,1,1,1,metadata_only,mujs,['CWE-476'],jsdump.c,205,124,332,456,(1) YES
+209931,1,1,1,metadata_only,FreeRDP,['CWE-190'],video_main.c,1581,125,439,564,(1) YES
+209955,1,1,1,metadata_only,linux,['CWE-476'],trans.c,5021,121,333,454,(1) YES: A security vulnerability detected.
+210050,1,1,1,metadata_only,lua,['CWE-125'],lparser.c,467,121,161,282,(1) YES
+210090,1,1,1,metadata_only,file,['CWE-787'],cdf.c,3962,121,119,240,(1) YES: A security vulnerability detected.
+210203,1,1,1,metadata_only,linux,['CWE-787'],seq_file.c,94,123,334,457,(1) YES
+210204,1,1,1,metadata_only,linux,['CWE-362'],flow_netlink.c,1036,124,463,587,(1) YES
+210206,1,1,1,metadata_only,squid,['CWE-400'],gopher.cc,11324,121,150,271,(1) YES: A security vulnerability detected.
+210252,1,1,1,metadata_only,ImageMagick,['CWE-787'],cin.c,15720,122,129,251,(1) YES
+210271,1,1,1,metadata_only,vim,['CWE-787'],spellfile.c,2143,122,455,577,(1) YES
+210273,1,1,1,metadata_only,mongo,['CWE-617'],pipeline_d.cpp,10193,123,291,414,(1) YES: A security vulnerability detected.
+210278,1,1,1,metadata_only,unicorn,['CWE-476'],exec.c,402,121,291,412,(1) YES
+210282,1,1,1,metadata_only,qemu,['CWE-125'],i2c-ddc.c,156,127,389,516,(1) YES: A security vulnerability detected.
+210283,1,1,1,metadata_only,dpdk,['CWE-703'],vhost_user.c,3022,125,270,395,(1) YES: A security vulnerability detected.
+210284,1,1,1,metadata_only,dpdk,['CWE-703'],vhost_user.c,3121,125,270,395,(1) YES: A security vulnerability detected.
+210393,1,1,1,metadata_only,vim,['CWE-416'],arglist.c,7558,121,125,246,(1) YES: A security vulnerability detected.
+210420,1,1,1,metadata_only,ghostpdl,['CWE-119'],gxht_thresh.c,758,126,447,573,(1) YES: A security vulnerability detected.
+210453,1,1,1,metadata_only,ghostpdl,['CWE-120'],gdev3852.c,4521,128,345,473,(1) YES
+210484,1,1,1,metadata_only,linux,['CWE-125'],io_uring.c,2805,122,118,240,(1) YES: A security vulnerability detected.
+210520,1,0,0,metadata_only,vim,['CWE-125'],indent.c,3834,121,412,533,(2) NO: No security vulnerability.
+210527,1,1,1,metadata_only,linux,['CWE-415'],mcba_usb.c,1600,124,492,616,(1) YES
+210551,1,1,1,metadata_only,oniguruma,['CWE-125'],regcomp.c,3190,124,326,450,(1) YES
+210570,1,1,1,metadata_only,radare2,['CWE-787'],bin_symbols.c,2594,125,307,432,(1) YES
+210571,1,1,1,metadata_only,linux,['CWE-401'],cx23888-ir.c,1324,128,217,345,(1) YES
+210620,1,1,1,metadata_only,linux,['CWE-415'],virtio_rpmsg_bus.c,751,127,417,544,(1) YES: A security vulnerability detected.
+210636,1,1,1,metadata_only,linux,['CWE-416'],mkiss.c,702,122,163,285,(1) YES
+210669,1,1,1,metadata_only,ImageMagick6,['CWE-401'],bmp.c,34566,124,286,410,(1) YES: A security vulnerability detected.
+210692,1,1,1,metadata_only,ImageMagick6,['CWE-835'],bmp.c,34742,124,238,362,(1) YES: A security vulnerability detected.
+210700,1,1,1,metadata_only,squashfs-tools,['CWE-22'],None,3282,121,340,461,(1) YES: A security vulnerability detected.
+210701,1,1,1,metadata_only,squashfs-tools,['CWE-22'],None,3285,121,398,519,(1) YES
+210702,1,1,1,metadata_only,squashfs-tools,['CWE-22'],None,2982,121,352,473,(1) YES: A security vulnerability detected.
+210834,1,1,1,metadata_only,xserver,['CWE-863'],log.c,1122,122,270,392,(1) YES
+210866,1,1,1,metadata_only,xserver,['CWE-191'],xkbSwap.c,2399,124,323,447,(1) YES
+210887,1,1,1,metadata_only,qemu,['CWE-835'],e1000.c,491,126,304,430,(1) YES
+210896,1,1,1,metadata_only,spice,['CWE-193'],memslot.c,1191,122,344,466,(1) YES
+210904,1,0,0,metadata_only,curl,['CWE-125'],main.c,789,121,277,398,(2) NO: No security vulnerability.
+210910,1,1,1,metadata_only,vim,['CWE-200'],drawscreen.c,3475,122,290,412,(1) YES
+210928,1,1,1,metadata_only,linux,['CWE-476'],inode.c,900,121,376,497,(1) YES: A security vulnerability detected.
+210944,1,1,1,metadata_only,vim,['CWE-416'],ex_docmd.c,22933,124,367,491,(1) YES
+211090,1,1,1,metadata_only,cifs-utils,['CWE-20'],mount.cifs.c,2509,126,472,598,(1) YES
+211102,1,1,1,metadata_only,file-roller,['CWE-22'],None,7299,120,363,483,(1) YES
+211103,1,1,1,metadata_only,file-roller,['CWE-22'],None,1690,120,363,483,(1) YES
+211110,1,1,1,metadata_only,libtiff,['CWE-787'],tif_lzw.c,5119,124,170,294,(1) YES: A security vulnerability detected.
+211113,1,1,1,metadata_only,linux,['CWE-416'],atusb.c,534,122,442,564,(1) YES
+211126,1,1,1,metadata_only,libmobi,['CWE-125'],index.c,6639,123,452,575,(1) YES
+211136,1,1,1,metadata_only,rizin,['CWE-787'],dyldcache.c,2717,124,337,461,(1) YES
+211179,1,1,1,metadata_only,exiv2,['CWE-125'],image.cpp,8217,123,330,453,(1) YES
+211181,1,1,1,metadata_only,php-src,['CWE-17'],apprentice.c,2835,121,120,241,(1) YES: A security vulnerability detected.
+211471,1,1,1,metadata_only,frr,['CWE-125'],bgp_packet.c,2993,125,198,323,(1) YES
+211473,1,1,1,metadata_only,gdk-pixbuf,['CWE-189'],io-xbm.c,2983,128,403,531,(1) YES
+211506,1,1,1,metadata_only,zlib,['CWE-787'],inflate.c,25995,122,423,545,(1) YES: A security vulnerability detected.
+211563,1,1,1,metadata_only,vim,['CWE-122'],None,1349,118,159,277,(1) YES: A security vulnerability detected.
+211567,1,1,1,metadata_only,clamav-devel,['CWE-189'],sis.c,466,124,270,394,(1) YES
+211695,1,1,1,metadata_only,vim,['CWE-416'],regexp.c,1662,121,137,258,(1) YES
+211699,1,1,1,metadata_only,gnulib,['CWE-119'],glob.c,28165,123,402,525,(1) YES
+211700,1,1,1,metadata_only,linux,['CWE-120'],se.c,1407,121,276,397,(1) YES
+211773,1,1,1,metadata_only,ntp,['CWE-20'],ntpq.c,2313,123,348,471,(1) YES: A security vulnerability detected.
+211785,1,1,1,metadata_only,jasper,['CWE-20'],jpc_enc.c,11802,123,315,438,(1) YES
+211842,1,1,1,metadata_only,vim,['CWE-787'],indent.c,5974,121,295,416,(1) YES
+211845,1,1,1,metadata_only,ImageMagick6,['CWE-787'],tiff.c,34484,125,338,463,(1) YES: A security vulnerability detected.
+211868,1,1,1,metadata_only,nf,['CWE-269'],nf_tables_offload.c,1118,126,446,572,(1) YES: A security vulnerability detected.
+211877,1,1,1,metadata_only,libexpat,['CWE-668'],xmlparse.c,5086,123,444,567,(1) YES
+211915,1,1,1,metadata_only,jasper,['CWE-125'],jp2_dec.c,9385,124,336,460,(1) YES
+212083,1,1,1,metadata_only,linux,['CWE-703'],i2c-ismt.c,6487,126,263,389,(1) YES
+212144,1,1,1,metadata_only,libmobi,['CWE-119'],read.c,1932,123,284,407,(1) YES
+212152,1,1,1,metadata_only,bash,['CWE-787'],shell.c,494,121,384,505,(1) YES: A security vulnerability detected.
+212339,1,1,1,metadata_only,icecast-server,['CWE-119'],auth_url.c,1092,125,148,273,(1) YES: A security vulnerability detected.
+212407,1,1,1,metadata_only,varnish-cache,['CWE-703'],cache_http.c,295,124,144,268,(1) YES: A security vulnerability detected.
+212414,1,1,1,metadata_only,linux,['CWE-416'],cls_api.c,5619,123,268,391,(1) YES
+212433,1,1,1,metadata_only,vim,['CWE-416'],tag.c,16686,121,360,481,(1) YES
+212436,1,1,1,metadata_only,linux,['CWE-787'],stackmap.c,532,122,290,412,(1) YES
+212818,1,1,1,metadata_only,pjproject,['CWE-191'],None,698,119,170,289,(1) YES
+212822,1,1,1,metadata_only,ghostpdl,['CWE-787'],None,501,121,302,423,(1) YES: A security vulnerability detected.
+212829,1,1,1,metadata_only,php-src,['CWE-476'],wddx.c,3806,124,237,361,(1) YES: A security vulnerability detected.
+212834,1,1,1,metadata_only,rsyslog,['CWE-190'],imptcp.c,4516,125,486,611,(1) YES
+212857,1,1,1,metadata_only,vim,['CWE-416'],quickfix.c,2622,122,395,517,(1) YES
+212871,1,1,1,metadata_only,newsbeuter,['CWE-787'],controller.cpp,1385,122,127,249,(1) YES: A security vulnerability detected.
+212927,1,1,1,metadata_only,qemu,['CWE-835'],sungem.c,320,123,299,422,(1) YES
+212934,1,1,1,metadata_only,cyrus-imapd,['CWE-732'],annotate.c,3456,125,249,374,(1) YES: A security vulnerability detected.
+212955,1,1,1,metadata_only,linux,['CWE-476'],af_ax25.c,1838,125,288,413,(1) YES
+213037,1,1,1,metadata_only,php-src,['CWE-125'],mbfilter_big5.c,2277,127,372,499,(1) YES
+213075,1,1,1,metadata_only,linux,['CWE-416'],main.c,369,121,400,521,(1) YES
+213370,1,1,1,metadata_only,glib,['CWE-754'],gsocketclient.c,3733,124,269,393,(1) YES
+213515,1,1,1,metadata_only,vim,['CWE-787'],spellsuggest.c,6540,122,348,470,(1) YES: A security vulnerability detected.
+213528,1,1,1,metadata_only,linux,['CWE-416'],cgroup-v1.c,2176,125,297,422,(1) YES: A security vulnerability detected.
+213998,1,1,1,metadata_only,libtpms,['CWE-119'],Object.c,482,123,312,435,(1) YES: A security vulnerability detected.
+214003,1,1,1,metadata_only,libvncserver,['CWE-787'],corre.c,836,124,110,234,(1) YES
+214124,1,1,1,metadata_only,chafa,['CWE-125'],lzw.c,2279,123,491,614,(1) YES
+214160,1,0,0,metadata_only,linux,['CWE-476'],composite.c,11322,121,420,541,(2) NO: No security vulnerability.
+214276,1,1,1,metadata_only,linux,['CWE-20'],crypto.c,1300,120,461,581,(1) YES: A security vulnerability detected.
+214282,1,1,1,metadata_only,radare2,['CWE-787'],None,2479,121,370,491,(1) YES: A security vulnerability detected.
+214335,1,1,1,metadata_only,ceph,['CWE-79'],rgw_rest_s3.cc,7013,127,266,393,(1) YES
+214336,1,1,1,metadata_only,linux,['CWE-362'],af_key.c,745,123,385,508,(1) YES
+214339,1,1,1,metadata_only,linux,['CWE-787'],book3s_rtas.c,1527,126,333,459,(1) YES
+214358,1,1,1,metadata_only,clamav-devel,['CWE-20'],mspack.c,5074,125,303,428,(1) YES: A security vulnerability detected.
+214364,1,1,1,metadata_only,php-src,['CWE-119'],simplestring.c,833,124,417,541,(1) YES: A security vulnerability detected.
+214909,1,1,1,metadata_only,linux,['CWE-401'],conn.c,2338,120,128,248,(1) YES: A security vulnerability detected.
+214948,1,1,1,metadata_only,nagioscore,['CWE-476'],query-handler.c,776,125,479,604,(1) YES
+214997,1,1,1,metadata_only,liblouis,['CWE-787'],compileTranslationTable.c,49196,124,135,259,(1) YES
+215038,1,1,1,metadata_only,gst-plugins-good,['CWE-125'],gstflxdec.c,5721,127,162,289,(1) YES
+215073,1,1,1,metadata_only,linux,['CWE-269'],cgroup-v1.c,503,125,276,401,(1) YES
+215103,1,0,0,metadata_only,mongo,['CWE-617'],None,9585,119,362,481,(2) NO: No security vulnerability.
+215142,1,1,1,metadata_only,open62541,['CWE-703'],check_securechannel.c,500,128,213,341,(1) YES
+215188,1,1,1,metadata_only,libmobi,['CWE-787'],None,683,121,350,471,(1) YES
+215262,1,1,1,metadata_only,qemu,['CWE-835'],cadence_gem.c,6042,123,134,257,(1) YES: A security vulnerability detected.
+215264,1,1,1,metadata_only,perl5,['CWE-120'],regcomp.c,81477,123,288,411,(1) YES
+215312,1,1,1,metadata_only,linux-2.6,['CWE-20'],None,1821,122,251,373,(1) YES: A security vulnerability detected.
+215374,1,1,1,metadata_only,linux-2.6,['CWE-189'],None,751,123,113,236,(1) YES
+215391,1,1,1,metadata_only,linux-2.6,['CWE-20'],None,403,122,349,471,(1) YES
+215399,1,1,1,metadata_only,linux-2.6,['CWE-119'],None,592,123,130,253,(1) YES
+215400,1,1,1,metadata_only,linux-2.6,['CWE-20'],None,2869,122,245,367,(1) YES: A security vulnerability detected.
+215549,1,1,1,metadata_only,gzip,['CWE-189'],None,4759,119,137,256,(1) YES
+215921,1,0,0,metadata_only,grep,['CWE-119'],None,2320,119,329,448,(2) NO: No security vulnerability.
+215948,1,0,0,metadata_only,nettle,['CWE-310'],None,1312,120,303,423,(2) NO: No security vulnerability.
+216027,1,1,1,metadata_only,tar,['CWE-476'],None,3123,119,310,429,(1) YES
+216126,1,1,1,metadata_only,openssl,['CWE-20'],None,1641,119,118,237,(1) YES
+216202,1,0,0,metadata_only,libssh,['CWE-399'],None,2415,120,348,468,(2) NO
+216515,1,1,1,metadata_only,openssl,['CWE-362'],None,2379,119,116,235,(1) YES
+216637,1,0,0,metadata_only,guile,['CWE-275'],None,729,120,273,393,(2) NO: No security vulnerability.
+216654,1,0,0,metadata_only,core,['CWE-20'],None,4342,118,308,426,(2) NO: No security vulnerability.
+216701,1,1,1,metadata_only,libtiff,['CWE-770'],None,2050,120,346,466,(1) YES
+216726,1,1,1,metadata_only,openssl,['CWE-327'],None,3458,120,131,251,(1) YES: A security vulnerability detected.
+216767,1,1,1,metadata_only,core,['CWE-835'],None,1865,119,116,235,(1) YES: A security vulnerability detected.
+216800,1,1,1,metadata_only,core,['CWE-125'],None,330,119,383,502,(1) YES: A security vulnerability detected.
+216812,1,1,1,metadata_only,openssl,['CWE-476'],None,95,120,456,576,(1) YES: A security vulnerability detected.
+216861,1,1,1,metadata_only,openssl,['CWE-125'],None,10741,120,354,474,(1) YES
+216903,1,0,0,metadata_only,server,['CWE-476'],None,3525,119,500,619,(2) NO: No security vulnerability.
+216906,1,1,1,metadata_only,server,['CWE-400'],None,155,119,353,472,(1) YES: A security vulnerability detected.
+216938,1,1,1,metadata_only,server,['CWE-416'],None,15070,119,294,413,(1) YES
+216945,1,1,1,metadata_only,server,['CWE-617'],None,1828,119,291,410,(1) YES: A security vulnerability detected.
+216946,1,1,1,metadata_only,server,['CWE-416'],None,402,119,302,421,(1) YES: A security vulnerability detected.
+216965,1,1,1,metadata_only,server,['CWE-617'],None,5013,119,291,410,(1) YES: A security vulnerability detected.
+217176,1,1,1,metadata_only,monit,['CWE-79'],None,1566,118,127,245,(1) YES: A security vulnerability detected.
+217459,1,1,1,metadata_only,JUCE,['CWE-59'],None,2024,119,394,513,(1) YES: A security vulnerability detected.
+217547,1,1,1,metadata_only,libMeshb,['CWE-120'],None,6479,121,280,401,(1) YES
+217551,1,1,1,metadata_only,elfspirit,['CWE-125'],None,37504,120,354,474,(1) YES
+217569,0,1,0,metadata_only,ImageMagick6,['CWE-704'],property.c,28274,124,389,513,(1) YES
+218785,0,1,0,metadata_only,ImageMagick6,['CWE-190'],psd.c,1718,125,147,272,(1) YES
+218852,0,1,0,metadata_only,tensorflow,['CWE-401'],immutable_executor_state.cc,6781,125,314,439,(1) YES
+218933,0,1,0,metadata_only,tensorflow,['CWE-476'],loader_util.cc,1491,123,488,611,(1) YES
+219032,0,1,0,metadata_only,tensorflow,['CWE-617'],constant_folding.cc,2762,123,298,421,(1) YES: A security vulnerability detected.
+219912,0,1,0,metadata_only,gpac,['CWE-476'],hint_track.c,466,124,343,467,(1) YES
+219931,0,1,0,metadata_only,tensorflow,['CWE-617'],constant_folding.cc,3008,123,298,421,(1) YES: A security vulnerability detected.
+219947,0,1,0,metadata_only,glewlwyd,['CWE-287'],webservice.c,9884,125,307,432,(1) YES
+220021,0,1,0,metadata_only,tensorflow,['CWE-190'],sparse_tensors_map_ops.cc,5527,128,334,462,(1) YES
+220100,0,1,0,metadata_only,linux,['CWE-909'],nfs4file.c,1686,124,353,477,(1) YES: A security vulnerability detected.
+220168,0,1,0,metadata_only,tensorflow,['CWE-401'],decode_image_op.cc,5125,125,325,450,(1) YES: A security vulnerability detected.
+220201,0,1,0,metadata_only,tensorflow,['CWE-125'],graph.cc,2328,121,290,411,(1) YES
+220442,0,1,0,metadata_only,mruby,['CWE-476'],array.c,878,122,333,455,(1) YES: A security vulnerability detected.
+220449,0,1,0,metadata_only,tensorflow,['CWE-354'],conv_ops.cc,4232,123,352,475,(1) YES: A security vulnerability detected.
+220463,0,1,0,metadata_only,tensorflow,['CWE-476'],xla_platform_info.cc,2769,126,417,543,(1) YES
+220804,0,1,0,metadata_only,tensorflow,['CWE-787'],count_ops.cc,2361,123,296,419,(1) YES
+220841,0,0,1,metadata_only,tensorflow,['CWE-369'],common.h,2700,121,405,526,(2) NO
+220909,0,1,0,metadata_only,tensorflow,['CWE-617'],None,1185,119,293,412,(1) YES: A security vulnerability detected.
+220924,0,1,0,metadata_only,gpac,['CWE-476'],None,16655,120,301,421,(1) YES
+221079,0,1,0,metadata_only,gpac,['CWE-120'],av_parsers.c,1731,124,171,295,(1) YES
+221123,0,1,0,metadata_only,tensorflow,['CWE-416'],decode_image_op.cc,4663,125,428,553,(1) YES
+221160,0,1,0,metadata_only,gpac,['CWE-415'],descriptors.c,2707,122,181,303,(1) YES
+221413,0,0,1,metadata_only,linux,['CWE-862'],None,1161,119,338,457,(2) NO: No security vulnerability.
+221428,0,1,0,metadata_only,tensorflow,['CWE-617'],tensor.cc,1679,121,256,377,(1) YES
+221631,0,1,0,metadata_only,tensorflow,['CWE-754'],tf_cpurt_symbolic_shape_optimization.cc,2739,131,436,567,(1) YES
+221651,0,1,0,metadata_only,hermes,['CWE-843'],IREval.cpp,2034,123,345,468,(1) YES: A security vulnerability detected.
+221678,0,1,0,metadata_only,e2guardian,['CWE-295'],Socket.cpp,3911,123,457,580,(1) YES
+222666,0,1,0,metadata_only,tmate-ssh-server,['CWE-362'],tmate-main.c,2025,129,449,578,(1) YES
+222737,0,1,0,metadata_only,pjproject,['CWE-125'],rtcp_xr.c,7585,125,354,479,(1) YES: A security vulnerability detected.
+222739,0,1,0,metadata_only,gpac,['CWE-476'],av_parsers.c,4475,124,319,443,(1) YES
+222906,0,1,0,metadata_only,tensorflow,['CWE-787'],graph_properties.cc,601,123,401,524,(1) YES
+222925,0,1,0,metadata_only,tensorflow,['CWE-617'],None,2055,119,275,394,(1) YES
+223089,0,1,0,metadata_only,ImageMagick,['CWE-190'],pcl.c,8029,123,386,509,(1) YES
+223368,0,1,0,metadata_only,pcre2,['CWE-125'],pcre2_jit_compile.c,22737,129,388,517,(1) YES
+223728,0,1,0,metadata_only,tensorflow,['CWE-476'],constant_folding.cc,4724,123,388,511,(1) YES
+224153,0,1,0,metadata_only,tensorflow,['CWE-908'],assign_op.h,3946,123,436,559,(1) YES
+224154,0,0,1,metadata_only,mruby,['CWE-476'],None,1318,120,280,400,(2) NO: No security vulnerability.
+224181,0,1,0,metadata_only,tensorflow,['CWE-843'],map_stage_op.cc,1181,125,261,386,(1) YES
+224192,0,1,0,metadata_only,mruby,['CWE-125'],codegen.c,3896,123,357,480,(1) YES
+224208,0,1,0,metadata_only,uWebSockets,['CWE-787'],TopicTree.h,2571,124,394,518,(1) YES
+224277,0,1,0,metadata_only,flatpak,['CWE-20'],flatpak-run.c,10472,124,142,266,(1) YES
+224281,0,1,0,metadata_only,squid,['CWE-400'],gopher.cc,11400,122,323,445,(1) YES: A security vulnerability detected.
+224472,0,1,0,metadata_only,gpac,['CWE-415'],load_text.c,1840,124,267,391,(1) YES: A security vulnerability detected.
+224570,0,1,0,metadata_only,tensorflow,['CWE-843'],common_shape_fns.cc,3248,125,244,369,(1) YES
+224728,0,1,0,metadata_only,gpac,['CWE-415'],box_code_meta.c,2479,126,157,283,(1) YES
+224862,0,1,0,metadata_only,tensorflow,['CWE-190'],sparse_dense_binary_op_shared.cc,6906,129,496,625,(1) YES
+224891,0,1,0,metadata_only,tensorflow,['CWE-125'],fractional_avg_pool_op.cc,7747,127,333,460,(1) YES
+224964,0,1,0,metadata_only,flatpak,['CWE-276'],flatpak-dir.c,3627,125,438,563,(1) YES
+225062,0,1,0,metadata_only,postgres,['CWE-522'],fe-connect.c,47132,123,272,395,(1) YES: A security vulnerability detected.
+225086,0,1,0,metadata_only,tensorflow,['CWE-617'],op_def_util.cc,722,125,321,446,(1) YES
+225125,0,1,0,metadata_only,tensorflow,['CWE-190'],string_ngrams_op.cc,5193,126,281,407,(1) YES: A security vulnerability detected.
+225383,0,1,0,metadata_only,v4l2loopback,['CWE-134'],v4l2loopback.c,1518,131,149,280,(1) YES
+225473,0,1,0,metadata_only,tensorflow,['CWE-476'],mutable_graph_view.cc,508,125,330,455,(1) YES
+225547,0,1,0,metadata_only,tensorflow,['CWE-190'],common.c,318,121,430,551,(1) YES: A security vulnerability detected.
+225552,0,1,0,metadata_only,tensorflow,['CWE-190'],common.c,263,121,313,434,(1) YES
+225563,0,1,0,metadata_only,tensorflow,['CWE-369'],fractional_max_pool_op.cc,5009,127,288,415,(1) YES: A security vulnerability detected.
+225566,0,1,0,metadata_only,ImageMagick6,['CWE-190'],pcl.c,8015,124,291,415,(1) YES: A security vulnerability detected.
+226029,0,1,0,metadata_only,gpac,['CWE-476'],box_code_base.c,279,126,329,455,(1) YES: A security vulnerability detected.
+226433,0,1,0,metadata_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,3181,129,321,450,(1) YES
+227022,0,1,0,metadata_only,weechat,['CWE-476'],irc-protocol.c,3216,126,193,319,(1) YES: A security vulnerability detected.
+228563,0,1,0,metadata_only,hhvm,['CWE-119'],zend-string.cpp,3598,125,336,461,(1) YES
+229165,0,1,0,metadata_only,qemu,['CWE-787'],virtio-serial-bus.c,486,127,304,431,(1) YES
+229337,0,1,0,metadata_only,tensorflow,['CWE-476'],execute.cc,1966,121,255,376,(1) YES
+230147,0,1,0,metadata_only,glewlwyd,['CWE-787'],webauthn.c,7404,126,379,505,(1) YES: A security vulnerability detected.
+230302,0,1,0,metadata_only,njs,['CWE-703'],njs_array.c,4486,125,346,471,(1) YES: A security vulnerability detected.
+230394,0,1,0,metadata_only,pjproject,['CWE-703'],xml.c,3343,122,479,601,(1) YES: A security vulnerability detected.
+231012,0,1,0,metadata_only,mruby,['CWE-703'],vm.c,51202,122,423,545,(1) YES
+231048,0,1,0,metadata_only,FreeRTOS-Kernel,['CWE-200'],queue.c,2940,125,262,387,(1) YES
+231710,0,1,0,metadata_only,mvfst,['CWE-703'],ServerStateMachine.cpp,3434,123,190,313,(1) YES
+232287,0,1,0,metadata_only,libjpeg,['CWE-703'],None,5449,120,329,449,(1) YES
+232289,0,1,0,metadata_only,libjpeg,['CWE-703'],None,6336,120,329,449,(1) YES
+232329,0,1,0,metadata_only,gpac,['CWE-476'],None,15893,120,386,506,(1) YES
+232405,0,1,0,metadata_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2915,129,321,450,(1) YES
+232839,0,1,0,metadata_only,tensorflow,['CWE-703'],quantile_ops.cc,1205,123,322,445,(1) YES: A security vulnerability detected.
+233862,0,1,0,metadata_only,deark,['CWE-369'],fmtutil.c,1471,123,178,301,(1) YES
+233867,0,1,0,metadata_only,php-src,['CWE-476'],wddx.c,3633,125,420,545,(1) YES: A security vulnerability detected.
+234731,0,1,0,metadata_only,linux,['CWE-703'],volumes.c,4213,121,299,420,(1) YES
+234875,0,1,0,metadata_only,ImageMagick,['CWE-125'],png.c,79225,123,158,281,(1) YES
+235642,0,1,0,metadata_only,pjproject,['CWE-787'],dns.c,1097,122,254,376,(1) YES
+235765,0,1,0,metadata_only,tensorflow,['CWE-787'],edit_distance_op.cc,7660,125,364,489,(1) YES: A security vulnerability detected.
+236125,0,1,0,metadata_only,gpac,['CWE-703'],box_code_3gpp.c,339,128,315,443,(1) YES
+237885,0,1,0,metadata_only,lsquic,['CWE-269'],None,1305,121,340,461,(1) YES
+238322,0,1,0,metadata_only,barebox,['CWE-200'],digest.c,305,122,277,399,(1) YES
+238803,0,1,0,metadata_only,vim,['CWE-416'],search.c,18162,121,135,256,(1) YES
+240276,0,1,0,metadata_only,vim,['CWE-787'],register.c,803,121,298,419,(1) YES: A security vulnerability detected.
+240595,0,1,0,metadata_only,tensorflow,['CWE-369'],resource_variable_ops.cc,3658,125,376,501,(1) YES: A security vulnerability detected.
+241040,0,1,0,metadata_only,booth,['CWE-284'],main.c,1025,121,314,435,(1) YES: A security vulnerability detected.
+241311,0,1,0,metadata_only,mruby,['CWE-787'],None,273,120,286,406,(1) YES: A security vulnerability detected.
+241369,0,1,0,metadata_only,tensorflow,['CWE-354'],matrix_solve_op.cc,10312,125,380,505,(1) YES: A security vulnerability detected.
+242619,0,1,0,metadata_only,tensorflow,['CWE-703'],stage_op.cc,517,123,338,461,(1) YES
+242637,0,1,0,metadata_only,gpac,['CWE-703'],isoffin_read.c,12031,126,217,343,(1) YES
+242899,0,1,0,metadata_only,tensorflow,['CWE-125'],None,2578,119,340,459,(1) YES
+242926,0,1,0,metadata_only,tensorflow,['CWE-20'],sparse_tensor_dense_add_op.cc,2303,128,262,390,(1) YES
+245140,0,1,0,metadata_only,tensorflow,['CWE-703'],sdca_internal.cc,4067,124,299,423,(1) YES
+245434,0,1,0,metadata_only,gpac,['CWE-703'],isom_hinter.c,6039,125,194,319,(1) YES
+245921,0,1,0,metadata_only,tensorflow,['CWE-476'],session_ops.cc,1071,123,329,452,(1) YES: A security vulnerability detected.
+246207,0,1,0,metadata_only,tensorflow,['CWE-125'],count_ops.cc,420,123,317,440,(1) YES
+246237,0,1,0,metadata_only,furnace,['CWE-703'],pattern.cpp,12980,121,417,538,(1) YES
+246495,0,1,0,metadata_only,tensorflow,['CWE-369'],div.cc,1915,121,236,357,(1) YES: A security vulnerability detected.
+246693,0,1,0,metadata_only,gpac,['CWE-787'],None,1877,120,249,369,(1) YES
+247290,0,1,0,metadata_only,tensorflow,['CWE-703'],mkl_requantization_range_per_channel_op.cc,3983,134,491,625,(1) YES
+247337,0,1,0,metadata_only,rpm,['CWE-284'],rpmpgp.c,1625,123,434,557,(1) YES
+247550,0,1,0,metadata_only,envoy,['CWE-362'],default_validator.cc,2972,123,411,534,(1) YES
+247755,0,1,0,metadata_only,cryptopp,['CWE-399'],rw.cpp,1215,122,304,426,(1) YES
+249510,0,1,0,metadata_only,libjxl,['CWE-369'],codec_apng.cc,7435,126,330,456,(1) YES: A security vulnerability detected.
+249989,0,1,0,metadata_only,gpac,['CWE-476'],isom_store.c,2973,124,299,423,(1) YES
+250692,0,1,0,metadata_only,drogon,['CWE-552'],None,959,120,338,458,(1) YES: A security vulnerability detected.
+251946,0,1,0,metadata_only,tensorflow,['CWE-369'],optimized_ops.h,4315,123,365,488,(1) YES
+252437,0,1,0,metadata_only,tinyexr,['CWE-20'],tinyexr.h,10240,124,298,422,(1) YES
+253515,0,1,0,metadata_only,mruby,['CWE-125'],None,3886,120,327,447,(1) YES
+253699,0,1,0,metadata_only,linux,['CWE-703'],ccp-ops.c,6915,124,368,492,(1) YES: A security vulnerability detected.
+253970,0,0,1,metadata_only,tensorflow,['CWE-476'],quantize_op.cc,4946,124,467,591,(2) NO
+255032,0,1,0,metadata_only,FFmpeg,['CWE-252'],None,1611,120,271,391,(1) YES
+255574,0,1,0,metadata_only,njs,['CWE-787'],njs_module.c,1139,125,330,455,(1) YES
+255787,0,1,0,metadata_only,tensorflow,['CWE-20'],mkl_requantize_per_channel_op.cc,5427,131,334,465,(1) YES
+255807,0,1,0,metadata_only,tensorflow,['CWE-908'],None,10123,119,275,394,(1) YES: A security vulnerability detected.
+255932,0,1,0,metadata_only,tensorflow,['CWE-369'],None,3318,119,394,513,(1) YES
+256138,0,1,0,metadata_only,tensorflow,['CWE-125'],sparse_matmul_op.cc,4710,125,355,480,(1) YES: A security vulnerability detected.
+256441,0,1,0,metadata_only,pjproject,['CWE-200'],rtcp_fb.c,1449,125,480,605,(1) YES
+256587,0,1,0,metadata_only,tensorflow,['CWE-703'],session_ops.cc,552,123,408,531,(1) YES
+256947,0,1,0,metadata_only,tensorflow,['CWE-703'],einsum_op_impl.h,2375,126,315,441,(1) YES: A security vulnerability detected.
+257461,0,1,0,metadata_only,tensorflow,['CWE-703'],auto_parallel.cc,5002,123,342,465,(1) YES
+258082,0,1,0,metadata_only,tensorflow,['CWE-369'],reverse_op.cc,1900,123,283,406,(1) YES
+259081,0,1,0,metadata_only,tensorflow,['CWE-476'],save_restore_tensor.cc,3979,125,194,319,(1) YES
+259515,0,1,0,metadata_only,gpac,['CWE-416'],field_decode.c,3091,124,180,304,(1) YES
+259619,0,0,1,metadata_only,libjpeg,['CWE-787'],hierarchicalbitmaprequester.cpp,1217,125,422,547,(2) NO: No security vulnerability.
+259732,0,1,0,metadata_only,tensorflow,['CWE-703'],quantize_and_dequantize_op.cc,3595,130,467,597,(1) YES: A security vulnerability detected.
+261220,0,1,0,metadata_only,wolfMQTT,['CWE-787'],mqtt_client.c,7575,124,374,498,(1) YES: A security vulnerability detected.
+261769,0,1,0,metadata_only,njs,['CWE-416'],njs_function.c,1410,125,166,291,(1) YES
+262721,0,1,0,metadata_only,njs,['CWE-703'],njs_iterator.c,4564,125,364,489,(1) YES
+262803,0,1,0,metadata_only,tensorflow,['CWE-125'],ragged_tensor_to_variant_op.cc,2419,129,393,522,(1) YES
+263382,0,1,0,metadata_only,tensorflow,['CWE-703'],array_ops.cc,2266,123,414,537,(1) YES: A security vulnerability detected.
+263521,0,1,0,metadata_only,tensorflow,['CWE-125'],gather_nd.cc,1424,123,347,470,(1) YES
+264367,0,1,0,metadata_only,tensorflow,['CWE-345'],tensor_slice_reader.h,2392,125,508,633,"Sorry, I cannot fulfill your request. I cannot perform a vulnerability analysis or provide a definitive YES/NO"
+264657,0,1,0,metadata_only,gpac,['CWE-416'],memory_decoder.c,1309,124,354,478,(1) YES: A security vulnerability detected.
+264715,0,1,0,metadata_only,tensorflow,['CWE-824'],constant_folding.cc,2427,123,339,462,(1) YES
+265432,0,1,0,metadata_only,tensorflow,['CWE-703'],gather.cc,1006,121,271,392,(1) YES
+267357,0,1,0,metadata_only,crun,['CWE-276'],exec.c,3362,122,330,452,(1) YES
+267917,0,1,0,metadata_only,tensorflow,['CWE-703'],unsorted_segment_join_op.cc,2873,128,275,403,(1) YES
+267985,0,1,0,metadata_only,radare2,['CWE-125'],bfile.c,7883,124,342,466,(1) YES
+268104,0,1,0,metadata_only,tensorflow,['CWE-703'],load_and_remap_matrix_op.cc,11370,130,449,579,(1) YES
+269323,0,1,0,metadata_only,tensorflow,['CWE-125'],sparse_reduce_op.cc,3684,125,255,380,(1) YES
+269330,0,1,0,metadata_only,tensorflow,['CWE-476'],fractional_avg_pool_op.cc,7257,127,403,530,(1) YES
+269941,0,1,0,metadata_only,ImageMagick,['CWE-125'],mat.c,16370,123,396,519,(1) YES
+270119,0,1,0,metadata_only,tensorflow,['CWE-369'],kernel_util.cc,278,123,315,438,(1) YES
+270767,0,1,0,metadata_only,barebox,['CWE-200'],password.c,1388,122,327,449,(1) YES
+270922,0,1,0,metadata_only,tensorflow,['CWE-369'],ragged_gather_op.cc,1859,125,194,319,(1) YES
+271526,0,1,0,metadata_only,tensorflow,['CWE-369'],reshape_util.cc,4881,123,251,374,(1) YES: A security vulnerability detected.
+273091,0,1,0,metadata_only,owntone-server,['CWE-416'],misc.c,2738,125,317,442,(1) YES: A security vulnerability detected.
+273407,0,1,0,metadata_only,tensorflow,['CWE-703'],lstm_ops.cc,8690,124,307,431,(1) YES
+273880,0,1,0,metadata_only,uftpd,['CWE-787'],ftpcmd.c,905,124,307,431,(1) YES
+274773,0,1,0,metadata_only,mruby,['CWE-288'],vm.c,50746,122,306,428,(1) YES
+274814,0,1,0,metadata_only,pjproject,['CWE-787'],stun_simple.c,1988,124,374,498,(1) YES: A security vulnerability detected.
+274865,0,1,0,metadata_only,tensorflow,['CWE-703'],comparisons.cc,1608,121,340,461,(1) YES
+275525,0,1,0,metadata_only,njs,['CWE-416'],njs_async.c,2071,125,278,403,(1) YES
+275987,0,1,0,metadata_only,micro-ecc,['CWE-415'],uECC.c,3068,124,284,408,(1) YES
+276447,0,1,0,metadata_only,tensorflow,['CWE-416'],resource_ops.cc,1233,123,299,422,(1) YES: A security vulnerability detected.
+276921,0,1,0,metadata_only,u-boot,['CWE-787'],i2c.c,2212,125,360,485,(1) YES: A security vulnerability detected.
+276993,0,1,0,metadata_only,mruby,['CWE-703'],fiber.c,1845,122,426,548,(1) YES: A security vulnerability detected.
+277489,0,1,0,metadata_only,libmobi,['CWE-787'],index.c,2092,123,415,538,(1) YES
+279948,0,1,0,metadata_only,vim,['CWE-787'],ex_cmds.c,1360,123,327,450,(1) YES: A security vulnerability detected.
+281119,0,1,0,metadata_only,ipsec,['CWE-125'],xfrm_policy.c,1566,125,323,448,(1) YES
+281247,0,1,0,metadata_only,MilkyTracker,['CWE-787'],LoaderS3M.cpp,8590,125,304,429,(1) YES
+281662,0,1,0,metadata_only,LibRaw,['CWE-189'],None,1419,120,326,446,(1) YES: A security vulnerability detected.
+282862,0,1,0,metadata_only,linux,['CWE-401'],rsi_91x_mgmt.c,660,128,417,545,(1) YES
+282984,0,1,0,metadata_only,LuaJIT,['CWE-125'],lj_err.c,1412,125,185,310,(1) YES
+285157,0,1,0,metadata_only,radare2,['CWE-125'],ne.c,2155,123,302,425,(1) YES: A security vulnerability detected.
+286739,0,1,0,metadata_only,swtpm,['CWE-125'],swtpm_nvstore.c,1391,128,187,315,(1) YES
+289293,0,1,0,metadata_only,linux,['CWE-362'],None,2969,119,298,417,(1) YES
+291761,0,1,0,metadata_only,linux,['CWE-415'],rtrs-clt.c,225,125,330,455,(1) YES
+292205,0,1,0,metadata_only,hexchat,['CWE-22'],inbound.c,1809,121,469,590,(1) YES
+292609,0,1,0,metadata_only,puma,['CWE-444'],http11_parser.c,19424,125,448,573,(1) YES
+293496,0,1,0,metadata_only,chafa,['CWE-476'],libnsgif.c,15337,124,433,557,(1) YES
+293522,0,1,0,metadata_only,pjproject,['CWE-125'],None,393,120,346,466,(1) YES: A security vulnerability detected.
+293750,0,1,0,metadata_only,radare2,['CWE-476'],bin_xnu_kernelcache.c,1681,129,334,463,(1) YES
+293939,0,1,0,metadata_only,vim,['CWE-787'],indent.c,5668,121,300,421,(1) YES: A security vulnerability detected.
+295887,0,1,0,metadata_only,MilkyTracker,['CWE-787'],None,19161,120,307,427,(1) YES: A security vulnerability detected.
+296226,0,1,0,metadata_only,vim,['CWE-416'],ex_cmds.c,31465,123,404,527,(1) YES
+299319,0,1,0,metadata_only,ImageMagick,['CWE-787'],mat.c,6690,123,419,542,(1) YES
+299905,0,1,0,metadata_only,exim,['CWE-264'],readconf.c,13109,123,356,479,(1) YES: A security vulnerability detected.
+299976,0,1,0,metadata_only,linux,['CWE-200'],hid-elo.c,895,123,278,401,(1) YES
+300731,0,0,1,metadata_only,linux,['CWE-200'],socket.c,3487,121,351,472,(2) NO
+301016,0,1,0,metadata_only,ghostpdl,['CWE-787'],gdevpcx.c,1184,126,355,481,(1) YES
+301429,0,1,0,metadata_only,samba,['CWE-665'],None,8880,119,280,399,(1) YES: A security vulnerability detected.
+301481,0,1,0,metadata_only,vim,['CWE-787'],spellsuggest.c,39439,121,139,260,(1) YES
+302095,0,1,0,metadata_only,radare2,['CWE-476'],None,786,120,126,246,(1) YES
+308163,0,1,0,metadata_only,linux,['CWE-401'],fastrpc.c,686,122,369,491,(1) YES
+309831,0,1,0,metadata_only,ncurses,['CWE-787'],None,1187,119,146,265,(1) YES
+312399,0,1,0,metadata_only,vim,['CWE-703'],quickfix.c,1303,121,117,238,(1) YES: A security vulnerability detected.
+313134,0,0,1,metadata_only,libvirt,['CWE-212'],virstoragetest.c,1385,125,182,307,(2) NO: No security vulnerability.
+313850,0,1,0,metadata_only,vim,['CWE-787'],normal.c,996,120,110,230,(1) YES
+314536,0,1,0,metadata_only,pjproject,['CWE-787'],sdp.c,1617,122,133,255,(1) YES
+317271,0,1,0,metadata_only,linux,['CWE-416'],None,203,119,355,474,(1) YES: A security vulnerability detected.
+318099,0,1,0,metadata_only,wireless-drivers,['CWE-415'],rsi_91x_usb.c,1400,129,164,293,(1) YES
+318781,0,1,0,metadata_only,gerbv,['CWE-787'],drill.c,7886,121,135,256,(1) YES
+318962,0,1,0,metadata_only,vim,['CWE-787'],testing.c,763,120,114,234,(1) YES
+319422,0,1,0,metadata_only,ImageMagick6,['CWE-787'],cin.c,15774,124,296,420,(1) YES
+325821,0,1,0,metadata_only,gnutls,['CWE-310'],gnutls_handshake.c,4790,128,323,451,(1) YES: A security vulnerability detected.
+326119,0,1,0,metadata_only,vim,['CWE-416'],regexp_bt.c,34649,123,328,451,(1) YES: A security vulnerability detected.
+326629,0,1,0,metadata_only,libarchive,['CWE-59'],None,2229,119,384,503,(1) YES
+326914,0,1,0,metadata_only,linux,['CWE-476'],vidtv_s302m.c,1317,128,347,475,(1) YES
+328807,0,1,0,metadata_only,vim,['CWE-787'],register.c,20005,121,324,445,(1) YES
+328836,0,1,0,metadata_only,radare2,['CWE-125'],class.c,1167,123,309,432,(1) YES
+329925,0,1,0,metadata_only,cairo,['CWE-787'],None,2984,120,369,489,(1) YES
+331760,0,1,0,metadata_only,qtbase,['CWE-787'],qpaintengineex.cpp,9188,124,156,280,(1) YES
+332375,0,1,0,metadata_only,vim,['CWE-787'],None,3119,119,280,399,(1) YES
+333041,0,1,0,metadata_only,vim,['CWE-122'],None,1239,119,287,406,(1) YES
+333503,0,1,0,metadata_only,php-src,['CWE-119'],gd_interpolation.c,1008,125,320,445,(1) YES: A security vulnerability detected.
+336106,0,1,0,metadata_only,net,['CWE-125'],ip6_gre.c,2085,123,140,263,(1) YES: A security vulnerability detected.
+336484,0,1,0,metadata_only,qemu,['CWE-369'],None,1354,119,147,266,(1) YES
+336807,0,1,0,metadata_only,ghostpdl,['CWE-787'],gdevlprn.c,920,127,494,621,(1) YES
+337374,0,1,0,metadata_only,vim,['CWE-476'],buffer.c,602,120,134,254,(1) YES
+337848,0,1,0,metadata_only,linux,['CWE-704'],sm_make_chunk.c,1244,124,138,262,(1) YES
+338747,0,1,0,metadata_only,ImageMagick,['CWE-772'],tga.c,13644,124,318,442,(1) YES
+339712,0,1,0,metadata_only,php-src,['CWE-119'],zend_strtod.c,562,127,339,466,(1) YES
+341817,0,1,0,metadata_only,ghostpdl,['CWE-787'],zstring.c,1279,124,321,445,(1) YES
+343158,0,1,0,metadata_only,linux,['CWE-787'],esp6.c,1975,121,118,239,(1) YES: A security vulnerability detected.
+343175,0,1,0,metadata_only,linux,['CWE-787'],esp4.c,2029,122,323,445,(1) YES
+343298,0,1,0,metadata_only,pure-ftpd,['CWE-434'],ftpd.c,7569,125,356,481,(1) YES
+344242,0,1,0,metadata_only,lua,['CWE-787'],None,531,118,140,258,(1) YES
+345131,0,1,0,metadata_only,linux,['CWE-703'],pxa3xx-gcu.c,1585,127,321,448,(1) YES: A security vulnerability detected.
+346415,0,1,0,metadata_only,vim,['CWE-703'],scriptfile.c,2775,121,120,241,(1) YES
+349251,0,1,0,metadata_only,squashfs-tools,['CWE-200'],None,3267,121,126,247,(1) YES
+349259,0,1,0,metadata_only,squashfs-tools,['CWE-200'],None,3559,121,126,247,(1) YES
+349259,0,1,0,metadata_only,squashfs-tools,['CWE-200'],None,3559,121,119,240,(1) YES
+349528,0,1,0,metadata_only,linux,['CWE-772'],virtio_bt.c,385,124,288,412,(1) YES
+349888,0,1,0,metadata_only,net,['CWE-787'],hw_atl_utils.c,1284,124,166,290,(1) YES
+351182,0,1,0,metadata_only,shapelib,['CWE-415'],shpsort.c,719,124,142,266,(1) YES
+353015,0,1,0,metadata_only,openldap,['CWE-617'],schema_init.c,3647,124,334,458,(1) YES: A security vulnerability detected.
+353124,0,1,0,metadata_only,poppler,['CWE-369'],None,6992,119,112,231,(1) YES: A security vulnerability detected.
+355014,0,1,0,metadata_only,pjproject,['CWE-125'],None,784,120,290,410,(1) YES
+355649,0,1,0,metadata_only,vim,['CWE-787'],eval.c,6349,121,352,473,(1) YES: A security vulnerability detected.
+356170,0,1,0,metadata_only,firejail,['CWE-94'],None,970,118,156,274,(1) YES: A security vulnerability detected.
+357668,0,1,0,metadata_only,squirrel,['CWE-125'],sqclass.cpp,1893,122,153,275,(1) YES
+359206,0,1,0,metadata_only,bpf,['CWE-787'],ringbuf.c,1164,123,383,506,(1) YES: A security vulnerability detected.
+359365,0,1,0,metadata_only,frr,['CWE-125'],bgp_packet.c,3211,125,317,442,(1) YES: A security vulnerability detected.
+359843,0,1,0,metadata_only,ImageMagick,['CWE-617'],operation.c,16656,123,321,444,(1) YES: A security vulnerability detected.
+360829,0,1,0,metadata_only,linux,['CWE-193'],cancel.c,637,121,308,429,(1) YES
+361298,0,1,0,metadata_only,admesh,['CWE-125'],connect.c,650,122,375,497,(1) YES: A security vulnerability detected.
+361303,0,1,0,metadata_only,admesh,['CWE-125'],connect.c,2431,122,347,469,(1) YES
+361755,0,1,0,metadata_only,linux,['CWE-416'],em28xx-cards.c,8029,126,423,549,(1) YES
+365760,0,1,0,metadata_only,linux,['CWE-703'],None,827,119,294,413,(1) YES: A security vulnerability detected.
+366223,0,1,0,metadata_only,linux,['CWE-200'],namespace.c,637,120,118,238,(1) YES: A security vulnerability detected.
+369215,0,0,1,metadata_only,linux,['CWE-94'],io_uring.c,1218,122,455,577,(2) NO
+371185,0,1,0,metadata_only,rizin,['CWE-787'],marshal.c,1209,122,321,443,(1) YES: A security vulnerability detected.
+371226,0,1,0,metadata_only,linux,['CWE-834'],fuse_i.h,137,122,140,262,(1) YES
+372352,0,1,0,metadata_only,Singular,['CWE-269'],None,1744,119,363,482,(1) YES
+373535,0,1,0,metadata_only,ovs,['CWE-401'],ipf.c,1051,122,126,248,(1) YES: A security vulnerability detected.
+376350,0,1,0,metadata_only,evolution-data-server,['CWE-200'],None,583,123,310,433,(1) YES
+376678,0,1,0,metadata_only,gimp,['CWE-125'],file-gbr.c,7880,125,342,467,(1) YES
+376682,0,1,0,metadata_only,tigervnc,['CWE-672'],None,3002,120,126,246,(1) YES: A security vulnerability detected.
+379334,0,1,0,metadata_only,vim,['CWE-787'],ex_docmd.c,9168,123,116,239,(1) YES
+379671,0,1,0,metadata_only,radare2,['CWE-416'],None,5476,120,174,294,(1) YES: A security vulnerability detected.
+380955,0,1,0,metadata_only,vim,['CWE-787'],edit.c,10110,120,118,238,(1) YES: A security vulnerability detected.
+382797,0,1,0,metadata_only,php-src,['CWE-119'],gd_io_dp.c,400,127,326,453,(1) YES: A security vulnerability detected.
+383316,0,1,0,metadata_only,php-src,['CWE-119'],None,1467,121,314,435,(1) YES: A security vulnerability detected.
+384124,0,1,0,metadata_only,raptor,['CWE-787'],raptor_xml_writer.c,8301,127,385,512,(1) YES: A security vulnerability detected.
+384201,0,1,0,metadata_only,linux,['CWE-703'],nf_tables_api.c,1517,125,498,623,(1) YES: A security vulnerability detected.
+384677,0,1,0,metadata_only,nbdkit,['CWE-924'],protocol-handshake-newstyle.c,19005,128,175,303,(1) YES
+384767,0,1,0,metadata_only,vim,['CWE-122'],move.c,6183,121,315,436,(1) YES
+384803,0,1,0,metadata_only,vim,['CWE-703'],filepath.c,5340,121,322,443,(1) YES: A security vulnerability detected.
+386565,0,1,0,metadata_only,qcad,['CWE-191'],dl_dxf.cpp,1296,125,371,496,(1) YES: A security vulnerability detected.
+386750,0,1,0,metadata_only,linux,['CWE-476'],inode.c,2081,120,134,254,(1) YES: A security vulnerability detected.
+387149,0,1,0,metadata_only,ImageMagick,['CWE-125'],quantize.c,5182,124,303,427,(1) YES: A security vulnerability detected.
+387593,0,1,0,metadata_only,linux,['CWE-125'],control.c,352,121,334,455,(1) YES
+389676,0,1,0,metadata_only,vim,['CWE-125'],typval.c,3822,122,245,367,(1) YES
+389760,0,1,0,metadata_only,jasper,['CWE-703'],jasper.c,4234,121,350,471,(1) YES
+391627,0,1,0,metadata_only,linux,['CWE-120'],rpadlpar_sysfs.c,400,127,338,465,(1) YES
+391628,0,1,0,metadata_only,linux,['CWE-120'],rpadlpar_sysfs.c,393,126,127,253,(1) YES: A security vulnerability detected.
+393528,0,1,0,metadata_only,squirrel,['CWE-703'],sqbaselib.cpp,650,123,119,242,(1) YES
+397644,0,1,0,metadata_only,autotrace,['CWE-787'],input-bmp.c,10785,125,333,458,(1) YES: A security vulnerability detected.
+398518,0,1,0,metadata_only,rizin,['CWE-787'],dwarf.c,1498,122,230,352,(1) YES
+400103,0,1,0,metadata_only,EternalTerminal,['CWE-362'],PipeSocketHandler.cpp,848,124,256,380,(1) YES: A security vulnerability detected.
+400109,0,1,0,metadata_only,EternalTerminal,['CWE-362'],UserTerminalRouter.cpp,275,123,127,250,(1) YES
+400409,0,1,0,metadata_only,vim,['CWE-787'],edit.c,618,121,314,435,(1) YES
+400735,0,1,0,metadata_only,linux,['CWE-284'],iov_iter.c,1005,124,470,594,(1) YES
+400743,0,1,0,metadata_only,linux,['CWE-284'],iov_iter.c,1080,123,153,276,(1) YES
+400779,0,1,0,metadata_only,php-src,['CWE-200'],openssl.c,2044,124,330,454,(1) YES: A security vulnerability detected.
+401034,0,1,0,metadata_only,radare2,['CWE-703'],None,4229,120,116,236,(1) YES
+401525,0,0,1,metadata_only,linux,['CWE-200'],timer.c,746,121,377,498,(2) NO: No security vulnerability.
+401579,0,1,0,metadata_only,linux,['CWE-200'],random.c,1766,120,115,235,(1) YES: A security vulnerability detected.
+404192,0,1,0,metadata_only,pcre2,['CWE-703'],pcre2_jit_compile.c,6323,129,394,523,(1) YES
+405333,0,1,0,metadata_only,linux,['CWE-703'],xfrm_policy.c,954,123,128,251,(1) YES: A security vulnerability detected.
+405698,0,1,0,metadata_only,linux,['CWE-703'],xilinx_emaclite.c,2256,126,165,291,(1) YES: A security vulnerability detected.
+406206,0,1,0,metadata_only,util-linux,['CWE-200'],mount.c,7680,123,317,440,(1) YES
+408968,0,1,0,metadata_only,vim,['CWE-787'],edit.c,2270,120,118,238,(1) YES: A security vulnerability detected.
+409515,0,1,0,metadata_only,vim,['CWE-787'],term.c,16039,120,138,258,(1) YES
+411896,0,1,0,metadata_only,tor,['CWE-399'],routerparse.c,17737,121,123,244,(1) YES
+411926,0,1,0,metadata_only,heimdal,['CWE-476'],None,31969,120,153,273,YES
+412117,0,1,0,metadata_only,unbound,['CWE-190'],dnscrypt.c,2728,123,145,268,(1) YES
+412190,0,1,0,metadata_only,vim,['CWE-787'],ex_getln.c,1586,124,397,521,(1) YES
+412332,0,1,0,metadata_only,rizin,['CWE-415'],bin_qnx.c,144,125,249,374,(1) YES
+413339,0,1,0,metadata_only,php-src,['CWE-416'],snmp.c,4687,124,306,430,(1)
+413623,0,1,0,metadata_only,radare2,['CWE-416'],None,13253,121,289,410,(1) YES
+416366,0,1,0,metadata_only,vim,['CWE-416'],ex_getln.c,25536,124,181,305,(1) YES
+417093,0,1,0,metadata_only,MilkyTracker,['CWE-416'],PlayerGeneric.cpp,251,123,452,575,(1) YES
+417472,0,1,0,metadata_only,libvirt,['CWE-119'],node_device_conf.c,636,126,303,429,(1) YES
+418795,0,1,0,metadata_only,vim,['CWE-703'],mouse.c,22413,121,324,445,(1) YES
+421378,0,1,0,metadata_only,mujs,['CWE-476'],jsdump.c,227,124,373,497,(1) YES: A security vulnerability detected.
+424522,0,1,0,metadata_only,FreeRDP,['CWE-190'],video_main.c,1645,125,281,406,(1) YES
+424969,0,1,0,metadata_only,linux,['CWE-476'],trans.c,5161,121,359,480,(1) YES: A security vulnerability detected.
+427153,0,1,0,metadata_only,lua,['CWE-125'],lparser.c,530,122,395,517,(1) YES: A security vulnerability detected.
+427707,0,1,0,metadata_only,file,['CWE-787'],cdf.c,3963,121,160,281,(1) YES
+430335,0,1,0,metadata_only,linux,['CWE-787'],seq_file.c,146,123,493,616,(1) YES
+430380,0,1,0,metadata_only,linux,['CWE-362'],flow_netlink.c,1036,124,413,537,(1) YES
+430470,0,1,0,metadata_only,squid,['CWE-400'],gopher.cc,11220,122,127,249,(1) YES: A security vulnerability detected.
+431633,0,1,0,metadata_only,ImageMagick,['CWE-787'],cin.c,15822,123,338,461,(1) YES: A security vulnerability detected.
+432093,0,1,0,metadata_only,vim,['CWE-787'],spellfile.c,2227,121,143,264,(1) YES: A security vulnerability detected.
+432152,0,1,0,metadata_only,mongo,['CWE-617'],pipeline_d.cpp,10351,122,128,250,(1) YES: A security vulnerability detected.
+432247,0,1,0,metadata_only,unicorn,['CWE-476'],exec.c,406,120,152,272,(1) YES: A security vulnerability detected.
+432346,0,1,0,metadata_only,qemu,['CWE-125'],i2c-ddc.c,179,126,157,283,(1) YES: A security vulnerability detected.
+432351,0,1,0,metadata_only,dpdk,['CWE-703'],vhost_user.c,3099,124,152,276,(1) YES: A security vulnerability detected.
+432352,0,1,0,metadata_only,dpdk,['CWE-703'],vhost_user.c,3198,125,295,420,(1) YES: A security vulnerability detected.
+434093,0,1,0,metadata_only,vim,['CWE-416'],arglist.c,7674,122,426,548,(1) YES
+434902,0,1,0,metadata_only,ghostpdl,['CWE-119'],gxht_thresh.c,757,125,155,280,(1) YES: A security vulnerability detected.
+435409,0,1,0,metadata_only,ghostpdl,['CWE-120'],gdev3852.c,4557,128,334,462,(1) YES: A security vulnerability detected.
+436066,0,1,0,metadata_only,linux,['CWE-125'],io_uring.c,2863,123,346,469,(1) YES: A security vulnerability detected.
+436990,0,1,0,metadata_only,vim,['CWE-125'],indent.c,3868,121,322,443,(1) YES: A security vulnerability detected.
+437003,0,1,0,metadata_only,linux,['CWE-415'],mcba_usb.c,1579,124,436,560,(1) YES
+437291,0,1,0,metadata_only,oniguruma,['CWE-125'],regcomp.c,4381,124,334,458,(1) YES
+437671,0,1,0,metadata_only,radare2,['CWE-787'],bin_symbols.c,2630,125,373,498,(1) YES
+437708,0,1,0,metadata_only,linux,['CWE-401'],cx23888-ir.c,1348,128,217,345,(1) YES
+438686,0,1,0,metadata_only,linux,['CWE-415'],virtio_rpmsg_bus.c,795,127,350,477,(1) YES
+438876,0,1,0,metadata_only,linux,['CWE-416'],mkiss.c,702,122,119,241,(1) YES: A security vulnerability detected.
+439114,0,1,0,metadata_only,ImageMagick6,['CWE-401'],bmp.c,34604,124,376,500,(1) YES
+439266,0,1,0,metadata_only,ImageMagick6,['CWE-835'],bmp.c,34707,124,378,502,(1) YES
+439495,0,1,0,metadata_only,squashfs-tools,['CWE-22'],None,3490,121,340,461,(1) YES: A security vulnerability detected.
+439495,0,1,0,metadata_only,squashfs-tools,['CWE-22'],None,3490,121,398,519,(1) YES
+439500,0,1,0,metadata_only,squashfs-tools,['CWE-22'],None,3190,121,398,519,(1) YES
+440872,0,1,0,metadata_only,xserver,['CWE-863'],log.c,1248,122,501,623,(1) YES: A security vulnerability detected.
+441822,0,1,0,metadata_only,xserver,['CWE-191'],xkbSwap.c,2401,124,260,384,(1) YES
+442189,0,1,0,metadata_only,qemu,['CWE-835'],e1000.c,493,126,304,430,(1) YES
+442587,0,1,0,metadata_only,spice,['CWE-193'],memslot.c,1193,122,431,553,(1) YES: A security vulnerability detected.
+442815,0,0,1,metadata_only,curl,['CWE-125'],main.c,954,121,277,398,(2) NO: No security vulnerability.
+442959,0,0,1,metadata_only,vim,['CWE-200'],drawscreen.c,3513,122,329,451,(2) NO
+443152,0,1,0,metadata_only,linux,['CWE-476'],inode.c,960,121,286,407,(1) YES: A security vulnerability detected.
+443298,0,1,0,metadata_only,vim,['CWE-416'],ex_docmd.c,22967,124,250,374,(1) YES
+444900,0,1,0,metadata_only,cifs-utils,['CWE-20'],mount.cifs.c,3041,126,472,598,(1) YES
+445881,0,1,0,metadata_only,file-roller,['CWE-22'],None,1868,119,115,234,(1) YES: A security vulnerability detected.
+445995,0,0,1,metadata_only,file-roller,['CWE-22'],None,7667,120,384,504,(2) NO: No security vulnerability.
+446058,0,1,0,metadata_only,libtiff,['CWE-787'],tif_lzw.c,5176,125,247,372,(1) YES: A security vulnerability detected.
+446096,0,1,0,metadata_only,linux,['CWE-416'],atusb.c,535,122,376,498,(1) YES: A security vulnerability detected.
+446279,0,1,0,metadata_only,libmobi,['CWE-125'],index.c,6806,123,452,575,(1) YES
+446416,0,1,0,metadata_only,rizin,['CWE-787'],dyldcache.c,2834,124,337,461,(1) YES
+447053,0,1,0,metadata_only,exiv2,['CWE-125'],image.cpp,8454,123,326,449,(1) YES
+447231,0,0,1,metadata_only,php-src,['CWE-17'],apprentice.c,2818,122,390,512,(2) NO: No security vulnerability.
+448562,0,1,0,metadata_only,frr,['CWE-125'],bgp_packet.c,3275,125,353,478,(1) YES
+448584,0,1,0,metadata_only,gdk-pixbuf,['CWE-189'],io-xbm.c,3351,127,171,298,(1) YES: A security vulnerability detected.
+448912,0,1,0,metadata_only,zlib,['CWE-787'],inflate.c,26047,122,347,469,(1) YES
+449294,0,1,0,metadata_only,vim,['CWE-122'],None,1349,119,298,417,(1) YES
+449321,0,1,0,metadata_only,clamav-devel,['CWE-189'],sis.c,468,124,298,422,(1) YES
+450764,0,1,0,metadata_only,vim,['CWE-416'],regexp.c,1757,121,344,465,(1) YES
+450812,0,1,0,metadata_only,gnulib,['CWE-119'],glob.c,28169,123,400,523,(1) YES: A security vulnerability detected.
+450830,0,1,0,metadata_only,linux,['CWE-120'],se.c,1715,121,299,420,(1) YES
+451731,0,1,0,metadata_only,ntp,['CWE-20'],ntpq.c,2436,123,348,471,(1) YES: A security vulnerability detected.
+451888,0,1,0,metadata_only,jasper,['CWE-20'],jpc_enc.c,11947,123,492,615,(1) YES
+452377,0,1,0,metadata_only,vim,['CWE-787'],indent.c,6020,121,343,464,(1) YES
+452391,0,1,0,metadata_only,ImageMagick6,['CWE-787'],tiff.c,34505,125,310,435,(1) YES
+452994,0,1,0,metadata_only,nf,['CWE-269'],nf_tables_offload.c,1137,126,349,475,(1) YES: A security vulnerability detected.
+453109,0,1,0,metadata_only,libexpat,['CWE-668'],xmlparse.c,5684,123,444,567,(1) YES
+453265,0,1,0,metadata_only,jasper,['CWE-125'],jp2_dec.c,9401,124,312,436,(1) YES: A security vulnerability detected.
+454759,0,1,0,metadata_only,linux,['CWE-703'],i2c-ismt.c,6551,126,263,389,(1) YES
+455177,0,1,0,metadata_only,libmobi,['CWE-119'],read.c,2146,123,436,559,(1) YES: A security vulnerability detected.
+455356,0,1,0,metadata_only,bash,['CWE-787'],shell.c,720,121,384,505,(1) YES: A security vulnerability detected.
+457772,0,1,0,metadata_only,icecast-server,['CWE-119'],auth_url.c,1913,125,147,272,(1) YES: A security vulnerability detected.
+459029,0,1,0,metadata_only,varnish-cache,['CWE-703'],cache_http.c,334,125,395,520,(1) YES: A security vulnerability detected.
+459107,0,1,0,metadata_only,linux,['CWE-416'],cls_api.c,5631,122,121,243,(1) YES: A security vulnerability detected.
+459400,0,1,0,metadata_only,vim,['CWE-416'],None,17024,119,378,497,(1) YES: A security vulnerability detected.
+459524,0,1,0,metadata_only,linux,['CWE-787'],stackmap.c,540,122,363,485,(1) YES: A security vulnerability detected.
+462278,0,1,0,metadata_only,pjproject,['CWE-191'],None,792,119,170,289,(1) YES
+462316,0,1,0,metadata_only,ghostpdl,['CWE-787'],None,536,121,281,402,(1) YES: A security vulnerability detected.
+462395,0,1,0,metadata_only,php-src,['CWE-476'],wddx.c,3878,124,155,279,(1) YES: A security vulnerability detected.
+462409,0,1,0,metadata_only,rsyslog,['CWE-190'],imptcp.c,4889,124,138,262,(1) YES: A security vulnerability detected.
+462511,0,1,0,metadata_only,vim,['CWE-416'],quickfix.c,2647,121,156,277,(1) YES
+462566,0,1,0,metadata_only,newsbeuter,['CWE-787'],controller.cpp,1406,123,334,457,(1) YES
+463051,0,1,0,metadata_only,qemu,['CWE-835'],sungem.c,322,123,249,372,(1) YES: A security vulnerability detected.
+463134,0,1,0,metadata_only,cyrus-imapd,['CWE-732'],annotate.c,3416,125,249,374,(1) YES: A security vulnerability detected.
+463476,0,1,0,metadata_only,linux,['CWE-476'],af_ax25.c,2008,125,363,488,(1) YES
+464942,0,,,metadata_only,php-src,['CWE-125'],mbfilter_big5.c,2059,127,508,635,"Sorry, I cannot fulfill your request to analyze a hidden function for vulnerabilities. Without the source code,"
+465854,0,0,1,metadata_only,linux,['CWE-416'],main.c,369,121,458,579,(2) NO: No security vulnerability.
+468349,0,1,0,metadata_only,glib,['CWE-754'],gsocketclient.c,3727,124,269,393,(1) YES
+471902,0,1,0,metadata_only,vim,['CWE-787'],spellsuggest.c,6730,122,263,385,(1) YES: A security vulnerability detected.
+472123,0,1,0,metadata_only,linux,['CWE-416'],cgroup-v1.c,2262,125,297,422,(1) YES: A security vulnerability detected.
+474434,0,1,0,metadata_only,libtpms,['CWE-119'],Object.c,576,123,357,480,(1) YES
+474462,0,1,0,metadata_only,libvncserver,['CWE-787'],corre.c,836,124,368,492,(1) YES: A security vulnerability detected.
+475987,0,1,0,metadata_only,chafa,['CWE-125'],lzw.c,2382,123,395,518,(1) YES: A security vulnerability detected.
+476103,0,1,0,metadata_only,linux,['CWE-476'],composite.c,11424,121,297,418,(1) YES: A security vulnerability detected.
+477273,0,1,0,metadata_only,linux,['CWE-20'],crypto.c,1682,120,375,495,(1) YES
+477380,0,1,0,metadata_only,radare2,['CWE-787'],None,2596,120,148,268,(1) YES
+477800,0,1,0,metadata_only,ceph,['CWE-79'],rgw_rest_s3.cc,7565,127,361,488,(1) YES
+477803,0,1,0,metadata_only,linux,['CWE-362'],af_key.c,802,123,393,516,(1) YES: A security vulnerability detected.
+477811,0,1,0,metadata_only,linux,['CWE-787'],book3s_rtas.c,2315,125,145,270,(1) YES: A security vulnerability detected.
+477946,0,1,0,metadata_only,clamav-devel,['CWE-20'],mspack.c,5230,125,273,398,(1) YES
+477975,0,1,0,metadata_only,php-src,['CWE-119'],simplestring.c,1227,124,275,399,(1) YES
+481267,0,1,0,metadata_only,linux,['CWE-401'],conn.c,2357,120,103,223,(1) YES
+481787,0,1,0,metadata_only,nagioscore,['CWE-476'],query-handler.c,782,125,479,604,(1) YES
+482533,0,1,0,metadata_only,liblouis,['CWE-787'],compileTranslationTable.c,49195,124,117,241,(1) YES: A security vulnerability detected.
+482692,0,1,0,metadata_only,gst-plugins-good,['CWE-125'],gstflxdec.c,5690,128,442,570,(1) YES
+483053,0,1,0,metadata_only,linux,['CWE-269'],cgroup-v1.c,713,124,120,244,(1) YES
+483469,0,1,0,metadata_only,mongo,['CWE-617'],None,9743,118,145,263,(1) YES: A security vulnerability detected.
+484063,0,1,0,metadata_only,open62541,['CWE-703'],check_securechannel.c,545,129,325,454,(1) YES
+484732,0,1,0,metadata_only,libmobi,['CWE-787'],None,737,120,147,267,(1) YES
+486796,0,1,0,metadata_only,qemu,['CWE-835'],cadence_gem.c,6058,124,492,616,(1) YES
+486837,0,1,0,metadata_only,perl5,['CWE-120'],regcomp.c,82226,123,395,518,(1) YES
+487618,0,1,0,metadata_only,linux-2.6,['CWE-20'],None,1857,122,362,484,(1) YES
+488919,0,1,0,metadata_only,linux-2.6,['CWE-189'],None,781,123,125,248,(1) YES
+489124,0,1,0,metadata_only,linux-2.6,['CWE-20'],None,397,122,245,367,(1) YES: A security vulnerability detected.
+489215,0,1,0,metadata_only,linux-2.6,['CWE-119'],None,724,123,154,277,(1) YES
+489221,0,1,0,metadata_only,linux-2.6,['CWE-20'],None,3033,122,296,418,(1) YES: A security vulnerability detected.
+491979,0,1,0,metadata_only,gzip,['CWE-189'],None,4781,119,137,256,(1) YES
+497809,0,0,1,metadata_only,grep,['CWE-119'],None,2383,119,329,448,(2) NO: No security vulnerability.
+498160,0,0,1,metadata_only,nettle,['CWE-310'],None,1552,120,390,510,(2) NO: No security vulnerability.
+498918,0,1,0,metadata_only,tar,['CWE-476'],None,3339,118,136,254,(1) YES
+500044,0,1,0,metadata_only,openssl,['CWE-20'],None,1670,119,119,238,(1) YES
+500663,0,1,0,metadata_only,libssh,['CWE-399'],None,2430,119,198,317,(1) YES
+502735,0,1,0,metadata_only,openssl,['CWE-362'],None,3459,120,292,412,(1) YES
+503867,0,0,1,metadata_only,guile,['CWE-275'],None,654,120,315,435,(2) NO: No security vulnerability.
+503985,0,1,0,metadata_only,core,['CWE-20'],None,4359,118,91,209,(1) YES: A security vulnerability detected.
+504608,0,1,0,metadata_only,libtiff,['CWE-770'],None,2542,120,352,472,(1) YES
+505463,0,1,0,metadata_only,openssl,['CWE-327'],None,3470,120,143,263,(1) YES
+505654,0,1,0,metadata_only,core,['CWE-835'],None,1902,118,103,221,(1) YES: A security vulnerability detected.
+506428,0,1,0,metadata_only,core,['CWE-125'],None,342,118,159,277,(1) YES: A security vulnerability detected.
+506696,0,1,0,metadata_only,openssl,['CWE-476'],None,132,120,328,448,(1) YES
+507778,0,1,0,metadata_only,openssl,['CWE-125'],None,10827,120,341,461,(1) YES: A security vulnerability detected.
+508874,0,0,1,metadata_only,server,['CWE-476'],None,4104,119,500,619,(2) NO: No security vulnerability.
+509510,0,1,0,metadata_only,server,['CWE-400'],None,164,119,155,274,(1) YES
+511472,0,1,0,metadata_only,server,['CWE-416'],None,15074,119,294,413,(1) YES
+512825,0,1,0,metadata_only,server,['CWE-617'],None,2230,119,315,434,(1) YES
+513202,0,1,0,metadata_only,server,['CWE-416'],None,435,119,347,466,(1) YES: A security vulnerability detected.
+514292,0,1,0,metadata_only,server,['CWE-617'],None,5121,119,315,434,(1) YES
+517437,0,1,0,metadata_only,monit,['CWE-79'],None,1551,118,280,398,(1) YES: A security vulnerability detected.
+521488,0,1,0,metadata_only,JUCE,['CWE-59'],None,2458,119,394,513,(1) YES: A security vulnerability detected.
+522329,0,1,0,metadata_only,libMeshb,['CWE-120'],None,6485,121,417,538,(1) YES
+522438,0,1,0,metadata_only,elfspirit,['CWE-125'],None,37828,120,360,480,(1) YES: A security vulnerability detected.

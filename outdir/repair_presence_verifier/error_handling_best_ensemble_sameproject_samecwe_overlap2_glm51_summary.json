@@ -1,0 +1,135 @@
+{
+  "total_records": 25,
+  "known_predictions": 25,
+  "unknown_predictions": 0,
+  "accuracy": 0.36,
+  "precision": 0.35,
+  "recall": 0.7,
+  "f1": 0.4666666666666667,
+  "yes_rate": 0.8,
+  "tp": 7,
+  "fp": 13,
+  "tn": 2,
+  "fn": 3,
+  "repair_type": "error_handling",
+  "override_to_no_count": 5,
+  "override_to_no_rate": 0.2,
+  "repair_present_count": 5,
+  "repair_present_rate": 0.2,
+  "confidence_counts": {
+    "high": 22,
+    "medium": 3
+  },
+  "target_mapping_counts": {
+    "check_before_operation": {
+      "False": 13,
+      "True": 12
+    },
+    "failure_action_present": {
+      "False": 15,
+      "True": 10
+    },
+    "failure_blocks_path": {
+      "False": 13,
+      "True": 12
+    },
+    "same_checked_condition": {
+      "False": 19,
+      "True": 6
+    },
+    "same_protected_operation": {
+      "False": 17,
+      "True": 8
+    },
+    "unchecked_alternate_path": {
+      "True": 14,
+      "False": 11
+    }
+  },
+  "project_metrics": {
+    "linux": {
+      "total_records": 13,
+      "known_predictions": 13,
+      "unknown_predictions": 0,
+      "accuracy": 0.23076923076923078,
+      "precision": 0.2,
+      "recall": 0.5,
+      "f1": 0.28571428571428575,
+      "yes_rate": 0.7692307692307693,
+      "tp": 2,
+      "fp": 8,
+      "tn": 1,
+      "fn": 2
+    },
+    "linux-2.6": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 1,
+      "tn": 0,
+      "fn": 0
+    },
+    "openssl": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "yes_rate": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 1,
+      "fn": 1
+    },
+    "php-src": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 1,
+      "tn": 0,
+      "fn": 0
+    },
+    "radare2": {
+      "total_records": 3,
+      "known_predictions": 3,
+      "unknown_predictions": 0,
+      "accuracy": 0.3333333333333333,
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1": 0.5,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 2,
+      "tn": 0,
+      "fn": 0
+    },
+    "tensorflow": {
+      "total_records": 3,
+      "known_predictions": 3,
+      "unknown_predictions": 0,
+      "accuracy": 0.6666666666666666,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8,
+      "yes_rate": 1.0,
+      "tp": 2,
+      "fp": 1,
+      "tn": 0,
+      "fn": 0
+    }
+  }
+}

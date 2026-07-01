@@ -1,0 +1,60 @@
+{
+  "total_records": 2,
+  "known_predictions": 2,
+  "unknown_predictions": 0,
+  "accuracy": 0.0,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0,
+  "yes_rate": 0.5,
+  "tp": 0,
+  "fp": 1,
+  "tn": 0,
+  "fn": 1,
+  "repair_type": "state_or_lifetime_repair",
+  "override_to_no_count": 1,
+  "override_to_no_rate": 0.5,
+  "repair_present_count": 1,
+  "repair_present_rate": 0.5,
+  "confidence_counts": {
+    "high": 1,
+    "medium": 1
+  },
+  "target_mapping_counts": {
+    "action_before_unsafe_event": {
+      "True": 2
+    },
+    "all_relevant_paths_covered": {
+      "True": 2
+    },
+    "required_ordering_preserved": {
+      "True": 2
+    },
+    "same_lifetime_or_state_action": {
+      "True": 2
+    },
+    "same_object_or_resource": {
+      "True": 1,
+      "False": 1
+    },
+    "unsafe_alternate_path": {
+      "False": 2
+    }
+  },
+  "project_metrics": {
+    "radare2": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "yes_rate": 0.5,
+      "tp": 0,
+      "fp": 1,
+      "tn": 0,
+      "fn": 1
+    }
+  }
+}

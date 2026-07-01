@@ -1,0 +1,54 @@
+{
+  "seed": 12345,
+  "samples_per_group": 50,
+  "all": false,
+  "groups": {
+    "icl_method_only": {
+      "source_csv": "outdir/complementarity_zero_shot/zero_shot_vs_icl/method_only.csv",
+      "available": 143,
+      "selected": 50,
+      "target_counts": {
+        "0": 48,
+        "1": 2
+      }
+    },
+    "icl_baseline_only": {
+      "source_csv": "outdir/complementarity_zero_shot/zero_shot_vs_icl/baseline_only.csv",
+      "available": 124,
+      "selected": 50,
+      "target_counts": {
+        "1": 45,
+        "0": 5
+      }
+    },
+    "positive_weighted_rag_method_only": {
+      "source_csv": "outdir/complementarity_zero_shot/zero_shot_vs_positive_weighted_rag/method_only.csv",
+      "available": 95,
+      "selected": 50,
+      "target_counts": {
+        "0": 48,
+        "1": 2
+      }
+    },
+    "positive_weighted_rag_baseline_only": {
+      "source_csv": "outdir/complementarity_zero_shot/zero_shot_vs_positive_weighted_rag/baseline_only.csv",
+      "available": 103,
+      "selected": 50,
+      "target_counts": {
+        "1": 44,
+        "0": 6
+      }
+    }
+  },
+  "total_selected": 200,
+  "target_counts": {
+    "0": 107,
+    "1": 93
+  },
+  "group_counts": {
+    "icl_method_only": 50,
+    "icl_baseline_only": 50,
+    "positive_weighted_rag_method_only": 50,
+    "positive_weighted_rag_baseline_only": 50
+  }
+}

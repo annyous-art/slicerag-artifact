@@ -1,0 +1,39 @@
+{
+  "data_jsonl": "data/primevul_test_paired_labeled.jsonl",
+  "predictions_csv": "outdir/empirical_study/aux_model_pairwise/gemini_old_rag_predictions.csv",
+  "num_data_rows": 870,
+  "num_adjacent_pairs": 435,
+  "pair_build_stats": {
+    "candidate_adjacent_pairs": 435,
+    "skipped_incomplete": 0,
+    "skipped_missing_target_pair": 0,
+    "skipped_project_mismatch": 0,
+    "skipped_commit_mismatch": 0,
+    "skipped_cve_mismatch": 0
+  },
+  "pair_filters": {
+    "require_same_project": false,
+    "require_same_commit": false,
+    "require_same_cve": false
+  },
+  "num_prediction_rows": 868,
+  "pred_columns": [
+    "prediction"
+  ],
+  "method_metrics": [
+    {
+      "method": "prediction",
+      "known_pairs": 434,
+      "unknown_pairs": 1,
+      "P-C": 65,
+      "P-V": 300,
+      "P-B": 43,
+      "P-R": 26,
+      "P-C_rate": 0.14977,
+      "P-V_rate": 0.691244,
+      "P-B_rate": 0.099078,
+      "P-R_rate": 0.059908
+    }
+  ],
+  "pair_detail_csv": "outdir/empirical_study/aux_model_pairwise/gemini_old_rag_pairwise_pairs.csv"
+}

@@ -1,0 +1,1501 @@
+{
+  "baseline": "zero_shot",
+  "method": "balanced_grouped_no_label_bc",
+  "counts": {
+    "both_correct": 385,
+    "baseline_only": 67,
+    "method_only": 62,
+    "both_wrong": 354
+  },
+  "oracle_accuracy": 0.5921658986175116,
+  "groups": {
+    "both_correct": {
+      "n": 385,
+      "target_positive_rate": 0.8571428571428571,
+      "baseline_yes_rate": 0.8571428571428571,
+      "method_yes_rate": 0.8571428571428571,
+      "numeric": {
+        "char_len": {
+          "mean": 5152.506493506494,
+          "median": 2354.0,
+          "min": 132.0,
+          "max": 79137.0
+        },
+        "token_len_approx": {
+          "mean": 1090.838961038961,
+          "median": 516.0,
+          "min": 25.0,
+          "max": 13477.0
+        },
+        "line_count": {
+          "mean": 166.27792207792209,
+          "median": 75.0,
+          "min": 5.0,
+          "max": 2411.0
+        },
+        "macro_count": {
+          "mean": 0.2909090909090909,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 28.0
+        },
+        "preproc_count": {
+          "mean": 2.846753246753247,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 96.0
+        },
+        "call_count": {
+          "mean": 44.885714285714286,
+          "median": 22.0,
+          "min": 1.0,
+          "max": 683.0
+        },
+        "unique_call_count": {
+          "mean": 19.454545454545453,
+          "median": 13.0,
+          "min": 1.0,
+          "max": 207.0
+        },
+        "loop_count": {
+          "mean": 4.148051948051948,
+          "median": 2.0,
+          "min": 0.0,
+          "max": 52.0
+        },
+        "cond_count": {
+          "mean": 28.522077922077923,
+          "median": 10.0,
+          "min": 0.0,
+          "max": 434.0
+        },
+        "ptr_count": {
+          "mean": 71.61298701298702,
+          "median": 33.0,
+          "min": 0.0,
+          "max": 1116.0
+        },
+        "memory_api_count": {
+          "mean": 1.7688311688311689,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 37.0
+        },
+        "string_api_count": {
+          "mean": 0.922077922077922,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 23.0
+        },
+        "bounds_keyword_count": {
+          "mean": 9.174025974025975,
+          "median": 3.0,
+          "min": 0.0,
+          "max": 166.0
+        },
+        "error_handling_keyword_count": {
+          "mean": 17.503896103896103,
+          "median": 7.0,
+          "min": 0.0,
+          "max": 278.0
+        },
+        "lifecycle_keyword_count": {
+          "mean": 1.3766233766233766,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 29.0
+        },
+        "null_keyword_count": {
+          "mean": 4.005194805194805,
+          "median": 1.0,
+          "min": 0.0,
+          "max": 60.0
+        },
+        "retrieval_top1_score": {
+          "mean": 0.9515107373138527,
+          "median": 0.9484859108924866,
+          "min": 0.9019692540168762,
+          "max": 1.000000238418579
+        },
+        "retrieval_score_gap_top1_top2": {
+          "mean": 0.0022118333098176237,
+          "median": 0.0011754035949707031,
+          "min": 0.0,
+          "max": 0.03881537914276123
+        },
+        "retrieval_mean_match_score": {
+          "mean": 0.9380503673983677,
+          "median": 0.9385205478895278,
+          "min": 0.8901964922746023,
+          "max": 0.9902245272760806
+        },
+        "retrieval_top_pos_score_max": {
+          "mean": 0.9477814158835969,
+          "median": 0.9477633237838745,
+          "min": 0.0,
+          "max": 1.000000238418579
+        },
+        "retrieval_top_neg_score_max": {
+          "mean": 0.9471396443131682,
+          "median": 0.9459897875785828,
+          "min": 0.8977319002151489,
+          "max": 1.000000238418579
+        },
+        "retrieval_pos_neg_margin_max": {
+          "mean": 0.001865868599383862,
+          "median": 0.0030843615531921387,
+          "min": -0.9457029700279236,
+          "max": 0.09088438749313354
+        },
+        "retrieval_pos_neg_margin_mean": {
+          "mean": 0.0006083220630497127,
+          "median": 0.002095550298690796,
+          "min": -0.9484238922595978,
+          "max": 0.08066534996032715
+        },
+        "retrieval_positive_evidence_count": {
+          "mean": 9.475324675324675,
+          "median": 10.0,
+          "min": 0.0,
+          "max": 10.0
+        },
+        "retrieval_negative_evidence_count": {
+          "mean": 10.0,
+          "median": 10.0,
+          "min": 10.0,
+          "max": 10.0
+        },
+        "retrieval_unknown_evidence_count": {
+          "mean": 2.4883116883116885,
+          "median": 2.0,
+          "min": 0.0,
+          "max": 8.0
+        },
+        "retrieval_same_project_match_count": {
+          "mean": 8.083116883116883,
+          "median": 4.0,
+          "min": 0.0,
+          "max": 26.0
+        },
+        "retrieval_same_cwe_match_count": {
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "method_yes_rate": {
+          "mean": 0.7801948051948052,
+          "median": 1.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "method_pred_entropy": {
+          "mean": 0.28665791203657076,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "icl_message_chars": {
+          "mean": 21874.906493506493,
+          "median": 12717.0,
+          "min": 1238.0,
+          "max": 105613.0
+        },
+        "old_rag_message_chars": {
+          "mean": 8809.761038961038,
+          "median": 5981.0,
+          "min": 3527.0,
+          "max": 83112.0
+        },
+        "positive_weighted_rag_message_chars": {
+          "mean": 9448.703896103896,
+          "median": 6655.0,
+          "min": 3800.0,
+          "max": 83518.0
+        },
+        "balanced_grouped_no_label_bc_message_chars": {
+          "mean": 8950.628571428571,
+          "median": 6051.0,
+          "min": 3267.0,
+          "max": 82548.0
+        }
+      },
+      "categorical": {
+        "project": [
+          {
+            "value": "tensorflow",
+            "count": 62,
+            "ratio": 0.16103896103896104
+          },
+          {
+            "value": "linux",
+            "count": 50,
+            "ratio": 0.12987012987012986
+          },
+          {
+            "value": "vim",
+            "count": 24,
+            "ratio": 0.06233766233766234
+          },
+          {
+            "value": "gpac",
+            "count": 16,
+            "ratio": 0.04155844155844156
+          },
+          {
+            "value": "php-src",
+            "count": 11,
+            "ratio": 0.02857142857142857
+          },
+          {
+            "value": "pjproject",
+            "count": 10,
+            "ratio": 0.025974025974025976
+          },
+          {
+            "value": "radare2",
+            "count": 9,
+            "ratio": 0.023376623376623377
+          },
+          {
+            "value": "ImageMagick",
+            "count": 8,
+            "ratio": 0.02077922077922078
+          },
+          {
+            "value": "qemu",
+            "count": 8,
+            "ratio": 0.02077922077922078
+          },
+          {
+            "value": "ImageMagick6",
+            "count": 7,
+            "ratio": 0.01818181818181818
+          },
+          {
+            "value": "mruby",
+            "count": 7,
+            "ratio": 0.01818181818181818
+          },
+          {
+            "value": "ghostpdl",
+            "count": 6,
+            "ratio": 0.015584415584415584
+          }
+        ],
+        "cwe": [
+          {
+            "value": "CWE-787",
+            "count": 65,
+            "ratio": 0.16883116883116883
+          },
+          {
+            "value": "CWE-125",
+            "count": 46,
+            "ratio": 0.11948051948051948
+          },
+          {
+            "value": "CWE-703",
+            "count": 40,
+            "ratio": 0.1038961038961039
+          },
+          {
+            "value": "CWE-476",
+            "count": 34,
+            "ratio": 0.08831168831168831
+          },
+          {
+            "value": "CWE-416",
+            "count": 21,
+            "ratio": 0.05454545454545454
+          },
+          {
+            "value": "CWE-119",
+            "count": 14,
+            "ratio": 0.03636363636363636
+          },
+          {
+            "value": "CWE-20",
+            "count": 12,
+            "ratio": 0.03116883116883117
+          },
+          {
+            "value": "CWE-200",
+            "count": 12,
+            "ratio": 0.03116883116883117
+          },
+          {
+            "value": "CWE-369",
+            "count": 11,
+            "ratio": 0.02857142857142857
+          },
+          {
+            "value": "CWE-190",
+            "count": 10,
+            "ratio": 0.025974025974025976
+          },
+          {
+            "value": "CWE-617",
+            "count": 10,
+            "ratio": 0.025974025974025976
+          },
+          {
+            "value": "CWE-415",
+            "count": 8,
+            "ratio": 0.02077922077922078
+          }
+        ],
+        "retrieval_top1_evidence_role": [
+          {
+            "value": "vulnerable_changed",
+            "count": 254,
+            "ratio": 0.6597402597402597
+          },
+          {
+            "value": "safe_background",
+            "count": 53,
+            "ratio": 0.13766233766233765
+          },
+          {
+            "value": "vulnerable_context",
+            "count": 47,
+            "ratio": 0.12207792207792208
+          },
+          {
+            "value": "fixed_changed",
+            "count": 31,
+            "ratio": 0.08051948051948052
+          }
+        ],
+        "retrieval_top1_evidence_polarity": [
+          {
+            "value": "1",
+            "count": 254,
+            "ratio": 0.6597402597402597
+          },
+          {
+            "value": "0",
+            "count": 84,
+            "ratio": 0.21818181818181817
+          }
+        ]
+      }
+    },
+    "baseline_only": {
+      "n": 67,
+      "target_positive_rate": 0.47761194029850745,
+      "baseline_yes_rate": 0.47761194029850745,
+      "method_yes_rate": 0.5223880597014925,
+      "numeric": {
+        "char_len": {
+          "mean": 4110.089552238806,
+          "median": 1641.0,
+          "min": 155.0,
+          "max": 31465.0
+        },
+        "token_len_approx": {
+          "mean": 918.8955223880597,
+          "median": 334.0,
+          "min": 34.0,
+          "max": 6936.0
+        },
+        "line_count": {
+          "mean": 146.22388059701493,
+          "median": 56.0,
+          "min": 6.0,
+          "max": 1132.0
+        },
+        "macro_count": {
+          "mean": 0.029850746268656716,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "preproc_count": {
+          "mean": 5.014925373134329,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 65.0
+        },
+        "call_count": {
+          "mean": 33.19402985074627,
+          "median": 16.0,
+          "min": 2.0,
+          "max": 212.0
+        },
+        "unique_call_count": {
+          "mean": 17.208955223880597,
+          "median": 11.0,
+          "min": 2.0,
+          "max": 97.0
+        },
+        "loop_count": {
+          "mean": 4.641791044776119,
+          "median": 1.0,
+          "min": 0.0,
+          "max": 66.0
+        },
+        "cond_count": {
+          "mean": 28.70149253731343,
+          "median": 8.0,
+          "min": 0.0,
+          "max": 426.0
+        },
+        "ptr_count": {
+          "mean": 60.97014925373134,
+          "median": 25.0,
+          "min": 0.0,
+          "max": 407.0
+        },
+        "memory_api_count": {
+          "mean": 1.044776119402985,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 16.0
+        },
+        "string_api_count": {
+          "mean": 0.5223880597014925,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 16.0
+        },
+        "bounds_keyword_count": {
+          "mean": 5.059701492537314,
+          "median": 1.0,
+          "min": 0.0,
+          "max": 76.0
+        },
+        "error_handling_keyword_count": {
+          "mean": 21.029850746268657,
+          "median": 5.0,
+          "min": 0.0,
+          "max": 381.0
+        },
+        "lifecycle_keyword_count": {
+          "mean": 1.6119402985074627,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 17.0
+        },
+        "null_keyword_count": {
+          "mean": 3.91044776119403,
+          "median": 1.0,
+          "min": 0.0,
+          "max": 42.0
+        },
+        "retrieval_top1_score": {
+          "mean": 0.9420062303543091,
+          "median": 0.9412029981613159,
+          "min": 0.9027320742607117,
+          "max": 0.9961702823638916
+        },
+        "retrieval_score_gap_top1_top2": {
+          "mean": 0.001694052077051419,
+          "median": 0.0010085701942443848,
+          "min": 0.0,
+          "max": 0.011471390724182129
+        },
+        "retrieval_mean_match_score": {
+          "mean": 0.930694573736466,
+          "median": 0.9313710161617824,
+          "min": 0.8882689881324768,
+          "max": 0.964584955573082
+        },
+        "retrieval_top_pos_score_max": {
+          "mean": 0.9406275749206543,
+          "median": 0.938796877861023,
+          "min": 0.9024949669837952,
+          "max": 0.9961702823638916
+        },
+        "retrieval_top_neg_score_max": {
+          "mean": 0.9387441989201218,
+          "median": 0.9385791420936584,
+          "min": 0.9027320742607117,
+          "max": 0.965575098991394
+        },
+        "retrieval_pos_neg_margin_max": {
+          "mean": 0.0031742471367565556,
+          "median": 0.0016223788261413574,
+          "min": -0.007460832595825195,
+          "max": 0.037874579429626465
+        },
+        "retrieval_pos_neg_margin_mean": {
+          "mean": 0.0019116277125344348,
+          "median": 0.0010056495666503906,
+          "min": -0.008680731058120728,
+          "max": 0.028806865215301514
+        },
+        "retrieval_positive_evidence_count": {
+          "mean": 9.074626865671641,
+          "median": 10.0,
+          "min": 3.0,
+          "max": 10.0
+        },
+        "retrieval_negative_evidence_count": {
+          "mean": 10.0,
+          "median": 10.0,
+          "min": 10.0,
+          "max": 10.0
+        },
+        "retrieval_unknown_evidence_count": {
+          "mean": 2.8955223880597014,
+          "median": 3.0,
+          "min": 0.0,
+          "max": 7.0
+        },
+        "retrieval_same_project_match_count": {
+          "mean": 8.238805970149254,
+          "median": 5.0,
+          "min": 0.0,
+          "max": 24.0
+        },
+        "retrieval_same_cwe_match_count": {
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "method_yes_rate": {
+          "mean": 0.42350746268656714,
+          "median": 0.375,
+          "min": 0.125,
+          "max": 0.875
+        },
+        "method_pred_entropy": {
+          "mean": 0.8293328220457716,
+          "median": 0.8112781244591328,
+          "min": 0.5435644431995964,
+          "max": 1.0
+        },
+        "icl_message_chars": {
+          "mean": 22827.641791044774,
+          "median": 12784.0,
+          "min": 1109.0,
+          "max": 95703.0
+        },
+        "old_rag_message_chars": {
+          "mean": 7722.611940298508,
+          "median": 5276.0,
+          "min": 3502.0,
+          "max": 34782.0
+        },
+        "positive_weighted_rag_message_chars": {
+          "mean": 8382.716417910447,
+          "median": 5906.0,
+          "min": 4038.0,
+          "max": 35826.0
+        },
+        "balanced_grouped_no_label_bc_message_chars": {
+          "mean": 7835.55223880597,
+          "median": 5416.0,
+          "min": 3130.0,
+          "max": 35161.0
+        }
+      },
+      "categorical": {
+        "project": [
+          {
+            "value": "vim",
+            "count": 16,
+            "ratio": 0.23880597014925373
+          },
+          {
+            "value": "tensorflow",
+            "count": 12,
+            "ratio": 0.1791044776119403
+          },
+          {
+            "value": "linux",
+            "count": 11,
+            "ratio": 0.16417910447761194
+          },
+          {
+            "value": "server",
+            "count": 4,
+            "ratio": 0.05970149253731343
+          },
+          {
+            "value": "mruby",
+            "count": 1,
+            "ratio": 0.014925373134328358
+          },
+          {
+            "value": "flatpak",
+            "count": 1,
+            "ratio": 0.014925373134328358
+          },
+          {
+            "value": "v4l2loopback",
+            "count": 1,
+            "ratio": 0.014925373134328358
+          },
+          {
+            "value": "FreeRTOS-Kernel",
+            "count": 1,
+            "ratio": 0.014925373134328358
+          },
+          {
+            "value": "cryptopp",
+            "count": 1,
+            "ratio": 0.014925373134328358
+          },
+          {
+            "value": "LuaJIT",
+            "count": 1,
+            "ratio": 0.014925373134328358
+          },
+          {
+            "value": "puma",
+            "count": 1,
+            "ratio": 0.014925373134328358
+          },
+          {
+            "value": "bpf",
+            "count": 1,
+            "ratio": 0.014925373134328358
+          }
+        ],
+        "cwe": [
+          {
+            "value": "CWE-416",
+            "count": 9,
+            "ratio": 0.13432835820895522
+          },
+          {
+            "value": "CWE-703",
+            "count": 8,
+            "ratio": 0.11940298507462686
+          },
+          {
+            "value": "CWE-787",
+            "count": 8,
+            "ratio": 0.11940298507462686
+          },
+          {
+            "value": "CWE-125",
+            "count": 6,
+            "ratio": 0.08955223880597014
+          },
+          {
+            "value": "CWE-476",
+            "count": 5,
+            "ratio": 0.07462686567164178
+          },
+          {
+            "value": "CWE-200",
+            "count": 4,
+            "ratio": 0.05970149253731343
+          },
+          {
+            "value": "CWE-617",
+            "count": 3,
+            "ratio": 0.04477611940298507
+          },
+          {
+            "value": "CWE-401",
+            "count": 2,
+            "ratio": 0.029850746268656716
+          },
+          {
+            "value": "CWE-369",
+            "count": 2,
+            "ratio": 0.029850746268656716
+          },
+          {
+            "value": "CWE-399",
+            "count": 2,
+            "ratio": 0.029850746268656716
+          },
+          {
+            "value": "CWE-119",
+            "count": 2,
+            "ratio": 0.029850746268656716
+          },
+          {
+            "value": "CWE-20",
+            "count": 2,
+            "ratio": 0.029850746268656716
+          }
+        ],
+        "retrieval_top1_evidence_role": [
+          {
+            "value": "vulnerable_changed",
+            "count": 37,
+            "ratio": 0.5522388059701493
+          },
+          {
+            "value": "safe_background",
+            "count": 17,
+            "ratio": 0.2537313432835821
+          },
+          {
+            "value": "vulnerable_context",
+            "count": 8,
+            "ratio": 0.11940298507462686
+          },
+          {
+            "value": "fixed_changed",
+            "count": 5,
+            "ratio": 0.07462686567164178
+          }
+        ],
+        "retrieval_top1_evidence_polarity": [
+          {
+            "value": "1",
+            "count": 37,
+            "ratio": 0.5522388059701493
+          },
+          {
+            "value": "0",
+            "count": 22,
+            "ratio": 0.3283582089552239
+          }
+        ]
+      }
+    },
+    "method_only": {
+      "n": 62,
+      "target_positive_rate": 0.43548387096774194,
+      "baseline_yes_rate": 0.5645161290322581,
+      "method_yes_rate": 0.43548387096774194,
+      "numeric": {
+        "char_len": {
+          "mean": 6929.306451612903,
+          "median": 2113.5,
+          "min": 148.0,
+          "max": 82226.0
+        },
+        "token_len_approx": {
+          "mean": 1393.8870967741937,
+          "median": 452.0,
+          "min": 31.0,
+          "max": 13594.0
+        },
+        "line_count": {
+          "mean": 213.69354838709677,
+          "median": 59.0,
+          "min": 5.0,
+          "max": 1990.0
+        },
+        "macro_count": {
+          "mean": 0.5,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 28.0
+        },
+        "preproc_count": {
+          "mean": 5.887096774193548,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 76.0
+        },
+        "call_count": {
+          "mean": 56.53225806451613,
+          "median": 19.5,
+          "min": 2.0,
+          "max": 682.0
+        },
+        "unique_call_count": {
+          "mean": 22.596774193548388,
+          "median": 11.0,
+          "min": 2.0,
+          "max": 207.0
+        },
+        "loop_count": {
+          "mean": 5.225806451612903,
+          "median": 1.0,
+          "min": 0.0,
+          "max": 52.0
+        },
+        "cond_count": {
+          "mean": 43.16129032258065,
+          "median": 8.0,
+          "min": 0.0,
+          "max": 431.0
+        },
+        "ptr_count": {
+          "mean": 102.11290322580645,
+          "median": 24.5,
+          "min": 2.0,
+          "max": 1301.0
+        },
+        "memory_api_count": {
+          "mean": 1.032258064516129,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 8.0
+        },
+        "string_api_count": {
+          "mean": 0.4032258064516129,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 8.0
+        },
+        "bounds_keyword_count": {
+          "mean": 7.096774193548387,
+          "median": 2.0,
+          "min": 0.0,
+          "max": 77.0
+        },
+        "error_handling_keyword_count": {
+          "mean": 21.967741935483872,
+          "median": 6.5,
+          "min": 0.0,
+          "max": 385.0
+        },
+        "lifecycle_keyword_count": {
+          "mean": 1.5161290322580645,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 13.0
+        },
+        "null_keyword_count": {
+          "mean": 4.661290322580645,
+          "median": 1.0,
+          "min": 0.0,
+          "max": 43.0
+        },
+        "retrieval_top1_score": {
+          "mean": 0.9464676562816866,
+          "median": 0.9450410008430481,
+          "min": 0.9064436554908752,
+          "max": 1.000000238418579
+        },
+        "retrieval_score_gap_top1_top2": {
+          "mean": 0.0018542360874914353,
+          "median": 0.0008977651596069336,
+          "min": 0.0,
+          "max": 0.011471390724182129
+        },
+        "retrieval_mean_match_score": {
+          "mean": 0.9345414018467817,
+          "median": 0.9346893305579821,
+          "min": 0.8997789485888048,
+          "max": 0.981554028780564
+        },
+        "retrieval_top_pos_score_max": {
+          "mean": 0.9295113134768701,
+          "median": 0.9434962570667267,
+          "min": 0.0,
+          "max": 0.9973467588424683
+        },
+        "retrieval_top_neg_score_max": {
+          "mean": 0.943922451426906,
+          "median": 0.9425634443759918,
+          "min": 0.9064436554908752,
+          "max": 1.000000238418579
+        },
+        "retrieval_pos_neg_margin_max": {
+          "mean": -0.01348433090794471,
+          "median": 0.0010457932949066162,
+          "min": -0.9501098990440369,
+          "max": 0.014657318592071533
+        },
+        "retrieval_pos_neg_margin_mean": {
+          "mean": -0.014695969800795279,
+          "median": 0.0005073249340057373,
+          "min": -0.9514834582805634,
+          "max": 0.012127161026000977
+        },
+        "retrieval_positive_evidence_count": {
+          "mean": 9.14516129032258,
+          "median": 10.0,
+          "min": 0.0,
+          "max": 10.0
+        },
+        "retrieval_negative_evidence_count": {
+          "mean": 10.0,
+          "median": 10.0,
+          "min": 10.0,
+          "max": 10.0
+        },
+        "retrieval_unknown_evidence_count": {
+          "mean": 2.935483870967742,
+          "median": 3.0,
+          "min": 0.0,
+          "max": 6.0
+        },
+        "retrieval_same_project_match_count": {
+          "mean": 8.741935483870968,
+          "median": 4.5,
+          "min": 0.0,
+          "max": 24.0
+        },
+        "retrieval_same_cwe_match_count": {
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "method_yes_rate": {
+          "mean": 0.45564516129032256,
+          "median": 0.5,
+          "min": 0.125,
+          "max": 0.875
+        },
+        "method_pred_entropy": {
+          "mean": 0.8269666618970166,
+          "median": 0.954434002924965,
+          "min": 0.5435644431995964,
+          "max": 1.0
+        },
+        "icl_message_chars": {
+          "mean": 21944.274193548386,
+          "median": 12236.5,
+          "min": 1110.0,
+          "max": 95848.0
+        },
+        "old_rag_message_chars": {
+          "mean": 10592.5,
+          "median": 5737.5,
+          "min": 3678.0,
+          "max": 85791.0
+        },
+        "positive_weighted_rag_message_chars": {
+          "mean": 11199.032258064517,
+          "median": 6319.5,
+          "min": 3761.0,
+          "max": 86557.0
+        },
+        "balanced_grouped_no_label_bc_message_chars": {
+          "mean": 10753.032258064517,
+          "median": 6017.5,
+          "min": 3332.0,
+          "max": 86214.0
+        }
+      },
+      "categorical": {
+        "project": [
+          {
+            "value": "tensorflow",
+            "count": 14,
+            "ratio": 0.22580645161290322
+          },
+          {
+            "value": "vim",
+            "count": 9,
+            "ratio": 0.14516129032258066
+          },
+          {
+            "value": "linux",
+            "count": 8,
+            "ratio": 0.12903225806451613
+          },
+          {
+            "value": "mruby",
+            "count": 2,
+            "ratio": 0.03225806451612903
+          },
+          {
+            "value": "barebox",
+            "count": 2,
+            "ratio": 0.03225806451612903
+          },
+          {
+            "value": "radare2",
+            "count": 2,
+            "ratio": 0.03225806451612903
+          },
+          {
+            "value": "nagioscore",
+            "count": 2,
+            "ratio": 0.03225806451612903
+          },
+          {
+            "value": "perl5",
+            "count": 2,
+            "ratio": 0.03225806451612903
+          },
+          {
+            "value": "server",
+            "count": 2,
+            "ratio": 0.03225806451612903
+          },
+          {
+            "value": "FreeRTOS-Kernel",
+            "count": 1,
+            "ratio": 0.016129032258064516
+          },
+          {
+            "value": "deark",
+            "count": 1,
+            "ratio": 0.016129032258064516
+          },
+          {
+            "value": "gpac",
+            "count": 1,
+            "ratio": 0.016129032258064516
+          }
+        ],
+        "cwe": [
+          {
+            "value": "CWE-416",
+            "count": 11,
+            "ratio": 0.1774193548387097
+          },
+          {
+            "value": "CWE-703",
+            "count": 9,
+            "ratio": 0.14516129032258066
+          },
+          {
+            "value": "CWE-787",
+            "count": 6,
+            "ratio": 0.0967741935483871
+          },
+          {
+            "value": "CWE-476",
+            "count": 6,
+            "ratio": 0.0967741935483871
+          },
+          {
+            "value": "CWE-125",
+            "count": 5,
+            "ratio": 0.08064516129032258
+          },
+          {
+            "value": "CWE-200",
+            "count": 4,
+            "ratio": 0.06451612903225806
+          },
+          {
+            "value": "CWE-369",
+            "count": 3,
+            "ratio": 0.04838709677419355
+          },
+          {
+            "value": "CWE-415",
+            "count": 3,
+            "ratio": 0.04838709677419355
+          },
+          {
+            "value": "CWE-20",
+            "count": 3,
+            "ratio": 0.04838709677419355
+          },
+          {
+            "value": "CWE-120",
+            "count": 2,
+            "ratio": 0.03225806451612903
+          },
+          {
+            "value": "CWE-617",
+            "count": 1,
+            "ratio": 0.016129032258064516
+          },
+          {
+            "value": "CWE-190",
+            "count": 1,
+            "ratio": 0.016129032258064516
+          }
+        ],
+        "retrieval_top1_evidence_role": [
+          {
+            "value": "vulnerable_changed",
+            "count": 32,
+            "ratio": 0.5161290322580645
+          },
+          {
+            "value": "safe_background",
+            "count": 16,
+            "ratio": 0.25806451612903225
+          },
+          {
+            "value": "fixed_changed",
+            "count": 10,
+            "ratio": 0.16129032258064516
+          },
+          {
+            "value": "vulnerable_context",
+            "count": 4,
+            "ratio": 0.06451612903225806
+          }
+        ],
+        "retrieval_top1_evidence_polarity": [
+          {
+            "value": "1",
+            "count": 32,
+            "ratio": 0.5161290322580645
+          },
+          {
+            "value": "0",
+            "count": 26,
+            "ratio": 0.41935483870967744
+          }
+        ]
+      }
+    },
+    "both_wrong": {
+      "n": 354,
+      "target_positive_rate": 0.12994350282485875,
+      "baseline_yes_rate": 0.8700564971751412,
+      "method_yes_rate": 0.8700564971751412,
+      "numeric": {
+        "char_len": {
+          "mean": 5426.590395480226,
+          "median": 2613.5,
+          "min": 94.0,
+          "max": 79225.0
+        },
+        "token_len_approx": {
+          "mean": 1144.1468926553673,
+          "median": 586.0,
+          "min": 19.0,
+          "max": 13494.0
+        },
+        "line_count": {
+          "mean": 173.9180790960452,
+          "median": 83.5,
+          "min": 4.0,
+          "max": 2414.0
+        },
+        "macro_count": {
+          "mean": 0.23163841807909605,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 27.0
+        },
+        "preproc_count": {
+          "mean": 3.016949152542373,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 96.0
+        },
+        "call_count": {
+          "mean": 46.35028248587571,
+          "median": 24.0,
+          "min": 1.0,
+          "max": 678.0
+        },
+        "unique_call_count": {
+          "mean": 19.827683615819208,
+          "median": 14.0,
+          "min": 1.0,
+          "max": 205.0
+        },
+        "loop_count": {
+          "mean": 4.435028248587571,
+          "median": 2.0,
+          "min": 0.0,
+          "max": 66.0
+        },
+        "cond_count": {
+          "mean": 30.062146892655367,
+          "median": 12.0,
+          "min": 0.0,
+          "max": 436.0
+        },
+        "ptr_count": {
+          "mean": 75.46892655367232,
+          "median": 36.5,
+          "min": 0.0,
+          "max": 1096.0
+        },
+        "memory_api_count": {
+          "mean": 1.8022598870056497,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 37.0
+        },
+        "string_api_count": {
+          "mean": 0.8870056497175142,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 23.0
+        },
+        "bounds_keyword_count": {
+          "mean": 9.92090395480226,
+          "median": 4.0,
+          "min": 0.0,
+          "max": 166.0
+        },
+        "error_handling_keyword_count": {
+          "mean": 18.646892655367232,
+          "median": 8.0,
+          "min": 0.0,
+          "max": 279.0
+        },
+        "lifecycle_keyword_count": {
+          "mean": 1.5084745762711864,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 29.0
+        },
+        "null_keyword_count": {
+          "mean": 4.067796610169491,
+          "median": 1.0,
+          "min": 0.0,
+          "max": 61.0
+        },
+        "retrieval_top1_score": {
+          "mean": 0.9514451104368867,
+          "median": 0.94917893409729,
+          "min": 0.9019692540168762,
+          "max": 1.0000003576278687
+        },
+        "retrieval_score_gap_top1_top2": {
+          "mean": 0.002054788972024864,
+          "median": 0.0010690391063690186,
+          "min": 0.0,
+          "max": 0.01837158203125
+        },
+        "retrieval_mean_match_score": {
+          "mean": 0.9386308604199997,
+          "median": 0.9384650533849543,
+          "min": 0.8901964922746023,
+          "max": 0.9884532623820834
+        },
+        "retrieval_top_pos_score_max": {
+          "mean": 0.950468064533115,
+          "median": 0.9485235214233398,
+          "min": 0.9019692540168762,
+          "max": 1.0000003576278687
+        },
+        "retrieval_top_neg_score_max": {
+          "mean": 0.9475999592387744,
+          "median": 0.9460047483444214,
+          "min": 0.8977319002151489,
+          "max": 1.000000238418579
+        },
+        "retrieval_pos_neg_margin_max": {
+          "mean": 0.004091210789599661,
+          "median": 0.0032342374324798584,
+          "min": -0.032380104064941406,
+          "max": 0.07749837636947632
+        },
+        "retrieval_pos_neg_margin_mean": {
+          "mean": 0.0028959745909534606,
+          "median": 0.002156481146812439,
+          "min": -0.03381696343421936,
+          "max": 0.0649375319480896
+        },
+        "retrieval_positive_evidence_count": {
+          "mean": 9.491525423728813,
+          "median": 10.0,
+          "min": 3.0,
+          "max": 20.0
+        },
+        "retrieval_negative_evidence_count": {
+          "mean": 10.056497175141242,
+          "median": 10.0,
+          "min": 10.0,
+          "max": 20.0
+        },
+        "retrieval_unknown_evidence_count": {
+          "mean": 2.4661016949152543,
+          "median": 2.0,
+          "min": 0.0,
+          "max": 12.0
+        },
+        "retrieval_same_project_match_count": {
+          "mean": 8.209039548022599,
+          "median": 4.0,
+          "min": 0.0,
+          "max": 27.0
+        },
+        "retrieval_same_cwe_match_count": {
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "method_yes_rate": {
+          "mean": 0.7722457627118644,
+          "median": 0.875,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "method_pred_entropy": {
+          "mean": 0.33409844230711555,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "icl_message_chars": {
+          "mean": 23003.20338983051,
+          "median": 13636.5,
+          "min": 988.0,
+          "max": 105623.0
+        },
+        "old_rag_message_chars": {
+          "mean": 9077.053672316384,
+          "median": 6355.0,
+          "min": 3560.0,
+          "max": 83269.0
+        },
+        "positive_weighted_rag_message_chars": {
+          "mean": 9730.0197740113,
+          "median": 7113.0,
+          "min": 3956.0,
+          "max": 83606.0
+        },
+        "balanced_grouped_no_label_bc_message_chars": {
+          "mean": 9193.77966101695,
+          "median": 6443.0,
+          "min": 3428.0,
+          "max": 82636.0
+        }
+      },
+      "categorical": {
+        "project": [
+          {
+            "value": "tensorflow",
+            "count": 56,
+            "ratio": 0.15819209039548024
+          },
+          {
+            "value": "linux",
+            "count": 45,
+            "ratio": 0.1271186440677966
+          },
+          {
+            "value": "vim",
+            "count": 27,
+            "ratio": 0.07627118644067797
+          },
+          {
+            "value": "gpac",
+            "count": 15,
+            "ratio": 0.0423728813559322
+          },
+          {
+            "value": "php-src",
+            "count": 10,
+            "ratio": 0.02824858757062147
+          },
+          {
+            "value": "pjproject",
+            "count": 8,
+            "ratio": 0.022598870056497175
+          },
+          {
+            "value": "radare2",
+            "count": 8,
+            "ratio": 0.022598870056497175
+          },
+          {
+            "value": "ImageMagick6",
+            "count": 7,
+            "ratio": 0.01977401129943503
+          },
+          {
+            "value": "ImageMagick",
+            "count": 7,
+            "ratio": 0.01977401129943503
+          },
+          {
+            "value": "mruby",
+            "count": 6,
+            "ratio": 0.01694915254237288
+          },
+          {
+            "value": "ghostpdl",
+            "count": 6,
+            "ratio": 0.01694915254237288
+          },
+          {
+            "value": "qemu",
+            "count": 5,
+            "ratio": 0.014124293785310734
+          }
+        ],
+        "cwe": [
+          {
+            "value": "CWE-787",
+            "count": 65,
+            "ratio": 0.18361581920903955
+          },
+          {
+            "value": "CWE-125",
+            "count": 37,
+            "ratio": 0.10451977401129943
+          },
+          {
+            "value": "CWE-703",
+            "count": 36,
+            "ratio": 0.1016949152542373
+          },
+          {
+            "value": "CWE-476",
+            "count": 33,
+            "ratio": 0.09322033898305085
+          },
+          {
+            "value": "CWE-416",
+            "count": 17,
+            "ratio": 0.0480225988700565
+          },
+          {
+            "value": "CWE-369",
+            "count": 12,
+            "ratio": 0.03389830508474576
+          },
+          {
+            "value": "CWE-190",
+            "count": 11,
+            "ratio": 0.031073446327683617
+          },
+          {
+            "value": "CWE-20",
+            "count": 11,
+            "ratio": 0.031073446327683617
+          },
+          {
+            "value": "CWE-119",
+            "count": 11,
+            "ratio": 0.031073446327683617
+          },
+          {
+            "value": "CWE-200",
+            "count": 11,
+            "ratio": 0.031073446327683617
+          },
+          {
+            "value": "CWE-617",
+            "count": 10,
+            "ratio": 0.02824858757062147
+          },
+          {
+            "value": "CWE-415",
+            "count": 8,
+            "ratio": 0.022598870056497175
+          }
+        ],
+        "retrieval_top1_evidence_role": [
+          {
+            "value": "vulnerable_changed",
+            "count": 240,
+            "ratio": 0.6779661016949152
+          },
+          {
+            "value": "safe_background",
+            "count": 57,
+            "ratio": 0.16101694915254236
+          },
+          {
+            "value": "vulnerable_context",
+            "count": 31,
+            "ratio": 0.08757062146892655
+          },
+          {
+            "value": "fixed_changed",
+            "count": 26,
+            "ratio": 0.07344632768361582
+          }
+        ],
+        "retrieval_top1_evidence_polarity": [
+          {
+            "value": "1",
+            "count": 240,
+            "ratio": 0.6779661016949152
+          },
+          {
+            "value": "0",
+            "count": 83,
+            "ratio": 0.2344632768361582
+          }
+        ]
+      }
+    }
+  }
+}

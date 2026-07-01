@@ -1,0 +1,36 @@
+{
+  "input_files": [
+    "${SLICERAG_ROOT}/outdir/repair_presence_verifier/bounds_path_variable_best_ensemble_sameproject_samecwe_overlap2_glm51_v2.jsonl",
+    "${SLICERAG_ROOT}/outdir/repair_presence_verifier/added_guard_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl"
+  ],
+  "input_rows": 107,
+  "unique_idx": 66,
+  "output_rows": 66,
+  "skipped_missing_idx": 0,
+  "conflict_idx_count": 3,
+  "selected_repair_type_counts": {
+    "added_guard": 41,
+    "bounds_or_shape_check": 25
+  },
+  "selected_pred_counts": {
+    "1": 60,
+    "0": 6
+  },
+  "selected_confidence_counts": {
+    "high": 63,
+    "medium": 3
+  },
+  "source_counts": {
+    "added_guard_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl": 41,
+    "bounds_path_variable_best_ensemble_sameproject_samecwe_overlap2_glm51_v2.jsonl": 25
+  },
+  "type_priority": {
+    "api_replacement": 100,
+    "state_or_lifetime_repair": 90,
+    "error_handling": 80,
+    "null_check": 75,
+    "added_guard": 70,
+    "bounds_or_shape_check": 60,
+    "unknown": 0
+  }
+}

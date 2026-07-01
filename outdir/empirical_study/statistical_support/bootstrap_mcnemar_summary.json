@@ -1,0 +1,95 @@
+[
+  {
+    "method": "zero_shot",
+    "f1": 0.635088,
+    "f1_ci": [
+      0.602518,
+      0.66724
+    ],
+    "delta_vs_yes_only": -0.001923,
+    "delta_ci_vs_yes_only": [
+      -0.020253,
+      0.015348
+    ],
+    "mcnemar_yes_only_correct_method_wrong": 51,
+    "mcnemar_method_correct_yes_only_wrong": 43,
+    "mcnemar_p": 0.47049211489037057
+  },
+  {
+    "method": "yes_only",
+    "f1": 0.637011,
+    "f1_ci": [
+      0.603352,
+      0.669651
+    ],
+    "delta_vs_yes_only": 0.0,
+    "delta_ci_vs_yes_only": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "method": "author_no_yes",
+    "f1": 0.621062,
+    "f1_ci": [
+      0.586271,
+      0.653169
+    ],
+    "delta_vs_yes_only": -0.015949,
+    "delta_ci_vs_yes_only": [
+      -0.0333,
+      0.001337
+    ],
+    "mcnemar_yes_only_correct_method_wrong": 53,
+    "mcnemar_method_correct_yes_only_wrong": 40,
+    "mcnemar_p": 0.213153000968908
+  },
+  {
+    "method": "old_rag",
+    "f1": 0.585127,
+    "f1_ci": [
+      0.546734,
+      0.62017
+    ],
+    "delta_vs_yes_only": -0.051883,
+    "delta_ci_vs_yes_only": [
+      -0.078011,
+      -0.026291
+    ],
+    "mcnemar_yes_only_correct_method_wrong": 97,
+    "mcnemar_method_correct_yes_only_wrong": 81,
+    "mcnemar_p": 0.2608293352608441
+  },
+  {
+    "method": "positive_weighted_rag",
+    "f1": 0.561983,
+    "f1_ci": [
+      0.524211,
+      0.597656
+    ],
+    "delta_vs_yes_only": -0.075027,
+    "delta_ci_vs_yes_only": [
+      -0.10426,
+      -0.046821
+    ],
+    "mcnemar_yes_only_correct_method_wrong": 107,
+    "mcnemar_method_correct_yes_only_wrong": 91,
+    "mcnemar_p": 0.2863956298917917
+  },
+  {
+    "method": "patch_contrast",
+    "f1": 0.591522,
+    "f1_ci": [
+      0.555891,
+      0.626977
+    ],
+    "delta_vs_yes_only": -0.045489,
+    "delta_ci_vs_yes_only": [
+      -0.071853,
+      -0.020239
+    ],
+    "mcnemar_yes_only_correct_method_wrong": 102,
+    "mcnemar_method_correct_yes_only_wrong": 86,
+    "mcnemar_p": 0.27391998687270586
+  }
+]

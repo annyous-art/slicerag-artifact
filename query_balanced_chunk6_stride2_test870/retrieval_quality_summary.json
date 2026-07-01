@@ -1,0 +1,23 @@
+{
+  "num_samples": 868,
+  "target_counts": {
+    "1": 435,
+    "0": 433
+  },
+  "top1_agreement_counts": {
+    "yes": 403,
+    "no": 375,
+    "unknown": 90
+  },
+  "top1_role_counts": {
+    "vulnerable_changed": 563,
+    "safe_background": 143,
+    "vulnerable_context": 90,
+    "fixed_changed": 72
+  },
+  "avg_num_index_matches": 21.993087557603687,
+  "avg_positive_evidence_count": 9.42741935483871,
+  "avg_negative_evidence_count": 10.023041474654377,
+  "avg_pos_neg_margin_max": 0.0017779885623861568,
+  "avg_pos_neg_margin_mean": 0.000548741853182217
+}

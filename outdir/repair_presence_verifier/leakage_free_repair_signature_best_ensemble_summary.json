@@ -1,0 +1,27 @@
+{
+  "predictions_csv": "${SLICERAG_ROOT}/outdir/ensemble_error_patch_contrast/per_sample_predictions.csv",
+  "query_results": "${SLICERAG_ROOT}/outdir/query_patch_repair_signature_test870/query_patch_contrast_results.jsonl",
+  "base_pred_column": "best_ensemble_pred",
+  "mode": "fixed_closer",
+  "max_pairs": 3,
+  "min_relevance": 0.9,
+  "min_abs_margin": 0.0,
+  "require_real_repair": true,
+  "require_fixed_added_lines": false,
+  "require_same_cwe": false,
+  "require_same_project": false,
+  "min_repair_token_overlap": 1,
+  "exclude_same_idx": true,
+  "num_query_rows": 868,
+  "num_prediction_rows": 868,
+  "num_candidates": 0,
+  "candidate_target_counts_for_evaluation_only": {},
+  "skip_counts": {
+    "no_trigger_pair": 769,
+    "base_not_yes": 99
+  },
+  "trigger_top_closer_side_counts": {},
+  "top_pair_same_project_counts": {},
+  "top_pair_same_cwe_counts": {},
+  "top_pair_repair_signal_counts": {}
+}

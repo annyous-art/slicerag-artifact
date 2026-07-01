@@ -1,0 +1,871 @@
+idx,target,prediction,correct,variant,project,cwe,file_name,func_char_len,prompt_tokens,completion_tokens,total_tokens,response
+187732,0,1,0,metadata_no_cwe,qemu,['CWE-264'],vnc.c,4695,115,8,123,(1) YES
+194963,1,0,0,metadata_no_cwe,ImageMagick6,['CWE-704'],property.c,28188,116,8,124,(2) NO
+194989,1,1,1,metadata_no_cwe,ImageMagick6,['CWE-190'],psd.c,1693,117,8,125,(1) YES
+194994,1,0,0,metadata_no_cwe,tensorflow,['CWE-401'],immutable_executor_state.cc,6738,115,13,128,(2) NO: No security vulnerability.
+194996,1,0,0,metadata_no_cwe,tensorflow,['CWE-476'],loader_util.cc,1226,114,8,122,(2) NO
+194998,1,1,1,metadata_no_cwe,tensorflow,['CWE-617'],constant_folding.cc,2726,115,8,123,(1) YES
+195017,1,1,1,metadata_no_cwe,gpac,['CWE-476'],hint_track.c,455,115,8,123,(1) YES
+195019,1,0,0,metadata_no_cwe,tensorflow,['CWE-617'],constant_folding.cc,2808,115,8,123,(2) NO
+195022,1,1,1,metadata_no_cwe,glewlwyd,['CWE-287'],webservice.c,10298,116,8,124,(1) YES
+195023,1,1,1,metadata_no_cwe,tensorflow,['CWE-190'],sparse_tensors_map_ops.cc,5831,117,8,125,(1) YES
+195026,1,1,1,metadata_no_cwe,linux,['CWE-909'],nfs4file.c,1703,116,8,124,(1) YES
+195028,1,1,1,metadata_no_cwe,tensorflow,['CWE-401'],decode_image_op.cc,4634,115,8,123,(1) YES
+195029,1,1,1,metadata_no_cwe,tensorflow,['CWE-125'],graph.cc,2052,113,8,121,(1) YES
+195038,1,1,1,metadata_no_cwe,mruby,['CWE-476'],array.c,877,114,8,122,(1) YES
+195039,1,1,1,metadata_no_cwe,tensorflow,['CWE-354'],conv_ops.cc,3831,114,8,122,(1) YES
+195040,1,0,0,metadata_no_cwe,tensorflow,['CWE-476'],xla_platform_info.cc,2726,116,8,124,(2) NO
+195055,1,1,1,metadata_no_cwe,tensorflow,['CWE-787'],count_ops.cc,3819,114,8,122,(1) YES
+195056,1,0,0,metadata_no_cwe,tensorflow,['CWE-369'],common.h,2670,113,8,121,(2) NO
+195059,1,0,0,metadata_no_cwe,tensorflow,['CWE-617'],dependency_optimizer.cc,1177,114,13,127,(2) NO: No security vulnerability.
+195063,1,1,1,metadata_no_cwe,gpac,['CWE-476'],reframe_mpgvid.c,16506,118,8,126,(1) YES
+195069,1,1,1,metadata_no_cwe,gpac,['CWE-120'],av_parsers.c,1715,116,8,124,(1) YES
+195073,1,1,1,metadata_no_cwe,tensorflow,['CWE-416'],decode_image_op.cc,4701,115,8,123,(1) YES
+195074,1,1,1,metadata_no_cwe,gpac,['CWE-415'],descriptors.c,2689,114,8,122,(1) YES
+195082,1,0,0,metadata_no_cwe,linux,['CWE-862'],None,1076,112,8,120,(2) NO
+195083,1,1,1,metadata_no_cwe,tensorflow,['CWE-617'],tensor.cc,1232,113,8,121,(1) YES
+195091,1,0,0,metadata_no_cwe,tensorflow,['CWE-754'],tf_cpurt_symbolic_shape_optimization.cc,2597,120,13,133,(2) NO: No security vulnerability.
+195092,1,0,0,metadata_no_cwe,hermes,['CWE-843'],IREval.cpp,2070,116,8,124,(2) NO
+195095,1,1,1,metadata_no_cwe,e2guardian,['CWE-295'],Socket.cpp,3786,115,8,123,(1) YES
+195220,1,0,0,metadata_no_cwe,tmate-ssh-server,['CWE-362'],tmate-main.c,1780,119,8,127,(2) NO
+195230,1,1,1,metadata_no_cwe,pjproject,['CWE-125'],rtcp_xr.c,7256,117,8,125,(1) YES
+195231,1,1,1,metadata_no_cwe,gpac,['CWE-476'],av_parsers.c,4464,116,8,124,(1) YES
+195233,1,1,1,metadata_no_cwe,tensorflow,['CWE-787'],graph_properties.cc,360,114,14,128,(1) YES: A security vulnerability detected.
+195234,1,0,0,metadata_no_cwe,tensorflow,['CWE-617'],function.cc,1873,113,8,121,(2) NO
+195237,1,1,1,metadata_no_cwe,ImageMagick,['CWE-190'],pcl.c,7995,115,8,123,(1) YES
+195264,1,0,0,metadata_no_cwe,pcre2,['CWE-125'],pcre2_jit_compile.c,22734,120,8,128,(2) NO
+195274,1,0,0,metadata_no_cwe,tensorflow,['CWE-476'],constant_folding.cc,4637,115,13,128,(2) NO: No security vulnerability.
+195291,1,0,0,metadata_no_cwe,tensorflow,['CWE-908'],assign_op.h,3667,114,13,127,(2) NO: No security vulnerability.
+195293,1,1,1,metadata_no_cwe,mruby,['CWE-476'],codegen.c,1302,115,8,123,(1) YES
+195294,1,1,1,metadata_no_cwe,tensorflow,['CWE-843'],map_stage_op.cc,967,115,8,123,(1) YES
+195295,1,1,1,metadata_no_cwe,mruby,['CWE-125'],codegen.c,3885,115,8,123,(1) YES
+195296,1,0,0,metadata_no_cwe,uWebSockets,['CWE-787'],TopicTree.h,2354,116,13,129,(2) NO: No security vulnerability.
+195308,1,0,0,metadata_no_cwe,flatpak,['CWE-20'],flatpak-run.c,10440,116,8,124,(2) NO
+195309,1,0,0,metadata_no_cwe,squid,['CWE-400'],gopher.cc,11823,114,8,122,(2) NO
+195328,1,1,1,metadata_no_cwe,gpac,['CWE-415'],load_text.c,1840,115,8,123,(1) YES
+195331,1,0,0,metadata_no_cwe,tensorflow,['CWE-843'],common_shape_fns.cc,3246,116,8,124,(2) NO
+195334,1,1,1,metadata_no_cwe,gpac,['CWE-415'],box_code_meta.c,2502,116,8,124,(1) YES
+195340,1,1,1,metadata_no_cwe,tensorflow,['CWE-190'],sparse_dense_binary_op_shared.cc,6813,117,8,125,(1) YES
+195343,1,1,1,metadata_no_cwe,tensorflow,['CWE-125'],fractional_avg_pool_op.cc,7263,116,8,124,(1) YES
+195385,1,1,1,metadata_no_cwe,flatpak,['CWE-276'],flatpak-dir.c,3354,116,8,124,(1) YES
+195388,1,0,0,metadata_no_cwe,postgres,['CWE-522'],fe-connect.c,46206,114,8,122,(2) NO
+195389,1,0,0,metadata_no_cwe,tensorflow,['CWE-617'],op_def_util.cc,699,115,8,123,(2) NO
+195391,1,1,1,metadata_no_cwe,tensorflow,['CWE-190'],string_ngrams_op.cc,4681,117,8,125,(1) YES
+195398,1,0,0,metadata_no_cwe,v4l2loopback,['CWE-134'],v4l2loopback.c,1512,123,13,136,(2) NO: No security vulnerability.
+195399,1,0,0,metadata_no_cwe,tensorflow,['CWE-476'],mutable_graph_view.cc,449,115,13,128,(2) NO: No security vulnerability.
+195402,1,0,0,metadata_no_cwe,tensorflow,['CWE-190'],common.c,312,113,13,126,(2) NO: No security vulnerability.
+195403,1,0,0,metadata_no_cwe,tensorflow,['CWE-190'],common.c,260,113,8,121,(2) NO
+195404,1,1,1,metadata_no_cwe,tensorflow,['CWE-369'],fractional_max_pool_op.cc,4646,116,8,124,(1) YES
+195405,1,1,1,metadata_no_cwe,ImageMagick6,['CWE-190'],pcl.c,7979,116,8,124,(1) YES
+195409,1,0,0,metadata_no_cwe,gpac,['CWE-476'],box_code_base.c,269,116,8,124,(2) NO
+195410,1,1,1,metadata_no_cwe,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2921,117,14,131,(1) YES: A security vulnerability detected.
+195471,1,0,0,metadata_no_cwe,weechat,['CWE-476'],irc-protocol.c,3200,118,13,131,(2) NO: No security vulnerability.
+195565,1,0,0,metadata_no_cwe,hhvm,['CWE-119'],zend-string.cpp,3314,115,8,123,(2) NO
+195626,1,0,0,metadata_no_cwe,qemu,['CWE-787'],virtio-serial-bus.c,410,119,8,127,(2) NO
+195629,1,0,0,metadata_no_cwe,tensorflow,['CWE-476'],execute.cc,1859,113,8,121,(2) NO
+195665,1,0,0,metadata_no_cwe,njs,['CWE-703'],njs_array.c,4339,116,13,129,(2) NO: No security vulnerability.
+195670,1,1,1,metadata_no_cwe,pjproject,['CWE-703'],xml.c,3296,114,8,122,(1) YES
+195691,1,1,1,metadata_no_cwe,mruby,['CWE-703'],vm.c,51274,114,8,122,(1) YES
+195692,1,0,0,metadata_no_cwe,FreeRTOS-Kernel,['CWE-200'],queue.c,2805,117,8,125,(2) NO
+195720,1,0,0,metadata_no_cwe,mvfst,['CWE-703'],ServerStateMachine.cpp,3323,116,8,124,(2) NO
+195740,1,0,0,metadata_no_cwe,libjpeg,['CWE-703'],None,6317,113,13,126,(2) NO: No security vulnerability.
+195741,1,0,0,metadata_no_cwe,libjpeg,['CWE-703'],None,5436,113,8,121,(2) NO
+195742,1,0,0,metadata_no_cwe,gpac,['CWE-476'],None,15815,113,8,121,(2) NO
+195752,1,1,1,metadata_no_cwe,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2398,117,8,125,(1) YES
+195768,1,1,1,metadata_no_cwe,tensorflow,['CWE-703'],quantile_ops.cc,1049,115,8,123,(1) YES
+195800,1,0,0,metadata_no_cwe,deark,['CWE-369'],fmtutil.c,1444,115,8,123,(2) NO
+195801,1,1,1,metadata_no_cwe,php-src,['CWE-476'],wddx.c,3632,116,8,124,(1) YES
+195908,1,1,1,metadata_no_cwe,linux,['CWE-703'],volumes.c,4198,113,8,121,(1) YES
+195909,1,0,0,metadata_no_cwe,ImageMagick,['CWE-125'],png.c,79137,115,13,128,(2) NO: No security vulnerability.
+195954,1,1,1,metadata_no_cwe,pjproject,['CWE-787'],dns.c,983,114,8,122,(1) YES
+195965,1,0,0,metadata_no_cwe,tensorflow,['CWE-787'],edit_distance_op.cc,7615,115,13,128,(2) NO: No security vulnerability.
+195984,1,1,1,metadata_no_cwe,gpac,['CWE-703'],box_code_3gpp.c,313,119,8,127,(1) YES
+196276,1,0,0,metadata_no_cwe,lsquic,['CWE-269'],None,1227,114,8,122,(2) NO
+196316,1,0,0,metadata_no_cwe,barebox,['CWE-200'],digest.c,292,114,13,127,(2) NO: No security vulnerability.
+196328,1,1,1,metadata_no_cwe,vim,['CWE-416'],search.c,18096,113,8,121,(1) YES
+196578,1,1,1,metadata_no_cwe,vim,['CWE-787'],register.c,803,113,8,121,(1) YES
+196587,1,0,0,metadata_no_cwe,tensorflow,['CWE-369'],resource_variable_ops.cc,3420,115,13,128,(2) NO: No security vulnerability.
+196611,1,0,0,metadata_no_cwe,booth,['CWE-284'],main.c,1007,113,8,121,(2) NO
+196621,1,0,0,metadata_no_cwe,mruby,['CWE-787'],None,228,113,8,121,(2) NO
+196629,1,0,0,metadata_no_cwe,tensorflow,['CWE-354'],matrix_solve_op.cc,10045,116,13,129,(2) NO: No security vulnerability.
+196689,1,1,1,metadata_no_cwe,tensorflow,['CWE-703'],stage_op.cc,602,114,8,122,(1) YES
+196691,1,1,1,metadata_no_cwe,gpac,['CWE-703'],isoffin_read.c,11818,117,8,125,(1) YES
+196698,1,1,1,metadata_no_cwe,tensorflow,['CWE-125'],sparse_fill_empty_rows_op.cc,2261,117,8,125,(1) YES
+196705,1,1,1,metadata_no_cwe,tensorflow,['CWE-20'],sparse_tensor_dense_add_op.cc,1242,117,8,125,(1) YES
+196790,1,0,0,metadata_no_cwe,tensorflow,['CWE-703'],sdca_internal.cc,3832,115,8,123,(2) NO
+196801,1,1,1,metadata_no_cwe,gpac,['CWE-703'],isom_hinter.c,6017,117,8,125,(1) YES
+196829,1,1,1,metadata_no_cwe,tensorflow,['CWE-476'],session_ops.cc,869,114,8,122,(1) YES
+196834,1,1,1,metadata_no_cwe,tensorflow,['CWE-125'],count_ops.cc,338,114,8,122,(1) YES
+196841,1,0,0,metadata_no_cwe,furnace,['CWE-703'],pattern.cpp,12844,113,8,121,(2) NO
+196846,1,1,1,metadata_no_cwe,tensorflow,['CWE-369'],div.cc,1159,113,8,121,(1) YES
+196860,1,0,0,metadata_no_cwe,gpac,['CWE-787'],None,1878,113,8,121,(2) NO
+196885,1,1,1,metadata_no_cwe,tensorflow,['CWE-703'],mkl_requantization_range_per_channel_op.cc,3259,121,8,129,(1) YES
+196889,1,0,0,metadata_no_cwe,rpm,['CWE-284'],rpmpgp.c,744,115,8,123,(2) NO
+196893,1,1,1,metadata_no_cwe,envoy,['CWE-362'],default_validator.cc,1618,114,8,122,(1) YES
+196894,1,0,0,metadata_no_cwe,cryptopp,['CWE-399'],rw.cpp,1059,114,8,122,(2) NO
+196993,1,0,0,metadata_no_cwe,libjxl,['CWE-369'],codec_apng.cc,7391,117,8,125,(2) NO
+197015,1,1,1,metadata_no_cwe,gpac,['CWE-476'],isom_store.c,2728,116,8,124,(1) YES
+197057,1,0,0,metadata_no_cwe,drogon,['CWE-552'],None,883,113,8,121,(2) NO
+197095,1,1,1,metadata_no_cwe,tensorflow,['CWE-369'],optimized_ops.h,4283,114,8,122,(1) YES
+197111,1,1,1,metadata_no_cwe,tinyexr,['CWE-20'],tinyexr.h,10037,117,8,125,(1) YES
+197128,1,1,1,metadata_no_cwe,mruby,['CWE-125'],codegen.c,3787,115,8,123,(1) YES
+197135,1,0,0,metadata_no_cwe,linux,['CWE-703'],ccp-ops.c,6867,116,13,129,(2) NO: No security vulnerability.
+197142,1,1,1,metadata_no_cwe,tensorflow,['CWE-476'],quantize_op.cc,2320,115,8,123,(1) YES
+197185,1,0,0,metadata_no_cwe,FFmpeg,['CWE-252'],None,1566,113,8,121,(2) NO
+197223,1,0,0,metadata_no_cwe,njs,['CWE-787'],njs_module.c,1138,116,8,124,(2) NO
+197239,1,0,0,metadata_no_cwe,tensorflow,['CWE-20'],mkl_requantize_per_channel_op.cc,5096,120,8,128,(2) NO
+197242,1,1,1,metadata_no_cwe,tensorflow,['CWE-908'],svdf.cc,9667,114,8,122,(1) YES
+197247,1,0,0,metadata_no_cwe,tensorflow,['CWE-369'],None,2523,112,8,120,(2) NO
+197262,1,1,1,metadata_no_cwe,tensorflow,['CWE-125'],sparse_matmul_op.cc,4354,116,8,124,(1) YES
+197305,1,1,1,metadata_no_cwe,pjproject,['CWE-200'],rtcp_fb.c,839,116,8,124,(1) YES
+197318,1,0,0,metadata_no_cwe,tensorflow,['CWE-703'],session_ops.cc,418,114,8,122,(2) NO
+197326,1,1,1,metadata_no_cwe,tensorflow,['CWE-703'],einsum_op_impl.h,2300,116,8,124,(1) YES
+197359,1,0,0,metadata_no_cwe,tensorflow,['CWE-703'],auto_parallel.cc,4992,114,8,122,(2) NO
+197395,1,0,0,metadata_no_cwe,tensorflow,['CWE-369'],reverse_op.cc,1647,114,8,122,(2) NO
+197466,1,1,1,metadata_no_cwe,tensorflow,['CWE-476'],save_restore_tensor.cc,3703,115,8,123,(1) YES
+197499,1,1,1,metadata_no_cwe,gpac,['CWE-416'],field_decode.c,3101,115,8,123,(1) YES
+197511,1,1,1,metadata_no_cwe,libjpeg,['CWE-787'],hierarchicalbitmaprequester.cpp,1103,117,8,125,(1) YES
+197517,1,1,1,metadata_no_cwe,glewlwyd,['CWE-787'],webauthn.c,7137,117,8,125,(1) YES
+197518,1,1,1,metadata_no_cwe,tensorflow,['CWE-703'],quantize_and_dequantize_op.cc,3191,119,8,127,(1) YES
+197565,1,0,0,metadata_no_cwe,wolfMQTT,['CWE-787'],mqtt_client.c,7554,116,13,129,(2) NO: No security vulnerability.
+197593,1,0,0,metadata_no_cwe,njs,['CWE-416'],njs_function.c,1335,116,8,124,(2) NO
+197666,1,0,0,metadata_no_cwe,njs,['CWE-703'],njs_iterator.c,4494,116,13,129,(2) NO: No security vulnerability.
+197719,1,1,1,metadata_no_cwe,tensorflow,['CWE-125'],ragged_tensor_to_variant_op.cc,2111,118,8,126,(1) YES
+197748,1,1,1,metadata_no_cwe,tensorflow,['CWE-703'],array_ops.cc,2247,114,8,122,(1) YES
+197760,1,1,1,metadata_no_cwe,tensorflow,['CWE-125'],gather_nd.cc,1030,114,8,122,(1) YES
+197796,1,1,1,metadata_no_cwe,qemu,['CWE-703'],vnc.c,4407,115,8,123,(1) YES
+197801,1,0,0,metadata_no_cwe,tensorflow,['CWE-345'],tensor_slice_reader.h,1688,115,13,128,(2) NO: No security vulnerability.
+197824,1,1,1,metadata_no_cwe,gpac,['CWE-416'],memory_decoder.c,1090,115,8,123,(1) YES
+197826,1,1,1,metadata_no_cwe,tensorflow,['CWE-824'],constant_folding.cc,2329,115,8,123,(1) YES
+197893,1,0,0,metadata_no_cwe,tensorflow,['CWE-703'],gather.cc,568,113,13,126,(2) NO: No security vulnerability.
+197973,1,1,1,metadata_no_cwe,crun,['CWE-276'],exec.c,3429,114,8,122,(1) YES
+197998,1,1,1,metadata_no_cwe,tensorflow,['CWE-703'],unsorted_segment_join_op.cc,2727,117,8,125,(1) YES
+198010,1,1,1,metadata_no_cwe,radare2,['CWE-125'],bfile.c,7850,116,8,124,(1) YES
+198013,1,1,1,metadata_no_cwe,tensorflow,['CWE-703'],load_and_remap_matrix_op.cc,11099,118,8,126,(1) YES
+198116,1,1,1,metadata_no_cwe,tensorflow,['CWE-125'],sparse_reduce_op.cc,3054,115,8,123,(1) YES
+198117,1,1,1,metadata_no_cwe,tensorflow,['CWE-476'],fractional_avg_pool_op.cc,6758,116,8,124,(1) YES
+198161,1,1,1,metadata_no_cwe,ImageMagick,['CWE-125'],mat.c,16319,115,8,123,(1) YES
+198169,1,0,0,metadata_no_cwe,tensorflow,['CWE-369'],kernel_util.cc,237,114,8,122,(2) NO
+198239,1,1,1,metadata_no_cwe,barebox,['CWE-200'],password.c,1384,114,8,122,(1) YES
+198259,1,1,1,metadata_no_cwe,tensorflow,['CWE-369'],ragged_gather_op.cc,1647,117,8,125,(1) YES
+198282,1,0,0,metadata_no_cwe,tensorflow,['CWE-369'],reshape_util.cc,4587,114,8,122,(2) NO
+198350,1,0,0,metadata_no_cwe,owntone-server,['CWE-416'],misc.c,2487,116,8,124,(2) NO
+198374,1,1,1,metadata_no_cwe,tensorflow,['CWE-703'],lstm_ops.cc,5377,115,8,123,(1) YES
+198399,1,1,1,metadata_no_cwe,uftpd,['CWE-787'],ftpcmd.c,890,117,8,125,(1) YES
+198439,1,1,1,metadata_no_cwe,mruby,['CWE-288'],vm.c,50746,114,8,122,(1) YES
+198449,1,0,0,metadata_no_cwe,pjproject,['CWE-787'],stun_simple.c,1767,115,13,128,(2) NO: No security vulnerability.
+198452,1,1,1,metadata_no_cwe,tensorflow,['CWE-703'],comparisons.cc,1722,113,8,121,(1) YES
+198476,1,0,0,metadata_no_cwe,njs,['CWE-416'],njs_async.c,2245,116,13,129,(2) NO: No security vulnerability.
+198499,1,0,0,metadata_no_cwe,micro-ecc,['CWE-415'],uECC.c,2725,116,8,124,(2) NO
+198523,1,0,0,metadata_no_cwe,tensorflow,['CWE-416'],resource_ops.cc,1155,114,8,122,(2) NO
+198545,1,0,0,metadata_no_cwe,u-boot,['CWE-787'],i2c.c,2210,117,8,125,(2) NO
+198556,1,1,1,metadata_no_cwe,mruby,['CWE-703'],fiber.c,1634,114,8,122,(1) YES
+198566,1,0,0,metadata_no_cwe,libmobi,['CWE-787'],index.c,2248,115,13,128,(2) NO: No security vulnerability.
+198662,1,0,0,metadata_no_cwe,vim,['CWE-787'],ex_cmds.c,1308,115,8,123,(2) NO
+198692,1,1,1,metadata_no_cwe,ipsec,['CWE-125'],xfrm_policy.c,1471,116,8,124,(1) YES
+198695,1,1,1,metadata_no_cwe,MilkyTracker,['CWE-787'],LoaderS3M.cpp,8477,118,8,126,(1) YES
+198703,1,0,0,metadata_no_cwe,LibRaw,['CWE-189'],dcraw.c,1410,115,8,123,(2) NO
+198736,1,0,0,metadata_no_cwe,linux,['CWE-401'],rsi_91x_mgmt.c,638,119,8,127,(2) NO
+198743,1,1,1,metadata_no_cwe,LuaJIT,['CWE-125'],lj_err.c,1384,116,8,124,(1) YES
+198927,1,0,0,metadata_no_cwe,radare2,['CWE-125'],ne.c,1947,115,8,123,(2) NO
+198983,1,0,0,metadata_no_cwe,swtpm,['CWE-125'],swtpm_nvfile.c,1134,119,13,132,(2) NO: No security vulnerability.
+199159,1,0,0,metadata_no_cwe,linux,['CWE-362'],None,2961,112,8,120,(2) NO
+199712,1,1,1,metadata_no_cwe,linux,['CWE-415'],rtrs-clt.c,152,116,8,124,(1) YES
+199767,1,0,0,metadata_no_cwe,hexchat,['CWE-22'],inbound.c,2721,114,8,122,(2) NO
+199778,1,1,1,metadata_no_cwe,puma,['CWE-444'],http11_parser.c,19279,116,8,124,(1) YES
+199833,1,0,0,metadata_no_cwe,chafa,['CWE-476'],libnsgif.c,15134,117,13,130,(2) NO: No security vulnerability.
+199836,1,0,0,metadata_no_cwe,pjproject,['CWE-125'],None,308,113,8,121,(2) NO
+199841,1,1,1,metadata_no_cwe,radare2,['CWE-476'],bin_xnu_kernelcache.c,1665,119,8,127,(1) YES
+199851,1,0,0,metadata_no_cwe,vim,['CWE-787'],indent.c,5582,113,8,121,(2) NO
+199952,1,0,0,metadata_no_cwe,MilkyTracker,['CWE-787'],None,19139,114,8,122,(2) NO
+199984,1,0,0,metadata_no_cwe,vim,['CWE-416'],ex_cmds.c,31245,115,8,123,(2) NO
+200113,1,1,1,metadata_no_cwe,ImageMagick,['CWE-787'],mat.c,6670,115,8,123,(1) YES
+200157,1,1,1,metadata_no_cwe,exim,['CWE-264'],readconf.c,13171,115,8,123,(1) YES
+200163,1,0,0,metadata_no_cwe,linux,['CWE-200'],hid-elo.c,875,115,8,123,(2) NO
+200287,1,0,0,metadata_no_cwe,linux,['CWE-200'],socket.c,3449,113,8,121,(2) NO
+200305,1,1,1,metadata_no_cwe,ghostpdl,['CWE-787'],gdevpcx.c,1184,118,8,126,(1) YES
+200320,1,0,0,metadata_no_cwe,samba,['CWE-665'],vfs_default.c,8888,115,8,123,(2) NO
+200323,1,1,1,metadata_no_cwe,vim,['CWE-787'],spellsuggest.c,39409,114,8,122,(1) YES
+200379,1,0,0,metadata_no_cwe,radare2,['CWE-476'],ne.c,761,115,8,123,(2) NO
+200695,1,1,1,metadata_no_cwe,linux,['CWE-401'],fastrpc.c,674,115,8,123,(1) YES
+200781,1,0,0,metadata_no_cwe,ncurses,['CWE-787'],None,1139,113,8,121,(2) NO
+200895,1,1,1,metadata_no_cwe,vim,['CWE-703'],None,1117,112,8,120,(1) YES
+200934,1,0,0,metadata_no_cwe,libvirt,['CWE-212'],virstoragetest.c,1308,118,8,126,(2) NO
+200976,1,1,1,metadata_no_cwe,vim,['CWE-787'],None,895,112,8,120,(1) YES
+201007,1,0,0,metadata_no_cwe,pjproject,['CWE-787'],sdp.c,1492,115,8,123,(2) NO
+201343,1,0,0,metadata_no_cwe,linux,['CWE-416'],None,204,112,8,120,(2) NO
+201353,1,1,1,metadata_no_cwe,wireless-drivers,['CWE-415'],rsi_91x_usb.c,1417,120,8,128,(1) YES
+201382,1,1,1,metadata_no_cwe,gerbv,['CWE-787'],drill.c,7874,114,8,122,(1) YES
+201384,1,1,1,metadata_no_cwe,vim,['CWE-787'],None,762,112,8,120,(1) YES
+201451,1,1,1,metadata_no_cwe,ImageMagick6,['CWE-787'],cin.c,15672,116,8,124,(1) YES
+201872,1,1,1,metadata_no_cwe,gnutls,['CWE-310'],gnutls_handshake.c,4749,119,8,127,(1) YES
+201885,1,1,1,metadata_no_cwe,vim,['CWE-416'],regexp_bt.c,34450,114,8,122,(1) YES
+201913,1,0,0,metadata_no_cwe,libarchive,['CWE-59'],None,2210,113,13,126,(2) NO: No security vulnerability.
+201925,1,1,1,metadata_no_cwe,linux,['CWE-476'],vidtv_s302m.c,1188,117,8,125,(1) YES
+202081,1,1,1,metadata_no_cwe,vim,['CWE-787'],register.c,19946,113,8,121,(1) YES
+202082,1,1,1,metadata_no_cwe,radare2,['CWE-125'],class.c,1105,115,8,123,(1) YES
+202125,1,0,0,metadata_no_cwe,cairo,['CWE-787'],None,2943,112,8,120,(2) NO
+202256,1,0,0,metadata_no_cwe,qtbase,['CWE-787'],qpaintengineex.cpp,9164,117,8,125,(2) NO
+202276,1,0,0,metadata_no_cwe,vim,['CWE-787'],None,3371,112,8,120,(2) NO
+202304,1,1,1,metadata_no_cwe,vim,['CWE-122'],None,1179,112,8,120,(1) YES
+202392,1,0,0,metadata_no_cwe,php-src,['CWE-119'],gd_interpolation.c,978,116,8,124,(2) NO
+202659,1,0,0,metadata_no_cwe,net,['CWE-125'],ip6_gre.c,2044,116,8,124,(2) NO
+202677,1,0,0,metadata_no_cwe,qemu,['CWE-369'],None,1213,113,8,121,(2) NO
+202688,1,1,1,metadata_no_cwe,ghostpdl,['CWE-787'],gdevlprn.c,522,119,8,127,(1) YES
+202708,1,1,1,metadata_no_cwe,vim,['CWE-476'],buffer.c,576,113,8,121,(1) YES
+202719,1,1,1,metadata_no_cwe,linux,['CWE-704'],sm_make_chunk.c,1222,115,8,123,(1) YES
+202748,1,1,1,metadata_no_cwe,ImageMagick,['CWE-772'],tga.c,13504,116,8,124,(1) YES
+202783,1,0,0,metadata_no_cwe,php-src,['CWE-119'],zend_strtod.c,349,116,8,124,(2) NO
+202822,1,1,1,metadata_no_cwe,ghostpdl,['CWE-787'],zstring.c,1080,116,8,124,(1) YES
+202888,1,0,0,metadata_no_cwe,linux,['CWE-787'],esp4.c,1898,114,8,122,(2) NO
+202889,1,1,1,metadata_no_cwe,linux,['CWE-787'],esp6.c,1844,114,8,122,(1) YES
+202892,1,0,0,metadata_no_cwe,pure-ftpd,['CWE-434'],ftpd.c,7610,116,8,124,(2) NO
+202943,1,0,0,metadata_no_cwe,lua,['CWE-787'],ldebug.c,434,114,8,122,(2) NO
+203614,1,1,1,metadata_no_cwe,linux,['CWE-703'],pxa3xx-gcu.c,1582,118,8,126,(1) YES
+203902,1,1,1,metadata_no_cwe,vim,['CWE-703'],scriptfile.c,2749,114,8,122,(1) YES
+204016,1,0,0,metadata_no_cwe,squashfs-tools,['CWE-200'],None,3355,114,8,122,(2) NO
+204017,1,0,0,metadata_no_cwe,squashfs-tools,['CWE-200'],None,3363,114,8,122,(2) NO
+204019,1,0,0,metadata_no_cwe,squashfs-tools,['CWE-200'],None,3071,114,8,122,(2) NO
+204032,1,0,0,metadata_no_cwe,linux,['CWE-772'],virtio_bt.c,348,115,13,128,(2) NO: No security vulnerability.
+204036,1,1,1,metadata_no_cwe,net,['CWE-787'],hw_atl_utils.c,1016,116,8,124,(1) YES
+204073,1,1,1,metadata_no_cwe,shapelib,['CWE-415'],shpsort.c,737,117,8,125,(1) YES
+204115,1,0,0,metadata_no_cwe,openldap,['CWE-617'],schema_init.c,3567,115,13,128,(2) NO: No security vulnerability.
+204137,1,0,0,metadata_no_cwe,poppler,['CWE-369'],None,6800,113,8,121,(2) NO
+204195,1,0,0,metadata_no_cwe,pjproject,['CWE-125'],None,558,113,13,126,(2) NO: No security vulnerability.
+204243,1,1,1,metadata_no_cwe,vim,['CWE-787'],eval.c,6093,113,8,121,(1) YES
+204278,1,0,0,metadata_no_cwe,firejail,['CWE-94'],None,876,114,8,122,(2) NO
+204351,1,1,1,metadata_no_cwe,squirrel,['CWE-125'],sqclass.cpp,1824,114,8,122,(1) YES
+204412,1,0,0,metadata_no_cwe,bpf,['CWE-787'],ringbuf.c,1123,115,13,128,(2) NO: No security vulnerability.
+204425,1,0,0,metadata_no_cwe,frr,['CWE-125'],bgp_packet.c,2808,116,8,124,(2) NO
+204438,1,1,1,metadata_no_cwe,ImageMagick,['CWE-617'],operation.c,16612,115,8,123,(1) YES
+204495,1,0,0,metadata_no_cwe,linux,['CWE-193'],cancel.c,636,113,8,121,(2) NO
+204534,1,0,0,metadata_no_cwe,admesh,['CWE-125'],connect.c,2388,114,13,127,(2) NO: No security vulnerability.
+204535,1,1,1,metadata_no_cwe,admesh,['CWE-125'],connect.c,620,114,8,122,(1) YES
+204544,1,0,0,metadata_no_cwe,linux,['CWE-416'],em28xx-cards.c,8029,117,8,125,(2) NO
+204814,1,0,0,metadata_no_cwe,linux,['CWE-703'],None,827,112,8,120,(2) NO
+204830,1,1,1,metadata_no_cwe,linux,['CWE-200'],namespace.c,422,113,8,121,(1) YES
+205630,1,1,1,metadata_no_cwe,linux,['CWE-94'],io_uring.c,1193,115,8,123,(1) YES
+205734,1,0,0,metadata_no_cwe,rizin,['CWE-787'],marshal.c,1196,114,8,122,(2) NO
+205736,1,0,0,metadata_no_cwe,linux,['CWE-834'],fuse_i.h,110,114,8,122,(2) NO
+205806,1,0,0,metadata_no_cwe,Singular,['CWE-269'],None,1794,112,8,120,(2) NO
+205823,1,0,0,metadata_no_cwe,ovs,['CWE-401'],ipf.c,991,114,8,122,(2) NO
+206025,1,0,0,metadata_no_cwe,evolution-data-server,['CWE-200'],None,295,114,8,122,(2) NO
+206043,1,1,1,metadata_no_cwe,gimp,['CWE-125'],file-gbr.c,7841,116,8,124,(1) YES
+206044,1,0,0,metadata_no_cwe,tigervnc,['CWE-672'],None,2972,114,8,122,(2) NO
+206262,1,1,1,metadata_no_cwe,vim,['CWE-787'],ex_docmd.c,9072,115,8,123,(1) YES
+206273,1,0,0,metadata_no_cwe,radare2,['CWE-416'],None,5477,114,8,122,(2) NO
+206417,1,1,1,metadata_no_cwe,vim,['CWE-787'],edit.c,10082,113,8,121,(1) YES
+206555,1,1,1,metadata_no_cwe,php-src,['CWE-119'],gd_io_dp.c,400,116,8,124,(1) YES
+206588,1,0,0,metadata_no_cwe,php-src,['CWE-119'],None,1594,113,13,126,(2) NO: No security vulnerability.
+206625,1,1,1,metadata_no_cwe,raptor,['CWE-787'],raptor_xml_writer.c,8295,117,8,125,(1) YES
+206639,1,1,1,metadata_no_cwe,linux,['CWE-703'],nf_tables_api.c,1465,115,8,123,(1) YES
+206670,1,0,0,metadata_no_cwe,nbdkit,['CWE-924'],protocol-handshake-newstyle.c,18843,119,8,127,(2) NO
+206676,1,1,1,metadata_no_cwe,vim,['CWE-122'],move.c,6235,113,8,121,(1) YES
+206677,1,0,0,metadata_no_cwe,vim,['CWE-703'],filepath.c,5339,113,13,126,(2) NO: No security vulnerability.
+206771,1,0,0,metadata_no_cwe,qcad,['CWE-191'],dl_dxf.cpp,1260,116,13,129,(2) NO: No security vulnerability.
+206781,1,0,0,metadata_no_cwe,linux,['CWE-476'],inode.c,2044,113,8,121,(2) NO
+206815,1,1,1,metadata_no_cwe,ImageMagick,['CWE-125'],quantize.c,5146,116,8,124,(1) YES
+206845,1,0,0,metadata_no_cwe,linux,['CWE-125'],control.c,352,113,13,126,(2) NO: No security vulnerability.
+206942,1,1,1,metadata_no_cwe,vim,['CWE-125'],typval.c,3520,114,8,122,(1) YES
+206946,1,0,0,metadata_no_cwe,jasper,['CWE-703'],jasper.c,4177,115,8,123,(2) NO
+207068,1,1,1,metadata_no_cwe,linux,['CWE-120'],rpadlpar_sysfs.c,422,118,8,126,(1) YES
+207069,1,0,0,metadata_no_cwe,linux,['CWE-120'],rpadlpar_sysfs.c,415,118,8,126,(2) NO
+207150,1,0,0,metadata_no_cwe,squirrel,['CWE-703'],sqbaselib.cpp,600,115,8,123,(2) NO
+207461,1,1,1,metadata_no_cwe,autotrace,['CWE-787'],input-bmp.c,10784,117,8,125,(1) YES
+207520,1,0,0,metadata_no_cwe,rizin,['CWE-787'],dwarf.c,1456,114,8,122,(2) NO
+207700,1,1,1,metadata_no_cwe,EternalTerminal,['CWE-362'],UserTerminalRouter.cpp,225,116,8,124,(1) YES
+207703,1,0,0,metadata_no_cwe,EternalTerminal,['CWE-362'],PipeSocketHandler.cpp,823,116,8,124,(2) NO
+207719,1,0,0,metadata_no_cwe,vim,['CWE-787'],edit.c,569,113,13,126,(2) NO: No security vulnerability.
+207753,1,0,0,metadata_no_cwe,linux,['CWE-284'],iov_iter.c,988,115,8,123,(2) NO
+207754,1,1,1,metadata_no_cwe,linux,['CWE-284'],iov_iter.c,1062,115,8,123,(1) YES
+207755,1,0,0,metadata_no_cwe,php-src,['CWE-200'],openssl.c,2116,115,8,123,(2) NO
+207780,1,0,0,metadata_no_cwe,radare2,['CWE-703'],None,4121,114,8,122,(2) NO
+207803,1,0,0,metadata_no_cwe,linux,['CWE-200'],random.c,1703,113,8,121,(2) NO
+207804,1,0,0,metadata_no_cwe,linux,['CWE-200'],timer.c,384,113,8,121,(2) NO
+207990,1,0,0,metadata_no_cwe,pcre2,['CWE-703'],pcre2_jit_compile.c,4749,120,13,133,(2) NO: No security vulnerability.
+208107,1,0,0,metadata_no_cwe,linux,['CWE-703'],xfrm_policy.c,913,115,8,123,(2) NO
+208115,1,1,1,metadata_no_cwe,linux,['CWE-703'],xilinx_emaclite.c,2285,117,8,125,(1) YES
+208140,1,0,0,metadata_no_cwe,util-linux,['CWE-200'],mount.c,7619,114,8,122,(2) NO
+208370,1,1,1,metadata_no_cwe,vim,['CWE-787'],edit.c,2208,113,8,121,(1) YES
+208411,1,1,1,metadata_no_cwe,vim,['CWE-787'],term.c,16023,113,8,121,(1) YES
+208505,1,0,0,metadata_no_cwe,tor,['CWE-399'],routerparse.c,17737,114,13,127,(2) NO: No security vulnerability.
+208506,1,0,0,metadata_no_cwe,heimdal,['CWE-476'],None,31845,113,13,126,(2) NO: No security vulnerability.
+208522,1,1,1,metadata_no_cwe,unbound,['CWE-190'],dnscrypt.c,2520,115,8,123,(1) YES
+208525,1,1,1,metadata_no_cwe,vim,['CWE-787'],ex_getln.c,1598,115,8,123,(1) YES
+208535,1,1,1,metadata_no_cwe,rizin,['CWE-415'],bin_qnx.c,148,116,8,124,(1) YES
+208654,1,1,1,metadata_no_cwe,php-src,['CWE-416'],snmp.c,4635,115,8,123,(1) YES
+208680,1,0,0,metadata_no_cwe,radare2,['CWE-416'],None,13139,114,8,122,(2) NO
+208912,1,1,1,metadata_no_cwe,vim,['CWE-416'],ex_getln.c,25369,115,8,123,(1) YES
+208987,1,0,0,metadata_no_cwe,MilkyTracker,['CWE-416'],PlayerGeneric.cpp,240,116,8,124,(2) NO
+209026,1,0,0,metadata_no_cwe,libvirt,['CWE-119'],node_device_conf.c,634,116,13,129,(2) NO: No security vulnerability.
+209102,1,1,1,metadata_no_cwe,vim,['CWE-703'],mouse.c,22314,113,8,121,(1) YES
+209801,1,0,0,metadata_no_cwe,mujs,['CWE-476'],jsdump.c,205,115,8,123,(2) NO
+209931,1,1,1,metadata_no_cwe,FreeRDP,['CWE-190'],video_main.c,1581,116,8,124,(1) YES
+209955,1,0,0,metadata_no_cwe,linux,['CWE-476'],trans.c,5021,113,8,121,(2) NO
+210050,1,0,0,metadata_no_cwe,lua,['CWE-125'],lparser.c,467,114,8,122,(2) NO
+210090,1,0,0,metadata_no_cwe,file,['CWE-787'],cdf.c,3962,114,8,122,(2) NO
+210203,1,1,1,metadata_no_cwe,linux,['CWE-787'],seq_file.c,94,114,8,122,(1) YES
+210204,1,1,1,metadata_no_cwe,linux,['CWE-362'],flow_netlink.c,1036,115,8,123,(1) YES
+210206,1,1,1,metadata_no_cwe,squid,['CWE-400'],gopher.cc,11324,114,8,122,(1) YES
+210252,1,1,1,metadata_no_cwe,ImageMagick,['CWE-787'],cin.c,15720,115,8,123,(1) YES
+210271,1,1,1,metadata_no_cwe,vim,['CWE-787'],spellfile.c,2143,114,8,122,(1) YES
+210273,1,0,0,metadata_no_cwe,mongo,['CWE-617'],pipeline_d.cpp,10193,114,8,122,(2) NO
+210278,1,1,1,metadata_no_cwe,unicorn,['CWE-476'],exec.c,402,113,8,121,(1) YES
+210282,1,1,1,metadata_no_cwe,qemu,['CWE-125'],i2c-ddc.c,156,118,8,126,(1) YES
+210283,1,1,1,metadata_no_cwe,dpdk,['CWE-703'],vhost_user.c,3022,116,8,124,(1) YES
+210284,1,0,0,metadata_no_cwe,dpdk,['CWE-703'],vhost_user.c,3121,116,8,124,(2) NO
+210393,1,0,0,metadata_no_cwe,vim,['CWE-416'],arglist.c,7558,114,8,122,(2) NO
+210420,1,0,0,metadata_no_cwe,ghostpdl,['CWE-119'],gxht_thresh.c,758,117,8,125,(2) NO
+210453,1,1,1,metadata_no_cwe,ghostpdl,['CWE-120'],gdev3852.c,4521,118,8,126,(1) YES
+210484,1,0,0,metadata_no_cwe,linux,['CWE-125'],io_uring.c,2805,115,8,123,(2) NO
+210520,1,0,0,metadata_no_cwe,vim,['CWE-125'],indent.c,3834,113,8,121,(2) NO
+210527,1,1,1,metadata_no_cwe,linux,['CWE-415'],mcba_usb.c,1600,115,8,123,(1) YES
+210551,1,1,1,metadata_no_cwe,oniguruma,['CWE-125'],regcomp.c,3190,116,8,124,(1) YES
+210570,1,0,0,metadata_no_cwe,radare2,['CWE-787'],bin_symbols.c,2594,116,13,129,(2) NO: No security vulnerability.
+210571,1,0,0,metadata_no_cwe,linux,['CWE-401'],cx23888-ir.c,1324,116,8,124,(2) NO
+210620,1,0,0,metadata_no_cwe,linux,['CWE-415'],virtio_rpmsg_bus.c,751,118,13,131,(2) NO: No security vulnerability.
+210636,1,1,1,metadata_no_cwe,linux,['CWE-416'],mkiss.c,702,114,8,122,(1) YES
+210669,1,0,0,metadata_no_cwe,ImageMagick6,['CWE-401'],bmp.c,34566,116,8,124,(2) NO
+210692,1,1,1,metadata_no_cwe,ImageMagick6,['CWE-835'],bmp.c,34742,116,8,124,(1) YES
+210700,1,0,0,metadata_no_cwe,squashfs-tools,['CWE-22'],None,3282,114,8,122,(2) NO
+210701,1,0,0,metadata_no_cwe,squashfs-tools,['CWE-22'],None,3285,114,8,122,(2) NO
+210702,1,0,0,metadata_no_cwe,squashfs-tools,['CWE-22'],None,2982,114,8,122,(2) NO
+210834,1,1,1,metadata_no_cwe,xserver,['CWE-863'],log.c,1122,114,8,122,(1) YES
+210866,1,1,1,metadata_no_cwe,xserver,['CWE-191'],xkbSwap.c,2399,116,8,124,(1) YES
+210887,1,1,1,metadata_no_cwe,qemu,['CWE-835'],e1000.c,491,116,8,124,(1) YES
+210896,1,1,1,metadata_no_cwe,spice,['CWE-193'],memslot.c,1191,114,8,122,(1) YES
+210904,1,0,0,metadata_no_cwe,curl,['CWE-125'],main.c,789,113,13,126,(2) NO: No security vulnerability.
+210910,1,1,1,metadata_no_cwe,vim,['CWE-200'],drawscreen.c,3475,114,8,122,(1) YES
+210928,1,0,0,metadata_no_cwe,linux,['CWE-476'],inode.c,900,113,8,121,(2) NO
+210944,1,1,1,metadata_no_cwe,vim,['CWE-416'],ex_docmd.c,22933,115,8,123,(1) YES
+211090,1,1,1,metadata_no_cwe,cifs-utils,['CWE-20'],mount.cifs.c,2509,117,8,125,(1) YES
+211102,1,0,0,metadata_no_cwe,file-roller,['CWE-22'],None,7299,114,8,122,(2) NO
+211103,1,0,0,metadata_no_cwe,file-roller,['CWE-22'],None,1690,114,8,122,(2) NO
+211110,1,1,1,metadata_no_cwe,libtiff,['CWE-787'],tif_lzw.c,5119,117,8,125,(1) YES
+211113,1,0,0,metadata_no_cwe,linux,['CWE-416'],atusb.c,534,114,8,122,(2) NO
+211126,1,0,0,metadata_no_cwe,libmobi,['CWE-125'],index.c,6639,115,13,128,(2) NO: No security vulnerability.
+211136,1,1,1,metadata_no_cwe,rizin,['CWE-787'],dyldcache.c,2717,116,8,124,(1) YES
+211179,1,0,0,metadata_no_cwe,exiv2,['CWE-125'],image.cpp,8217,115,8,123,(2) NO
+211181,1,1,1,metadata_no_cwe,php-src,['CWE-17'],apprentice.c,2835,114,8,122,(1) YES
+211471,1,1,1,metadata_no_cwe,frr,['CWE-125'],bgp_packet.c,2993,116,8,124,(1) YES
+211473,1,1,1,metadata_no_cwe,gdk-pixbuf,['CWE-189'],io-xbm.c,2983,119,8,127,(1) YES
+211506,1,0,0,metadata_no_cwe,zlib,['CWE-787'],inflate.c,25995,114,8,122,(2) NO
+211563,1,1,1,metadata_no_cwe,vim,['CWE-122'],None,1349,112,8,120,(1) YES
+211567,1,1,1,metadata_no_cwe,clamav-devel,['CWE-189'],sis.c,466,115,8,123,(1) YES
+211695,1,1,1,metadata_no_cwe,vim,['CWE-416'],regexp.c,1662,113,8,121,(1) YES
+211699,1,1,1,metadata_no_cwe,gnulib,['CWE-119'],glob.c,28165,115,8,123,(1) YES
+211700,1,0,0,metadata_no_cwe,linux,['CWE-120'],se.c,1407,113,8,121,(2) NO
+211773,1,0,0,metadata_no_cwe,ntp,['CWE-20'],ntpq.c,2313,115,8,123,(2) NO
+211785,1,1,1,metadata_no_cwe,jasper,['CWE-20'],jpc_enc.c,11802,116,8,124,(1) YES
+211842,1,1,1,metadata_no_cwe,vim,['CWE-787'],indent.c,5974,113,8,121,(1) YES
+211845,1,0,0,metadata_no_cwe,ImageMagick6,['CWE-787'],tiff.c,34484,117,8,125,(2) NO
+211868,1,0,0,metadata_no_cwe,nf,['CWE-269'],nf_tables_offload.c,1118,116,8,124,(2) NO
+211877,1,0,0,metadata_no_cwe,libexpat,['CWE-668'],xmlparse.c,5086,116,8,124,(2) NO
+211915,1,1,1,metadata_no_cwe,jasper,['CWE-125'],jp2_dec.c,9385,116,8,124,(1) YES
+212083,1,1,1,metadata_no_cwe,linux,['CWE-703'],i2c-ismt.c,6487,118,8,126,(1) YES
+212144,1,1,1,metadata_no_cwe,libmobi,['CWE-119'],read.c,1932,115,8,123,(1) YES
+212152,1,1,1,metadata_no_cwe,bash,['CWE-787'],shell.c,494,113,8,121,(1) YES
+212339,1,1,1,metadata_no_cwe,icecast-server,['CWE-119'],auth_url.c,1092,116,8,124,(1) YES
+212407,1,0,0,metadata_no_cwe,varnish-cache,['CWE-703'],cache_http.c,295,116,8,124,(2) NO
+212414,1,0,0,metadata_no_cwe,linux,['CWE-416'],cls_api.c,5619,114,8,122,(2) NO
+212433,1,1,1,metadata_no_cwe,vim,['CWE-416'],tag.c,16686,113,8,121,(1) YES
+212436,1,0,0,metadata_no_cwe,linux,['CWE-787'],stackmap.c,532,114,13,127,(2) NO: No security vulnerability.
+212818,1,0,0,metadata_no_cwe,pjproject,['CWE-191'],None,698,113,13,126,(2) NO: No security vulnerability.
+212822,1,0,0,metadata_no_cwe,ghostpdl,['CWE-787'],None,501,114,8,122,(2) NO
+212829,1,1,1,metadata_no_cwe,php-src,['CWE-476'],wddx.c,3806,116,8,124,(1) YES
+212834,1,0,0,metadata_no_cwe,rsyslog,['CWE-190'],imptcp.c,4516,117,8,125,(2) NO
+212857,1,1,1,metadata_no_cwe,vim,['CWE-416'],quickfix.c,2622,114,8,122,(1) YES
+212871,1,0,0,metadata_no_cwe,newsbeuter,['CWE-787'],controller.cpp,1385,115,8,123,(2) NO
+212927,1,1,1,metadata_no_cwe,qemu,['CWE-835'],sungem.c,320,115,8,123,(1) YES
+212934,1,0,0,metadata_no_cwe,cyrus-imapd,['CWE-732'],annotate.c,3456,117,13,130,(2) NO: No security vulnerability.
+212955,1,1,1,metadata_no_cwe,linux,['CWE-476'],af_ax25.c,1838,115,8,123,(1) YES
+213037,1,1,1,metadata_no_cwe,php-src,['CWE-125'],mbfilter_big5.c,2277,117,8,125,(1) YES
+213075,1,0,0,metadata_no_cwe,linux,['CWE-416'],main.c,369,113,8,121,(2) NO
+213370,1,0,0,metadata_no_cwe,glib,['CWE-754'],gsocketclient.c,3733,116,8,124,(2) NO
+213515,1,1,1,metadata_no_cwe,vim,['CWE-787'],spellsuggest.c,6540,114,8,122,(1) YES
+213528,1,0,0,metadata_no_cwe,linux,['CWE-416'],cgroup-v1.c,2176,116,8,124,(2) NO
+213998,1,0,0,metadata_no_cwe,libtpms,['CWE-119'],Object.c,482,115,8,123,(2) NO
+214003,1,1,1,metadata_no_cwe,libvncserver,['CWE-787'],corre.c,836,116,8,124,(1) YES
+214124,1,1,1,metadata_no_cwe,chafa,['CWE-125'],lzw.c,2279,115,8,123,(1) YES
+214160,1,0,0,metadata_no_cwe,linux,['CWE-476'],composite.c,11322,113,13,126,(2) NO: No security vulnerability.
+214276,1,0,0,metadata_no_cwe,linux,['CWE-20'],crypto.c,1300,113,8,121,(2) NO
+214282,1,0,0,metadata_no_cwe,radare2,['CWE-787'],None,2479,114,8,122,(2) NO
+214335,1,0,0,metadata_no_cwe,ceph,['CWE-79'],rgw_rest_s3.cc,7013,118,13,131,(2) NO: No security vulnerability.
+214336,1,0,0,metadata_no_cwe,linux,['CWE-362'],af_key.c,745,114,8,122,(2) NO
+214339,1,0,0,metadata_no_cwe,linux,['CWE-787'],book3s_rtas.c,1527,117,8,125,(2) NO
+214358,1,1,1,metadata_no_cwe,clamav-devel,['CWE-20'],mspack.c,5074,117,8,125,(1) YES
+214364,1,0,0,metadata_no_cwe,php-src,['CWE-119'],simplestring.c,833,115,8,123,(2) NO
+214909,1,0,0,metadata_no_cwe,linux,['CWE-401'],conn.c,2338,113,8,121,(2) NO
+214948,1,1,1,metadata_no_cwe,nagioscore,['CWE-476'],query-handler.c,776,116,8,124,(1) YES
+214997,1,1,1,metadata_no_cwe,liblouis,['CWE-787'],compileTranslationTable.c,49196,117,8,125,(1) YES
+215038,1,1,1,metadata_no_cwe,gst-plugins-good,['CWE-125'],gstflxdec.c,5721,119,8,127,(1) YES
+215073,1,0,0,metadata_no_cwe,linux,['CWE-269'],cgroup-v1.c,503,116,8,124,(2) NO
+215103,1,0,0,metadata_no_cwe,mongo,['CWE-617'],None,9585,112,8,120,(2) NO
+215142,1,0,0,metadata_no_cwe,open62541,['CWE-703'],check_securechannel.c,500,117,13,130,(2) NO: No security vulnerability.
+215188,1,0,0,metadata_no_cwe,libmobi,['CWE-787'],None,683,114,8,122,(2) NO
+215262,1,1,1,metadata_no_cwe,qemu,['CWE-835'],cadence_gem.c,6042,116,8,124,(1) YES
+215264,1,0,0,metadata_no_cwe,perl5,['CWE-120'],regcomp.c,81477,115,8,123,(2) NO
+215312,1,0,0,metadata_no_cwe,linux-2.6,['CWE-20'],None,1821,116,8,124,(2) NO
+215374,1,0,0,metadata_no_cwe,linux-2.6,['CWE-189'],None,751,116,8,124,(2) NO
+215391,1,0,0,metadata_no_cwe,linux-2.6,['CWE-20'],None,403,116,8,124,(2) NO
+215399,1,0,0,metadata_no_cwe,linux-2.6,['CWE-119'],None,592,116,8,124,(2) NO
+215400,1,0,0,metadata_no_cwe,linux-2.6,['CWE-20'],None,2869,116,8,124,(2) NO
+215549,1,0,0,metadata_no_cwe,gzip,['CWE-189'],None,4759,112,8,120,(2) NO
+215921,1,0,0,metadata_no_cwe,grep,['CWE-119'],None,2320,112,13,125,(2) NO: No security vulnerability.
+215948,1,0,0,metadata_no_cwe,nettle,['CWE-310'],None,1312,113,8,121,(2) NO
+216027,1,0,0,metadata_no_cwe,tar,['CWE-476'],None,3123,112,8,120,(2) NO
+216126,1,0,0,metadata_no_cwe,openssl,['CWE-20'],None,1641,113,8,121,(2) NO
+216202,1,0,0,metadata_no_cwe,libssh,['CWE-399'],None,2415,113,8,121,(2) NO
+216515,1,0,0,metadata_no_cwe,openssl,['CWE-362'],None,2379,113,13,126,(2) NO: No security vulnerability.
+216637,1,0,0,metadata_no_cwe,guile,['CWE-275'],None,729,113,8,121,(2) NO
+216654,1,0,0,metadata_no_cwe,core,['CWE-20'],None,4342,112,8,120,(2) NO
+216701,1,0,0,metadata_no_cwe,libtiff,['CWE-770'],None,2050,114,8,122,(2) NO
+216726,1,0,0,metadata_no_cwe,openssl,['CWE-327'],None,3458,113,8,121,(2) NO
+216767,1,0,0,metadata_no_cwe,core,['CWE-835'],None,1865,112,8,120,(2) NO
+216800,1,0,0,metadata_no_cwe,core,['CWE-125'],None,330,112,8,120,(2) NO
+216812,1,0,0,metadata_no_cwe,openssl,['CWE-476'],None,95,113,8,121,(2) NO
+216861,1,0,0,metadata_no_cwe,openssl,['CWE-125'],None,10741,113,8,121,(2) NO
+216903,1,0,0,metadata_no_cwe,server,['CWE-476'],None,3525,112,13,125,(2) NO: No security vulnerability.
+216906,1,0,0,metadata_no_cwe,server,['CWE-400'],None,155,112,8,120,(2) NO
+216938,1,0,0,metadata_no_cwe,server,['CWE-416'],None,15070,112,8,120,(2) NO
+216945,1,0,0,metadata_no_cwe,server,['CWE-617'],None,1828,112,8,120,(2) NO
+216946,1,0,0,metadata_no_cwe,server,['CWE-416'],None,402,112,13,125,(2) NO: No security vulnerability.
+216965,1,0,0,metadata_no_cwe,server,['CWE-617'],None,5013,112,8,120,(2) NO
+217176,1,0,0,metadata_no_cwe,monit,['CWE-79'],None,1566,112,8,120,(2) NO
+217459,1,0,0,metadata_no_cwe,JUCE,['CWE-59'],None,2024,113,8,121,(2) NO
+217547,1,0,0,metadata_no_cwe,libMeshb,['CWE-120'],None,6479,114,8,122,(2) NO
+217551,1,0,0,metadata_no_cwe,elfspirit,['CWE-125'],None,37504,114,8,122,(2) NO
+217569,0,1,0,metadata_no_cwe,ImageMagick6,['CWE-704'],property.c,28274,116,8,124,(1) YES
+218785,0,1,0,metadata_no_cwe,ImageMagick6,['CWE-190'],psd.c,1718,117,8,125,(1) YES
+218852,0,0,1,metadata_no_cwe,tensorflow,['CWE-401'],immutable_executor_state.cc,6781,115,13,128,(2) NO: No security vulnerability.
+218933,0,1,0,metadata_no_cwe,tensorflow,['CWE-476'],loader_util.cc,1491,114,8,122,(1) YES
+219032,0,0,1,metadata_no_cwe,tensorflow,['CWE-617'],constant_folding.cc,2762,115,8,123,(2) NO
+219912,0,1,0,metadata_no_cwe,gpac,['CWE-476'],hint_track.c,466,115,8,123,(1) YES
+219931,0,0,1,metadata_no_cwe,tensorflow,['CWE-617'],constant_folding.cc,3008,115,8,123,(2) NO
+219947,0,0,1,metadata_no_cwe,glewlwyd,['CWE-287'],webservice.c,9884,116,8,124,(2) NO
+220021,0,1,0,metadata_no_cwe,tensorflow,['CWE-190'],sparse_tensors_map_ops.cc,5527,117,8,125,(1) YES
+220100,0,0,1,metadata_no_cwe,linux,['CWE-909'],nfs4file.c,1686,116,8,124,(2) NO
+220168,0,1,0,metadata_no_cwe,tensorflow,['CWE-401'],decode_image_op.cc,5125,115,8,123,(1) YES
+220201,0,1,0,metadata_no_cwe,tensorflow,['CWE-125'],graph.cc,2328,113,8,121,(1) YES
+220442,0,0,1,metadata_no_cwe,mruby,['CWE-476'],array.c,878,114,8,122,(2) NO
+220449,0,1,0,metadata_no_cwe,tensorflow,['CWE-354'],conv_ops.cc,4232,114,8,122,(1) YES
+220463,0,0,1,metadata_no_cwe,tensorflow,['CWE-476'],xla_platform_info.cc,2769,116,8,124,(2) NO
+220804,0,1,0,metadata_no_cwe,tensorflow,['CWE-787'],count_ops.cc,2361,114,8,122,(1) YES
+220841,0,0,1,metadata_no_cwe,tensorflow,['CWE-369'],common.h,2700,113,8,121,(2) NO
+220909,0,0,1,metadata_no_cwe,tensorflow,['CWE-617'],None,1185,112,8,120,(2) NO
+220924,0,0,1,metadata_no_cwe,gpac,['CWE-476'],None,16655,113,8,121,(2) NO
+221079,0,1,0,metadata_no_cwe,gpac,['CWE-120'],av_parsers.c,1731,116,8,124,(1) YES
+221123,0,1,0,metadata_no_cwe,tensorflow,['CWE-416'],decode_image_op.cc,4663,115,8,123,(1) YES
+221160,0,1,0,metadata_no_cwe,gpac,['CWE-415'],descriptors.c,2707,114,8,122,(1) YES
+221413,0,0,1,metadata_no_cwe,linux,['CWE-862'],None,1161,112,8,120,(2) NO
+221428,0,0,1,metadata_no_cwe,tensorflow,['CWE-617'],tensor.cc,1679,113,8,121,(2) NO
+221631,0,0,1,metadata_no_cwe,tensorflow,['CWE-754'],tf_cpurt_symbolic_shape_optimization.cc,2739,120,13,133,(2) NO: No security vulnerability.
+221651,0,0,1,metadata_no_cwe,hermes,['CWE-843'],IREval.cpp,2034,116,8,124,(2) NO
+221678,0,1,0,metadata_no_cwe,e2guardian,['CWE-295'],Socket.cpp,3911,115,8,123,(1) YES
+222666,0,0,1,metadata_no_cwe,tmate-ssh-server,['CWE-362'],tmate-main.c,2025,119,8,127,(2) NO
+222737,0,1,0,metadata_no_cwe,pjproject,['CWE-125'],rtcp_xr.c,7585,117,8,125,(1) YES
+222739,0,1,0,metadata_no_cwe,gpac,['CWE-476'],av_parsers.c,4475,116,8,124,(1) YES
+222906,0,0,1,metadata_no_cwe,tensorflow,['CWE-787'],graph_properties.cc,601,114,8,122,(2) NO
+222925,0,0,1,metadata_no_cwe,tensorflow,['CWE-617'],None,2055,112,8,120,(2) NO
+223089,0,1,0,metadata_no_cwe,ImageMagick,['CWE-190'],pcl.c,8029,115,8,123,(1) YES
+223368,0,1,0,metadata_no_cwe,pcre2,['CWE-125'],pcre2_jit_compile.c,22737,120,8,128,(1) YES
+223728,0,0,1,metadata_no_cwe,tensorflow,['CWE-476'],constant_folding.cc,4724,115,8,123,(2) NO
+224153,0,0,1,metadata_no_cwe,tensorflow,['CWE-908'],assign_op.h,3946,114,8,122,(2) NO
+224154,0,0,1,metadata_no_cwe,mruby,['CWE-476'],None,1318,113,8,121,(2) NO
+224181,0,1,0,metadata_no_cwe,tensorflow,['CWE-843'],map_stage_op.cc,1181,115,8,123,(1) YES
+224192,0,1,0,metadata_no_cwe,mruby,['CWE-125'],codegen.c,3896,115,8,123,(1) YES
+224208,0,1,0,metadata_no_cwe,uWebSockets,['CWE-787'],TopicTree.h,2571,116,8,124,(1) YES
+224277,0,0,1,metadata_no_cwe,flatpak,['CWE-20'],flatpak-run.c,10472,116,8,124,(2) NO
+224281,0,0,1,metadata_no_cwe,squid,['CWE-400'],gopher.cc,11400,114,8,122,(2) NO
+224472,0,1,0,metadata_no_cwe,gpac,['CWE-415'],load_text.c,1840,115,8,123,(1) YES
+224570,0,0,1,metadata_no_cwe,tensorflow,['CWE-843'],common_shape_fns.cc,3248,116,8,124,(2) NO
+224728,0,1,0,metadata_no_cwe,gpac,['CWE-415'],box_code_meta.c,2479,116,8,124,(1) YES
+224862,0,1,0,metadata_no_cwe,tensorflow,['CWE-190'],sparse_dense_binary_op_shared.cc,6906,117,8,125,(1) YES
+224891,0,1,0,metadata_no_cwe,tensorflow,['CWE-125'],fractional_avg_pool_op.cc,7747,116,8,124,(1) YES
+224964,0,1,0,metadata_no_cwe,flatpak,['CWE-276'],flatpak-dir.c,3627,116,8,124,(1) YES
+225062,0,0,1,metadata_no_cwe,postgres,['CWE-522'],fe-connect.c,47132,114,8,122,(2) NO
+225086,0,1,0,metadata_no_cwe,tensorflow,['CWE-617'],op_def_util.cc,722,115,8,123,(1) YES
+225125,0,1,0,metadata_no_cwe,tensorflow,['CWE-190'],string_ngrams_op.cc,5193,117,8,125,(1) YES
+225383,0,1,0,metadata_no_cwe,v4l2loopback,['CWE-134'],v4l2loopback.c,1518,123,8,131,(1) YES
+225473,0,0,1,metadata_no_cwe,tensorflow,['CWE-476'],mutable_graph_view.cc,508,115,8,123,(2) NO
+225547,0,0,1,metadata_no_cwe,tensorflow,['CWE-190'],common.c,318,113,13,126,(2) NO: No security vulnerability.
+225552,0,1,0,metadata_no_cwe,tensorflow,['CWE-190'],common.c,263,113,8,121,(1) YES
+225563,0,1,0,metadata_no_cwe,tensorflow,['CWE-369'],fractional_max_pool_op.cc,5009,116,8,124,(1) YES
+225566,0,1,0,metadata_no_cwe,ImageMagick6,['CWE-190'],pcl.c,8015,116,8,124,(1) YES
+226029,0,1,0,metadata_no_cwe,gpac,['CWE-476'],box_code_base.c,279,116,8,124,(1) YES
+226433,0,1,0,metadata_no_cwe,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,3181,117,8,125,(1) YES
+227022,0,1,0,metadata_no_cwe,weechat,['CWE-476'],irc-protocol.c,3216,118,8,126,(1) YES
+228563,0,0,1,metadata_no_cwe,hhvm,['CWE-119'],zend-string.cpp,3598,115,8,123,(2) NO
+229165,0,0,1,metadata_no_cwe,qemu,['CWE-787'],virtio-serial-bus.c,486,119,8,127,(2) NO
+229337,0,1,0,metadata_no_cwe,tensorflow,['CWE-476'],execute.cc,1966,113,8,121,(1) YES
+230147,0,1,0,metadata_no_cwe,glewlwyd,['CWE-787'],webauthn.c,7404,117,8,125,(1) YES
+230302,0,0,1,metadata_no_cwe,njs,['CWE-703'],njs_array.c,4486,116,13,129,(2) NO: No security vulnerability.
+230394,0,1,0,metadata_no_cwe,pjproject,['CWE-703'],xml.c,3343,114,8,122,(1) YES
+231012,0,1,0,metadata_no_cwe,mruby,['CWE-703'],vm.c,51202,114,8,122,(1) YES
+231048,0,0,1,metadata_no_cwe,FreeRTOS-Kernel,['CWE-200'],queue.c,2940,117,13,130,(2) NO: No security vulnerability.
+231710,0,0,1,metadata_no_cwe,mvfst,['CWE-703'],ServerStateMachine.cpp,3434,116,13,129,(2) NO: No security vulnerability.
+232287,0,0,1,metadata_no_cwe,libjpeg,['CWE-703'],None,5449,113,13,126,(2) NO: No security vulnerability.
+232289,0,0,1,metadata_no_cwe,libjpeg,['CWE-703'],None,6336,113,8,121,(2) NO
+232329,0,0,1,metadata_no_cwe,gpac,['CWE-476'],None,15893,113,13,126,(2) NO: No security vulnerability.
+232405,0,1,0,metadata_no_cwe,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2915,117,8,125,(1) YES
+232839,0,0,1,metadata_no_cwe,tensorflow,['CWE-703'],quantile_ops.cc,1205,115,13,128,(2) NO: No security vulnerability.
+233862,0,0,1,metadata_no_cwe,deark,['CWE-369'],fmtutil.c,1471,115,8,123,(2) NO
+233867,0,1,0,metadata_no_cwe,php-src,['CWE-476'],wddx.c,3633,116,8,124,(1) YES
+234731,0,0,1,metadata_no_cwe,linux,['CWE-703'],volumes.c,4213,113,8,121,(2) NO
+234875,0,0,1,metadata_no_cwe,ImageMagick,['CWE-125'],png.c,79225,115,8,123,(2) NO
+235642,0,1,0,metadata_no_cwe,pjproject,['CWE-787'],dns.c,1097,114,8,122,(1) YES
+235765,0,1,0,metadata_no_cwe,tensorflow,['CWE-787'],edit_distance_op.cc,7660,115,8,123,(1) YES
+236125,0,0,1,metadata_no_cwe,gpac,['CWE-703'],box_code_3gpp.c,339,119,8,127,(2) NO
+237885,0,0,1,metadata_no_cwe,lsquic,['CWE-269'],None,1305,114,13,127,(2) NO: No security vulnerability.
+238322,0,0,1,metadata_no_cwe,barebox,['CWE-200'],digest.c,305,114,8,122,(2) NO
+238803,0,1,0,metadata_no_cwe,vim,['CWE-416'],search.c,18162,113,8,121,(1) YES
+240276,0,1,0,metadata_no_cwe,vim,['CWE-787'],register.c,803,113,8,121,(1) YES
+240595,0,0,1,metadata_no_cwe,tensorflow,['CWE-369'],resource_variable_ops.cc,3658,115,13,128,(2) NO: No security vulnerability.
+241040,0,0,1,metadata_no_cwe,booth,['CWE-284'],main.c,1025,113,13,126,(2) NO: No security vulnerability.
+241311,0,1,0,metadata_no_cwe,mruby,['CWE-787'],None,273,113,8,121,(1) YES
+241369,0,1,0,metadata_no_cwe,tensorflow,['CWE-354'],matrix_solve_op.cc,10312,116,8,124,(1) YES
+242619,0,1,0,metadata_no_cwe,tensorflow,['CWE-703'],stage_op.cc,517,114,8,122,(1) YES
+242637,0,1,0,metadata_no_cwe,gpac,['CWE-703'],isoffin_read.c,12031,117,8,125,(1) YES
+242899,0,0,1,metadata_no_cwe,tensorflow,['CWE-125'],None,2578,112,8,120,(2) NO
+242926,0,1,0,metadata_no_cwe,tensorflow,['CWE-20'],sparse_tensor_dense_add_op.cc,2303,117,8,125,(1) YES
+245140,0,0,1,metadata_no_cwe,tensorflow,['CWE-703'],sdca_internal.cc,4067,115,13,128,(2) NO: No security vulnerability.
+245434,0,1,0,metadata_no_cwe,gpac,['CWE-703'],isom_hinter.c,6039,117,8,125,(1) YES
+245921,0,1,0,metadata_no_cwe,tensorflow,['CWE-476'],session_ops.cc,1071,114,8,122,(1) YES
+246207,0,1,0,metadata_no_cwe,tensorflow,['CWE-125'],count_ops.cc,420,114,8,122,(1) YES
+246237,0,0,1,metadata_no_cwe,furnace,['CWE-703'],pattern.cpp,12980,113,8,121,(2) NO
+246495,0,1,0,metadata_no_cwe,tensorflow,['CWE-369'],div.cc,1915,113,8,121,(1) YES
+246693,0,0,1,metadata_no_cwe,gpac,['CWE-787'],None,1877,113,8,121,(2) NO
+247290,0,1,0,metadata_no_cwe,tensorflow,['CWE-703'],mkl_requantization_range_per_channel_op.cc,3983,121,8,129,(1) YES
+247337,0,1,0,metadata_no_cwe,rpm,['CWE-284'],rpmpgp.c,1625,115,8,123,(1) YES
+247550,0,0,1,metadata_no_cwe,envoy,['CWE-362'],default_validator.cc,2972,114,13,127,(2) NO: No security vulnerability.
+247755,0,0,1,metadata_no_cwe,cryptopp,['CWE-399'],rw.cpp,1215,114,8,122,(2) NO
+249510,0,1,0,metadata_no_cwe,libjxl,['CWE-369'],codec_apng.cc,7435,117,8,125,(1) YES
+249989,0,1,0,metadata_no_cwe,gpac,['CWE-476'],isom_store.c,2973,116,8,124,(1) YES
+250692,0,0,1,metadata_no_cwe,drogon,['CWE-552'],None,959,113,8,121,(2) NO
+251946,0,1,0,metadata_no_cwe,tensorflow,['CWE-369'],optimized_ops.h,4315,114,8,122,(1) YES
+252437,0,1,0,metadata_no_cwe,tinyexr,['CWE-20'],tinyexr.h,10240,117,8,125,(1) YES
+253515,0,0,1,metadata_no_cwe,mruby,['CWE-125'],None,3886,113,8,121,(2) NO
+253699,0,0,1,metadata_no_cwe,linux,['CWE-703'],ccp-ops.c,6915,116,13,129,(2) NO: No security vulnerability.
+253970,0,1,0,metadata_no_cwe,tensorflow,['CWE-476'],quantize_op.cc,4946,115,8,123,(1) YES
+255032,0,0,1,metadata_no_cwe,FFmpeg,['CWE-252'],None,1611,113,13,126,(2) NO: No security vulnerability.
+255574,0,0,1,metadata_no_cwe,njs,['CWE-787'],njs_module.c,1139,116,13,129,(2) NO: No security vulnerability.
+255787,0,0,1,metadata_no_cwe,tensorflow,['CWE-20'],mkl_requantize_per_channel_op.cc,5427,120,8,128,(2) NO
+255807,0,0,1,metadata_no_cwe,tensorflow,['CWE-908'],None,10123,112,8,120,(2) NO
+255932,0,0,1,metadata_no_cwe,tensorflow,['CWE-369'],None,3318,112,8,120,(2) NO
+256138,0,1,0,metadata_no_cwe,tensorflow,['CWE-125'],sparse_matmul_op.cc,4710,116,8,124,(1) YES
+256441,0,1,0,metadata_no_cwe,pjproject,['CWE-200'],rtcp_fb.c,1449,116,8,124,(1) YES
+256587,0,0,1,metadata_no_cwe,tensorflow,['CWE-703'],session_ops.cc,552,114,13,127,(2) NO: No security vulnerability.
+256947,0,1,0,metadata_no_cwe,tensorflow,['CWE-703'],einsum_op_impl.h,2375,116,8,124,(1) YES
+257461,0,0,1,metadata_no_cwe,tensorflow,['CWE-703'],auto_parallel.cc,5002,114,8,122,(2) NO
+258082,0,1,0,metadata_no_cwe,tensorflow,['CWE-369'],reverse_op.cc,1900,114,8,122,(1) YES
+259081,0,1,0,metadata_no_cwe,tensorflow,['CWE-476'],save_restore_tensor.cc,3979,115,8,123,(1) YES
+259515,0,1,0,metadata_no_cwe,gpac,['CWE-416'],field_decode.c,3091,115,8,123,(1) YES
+259619,0,0,1,metadata_no_cwe,libjpeg,['CWE-787'],hierarchicalbitmaprequester.cpp,1217,117,8,125,(2) NO
+259732,0,1,0,metadata_no_cwe,tensorflow,['CWE-703'],quantize_and_dequantize_op.cc,3595,119,8,127,(1) YES
+261220,0,0,1,metadata_no_cwe,wolfMQTT,['CWE-787'],mqtt_client.c,7575,116,8,124,(2) NO
+261769,0,0,1,metadata_no_cwe,njs,['CWE-416'],njs_function.c,1410,116,13,129,(2) NO: No security vulnerability.
+262721,0,1,0,metadata_no_cwe,njs,['CWE-703'],njs_iterator.c,4564,116,8,124,(1) YES
+262803,0,1,0,metadata_no_cwe,tensorflow,['CWE-125'],ragged_tensor_to_variant_op.cc,2419,118,8,126,(1) YES
+263382,0,0,1,metadata_no_cwe,tensorflow,['CWE-703'],array_ops.cc,2266,114,13,127,(2) NO: No security vulnerability.
+263521,0,1,0,metadata_no_cwe,tensorflow,['CWE-125'],gather_nd.cc,1424,114,8,122,(1) YES
+264367,0,0,1,metadata_no_cwe,tensorflow,['CWE-345'],tensor_slice_reader.h,2392,115,8,123,(2) NO
+264657,0,1,0,metadata_no_cwe,gpac,['CWE-416'],memory_decoder.c,1309,115,8,123,(1) YES
+264715,0,1,0,metadata_no_cwe,tensorflow,['CWE-824'],constant_folding.cc,2427,115,8,123,(1) YES
+265432,0,1,0,metadata_no_cwe,tensorflow,['CWE-703'],gather.cc,1006,113,8,121,(1) YES
+267357,0,0,1,metadata_no_cwe,crun,['CWE-276'],exec.c,3362,114,8,122,(2) NO
+267917,0,1,0,metadata_no_cwe,tensorflow,['CWE-703'],unsorted_segment_join_op.cc,2873,117,8,125,(1) YES
+267985,0,1,0,metadata_no_cwe,radare2,['CWE-125'],bfile.c,7883,116,8,124,(1) YES
+268104,0,1,0,metadata_no_cwe,tensorflow,['CWE-703'],load_and_remap_matrix_op.cc,11370,118,8,126,(1) YES
+269323,0,1,0,metadata_no_cwe,tensorflow,['CWE-125'],sparse_reduce_op.cc,3684,115,8,123,(1) YES
+269330,0,1,0,metadata_no_cwe,tensorflow,['CWE-476'],fractional_avg_pool_op.cc,7257,116,8,124,(1) YES
+269941,0,1,0,metadata_no_cwe,ImageMagick,['CWE-125'],mat.c,16370,115,8,123,(1) YES
+270119,0,0,1,metadata_no_cwe,tensorflow,['CWE-369'],kernel_util.cc,278,114,13,127,(2) NO: No security vulnerability.
+270767,0,1,0,metadata_no_cwe,barebox,['CWE-200'],password.c,1388,114,8,122,(1) YES
+270922,0,1,0,metadata_no_cwe,tensorflow,['CWE-369'],ragged_gather_op.cc,1859,117,8,125,(1) YES
+271526,0,0,1,metadata_no_cwe,tensorflow,['CWE-369'],reshape_util.cc,4881,114,8,122,(2) NO
+273091,0,0,1,metadata_no_cwe,owntone-server,['CWE-416'],misc.c,2738,116,8,124,(2) NO
+273407,0,1,0,metadata_no_cwe,tensorflow,['CWE-703'],lstm_ops.cc,8690,115,8,123,(1) YES
+273880,0,1,0,metadata_no_cwe,uftpd,['CWE-787'],ftpcmd.c,905,117,8,125,(1) YES
+274773,0,1,0,metadata_no_cwe,mruby,['CWE-288'],vm.c,50746,114,8,122,(1) YES
+274814,0,1,0,metadata_no_cwe,pjproject,['CWE-787'],stun_simple.c,1988,115,8,123,(1) YES
+274865,0,0,1,metadata_no_cwe,tensorflow,['CWE-703'],comparisons.cc,1608,113,13,126,(2) NO: No security vulnerability.
+275525,0,0,1,metadata_no_cwe,njs,['CWE-416'],njs_async.c,2071,116,13,129,(2) NO: No security vulnerability.
+275987,0,0,1,metadata_no_cwe,micro-ecc,['CWE-415'],uECC.c,3068,116,8,124,(2) NO
+276447,0,1,0,metadata_no_cwe,tensorflow,['CWE-416'],resource_ops.cc,1233,114,8,122,(1) YES
+276921,0,0,1,metadata_no_cwe,u-boot,['CWE-787'],i2c.c,2212,117,8,125,(2) NO
+276993,0,1,0,metadata_no_cwe,mruby,['CWE-703'],fiber.c,1845,114,8,122,(1) YES
+277489,0,0,1,metadata_no_cwe,libmobi,['CWE-787'],index.c,2092,115,8,123,(2) NO
+279948,0,0,1,metadata_no_cwe,vim,['CWE-787'],ex_cmds.c,1360,115,8,123,(2) NO
+281119,0,0,1,metadata_no_cwe,ipsec,['CWE-125'],xfrm_policy.c,1566,116,8,124,(2) NO
+281247,0,0,1,metadata_no_cwe,MilkyTracker,['CWE-787'],LoaderS3M.cpp,8590,118,8,126,(2) NO
+281662,0,0,1,metadata_no_cwe,LibRaw,['CWE-189'],None,1419,113,8,121,(2) NO
+282862,0,1,0,metadata_no_cwe,linux,['CWE-401'],rsi_91x_mgmt.c,660,119,8,127,(1) YES
+282984,0,1,0,metadata_no_cwe,LuaJIT,['CWE-125'],lj_err.c,1412,116,8,124,(1) YES
+285157,0,0,1,metadata_no_cwe,radare2,['CWE-125'],ne.c,2155,115,8,123,(2) NO
+286739,0,0,1,metadata_no_cwe,swtpm,['CWE-125'],swtpm_nvstore.c,1391,119,13,132,(2) NO: No security vulnerability.
+289293,0,0,1,metadata_no_cwe,linux,['CWE-362'],None,2969,112,8,120,(2) NO
+291761,0,0,1,metadata_no_cwe,linux,['CWE-415'],rtrs-clt.c,225,116,8,124,(2) NO
+292205,0,0,1,metadata_no_cwe,hexchat,['CWE-22'],inbound.c,1809,114,8,122,(2) NO
+292609,0,1,0,metadata_no_cwe,puma,['CWE-444'],http11_parser.c,19424,116,8,124,(1) YES
+293496,0,0,1,metadata_no_cwe,chafa,['CWE-476'],libnsgif.c,15337,117,8,125,(2) NO
+293522,0,0,1,metadata_no_cwe,pjproject,['CWE-125'],None,393,113,8,121,(2) NO
+293750,0,0,1,metadata_no_cwe,radare2,['CWE-476'],bin_xnu_kernelcache.c,1681,119,13,132,(2) NO: No security vulnerability.
+293939,0,0,1,metadata_no_cwe,vim,['CWE-787'],indent.c,5668,113,8,121,(2) NO
+295887,0,0,1,metadata_no_cwe,MilkyTracker,['CWE-787'],None,19161,114,8,122,(2) NO
+296226,0,1,0,metadata_no_cwe,vim,['CWE-416'],ex_cmds.c,31465,115,8,123,(1) YES
+299319,0,1,0,metadata_no_cwe,ImageMagick,['CWE-787'],mat.c,6690,115,8,123,(1) YES
+299905,0,0,1,metadata_no_cwe,exim,['CWE-264'],readconf.c,13109,115,8,123,(2) NO
+299976,0,0,1,metadata_no_cwe,linux,['CWE-200'],hid-elo.c,895,115,8,123,(2) NO
+300731,0,0,1,metadata_no_cwe,linux,['CWE-200'],socket.c,3487,113,13,126,(2) NO: No security vulnerability.
+301016,0,1,0,metadata_no_cwe,ghostpdl,['CWE-787'],gdevpcx.c,1184,118,8,126,(1) YES
+301429,0,0,1,metadata_no_cwe,samba,['CWE-665'],None,8880,112,8,120,(2) NO
+301481,0,0,1,metadata_no_cwe,vim,['CWE-787'],spellsuggest.c,39439,114,8,122,(2) NO
+302095,0,0,1,metadata_no_cwe,radare2,['CWE-476'],None,786,114,8,122,(2) NO
+308163,0,1,0,metadata_no_cwe,linux,['CWE-401'],fastrpc.c,686,115,8,123,(1) YES
+309831,0,1,0,metadata_no_cwe,ncurses,['CWE-787'],None,1187,113,8,121,(1) YES
+312399,0,1,0,metadata_no_cwe,vim,['CWE-703'],quickfix.c,1303,114,8,122,(1) YES
+313134,0,0,1,metadata_no_cwe,libvirt,['CWE-212'],virstoragetest.c,1385,118,8,126,(2) NO
+313850,0,1,0,metadata_no_cwe,vim,['CWE-787'],normal.c,996,113,8,121,(1) YES
+314536,0,0,1,metadata_no_cwe,pjproject,['CWE-787'],sdp.c,1617,115,8,123,(2) NO
+317271,0,0,1,metadata_no_cwe,linux,['CWE-416'],None,203,112,8,120,(2) NO
+318099,0,0,1,metadata_no_cwe,wireless-drivers,['CWE-415'],rsi_91x_usb.c,1400,120,13,133,(2) NO: No security vulnerability.
+318781,0,1,0,metadata_no_cwe,gerbv,['CWE-787'],drill.c,7886,114,8,122,(1) YES
+318962,0,0,1,metadata_no_cwe,vim,['CWE-787'],testing.c,763,113,8,121,(2) NO
+319422,0,1,0,metadata_no_cwe,ImageMagick6,['CWE-787'],cin.c,15774,116,8,124,(1) YES
+325821,0,0,1,metadata_no_cwe,gnutls,['CWE-310'],gnutls_handshake.c,4790,119,8,127,(2) NO
+326119,0,0,1,metadata_no_cwe,vim,['CWE-416'],regexp_bt.c,34649,114,8,122,(2) NO
+326629,0,0,1,metadata_no_cwe,libarchive,['CWE-59'],None,2229,113,13,126,(2) NO: No security vulnerability.
+326914,0,0,1,metadata_no_cwe,linux,['CWE-476'],vidtv_s302m.c,1317,117,13,130,(2) NO: No security vulnerability.
+328807,0,1,0,metadata_no_cwe,vim,['CWE-787'],register.c,20005,113,8,121,(1) YES
+328836,0,1,0,metadata_no_cwe,radare2,['CWE-125'],class.c,1167,115,8,123,(1) YES
+329925,0,0,1,metadata_no_cwe,cairo,['CWE-787'],None,2984,112,13,125,(2) NO: No security vulnerability.
+331760,0,0,1,metadata_no_cwe,qtbase,['CWE-787'],qpaintengineex.cpp,9188,117,8,125,(2) NO
+332375,0,1,0,metadata_no_cwe,vim,['CWE-787'],None,3119,112,8,120,(1) YES
+333041,0,0,1,metadata_no_cwe,vim,['CWE-122'],None,1239,112,8,120,(2) NO
+333503,0,1,0,metadata_no_cwe,php-src,['CWE-119'],gd_interpolation.c,1008,116,8,124,(1) YES
+336106,0,1,0,metadata_no_cwe,net,['CWE-125'],ip6_gre.c,2085,116,8,124,(1) YES
+336484,0,0,1,metadata_no_cwe,qemu,['CWE-369'],None,1354,113,8,121,(2) NO
+336807,0,1,0,metadata_no_cwe,ghostpdl,['CWE-787'],gdevlprn.c,920,119,8,127,(1) YES
+337374,0,1,0,metadata_no_cwe,vim,['CWE-476'],buffer.c,602,113,8,121,(1) YES
+337848,0,1,0,metadata_no_cwe,linux,['CWE-704'],sm_make_chunk.c,1244,115,8,123,(1) YES
+338747,0,1,0,metadata_no_cwe,ImageMagick,['CWE-772'],tga.c,13644,116,8,124,(1) YES
+339712,0,1,0,metadata_no_cwe,php-src,['CWE-119'],zend_strtod.c,562,116,8,124,(1) YES
+341817,0,1,0,metadata_no_cwe,ghostpdl,['CWE-787'],zstring.c,1279,116,8,124,(1) YES
+343158,0,0,1,metadata_no_cwe,linux,['CWE-787'],esp6.c,1975,114,8,122,(2) NO
+343175,0,1,0,metadata_no_cwe,linux,['CWE-787'],esp4.c,2029,114,8,122,(1) YES
+343298,0,1,0,metadata_no_cwe,pure-ftpd,['CWE-434'],ftpd.c,7569,116,8,124,(1) YES
+344242,0,0,1,metadata_no_cwe,lua,['CWE-787'],None,531,112,8,120,(2) NO
+345131,0,0,1,metadata_no_cwe,linux,['CWE-703'],pxa3xx-gcu.c,1585,118,8,126,(2) NO
+346415,0,1,0,metadata_no_cwe,vim,['CWE-703'],scriptfile.c,2775,114,8,122,(1) YES
+349251,0,0,1,metadata_no_cwe,squashfs-tools,['CWE-200'],None,3267,114,8,122,(2) NO
+349259,0,0,1,metadata_no_cwe,squashfs-tools,['CWE-200'],None,3559,114,8,122,(2) NO
+349259,0,0,1,metadata_no_cwe,squashfs-tools,['CWE-200'],None,3559,114,8,122,(2) NO
+349528,0,0,1,metadata_no_cwe,linux,['CWE-772'],virtio_bt.c,385,115,8,123,(2) NO
+349888,0,0,1,metadata_no_cwe,net,['CWE-787'],hw_atl_utils.c,1284,116,8,124,(2) NO
+351182,0,1,0,metadata_no_cwe,shapelib,['CWE-415'],shpsort.c,719,117,8,125,(1) YES
+353015,0,0,1,metadata_no_cwe,openldap,['CWE-617'],schema_init.c,3647,115,13,128,(2) NO: No security vulnerability.
+353124,0,0,1,metadata_no_cwe,poppler,['CWE-369'],None,6992,113,8,121,(2) NO
+355014,0,0,1,metadata_no_cwe,pjproject,['CWE-125'],None,784,113,8,121,(2) NO
+355649,0,1,0,metadata_no_cwe,vim,['CWE-787'],eval.c,6349,113,8,121,(1) YES
+356170,0,0,1,metadata_no_cwe,firejail,['CWE-94'],None,970,114,8,122,(2) NO
+357668,0,0,1,metadata_no_cwe,squirrel,['CWE-125'],sqclass.cpp,1893,114,8,122,(2) NO
+359206,0,1,0,metadata_no_cwe,bpf,['CWE-787'],ringbuf.c,1164,115,8,123,(1) YES
+359365,0,1,0,metadata_no_cwe,frr,['CWE-125'],bgp_packet.c,3211,116,8,124,(1) YES
+359843,0,0,1,metadata_no_cwe,ImageMagick,['CWE-617'],operation.c,16656,115,8,123,(2) NO
+360829,0,0,1,metadata_no_cwe,linux,['CWE-193'],cancel.c,637,113,8,121,(2) NO
+361298,0,1,0,metadata_no_cwe,admesh,['CWE-125'],connect.c,650,114,8,122,(1) YES
+361303,0,1,0,metadata_no_cwe,admesh,['CWE-125'],connect.c,2431,114,8,122,(1) YES
+361755,0,0,1,metadata_no_cwe,linux,['CWE-416'],em28xx-cards.c,8029,117,8,125,(2) NO
+365760,0,0,1,metadata_no_cwe,linux,['CWE-703'],None,827,112,8,120,(2) NO
+366223,0,1,0,metadata_no_cwe,linux,['CWE-200'],namespace.c,637,113,8,121,(1) YES
+369215,0,0,1,metadata_no_cwe,linux,['CWE-94'],io_uring.c,1218,115,13,128,(2) NO: No security vulnerability.
+371185,0,0,1,metadata_no_cwe,rizin,['CWE-787'],marshal.c,1209,114,8,122,(2) NO
+371226,0,0,1,metadata_no_cwe,linux,['CWE-834'],fuse_i.h,137,114,8,122,(2) NO
+372352,0,0,1,metadata_no_cwe,Singular,['CWE-269'],None,1744,112,8,120,(2) NO
+373535,0,1,0,metadata_no_cwe,ovs,['CWE-401'],ipf.c,1051,114,8,122,(1) YES
+376350,0,0,1,metadata_no_cwe,evolution-data-server,['CWE-200'],None,583,114,8,122,(2) NO
+376678,0,1,0,metadata_no_cwe,gimp,['CWE-125'],file-gbr.c,7880,116,8,124,(1) YES
+376682,0,0,1,metadata_no_cwe,tigervnc,['CWE-672'],None,3002,114,8,122,(2) NO
+379334,0,0,1,metadata_no_cwe,vim,['CWE-787'],ex_docmd.c,9168,115,8,123,(2) NO
+379671,0,0,1,metadata_no_cwe,radare2,['CWE-416'],None,5476,114,8,122,(2) NO
+380955,0,1,0,metadata_no_cwe,vim,['CWE-787'],edit.c,10110,113,8,121,(1) YES
+382797,0,1,0,metadata_no_cwe,php-src,['CWE-119'],gd_io_dp.c,400,116,8,124,(1) YES
+383316,0,0,1,metadata_no_cwe,php-src,['CWE-119'],None,1467,113,13,126,(2) NO: No security vulnerability.
+384124,0,0,1,metadata_no_cwe,raptor,['CWE-787'],raptor_xml_writer.c,8301,117,13,130,(2) NO: No security vulnerability.
+384201,0,0,1,metadata_no_cwe,linux,['CWE-703'],nf_tables_api.c,1517,115,8,123,(2) NO
+384677,0,0,1,metadata_no_cwe,nbdkit,['CWE-924'],protocol-handshake-newstyle.c,19005,119,8,127,(2) NO
+384767,0,0,1,metadata_no_cwe,vim,['CWE-122'],move.c,6183,113,8,121,(2) NO
+384803,0,0,1,metadata_no_cwe,vim,['CWE-703'],filepath.c,5340,113,8,121,(2) NO
+386565,0,0,1,metadata_no_cwe,qcad,['CWE-191'],dl_dxf.cpp,1296,116,8,124,(2) NO
+386750,0,0,1,metadata_no_cwe,linux,['CWE-476'],inode.c,2081,113,8,121,(2) NO
+387149,0,0,1,metadata_no_cwe,ImageMagick,['CWE-125'],quantize.c,5182,116,8,124,(2) NO
+387593,0,0,1,metadata_no_cwe,linux,['CWE-125'],control.c,352,113,13,126,(2) NO: No security vulnerability.
+389676,0,0,1,metadata_no_cwe,vim,['CWE-125'],typval.c,3822,114,8,122,(2) NO
+389760,0,1,0,metadata_no_cwe,jasper,['CWE-703'],jasper.c,4234,115,8,123,(1) YES
+391627,0,0,1,metadata_no_cwe,linux,['CWE-120'],rpadlpar_sysfs.c,400,118,8,126,(2) NO
+391628,0,1,0,metadata_no_cwe,linux,['CWE-120'],rpadlpar_sysfs.c,393,118,8,126,(1) YES
+393528,0,1,0,metadata_no_cwe,squirrel,['CWE-703'],sqbaselib.cpp,650,115,8,123,(1) YES
+397644,0,1,0,metadata_no_cwe,autotrace,['CWE-787'],input-bmp.c,10785,117,8,125,(1) YES
+398518,0,1,0,metadata_no_cwe,rizin,['CWE-787'],dwarf.c,1498,114,8,122,(1) YES
+400103,0,1,0,metadata_no_cwe,EternalTerminal,['CWE-362'],PipeSocketHandler.cpp,848,116,8,124,(1) YES
+400109,0,0,1,metadata_no_cwe,EternalTerminal,['CWE-362'],UserTerminalRouter.cpp,275,116,8,124,(2) NO
+400409,0,0,1,metadata_no_cwe,vim,['CWE-787'],edit.c,618,113,8,121,(2) NO
+400735,0,0,1,metadata_no_cwe,linux,['CWE-284'],iov_iter.c,1005,115,8,123,(2) NO
+400743,0,0,1,metadata_no_cwe,linux,['CWE-284'],iov_iter.c,1080,115,8,123,(2) NO
+400779,0,0,1,metadata_no_cwe,php-src,['CWE-200'],openssl.c,2044,115,13,128,(2) NO: No security vulnerability.
+401034,0,0,1,metadata_no_cwe,radare2,['CWE-703'],None,4229,114,8,122,(2) NO
+401525,0,0,1,metadata_no_cwe,linux,['CWE-200'],timer.c,746,113,8,121,(2) NO
+401579,0,0,1,metadata_no_cwe,linux,['CWE-200'],random.c,1766,113,8,121,(2) NO
+404192,0,0,1,metadata_no_cwe,pcre2,['CWE-703'],pcre2_jit_compile.c,6323,120,8,128,(2) NO
+405333,0,0,1,metadata_no_cwe,linux,['CWE-703'],xfrm_policy.c,954,115,8,123,(2) NO
+405698,0,1,0,metadata_no_cwe,linux,['CWE-703'],xilinx_emaclite.c,2256,117,8,125,(1) YES
+406206,0,0,1,metadata_no_cwe,util-linux,['CWE-200'],mount.c,7680,114,8,122,(2) NO
+408968,0,0,1,metadata_no_cwe,vim,['CWE-787'],edit.c,2270,113,8,121,(2) NO
+409515,0,1,0,metadata_no_cwe,vim,['CWE-787'],term.c,16039,113,8,121,(1) YES
+411896,0,0,1,metadata_no_cwe,tor,['CWE-399'],routerparse.c,17737,114,8,122,(2) NO
+411926,0,1,0,metadata_no_cwe,heimdal,['CWE-476'],None,31969,113,8,121,(1) YES
+412117,0,0,1,metadata_no_cwe,unbound,['CWE-190'],dnscrypt.c,2728,115,13,128,(2) NO: No security vulnerability.
+412190,0,0,1,metadata_no_cwe,vim,['CWE-787'],ex_getln.c,1586,115,8,123,(2) NO
+412332,0,1,0,metadata_no_cwe,rizin,['CWE-415'],bin_qnx.c,144,116,8,124,(1) YES
+413339,0,1,0,metadata_no_cwe,php-src,['CWE-416'],snmp.c,4687,115,8,123,(1) YES
+413623,0,0,1,metadata_no_cwe,radare2,['CWE-416'],None,13253,114,8,122,(2) NO
+416366,0,1,0,metadata_no_cwe,vim,['CWE-416'],ex_getln.c,25536,115,8,123,(1) YES
+417093,0,0,1,metadata_no_cwe,MilkyTracker,['CWE-416'],PlayerGeneric.cpp,251,116,13,129,(2) NO: No security vulnerability.
+417472,0,0,1,metadata_no_cwe,libvirt,['CWE-119'],node_device_conf.c,636,116,8,124,(2) NO
+418795,0,0,1,metadata_no_cwe,vim,['CWE-703'],mouse.c,22413,113,8,121,(2) NO
+421378,0,0,1,metadata_no_cwe,mujs,['CWE-476'],jsdump.c,227,115,8,123,(2) NO
+424522,0,1,0,metadata_no_cwe,FreeRDP,['CWE-190'],video_main.c,1645,116,8,124,(1) YES
+424969,0,0,1,metadata_no_cwe,linux,['CWE-476'],trans.c,5161,113,8,121,(2) NO
+427153,0,0,1,metadata_no_cwe,lua,['CWE-125'],lparser.c,530,114,8,122,(2) NO
+427707,0,1,0,metadata_no_cwe,file,['CWE-787'],cdf.c,3963,114,8,122,(1) YES
+430335,0,0,1,metadata_no_cwe,linux,['CWE-787'],seq_file.c,146,114,8,122,(2) NO
+430380,0,1,0,metadata_no_cwe,linux,['CWE-362'],flow_netlink.c,1036,115,8,123,(1) YES
+430470,0,1,0,metadata_no_cwe,squid,['CWE-400'],gopher.cc,11220,114,8,122,(1) YES
+431633,0,1,0,metadata_no_cwe,ImageMagick,['CWE-787'],cin.c,15822,115,8,123,(1) YES
+432093,0,1,0,metadata_no_cwe,vim,['CWE-787'],spellfile.c,2227,114,8,122,(1) YES
+432152,0,0,1,metadata_no_cwe,mongo,['CWE-617'],pipeline_d.cpp,10351,114,13,127,(2) NO: No security vulnerability.
+432247,0,1,0,metadata_no_cwe,unicorn,['CWE-476'],exec.c,406,113,8,121,(1) YES
+432346,0,0,1,metadata_no_cwe,qemu,['CWE-125'],i2c-ddc.c,179,118,8,126,(2) NO
+432351,0,0,1,metadata_no_cwe,dpdk,['CWE-703'],vhost_user.c,3099,116,8,124,(2) NO
+432352,0,1,0,metadata_no_cwe,dpdk,['CWE-703'],vhost_user.c,3198,116,8,124,(1) YES
+434093,0,0,1,metadata_no_cwe,vim,['CWE-416'],arglist.c,7674,114,8,122,(2) NO
+434902,0,1,0,metadata_no_cwe,ghostpdl,['CWE-119'],gxht_thresh.c,757,117,8,125,(1) YES
+435409,0,1,0,metadata_no_cwe,ghostpdl,['CWE-120'],gdev3852.c,4557,118,8,126,(1) YES
+436066,0,0,1,metadata_no_cwe,linux,['CWE-125'],io_uring.c,2863,115,8,123,(2) NO
+436990,0,0,1,metadata_no_cwe,vim,['CWE-125'],indent.c,3868,113,8,121,(2) NO
+437003,0,1,0,metadata_no_cwe,linux,['CWE-415'],mcba_usb.c,1579,115,8,123,(1) YES
+437291,0,0,1,metadata_no_cwe,oniguruma,['CWE-125'],regcomp.c,4381,116,8,124,(2) NO
+437671,0,1,0,metadata_no_cwe,radare2,['CWE-787'],bin_symbols.c,2630,116,8,124,(1) YES
+437708,0,0,1,metadata_no_cwe,linux,['CWE-401'],cx23888-ir.c,1348,116,13,129,(2) NO: No security vulnerability.
+438686,0,1,0,metadata_no_cwe,linux,['CWE-415'],virtio_rpmsg_bus.c,795,118,8,126,(1) YES
+438876,0,1,0,metadata_no_cwe,linux,['CWE-416'],mkiss.c,702,114,8,122,(1) YES
+439114,0,1,0,metadata_no_cwe,ImageMagick6,['CWE-401'],bmp.c,34604,116,8,124,(1) YES
+439266,0,1,0,metadata_no_cwe,ImageMagick6,['CWE-835'],bmp.c,34707,116,8,124,(1) YES
+439495,0,0,1,metadata_no_cwe,squashfs-tools,['CWE-22'],None,3490,114,8,122,(2) NO
+439495,0,0,1,metadata_no_cwe,squashfs-tools,['CWE-22'],None,3490,114,8,122,(2) NO
+439500,0,0,1,metadata_no_cwe,squashfs-tools,['CWE-22'],None,3190,114,8,122,(2) NO
+440872,0,0,1,metadata_no_cwe,xserver,['CWE-863'],log.c,1248,114,8,122,(2) NO
+441822,0,1,0,metadata_no_cwe,xserver,['CWE-191'],xkbSwap.c,2401,116,8,124,(1) YES
+442189,0,1,0,metadata_no_cwe,qemu,['CWE-835'],e1000.c,493,116,8,124,(1) YES
+442587,0,1,0,metadata_no_cwe,spice,['CWE-193'],memslot.c,1193,114,8,122,(1) YES
+442815,0,0,1,metadata_no_cwe,curl,['CWE-125'],main.c,954,113,8,121,(2) NO
+442959,0,0,1,metadata_no_cwe,vim,['CWE-200'],drawscreen.c,3513,114,13,127,(2) NO: No security vulnerability.
+443152,0,0,1,metadata_no_cwe,linux,['CWE-476'],inode.c,960,113,8,121,(2) NO
+443298,0,0,1,metadata_no_cwe,vim,['CWE-416'],ex_docmd.c,22967,115,8,123,(2) NO
+444900,0,1,0,metadata_no_cwe,cifs-utils,['CWE-20'],mount.cifs.c,3041,117,8,125,(1) YES
+445881,0,0,1,metadata_no_cwe,file-roller,['CWE-22'],None,1868,114,8,122,(2) NO
+445995,0,1,0,metadata_no_cwe,file-roller,['CWE-22'],None,7667,114,8,122,(1) YES
+446058,0,1,0,metadata_no_cwe,libtiff,['CWE-787'],tif_lzw.c,5176,117,8,125,(1) YES
+446096,0,1,0,metadata_no_cwe,linux,['CWE-416'],atusb.c,535,114,8,122,(1) YES
+446279,0,1,0,metadata_no_cwe,libmobi,['CWE-125'],index.c,6806,115,8,123,(1) YES
+446416,0,0,1,metadata_no_cwe,rizin,['CWE-787'],dyldcache.c,2834,116,8,124,(2) NO
+447053,0,0,1,metadata_no_cwe,exiv2,['CWE-125'],image.cpp,8454,115,13,128,(2) NO: No security vulnerability.
+447231,0,1,0,metadata_no_cwe,php-src,['CWE-17'],apprentice.c,2818,114,8,122,(1) YES
+448562,0,0,1,metadata_no_cwe,frr,['CWE-125'],bgp_packet.c,3275,116,8,124,(2) NO
+448584,0,1,0,metadata_no_cwe,gdk-pixbuf,['CWE-189'],io-xbm.c,3351,119,8,127,(1) YES
+448912,0,0,1,metadata_no_cwe,zlib,['CWE-787'],inflate.c,26047,114,8,122,(2) NO
+449294,0,0,1,metadata_no_cwe,vim,['CWE-122'],None,1349,112,8,120,(2) NO
+449321,0,1,0,metadata_no_cwe,clamav-devel,['CWE-189'],sis.c,468,115,8,123,(1) YES
+450764,0,1,0,metadata_no_cwe,vim,['CWE-416'],regexp.c,1757,113,8,121,(1) YES
+450812,0,1,0,metadata_no_cwe,gnulib,['CWE-119'],glob.c,28169,115,8,123,(1) YES
+450830,0,0,1,metadata_no_cwe,linux,['CWE-120'],se.c,1715,113,8,121,(2) NO
+451731,0,0,1,metadata_no_cwe,ntp,['CWE-20'],ntpq.c,2436,115,8,123,(2) NO
+451888,0,1,0,metadata_no_cwe,jasper,['CWE-20'],jpc_enc.c,11947,116,8,124,(1) YES
+452377,0,1,0,metadata_no_cwe,vim,['CWE-787'],indent.c,6020,113,8,121,(1) YES
+452391,0,1,0,metadata_no_cwe,ImageMagick6,['CWE-787'],tiff.c,34505,117,8,125,(1) YES
+452994,0,1,0,metadata_no_cwe,nf,['CWE-269'],nf_tables_offload.c,1137,116,8,124,(1) YES
+453109,0,1,0,metadata_no_cwe,libexpat,['CWE-668'],xmlparse.c,5684,116,8,124,(1) YES
+453265,0,1,0,metadata_no_cwe,jasper,['CWE-125'],jp2_dec.c,9401,116,8,124,(1) YES
+454759,0,1,0,metadata_no_cwe,linux,['CWE-703'],i2c-ismt.c,6551,118,8,126,(1) YES
+455177,0,0,1,metadata_no_cwe,libmobi,['CWE-119'],read.c,2146,115,13,128,(2) NO: No security vulnerability.
+455356,0,0,1,metadata_no_cwe,bash,['CWE-787'],shell.c,720,113,13,126,(2) NO: No security vulnerability.
+457772,0,1,0,metadata_no_cwe,icecast-server,['CWE-119'],auth_url.c,1913,116,8,124,(1) YES
+459029,0,1,0,metadata_no_cwe,varnish-cache,['CWE-703'],cache_http.c,334,116,8,124,(1) YES
+459107,0,0,1,metadata_no_cwe,linux,['CWE-416'],cls_api.c,5631,114,13,127,(2) NO: No security vulnerability.
+459400,0,1,0,metadata_no_cwe,vim,['CWE-416'],None,17024,112,8,120,(1) YES
+459524,0,0,1,metadata_no_cwe,linux,['CWE-787'],stackmap.c,540,114,8,122,(2) NO
+462278,0,0,1,metadata_no_cwe,pjproject,['CWE-191'],None,792,113,8,121,(2) NO
+462316,0,0,1,metadata_no_cwe,ghostpdl,['CWE-787'],None,536,114,8,122,(2) NO
+462395,0,1,0,metadata_no_cwe,php-src,['CWE-476'],wddx.c,3878,116,8,124,(1) YES
+462409,0,0,1,metadata_no_cwe,rsyslog,['CWE-190'],imptcp.c,4889,117,13,130,(2) NO: No security vulnerability.
+462511,0,0,1,metadata_no_cwe,vim,['CWE-416'],quickfix.c,2647,114,8,122,(2) NO
+462566,0,1,0,metadata_no_cwe,newsbeuter,['CWE-787'],controller.cpp,1406,115,8,123,(1) YES
+463051,0,1,0,metadata_no_cwe,qemu,['CWE-835'],sungem.c,322,115,8,123,(1) YES
+463134,0,1,0,metadata_no_cwe,cyrus-imapd,['CWE-732'],annotate.c,3416,117,8,125,(1) YES
+463476,0,1,0,metadata_no_cwe,linux,['CWE-476'],af_ax25.c,2008,115,8,123,(1) YES
+464942,0,1,0,metadata_no_cwe,php-src,['CWE-125'],mbfilter_big5.c,2059,117,8,125,(1) YES
+465854,0,0,1,metadata_no_cwe,linux,['CWE-416'],main.c,369,113,8,121,(2) NO
+468349,0,0,1,metadata_no_cwe,glib,['CWE-754'],gsocketclient.c,3727,116,8,124,(2) NO
+471902,0,1,0,metadata_no_cwe,vim,['CWE-787'],spellsuggest.c,6730,114,8,122,(1) YES
+472123,0,0,1,metadata_no_cwe,linux,['CWE-416'],cgroup-v1.c,2262,116,8,124,(2) NO
+474434,0,1,0,metadata_no_cwe,libtpms,['CWE-119'],Object.c,576,115,8,123,(1) YES
+474462,0,1,0,metadata_no_cwe,libvncserver,['CWE-787'],corre.c,836,116,8,124,(1) YES
+475987,0,1,0,metadata_no_cwe,chafa,['CWE-125'],lzw.c,2382,115,8,123,(1) YES
+476103,0,0,1,metadata_no_cwe,linux,['CWE-476'],composite.c,11424,113,8,121,(2) NO
+477273,0,0,1,metadata_no_cwe,linux,['CWE-20'],crypto.c,1682,113,8,121,(2) NO
+477380,0,0,1,metadata_no_cwe,radare2,['CWE-787'],None,2596,114,8,122,(2) NO
+477800,0,0,1,metadata_no_cwe,ceph,['CWE-79'],rgw_rest_s3.cc,7565,118,8,126,(2) NO
+477803,0,1,0,metadata_no_cwe,linux,['CWE-362'],af_key.c,802,114,8,122,(1) YES
+477811,0,1,0,metadata_no_cwe,linux,['CWE-787'],book3s_rtas.c,2315,117,8,125,(1) YES
+477946,0,1,0,metadata_no_cwe,clamav-devel,['CWE-20'],mspack.c,5230,117,8,125,(1) YES
+477975,0,0,1,metadata_no_cwe,php-src,['CWE-119'],simplestring.c,1227,115,8,123,(2) NO
+481267,0,0,1,metadata_no_cwe,linux,['CWE-401'],conn.c,2357,113,8,121,(2) NO
+481787,0,1,0,metadata_no_cwe,nagioscore,['CWE-476'],query-handler.c,782,116,8,124,(1) YES
+482533,0,1,0,metadata_no_cwe,liblouis,['CWE-787'],compileTranslationTable.c,49195,117,8,125,(1) YES
+482692,0,1,0,metadata_no_cwe,gst-plugins-good,['CWE-125'],gstflxdec.c,5690,119,8,127,(1) YES
+483053,0,0,1,metadata_no_cwe,linux,['CWE-269'],cgroup-v1.c,713,116,8,124,(2) NO
+483469,0,0,1,metadata_no_cwe,mongo,['CWE-617'],None,9743,112,8,120,(2) NO
+484063,0,0,1,metadata_no_cwe,open62541,['CWE-703'],check_securechannel.c,545,117,13,130,(2) NO: No security vulnerability.
+484732,0,0,1,metadata_no_cwe,libmobi,['CWE-787'],None,737,114,13,127,(2) NO: No security vulnerability.
+486796,0,1,0,metadata_no_cwe,qemu,['CWE-835'],cadence_gem.c,6058,116,8,124,(1) YES
+486837,0,1,0,metadata_no_cwe,perl5,['CWE-120'],regcomp.c,82226,115,8,123,(1) YES
+487618,0,0,1,metadata_no_cwe,linux-2.6,['CWE-20'],None,1857,116,8,124,(2) NO
+488919,0,0,1,metadata_no_cwe,linux-2.6,['CWE-189'],None,781,116,8,124,(2) NO
+489124,0,0,1,metadata_no_cwe,linux-2.6,['CWE-20'],None,397,116,8,124,(2) NO
+489215,0,0,1,metadata_no_cwe,linux-2.6,['CWE-119'],None,724,116,8,124,(2) NO
+489221,0,0,1,metadata_no_cwe,linux-2.6,['CWE-20'],None,3033,116,8,124,(2) NO
+491979,0,0,1,metadata_no_cwe,gzip,['CWE-189'],None,4781,112,8,120,(2) NO
+497809,0,0,1,metadata_no_cwe,grep,['CWE-119'],None,2383,112,8,120,(2) NO
+498160,0,0,1,metadata_no_cwe,nettle,['CWE-310'],None,1552,113,13,126,(2) NO: No security vulnerability.
+498918,0,0,1,metadata_no_cwe,tar,['CWE-476'],None,3339,112,8,120,(2) NO
+500044,0,0,1,metadata_no_cwe,openssl,['CWE-20'],None,1670,113,8,121,(2) NO
+500663,0,0,1,metadata_no_cwe,libssh,['CWE-399'],None,2430,113,8,121,(2) NO
+502735,0,0,1,metadata_no_cwe,openssl,['CWE-362'],None,3459,113,8,121,(2) NO
+503867,0,0,1,metadata_no_cwe,guile,['CWE-275'],None,654,113,8,121,(2) NO
+503985,0,0,1,metadata_no_cwe,core,['CWE-20'],None,4359,112,13,125,(2) NO: No security vulnerability.
+504608,0,0,1,metadata_no_cwe,libtiff,['CWE-770'],None,2542,114,8,122,(2) NO
+505463,0,0,1,metadata_no_cwe,openssl,['CWE-327'],None,3470,113,8,121,(2) NO
+505654,0,0,1,metadata_no_cwe,core,['CWE-835'],None,1902,112,8,120,(2) NO
+506428,0,0,1,metadata_no_cwe,core,['CWE-125'],None,342,112,8,120,(2) NO
+506696,0,0,1,metadata_no_cwe,openssl,['CWE-476'],None,132,113,8,121,(2) NO
+507778,0,0,1,metadata_no_cwe,openssl,['CWE-125'],None,10827,113,8,121,(2) NO
+508874,0,0,1,metadata_no_cwe,server,['CWE-476'],None,4104,112,8,120,(2) NO
+509510,0,0,1,metadata_no_cwe,server,['CWE-400'],None,164,112,8,120,(2) NO
+511472,0,0,1,metadata_no_cwe,server,['CWE-416'],None,15074,112,8,120,(2) NO
+512825,0,0,1,metadata_no_cwe,server,['CWE-617'],None,2230,112,8,120,(2) NO
+513202,0,0,1,metadata_no_cwe,server,['CWE-416'],None,435,112,8,120,(2) NO
+514292,0,0,1,metadata_no_cwe,server,['CWE-617'],None,5121,112,8,120,(2) NO
+517437,0,0,1,metadata_no_cwe,monit,['CWE-79'],None,1551,112,13,125,(2) NO: No security vulnerability.
+521488,0,0,1,metadata_no_cwe,JUCE,['CWE-59'],None,2458,113,8,121,(2) NO
+522329,0,0,1,metadata_no_cwe,libMeshb,['CWE-120'],None,6485,114,8,122,(2) NO
+522438,0,0,1,metadata_no_cwe,elfspirit,['CWE-125'],None,37828,114,8,122,(2) NO

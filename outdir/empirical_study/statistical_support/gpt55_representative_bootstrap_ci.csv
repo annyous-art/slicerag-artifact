@@ -1,0 +1,6 @@
+"setting","n","f1","f1_ci_low","f1_ci_high","vuln","P-C","P-V","P-B","path"
+"Fixed few-shot","870","0.6377325066430469","0.6043123301178713","0.6695503605758409","0.7977011494252874","0.113","0.715","0.12","outdir/empirical_study/gpt55_pairwise/gpt55_baseline_predictions.csv"
+"Positive-only RAG","870","0.5580865603644647","0.5180856211610196","0.5966538925731918","0.5091954022988506","0.172","0.391","0.372","outdir/empirical_study/gpt55_pairwise/gpt55_rag_predictions.csv"
+"Target focus","870","0.535796766743649","0.4951207497296648","0.5724141959394135","0.4954022988505747","0.145","0.389","0.398","outdir/prompt_gpt55_representative_ablation_test870/eval/gpt-5.5_std_cls_target_focus_rag_fewshotegFalse_cls0_predictions.csv"
+"Grouped no-label","870","0.5838641188959661","0.5452537646144738","0.6204098516345525","0.5827586206896552","0.149","0.483","0.317","outdir/prompt_gpt55_representative_ablation_test870/eval/gpt-5.5_std_cls_grouped_no_label_rag_fewshotegFalse_cls0_predictions.csv"
+"Baseline-compatible grouped no-label","870","0.6530612244897959","0.6208113590263692","0.6841656306119629","0.7954022988505747","0.133","0.713","0.122","outdir/prompt_gpt55_representative_ablation_test870/eval/gpt-5.5_std_cls_grouped_no_label_baseline_compatible_fewshotegTrue_cls0_predictions.csv"

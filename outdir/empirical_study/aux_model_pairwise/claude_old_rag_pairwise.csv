@@ -1,0 +1,2 @@
+method,known_pairs,unknown_pairs,P-C,P-V,P-B,P-R,P-C_rate,P-V_rate,P-B_rate,P-R_rate
+prediction,435,0,84,189,124,38,0.193103,0.434483,0.285057,0.087356

@@ -1,0 +1,16 @@
+error_type,dominant_pattern,avg_char_len,avg_yes_vote_count,n,pred_0,pred_1,target_0,target_1
+correct,error_handling,5380.21,5.05,292,39,253,39,253
+FP,error_handling,5856.0,5.83,235,0,235,235,0
+correct,bounds,5138.41,5.78,134,10,124,10,124
+FP,bounds,5490.62,6.06,127,0,127,127,0
+FN,error_handling,6208.85,0.12,26,26,0,0,26
+correct,memory_api,2769.22,6.0,9,1,8,1,8
+FN,bounds,2047.75,0.12,8,8,0,0,8
+correct,low_keyword_signal,437.88,2.0,8,4,4,4,4
+FP,memory_api,2467.43,6.14,7,0,7,7,0
+correct,lifecycle,3414.57,3.71,7,3,4,3,4
+FN,low_keyword_signal,585.75,0.0,4,4,0,0,4
+FP,low_keyword_signal,1022.0,3.25,4,0,4,4,0
+FN,lifecycle,6748.33,0.0,3,3,0,0,3
+FP,lifecycle,814.67,5.33,3,0,3,3,0
+FN,memory_api,152.0,0.0,1,1,0,0,1

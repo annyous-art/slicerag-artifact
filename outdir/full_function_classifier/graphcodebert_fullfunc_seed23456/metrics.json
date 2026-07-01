@@ -1,0 +1,61 @@
+{
+  "run_config": {
+    "train": "${SLICERAG_ROOT}/data/primevul_train_paired_labeled.jsonl",
+    "test": "${SLICERAG_ROOT}/data/primevul_test_paired_labeled.jsonl",
+    "model": "${SLICERAG_EMBED_MODEL}",
+    "epochs": 3,
+    "batch_size": 8,
+    "eval_batch_size": 16,
+    "gradient_accumulation_steps": 1,
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.06,
+    "warmup_steps": 170,
+    "max_length": 512,
+    "seed": 23456,
+    "device": "cuda",
+    "fp16": true,
+    "num_train_rows": 7578,
+    "num_test_rows": 870,
+    "train_label_counts": {
+      "1": 3789,
+      "0": 3789
+    },
+    "test_label_counts": {
+      "1": 435,
+      "0": 435
+    }
+  },
+  "sample_metrics": {
+    "known": 870,
+    "accuracy": 0.5126436781609195,
+    "precision": 0.5174603174603175,
+    "recall": 0.37471264367816093,
+    "specificity": 0.6505747126436782,
+    "f1": 0.4346666666666667,
+    "yes_rate": 0.3620689655172414,
+    "directional_failure_index": -0.27586206896551724,
+    "tp": 163,
+    "fp": 152,
+    "tn": 283,
+    "fn": 272
+  },
+  "pairwise_metrics": {
+    "num_data_rows": 870,
+    "candidate_adjacent_pairs": 435,
+    "known_pairs": 435,
+    "unknown_pairs": 0,
+    "skip_counts": {},
+    "P-C": 17,
+    "P-V": 146,
+    "P-B": 266,
+    "P-R": 6,
+    "P-C_rate": 0.03908045977011494,
+    "P-V_rate": 0.335632183908046,
+    "P-B_rate": 0.6114942528735632,
+    "P-R_rate": 0.013793103448275862
+  },
+  "predictions_csv": "${SLICERAG_ROOT}/outdir/full_function_classifier/graphcodebert_fullfunc_seed23456/predictions.csv",
+  "pairwise_pairs_csv": "${SLICERAG_ROOT}/outdir/full_function_classifier/graphcodebert_fullfunc_seed23456/pairwise_pairs.csv",
+  "pairwise_metrics_csv": "${SLICERAG_ROOT}/outdir/full_function_classifier/graphcodebert_fullfunc_seed23456/pairwise_metrics.csv"
+}

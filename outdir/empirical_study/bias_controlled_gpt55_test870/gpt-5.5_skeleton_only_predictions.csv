@@ -1,0 +1,871 @@
+idx,target,prediction,correct,variant,project,cwe,file_name,func_char_len,prompt_tokens,completion_tokens,total_tokens,response
+187732,0,0,1,skeleton_only,qemu,['CWE-264'],vnc.c,4695,142,8,150,(2) NO
+194963,1,0,0,skeleton_only,ImageMagick6,['CWE-704'],property.c,28188,141,13,154,(2) NO: No security vulnerability.
+194989,1,0,0,skeleton_only,ImageMagick6,['CWE-190'],psd.c,1693,160,8,168,(2) NO
+194994,1,0,0,skeleton_only,tensorflow,['CWE-401'],immutable_executor_state.cc,6738,132,13,145,(2) NO: No security vulnerability.
+194996,1,0,0,skeleton_only,tensorflow,['CWE-476'],loader_util.cc,1226,147,13,160,(2) NO: No security vulnerability.
+194998,1,0,0,skeleton_only,tensorflow,['CWE-617'],constant_folding.cc,2726,146,13,159,(2) NO: No security vulnerability.
+195017,1,0,0,skeleton_only,gpac,['CWE-476'],hint_track.c,455,133,13,146,(2) NO: No security vulnerability.
+195019,1,0,0,skeleton_only,tensorflow,['CWE-617'],constant_folding.cc,2808,153,13,166,(2) NO: No security vulnerability.
+195022,1,0,0,skeleton_only,glewlwyd,['CWE-287'],webservice.c,10298,150,13,163,(2) NO: No security vulnerability.
+195023,1,0,0,skeleton_only,tensorflow,['CWE-190'],sparse_tensors_map_ops.cc,5831,131,13,144,(2) NO: No security vulnerability.
+195026,1,0,0,skeleton_only,linux,['CWE-909'],nfs4file.c,1703,137,13,150,(2) NO: No security vulnerability.
+195028,1,0,0,skeleton_only,tensorflow,['CWE-401'],decode_image_op.cc,4634,138,13,151,(2) NO: No security vulnerability.
+195029,1,0,0,skeleton_only,tensorflow,['CWE-125'],graph.cc,2052,129,13,142,(2) NO: No security vulnerability.
+195038,1,0,0,skeleton_only,mruby,['CWE-476'],array.c,877,138,13,151,(2) NO: No security vulnerability.
+195039,1,0,0,skeleton_only,tensorflow,['CWE-354'],conv_ops.cc,3831,190,13,203,(2) NO: No security vulnerability.
+195040,1,0,0,skeleton_only,tensorflow,['CWE-476'],xla_platform_info.cc,2726,157,13,170,(2) NO: No security vulnerability.
+195055,1,0,0,skeleton_only,tensorflow,['CWE-787'],count_ops.cc,3819,131,13,144,(2) NO: No security vulnerability.
+195056,1,0,0,skeleton_only,tensorflow,['CWE-369'],common.h,2670,155,13,168,(2) NO: No security vulnerability.
+195059,1,0,0,skeleton_only,tensorflow,['CWE-617'],dependency_optimizer.cc,1177,136,13,149,(2) NO: No security vulnerability.
+195063,1,0,0,skeleton_only,gpac,['CWE-476'],reframe_mpgvid.c,16506,135,13,148,(2) NO: No security vulnerability.
+195069,1,0,0,skeleton_only,gpac,['CWE-120'],av_parsers.c,1715,148,13,161,(2) NO: No security vulnerability.
+195073,1,0,0,skeleton_only,tensorflow,['CWE-416'],decode_image_op.cc,4701,138,13,151,(2) NO: No security vulnerability.
+195074,1,0,0,skeleton_only,gpac,['CWE-415'],descriptors.c,2689,147,13,160,(2) NO: No security vulnerability.
+195082,1,0,0,skeleton_only,linux,['CWE-862'],None,1076,135,13,148,(2) NO: No security vulnerability.
+195083,1,0,0,skeleton_only,tensorflow,['CWE-617'],tensor.cc,1232,137,13,150,(2) NO: No security vulnerability.
+195091,1,0,0,skeleton_only,tensorflow,['CWE-754'],tf_cpurt_symbolic_shape_optimization.cc,2597,149,13,162,(2) NO: No security vulnerability.
+195092,1,0,0,skeleton_only,hermes,['CWE-843'],IREval.cpp,2070,150,13,163,(2) NO: No security vulnerability.
+195095,1,0,0,skeleton_only,e2guardian,['CWE-295'],Socket.cpp,3786,138,13,151,(2) NO: No security vulnerability.
+195220,1,0,0,skeleton_only,tmate-ssh-server,['CWE-362'],tmate-main.c,1780,135,13,148,(2) NO: No security vulnerability.
+195230,1,0,0,skeleton_only,pjproject,['CWE-125'],rtcp_xr.c,7256,156,13,169,(2) NO: No security vulnerability.
+195231,1,0,0,skeleton_only,gpac,['CWE-476'],av_parsers.c,4464,143,13,156,(2) NO: No security vulnerability.
+195233,1,0,0,skeleton_only,tensorflow,['CWE-787'],graph_properties.cc,360,135,13,148,(2) NO: No security vulnerability.
+195234,1,0,0,skeleton_only,tensorflow,['CWE-617'],function.cc,1873,168,13,181,(2) NO: No security vulnerability.
+195237,1,0,0,skeleton_only,ImageMagick,['CWE-190'],pcl.c,7995,140,13,153,(2) NO: No security vulnerability.
+195264,1,0,0,skeleton_only,pcre2,['CWE-125'],pcre2_jit_compile.c,22734,147,13,160,(2) NO: No security vulnerability.
+195274,1,0,0,skeleton_only,tensorflow,['CWE-476'],constant_folding.cc,4637,148,13,161,(2) NO: No security vulnerability.
+195291,1,0,0,skeleton_only,tensorflow,['CWE-908'],assign_op.h,3667,131,13,144,(2) NO: No security vulnerability.
+195293,1,0,0,skeleton_only,mruby,['CWE-476'],codegen.c,1302,139,13,152,(2) NO: No security vulnerability.
+195294,1,0,0,skeleton_only,tensorflow,['CWE-843'],map_stage_op.cc,967,130,13,143,(2) NO: No security vulnerability.
+195295,1,0,0,skeleton_only,mruby,['CWE-125'],codegen.c,3885,143,13,156,(2) NO: No security vulnerability.
+195296,1,0,0,skeleton_only,uWebSockets,['CWE-787'],TopicTree.h,2354,158,13,171,(2) NO: No security vulnerability.
+195308,1,0,0,skeleton_only,flatpak,['CWE-20'],flatpak-run.c,10440,164,13,177,(2) NO: No security vulnerability.
+195309,1,1,1,skeleton_only,squid,['CWE-400'],gopher.cc,11823,142,14,156,(1) YES: A security vulnerability detected.
+195328,1,0,0,skeleton_only,gpac,['CWE-415'],load_text.c,1840,149,13,162,(2) NO: No security vulnerability.
+195331,1,0,0,skeleton_only,tensorflow,['CWE-843'],common_shape_fns.cc,3246,147,13,160,(2) NO: No security vulnerability.
+195334,1,0,0,skeleton_only,gpac,['CWE-415'],box_code_meta.c,2502,141,13,154,(2) NO: No security vulnerability.
+195340,1,0,0,skeleton_only,tensorflow,['CWE-190'],sparse_dense_binary_op_shared.cc,6813,131,13,144,(2) NO: No security vulnerability.
+195343,1,0,0,skeleton_only,tensorflow,['CWE-125'],fractional_avg_pool_op.cc,7263,131,8,139,(2) NO
+195385,1,0,0,skeleton_only,flatpak,['CWE-276'],flatpak-dir.c,3354,136,13,149,(2) NO: No security vulnerability.
+195388,1,0,0,skeleton_only,postgres,['CWE-522'],fe-connect.c,46206,131,8,139,(2) NO
+195389,1,0,0,skeleton_only,tensorflow,['CWE-617'],op_def_util.cc,699,161,13,174,(2) NO: No security vulnerability.
+195391,1,0,0,skeleton_only,tensorflow,['CWE-190'],string_ngrams_op.cc,4681,135,13,148,(2) NO: No security vulnerability.
+195398,1,0,0,skeleton_only,v4l2loopback,['CWE-134'],v4l2loopback.c,1512,147,13,160,(2) NO: No security vulnerability.
+195399,1,0,0,skeleton_only,tensorflow,['CWE-476'],mutable_graph_view.cc,449,140,13,153,(2) NO: No security vulnerability.
+195402,1,0,0,skeleton_only,tensorflow,['CWE-190'],common.c,312,132,13,145,(2) NO: No security vulnerability.
+195403,1,0,0,skeleton_only,tensorflow,['CWE-190'],common.c,260,133,13,146,(2) NO: No security vulnerability.
+195404,1,0,0,skeleton_only,tensorflow,['CWE-369'],fractional_max_pool_op.cc,4646,131,13,144,(2) NO: No security vulnerability.
+195405,1,0,0,skeleton_only,ImageMagick6,['CWE-190'],pcl.c,7979,140,8,148,(2) NO
+195409,1,0,0,skeleton_only,gpac,['CWE-476'],box_code_base.c,269,131,8,139,(2) NO
+195410,1,0,0,skeleton_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2921,137,13,150,(2) NO: No security vulnerability.
+195471,1,0,0,skeleton_only,weechat,['CWE-476'],irc-protocol.c,3200,127,13,140,(2) NO: No security vulnerability.
+195565,1,0,0,skeleton_only,hhvm,['CWE-119'],zend-string.cpp,3314,145,13,158,(2) NO: No security vulnerability.
+195626,1,0,0,skeleton_only,qemu,['CWE-787'],virtio-serial-bus.c,410,142,13,155,(2) NO: No security vulnerability.
+195629,1,0,0,skeleton_only,tensorflow,['CWE-476'],execute.cc,1859,151,13,164,(2) NO: No security vulnerability.
+195665,1,0,0,skeleton_only,njs,['CWE-703'],njs_array.c,4339,155,13,168,(2) NO: No security vulnerability.
+195670,1,0,0,skeleton_only,pjproject,['CWE-703'],xml.c,3296,142,13,155,(2) NO: No security vulnerability.
+195691,1,0,0,skeleton_only,mruby,['CWE-703'],vm.c,51274,147,13,160,(2) NO: No security vulnerability.
+195692,1,0,0,skeleton_only,FreeRTOS-Kernel,['CWE-200'],queue.c,2805,159,13,172,(2) NO: No security vulnerability.
+195720,1,0,0,skeleton_only,mvfst,['CWE-703'],ServerStateMachine.cpp,3323,134,13,147,(2) NO: No security vulnerability.
+195740,1,0,0,skeleton_only,libjpeg,['CWE-703'],None,6317,134,13,147,(2) NO: No security vulnerability.
+195741,1,0,0,skeleton_only,libjpeg,['CWE-703'],None,5436,132,8,140,(2) NO
+195742,1,0,0,skeleton_only,gpac,['CWE-476'],None,15815,156,8,164,(2) NO
+195752,1,0,0,skeleton_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2398,137,13,150,(2) NO: No security vulnerability.
+195768,1,0,0,skeleton_only,tensorflow,['CWE-703'],quantile_ops.cc,1049,131,13,144,(2) NO: No security vulnerability.
+195800,1,0,0,skeleton_only,deark,['CWE-369'],fmtutil.c,1444,154,13,167,(2) NO: No security vulnerability.
+195801,1,0,0,skeleton_only,php-src,['CWE-476'],wddx.c,3632,142,13,155,(2) NO: No security vulnerability.
+195908,1,0,0,skeleton_only,linux,['CWE-703'],volumes.c,4198,148,13,161,(2) NO: No security vulnerability.
+195909,1,0,0,skeleton_only,ImageMagick,['CWE-125'],png.c,79137,151,13,164,(2) NO: No security vulnerability.
+195954,1,0,0,skeleton_only,pjproject,['CWE-787'],dns.c,983,172,13,185,(2) NO: No security vulnerability.
+195965,1,0,0,skeleton_only,tensorflow,['CWE-787'],edit_distance_op.cc,7615,131,13,144,(2) NO: No security vulnerability.
+195984,1,0,0,skeleton_only,gpac,['CWE-703'],box_code_3gpp.c,313,140,13,153,(2) NO: No security vulnerability.
+196276,1,0,0,skeleton_only,lsquic,['CWE-269'],None,1227,159,13,172,(2) NO: No security vulnerability.
+196316,1,0,0,skeleton_only,barebox,['CWE-200'],digest.c,292,135,13,148,(2) NO: No security vulnerability.
+196328,1,0,0,skeleton_only,vim,['CWE-416'],search.c,18096,126,13,139,(2) NO: No security vulnerability.
+196578,1,0,0,skeleton_only,vim,['CWE-787'],register.c,803,140,13,153,(2) NO: No security vulnerability.
+196587,1,0,0,skeleton_only,tensorflow,['CWE-369'],resource_variable_ops.cc,3420,131,13,144,(2) NO: No security vulnerability.
+196611,1,0,0,skeleton_only,booth,['CWE-284'],main.c,1007,128,13,141,(2) NO: No security vulnerability.
+196621,1,0,0,skeleton_only,mruby,['CWE-787'],None,228,142,13,155,(2) NO: No security vulnerability.
+196629,1,0,0,skeleton_only,tensorflow,['CWE-354'],matrix_solve_op.cc,10045,136,13,149,(2) NO: No security vulnerability.
+196689,1,0,0,skeleton_only,tensorflow,['CWE-703'],stage_op.cc,602,130,13,143,(2) NO: No security vulnerability.
+196691,1,0,0,skeleton_only,gpac,['CWE-703'],isoffin_read.c,11818,135,13,148,(2) NO: No security vulnerability.
+196698,1,0,0,skeleton_only,tensorflow,['CWE-125'],sparse_fill_empty_rows_op.cc,2261,145,13,158,(2) NO: No security vulnerability.
+196705,1,0,0,skeleton_only,tensorflow,['CWE-20'],sparse_tensor_dense_add_op.cc,1242,148,13,161,(2) NO: No security vulnerability.
+196790,1,0,0,skeleton_only,tensorflow,['CWE-703'],sdca_internal.cc,3832,162,13,175,(2) NO: No security vulnerability.
+196801,1,0,0,skeleton_only,gpac,['CWE-703'],isom_hinter.c,6017,150,13,163,(2) NO: No security vulnerability.
+196829,1,0,0,skeleton_only,tensorflow,['CWE-476'],session_ops.cc,869,130,13,143,(2) NO: No security vulnerability.
+196834,1,0,0,skeleton_only,tensorflow,['CWE-125'],count_ops.cc,338,133,13,146,(2) NO: No security vulnerability.
+196841,1,0,0,skeleton_only,furnace,['CWE-703'],pattern.cpp,12844,152,13,165,(2) NO: No security vulnerability.
+196846,1,0,0,skeleton_only,tensorflow,['CWE-369'],div.cc,1159,138,13,151,(2) NO: No security vulnerability.
+196860,1,0,0,skeleton_only,gpac,['CWE-787'],None,1878,141,13,154,(2) NO: No security vulnerability.
+196885,1,0,0,skeleton_only,tensorflow,['CWE-703'],mkl_requantization_range_per_channel_op.cc,3259,131,13,144,(2) NO: No security vulnerability.
+196889,1,0,0,skeleton_only,rpm,['CWE-284'],rpmpgp.c,744,153,13,166,(2) NO: No security vulnerability.
+196893,1,0,0,skeleton_only,envoy,['CWE-362'],default_validator.cc,1618,160,13,173,(2) NO: No security vulnerability.
+196894,1,0,0,skeleton_only,cryptopp,['CWE-399'],rw.cpp,1059,143,13,156,(2) NO: No security vulnerability.
+196993,1,0,0,skeleton_only,libjxl,['CWE-369'],codec_apng.cc,7391,147,13,160,(2) NO: No security vulnerability.
+197015,1,0,0,skeleton_only,gpac,['CWE-476'],isom_store.c,2728,143,13,156,(2) NO: No security vulnerability.
+197057,1,0,0,skeleton_only,drogon,['CWE-552'],None,883,135,13,148,(2) NO: No security vulnerability.
+197095,1,0,0,skeleton_only,tensorflow,['CWE-369'],optimized_ops.h,4283,212,13,225,(2) NO: No security vulnerability.
+197111,1,0,0,skeleton_only,tinyexr,['CWE-20'],tinyexr.h,10037,181,13,194,(2) NO: No security vulnerability.
+197128,1,0,0,skeleton_only,mruby,['CWE-125'],codegen.c,3787,143,13,156,(2) NO: No security vulnerability.
+197135,1,0,0,skeleton_only,linux,['CWE-703'],ccp-ops.c,6867,145,13,158,(2) NO: No security vulnerability.
+197142,1,0,0,skeleton_only,tensorflow,['CWE-476'],quantize_op.cc,2320,131,8,139,(2) NO
+197185,1,0,0,skeleton_only,FFmpeg,['CWE-252'],None,1566,153,13,166,(2) NO: No security vulnerability.
+197223,1,0,0,skeleton_only,njs,['CWE-787'],njs_module.c,1138,148,13,161,(2) NO: No security vulnerability.
+197239,1,0,0,skeleton_only,tensorflow,['CWE-20'],mkl_requantize_per_channel_op.cc,5096,131,13,144,(2) NO: No security vulnerability.
+197242,1,0,0,skeleton_only,tensorflow,['CWE-908'],svdf.cc,9667,138,13,151,(2) NO: No security vulnerability.
+197247,1,0,0,skeleton_only,tensorflow,['CWE-369'],None,2523,146,13,159,(2) NO: No security vulnerability.
+197262,1,0,0,skeleton_only,tensorflow,['CWE-125'],sparse_matmul_op.cc,4354,131,13,144,(2) NO: No security vulnerability.
+197305,1,0,0,skeleton_only,pjproject,['CWE-200'],rtcp_fb.c,839,162,13,175,(2) NO: No security vulnerability.
+197318,1,0,0,skeleton_only,tensorflow,['CWE-703'],session_ops.cc,418,130,13,143,(2) NO: No security vulnerability.
+197326,1,0,0,skeleton_only,tensorflow,['CWE-703'],einsum_op_impl.h,2300,197,13,210,(2) NO: No security vulnerability.
+197359,1,0,0,skeleton_only,tensorflow,['CWE-703'],auto_parallel.cc,4992,133,13,146,(2) NO: No security vulnerability.
+197395,1,0,0,skeleton_only,tensorflow,['CWE-369'],reverse_op.cc,1647,131,13,144,(2) NO: No security vulnerability.
+197466,1,0,0,skeleton_only,tensorflow,['CWE-476'],save_restore_tensor.cc,3703,157,13,170,(2) NO: No security vulnerability.
+197499,1,0,0,skeleton_only,gpac,['CWE-416'],field_decode.c,3101,161,8,169,(2) NO
+197511,1,0,0,skeleton_only,libjpeg,['CWE-787'],hierarchicalbitmaprequester.cpp,1103,133,13,146,(2) NO: No security vulnerability.
+197517,1,0,0,skeleton_only,glewlwyd,['CWE-787'],webauthn.c,7137,204,13,217,(2) NO: No security vulnerability.
+197518,1,0,0,skeleton_only,tensorflow,['CWE-703'],quantize_and_dequantize_op.cc,3191,131,8,139,(2) NO
+197565,1,0,0,skeleton_only,wolfMQTT,['CWE-787'],mqtt_client.c,7554,155,13,168,(2) NO: No security vulnerability.
+197593,1,0,0,skeleton_only,njs,['CWE-416'],njs_function.c,1335,145,8,153,(2) NO
+197666,1,0,0,skeleton_only,njs,['CWE-703'],njs_iterator.c,4494,150,13,163,(2) NO: No security vulnerability.
+197719,1,0,0,skeleton_only,tensorflow,['CWE-125'],ragged_tensor_to_variant_op.cc,2111,131,13,144,(2) NO: No security vulnerability.
+197748,1,0,0,skeleton_only,tensorflow,['CWE-703'],array_ops.cc,2247,132,13,145,(2) NO: No security vulnerability.
+197760,1,0,0,skeleton_only,tensorflow,['CWE-125'],gather_nd.cc,1030,155,13,168,(2) NO: No security vulnerability.
+197796,1,0,0,skeleton_only,qemu,['CWE-703'],vnc.c,4407,142,13,155,(2) NO: No security vulnerability.
+197801,1,0,0,skeleton_only,tensorflow,['CWE-345'],tensor_slice_reader.h,1688,146,13,159,(2) NO: No security vulnerability.
+197824,1,0,0,skeleton_only,gpac,['CWE-416'],memory_decoder.c,1090,151,13,164,(2) NO: No security vulnerability.
+197826,1,0,0,skeleton_only,tensorflow,['CWE-824'],constant_folding.cc,2329,197,13,210,(2) NO: No security vulnerability.
+197893,1,0,0,skeleton_only,tensorflow,['CWE-703'],gather.cc,568,153,13,166,(2) NO: No security vulnerability.
+197973,1,0,0,skeleton_only,crun,['CWE-276'],exec.c,3429,150,13,163,(2) NO: No security vulnerability.
+197998,1,0,0,skeleton_only,tensorflow,['CWE-703'],unsorted_segment_join_op.cc,2727,131,13,144,(2) NO: No security vulnerability.
+198010,1,0,0,skeleton_only,radare2,['CWE-125'],bfile.c,7850,163,13,176,(2) NO: No security vulnerability.
+198013,1,0,0,skeleton_only,tensorflow,['CWE-703'],load_and_remap_matrix_op.cc,11099,131,13,144,(2) NO: No security vulnerability.
+198116,1,0,0,skeleton_only,tensorflow,['CWE-125'],sparse_reduce_op.cc,3054,131,8,139,(2) NO
+198117,1,0,0,skeleton_only,tensorflow,['CWE-476'],fractional_avg_pool_op.cc,6758,131,13,144,(2) NO: No security vulnerability.
+198161,1,0,0,skeleton_only,ImageMagick,['CWE-125'],mat.c,16319,139,13,152,(2) NO: No security vulnerability.
+198169,1,0,0,skeleton_only,tensorflow,['CWE-369'],kernel_util.cc,237,145,13,158,(2) NO: No security vulnerability.
+198239,1,0,0,skeleton_only,barebox,['CWE-200'],password.c,1384,135,13,148,(2) NO: No security vulnerability.
+198259,1,0,0,skeleton_only,tensorflow,['CWE-369'],ragged_gather_op.cc,1647,131,13,144,(2) NO: No security vulnerability.
+198282,1,0,0,skeleton_only,tensorflow,['CWE-369'],reshape_util.cc,4587,167,13,180,(2) NO: No security vulnerability.
+198350,1,0,0,skeleton_only,owntone-server,['CWE-416'],misc.c,2487,138,8,146,(2) NO
+198374,1,0,0,skeleton_only,tensorflow,['CWE-703'],lstm_ops.cc,5377,131,13,144,(2) NO: No security vulnerability.
+198399,1,0,0,skeleton_only,uftpd,['CWE-787'],ftpcmd.c,890,133,13,146,(2) NO: No security vulnerability.
+198439,1,0,0,skeleton_only,mruby,['CWE-288'],vm.c,50746,147,13,160,(2) NO: No security vulnerability.
+198449,1,0,0,skeleton_only,pjproject,['CWE-787'],stun_simple.c,1767,152,13,165,(2) NO: No security vulnerability.
+198452,1,0,0,skeleton_only,tensorflow,['CWE-703'],comparisons.cc,1722,153,13,166,(2) NO: No security vulnerability.
+198476,1,0,0,skeleton_only,njs,['CWE-416'],njs_async.c,2245,155,13,168,(2) NO: No security vulnerability.
+198499,1,0,0,skeleton_only,micro-ecc,['CWE-415'],uECC.c,2725,172,13,185,(2) NO: No security vulnerability.
+198523,1,0,0,skeleton_only,tensorflow,['CWE-416'],resource_ops.cc,1155,131,13,144,(2) NO: No security vulnerability.
+198545,1,0,0,skeleton_only,u-boot,['CWE-787'],i2c.c,2210,147,13,160,(2) NO: No security vulnerability.
+198556,1,0,0,skeleton_only,mruby,['CWE-703'],fiber.c,1634,158,13,171,(2) NO: No security vulnerability.
+198566,1,0,0,skeleton_only,libmobi,['CWE-787'],index.c,2248,145,8,153,(2) NO
+198662,1,0,0,skeleton_only,vim,['CWE-787'],ex_cmds.c,1308,141,13,154,(2) NO: No security vulnerability.
+198692,1,0,0,skeleton_only,ipsec,['CWE-125'],xfrm_policy.c,1471,183,13,196,(2) NO: No security vulnerability.
+198695,1,0,0,skeleton_only,MilkyTracker,['CWE-787'],LoaderS3M.cpp,8477,143,13,156,(2) NO: No security vulnerability.
+198703,1,0,0,skeleton_only,LibRaw,['CWE-189'],dcraw.c,1410,137,13,150,(2) NO: No security vulnerability.
+198736,1,0,0,skeleton_only,linux,['CWE-401'],rsi_91x_mgmt.c,638,134,13,147,(2) NO: No security vulnerability.
+198743,1,0,0,skeleton_only,LuaJIT,['CWE-125'],lj_err.c,1384,133,13,146,(2) NO: No security vulnerability.
+198927,1,0,0,skeleton_only,radare2,['CWE-125'],ne.c,1947,138,8,146,(2) NO
+198983,1,0,0,skeleton_only,swtpm,['CWE-125'],swtpm_nvfile.c,1134,165,13,178,(2) NO: No security vulnerability.
+199159,1,0,0,skeleton_only,linux,['CWE-362'],None,2961,140,8,148,(2) NO
+199712,1,0,0,skeleton_only,linux,['CWE-415'],rtrs-clt.c,152,133,13,146,(2) NO: No security vulnerability.
+199767,1,0,0,skeleton_only,hexchat,['CWE-22'],inbound.c,2721,148,13,161,(2) NO: No security vulnerability.
+199778,1,0,0,skeleton_only,puma,['CWE-444'],http11_parser.c,19279,147,13,160,(2) NO: No security vulnerability.
+199833,1,0,0,skeleton_only,chafa,['CWE-476'],libnsgif.c,15134,141,13,154,(2) NO: No security vulnerability.
+199836,1,0,0,skeleton_only,pjproject,['CWE-125'],None,308,135,13,148,(2) NO: No security vulnerability.
+199841,1,0,0,skeleton_only,radare2,['CWE-476'],bin_xnu_kernelcache.c,1665,152,8,160,(2) NO
+199851,1,0,0,skeleton_only,vim,['CWE-787'],indent.c,5582,131,13,144,(2) NO: No security vulnerability.
+199952,1,0,0,skeleton_only,MilkyTracker,['CWE-787'],None,19139,141,13,154,(2) NO: No security vulnerability.
+199984,1,0,0,skeleton_only,vim,['CWE-416'],ex_cmds.c,31245,132,8,140,(2) NO
+200113,1,0,0,skeleton_only,ImageMagick,['CWE-787'],mat.c,6670,146,13,159,(2) NO: No security vulnerability.
+200157,1,0,0,skeleton_only,exim,['CWE-264'],readconf.c,13171,126,13,139,(2) NO: No security vulnerability.
+200163,1,0,0,skeleton_only,linux,['CWE-200'],hid-elo.c,875,139,13,152,(2) NO: No security vulnerability.
+200287,1,0,0,skeleton_only,linux,['CWE-200'],socket.c,3449,145,13,158,(2) NO: No security vulnerability.
+200305,1,0,0,skeleton_only,ghostpdl,['CWE-787'],gdevpcx.c,1184,147,13,160,(2) NO: No security vulnerability.
+200320,1,0,0,skeleton_only,samba,['CWE-665'],vfs_default.c,8888,137,13,150,(2) NO: No security vulnerability.
+200323,1,0,0,skeleton_only,vim,['CWE-787'],spellsuggest.c,39409,157,13,170,(2) NO: No security vulnerability.
+200379,1,0,0,skeleton_only,radare2,['CWE-476'],ne.c,761,136,8,144,(2) NO
+200695,1,0,0,skeleton_only,linux,['CWE-401'],fastrpc.c,674,144,13,157,(2) NO: No security vulnerability.
+200781,1,0,0,skeleton_only,ncurses,['CWE-787'],None,1139,140,13,153,(2) NO: No security vulnerability.
+200895,1,0,0,skeleton_only,vim,['CWE-703'],None,1117,148,13,161,(2) NO: No security vulnerability.
+200934,1,0,0,skeleton_only,libvirt,['CWE-212'],virstoragetest.c,1308,129,13,142,(2) NO: No security vulnerability.
+200976,1,0,0,skeleton_only,vim,['CWE-787'],None,895,165,13,178,(2) NO: No security vulnerability.
+201007,1,0,0,skeleton_only,pjproject,['CWE-787'],sdp.c,1492,144,13,157,(2) NO: No security vulnerability.
+201343,1,0,0,skeleton_only,linux,['CWE-416'],None,204,135,13,148,(2) NO: No security vulnerability.
+201353,1,0,0,skeleton_only,wireless-drivers,['CWE-415'],rsi_91x_usb.c,1417,143,8,151,(2) NO
+201382,1,0,0,skeleton_only,gerbv,['CWE-787'],drill.c,7874,154,13,167,(2) NO: No security vulnerability.
+201384,1,0,0,skeleton_only,vim,['CWE-787'],None,762,137,13,150,(2) NO: No security vulnerability.
+201451,1,0,0,skeleton_only,ImageMagick6,['CWE-787'],cin.c,15672,140,13,153,(2) NO: No security vulnerability.
+201872,1,0,0,skeleton_only,gnutls,['CWE-310'],gnutls_handshake.c,4749,147,13,160,(2) NO: No security vulnerability.
+201885,1,0,0,skeleton_only,vim,['CWE-416'],regexp_bt.c,34450,172,13,185,(2) NO: No security vulnerability.
+201913,1,0,0,skeleton_only,libarchive,['CWE-59'],None,2210,153,13,166,(2) NO: No security vulnerability.
+201925,1,0,0,skeleton_only,linux,['CWE-476'],vidtv_s302m.c,1188,140,13,153,(2) NO: No security vulnerability.
+202081,1,0,0,skeleton_only,vim,['CWE-787'],register.c,19946,177,8,185,(2) NO
+202082,1,0,0,skeleton_only,radare2,['CWE-125'],class.c,1105,158,13,171,(2) NO: No security vulnerability.
+202125,1,0,0,skeleton_only,cairo,['CWE-787'],None,2943,155,13,168,(2) NO: No security vulnerability.
+202256,1,0,0,skeleton_only,qtbase,['CWE-787'],qpaintengineex.cpp,9164,141,13,154,(2) NO: No security vulnerability.
+202276,1,0,0,skeleton_only,vim,['CWE-787'],None,3371,157,13,170,(2) NO: No security vulnerability.
+202304,1,0,0,skeleton_only,vim,['CWE-122'],None,1179,141,13,154,(2) NO: No security vulnerability.
+202392,1,0,0,skeleton_only,php-src,['CWE-119'],gd_interpolation.c,978,142,13,155,(2) NO: No security vulnerability.
+202659,1,0,0,skeleton_only,net,['CWE-125'],ip6_gre.c,2044,160,13,173,(2) NO: No security vulnerability.
+202677,1,0,0,skeleton_only,qemu,['CWE-369'],None,1213,145,13,158,(2) NO: No security vulnerability.
+202688,1,0,0,skeleton_only,ghostpdl,['CWE-787'],gdevlprn.c,522,143,13,156,(2) NO: No security vulnerability.
+202708,1,0,0,skeleton_only,vim,['CWE-476'],buffer.c,576,158,13,171,(2) NO: No security vulnerability.
+202719,1,0,0,skeleton_only,linux,['CWE-704'],sm_make_chunk.c,1222,166,13,179,(2) NO: No security vulnerability.
+202748,1,0,0,skeleton_only,ImageMagick,['CWE-772'],tga.c,13504,141,13,154,(2) NO: No security vulnerability.
+202783,1,0,0,skeleton_only,php-src,['CWE-119'],zend_strtod.c,349,129,13,142,(2) NO: No security vulnerability.
+202822,1,0,0,skeleton_only,ghostpdl,['CWE-787'],zstring.c,1080,134,13,147,(2) NO: No security vulnerability.
+202888,1,0,0,skeleton_only,linux,['CWE-787'],esp4.c,1898,144,8,152,(2) NO
+202889,1,0,0,skeleton_only,linux,['CWE-787'],esp6.c,1844,145,13,158,(2) NO: No security vulnerability.
+202892,1,0,0,skeleton_only,pure-ftpd,['CWE-434'],ftpd.c,7610,137,8,145,(2) NO
+202943,1,0,0,skeleton_only,lua,['CWE-787'],ldebug.c,434,139,13,152,(2) NO: No security vulnerability.
+203614,1,0,0,skeleton_only,linux,['CWE-703'],pxa3xx-gcu.c,1582,150,13,163,(2) NO: No security vulnerability.
+203902,1,0,0,skeleton_only,vim,['CWE-703'],scriptfile.c,2749,133,13,146,(2) NO: No security vulnerability.
+204016,1,0,0,skeleton_only,squashfs-tools,['CWE-200'],None,3355,145,8,153,(2) NO
+204017,1,0,0,skeleton_only,squashfs-tools,['CWE-200'],None,3363,145,13,158,(2) NO: No security vulnerability.
+204019,1,0,0,skeleton_only,squashfs-tools,['CWE-200'],None,3071,145,13,158,(2) NO: No security vulnerability.
+204032,1,0,0,skeleton_only,linux,['CWE-772'],virtio_bt.c,348,141,13,154,(2) NO: No security vulnerability.
+204036,1,0,0,skeleton_only,net,['CWE-787'],hw_atl_utils.c,1016,147,13,160,(2) NO: No security vulnerability.
+204073,1,0,0,skeleton_only,shapelib,['CWE-415'],shpsort.c,737,135,13,148,(2) NO: No security vulnerability.
+204115,1,0,0,skeleton_only,openldap,['CWE-617'],schema_init.c,3567,149,13,162,(2) NO: No security vulnerability.
+204137,1,0,0,skeleton_only,poppler,['CWE-369'],None,6800,209,8,217,(2) NO
+204195,1,0,0,skeleton_only,pjproject,['CWE-125'],None,558,148,13,161,(2) NO: No security vulnerability.
+204243,1,0,0,skeleton_only,vim,['CWE-787'],eval.c,6093,161,13,174,(2) NO: No security vulnerability.
+204278,1,0,0,skeleton_only,firejail,['CWE-94'],None,876,144,13,157,(2) NO: No security vulnerability.
+204351,1,0,0,skeleton_only,squirrel,['CWE-125'],sqclass.cpp,1824,149,13,162,(2) NO: No security vulnerability.
+204412,1,0,0,skeleton_only,bpf,['CWE-787'],ringbuf.c,1123,142,13,155,(2) NO: No security vulnerability.
+204425,1,0,0,skeleton_only,frr,['CWE-125'],bgp_packet.c,2808,145,8,153,(2) NO
+204438,1,0,0,skeleton_only,ImageMagick,['CWE-617'],operation.c,16612,157,13,170,(2) NO: No security vulnerability.
+204495,1,0,0,skeleton_only,linux,['CWE-193'],cancel.c,636,146,13,159,(2) NO: No security vulnerability.
+204534,1,0,0,skeleton_only,admesh,['CWE-125'],connect.c,2388,136,13,149,(2) NO: No security vulnerability.
+204535,1,0,0,skeleton_only,admesh,['CWE-125'],connect.c,620,139,13,152,(2) NO: No security vulnerability.
+204544,1,0,0,skeleton_only,linux,['CWE-416'],em28xx-cards.c,8029,144,13,157,(2) NO: No security vulnerability.
+204814,1,0,0,skeleton_only,linux,['CWE-703'],None,827,131,13,144,(2) NO: No security vulnerability.
+204830,1,0,0,skeleton_only,linux,['CWE-200'],namespace.c,422,134,13,147,(2) NO: No security vulnerability.
+205630,1,0,0,skeleton_only,linux,['CWE-94'],io_uring.c,1193,141,13,154,(2) NO: No security vulnerability.
+205734,1,0,0,skeleton_only,rizin,['CWE-787'],marshal.c,1196,145,13,158,(2) NO: No security vulnerability.
+205736,1,0,0,skeleton_only,linux,['CWE-834'],fuse_i.h,110,131,8,139,(2) NO
+205806,1,0,0,skeleton_only,Singular,['CWE-269'],None,1794,130,13,143,(2) NO: No security vulnerability.
+205823,1,0,0,skeleton_only,ovs,['CWE-401'],ipf.c,991,164,8,172,(2) NO
+206025,1,0,0,skeleton_only,evolution-data-server,['CWE-200'],None,295,143,13,156,(2) NO: No security vulnerability.
+206043,1,0,0,skeleton_only,gimp,['CWE-125'],file-gbr.c,7841,137,13,150,(2) NO: No security vulnerability.
+206044,1,0,0,skeleton_only,tigervnc,['CWE-672'],None,2972,164,13,177,(2) NO: No security vulnerability.
+206262,1,0,0,skeleton_only,vim,['CWE-787'],ex_docmd.c,9072,154,13,167,(2) NO: No security vulnerability.
+206273,1,0,0,skeleton_only,radare2,['CWE-416'],None,5477,156,13,169,(2) NO: No security vulnerability.
+206417,1,0,0,skeleton_only,vim,['CWE-787'],edit.c,10082,144,13,157,(2) NO: No security vulnerability.
+206555,1,0,0,skeleton_only,php-src,['CWE-119'],gd_io_dp.c,400,139,13,152,(2) NO: No security vulnerability.
+206588,1,0,0,skeleton_only,php-src,['CWE-119'],None,1594,144,8,152,(2) NO
+206625,1,0,0,skeleton_only,raptor,['CWE-787'],raptor_xml_writer.c,8295,150,8,158,(2) NO
+206639,1,0,0,skeleton_only,linux,['CWE-703'],nf_tables_api.c,1465,156,13,169,(2) NO: No security vulnerability.
+206670,1,0,0,skeleton_only,nbdkit,['CWE-924'],protocol-handshake-newstyle.c,18843,132,13,145,(2) NO: No security vulnerability.
+206676,1,0,0,skeleton_only,vim,['CWE-122'],move.c,6235,126,13,139,(2) NO: No security vulnerability.
+206677,1,0,0,skeleton_only,vim,['CWE-703'],filepath.c,5339,174,13,187,(2) NO: No security vulnerability.
+206771,1,0,0,skeleton_only,qcad,['CWE-191'],dl_dxf.cpp,1260,141,13,154,(2) NO: No security vulnerability.
+206781,1,0,0,skeleton_only,linux,['CWE-476'],inode.c,2044,133,13,146,(2) NO: No security vulnerability.
+206815,1,0,0,skeleton_only,ImageMagick,['CWE-125'],quantize.c,5146,140,13,153,(2) NO: No security vulnerability.
+206845,1,0,0,skeleton_only,linux,['CWE-125'],control.c,352,136,13,149,(2) NO: No security vulnerability.
+206942,1,0,0,skeleton_only,vim,['CWE-125'],typval.c,3520,141,13,154,(2) NO: No security vulnerability.
+206946,1,0,0,skeleton_only,jasper,['CWE-703'],jasper.c,4177,135,13,148,(2) NO: No security vulnerability.
+207068,1,0,0,skeleton_only,linux,['CWE-120'],rpadlpar_sysfs.c,422,152,13,165,(2) NO: No security vulnerability.
+207069,1,0,0,skeleton_only,linux,['CWE-120'],rpadlpar_sysfs.c,415,151,13,164,(2) NO: No security vulnerability.
+207150,1,0,0,skeleton_only,squirrel,['CWE-703'],sqbaselib.cpp,600,133,8,141,(2) NO
+207461,1,0,0,skeleton_only,autotrace,['CWE-787'],input-bmp.c,10784,153,8,161,(2) NO
+207520,1,0,0,skeleton_only,rizin,['CWE-787'],dwarf.c,1456,201,13,214,(2) NO: No security vulnerability.
+207700,1,0,0,skeleton_only,EternalTerminal,['CWE-362'],UserTerminalRouter.cpp,225,136,13,149,(2) NO: No security vulnerability.
+207703,1,0,0,skeleton_only,EternalTerminal,['CWE-362'],PipeSocketHandler.cpp,823,134,13,147,(2) NO: No security vulnerability.
+207719,1,0,0,skeleton_only,vim,['CWE-787'],edit.c,569,129,13,142,(2) NO: No security vulnerability.
+207753,1,0,0,skeleton_only,linux,['CWE-284'],iov_iter.c,988,149,13,162,(2) NO: No security vulnerability.
+207754,1,0,0,skeleton_only,linux,['CWE-284'],iov_iter.c,1062,150,13,163,(2) NO: No security vulnerability.
+207755,1,0,0,skeleton_only,php-src,['CWE-200'],openssl.c,2116,128,13,141,(2) NO: No security vulnerability.
+207780,1,0,0,skeleton_only,radare2,['CWE-703'],None,4121,141,13,154,(2) NO: No security vulnerability.
+207803,1,0,0,skeleton_only,linux,['CWE-200'],random.c,1703,133,13,146,(2) NO: No security vulnerability.
+207804,1,0,0,skeleton_only,linux,['CWE-200'],timer.c,384,128,13,141,(2) NO: No security vulnerability.
+207990,1,0,0,skeleton_only,pcre2,['CWE-703'],pcre2_jit_compile.c,4749,167,13,180,(2) NO: No security vulnerability.
+208107,1,0,0,skeleton_only,linux,['CWE-703'],xfrm_policy.c,913,161,13,174,(2) NO: No security vulnerability.
+208115,1,0,0,skeleton_only,linux,['CWE-703'],xilinx_emaclite.c,2285,135,13,148,(2) NO: No security vulnerability.
+208140,1,0,0,skeleton_only,util-linux,['CWE-200'],mount.c,7619,130,13,143,(2) NO: No security vulnerability.
+208370,1,0,0,skeleton_only,vim,['CWE-787'],edit.c,2208,141,13,154,(2) NO: No security vulnerability.
+208411,1,0,0,skeleton_only,vim,['CWE-787'],term.c,16023,152,13,165,(2) NO: No security vulnerability.
+208505,1,0,0,skeleton_only,tor,['CWE-399'],routerparse.c,17737,147,13,160,(2) NO: No security vulnerability.
+208506,1,0,0,skeleton_only,heimdal,['CWE-476'],None,31845,132,8,140,(2) NO
+208522,1,0,0,skeleton_only,unbound,['CWE-190'],dnscrypt.c,2520,141,13,154,(2) NO: No security vulnerability.
+208525,1,0,0,skeleton_only,vim,['CWE-787'],ex_getln.c,1598,131,13,144,(2) NO: No security vulnerability.
+208535,1,0,0,skeleton_only,rizin,['CWE-415'],bin_qnx.c,148,134,13,147,(2) NO: No security vulnerability.
+208654,1,0,0,skeleton_only,php-src,['CWE-416'],snmp.c,4635,128,13,141,(2) NO: No security vulnerability.
+208680,1,0,0,skeleton_only,radare2,['CWE-416'],None,13139,145,8,153,(2) NO
+208912,1,0,0,skeleton_only,vim,['CWE-416'],ex_getln.c,25369,175,13,188,(2) NO: No security vulnerability.
+208987,1,0,0,skeleton_only,MilkyTracker,['CWE-416'],PlayerGeneric.cpp,240,126,13,139,(2) NO: No security vulnerability.
+209026,1,0,0,skeleton_only,libvirt,['CWE-119'],node_device_conf.c,634,156,13,169,(2) NO: No security vulnerability.
+209102,1,0,0,skeleton_only,vim,['CWE-703'],mouse.c,22314,197,13,210,(2) NO: No security vulnerability.
+209801,1,0,0,skeleton_only,mujs,['CWE-476'],jsdump.c,205,141,13,154,(2) NO: No security vulnerability.
+209931,1,0,0,skeleton_only,FreeRDP,['CWE-190'],video_main.c,1581,155,13,168,(2) NO: No security vulnerability.
+209955,1,0,0,skeleton_only,linux,['CWE-476'],trans.c,5021,159,13,172,(2) NO: No security vulnerability.
+210050,1,0,0,skeleton_only,lua,['CWE-125'],lparser.c,467,135,13,148,(2) NO: No security vulnerability.
+210090,1,1,1,skeleton_only,file,['CWE-787'],cdf.c,3962,166,14,180,(1) YES: A security vulnerability detected.
+210203,1,0,0,skeleton_only,linux,['CWE-787'],seq_file.c,94,130,13,143,(2) NO: No security vulnerability.
+210204,1,0,0,skeleton_only,linux,['CWE-362'],flow_netlink.c,1036,146,13,159,(2) NO: No security vulnerability.
+210206,1,1,1,skeleton_only,squid,['CWE-400'],gopher.cc,11324,142,14,156,(1) YES: A security vulnerability detected.
+210252,1,0,0,skeleton_only,ImageMagick,['CWE-787'],cin.c,15720,140,13,153,(2) NO: No security vulnerability.
+210271,1,0,0,skeleton_only,vim,['CWE-787'],spellfile.c,2143,138,13,151,(2) NO: No security vulnerability.
+210273,1,0,0,skeleton_only,mongo,['CWE-617'],pipeline_d.cpp,10193,170,13,183,(2) NO: No security vulnerability.
+210278,1,0,0,skeleton_only,unicorn,['CWE-476'],exec.c,402,136,13,149,(2) NO: No security vulnerability.
+210282,1,0,0,skeleton_only,qemu,['CWE-125'],i2c-ddc.c,156,137,13,150,(2) NO: No security vulnerability.
+210283,1,0,0,skeleton_only,dpdk,['CWE-703'],vhost_user.c,3022,153,13,166,(2) NO: No security vulnerability.
+210284,1,0,0,skeleton_only,dpdk,['CWE-703'],vhost_user.c,3121,153,13,166,(2) NO: No security vulnerability.
+210393,1,0,0,skeleton_only,vim,['CWE-416'],arglist.c,7558,162,13,175,(2) NO: No security vulnerability.
+210420,1,0,0,skeleton_only,ghostpdl,['CWE-119'],gxht_thresh.c,758,156,13,169,(2) NO: No security vulnerability.
+210453,1,0,0,skeleton_only,ghostpdl,['CWE-120'],gdev3852.c,4521,142,13,155,(2) NO: No security vulnerability.
+210484,1,0,0,skeleton_only,linux,['CWE-125'],io_uring.c,2805,139,13,152,(2) NO: No security vulnerability.
+210520,1,0,0,skeleton_only,vim,['CWE-125'],indent.c,3834,127,13,140,(2) NO: No security vulnerability.
+210527,1,0,0,skeleton_only,linux,['CWE-415'],mcba_usb.c,1600,146,13,159,(2) NO: No security vulnerability.
+210551,1,0,0,skeleton_only,oniguruma,['CWE-125'],regcomp.c,3190,134,13,147,(2) NO: No security vulnerability.
+210570,1,0,0,skeleton_only,radare2,['CWE-787'],bin_symbols.c,2594,156,13,169,(2) NO: No security vulnerability.
+210571,1,0,0,skeleton_only,linux,['CWE-401'],cx23888-ir.c,1324,135,13,148,(2) NO: No security vulnerability.
+210620,1,0,0,skeleton_only,linux,['CWE-415'],virtio_rpmsg_bus.c,751,142,13,155,(2) NO: No security vulnerability.
+210636,1,0,0,skeleton_only,linux,['CWE-416'],mkiss.c,702,131,13,144,(2) NO: No security vulnerability.
+210669,1,0,0,skeleton_only,ImageMagick6,['CWE-401'],bmp.c,34566,139,8,147,(2) NO
+210692,1,1,1,skeleton_only,ImageMagick6,['CWE-835'],bmp.c,34742,139,8,147,(1) YES
+210700,1,0,0,skeleton_only,squashfs-tools,['CWE-22'],None,3282,145,13,158,(2) NO: No security vulnerability.
+210701,1,0,0,skeleton_only,squashfs-tools,['CWE-22'],None,3285,145,8,153,(2) NO
+210702,1,0,0,skeleton_only,squashfs-tools,['CWE-22'],None,2982,145,13,158,(2) NO: No security vulnerability.
+210834,1,0,0,skeleton_only,xserver,['CWE-863'],log.c,1122,140,13,153,(2) NO: No security vulnerability.
+210866,1,0,0,skeleton_only,xserver,['CWE-191'],xkbSwap.c,2399,131,13,144,(2) NO: No security vulnerability.
+210887,1,0,0,skeleton_only,qemu,['CWE-835'],e1000.c,491,142,13,155,(2) NO: No security vulnerability.
+210896,1,0,0,skeleton_only,spice,['CWE-193'],memslot.c,1191,154,13,167,(2) NO: No security vulnerability.
+210904,1,0,0,skeleton_only,curl,['CWE-125'],main.c,789,136,13,149,(2) NO: No security vulnerability.
+210910,1,0,0,skeleton_only,vim,['CWE-200'],drawscreen.c,3475,136,13,149,(2) NO: No security vulnerability.
+210928,1,0,0,skeleton_only,linux,['CWE-476'],inode.c,900,131,13,144,(2) NO: No security vulnerability.
+210944,1,0,0,skeleton_only,vim,['CWE-416'],ex_docmd.c,22933,171,13,184,(2) NO: No security vulnerability.
+211090,1,0,0,skeleton_only,cifs-utils,['CWE-20'],mount.cifs.c,2509,144,13,157,(2) NO: No security vulnerability.
+211102,1,0,0,skeleton_only,file-roller,['CWE-22'],None,7299,148,13,161,(2) NO: No security vulnerability.
+211103,1,0,0,skeleton_only,file-roller,['CWE-22'],None,1690,134,13,147,(2) NO: No security vulnerability.
+211110,1,0,0,skeleton_only,libtiff,['CWE-787'],tif_lzw.c,5119,147,13,160,(2) NO: No security vulnerability.
+211113,1,0,0,skeleton_only,linux,['CWE-416'],atusb.c,534,131,13,144,(2) NO: No security vulnerability.
+211126,1,0,0,skeleton_only,libmobi,['CWE-125'],index.c,6639,175,8,183,(2) NO
+211136,1,0,0,skeleton_only,rizin,['CWE-787'],dyldcache.c,2717,142,13,155,(2) NO: No security vulnerability.
+211179,1,0,0,skeleton_only,exiv2,['CWE-125'],image.cpp,8217,162,13,175,(2) NO: No security vulnerability.
+211181,1,0,0,skeleton_only,php-src,['CWE-17'],apprentice.c,2835,139,13,152,(2) NO: No security vulnerability.
+211471,1,0,0,skeleton_only,frr,['CWE-125'],bgp_packet.c,2993,148,13,161,(2) NO: No security vulnerability.
+211473,1,0,0,skeleton_only,gdk-pixbuf,['CWE-189'],io-xbm.c,2983,163,8,171,(2) NO
+211506,1,0,0,skeleton_only,zlib,['CWE-787'],inflate.c,25995,140,13,153,(2) NO: No security vulnerability.
+211563,1,0,0,skeleton_only,vim,['CWE-122'],None,1349,128,13,141,(2) NO: No security vulnerability.
+211567,1,0,0,skeleton_only,clamav-devel,['CWE-189'],sis.c,466,140,13,153,(2) NO: No security vulnerability.
+211695,1,0,0,skeleton_only,vim,['CWE-416'],regexp.c,1662,126,13,139,(2) NO: No security vulnerability.
+211699,1,0,0,skeleton_only,gnulib,['CWE-119'],glob.c,28165,149,8,157,(2) NO
+211700,1,0,0,skeleton_only,linux,['CWE-120'],se.c,1407,155,8,163,(2) NO
+211773,1,0,0,skeleton_only,ntp,['CWE-20'],ntpq.c,2313,125,13,138,(2) NO: No security vulnerability.
+211785,1,0,0,skeleton_only,jasper,['CWE-20'],jpc_enc.c,11802,142,13,155,(2) NO: No security vulnerability.
+211842,1,0,0,skeleton_only,vim,['CWE-787'],indent.c,5974,170,13,183,(2) NO: No security vulnerability.
+211845,1,0,0,skeleton_only,ImageMagick6,['CWE-787'],tiff.c,34484,142,8,150,(2) NO
+211868,1,0,0,skeleton_only,nf,['CWE-269'],nf_tables_offload.c,1118,144,13,157,(2) NO: No security vulnerability.
+211877,1,0,0,skeleton_only,libexpat,['CWE-668'],xmlparse.c,5086,154,13,167,(2) NO: No security vulnerability.
+211915,1,0,0,skeleton_only,jasper,['CWE-125'],jp2_dec.c,9385,141,13,154,(2) NO: No security vulnerability.
+212083,1,0,0,skeleton_only,linux,['CWE-703'],i2c-ismt.c,6487,167,13,180,(2) NO: No security vulnerability.
+212144,1,0,0,skeleton_only,libmobi,['CWE-119'],read.c,1932,147,8,155,(2) NO
+212152,1,0,0,skeleton_only,bash,['CWE-787'],shell.c,494,124,13,137,(2) NO: No security vulnerability.
+212339,1,0,0,skeleton_only,icecast-server,['CWE-119'],auth_url.c,1092,146,8,154,(2) NO
+212407,1,0,0,skeleton_only,varnish-cache,['CWE-703'],cache_http.c,295,135,13,148,(2) NO: No security vulnerability.
+212414,1,0,0,skeleton_only,linux,['CWE-416'],cls_api.c,5619,151,13,164,(2) NO: No security vulnerability.
+212433,1,0,0,skeleton_only,vim,['CWE-416'],tag.c,16686,181,13,194,(2) NO: No security vulnerability.
+212436,1,0,0,skeleton_only,linux,['CWE-787'],stackmap.c,532,139,13,152,(2) NO: No security vulnerability.
+212818,1,0,0,skeleton_only,pjproject,['CWE-191'],None,698,162,13,175,(2) NO: No security vulnerability.
+212822,1,0,0,skeleton_only,ghostpdl,['CWE-787'],None,501,138,13,151,(2) NO: No security vulnerability.
+212829,1,0,0,skeleton_only,php-src,['CWE-476'],wddx.c,3806,142,13,155,(2) NO: No security vulnerability.
+212834,1,0,0,skeleton_only,rsyslog,['CWE-190'],imptcp.c,4516,181,13,194,(2) NO: No security vulnerability.
+212857,1,0,0,skeleton_only,vim,['CWE-416'],quickfix.c,2622,152,13,165,(2) NO: No security vulnerability.
+212871,1,0,0,skeleton_only,newsbeuter,['CWE-787'],controller.cpp,1385,161,13,174,(2) NO: No security vulnerability.
+212927,1,0,0,skeleton_only,qemu,['CWE-835'],sungem.c,320,145,13,158,(2) NO: No security vulnerability.
+212934,1,0,0,skeleton_only,cyrus-imapd,['CWE-732'],annotate.c,3456,131,8,139,(2) NO
+212955,1,0,0,skeleton_only,linux,['CWE-476'],af_ax25.c,1838,131,13,144,(2) NO: No security vulnerability.
+213037,1,0,0,skeleton_only,php-src,['CWE-125'],mbfilter_big5.c,2277,140,13,153,(2) NO: No security vulnerability.
+213075,1,0,0,skeleton_only,linux,['CWE-416'],main.c,369,138,13,151,(2) NO: No security vulnerability.
+213370,1,0,0,skeleton_only,glib,['CWE-754'],gsocketclient.c,3733,146,13,159,(2) NO: No security vulnerability.
+213515,1,0,0,skeleton_only,vim,['CWE-787'],spellsuggest.c,6540,127,13,140,(2) NO: No security vulnerability.
+213528,1,0,0,skeleton_only,linux,['CWE-416'],cgroup-v1.c,2176,139,8,147,(2) NO
+213998,1,0,0,skeleton_only,libtpms,['CWE-119'],Object.c,482,143,13,156,(2) NO: No security vulnerability.
+214003,1,0,0,skeleton_only,libvncserver,['CWE-787'],corre.c,836,144,13,157,(2) NO: No security vulnerability.
+214124,1,0,0,skeleton_only,chafa,['CWE-125'],lzw.c,2279,145,13,158,(2) NO: No security vulnerability.
+214160,1,0,0,skeleton_only,linux,['CWE-476'],composite.c,11322,140,8,148,(2) NO
+214276,1,0,0,skeleton_only,linux,['CWE-20'],crypto.c,1300,143,13,156,(2) NO: No security vulnerability.
+214282,1,1,1,skeleton_only,radare2,['CWE-787'],None,2479,157,8,165,(1) YES
+214335,1,0,0,skeleton_only,ceph,['CWE-79'],rgw_rest_s3.cc,7013,151,13,164,(2) NO: No security vulnerability.
+214336,1,0,0,skeleton_only,linux,['CWE-362'],af_key.c,745,152,13,165,(2) NO: No security vulnerability.
+214339,1,0,0,skeleton_only,linux,['CWE-787'],book3s_rtas.c,1527,139,13,152,(2) NO: No security vulnerability.
+214358,1,0,0,skeleton_only,clamav-devel,['CWE-20'],mspack.c,5074,139,13,152,(2) NO: No security vulnerability.
+214364,1,0,0,skeleton_only,php-src,['CWE-119'],simplestring.c,833,140,13,153,(2) NO: No security vulnerability.
+214909,1,0,0,skeleton_only,linux,['CWE-401'],conn.c,2338,144,8,152,(2) NO
+214948,1,0,0,skeleton_only,nagioscore,['CWE-476'],query-handler.c,776,136,13,149,(2) NO: No security vulnerability.
+214997,1,0,0,skeleton_only,liblouis,['CWE-787'],compileTranslationTable.c,49196,151,13,164,(2) NO: No security vulnerability.
+215038,1,0,0,skeleton_only,gst-plugins-good,['CWE-125'],gstflxdec.c,5721,143,13,156,(2) NO: No security vulnerability.
+215073,1,0,0,skeleton_only,linux,['CWE-269'],cgroup-v1.c,503,151,13,164,(2) NO: No security vulnerability.
+215103,1,0,0,skeleton_only,mongo,['CWE-617'],None,9585,170,8,178,(2) NO
+215142,1,0,0,skeleton_only,open62541,['CWE-703'],check_securechannel.c,500,125,13,138,(2) NO: No security vulnerability.
+215188,1,0,0,skeleton_only,libmobi,['CWE-787'],None,683,140,8,148,(2) NO
+215262,1,0,0,skeleton_only,qemu,['CWE-835'],cadence_gem.c,6042,135,8,143,(2) NO
+215264,1,0,0,skeleton_only,perl5,['CWE-120'],regcomp.c,81477,127,13,140,(2) NO: No security vulnerability.
+215312,1,0,0,skeleton_only,linux-2.6,['CWE-20'],None,1821,142,13,155,(2) NO: No security vulnerability.
+215374,1,0,0,skeleton_only,linux-2.6,['CWE-189'],None,751,147,13,160,(2) NO: No security vulnerability.
+215391,1,0,0,skeleton_only,linux-2.6,['CWE-20'],None,403,177,13,190,(2) NO: No security vulnerability.
+215399,1,0,0,skeleton_only,linux-2.6,['CWE-119'],None,592,146,13,159,(2) NO: No security vulnerability.
+215400,1,0,0,skeleton_only,linux-2.6,['CWE-20'],None,2869,146,13,159,(2) NO: No security vulnerability.
+215549,1,0,0,skeleton_only,gzip,['CWE-189'],None,4759,142,8,150,(2) NO
+215921,1,0,0,skeleton_only,grep,['CWE-119'],None,2320,140,13,153,(2) NO: No security vulnerability.
+215948,1,0,0,skeleton_only,nettle,['CWE-310'],None,1312,142,8,150,(2) NO
+216027,1,0,0,skeleton_only,tar,['CWE-476'],None,3123,133,13,146,(2) NO: No security vulnerability.
+216126,1,0,0,skeleton_only,openssl,['CWE-20'],None,1641,136,13,149,(2) NO: No security vulnerability.
+216202,1,0,0,skeleton_only,libssh,['CWE-399'],None,2415,141,13,154,(2) NO: No security vulnerability.
+216515,1,0,0,skeleton_only,openssl,['CWE-362'],None,2379,133,13,146,(2) NO: No security vulnerability.
+216637,1,0,0,skeleton_only,guile,['CWE-275'],None,729,173,13,186,(2) NO: No security vulnerability.
+216654,1,0,0,skeleton_only,core,['CWE-20'],None,4342,152,13,165,(2) NO: No security vulnerability.
+216701,1,0,0,skeleton_only,libtiff,['CWE-770'],None,2050,169,13,182,(2) NO: No security vulnerability.
+216726,1,0,0,skeleton_only,openssl,['CWE-327'],None,3458,149,13,162,(2) NO: No security vulnerability.
+216767,1,0,0,skeleton_only,core,['CWE-835'],None,1865,134,13,147,(2) NO: No security vulnerability.
+216800,1,0,0,skeleton_only,core,['CWE-125'],None,330,146,13,159,(2) NO: No security vulnerability.
+216812,1,0,0,skeleton_only,openssl,['CWE-476'],None,95,125,13,138,(2) NO: No security vulnerability.
+216861,1,0,0,skeleton_only,openssl,['CWE-125'],None,10741,138,13,151,(2) NO: No security vulnerability.
+216903,1,0,0,skeleton_only,server,['CWE-476'],None,3525,138,13,151,(2) NO: No security vulnerability.
+216906,1,0,0,skeleton_only,server,['CWE-400'],None,155,132,8,140,(2) NO
+216938,1,0,0,skeleton_only,server,['CWE-416'],None,15070,144,8,152,(2) NO
+216945,1,0,0,skeleton_only,server,['CWE-617'],None,1828,161,13,174,(2) NO: No security vulnerability.
+216946,1,0,0,skeleton_only,server,['CWE-416'],None,402,137,13,150,(2) NO: No security vulnerability.
+216965,1,0,0,skeleton_only,server,['CWE-617'],None,5013,131,8,139,(2) NO
+217176,1,0,0,skeleton_only,monit,['CWE-79'],None,1566,134,13,147,(2) NO: No security vulnerability.
+217459,1,1,1,skeleton_only,JUCE,['CWE-59'],None,2024,143,14,157,(1) YES: A security vulnerability detected.
+217547,1,0,0,skeleton_only,libMeshb,['CWE-120'],None,6479,138,13,151,(2) NO: No security vulnerability.
+217551,1,0,0,skeleton_only,elfspirit,['CWE-125'],None,37504,128,13,141,(2) NO: No security vulnerability.
+217569,0,0,1,skeleton_only,ImageMagick6,['CWE-704'],property.c,28274,141,13,154,(2) NO: No security vulnerability.
+218785,0,0,1,skeleton_only,ImageMagick6,['CWE-190'],psd.c,1718,160,8,168,(2) NO
+218852,0,0,1,skeleton_only,tensorflow,['CWE-401'],immutable_executor_state.cc,6781,132,13,145,(2) NO: No security vulnerability.
+218933,0,0,1,skeleton_only,tensorflow,['CWE-476'],loader_util.cc,1491,147,13,160,(2) NO: No security vulnerability.
+219032,0,0,1,skeleton_only,tensorflow,['CWE-617'],constant_folding.cc,2762,146,13,159,(2) NO: No security vulnerability.
+219912,0,0,1,skeleton_only,gpac,['CWE-476'],hint_track.c,466,133,8,141,(2) NO
+219931,0,0,1,skeleton_only,tensorflow,['CWE-617'],constant_folding.cc,3008,153,13,166,(2) NO: No security vulnerability.
+219947,0,0,1,skeleton_only,glewlwyd,['CWE-287'],webservice.c,9884,150,8,158,(2) NO
+220021,0,0,1,skeleton_only,tensorflow,['CWE-190'],sparse_tensors_map_ops.cc,5527,131,13,144,(2) NO: No security vulnerability.
+220100,0,0,1,skeleton_only,linux,['CWE-909'],nfs4file.c,1686,137,13,150,(2) NO: No security vulnerability.
+220168,0,0,1,skeleton_only,tensorflow,['CWE-401'],decode_image_op.cc,5125,138,13,151,(2) NO: No security vulnerability.
+220201,0,0,1,skeleton_only,tensorflow,['CWE-125'],graph.cc,2328,129,8,137,(2) NO
+220442,0,0,1,skeleton_only,mruby,['CWE-476'],array.c,878,138,13,151,(2) NO: No security vulnerability.
+220449,0,0,1,skeleton_only,tensorflow,['CWE-354'],conv_ops.cc,4232,190,13,203,(2) NO: No security vulnerability.
+220463,0,0,1,skeleton_only,tensorflow,['CWE-476'],xla_platform_info.cc,2769,157,13,170,(2) NO: No security vulnerability.
+220804,0,0,1,skeleton_only,tensorflow,['CWE-787'],count_ops.cc,2361,131,13,144,(2) NO: No security vulnerability.
+220841,0,0,1,skeleton_only,tensorflow,['CWE-369'],common.h,2700,155,13,168,(2) NO: No security vulnerability.
+220909,0,0,1,skeleton_only,tensorflow,['CWE-617'],None,1185,136,13,149,(2) NO: No security vulnerability.
+220924,0,0,1,skeleton_only,gpac,['CWE-476'],None,16655,135,13,148,(2) NO: No security vulnerability.
+221079,0,0,1,skeleton_only,gpac,['CWE-120'],av_parsers.c,1731,148,13,161,(2) NO: No security vulnerability.
+221123,0,0,1,skeleton_only,tensorflow,['CWE-416'],decode_image_op.cc,4663,138,13,151,(2) NO: No security vulnerability.
+221160,0,0,1,skeleton_only,gpac,['CWE-415'],descriptors.c,2707,147,13,160,(2) NO: No security vulnerability.
+221413,0,0,1,skeleton_only,linux,['CWE-862'],None,1161,135,13,148,(2) NO: No security vulnerability.
+221428,0,0,1,skeleton_only,tensorflow,['CWE-617'],tensor.cc,1679,137,13,150,(2) NO: No security vulnerability.
+221631,0,0,1,skeleton_only,tensorflow,['CWE-754'],tf_cpurt_symbolic_shape_optimization.cc,2739,149,13,162,(2) NO: No security vulnerability.
+221651,0,0,1,skeleton_only,hermes,['CWE-843'],IREval.cpp,2034,150,13,163,(2) NO: No security vulnerability.
+221678,0,0,1,skeleton_only,e2guardian,['CWE-295'],Socket.cpp,3911,138,13,151,(2) NO: No security vulnerability.
+222666,0,0,1,skeleton_only,tmate-ssh-server,['CWE-362'],tmate-main.c,2025,135,13,148,(2) NO: No security vulnerability.
+222737,0,0,1,skeleton_only,pjproject,['CWE-125'],rtcp_xr.c,7585,156,13,169,(2) NO: No security vulnerability.
+222739,0,0,1,skeleton_only,gpac,['CWE-476'],av_parsers.c,4475,143,8,151,(2) NO
+222906,0,0,1,skeleton_only,tensorflow,['CWE-787'],graph_properties.cc,601,135,13,148,(2) NO: No security vulnerability.
+222925,0,0,1,skeleton_only,tensorflow,['CWE-617'],None,2055,168,13,181,(2) NO: No security vulnerability.
+223089,0,0,1,skeleton_only,ImageMagick,['CWE-190'],pcl.c,8029,140,13,153,(2) NO: No security vulnerability.
+223368,0,0,1,skeleton_only,pcre2,['CWE-125'],pcre2_jit_compile.c,22737,147,13,160,(2) NO: No security vulnerability.
+223728,0,0,1,skeleton_only,tensorflow,['CWE-476'],constant_folding.cc,4724,148,13,161,(2) NO: No security vulnerability.
+224153,0,0,1,skeleton_only,tensorflow,['CWE-908'],assign_op.h,3946,131,8,139,(2) NO
+224154,0,0,1,skeleton_only,mruby,['CWE-476'],None,1318,139,13,152,(2) NO: No security vulnerability.
+224181,0,0,1,skeleton_only,tensorflow,['CWE-843'],map_stage_op.cc,1181,131,8,139,(2) NO
+224192,0,0,1,skeleton_only,mruby,['CWE-125'],codegen.c,3896,143,13,156,(2) NO: No security vulnerability.
+224208,0,0,1,skeleton_only,uWebSockets,['CWE-787'],TopicTree.h,2571,158,13,171,(2) NO: No security vulnerability.
+224277,0,0,1,skeleton_only,flatpak,['CWE-20'],flatpak-run.c,10472,164,13,177,(2) NO: No security vulnerability.
+224281,0,0,1,skeleton_only,squid,['CWE-400'],gopher.cc,11400,142,13,155,(2) NO: No security vulnerability.
+224472,0,0,1,skeleton_only,gpac,['CWE-415'],load_text.c,1840,149,13,162,(2) NO: No security vulnerability.
+224570,0,0,1,skeleton_only,tensorflow,['CWE-843'],common_shape_fns.cc,3248,147,13,160,(2) NO: No security vulnerability.
+224728,0,0,1,skeleton_only,gpac,['CWE-415'],box_code_meta.c,2479,141,8,149,(2) NO
+224862,0,0,1,skeleton_only,tensorflow,['CWE-190'],sparse_dense_binary_op_shared.cc,6906,131,13,144,(2) NO: No security vulnerability.
+224891,0,0,1,skeleton_only,tensorflow,['CWE-125'],fractional_avg_pool_op.cc,7747,131,8,139,(2) NO
+224964,0,0,1,skeleton_only,flatpak,['CWE-276'],flatpak-dir.c,3627,136,13,149,(2) NO: No security vulnerability.
+225062,0,0,1,skeleton_only,postgres,['CWE-522'],fe-connect.c,47132,131,13,144,(2) NO: No security vulnerability.
+225086,0,0,1,skeleton_only,tensorflow,['CWE-617'],op_def_util.cc,722,161,13,174,(2) NO: No security vulnerability.
+225125,0,0,1,skeleton_only,tensorflow,['CWE-190'],string_ngrams_op.cc,5193,135,13,148,(2) NO: No security vulnerability.
+225383,0,0,1,skeleton_only,v4l2loopback,['CWE-134'],v4l2loopback.c,1518,147,13,160,(2) NO: No security vulnerability.
+225473,0,0,1,skeleton_only,tensorflow,['CWE-476'],mutable_graph_view.cc,508,140,13,153,(2) NO: No security vulnerability.
+225547,0,0,1,skeleton_only,tensorflow,['CWE-190'],common.c,318,133,13,146,(2) NO: No security vulnerability.
+225552,0,0,1,skeleton_only,tensorflow,['CWE-190'],common.c,263,133,13,146,(2) NO: No security vulnerability.
+225563,0,0,1,skeleton_only,tensorflow,['CWE-369'],fractional_max_pool_op.cc,5009,131,13,144,(2) NO: No security vulnerability.
+225566,0,0,1,skeleton_only,ImageMagick6,['CWE-190'],pcl.c,8015,140,13,153,(2) NO: No security vulnerability.
+226029,0,0,1,skeleton_only,gpac,['CWE-476'],box_code_base.c,279,131,13,144,(2) NO: No security vulnerability.
+226433,0,0,1,skeleton_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,3181,137,8,145,(2) NO
+227022,0,0,1,skeleton_only,weechat,['CWE-476'],irc-protocol.c,3216,127,8,135,(2) NO
+228563,0,0,1,skeleton_only,hhvm,['CWE-119'],zend-string.cpp,3598,145,8,153,(2) NO
+229165,0,0,1,skeleton_only,qemu,['CWE-787'],virtio-serial-bus.c,486,142,13,155,(2) NO: No security vulnerability.
+229337,0,0,1,skeleton_only,tensorflow,['CWE-476'],execute.cc,1966,151,13,164,(2) NO: No security vulnerability.
+230147,0,0,1,skeleton_only,glewlwyd,['CWE-787'],webauthn.c,7404,204,13,217,(2) NO: No security vulnerability.
+230302,0,0,1,skeleton_only,njs,['CWE-703'],njs_array.c,4486,155,13,168,(2) NO: No security vulnerability.
+230394,0,0,1,skeleton_only,pjproject,['CWE-703'],xml.c,3343,142,13,155,(2) NO: No security vulnerability.
+231012,0,0,1,skeleton_only,mruby,['CWE-703'],vm.c,51202,147,13,160,(2) NO: No security vulnerability.
+231048,0,0,1,skeleton_only,FreeRTOS-Kernel,['CWE-200'],queue.c,2940,159,8,167,(2) NO
+231710,0,0,1,skeleton_only,mvfst,['CWE-703'],ServerStateMachine.cpp,3434,134,13,147,(2) NO: No security vulnerability.
+232287,0,0,1,skeleton_only,libjpeg,['CWE-703'],None,5449,132,13,145,(2) NO: No security vulnerability.
+232289,0,0,1,skeleton_only,libjpeg,['CWE-703'],None,6336,134,13,147,(2) NO: No security vulnerability.
+232329,0,0,1,skeleton_only,gpac,['CWE-476'],None,15893,156,13,169,(2) NO: No security vulnerability.
+232405,0,0,1,skeleton_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2915,137,13,150,(2) NO: No security vulnerability.
+232839,0,0,1,skeleton_only,tensorflow,['CWE-703'],quantile_ops.cc,1205,131,13,144,(2) NO: No security vulnerability.
+233862,0,0,1,skeleton_only,deark,['CWE-369'],fmtutil.c,1471,154,13,167,(2) NO: No security vulnerability.
+233867,0,0,1,skeleton_only,php-src,['CWE-476'],wddx.c,3633,142,13,155,(2) NO: No security vulnerability.
+234731,0,0,1,skeleton_only,linux,['CWE-703'],volumes.c,4213,148,8,156,(2) NO
+234875,0,0,1,skeleton_only,ImageMagick,['CWE-125'],png.c,79225,151,13,164,(2) NO: No security vulnerability.
+235642,0,0,1,skeleton_only,pjproject,['CWE-787'],dns.c,1097,173,13,186,(2) NO: No security vulnerability.
+235765,0,0,1,skeleton_only,tensorflow,['CWE-787'],edit_distance_op.cc,7660,131,13,144,(2) NO: No security vulnerability.
+236125,0,0,1,skeleton_only,gpac,['CWE-703'],box_code_3gpp.c,339,140,8,148,(2) NO
+237885,0,0,1,skeleton_only,lsquic,['CWE-269'],None,1305,159,13,172,(2) NO: No security vulnerability.
+238322,0,0,1,skeleton_only,barebox,['CWE-200'],digest.c,305,135,13,148,(2) NO: No security vulnerability.
+238803,0,0,1,skeleton_only,vim,['CWE-416'],search.c,18162,126,13,139,(2) NO: No security vulnerability.
+240276,0,0,1,skeleton_only,vim,['CWE-787'],register.c,803,140,8,148,(2) NO
+240595,0,0,1,skeleton_only,tensorflow,['CWE-369'],resource_variable_ops.cc,3658,131,13,144,(2) NO: No security vulnerability.
+241040,0,0,1,skeleton_only,booth,['CWE-284'],main.c,1025,128,13,141,(2) NO: No security vulnerability.
+241311,0,0,1,skeleton_only,mruby,['CWE-787'],None,273,142,13,155,(2) NO: No security vulnerability.
+241369,0,0,1,skeleton_only,tensorflow,['CWE-354'],matrix_solve_op.cc,10312,136,13,149,(2) NO: No security vulnerability.
+242619,0,0,1,skeleton_only,tensorflow,['CWE-703'],stage_op.cc,517,130,13,143,(2) NO: No security vulnerability.
+242637,0,0,1,skeleton_only,gpac,['CWE-703'],isoffin_read.c,12031,135,13,148,(2) NO: No security vulnerability.
+242899,0,0,1,skeleton_only,tensorflow,['CWE-125'],None,2578,145,13,158,(2) NO: No security vulnerability.
+242926,0,0,1,skeleton_only,tensorflow,['CWE-20'],sparse_tensor_dense_add_op.cc,2303,148,13,161,(2) NO: No security vulnerability.
+245140,0,0,1,skeleton_only,tensorflow,['CWE-703'],sdca_internal.cc,4067,162,8,170,(2) NO
+245434,0,0,1,skeleton_only,gpac,['CWE-703'],isom_hinter.c,6039,150,13,163,(2) NO: No security vulnerability.
+245921,0,0,1,skeleton_only,tensorflow,['CWE-476'],session_ops.cc,1071,131,13,144,(2) NO: No security vulnerability.
+246207,0,0,1,skeleton_only,tensorflow,['CWE-125'],count_ops.cc,420,133,13,146,(2) NO: No security vulnerability.
+246237,0,0,1,skeleton_only,furnace,['CWE-703'],pattern.cpp,12980,152,13,165,(2) NO: No security vulnerability.
+246495,0,0,1,skeleton_only,tensorflow,['CWE-369'],div.cc,1915,138,13,151,(2) NO: No security vulnerability.
+246693,0,0,1,skeleton_only,gpac,['CWE-787'],None,1877,141,13,154,(2) NO: No security vulnerability.
+247290,0,0,1,skeleton_only,tensorflow,['CWE-703'],mkl_requantization_range_per_channel_op.cc,3983,131,8,139,(2) NO
+247337,0,0,1,skeleton_only,rpm,['CWE-284'],rpmpgp.c,1625,154,8,162,(2) NO
+247550,0,0,1,skeleton_only,envoy,['CWE-362'],default_validator.cc,2972,160,13,173,(2) NO: No security vulnerability.
+247755,0,0,1,skeleton_only,cryptopp,['CWE-399'],rw.cpp,1215,143,13,156,(2) NO: No security vulnerability.
+249510,0,0,1,skeleton_only,libjxl,['CWE-369'],codec_apng.cc,7435,147,8,155,(2) NO
+249989,0,0,1,skeleton_only,gpac,['CWE-476'],isom_store.c,2973,143,13,156,(2) NO: No security vulnerability.
+250692,0,0,1,skeleton_only,drogon,['CWE-552'],None,959,137,13,150,(2) NO: No security vulnerability.
+251946,0,0,1,skeleton_only,tensorflow,['CWE-369'],optimized_ops.h,4315,212,13,225,(2) NO: No security vulnerability.
+252437,0,0,1,skeleton_only,tinyexr,['CWE-20'],tinyexr.h,10240,181,13,194,(2) NO: No security vulnerability.
+253515,0,0,1,skeleton_only,mruby,['CWE-125'],None,3886,143,13,156,(2) NO: No security vulnerability.
+253699,0,0,1,skeleton_only,linux,['CWE-703'],ccp-ops.c,6915,145,13,158,(2) NO: No security vulnerability.
+253970,0,0,1,skeleton_only,tensorflow,['CWE-476'],quantize_op.cc,4946,131,13,144,(2) NO: No security vulnerability.
+255032,0,0,1,skeleton_only,FFmpeg,['CWE-252'],None,1611,153,13,166,(2) NO: No security vulnerability.
+255574,0,0,1,skeleton_only,njs,['CWE-787'],njs_module.c,1139,148,13,161,(2) NO: No security vulnerability.
+255787,0,0,1,skeleton_only,tensorflow,['CWE-20'],mkl_requantize_per_channel_op.cc,5427,131,13,144,(2) NO: No security vulnerability.
+255807,0,0,1,skeleton_only,tensorflow,['CWE-908'],None,10123,138,13,151,(2) NO: No security vulnerability.
+255932,0,0,1,skeleton_only,tensorflow,['CWE-369'],None,3318,146,13,159,(2) NO: No security vulnerability.
+256138,0,0,1,skeleton_only,tensorflow,['CWE-125'],sparse_matmul_op.cc,4710,131,13,144,(2) NO: No security vulnerability.
+256441,0,0,1,skeleton_only,pjproject,['CWE-200'],rtcp_fb.c,1449,163,13,176,(2) NO: No security vulnerability.
+256587,0,0,1,skeleton_only,tensorflow,['CWE-703'],session_ops.cc,552,130,13,143,(2) NO: No security vulnerability.
+256947,0,0,1,skeleton_only,tensorflow,['CWE-703'],einsum_op_impl.h,2375,197,13,210,(2) NO: No security vulnerability.
+257461,0,0,1,skeleton_only,tensorflow,['CWE-703'],auto_parallel.cc,5002,133,13,146,(2) NO: No security vulnerability.
+258082,0,0,1,skeleton_only,tensorflow,['CWE-369'],reverse_op.cc,1900,131,8,139,(2) NO
+259081,0,0,1,skeleton_only,tensorflow,['CWE-476'],save_restore_tensor.cc,3979,157,13,170,(2) NO: No security vulnerability.
+259515,0,0,1,skeleton_only,gpac,['CWE-416'],field_decode.c,3091,161,13,174,(2) NO: No security vulnerability.
+259619,0,0,1,skeleton_only,libjpeg,['CWE-787'],hierarchicalbitmaprequester.cpp,1217,132,13,145,(2) NO: No security vulnerability.
+259732,0,0,1,skeleton_only,tensorflow,['CWE-703'],quantize_and_dequantize_op.cc,3595,131,8,139,(2) NO
+261220,0,0,1,skeleton_only,wolfMQTT,['CWE-787'],mqtt_client.c,7575,155,13,168,(2) NO: No security vulnerability.
+261769,0,0,1,skeleton_only,njs,['CWE-416'],njs_function.c,1410,145,13,158,(2) NO: No security vulnerability.
+262721,0,0,1,skeleton_only,njs,['CWE-703'],njs_iterator.c,4564,150,13,163,(2) NO: No security vulnerability.
+262803,0,0,1,skeleton_only,tensorflow,['CWE-125'],ragged_tensor_to_variant_op.cc,2419,131,8,139,(2) NO
+263382,0,0,1,skeleton_only,tensorflow,['CWE-703'],array_ops.cc,2266,132,13,145,(2) NO: No security vulnerability.
+263521,0,0,1,skeleton_only,tensorflow,['CWE-125'],gather_nd.cc,1424,155,13,168,(2) NO: No security vulnerability.
+264367,0,0,1,skeleton_only,tensorflow,['CWE-345'],tensor_slice_reader.h,2392,146,8,154,(2) NO
+264657,0,0,1,skeleton_only,gpac,['CWE-416'],memory_decoder.c,1309,151,13,164,(2) NO: No security vulnerability.
+264715,0,0,1,skeleton_only,tensorflow,['CWE-824'],constant_folding.cc,2427,197,13,210,(2) NO: No security vulnerability.
+265432,0,0,1,skeleton_only,tensorflow,['CWE-703'],gather.cc,1006,162,13,175,(2) NO: No security vulnerability.
+267357,0,0,1,skeleton_only,crun,['CWE-276'],exec.c,3362,150,13,163,(2) NO: No security vulnerability.
+267917,0,0,1,skeleton_only,tensorflow,['CWE-703'],unsorted_segment_join_op.cc,2873,131,8,139,(2) NO
+267985,0,0,1,skeleton_only,radare2,['CWE-125'],bfile.c,7883,163,13,176,(2) NO: No security vulnerability.
+268104,0,0,1,skeleton_only,tensorflow,['CWE-703'],load_and_remap_matrix_op.cc,11370,131,8,139,(2) NO
+269323,0,0,1,skeleton_only,tensorflow,['CWE-125'],sparse_reduce_op.cc,3684,131,13,144,(2) NO: No security vulnerability.
+269330,0,0,1,skeleton_only,tensorflow,['CWE-476'],fractional_avg_pool_op.cc,7257,131,13,144,(2) NO: No security vulnerability.
+269941,0,0,1,skeleton_only,ImageMagick,['CWE-125'],mat.c,16370,139,8,147,(2) NO
+270119,0,0,1,skeleton_only,tensorflow,['CWE-369'],kernel_util.cc,278,145,13,158,(2) NO: No security vulnerability.
+270767,0,0,1,skeleton_only,barebox,['CWE-200'],password.c,1388,135,13,148,(2) NO: No security vulnerability.
+270922,0,0,1,skeleton_only,tensorflow,['CWE-369'],ragged_gather_op.cc,1859,131,13,144,(2) NO: No security vulnerability.
+271526,0,0,1,skeleton_only,tensorflow,['CWE-369'],reshape_util.cc,4881,167,13,180,(2) NO: No security vulnerability.
+273091,0,0,1,skeleton_only,owntone-server,['CWE-416'],misc.c,2738,138,8,146,(2) NO
+273407,0,0,1,skeleton_only,tensorflow,['CWE-703'],lstm_ops.cc,8690,131,13,144,(2) NO: No security vulnerability.
+273880,0,0,1,skeleton_only,uftpd,['CWE-787'],ftpcmd.c,905,133,13,146,(2) NO: No security vulnerability.
+274773,0,0,1,skeleton_only,mruby,['CWE-288'],vm.c,50746,147,13,160,(2) NO: No security vulnerability.
+274814,0,0,1,skeleton_only,pjproject,['CWE-787'],stun_simple.c,1988,152,13,165,(2) NO: No security vulnerability.
+274865,0,0,1,skeleton_only,tensorflow,['CWE-703'],comparisons.cc,1608,153,13,166,(2) NO: No security vulnerability.
+275525,0,0,1,skeleton_only,njs,['CWE-416'],njs_async.c,2071,155,8,163,(2) NO
+275987,0,0,1,skeleton_only,micro-ecc,['CWE-415'],uECC.c,3068,172,13,185,(2) NO: No security vulnerability.
+276447,0,0,1,skeleton_only,tensorflow,['CWE-416'],resource_ops.cc,1233,131,13,144,(2) NO: No security vulnerability.
+276921,0,0,1,skeleton_only,u-boot,['CWE-787'],i2c.c,2212,147,13,160,(2) NO: No security vulnerability.
+276993,0,0,1,skeleton_only,mruby,['CWE-703'],fiber.c,1845,158,8,166,(2) NO
+277489,0,0,1,skeleton_only,libmobi,['CWE-787'],index.c,2092,145,13,158,(2) NO: No security vulnerability.
+279948,0,0,1,skeleton_only,vim,['CWE-787'],ex_cmds.c,1360,141,13,154,(2) NO: No security vulnerability.
+281119,0,0,1,skeleton_only,ipsec,['CWE-125'],xfrm_policy.c,1566,183,13,196,(2) NO: No security vulnerability.
+281247,0,0,1,skeleton_only,MilkyTracker,['CWE-787'],LoaderS3M.cpp,8590,143,13,156,(2) NO: No security vulnerability.
+281662,0,0,1,skeleton_only,LibRaw,['CWE-189'],None,1419,137,8,145,(2) NO
+282862,0,0,1,skeleton_only,linux,['CWE-401'],rsi_91x_mgmt.c,660,134,13,147,(2) NO: No security vulnerability.
+282984,0,0,1,skeleton_only,LuaJIT,['CWE-125'],lj_err.c,1412,133,13,146,(2) NO: No security vulnerability.
+285157,0,0,1,skeleton_only,radare2,['CWE-125'],ne.c,2155,138,8,146,(2) NO
+286739,0,0,1,skeleton_only,swtpm,['CWE-125'],swtpm_nvstore.c,1391,165,8,173,(2) NO
+289293,0,0,1,skeleton_only,linux,['CWE-362'],None,2969,140,13,153,(2) NO: No security vulnerability.
+291761,0,0,1,skeleton_only,linux,['CWE-415'],rtrs-clt.c,225,133,13,146,(2) NO: No security vulnerability.
+292205,0,0,1,skeleton_only,hexchat,['CWE-22'],inbound.c,1809,148,8,156,(2) NO
+292609,0,0,1,skeleton_only,puma,['CWE-444'],http11_parser.c,19424,147,8,155,(2) NO
+293496,0,0,1,skeleton_only,chafa,['CWE-476'],libnsgif.c,15337,141,13,154,(2) NO: No security vulnerability.
+293522,0,0,1,skeleton_only,pjproject,['CWE-125'],None,393,135,13,148,(2) NO: No security vulnerability.
+293750,0,0,1,skeleton_only,radare2,['CWE-476'],bin_xnu_kernelcache.c,1681,152,13,165,(2) NO: No security vulnerability.
+293939,0,0,1,skeleton_only,vim,['CWE-787'],indent.c,5668,131,8,139,(2) NO
+295887,0,0,1,skeleton_only,MilkyTracker,['CWE-787'],None,19161,141,13,154,(2) NO: No security vulnerability.
+296226,0,0,1,skeleton_only,vim,['CWE-416'],ex_cmds.c,31465,132,8,140,(2) NO
+299319,0,0,1,skeleton_only,ImageMagick,['CWE-787'],mat.c,6690,146,13,159,(2) NO: No security vulnerability.
+299905,0,0,1,skeleton_only,exim,['CWE-264'],readconf.c,13109,126,13,139,(2) NO: No security vulnerability.
+299976,0,0,1,skeleton_only,linux,['CWE-200'],hid-elo.c,895,139,8,147,(2) NO
+300731,0,0,1,skeleton_only,linux,['CWE-200'],socket.c,3487,145,13,158,(2) NO: No security vulnerability.
+301016,0,0,1,skeleton_only,ghostpdl,['CWE-787'],gdevpcx.c,1184,147,13,160,(2) NO: No security vulnerability.
+301429,0,0,1,skeleton_only,samba,['CWE-665'],None,8880,137,13,150,(2) NO: No security vulnerability.
+301481,0,0,1,skeleton_only,vim,['CWE-787'],spellsuggest.c,39439,157,13,170,(2) NO: No security vulnerability.
+302095,0,0,1,skeleton_only,radare2,['CWE-476'],None,786,136,8,144,(2) NO
+308163,0,0,1,skeleton_only,linux,['CWE-401'],fastrpc.c,686,144,13,157,(2) NO: No security vulnerability.
+309831,0,0,1,skeleton_only,ncurses,['CWE-787'],None,1187,140,8,148,(2) NO
+312399,0,0,1,skeleton_only,vim,['CWE-703'],quickfix.c,1303,148,13,161,(2) NO: No security vulnerability.
+313134,0,0,1,skeleton_only,libvirt,['CWE-212'],virstoragetest.c,1385,129,13,142,(2) NO: No security vulnerability.
+313850,0,0,1,skeleton_only,vim,['CWE-787'],normal.c,996,165,8,173,(2) NO
+314536,0,0,1,skeleton_only,pjproject,['CWE-787'],sdp.c,1617,144,13,157,(2) NO: No security vulnerability.
+317271,0,0,1,skeleton_only,linux,['CWE-416'],None,203,135,13,148,(2) NO: No security vulnerability.
+318099,0,0,1,skeleton_only,wireless-drivers,['CWE-415'],rsi_91x_usb.c,1400,143,13,156,(2) NO: No security vulnerability.
+318781,0,0,1,skeleton_only,gerbv,['CWE-787'],drill.c,7886,154,13,167,(2) NO: No security vulnerability.
+318962,0,0,1,skeleton_only,vim,['CWE-787'],testing.c,763,137,13,150,(2) NO: No security vulnerability.
+319422,0,0,1,skeleton_only,ImageMagick6,['CWE-787'],cin.c,15774,140,13,153,(2) NO: No security vulnerability.
+325821,0,0,1,skeleton_only,gnutls,['CWE-310'],gnutls_handshake.c,4790,147,8,155,(2) NO
+326119,0,0,1,skeleton_only,vim,['CWE-416'],regexp_bt.c,34649,172,8,180,(2) NO
+326629,0,0,1,skeleton_only,libarchive,['CWE-59'],None,2229,153,13,166,(2) NO: No security vulnerability.
+326914,0,0,1,skeleton_only,linux,['CWE-476'],vidtv_s302m.c,1317,140,13,153,(2) NO: No security vulnerability.
+328807,0,0,1,skeleton_only,vim,['CWE-787'],register.c,20005,177,8,185,(2) NO
+328836,0,0,1,skeleton_only,radare2,['CWE-125'],class.c,1167,158,13,171,(2) NO: No security vulnerability.
+329925,0,0,1,skeleton_only,cairo,['CWE-787'],None,2984,155,13,168,(2) NO: No security vulnerability.
+331760,0,0,1,skeleton_only,qtbase,['CWE-787'],qpaintengineex.cpp,9188,141,13,154,(2) NO: No security vulnerability.
+332375,0,0,1,skeleton_only,vim,['CWE-787'],None,3119,157,13,170,(2) NO: No security vulnerability.
+333041,0,0,1,skeleton_only,vim,['CWE-122'],None,1239,141,13,154,(2) NO: No security vulnerability.
+333503,0,0,1,skeleton_only,php-src,['CWE-119'],gd_interpolation.c,1008,143,13,156,(2) NO: No security vulnerability.
+336106,0,0,1,skeleton_only,net,['CWE-125'],ip6_gre.c,2085,160,13,173,(2) NO: No security vulnerability.
+336484,0,0,1,skeleton_only,qemu,['CWE-369'],None,1354,145,13,158,(2) NO: No security vulnerability.
+336807,0,0,1,skeleton_only,ghostpdl,['CWE-787'],gdevlprn.c,920,143,13,156,(2) NO: No security vulnerability.
+337374,0,0,1,skeleton_only,vim,['CWE-476'],buffer.c,602,158,13,171,(2) NO: No security vulnerability.
+337848,0,0,1,skeleton_only,linux,['CWE-704'],sm_make_chunk.c,1244,166,13,179,(2) NO: No security vulnerability.
+338747,0,0,1,skeleton_only,ImageMagick,['CWE-772'],tga.c,13644,141,13,154,(2) NO: No security vulnerability.
+339712,0,0,1,skeleton_only,php-src,['CWE-119'],zend_strtod.c,562,129,13,142,(2) NO: No security vulnerability.
+341817,0,0,1,skeleton_only,ghostpdl,['CWE-787'],zstring.c,1279,134,13,147,(2) NO: No security vulnerability.
+343158,0,0,1,skeleton_only,linux,['CWE-787'],esp6.c,1975,145,13,158,(2) NO: No security vulnerability.
+343175,0,0,1,skeleton_only,linux,['CWE-787'],esp4.c,2029,144,13,157,(2) NO: No security vulnerability.
+343298,0,0,1,skeleton_only,pure-ftpd,['CWE-434'],ftpd.c,7569,137,13,150,(2) NO: No security vulnerability.
+344242,0,0,1,skeleton_only,lua,['CWE-787'],None,531,139,13,152,(2) NO: No security vulnerability.
+345131,0,0,1,skeleton_only,linux,['CWE-703'],pxa3xx-gcu.c,1585,150,13,163,(2) NO: No security vulnerability.
+346415,0,0,1,skeleton_only,vim,['CWE-703'],scriptfile.c,2775,133,13,146,(2) NO: No security vulnerability.
+349251,0,0,1,skeleton_only,squashfs-tools,['CWE-200'],None,3267,145,13,158,(2) NO: No security vulnerability.
+349259,0,0,1,skeleton_only,squashfs-tools,['CWE-200'],None,3559,145,13,158,(2) NO: No security vulnerability.
+349259,0,0,1,skeleton_only,squashfs-tools,['CWE-200'],None,3559,145,13,158,(2) NO: No security vulnerability.
+349528,0,0,1,skeleton_only,linux,['CWE-772'],virtio_bt.c,385,141,13,154,(2) NO: No security vulnerability.
+349888,0,0,1,skeleton_only,net,['CWE-787'],hw_atl_utils.c,1284,147,13,160,(2) NO: No security vulnerability.
+351182,0,0,1,skeleton_only,shapelib,['CWE-415'],shpsort.c,719,135,13,148,(2) NO: No security vulnerability.
+353015,0,0,1,skeleton_only,openldap,['CWE-617'],schema_init.c,3647,149,13,162,(2) NO: No security vulnerability.
+353124,0,0,1,skeleton_only,poppler,['CWE-369'],None,6992,209,8,217,(2) NO
+355014,0,0,1,skeleton_only,pjproject,['CWE-125'],None,784,148,13,161,(2) NO: No security vulnerability.
+355649,0,0,1,skeleton_only,vim,['CWE-787'],eval.c,6349,161,13,174,(2) NO: No security vulnerability.
+356170,0,0,1,skeleton_only,firejail,['CWE-94'],None,970,144,13,157,(2) NO: No security vulnerability.
+357668,0,0,1,skeleton_only,squirrel,['CWE-125'],sqclass.cpp,1893,149,13,162,(2) NO: No security vulnerability.
+359206,0,0,1,skeleton_only,bpf,['CWE-787'],ringbuf.c,1164,142,13,155,(2) NO: No security vulnerability.
+359365,0,0,1,skeleton_only,frr,['CWE-125'],bgp_packet.c,3211,145,13,158,(2) NO: No security vulnerability.
+359843,0,0,1,skeleton_only,ImageMagick,['CWE-617'],operation.c,16656,157,13,170,(2) NO: No security vulnerability.
+360829,0,0,1,skeleton_only,linux,['CWE-193'],cancel.c,637,146,13,159,(2) NO: No security vulnerability.
+361298,0,0,1,skeleton_only,admesh,['CWE-125'],connect.c,650,139,8,147,(2) NO
+361303,0,0,1,skeleton_only,admesh,['CWE-125'],connect.c,2431,136,13,149,(2) NO: No security vulnerability.
+361755,0,0,1,skeleton_only,linux,['CWE-416'],em28xx-cards.c,8029,144,13,157,(2) NO: No security vulnerability.
+365760,0,0,1,skeleton_only,linux,['CWE-703'],None,827,131,13,144,(2) NO: No security vulnerability.
+366223,0,0,1,skeleton_only,linux,['CWE-200'],namespace.c,637,134,13,147,(2) NO: No security vulnerability.
+369215,0,0,1,skeleton_only,linux,['CWE-94'],io_uring.c,1218,141,13,154,(2) NO: No security vulnerability.
+371185,0,0,1,skeleton_only,rizin,['CWE-787'],marshal.c,1209,145,8,153,(2) NO
+371226,0,0,1,skeleton_only,linux,['CWE-834'],fuse_i.h,137,131,13,144,(2) NO: No security vulnerability.
+372352,0,0,1,skeleton_only,Singular,['CWE-269'],None,1744,130,13,143,(2) NO: No security vulnerability.
+373535,0,0,1,skeleton_only,ovs,['CWE-401'],ipf.c,1051,165,13,178,(2) NO: No security vulnerability.
+376350,0,0,1,skeleton_only,evolution-data-server,['CWE-200'],None,583,143,13,156,(2) NO: No security vulnerability.
+376678,0,0,1,skeleton_only,gimp,['CWE-125'],file-gbr.c,7880,137,13,150,(2) NO: No security vulnerability.
+376682,0,0,1,skeleton_only,tigervnc,['CWE-672'],None,3002,164,13,177,(2) NO: No security vulnerability.
+379334,0,0,1,skeleton_only,vim,['CWE-787'],ex_docmd.c,9168,154,13,167,(2) NO: No security vulnerability.
+379671,0,0,1,skeleton_only,radare2,['CWE-416'],None,5476,156,13,169,(2) NO: No security vulnerability.
+380955,0,0,1,skeleton_only,vim,['CWE-787'],edit.c,10110,144,13,157,(2) NO: No security vulnerability.
+382797,0,0,1,skeleton_only,php-src,['CWE-119'],gd_io_dp.c,400,139,8,147,(2) NO
+383316,0,0,1,skeleton_only,php-src,['CWE-119'],None,1467,145,13,158,(2) NO: No security vulnerability.
+384124,0,0,1,skeleton_only,raptor,['CWE-787'],raptor_xml_writer.c,8301,150,8,158,(2) NO
+384201,0,0,1,skeleton_only,linux,['CWE-703'],nf_tables_api.c,1517,156,13,169,(2) NO: No security vulnerability.
+384677,0,0,1,skeleton_only,nbdkit,['CWE-924'],protocol-handshake-newstyle.c,19005,132,13,145,(2) NO: No security vulnerability.
+384767,0,0,1,skeleton_only,vim,['CWE-122'],move.c,6183,126,13,139,(2) NO: No security vulnerability.
+384803,0,0,1,skeleton_only,vim,['CWE-703'],filepath.c,5340,174,13,187,(2) NO: No security vulnerability.
+386565,0,0,1,skeleton_only,qcad,['CWE-191'],dl_dxf.cpp,1296,141,13,154,(2) NO: No security vulnerability.
+386750,0,0,1,skeleton_only,linux,['CWE-476'],inode.c,2081,133,13,146,(2) NO: No security vulnerability.
+387149,0,0,1,skeleton_only,ImageMagick,['CWE-125'],quantize.c,5182,140,8,148,(2) NO
+387593,0,0,1,skeleton_only,linux,['CWE-125'],control.c,352,136,13,149,(2) NO: No security vulnerability.
+389676,0,0,1,skeleton_only,vim,['CWE-125'],typval.c,3822,141,13,154,(2) NO: No security vulnerability.
+389760,0,0,1,skeleton_only,jasper,['CWE-703'],jasper.c,4234,135,13,148,(2) NO: No security vulnerability.
+391627,0,0,1,skeleton_only,linux,['CWE-120'],rpadlpar_sysfs.c,400,152,13,165,(2) NO: No security vulnerability.
+391628,0,0,1,skeleton_only,linux,['CWE-120'],rpadlpar_sysfs.c,393,151,13,164,(2) NO: No security vulnerability.
+393528,0,0,1,skeleton_only,squirrel,['CWE-703'],sqbaselib.cpp,650,133,13,146,(2) NO: No security vulnerability.
+397644,0,0,1,skeleton_only,autotrace,['CWE-787'],input-bmp.c,10785,153,13,166,(2) NO: No security vulnerability.
+398518,0,0,1,skeleton_only,rizin,['CWE-787'],dwarf.c,1498,201,13,214,(2) NO: No security vulnerability.
+400103,0,0,1,skeleton_only,EternalTerminal,['CWE-362'],PipeSocketHandler.cpp,848,134,8,142,(2) NO
+400109,0,0,1,skeleton_only,EternalTerminal,['CWE-362'],UserTerminalRouter.cpp,275,136,13,149,(2) NO: No security vulnerability.
+400409,0,0,1,skeleton_only,vim,['CWE-787'],edit.c,618,130,13,143,(2) NO: No security vulnerability.
+400735,0,0,1,skeleton_only,linux,['CWE-284'],iov_iter.c,1005,150,13,163,(2) NO: No security vulnerability.
+400743,0,0,1,skeleton_only,linux,['CWE-284'],iov_iter.c,1080,150,13,163,(2) NO: No security vulnerability.
+400779,0,0,1,skeleton_only,php-src,['CWE-200'],openssl.c,2044,129,13,142,(2) NO: No security vulnerability.
+401034,0,0,1,skeleton_only,radare2,['CWE-703'],None,4229,141,13,154,(2) NO: No security vulnerability.
+401525,0,0,1,skeleton_only,linux,['CWE-200'],timer.c,746,128,13,141,(2) NO: No security vulnerability.
+401579,0,0,1,skeleton_only,linux,['CWE-200'],random.c,1766,133,13,146,(2) NO: No security vulnerability.
+404192,0,0,1,skeleton_only,pcre2,['CWE-703'],pcre2_jit_compile.c,6323,167,8,175,(2) NO
+405333,0,0,1,skeleton_only,linux,['CWE-703'],xfrm_policy.c,954,161,13,174,(2) NO: No security vulnerability.
+405698,0,0,1,skeleton_only,linux,['CWE-703'],xilinx_emaclite.c,2256,135,13,148,(2) NO: No security vulnerability.
+406206,0,0,1,skeleton_only,util-linux,['CWE-200'],mount.c,7680,130,13,143,(2) NO: No security vulnerability.
+408968,0,0,1,skeleton_only,vim,['CWE-787'],edit.c,2270,141,13,154,(2) NO: No security vulnerability.
+409515,0,0,1,skeleton_only,vim,['CWE-787'],term.c,16039,152,13,165,(2) NO: No security vulnerability.
+411896,0,0,1,skeleton_only,tor,['CWE-399'],routerparse.c,17737,147,8,155,(2) NO
+411926,0,0,1,skeleton_only,heimdal,['CWE-476'],None,31969,132,8,140,(2) NO
+412117,0,0,1,skeleton_only,unbound,['CWE-190'],dnscrypt.c,2728,141,13,154,(2) NO: No security vulnerability.
+412190,0,0,1,skeleton_only,vim,['CWE-787'],ex_getln.c,1586,131,13,144,(2) NO: No security vulnerability.
+412332,0,0,1,skeleton_only,rizin,['CWE-415'],bin_qnx.c,144,133,13,146,(2) NO: No security vulnerability.
+413339,0,0,1,skeleton_only,php-src,['CWE-416'],snmp.c,4687,128,13,141,(2) NO: No security vulnerability.
+413623,0,0,1,skeleton_only,radare2,['CWE-416'],None,13253,145,13,158,(2) NO: No security vulnerability.
+416366,0,0,1,skeleton_only,vim,['CWE-416'],ex_getln.c,25536,175,13,188,(2) NO: No security vulnerability.
+417093,0,0,1,skeleton_only,MilkyTracker,['CWE-416'],PlayerGeneric.cpp,251,126,13,139,(2) NO: No security vulnerability.
+417472,0,0,1,skeleton_only,libvirt,['CWE-119'],node_device_conf.c,636,156,13,169,(2) NO: No security vulnerability.
+418795,0,0,1,skeleton_only,vim,['CWE-703'],mouse.c,22413,197,8,205,(2) NO
+421378,0,0,1,skeleton_only,mujs,['CWE-476'],jsdump.c,227,141,13,154,(2) NO: No security vulnerability.
+424522,0,0,1,skeleton_only,FreeRDP,['CWE-190'],video_main.c,1645,155,8,163,(2) NO
+424969,0,0,1,skeleton_only,linux,['CWE-476'],trans.c,5161,159,8,167,(2) NO
+427153,0,0,1,skeleton_only,lua,['CWE-125'],lparser.c,530,135,13,148,(2) NO: No security vulnerability.
+427707,0,0,1,skeleton_only,file,['CWE-787'],cdf.c,3963,166,13,179,(2) NO: No security vulnerability.
+430335,0,0,1,skeleton_only,linux,['CWE-787'],seq_file.c,146,130,13,143,(2) NO: No security vulnerability.
+430380,0,0,1,skeleton_only,linux,['CWE-362'],flow_netlink.c,1036,146,13,159,(2) NO: No security vulnerability.
+430470,0,0,1,skeleton_only,squid,['CWE-400'],gopher.cc,11220,142,13,155,(2) NO: No security vulnerability.
+431633,0,0,1,skeleton_only,ImageMagick,['CWE-787'],cin.c,15822,140,13,153,(2) NO: No security vulnerability.
+432093,0,0,1,skeleton_only,vim,['CWE-787'],spellfile.c,2227,138,13,151,(2) NO: No security vulnerability.
+432152,0,0,1,skeleton_only,mongo,['CWE-617'],pipeline_d.cpp,10351,170,13,183,(2) NO: No security vulnerability.
+432247,0,0,1,skeleton_only,unicorn,['CWE-476'],exec.c,406,136,13,149,(2) NO: No security vulnerability.
+432346,0,0,1,skeleton_only,qemu,['CWE-125'],i2c-ddc.c,179,137,13,150,(2) NO: No security vulnerability.
+432351,0,0,1,skeleton_only,dpdk,['CWE-703'],vhost_user.c,3099,153,13,166,(2) NO: No security vulnerability.
+432352,0,0,1,skeleton_only,dpdk,['CWE-703'],vhost_user.c,3198,153,13,166,(2) NO: No security vulnerability.
+434093,0,0,1,skeleton_only,vim,['CWE-416'],arglist.c,7674,162,8,170,(2) NO
+434902,0,0,1,skeleton_only,ghostpdl,['CWE-119'],gxht_thresh.c,757,155,13,168,(2) NO: No security vulnerability.
+435409,0,0,1,skeleton_only,ghostpdl,['CWE-120'],gdev3852.c,4557,142,8,150,(2) NO
+436066,0,0,1,skeleton_only,linux,['CWE-125'],io_uring.c,2863,139,13,152,(2) NO: No security vulnerability.
+436990,0,0,1,skeleton_only,vim,['CWE-125'],indent.c,3868,127,13,140,(2) NO: No security vulnerability.
+437003,0,0,1,skeleton_only,linux,['CWE-415'],mcba_usb.c,1579,146,13,159,(2) NO: No security vulnerability.
+437291,0,0,1,skeleton_only,oniguruma,['CWE-125'],regcomp.c,4381,134,13,147,(2) NO: No security vulnerability.
+437671,0,0,1,skeleton_only,radare2,['CWE-787'],bin_symbols.c,2630,156,8,164,(2) NO
+437708,0,0,1,skeleton_only,linux,['CWE-401'],cx23888-ir.c,1348,135,13,148,(2) NO: No security vulnerability.
+438686,0,0,1,skeleton_only,linux,['CWE-415'],virtio_rpmsg_bus.c,795,142,13,155,(2) NO: No security vulnerability.
+438876,0,0,1,skeleton_only,linux,['CWE-416'],mkiss.c,702,131,8,139,(2) NO
+439114,0,1,0,skeleton_only,ImageMagick6,['CWE-401'],bmp.c,34604,139,14,153,(1) YES: A security vulnerability detected.
+439266,0,0,1,skeleton_only,ImageMagick6,['CWE-835'],bmp.c,34707,139,8,147,(2) NO
+439495,0,0,1,skeleton_only,squashfs-tools,['CWE-22'],None,3490,145,13,158,(2) NO: No security vulnerability.
+439495,0,0,1,skeleton_only,squashfs-tools,['CWE-22'],None,3490,145,13,158,(2) NO: No security vulnerability.
+439500,0,0,1,skeleton_only,squashfs-tools,['CWE-22'],None,3190,145,8,153,(2) NO
+440872,0,0,1,skeleton_only,xserver,['CWE-863'],log.c,1248,140,13,153,(2) NO: No security vulnerability.
+441822,0,0,1,skeleton_only,xserver,['CWE-191'],xkbSwap.c,2401,131,13,144,(2) NO: No security vulnerability.
+442189,0,0,1,skeleton_only,qemu,['CWE-835'],e1000.c,493,142,8,150,(2) NO
+442587,0,0,1,skeleton_only,spice,['CWE-193'],memslot.c,1193,154,8,162,(2) NO
+442815,0,0,1,skeleton_only,curl,['CWE-125'],main.c,954,136,13,149,(2) NO: No security vulnerability.
+442959,0,0,1,skeleton_only,vim,['CWE-200'],drawscreen.c,3513,136,13,149,(2) NO: No security vulnerability.
+443152,0,0,1,skeleton_only,linux,['CWE-476'],inode.c,960,131,13,144,(2) NO: No security vulnerability.
+443298,0,0,1,skeleton_only,vim,['CWE-416'],ex_docmd.c,22967,171,13,184,(2) NO: No security vulnerability.
+444900,0,0,1,skeleton_only,cifs-utils,['CWE-20'],mount.cifs.c,3041,144,13,157,(2) NO: No security vulnerability.
+445881,0,0,1,skeleton_only,file-roller,['CWE-22'],None,1868,134,13,147,(2) NO: No security vulnerability.
+445995,0,0,1,skeleton_only,file-roller,['CWE-22'],None,7667,148,13,161,(2) NO: No security vulnerability.
+446058,0,0,1,skeleton_only,libtiff,['CWE-787'],tif_lzw.c,5176,147,13,160,(2) NO: No security vulnerability.
+446096,0,0,1,skeleton_only,linux,['CWE-416'],atusb.c,535,131,13,144,(2) NO: No security vulnerability.
+446279,0,0,1,skeleton_only,libmobi,['CWE-125'],index.c,6806,175,13,188,(2) NO: No security vulnerability.
+446416,0,0,1,skeleton_only,rizin,['CWE-787'],dyldcache.c,2834,142,8,150,(2) NO
+447053,0,0,1,skeleton_only,exiv2,['CWE-125'],image.cpp,8454,162,13,175,(2) NO: No security vulnerability.
+447231,0,0,1,skeleton_only,php-src,['CWE-17'],apprentice.c,2818,139,13,152,(2) NO: No security vulnerability.
+448562,0,0,1,skeleton_only,frr,['CWE-125'],bgp_packet.c,3275,148,13,161,(2) NO: No security vulnerability.
+448584,0,0,1,skeleton_only,gdk-pixbuf,['CWE-189'],io-xbm.c,3351,163,8,171,(2) NO
+448912,0,0,1,skeleton_only,zlib,['CWE-787'],inflate.c,26047,140,13,153,(2) NO: No security vulnerability.
+449294,0,0,1,skeleton_only,vim,['CWE-122'],None,1349,128,13,141,(2) NO: No security vulnerability.
+449321,0,0,1,skeleton_only,clamav-devel,['CWE-189'],sis.c,468,140,13,153,(2) NO: No security vulnerability.
+450764,0,0,1,skeleton_only,vim,['CWE-416'],regexp.c,1757,126,13,139,(2) NO: No security vulnerability.
+450812,0,0,1,skeleton_only,gnulib,['CWE-119'],glob.c,28169,149,8,157,(2) NO
+450830,0,0,1,skeleton_only,linux,['CWE-120'],se.c,1715,155,13,168,(2) NO: No security vulnerability.
+451731,0,0,1,skeleton_only,ntp,['CWE-20'],ntpq.c,2436,125,13,138,(2) NO: No security vulnerability.
+451888,0,0,1,skeleton_only,jasper,['CWE-20'],jpc_enc.c,11947,142,13,155,(2) NO: No security vulnerability.
+452377,0,0,1,skeleton_only,vim,['CWE-787'],indent.c,6020,170,13,183,(2) NO: No security vulnerability.
+452391,0,0,1,skeleton_only,ImageMagick6,['CWE-787'],tiff.c,34505,142,13,155,(2) NO: No security vulnerability.
+452994,0,0,1,skeleton_only,nf,['CWE-269'],nf_tables_offload.c,1137,144,13,157,(2) NO: No security vulnerability.
+453109,0,0,1,skeleton_only,libexpat,['CWE-668'],xmlparse.c,5684,154,13,167,(2) NO: No security vulnerability.
+453265,0,0,1,skeleton_only,jasper,['CWE-125'],jp2_dec.c,9401,141,13,154,(2) NO: No security vulnerability.
+454759,0,0,1,skeleton_only,linux,['CWE-703'],i2c-ismt.c,6551,167,13,180,(2) NO: No security vulnerability.
+455177,0,0,1,skeleton_only,libmobi,['CWE-119'],read.c,2146,147,8,155,(2) NO
+455356,0,0,1,skeleton_only,bash,['CWE-787'],shell.c,720,124,13,137,(2) NO: No security vulnerability.
+457772,0,0,1,skeleton_only,icecast-server,['CWE-119'],auth_url.c,1913,146,13,159,(2) NO: No security vulnerability.
+459029,0,0,1,skeleton_only,varnish-cache,['CWE-703'],cache_http.c,334,135,8,143,(2) NO
+459107,0,0,1,skeleton_only,linux,['CWE-416'],cls_api.c,5631,151,13,164,(2) NO: No security vulnerability.
+459400,0,0,1,skeleton_only,vim,['CWE-416'],None,17024,181,13,194,(2) NO: No security vulnerability.
+459524,0,0,1,skeleton_only,linux,['CWE-787'],stackmap.c,540,139,8,147,(2) NO
+462278,0,0,1,skeleton_only,pjproject,['CWE-191'],None,792,162,13,175,(2) NO: No security vulnerability.
+462316,0,0,1,skeleton_only,ghostpdl,['CWE-787'],None,536,138,13,151,(2) NO: No security vulnerability.
+462395,0,0,1,skeleton_only,php-src,['CWE-476'],wddx.c,3878,142,13,155,(2) NO: No security vulnerability.
+462409,0,0,1,skeleton_only,rsyslog,['CWE-190'],imptcp.c,4889,181,8,189,(2) NO
+462511,0,0,1,skeleton_only,vim,['CWE-416'],quickfix.c,2647,152,13,165,(2) NO: No security vulnerability.
+462566,0,0,1,skeleton_only,newsbeuter,['CWE-787'],controller.cpp,1406,161,13,174,(2) NO: No security vulnerability.
+463051,0,0,1,skeleton_only,qemu,['CWE-835'],sungem.c,322,145,13,158,(2) NO: No security vulnerability.
+463134,0,0,1,skeleton_only,cyrus-imapd,['CWE-732'],annotate.c,3416,131,13,144,(2) NO: No security vulnerability.
+463476,0,0,1,skeleton_only,linux,['CWE-476'],af_ax25.c,2008,131,13,144,(2) NO: No security vulnerability.
+464942,0,0,1,skeleton_only,php-src,['CWE-125'],mbfilter_big5.c,2059,140,8,148,(2) NO
+465854,0,0,1,skeleton_only,linux,['CWE-416'],main.c,369,138,13,151,(2) NO: No security vulnerability.
+468349,0,0,1,skeleton_only,glib,['CWE-754'],gsocketclient.c,3727,146,13,159,(2) NO: No security vulnerability.
+471902,0,0,1,skeleton_only,vim,['CWE-787'],spellsuggest.c,6730,127,13,140,(2) NO: No security vulnerability.
+472123,0,0,1,skeleton_only,linux,['CWE-416'],cgroup-v1.c,2262,139,8,147,(2) NO
+474434,0,0,1,skeleton_only,libtpms,['CWE-119'],Object.c,576,143,13,156,(2) NO: No security vulnerability.
+474462,0,0,1,skeleton_only,libvncserver,['CWE-787'],corre.c,836,144,13,157,(2) NO: No security vulnerability.
+475987,0,0,1,skeleton_only,chafa,['CWE-125'],lzw.c,2382,145,13,158,(2) NO: No security vulnerability.
+476103,0,0,1,skeleton_only,linux,['CWE-476'],composite.c,11424,140,13,153,(2) NO: No security vulnerability.
+477273,0,0,1,skeleton_only,linux,['CWE-20'],crypto.c,1682,143,13,156,(2) NO: No security vulnerability.
+477380,0,0,1,skeleton_only,radare2,['CWE-787'],None,2596,157,13,170,(2) NO: No security vulnerability.
+477800,0,0,1,skeleton_only,ceph,['CWE-79'],rgw_rest_s3.cc,7565,151,13,164,(2) NO: No security vulnerability.
+477803,0,0,1,skeleton_only,linux,['CWE-362'],af_key.c,802,152,13,165,(2) NO: No security vulnerability.
+477811,0,0,1,skeleton_only,linux,['CWE-787'],book3s_rtas.c,2315,139,8,147,(2) NO
+477946,0,0,1,skeleton_only,clamav-devel,['CWE-20'],mspack.c,5230,139,13,152,(2) NO: No security vulnerability.
+477975,0,0,1,skeleton_only,php-src,['CWE-119'],simplestring.c,1227,142,13,155,(2) NO: No security vulnerability.
+481267,0,0,1,skeleton_only,linux,['CWE-401'],conn.c,2357,144,13,157,(2) NO: No security vulnerability.
+481787,0,0,1,skeleton_only,nagioscore,['CWE-476'],query-handler.c,782,136,13,149,(2) NO: No security vulnerability.
+482533,0,0,1,skeleton_only,liblouis,['CWE-787'],compileTranslationTable.c,49195,151,13,164,(2) NO: No security vulnerability.
+482692,0,0,1,skeleton_only,gst-plugins-good,['CWE-125'],gstflxdec.c,5690,143,13,156,(2) NO: No security vulnerability.
+483053,0,0,1,skeleton_only,linux,['CWE-269'],cgroup-v1.c,713,151,13,164,(2) NO: No security vulnerability.
+483469,0,0,1,skeleton_only,mongo,['CWE-617'],None,9743,170,13,183,(2) NO: No security vulnerability.
+484063,0,0,1,skeleton_only,open62541,['CWE-703'],check_securechannel.c,545,125,13,138,(2) NO: No security vulnerability.
+484732,0,0,1,skeleton_only,libmobi,['CWE-787'],None,737,140,13,153,(2) NO: No security vulnerability.
+486796,0,0,1,skeleton_only,qemu,['CWE-835'],cadence_gem.c,6058,135,13,148,(2) NO: No security vulnerability.
+486837,0,0,1,skeleton_only,perl5,['CWE-120'],regcomp.c,82226,127,13,140,(2) NO: No security vulnerability.
+487618,0,0,1,skeleton_only,linux-2.6,['CWE-20'],None,1857,142,13,155,(2) NO: No security vulnerability.
+488919,0,0,1,skeleton_only,linux-2.6,['CWE-189'],None,781,147,13,160,(2) NO: No security vulnerability.
+489124,0,0,1,skeleton_only,linux-2.6,['CWE-20'],None,397,177,13,190,(2) NO: No security vulnerability.
+489215,0,0,1,skeleton_only,linux-2.6,['CWE-119'],None,724,146,13,159,(2) NO: No security vulnerability.
+489221,0,0,1,skeleton_only,linux-2.6,['CWE-20'],None,3033,146,13,159,(2) NO: No security vulnerability.
+491979,0,0,1,skeleton_only,gzip,['CWE-189'],None,4781,142,13,155,(2) NO: No security vulnerability.
+497809,0,0,1,skeleton_only,grep,['CWE-119'],None,2383,140,13,153,(2) NO: No security vulnerability.
+498160,0,0,1,skeleton_only,nettle,['CWE-310'],None,1552,142,13,155,(2) NO: No security vulnerability.
+498918,0,0,1,skeleton_only,tar,['CWE-476'],None,3339,133,8,141,(2) NO
+500044,0,0,1,skeleton_only,openssl,['CWE-20'],None,1670,136,13,149,(2) NO: No security vulnerability.
+500663,0,0,1,skeleton_only,libssh,['CWE-399'],None,2430,141,13,154,(2) NO: No security vulnerability.
+502735,0,0,1,skeleton_only,openssl,['CWE-362'],None,3459,133,13,146,(2) NO: No security vulnerability.
+503867,0,0,1,skeleton_only,guile,['CWE-275'],None,654,173,13,186,(2) NO: No security vulnerability.
+503985,0,0,1,skeleton_only,core,['CWE-20'],None,4359,152,13,165,(2) NO: No security vulnerability.
+504608,0,0,1,skeleton_only,libtiff,['CWE-770'],None,2542,169,13,182,(2) NO: No security vulnerability.
+505463,0,0,1,skeleton_only,openssl,['CWE-327'],None,3470,149,13,162,(2) NO: No security vulnerability.
+505654,0,0,1,skeleton_only,core,['CWE-835'],None,1902,134,13,147,(2) NO: No security vulnerability.
+506428,0,0,1,skeleton_only,core,['CWE-125'],None,342,146,8,154,(2) NO
+506696,0,0,1,skeleton_only,openssl,['CWE-476'],None,132,125,13,138,(2) NO: No security vulnerability.
+507778,0,0,1,skeleton_only,openssl,['CWE-125'],None,10827,138,13,151,(2) NO: No security vulnerability.
+508874,0,0,1,skeleton_only,server,['CWE-476'],None,4104,138,13,151,(2) NO: No security vulnerability.
+509510,0,0,1,skeleton_only,server,['CWE-400'],None,164,132,13,145,(2) NO: No security vulnerability.
+511472,0,0,1,skeleton_only,server,['CWE-416'],None,15074,144,13,157,(2) NO: No security vulnerability.
+512825,0,0,1,skeleton_only,server,['CWE-617'],None,2230,161,13,174,(2) NO: No security vulnerability.
+513202,0,0,1,skeleton_only,server,['CWE-416'],None,435,137,13,150,(2) NO: No security vulnerability.
+514292,0,0,1,skeleton_only,server,['CWE-617'],None,5121,131,13,144,(2) NO: No security vulnerability.
+517437,0,0,1,skeleton_only,monit,['CWE-79'],None,1551,134,13,147,(2) NO: No security vulnerability.
+521488,0,0,1,skeleton_only,JUCE,['CWE-59'],None,2458,153,8,161,(2) NO
+522329,0,0,1,skeleton_only,libMeshb,['CWE-120'],None,6485,138,13,151,(2) NO: No security vulnerability.
+522438,0,0,1,skeleton_only,elfspirit,['CWE-125'],None,37828,128,13,141,(2) NO: No security vulnerability.

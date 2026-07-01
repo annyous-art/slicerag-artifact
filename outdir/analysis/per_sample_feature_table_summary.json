@@ -1,0 +1,63 @@
+{
+  "num_rows": 870,
+  "target_counts": {
+    "1": 435,
+    "0": 435
+  },
+  "zero_shot": {
+    "known": 870,
+    "accuracy": 0.5195402298850574,
+    "yes_rate": 0.8126436781609195,
+    "avg_prompt_tokens": 0.0,
+    "avg_message_chars": 5642.632183908046
+  },
+  "author_no_yes": {
+    "known": 870,
+    "accuracy": 0.5137931034482759,
+    "yes_rate": 0.7793103448275862,
+    "avg_prompt_tokens": 0.0,
+    "avg_message_chars": 7296.632183908046
+  },
+  "yes_only": {
+    "known": 870,
+    "accuracy": 0.5287356321839081,
+    "yes_rate": 0.7942528735632184,
+    "avg_prompt_tokens": 0.0,
+    "avg_message_chars": 6301.632183908046
+  },
+  "no_only": {
+    "known": 870,
+    "accuracy": 0.506896551724138,
+    "yes_rate": 0.774712643678161,
+    "avg_prompt_tokens": 0.0,
+    "avg_message_chars": 6637.632183908046
+  },
+  "icl": {
+    "known": 870,
+    "accuracy": 0.5413793103448276,
+    "yes_rate": 0.5563218390804597,
+    "avg_prompt_tokens": 0.0,
+    "avg_message_chars": 22383.22183908046
+  },
+  "old_rag": {
+    "known": 870,
+    "accuracy": 0.5114942528735632,
+    "yes_rate": 0.6758620689655173,
+    "avg_prompt_tokens": 2312.506896551724,
+    "avg_message_chars": 8958.34367816092
+  },
+  "positive_weighted_rag": {
+    "known": 868,
+    "accuracy": 0.511520737327189,
+    "yes_rate": 0.6140552995391705,
+    "avg_prompt_tokens": 2478.4919354838707,
+    "avg_message_chars": 9606.175115207374
+  },
+  "balanced_grouped_no_label_bc": {
+    "known": 868,
+    "accuracy": 0.5149769585253456,
+    "yes_rate": 0.8064516129032258,
+    "avg_prompt_tokens": 2493.4861751152075,
+    "avg_message_chars": 9092.465437788018
+  }
+}

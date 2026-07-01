@@ -1,0 +1,17 @@
+{
+  "taxonomy_csv": "${SLICERAG_ROOT}/outdir/empirical_study/error_taxonomy/per_sample_error_taxonomy.csv",
+  "data_jsonl": "${SLICERAG_ROOT}/data/primevul_test_paired_labeled.jsonl",
+  "per_taxonomy": 10,
+  "num_taxonomies": 8,
+  "num_samples": 51,
+  "taxonomy_counts": {
+    "conservative_consensus_false_negative": 42,
+    "repair_present_but_not_applied_or_policy_blocked": 5,
+    "retrieval_misleading_or_ambiguous:retrieval_low_margin": 3,
+    "risky_pattern_false_alarm:bounds": 31,
+    "risky_pattern_false_alarm:error_handling": 76,
+    "risky_pattern_false_alarm:lifecycle": 2,
+    "risky_pattern_false_alarm:memory_api": 1,
+    "yes_prior_consensus_false_positive": 258
+  }
+}

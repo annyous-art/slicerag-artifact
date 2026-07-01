@@ -1,0 +1,11 @@
+{
+  "num_query_records": null,
+  "num_query_chunks": 59156,
+  "num_patch_pairs": 3571,
+  "chunk_size": 6,
+  "stride": 2,
+  "faiss_topk": 50,
+  "max_patch_pairs": 3,
+  "top_n": 2,
+  "ranking_score": "contrast"
+}

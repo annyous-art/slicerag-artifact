@@ -1,0 +1,137 @@
+{
+  "data_jsonl": "data/primevul_test_paired_labeled.jsonl",
+  "predictions_csv": "outdir/analysis/per_sample_feature_table.csv",
+  "num_data_rows": 870,
+  "num_adjacent_pairs": 433,
+  "pair_build_stats": {
+    "candidate_adjacent_pairs": 435,
+    "skipped_incomplete": 0,
+    "skipped_missing_target_pair": 0,
+    "skipped_project_mismatch": 0,
+    "skipped_commit_mismatch": 2,
+    "skipped_cve_mismatch": 0
+  },
+  "pair_filters": {
+    "require_same_project": true,
+    "require_same_commit": true,
+    "require_same_cve": true
+  },
+  "num_prediction_rows": 868,
+  "pred_columns": [
+    "zero_shot_pred",
+    "author_no_yes_pred",
+    "yes_only_pred",
+    "no_only_pred",
+    "icl_pred",
+    "old_rag_pred",
+    "positive_weighted_rag_pred",
+    "balanced_grouped_no_label_bc_pred"
+  ],
+  "method_metrics": [
+    {
+      "method": "zero_shot",
+      "known_pairs": 433,
+      "unknown_pairs": 0,
+      "P-C": 29,
+      "P-V": 331,
+      "P-B": 61,
+      "P-R": 12,
+      "P-C_rate": 0.066975,
+      "P-V_rate": 0.764434,
+      "P-B_rate": 0.140878,
+      "P-R_rate": 0.027714
+    },
+    {
+      "method": "author_no_yes",
+      "known_pairs": 433,
+      "unknown_pairs": 0,
+      "P-C": 36,
+      "P-V": 307,
+      "P-B": 66,
+      "P-R": 24,
+      "P-C_rate": 0.083141,
+      "P-V_rate": 0.709007,
+      "P-B_rate": 0.152425,
+      "P-R_rate": 0.055427
+    },
+    {
+      "method": "yes_only",
+      "known_pairs": 433,
+      "unknown_pairs": 0,
+      "P-C": 39,
+      "P-V": 317,
+      "P-B": 63,
+      "P-R": 14,
+      "P-C_rate": 0.090069,
+      "P-V_rate": 0.732102,
+      "P-B_rate": 0.145497,
+      "P-R_rate": 0.032333
+    },
+    {
+      "method": "no_only",
+      "known_pairs": 433,
+      "unknown_pairs": 0,
+      "P-C": 30,
+      "P-V": 308,
+      "P-B": 71,
+      "P-R": 24,
+      "P-C_rate": 0.069284,
+      "P-V_rate": 0.711316,
+      "P-B_rate": 0.163972,
+      "P-R_rate": 0.055427
+    },
+    {
+      "method": "icl",
+      "known_pairs": 433,
+      "unknown_pairs": 0,
+      "P-C": 59,
+      "P-V": 199,
+      "P-B": 152,
+      "P-R": 23,
+      "P-C_rate": 0.136259,
+      "P-V_rate": 0.459584,
+      "P-B_rate": 0.351039,
+      "P-R_rate": 0.053118
+    },
+    {
+      "method": "old_rag",
+      "known_pairs": 433,
+      "unknown_pairs": 0,
+      "P-C": 37,
+      "P-V": 260,
+      "P-B": 108,
+      "P-R": 28,
+      "P-C_rate": 0.08545,
+      "P-V_rate": 0.600462,
+      "P-B_rate": 0.249423,
+      "P-R_rate": 0.064665
+    },
+    {
+      "method": "positive_weighted_rag",
+      "known_pairs": 429,
+      "unknown_pairs": 4,
+      "P-C": 31,
+      "P-V": 235,
+      "P-B": 141,
+      "P-R": 22,
+      "P-C_rate": 0.072261,
+      "P-V_rate": 0.547786,
+      "P-B_rate": 0.328671,
+      "P-R_rate": 0.051282
+    },
+    {
+      "method": "balanced_grouped_no_label_bc",
+      "known_pairs": 429,
+      "unknown_pairs": 4,
+      "P-C": 32,
+      "P-V": 319,
+      "P-B": 58,
+      "P-R": 20,
+      "P-C_rate": 0.074592,
+      "P-V_rate": 0.74359,
+      "P-B_rate": 0.135198,
+      "P-R_rate": 0.04662
+    }
+  ],
+  "pair_detail_csv": "outdir/empirical_study/pairwise_metrics/pairwise_primevul_metrics_validated_feature_table_pairs.csv"
+}

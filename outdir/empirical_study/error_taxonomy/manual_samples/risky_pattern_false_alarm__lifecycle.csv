@@ -1,0 +1,126 @@
+idx,target,base_pred,error_type,taxonomy,dominant_pattern,project,cwe,char_len,yes_vote_count,known_vote_count,func_excerpt,author_no_yes_correct,author_no_yes_pred,base_correct,best_ensemble_correct,best_ensemble_pred,bounds_keyword_count,commit_message,cve_desc,error_handling_keyword_count,func,length_bucket,lifecycle_keyword_count,line_count,memory_api_count,method_pattern,null_keyword_count,old_rag_correct,old_rag_pred,patch_contrast_correct,patch_contrast_pred,positive_weighted_rag_correct,positive_weighted_rag_pred,repair_signal,retrieval_bucket,retrieval_pos_neg_margin_max,retrieval_top1_score,token_len_approx,yes_only_correct,yes_only_pred,zero_shot_correct,zero_shot_pred
+443152,0,1,FP,risky_pattern_false_alarm:lifecycle,lifecycle,linux,CWE-476,960,5,7,"void jfs_evict_inode(struct inode *inode)
+{
+	struct jfs_inode_info *ji = JFS_IP(inode);
+
+	jfs_info(""In jfs_evict_inode, inode = 0x%p"", inode);
+
+	if (!inode->i_nlink && !is_bad_inode(inode)) {
+		dquot_initialize(inode);
+
+		if (JFS_IP(inode)->fileset == FILESYSTEM_I) {
+			struct inode *ipimap = JFS_SBI(inode->i_sb)->ipimap;
+			truncate_inode_pages_final(&inode->i_data);
+
+			if (test_cflag(COMMIT_Freewmap, inode))
+				jfs_free_zero_link(inode);
+
+			if (ipimap && JFS_IP(ipimap)->i_imap)
+				diFree(inode);
+
+			/*
+			 * Free the inode from the quota allocation.
+			 */
+			dquot_free_inode(inode);
+		}
+	} else {
+		truncate_inode_pages_final(&inode->i_data);
+	}
+	clear_inode(inode);
+	dquot_drop(inode);
+
+	BUG_ON(!list_empty(&ji->anon_inode_list));
+
+	spin_lock_irq(&ji->ag_lock);
+	if (ji->active_ag != -1) {
+		struct bmap *bmap = JFS_SBI(inode->i_sb)->bmap;
+		atomic_dec(&bmap->db_active[ji->active_ag]);
+		ji->active_ag = -1;
+	}
+	spin_unlock_irq(&ji->ag_lock);
+}",0,1,0,0,1,0,"jfs: prevent NULL deref in diFree
+
+Add validation check for JFS_IP(ipimap)->i_imap to prevent a NULL deref
+in diFree since diFree uses it without do any validations.
+When function jfs_mount calls diMount to initialize fileset inode
+allocation map, it can fail and JFS_IP(ipimap)->i_imap won't be
+initialized. Then it calls diFreeSpecial to close fileset inode allocation
+map inode and it will flow into jfs_evict_inode. Function jfs_evict_inode
+just validates JFS_SBI(inode->i_sb)->ipimap, then calls diFree. diFree use
+JFS_IP(ipimap)->i_imap directly, then it will cause a NULL deref.
+
+Reported-by: TCS Robot <tcs_robot@tencent.com>
+Signed-off-by: Haimin Zhang <tcs_kernel@tencent.com>
+Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>",A NULL pointer dereference flaw in diFree in fs/jfs/inode.c in Journaled File System (JFS)in the Linux kernel. This could allow a local attacker to crash the system or leak kernel internal information.,0,"void jfs_evict_inode(struct inode *inode)
+{
+	struct jfs_inode_info *ji = JFS_IP(inode);
+
+	jfs_info(""In jfs_evict_inode, inode = 0x%p"", inode);
+
+	if (!inode->i_nlink && !is_bad_inode(inode)) {
+		dquot_initialize(inode);
+
+		if (JFS_IP(inode)->fileset == FILESYSTEM_I) {
+			struct inode *ipimap = JFS_SBI(inode->i_sb)->ipimap;
+			truncate_inode_pages_final(&inode->i_data);
+
+			if (test_cflag(COMMIT_Freewmap, inode))
+				jfs_free_zero_link(inode);
+
+			if (ipimap && JFS_IP(ipimap)->i_imap)
+				diFree(inode);
+
+			/*
+			 * Free the inode from the quota allocation.
+			 */
+			dquot_free_inode(inode);
+		}
+	} else {
+		truncate_inode_pages_final(&inode->i_data);
+	}
+	clear_inode(inode);
+	dquot_drop(inode);
+
+	BUG_ON(!list_empty(&ji->anon_inode_list));
+
+	spin_lock_irq(&ji->ag_lock);
+	if (ji->active_ag != -1) {
+		struct bmap *bmap = JFS_SBI(inode->i_sb)->bmap;
+		atomic_dec(&bmap->db_active[ji->active_ag]);
+		ji->active_ag = -1;
+	}
+	spin_unlock_irq(&ji->ag_lock);
+}",short_<2k,1,40,0,method_disagreement,0,0,1,0,1,1,0,repair_checked_absent_or_irrelevant:bounds_or_shape_check,retrieval_low_margin,0.003740549087524414,0.9560534358024597,234,1,0,0,1
+417093,0,1,FP,risky_pattern_false_alarm:lifecycle,lifecycle,MilkyTracker,CWE-416,251,4,7,"PlayerGeneric::~PlayerGeneric()
+{
+
+	if (player)
+	{
+		if (mixer && mixer->isActive() && !mixer->isDeviceRemoved(player))
+			mixer->removeDevice(player);
+		delete player;
+	}
+	
+	if (mixer)
+		delete mixer;
+
+	delete[] audioDriverName;
+	
+	delete listener;
+}",0,1,0,0,1,0,Fix use-after-free in PlayerGeneric destructor,PlayerGeneric.cpp in MilkyTracker through 1.02.00 has a use-after-free in the PlayerGeneric destructor.,0,"PlayerGeneric::~PlayerGeneric()
+{
+
+	if (player)
+	{
+		if (mixer && mixer->isActive() && !mixer->isDeviceRemoved(player))
+			mixer->removeDevice(player);
+		delete player;
+	}
+	
+	if (mixer)
+		delete mixer;
+
+	delete[] audioDriverName;
+	
+	delete listener;
+}",short_<2k,4,17,4,method_disagreement,0,1,0,1,0,1,0,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,-0.009276151657104492,0.9147615432739258,60,0,1,0,1

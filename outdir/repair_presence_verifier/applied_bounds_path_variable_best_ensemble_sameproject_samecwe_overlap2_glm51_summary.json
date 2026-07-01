@@ -1,0 +1,76 @@
+{
+  "base_pred_column": "best_ensemble_pred",
+  "min_confidence": "medium",
+  "require_repair_present": true,
+  "allow_repair_types": [
+    "bounds_or_shape_check"
+  ],
+  "exclude_repair_types": [],
+  "before": {
+    "known": 868,
+    "unknown": 0,
+    "accuracy": 0.518433,
+    "precision": 0.511053,
+    "recall": 0.903448,
+    "f1": 0.652824,
+    "yes_rate": 0.885945,
+    "tp": 393,
+    "fp": 376,
+    "tn": 57,
+    "fn": 42
+  },
+  "after": {
+    "known": 868,
+    "unknown": 0,
+    "accuracy": 0.521889,
+    "precision": 0.513089,
+    "recall": 0.901149,
+    "f1": 0.653878,
+    "yes_rate": 0.880184,
+    "tp": 392,
+    "fp": 372,
+    "tn": 61,
+    "fn": 43
+  },
+  "delta": {
+    "accuracy": 0.003456,
+    "precision": 0.002036,
+    "recall": -0.002299,
+    "f1": 0.001054,
+    "yes_rate": -0.005761
+  },
+  "verifier_rows": 67,
+  "rows_with_verifier": 67,
+  "override_count": 5,
+  "skipped_yes_with_verifier_count": 62,
+  "override_target_counts": {
+    "0": 4,
+    "1": 1
+  },
+  "override_repair_type_counts": {
+    "bounds_or_shape_check": 5
+  },
+  "override_confidence_counts": {
+    "high": 3,
+    "medium": 2
+  },
+  "skipped_policy_reason_counts": {
+    "verifier_not_no": 62
+  },
+  "skipped_repair_type_counts": {
+    "bounds_or_shape_check": 62
+  },
+  "override_metrics_on_overridden_rows": {
+    "known": 5,
+    "unknown": 0,
+    "accuracy": 0.8,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "yes_rate": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "tn": 4,
+    "fn": 1
+  }
+}

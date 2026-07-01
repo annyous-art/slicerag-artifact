@@ -1,0 +1,52 @@
+idx,target,error_type,taxonomy,dominant_pattern,project,cwe,yes_vote_count,known_vote_count,manual_taxonomy_valid,manual_refined_category,notes
+263382,0,FP,yes_prior_consensus_false_positive,error_handling,tensorflow,CWE-703,7,7,yes,bounds_false_alarm,Heap overflow caused by negative perm values.
+522438,0,FP,yes_prior_consensus_false_positive,bounds,elfspirit,CWE-125,7,7,yes,yes_prior_consensus_false_positive,Target is benign/fixed but the analyzed methods largely predict YES (7/7); the bounds risk pattern makes the consensus vulnerable-label prior plausible.
+353015,0,FP,yes_prior_consensus_false_positive,error_handling,openldap,CWE-617,7,7,yes,state_machine_or_invariant_error,Need state-machine / invariant reasoning; constructing a malicious packet may cause the slapd daemon to terminate due to assertion failure.
+223089,0,FP,yes_prior_consensus_false_positive,error_handling,ImageMagick,CWE-190,7,7,yes,bounds_false_alarm,Unsigned long values may exceed the representable range.
+477946,0,FP,yes_prior_consensus_false_positive,error_handling,clamav-devel,CWE-20,7,7,yes,allocation_or_size_accounting,Memory corruption and application crash caused by constructing a specially crafted CAB archive file.
+267917,0,FP,yes_prior_consensus_false_positive,bounds,tensorflow,CWE-703,7,7,yes,bounds_false_alarm,Overreaction to boundary or size operations.
+230394,0,FP,yes_prior_consensus_false_positive,error_handling,pjproject,CWE-703,7,7,yes,state_machine_or_invariant_error,Requires state-machine / invariant reasoning; parsing specific XML content triggers an infinite loop.
+359843,0,FP,yes_prior_consensus_false_positive,error_handling,ImageMagick,CWE-617,6,7,yes,state_machine_or_invariant_error,Requires state-machine / invariant reasoning; do not attempt to write to an empty image list.
+484732,0,FP,yes_prior_consensus_false_positive,bounds,libmobi,CWE-787,7,7,yes,bounds_false_alarm,Out-of-bounds write vulnerability exists in libmobi.
+267985,0,FP,yes_prior_consensus_false_positive,error_handling,radare2,CWE-125,7,7,yes,bounds_false_alarm,Out-of-bounds read exists.
+437708,0,FP,risky_pattern_false_alarm:error_handling,error_handling,linux,CWE-401,5,7,partial,lifecycle_or_refcount_false_alarm,Memory leak exists.
+481267,0,FP,risky_pattern_false_alarm:error_handling,error_handling,linux,CWE-401,4,7,partial,lifecycle_or_refcount_false_alarm,Memory leak exists.
+235642,0,FP,risky_pattern_false_alarm:error_handling,error_handling,pjproject,CWE-787,5,7,partial,bounds_false_alarm,Buffer overflow.
+444900,0,FP,risky_pattern_false_alarm:error_handling,error_handling,cifs-utils,CWE-20,4,7,partial,policy_or_permission_false_alarm,Improper input validation in mount.cifs mtab processing; involves resource limit checks and uid/permission logic.
+405333,0,FP,risky_pattern_false_alarm:error_handling,error_handling,linux,CWE-703,5,7,partial,lifecycle_or_refcount_false_alarm,The xfrm_expand_policies function may cause the reference count to be dropped twice.
+417472,0,FP,risky_pattern_false_alarm:error_handling,error_handling,libvirt,CWE-119,2,7,partial,pointer_array_precedence,Segmentation fault caused by incorrect operator precedence when accessing array elements via pointer.
+226029,0,FP,risky_pattern_false_alarm:error_handling,error_handling,gpac,CWE-476,5,7,partial,lifecycle_or_refcount_false_alarm,Null pointer dereference error.
+452994,0,FP,risky_pattern_false_alarm:error_handling,error_handling,nf,CWE-269,3,7,partial,allocation_or_size_accounting,Heap out-of-bounds.
+267357,0,FP,risky_pattern_false_alarm:error_handling,error_handling,crun,CWE-276,4,7,partial,policy_or_permission_false_alarm,Policy causes inherited capability error.
+221413,0,FP,risky_pattern_false_alarm:error_handling,error_handling,linux,CWE-862,5,7,partial,policy_or_permission_false_alarm,Policy causes interception control error.
+195091,1,FN,conservative_consensus_false_negative,bounds,tensorflow,CWE-754,0,7,yes,semantic_context_required_false_negative,tensor::FromElementsOp requires knowledge of the output type.
+196621,1,FN,conservative_consensus_false_negative,error_handling,mruby,CWE-787,0,7,yes,semantic_context_required_false_negative,Method cache not cleared after method deletion.
+208654,1,FN,conservative_consensus_false_negative,error_handling,php-src,CWE-416,0,7,yes,semantic_context_required_false_negative,Caused by unserialize / garbage collection interaction; requires understanding object lifecycles across multiple subsystems.
+210203,1,FN,conservative_consensus_false_negative,bounds,linux,CWE-787,0,7,yes,semantic_context_required_false_negative,"Seq buffer allocation not properly restricted, leading to integer overflow."
+195234,1,FN,conservative_consensus_false_negative,bounds,tensorflow,CWE-617,0,7,yes,semantic_context_required_false_negative,CHECK failure in BuildInputArgIndex.
+197826,1,FN,conservative_consensus_false_negative,error_handling,tensorflow,CWE-824,0,7,yes,semantic_context_required_false_negative,DT_RESOURCE tensor constant folding segmentation fault; requires understanding Grappler optimizer semantics and tensor type constraints.
+200934,1,FN,conservative_consensus_false_negative,error_handling,libvirt,CWE-212,0,7,yes,state_machine_or_invariant_error,"Requires understanding the state machine to track whether the ""safety flag"" is propagated throughout the operation flow."
+207803,1,FN,conservative_consensus_false_negative,bounds,linux,CWE-200,0,7,yes,state_machine_or_invariant_error,Requires understanding entropy mixing and remote attack models.
+208525,1,FN,conservative_consensus_false_negative,error_handling,vim,CWE-787,0,7,yes,state_machine_or_invariant_error,Buffer out-of-bounds read in vim command-line expression processing; requires understanding cursor position validity across command-line mode transitions.
+216903,1,FN,conservative_consensus_false_negative,error_handling,server,CWE-476,0,7,yes,semantic_context_required_false_negative,Assertion failure; requires understanding subquery predicate fix semantics not visible in native code.
+391628,0,FP,risky_pattern_false_alarm:bounds,bounds,linux,CWE-120,3,7,yes,bounds_false_alarm,Buffer overflow.
+242619,0,FP,risky_pattern_false_alarm:bounds,bounds,tensorflow,CWE-703,3,7,partial,lifecycle_or_refcount_false_alarm,"buf->Get(&tuple); if shared buffer, potential synchronization issue may exist."
+462316,0,FP,risky_pattern_false_alarm:bounds,bounds,ghostpdl,CWE-787,5,7,partial,lifecycle_or_refcount_false_alarm,Avoid double-free of erroneous PCL buffers.
+224154,0,FP,risky_pattern_false_alarm:bounds,bounds,mruby,CWE-476,5,7,partial,lifecycle_or_refcount_false_alarm,Null pointer dereference error.
+448912,0,FP,risky_pattern_false_alarm:bounds,bounds,zlib,CWE-787,5,7,yes,bounds_false_alarm,Buffer overflow.
+233862,0,FP,risky_pattern_false_alarm:bounds,bounds,deark,CWE-369,5,7,partial,allocation_or_size_accounting,Division-by-zero error.
+513202,0,FP,risky_pattern_false_alarm:bounds,bounds,server,CWE-416,4,7,partial,lifecycle_or_refcount_false_alarm,Use-after-free vulnerability exists in my_strcasecmp_8bit.
+391627,0,FP,risky_pattern_false_alarm:bounds,bounds,linux,CWE-120,2,7,yes,bounds_false_alarm,Buffer overflow.
+271526,0,FP,risky_pattern_false_alarm:bounds,bounds,tensorflow,CWE-369,5,7,partial,allocation_or_size_accounting,Division-by-zero error.
+259619,0,FP,risky_pattern_false_alarm:bounds,bounds,libjpeg,CWE-787,3,7,partial,allocation_or_size_accounting,MCU size may differ between allocation and usage.
+483053,0,FP,repair_present_but_not_applied_or_policy_blocked,bounds,linux,CWE-269,4,7,yes,policy_or_permission_false_alarm,Policy exploits cgroups v1 release_agent feature for privilege escalation.
+506428,0,FP,repair_present_but_not_applied_or_policy_blocked,bounds,core,CWE-125,5,7,yes,policy_or_permission_false_alarm,Zero-length buffer processing issue.
+326119,0,FP,repair_present_but_not_applied_or_policy_blocked,error_handling,vim,CWE-416,4,7,yes,repair_present_but_not_used,"Repair-like evidence is present in the candidate signal (repair_present_override_candidate:added_guard), but the model/policy did not safely use it to avoid a YES false positive."
+497809,0,FP,repair_present_but_not_applied_or_policy_blocked,bounds,grep,CWE-119,5,7,yes,allocation_or_size_accounting,Heap buffer read overflow issue.
+246495,0,FP,repair_present_but_not_applied_or_policy_blocked,error_handling,tensorflow,CWE-369,5,7,yes,allocation_or_size_accounting,Division-by-zero error.
+274865,0,FP,retrieval_misleading_or_ambiguous:retrieval_low_margin,low_keyword_signal,tensorflow,CWE-703,2,7,partial,state_machine_or_invariant_error,Requires state-machine reasoning; understanding numerical scale issues during quantization.
+401525,0,FP,retrieval_misleading_or_ambiguous:retrieval_low_margin,low_keyword_signal,linux,CWE-200,3,7,partial,state_machine_or_invariant_error,Requires understanding entropy mixing and remote attack models.
+449294,0,FP,retrieval_misleading_or_ambiguous:retrieval_low_margin,low_keyword_signal,vim,CWE-122,2,7,partial,bounds_false_alarm,Buffer overflow.
+443152,0,FP,risky_pattern_false_alarm:lifecycle,lifecycle,linux,CWE-476,5,7,yes,lifecycle_or_refcount_false_alarm,Null pointer dereference error.
+417093,0,FP,risky_pattern_false_alarm:lifecycle,lifecycle,MilkyTracker,CWE-416,4,7,yes,lifecycle_or_refcount_false_alarm,Use-after-free issue exists in PlayerGeneric destructor.
+232405,0,FP,risky_pattern_false_alarm:memory_api,memory_api,tensorflow,CWE-476,4,7,yes,lifecycle_or_refcount_false_alarm,Null pointer dereference error.

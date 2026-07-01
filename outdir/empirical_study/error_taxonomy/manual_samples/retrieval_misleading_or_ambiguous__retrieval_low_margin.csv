@@ -1,0 +1,241 @@
+idx,target,base_pred,error_type,taxonomy,dominant_pattern,project,cwe,char_len,yes_vote_count,known_vote_count,func_excerpt,author_no_yes_correct,author_no_yes_pred,base_correct,best_ensemble_correct,best_ensemble_pred,bounds_keyword_count,commit_message,cve_desc,error_handling_keyword_count,func,length_bucket,lifecycle_keyword_count,line_count,memory_api_count,method_pattern,null_keyword_count,old_rag_correct,old_rag_pred,patch_contrast_correct,patch_contrast_pred,positive_weighted_rag_correct,positive_weighted_rag_pred,repair_signal,retrieval_bucket,retrieval_pos_neg_margin_max,retrieval_top1_score,token_len_approx,yes_only_correct,yes_only_pred,zero_shot_correct,zero_shot_pred
+274865,0,1,FP,retrieval_misleading_or_ambiguous:retrieval_low_margin,low_keyword_signal,tensorflow,CWE-703,1608,2,7,"void ComparisonQuantized(const TfLiteTensor* input1, const TfLiteTensor* input2,
+                         TfLiteTensor* output, bool requires_broadcast) {
+  if (input1->type == kTfLiteUInt8 || input1->type == kTfLiteInt8) {
+    auto input1_offset = -input1->params.zero_point;
+    auto input2_offset = -input2->params.zero_point;
+    const int left_shift = 8;
+
+    int32 input1_multiplier;
+    int32 input2_multiplier;
+    int input1_shift;
+    int input2_shift;
+    QuantizeMultiplier(input1->params.scale, &input1_multiplier, &input1_shift);
+    QuantizeMultiplier(input2->params.scale, &input2_multiplier, &input2_shift);
+
+    ComparisonParams op_params;
+    op_params.left_shift = left_shift;
+    op_params.input1_offset = input1_offset;
+    op_params.input1_multiplier = input1_multiplier;
+    op_params.input1_shift = input1_shift;
+    op_params.input2_offset = input2_offset;
+    op_params.input2_multiplier = input2_multiplier;
+    op_params.input2_shift = input2_shift;
+    if (requires_broadcast) {
+      reference_ops::BroadcastComparison4DSlowWithScaling<input_dtype, opname>(
+          op_params, GetTensorShape(input1), GetTensorData<input_dtype>(input1),
+          GetTensorShape(input2), GetTensorData<input_dtype>(input2),
+          GetTensorShape(output), GetTensorData<bool>(output));
+    } else {
+      reference_ops::ComparisonWithScaling<input_dtype, opname>(
+          op_params, GetTensorShape(input1), GetTensorData<input_dtype>(input1),
+          GetTensorShape(input2), GetTensorData<input_dtype>(input2),
+          GetTensorShape(output), GetTensorData<bool>(output));
+    }
+  }
+}",1,0,0,0,1,0,"Improve to cover scale value greater than one
+
+PiperOrigin-RevId: 433050921","TensorFlow is an open source platform for machine learning. Prior to versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4, certain TFLite models that were created using TFLite model converter would crash when loaded in the TFLite interpreter. The culprit is that during quantization the scale of values could be greater than 1 but code was always assuming sub-unit scaling. Thus, since code was calling `QuantizeMultiplierSmallerThanOneExp`, the `TFLITE_CHECK_LT` assertion would trigger and abort the process. Versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4 contain a patch for this issue.",0,"void ComparisonQuantized(const TfLiteTensor* input1, const TfLiteTensor* input2,
+                         TfLiteTensor* output, bool requires_broadcast) {
+  if (input1->type == kTfLiteUInt8 || input1->type == kTfLiteInt8) {
+    auto input1_offset = -input1->params.zero_point;
+    auto input2_offset = -input2->params.zero_point;
+    const int left_shift = 8;
+
+    int32 input1_multiplier;
+    int32 input2_multiplier;
+    int input1_shift;
+    int input2_shift;
+    QuantizeMultiplier(input1->params.scale, &input1_multiplier, &input1_shift);
+    QuantizeMultiplier(input2->params.scale, &input2_multiplier, &input2_shift);
+
+    ComparisonParams op_params;
+    op_params.left_shift = left_shift;
+    op_params.input1_offset = input1_offset;
+    op_params.input1_multiplier = input1_multiplier;
+    op_params.input1_shift = input1_shift;
+    op_params.input2_offset = input2_offset;
+    op_params.input2_multiplier = input2_multiplier;
+    op_params.input2_shift = input2_shift;
+    if (requires_broadcast) {
+      reference_ops::BroadcastComparison4DSlowWithScaling<input_dtype, opname>(
+          op_params, GetTensorShape(input1), GetTensorData<input_dtype>(input1),
+          GetTensorShape(input2), GetTensorData<input_dtype>(input2),
+          GetTensorShape(output), GetTensorData<bool>(output));
+    } else {
+      reference_ops::ComparisonWithScaling<input_dtype, opname>(
+          op_params, GetTensorShape(input1), GetTensorData<input_dtype>(input1),
+          GetTensorShape(input2), GetTensorData<input_dtype>(input2),
+          GetTensorShape(output), GetTensorData<bool>(output));
+    }
+  }
+}",short_<2k,0,35,0,method_disagreement,0,1,0,1,0,1,0,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,0.004216611385345459,0.9537745118141174,265,1,0,0,1
+401525,0,1,FP,retrieval_misleading_or_ambiguous:retrieval_low_margin,low_keyword_signal,linux,CWE-200,746,3,7,"void update_process_times(int user_tick)
+{
+	struct task_struct *p = current;
+
+	/* Note: this timer irq context must be accounted for as well. */
+	account_process_tick(p, user_tick);
+	run_local_timers();
+	rcu_sched_clock_irq(user_tick);
+#ifdef CONFIG_IRQ_WORK
+	if (in_irq())
+		irq_work_tick();
+#endif
+	scheduler_tick();
+	if (IS_ENABLED(CONFIG_POSIX_TIMERS))
+		run_posix_cpu_timers();
+
+	/* The current CPU might make use of net randoms without receiving IRQs
+	 * to renew them often enough. Let's update the net_rand_state from a
+	 * non-constant value that's not affine to the number of calls to make
+	 * sure it's updated when there's some activity (we don't care in idle).
+	 */
+	this_cpu_add(net_rand_state.s1, rol32(jiffies, 24) + user_tick);
+}",0,1,0,0,1,0,"random32: update the net random state on interrupt and activity
+
+This modifies the first 32 bits out of the 128 bits of a random CPU's
+net_rand_state on interrupt or CPU activity to complicate remote
+observations that could lead to guessing the network RNG's internal
+state.
+
+Note that depending on some network devices' interrupt rate moderation
+or binding, this re-seeding might happen on every packet or even almost
+never.
+
+In addition, with NOHZ some CPUs might not even get timer interrupts,
+leaving their local state rarely updated, while they are running
+networked processes making use of the random state.  For this reason, we
+also perform this update in update_process_times() in order to at least
+update the state when there is user or system activity, since it's the
+only case we care about.
+
+Reported-by: Amit Klein <aksecurity@gmail.com>
+Suggested-by: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Eric Dumazet <edumazet@google.com>
+Cc: ""Jason A. Donenfeld"" <Jason@zx2c4.com>
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: Kees Cook <keescook@chromium.org>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: <stable@vger.kernel.org>
+Signed-off-by: Willy Tarreau <w@1wt.eu>
+Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>","The Linux kernel through 5.7.11 allows remote attackers to make observations that help to obtain sensitive information about the internal state of the network RNG, aka CID-f227e3ec3b5c. This is related to drivers/char/random.c and kernel/time/timer.c.",0,"void update_process_times(int user_tick)
+{
+	struct task_struct *p = current;
+
+	/* Note: this timer irq context must be accounted for as well. */
+	account_process_tick(p, user_tick);
+	run_local_timers();
+	rcu_sched_clock_irq(user_tick);
+#ifdef CONFIG_IRQ_WORK
+	if (in_irq())
+		irq_work_tick();
+#endif
+	scheduler_tick();
+	if (IS_ENABLED(CONFIG_POSIX_TIMERS))
+		run_posix_cpu_timers();
+
+	/* The current CPU might make use of net randoms without receiving IRQs
+	 * to renew them often enough. Let's update the net_rand_state from a
+	 * non-constant value that's not affine to the number of calls to make
+	 * sure it's updated when there's some activity (we don't care in idle).
+	 */
+	this_cpu_add(net_rand_state.s1, rol32(jiffies, 24) + user_tick);
+}",short_<2k,0,23,0,method_disagreement,0,1,0,1,0,0,1,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,-0.0010606050491333008,0.9428854584693909,157,1,0,1,0
+449294,0,1,FP,retrieval_misleading_or_ambiguous:retrieval_low_margin,low_keyword_signal,vim,CWE-122,1349,2,7,"n_start_visual_mode(int c)
+{
+#ifdef FEAT_CONCEAL
+    int cursor_line_was_concealed = curwin->w_p_cole > 0
+						&& conceal_cursor_line(curwin);
+#endif
+
+    VIsual_mode = c;
+    VIsual_active = TRUE;
+    VIsual_reselect = TRUE;
+
+    // Corner case: the 0 position in a tab may change when going into
+    // virtualedit.  Recalculate curwin->w_cursor to avoid bad highlighting.
+    if (c == Ctrl_V && (get_ve_flags() & VE_BLOCK) && gchar_cursor() == TAB)
+    {
+	validate_virtcol();
+	coladvance(curwin->w_virtcol);
+    }
+    VIsual = curwin->w_cursor;
+
+#ifdef FEAT_FOLDING
+    foldAdjustVisual();
+#endif
+
+    trigger_modechanged();
+    setmouse();
+#ifdef FEAT_CONCEAL
+    // Check if redraw is needed after changing the state.
+    conceal_check_cursor_line(cursor_line_was_concealed);
+#endif
+
+    if (p_smd && msg_silent == 0)
+	redraw_cmdline = TRUE;	// show visual mode later
+#ifdef FEAT_CLIPBOARD
+    // Make sure the clipboard gets updated.  Needed because start and
+    // end may still be the same, and the selection needs to be owned
+    clip_star.vmode = NUL;
+#endif
+
+    // Only need to redraw this line, unless still need to redraw an old
+    // Visual area (when 'lazyredraw' is set).
+    if (curwin->w_redr_type < INVERTED)
+    {
+	curwin->w_old_cursor_lnum = curwin->w_cursor.lnum;
+	curwin->w_old_visual_lnum = curwin->w_cursor.lnum;
+    }
+}",1,0,0,0,1,0,"patch 8.2.3610: crash when ModeChanged triggered too early
+
+Problem:    Crash when ModeChanged triggered too early.
+Solution:   Trigger ModeChanged after setting VIsual.",vim is vulnerable to Heap-based Buffer Overflow,0,"n_start_visual_mode(int c)
+{
+#ifdef FEAT_CONCEAL
+    int cursor_line_was_concealed = curwin->w_p_cole > 0
+						&& conceal_cursor_line(curwin);
+#endif
+
+    VIsual_mode = c;
+    VIsual_active = TRUE;
+    VIsual_reselect = TRUE;
+
+    // Corner case: the 0 position in a tab may change when going into
+    // virtualedit.  Recalculate curwin->w_cursor to avoid bad highlighting.
+    if (c == Ctrl_V && (get_ve_flags() & VE_BLOCK) && gchar_cursor() == TAB)
+    {
+	validate_virtcol();
+	coladvance(curwin->w_virtcol);
+    }
+    VIsual = curwin->w_cursor;
+
+#ifdef FEAT_FOLDING
+    foldAdjustVisual();
+#endif
+
+    trigger_modechanged();
+    setmouse();
+#ifdef FEAT_CONCEAL
+    // Check if redraw is needed after changing the state.
+    conceal_check_cursor_line(cursor_line_was_concealed);
+#endif
+
+    if (p_smd && msg_silent == 0)
+	redraw_cmdline = TRUE;	// show visual mode later
+#ifdef FEAT_CLIPBOARD
+    // Make sure the clipboard gets updated.  Needed because start and
+    // end may still be the same, and the selection needs to be owned
+    clip_star.vmode = NUL;
+#endif
+
+    // Only need to redraw this line, unless still need to redraw an old
+    // Visual area (when 'lazyredraw' is set).
+    if (curwin->w_redr_type < INVERTED)
+    {
+	curwin->w_old_cursor_lnum = curwin->w_cursor.lnum;
+	curwin->w_old_visual_lnum = curwin->w_cursor.lnum;
+    }
+}",short_<2k,0,47,0,method_disagreement,0,1,0,0,1,1,0,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,-0.0031300783157348633,0.936733603477478,256,1,0,1,0

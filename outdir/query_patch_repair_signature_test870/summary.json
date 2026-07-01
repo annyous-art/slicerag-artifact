@@ -1,0 +1,11 @@
+{
+  "num_query_records": 870,
+  "num_query_chunks": 59156,
+  "num_patch_pairs": 3789,
+  "chunk_size": 6,
+  "stride": 2,
+  "faiss_topk": 200,
+  "max_patch_pairs": 10,
+  "top_n": 2,
+  "ranking_score": "vuln_margin"
+}

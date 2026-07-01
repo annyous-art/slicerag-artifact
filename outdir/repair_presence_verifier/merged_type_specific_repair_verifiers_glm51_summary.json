@@ -1,0 +1,48 @@
+{
+  "input_files": [
+    "${SLICERAG_ROOT}/outdir/repair_presence_verifier/bounds_path_variable_best_ensemble_sameproject_samecwe_overlap2_glm51_v2.jsonl",
+    "${SLICERAG_ROOT}/outdir/repair_presence_verifier/api_replacement_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl",
+    "${SLICERAG_ROOT}/outdir/repair_presence_verifier/error_handling_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl",
+    "${SLICERAG_ROOT}/outdir/repair_presence_verifier/null_check_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl",
+    "${SLICERAG_ROOT}/outdir/repair_presence_verifier/added_guard_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl",
+    "${SLICERAG_ROOT}/outdir/repair_presence_verifier/state_or_lifetime_repair_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl"
+  ],
+  "input_rows": 193,
+  "unique_idx": 66,
+  "output_rows": 66,
+  "skipped_missing_idx": 0,
+  "conflict_idx_count": 7,
+  "selected_repair_type_counts": {
+    "api_replacement": 30,
+    "bounds_or_shape_check": 13,
+    "error_handling": 11,
+    "added_guard": 6,
+    "null_check": 5,
+    "state_or_lifetime_repair": 1
+  },
+  "selected_pred_counts": {
+    "1": 56,
+    "0": 10
+  },
+  "selected_confidence_counts": {
+    "high": 64,
+    "medium": 2
+  },
+  "source_counts": {
+    "api_replacement_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl": 30,
+    "bounds_path_variable_best_ensemble_sameproject_samecwe_overlap2_glm51_v2.jsonl": 13,
+    "error_handling_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl": 11,
+    "added_guard_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl": 6,
+    "null_check_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl": 5,
+    "state_or_lifetime_repair_best_ensemble_sameproject_samecwe_overlap2_glm51.jsonl": 1
+  },
+  "type_priority": {
+    "api_replacement": 100,
+    "state_or_lifetime_repair": 90,
+    "error_handling": 80,
+    "null_check": 75,
+    "added_guard": 70,
+    "bounds_or_shape_check": 60,
+    "unknown": 0
+  }
+}

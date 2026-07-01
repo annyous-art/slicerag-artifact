@@ -1,0 +1,23 @@
+{
+  "predictions_csv": "outdir/ensemble_error_patch_contrast/per_sample_predictions.csv",
+  "query_results": "outdir/query_patch_contrast_test870_vuln_margin/query_patch_contrast_results.jsonl",
+  "base_pred_column": "yes_only_pred",
+  "mode": "fixed_closer_both_sides",
+  "max_pairs": 2,
+  "min_relevance": 0.0,
+  "min_abs_margin": 0.05,
+  "exclude_same_idx": true,
+  "num_query_rows": 868,
+  "num_prediction_rows": 868,
+  "num_candidates": 1,
+  "candidate_target_counts_for_evaluation_only": {
+    "1": 1
+  },
+  "skip_counts": {
+    "no_trigger_pair": 688,
+    "base_not_yes": 179
+  },
+  "trigger_top_closer_side_counts": {
+    "fixed": 1
+  }
+}

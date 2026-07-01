@@ -1,0 +1,123 @@
+idx,target,base_pred,error_type,taxonomy,dominant_pattern,project,cwe,char_len,yes_vote_count,known_vote_count,func_excerpt,author_no_yes_correct,author_no_yes_pred,base_correct,best_ensemble_correct,best_ensemble_pred,bounds_keyword_count,commit_message,cve_desc,error_handling_keyword_count,func,length_bucket,lifecycle_keyword_count,line_count,memory_api_count,method_pattern,null_keyword_count,old_rag_correct,old_rag_pred,patch_contrast_correct,patch_contrast_pred,positive_weighted_rag_correct,positive_weighted_rag_pred,repair_signal,retrieval_bucket,retrieval_pos_neg_margin_max,retrieval_top1_score,token_len_approx,yes_only_correct,yes_only_pred,zero_shot_correct,zero_shot_pred
+232405,0,1,FP,risky_pattern_false_alarm:memory_api,memory_api,tensorflow,CWE-476,2915,4,7,"  void MakeDataset(OpKernelContext* ctx, DatasetBase** output) override {
+    // Create a new SparseTensorSliceDatasetOp::Dataset, insert it in
+    // the step container, and return it as the output.
+    const Tensor* indices;
+    OP_REQUIRES_OK(ctx, ctx->input(""indices"", &indices));
+    const Tensor* values;
+    OP_REQUIRES_OK(ctx, ctx->input(""values"", &values));
+    const Tensor* dense_shape;
+    OP_REQUIRES_OK(ctx, ctx->input(""dense_shape"", &dense_shape));
+
+    OP_REQUIRES(ctx, TensorShapeUtils::IsMatrix(indices->shape()),
+                errors::InvalidArgument(
+                    ""Input indices should be a matrix but received shape "",
+                    indices->shape().DebugString()));
+
+    const auto num_indices = indices->NumElements();
+    const auto num_values = values->NumElements();
+    if (num_indices == 0 || num_values == 0) {
+      OP_REQUIRES(ctx, num_indices == num_values,
+                  errors::InvalidArgument(
+                      ""If indices or values are empty, the other one must also ""
+                      ""be. Got indices of shape "",
+                      indices->shape().DebugString(), "" and values of shape "",
+                      values->shape().DebugString()));
+    }
+    OP_REQUIRES(ctx, TensorShapeUtils::IsVector(values->shape()),
+                errors::InvalidArgument(
+                    ""Input values should be a vector but received shape "",
+                    indices->shape().DebugString()));
+    OP_REQUIRES(ctx, TensorShapeUtils::IsVector(dense_shape->shape()),
+                errors::InvalidArgument(
+                    ""Input shape should be a vector but received shape "",
+                    dense_shape->shape().DebugString()));
+
+    // We currently ensure that `sparse_tensor` is ordered in the
+    // batch dimension.
+    // TODO(mrry): Investigate ways to avoid this unconditional check
+    // if we can be sure that the sparse tensor was produced in an
+    // appropriate order (e.g. by `tf.parse_example()` or a Dataset
+    // that batches elements into rows of a SparseTensor).
+    int64_t previous_batch_index = -1;
+    for (int64_t i = 0; i < indices->dim_size(0); ++i) {
+      int64_t next_batch_index = indices->matrix<int64>()(i, 0);
+      OP_REQUIRES(
+          ctx, next_batch_index >= previous_batch_index,
+          errors::Unimplemented(""The SparseTensor must be ordered in the batch ""
+                                ""dimension; handling arbitrarily ordered input ""
+                                ""is not currently supported.""));
+      previous_batch_index = next_batch_index;
+    }
+    gtl::InlinedVector<int64, 8> std_order(dense_shape->NumElements(), 0);
+    sparse::SparseTensor tensor;
+    OP_REQUIRES_OK(
+        ctx, sparse::SparseTensor::Create(
+                 *indices, *values, TensorShape(dense_shape->vec<int64>()),
+                 std_order, &tensor));
+    *output = new Dataset<T>(ctx, std::move(tensor));
+  }",1,0,0,0,1,1,"Prevent nullptr deref in SparseTensorSliceDataset
+
+The arguments must determine a valid sparse tensor. This means that when indices are empty then the values must be empty too (and the reverse).
+
+Also added test, by modifying existing test with empty sparse tensor to now run with an invalid sparse tensor input.
+
+PiperOrigin-RevId: 388562757
+Change-Id: Id8b54cd7c2316025b4f9a77292c8fb5344d17609","TensorFlow is an end-to-end open source platform for machine learning. When a user does not supply arguments that determine a valid sparse tensor, `tf.raw_ops.SparseTensorSliceDataset` implementation can be made to dereference a null pointer. The [implementation](https://github.com/tensorflow/tensorflow/blob/8d72537c6abf5a44103b57b9c2e22c14f5f49698/tensorflow/core/kernels/data/sparse_tensor_slice_dataset_op.cc#L240-L251) has some argument validation but fails to consider the case when either `indices` or `values` are provided for an empty sparse tensor when the other is not. If `indices` is empty, then [code that performs validation](https://github.com/tensorflow/tensorflow/blob/8d72537c6abf5a44103b57b9c2e22c14f5f49698/tensorflow/core/kernels/data/sparse_tensor_slice_dataset_op.cc#L260-L261) (i.e., checking that the indices are monotonically increasing) results in a null pointer dereference. If `indices` as provided by the user is empty, then `indices` in the C++ code above is backed by an empty `std::vector`, hence calling `indices->dim_size(0)` results in null pointer dereferencing (same as calling `std::vector::at()` on an empty vector). We have patched the issue in GitHub commit 02cc160e29d20631de3859c6653184e3f876b9d7. The fix will be included in TensorFlow 2.6.0. We will also cherrypick this commit on TensorFlow 2.5.1, TensorFlow 2.4.3, and TensorFlow 2.3.4, as these are also affected and still in supported range.",1,"  void MakeDataset(OpKernelContext* ctx, DatasetBase** output) override {
+    // Create a new SparseTensorSliceDatasetOp::Dataset, insert it in
+    // the step container, and return it as the output.
+    const Tensor* indices;
+    OP_REQUIRES_OK(ctx, ctx->input(""indices"", &indices));
+    const Tensor* values;
+    OP_REQUIRES_OK(ctx, ctx->input(""values"", &values));
+    const Tensor* dense_shape;
+    OP_REQUIRES_OK(ctx, ctx->input(""dense_shape"", &dense_shape));
+
+    OP_REQUIRES(ctx, TensorShapeUtils::IsMatrix(indices->shape()),
+                errors::InvalidArgument(
+                    ""Input indices should be a matrix but received shape "",
+                    indices->shape().DebugString()));
+
+    const auto num_indices = indices->NumElements();
+    const auto num_values = values->NumElements();
+    if (num_indices == 0 || num_values == 0) {
+      OP_REQUIRES(ctx, num_indices == num_values,
+                  errors::InvalidArgument(
+                      ""If indices or values are empty, the other one must also ""
+                      ""be. Got indices of shape "",
+                      indices->shape().DebugString(), "" and values of shape "",
+                      values->shape().DebugString()));
+    }
+    OP_REQUIRES(ctx, TensorShapeUtils::IsVector(values->shape()),
+                errors::InvalidArgument(
+                    ""Input values should be a vector but received shape "",
+                    indices->shape().DebugString()));
+    OP_REQUIRES(ctx, TensorShapeUtils::IsVector(dense_shape->shape()),
+                errors::InvalidArgument(
+                    ""Input shape should be a vector but received shape "",
+                    dense_shape->shape().DebugString()));
+
+    // We currently ensure that `sparse_tensor` is ordered in the
+    // batch dimension.
+    // TODO(mrry): Investigate ways to avoid this unconditional check
+    // if we can be sure that the sparse tensor was produced in an
+    // appropriate order (e.g. by `tf.parse_example()` or a Dataset
+    // that batches elements into rows of a SparseTensor).
+    int64_t previous_batch_index = -1;
+    for (int64_t i = 0; i < indices->dim_size(0); ++i) {
+      int64_t next_batch_index = indices->matrix<int64>()(i, 0);
+      OP_REQUIRES(
+          ctx, next_batch_index >= previous_batch_index,
+          errors::Unimplemented(""The SparseTensor must be ordered in the batch ""
+                                ""dimension; handling arbitrarily ordered input ""
+                                ""is not currently supported.""));
+      previous_batch_index = next_batch_index;
+    }
+    gtl::InlinedVector<int64, 8> std_order(dense_shape->NumElements(), 0);
+    sparse::SparseTensor tensor;
+    OP_REQUIRES_OK(
+        ctx, sparse::SparseTensor::Create(
+                 *indices, *values, TensorShape(dense_shape->vec<int64>()),
+                 std_order, &tensor));
+    *output = new Dataset<T>(ctx, std::move(tensor));
+  }",medium_2k_5k,0,58,2,method_disagreement,0,1,0,0,1,1,0,no_repair_verifier_candidate,retrieval_low_margin,0.0026079416275024414,0.9493675827980042,564,0,1,0,1

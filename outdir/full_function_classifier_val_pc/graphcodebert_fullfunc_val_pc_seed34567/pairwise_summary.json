@@ -1,0 +1,15 @@
+{
+  "num_data_rows": 870,
+  "candidate_adjacent_pairs": 435,
+  "known_pairs": 435,
+  "unknown_pairs": 0,
+  "skip_counts": {},
+  "P-C": 40,
+  "P-V": 221,
+  "P-B": 168,
+  "P-R": 6,
+  "P-C_rate": 0.09195402298850575,
+  "P-V_rate": 0.5080459770114942,
+  "P-B_rate": 0.38620689655172413,
+  "P-R_rate": 0.013793103448275862
+}

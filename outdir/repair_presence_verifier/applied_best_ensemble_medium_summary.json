@@ -1,0 +1,73 @@
+{
+  "base_pred_column": "best_ensemble_pred",
+  "min_confidence": "medium",
+  "require_repair_present": true,
+  "before": {
+    "known": 868,
+    "unknown": 0,
+    "accuracy": 0.518433,
+    "precision": 0.511053,
+    "recall": 0.903448,
+    "f1": 0.652824,
+    "yes_rate": 0.885945,
+    "tp": 393,
+    "fp": 376,
+    "tn": 57,
+    "fn": 42
+  },
+  "after": {
+    "known": 868,
+    "unknown": 0,
+    "accuracy": 0.743088,
+    "precision": 0.684669,
+    "recall": 0.903448,
+    "f1": 0.778989,
+    "yes_rate": 0.66129,
+    "tp": 393,
+    "fp": 181,
+    "tn": 252,
+    "fn": 42
+  },
+  "delta": {
+    "accuracy": 0.224655,
+    "precision": 0.173616,
+    "recall": 0.0,
+    "f1": 0.126165,
+    "yes_rate": -0.224655
+  },
+  "verifier_rows": 200,
+  "rows_with_verifier": 200,
+  "override_count": 195,
+  "skipped_yes_with_verifier_count": 5,
+  "override_target_counts": {
+    "0": 195
+  },
+  "override_repair_type_counts": {
+    "added_guard": 87,
+    "bounds_or_shape_check": 50,
+    "state_or_lifetime_repair": 26,
+    "api_replacement": 16,
+    "bounds_or_shape_repair": 5,
+    "error_handling": 4,
+    "added_guard|bounds_or_shape_check": 2,
+    "added_guard|bounds_or_shape_check|api_replacement": 2,
+    "added_guard|bounds_or_shape_check|error_handling": 2,
+    "unknown": 1
+  },
+  "override_confidence_counts": {
+    "high": 195
+  },
+  "override_metrics_on_overridden_rows": {
+    "known": 195,
+    "unknown": 0,
+    "accuracy": 1.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "yes_rate": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "tn": 195,
+    "fn": 0
+  }
+}

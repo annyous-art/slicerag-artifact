@@ -1,0 +1,2 @@
+method,known_pairs,unknown_pairs,P-C,P-V,P-B,P-R,P-C_rate,P-V_rate,P-B_rate,P-R_rate
+fine_tuned_full_function_classifier,435,0,15,368,46,6,0.034482758620689655,0.8459770114942529,0.10574712643678161,0.013793103448275862

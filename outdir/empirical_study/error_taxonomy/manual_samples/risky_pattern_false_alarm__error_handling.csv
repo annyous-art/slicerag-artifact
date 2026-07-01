@@ -1,0 +1,1257 @@
+idx,target,base_pred,error_type,taxonomy,dominant_pattern,project,cwe,char_len,yes_vote_count,known_vote_count,func_excerpt,author_no_yes_correct,author_no_yes_pred,base_correct,best_ensemble_correct,best_ensemble_pred,bounds_keyword_count,commit_message,cve_desc,error_handling_keyword_count,func,length_bucket,lifecycle_keyword_count,line_count,memory_api_count,method_pattern,null_keyword_count,old_rag_correct,old_rag_pred,patch_contrast_correct,patch_contrast_pred,positive_weighted_rag_correct,positive_weighted_rag_pred,repair_signal,retrieval_bucket,retrieval_pos_neg_margin_max,retrieval_top1_score,token_len_approx,yes_only_correct,yes_only_pred,zero_shot_correct,zero_shot_pred
+437708,0,1,FP,risky_pattern_false_alarm:error_handling,error_handling,linux,CWE-401,1348,5,7,"int cx23888_ir_probe(struct cx23885_dev *dev)
+{
+	struct cx23888_ir_state *state;
+	struct v4l2_subdev *sd;
+	struct v4l2_subdev_ir_parameters default_params;
+	int ret;
+
+	state = kzalloc(sizeof(struct cx23888_ir_state), GFP_KERNEL);
+	if (state == NULL)
+		return -ENOMEM;
+
+	spin_lock_init(&state->rx_kfifo_lock);
+	if (kfifo_alloc(&state->rx_kfifo, CX23888_IR_RX_KFIFO_SIZE,
+			GFP_KERNEL)) {
+		kfree(state);
+		return -ENOMEM;
+	}
+
+	state->dev = dev;
+	sd = &state->sd;
+
+	v4l2_subdev_init(sd, &cx23888_ir_controller_ops);
+	v4l2_set_subdevdata(sd, state);
+	/* FIXME - fix the formatting of dev->v4l2_dev.name and use it */
+	snprintf(sd->name, sizeof(sd->name), ""%s/888-ir"", dev->name);
+	sd->grp_id = CX23885_HW_888_IR;
+
+	ret = v4l2_device_register_subdev(&dev->v4l2_dev, sd);
+	if (ret == 0) {
+		/*
+		 * Ensure no interrupts arrive from '888 specific conditions,
+		 * since we ignore them in this driver to have commonality with
+		 * similar IR controller cores.
+		 */
+		cx23888_ir_write4(dev, CX23888_IR_IRQEN_REG, 0);
+
+		mutex_init(&state->rx_params_lock);
+		default_params = default_rx_params;
+		v4l2_subdev_call(sd, ir, rx_s_parameters, &default_params);
+
+		mutex_init(&state->tx_params_lock);
+		default_params = default_tx_params;
+		v4l2_subdev_call(sd, ir, tx_s_parameters, &default_params);
+	} else {
+		kfifo_free(&state->rx_kfifo);
+	}
+	return ret;
+}",0,1,0,0,1,2,"media: rc: prevent memory leak in cx23888_ir_probe
+
+In cx23888_ir_probe if kfifo_alloc fails the allocated memory for state
+should be released.
+
+Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
+Signed-off-by: Sean Young <sean@mess.org>
+Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>","A memory leak in the cx23888_ir_probe() function in drivers/media/pci/cx23885/cx23888-ir.c in the Linux kernel through 5.3.11 allows attackers to cause a denial of service (memory consumption) by triggering kfifo_alloc() failures, aka CID-a7b2df76b42b.",5,"int cx23888_ir_probe(struct cx23885_dev *dev)
+{
+	struct cx23888_ir_state *state;
+	struct v4l2_subdev *sd;
+	struct v4l2_subdev_ir_parameters default_params;
+	int ret;
+
+	state = kzalloc(sizeof(struct cx23888_ir_state), GFP_KERNEL);
+	if (state == NULL)
+		return -ENOMEM;
+
+	spin_lock_init(&state->rx_kfifo_lock);
+	if (kfifo_alloc(&state->rx_kfifo, CX23888_IR_RX_KFIFO_SIZE,
+			GFP_KERNEL)) {
+		kfree(state);
+		return -ENOMEM;
+	}
+
+	state->dev = dev;
+	sd = &state->sd;
+
+	v4l2_subdev_init(sd, &cx23888_ir_controller_ops);
+	v4l2_set_subdevdata(sd, state);
+	/* FIXME - fix the formatting of dev->v4l2_dev.name and use it */
+	snprintf(sd->name, sizeof(sd->name), ""%s/888-ir"", dev->name);
+	sd->grp_id = CX23885_HW_888_IR;
+
+	ret = v4l2_device_register_subdev(&dev->v4l2_dev, sd);
+	if (ret == 0) {
+		/*
+		 * Ensure no interrupts arrive from '888 specific conditions,
+		 * since we ignore them in this driver to have commonality with
+		 * similar IR controller cores.
+		 */
+		cx23888_ir_write4(dev, CX23888_IR_IRQEN_REG, 0);
+
+		mutex_init(&state->rx_params_lock);
+		default_params = default_rx_params;
+		v4l2_subdev_call(sd, ir, rx_s_parameters, &default_params);
+
+		mutex_init(&state->tx_params_lock);
+		default_params = default_tx_params;
+		v4l2_subdev_call(sd, ir, tx_s_parameters, &default_params);
+	} else {
+		kfifo_free(&state->rx_kfifo);
+	}
+	return ret;
+}",short_<2k,0,48,2,method_disagreement,1,1,0,0,1,0,1,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,0.0011045336723327637,0.9548231959342957,283,0,1,1,0
+481267,0,1,FP,risky_pattern_false_alarm:error_handling,error_handling,linux,CWE-401,2357,4,7,"static int mlx5_fpga_conn_create_cq(struct mlx5_fpga_conn *conn, int cq_size)
+{
+	struct mlx5_fpga_device *fdev = conn->fdev;
+	struct mlx5_core_dev *mdev = fdev->mdev;
+	u32 temp_cqc[MLX5_ST_SZ_DW(cqc)] = {0};
+	u32 out[MLX5_ST_SZ_DW(create_cq_out)];
+	struct mlx5_wq_param wqp;
+	struct mlx5_cqe64 *cqe;
+	int inlen, err, eqn;
+	unsigned int irqn;
+	void *cqc, *in;
+	__be64 *pas;
+	u32 i;
+
+	cq_size = roundup_pow_of_two(cq_size);
+	MLX5_SET(cqc, temp_cqc, log_cq_size, ilog2(cq_size));
+
+	wqp.buf_numa_node = mdev->priv.numa_node;
+	wqp.db_numa_node  = mdev->priv.numa_node;
+
+	err = mlx5_cqwq_create(mdev, &wqp, temp_cqc, &conn->cq.wq,
+			       &conn->cq.wq_ctrl);
+	if (err)
+		return err;
+
+	for (i = 0; i < mlx5_cqwq_get_size(&conn->cq.wq); i++) {
+		cqe = mlx5_cqwq_get_wqe(&conn->cq.wq, i);
+		cqe->op_own = MLX5_CQE_INVALID << 4 | MLX5_CQE_OWNER_MASK;
+	}
+
+	inlen = MLX5_ST_SZ_BYTES(create_cq_in) +
+		sizeof(u64) * conn->cq.wq_ctrl.buf.npages;
+	in = kvzalloc(inlen, GFP_KERNEL);
+	if (!in) {
+		err = -ENOMEM;
+		goto err_cqwq;
+	}
+
+	err = mlx5_vector2eqn(mdev, smp_processor_id(), &eqn, &irqn);
+	if (err) {
+		kvfree(in);
+		goto err_cqwq;
+	}
+
+	cqc = MLX5_ADDR_OF(create_cq_in, in, cq_context);
+	MLX5_SET(cqc, cqc, log_cq_size, ilog2(cq_size));
+	MLX5_SET(cqc, cqc, c_eqn, eqn);
+	MLX5_SET(cqc, cqc, uar_page, fdev->conn_res.uar->index);
+	MLX5_SET(cqc, cqc, log_page_size, conn->cq.wq_ctrl.buf.page_shift -
+			   MLX5_ADAPTER_PAGE_SHIFT);
+	MLX5_SET64(cqc, cqc, dbr_addr, conn->cq.wq_ctrl.db.dma);
+
+	pas = (__be64 *)MLX5_ADDR_OF(create_cq_in, in, pas);
+	mlx5_fill_page_frag_array(&conn->cq.wq_ctrl.buf, pas);
+
+	err = mlx5_core_create_cq(mdev, &conn->cq.mcq, in, inlen, out, sizeof(out));
+	kvfree(in);
+
+	if (err)
+		goto err_cqwq;
+
+	conn->cq.mcq.cqe_sz     = 64;
+	conn->cq.mcq.set_ci_db  = conn->cq.wq_ctrl.db.db;
+	conn->cq.mcq.arm_db     = conn->cq.wq_ctrl.db.db + 1;
+	*conn->cq.mcq.set_ci_db = 0;
+	*conn->cq.mcq.arm_db    = 0;
+	conn->cq.mcq.vector     = 0;
+	conn->cq.mcq.comp       = mlx5_fpga_conn_cq_complete;
+	conn->cq.mcq.event      = mlx5_fpga_conn_cq_event;
+	conn->cq.mcq.irqn       = irqn;
+	conn->cq.mcq.uar        = fdev->conn_res.uar;
+	tasklet_init(&conn->cq.tasklet, mlx5_fpga_conn_cq_tasklet,
+		     (unsigned long)conn);
+
+	mlx5_fpga_dbg(fdev, ""Created CQ #0x%x\n"", conn->cq.mcq.cqn);
+
+	goto out;
+
+err_cqwq:
+	mlx5_wq_destroy(&conn->cq.wq_ctrl);
+out:
+	return err;
+}",0,1,0,0,1,3,"net/mlx5: prevent memory leak in mlx5_fpga_conn_create_cq
+
+In mlx5_fpga_conn_create_cq if mlx5_vector2eqn fails the allocated
+memory should be released.
+
+Fixes: 537a50574175 (""net/mlx5: FPGA, Add high-speed connection routines"")
+Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
+Signed-off-by: Saeed Mahameed <saeedm@mellanox.com>","A memory leak in the mlx5_fpga_conn_create_cq() function in drivers/net/ethernet/mellanox/mlx5/core/fpga/conn.c in the Linux kernel before 5.3.11 allows attackers to cause a denial of service (memory consumption) by triggering mlx5_vector2eqn() failures, aka CID-c8c2a057fdc7.",16,"static int mlx5_fpga_conn_create_cq(struct mlx5_fpga_conn *conn, int cq_size)
+{
+	struct mlx5_fpga_device *fdev = conn->fdev;
+	struct mlx5_core_dev *mdev = fdev->mdev;
+	u32 temp_cqc[MLX5_ST_SZ_DW(cqc)] = {0};
+	u32 out[MLX5_ST_SZ_DW(create_cq_out)];
+	struct mlx5_wq_param wqp;
+	struct mlx5_cqe64 *cqe;
+	int inlen, err, eqn;
+	unsigned int irqn;
+	void *cqc, *in;
+	__be64 *pas;
+	u32 i;
+
+	cq_size = roundup_pow_of_two(cq_size);
+	MLX5_SET(cqc, temp_cqc, log_cq_size, ilog2(cq_size));
+
+	wqp.buf_numa_node = mdev->priv.numa_node;
+	wqp.db_numa_node  = mdev->priv.numa_node;
+
+	err = mlx5_cqwq_create(mdev, &wqp, temp_cqc, &conn->cq.wq,
+			       &conn->cq.wq_ctrl);
+	if (err)
+		return err;
+
+	for (i = 0; i < mlx5_cqwq_get_size(&conn->cq.wq); i++) {
+		cqe = mlx5_cqwq_get_wqe(&conn->cq.wq, i);
+		cqe->op_own = MLX5_CQE_INVALID << 4 | MLX5_CQE_OWNER_MASK;
+	}
+
+	inlen = MLX5_ST_SZ_BYTES(create_cq_in) +
+		sizeof(u64) * conn->cq.wq_ctrl.buf.npages;
+	in = kvzalloc(inlen, GFP_KERNEL);
+	if (!in) {
+		err = -ENOMEM;
+		goto err_cqwq;
+	}
+
+	err = mlx5_vector2eqn(mdev, smp_processor_id(), &eqn, &irqn);
+	if (err) {
+		kvfree(in);
+		goto err_cqwq;
+	}
+
+	cqc = MLX5_ADDR_OF(create_cq_in, in, cq_context);
+	MLX5_SET(cqc, cqc, log_cq_size, ilog2(cq_size));
+	MLX5_SET(cqc, cqc, c_eqn, eqn);
+	MLX5_SET(cqc, cqc, uar_page, fdev->conn_res.uar->index);
+	MLX5_SET(cqc, cqc, log_page_size, conn->cq.wq_ctrl.buf.page_shift -
+			   MLX5_ADAPTER_PAGE_SHIFT);
+	MLX5_SET64(cqc, cqc, dbr_addr, conn->cq.wq_ctrl.db.dma);
+
+	pas = (__be64 *)MLX5_ADDR_OF(create_cq_in, in, pas);
+	mlx5_fill_page_frag_array(&conn->cq.wq_ctrl.buf, pas);
+
+	err = mlx5_core_create_cq(mdev, &conn->cq.mcq, in, inlen, out, sizeof(out));
+	kvfree(in);
+
+	if (err)
+		goto err_cqwq;
+
+	conn->cq.mcq.cqe_sz     = 64;
+	conn->cq.mcq.set_ci_db  = conn->cq.wq_ctrl.db.db;
+	conn->cq.mcq.arm_db     = conn->cq.wq_ctrl.db.db + 1;
+	*conn->cq.mcq.set_ci_db = 0;
+	*conn->cq.mcq.arm_db    = 0;
+	conn->cq.mcq.vector     = 0;
+	conn->cq.mcq.comp       = mlx5_fpga_conn_cq_complete;
+	conn->cq.mcq.event      = mlx5_fpga_conn_cq_event;
+	conn->cq.mcq.irqn       = irqn;
+	conn->cq.mcq.uar        = fdev->conn_res.uar;
+	tasklet_init(&conn->cq.tasklet, mlx5_fpga_conn_cq_tasklet,
+		     (unsigned long)conn);
+
+	mlx5_fpga_dbg(fdev, ""Created CQ #0x%x\n"", conn->cq.mcq.cqn);
+
+	goto out;
+
+err_cqwq:
+	mlx5_wq_destroy(&conn->cq.wq_ctrl);
+out:
+	return err;
+}",medium_2k_5k,0,83,0,method_disagreement,0,1,0,1,0,1,0,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,0.002170741558074951,0.9692442417144775,630,0,1,0,1
+235642,0,1,FP,risky_pattern_false_alarm:error_handling,error_handling,pjproject,CWE-787,1097,5,7,"static pj_status_t parse_query(pj_dns_parsed_query *q, pj_pool_t *pool,
+			       const pj_uint8_t *pkt, const pj_uint8_t *start,
+			       const pj_uint8_t *max, int *parsed_len)
+{
+    const pj_uint8_t *p = start;
+    int name_len, name_part_len;
+    pj_status_t status;
+
+    /* Get the length of the name */
+    status = get_name_len(0, pkt, start, max, &name_part_len, &name_len);
+    if (status != PJ_SUCCESS)
+	return status;
+
+    /* Allocate memory for the name */
+    q->name.ptr = (char*) pj_pool_alloc(pool, name_len+4);
+    q->name.slen = 0;
+
+    /* Get the name */
+    status = get_name(0, pkt, start, max, &q->name);
+    if (status != PJ_SUCCESS)
+	return status;
+
+    p = (start + name_part_len);
+
+    /* Check the size can accomodate next few fields. */
+    if (p + 4 > max)
+    	return PJLIB_UTIL_EDNSINSIZE;
+
+    /* Get the type */
+    pj_memcpy(&q->type, p, 2);
+    q->type = pj_ntohs(q->type);
+    p += 2;
+
+    /* Get the class */
+    pj_memcpy(&q->dnsclass, p, 2);
+    q->dnsclass = pj_ntohs(q->dnsclass);
+    p += 2;
+
+    *parsed_len = (int)(p - start);
+
+    return PJ_SUCCESS;
+}",0,1,0,0,1,2,"Merge pull request from GHSA-p6g5-v97c-w5q4
+
+* Prevent heap buffer overflow when parsing DNS packets
+
+* Make sure packet parsing doesn't advance beyond max/end
+
+* Update checks
+
+* Remove  check
+
+Co-authored-by: sauwming <ming@teluu.com>","PJSIP is a free and open source multimedia communication library written in C. A buffer overflow vulnerability in versions 2.12 and prior affects applications that use PJSIP DNS resolution. It doesn't affect PJSIP users who utilize an external resolver. This vulnerability is related to CVE-2023-27585. The difference is that this issue is in parsing the query record `parse_rr()`, while the issue in CVE-2023-27585 is in `parse_query()`. A patch is available in the `master` branch of the `pjsip/pjproject` GitHub repository. A workaround is to disable DNS resolution in PJSIP config (by setting `nameserver_count` to zero) or use an external resolver instead.",4,"static pj_status_t parse_query(pj_dns_parsed_query *q, pj_pool_t *pool,
+			       const pj_uint8_t *pkt, const pj_uint8_t *start,
+			       const pj_uint8_t *max, int *parsed_len)
+{
+    const pj_uint8_t *p = start;
+    int name_len, name_part_len;
+    pj_status_t status;
+
+    /* Get the length of the name */
+    status = get_name_len(0, pkt, start, max, &name_part_len, &name_len);
+    if (status != PJ_SUCCESS)
+	return status;
+
+    /* Allocate memory for the name */
+    q->name.ptr = (char*) pj_pool_alloc(pool, name_len+4);
+    q->name.slen = 0;
+
+    /* Get the name */
+    status = get_name(0, pkt, start, max, &q->name);
+    if (status != PJ_SUCCESS)
+	return status;
+
+    p = (start + name_part_len);
+
+    /* Check the size can accomodate next few fields. */
+    if (p + 4 > max)
+    	return PJLIB_UTIL_EDNSINSIZE;
+
+    /* Get the type */
+    pj_memcpy(&q->type, p, 2);
+    q->type = pj_ntohs(q->type);
+    p += 2;
+
+    /* Get the class */
+    pj_memcpy(&q->dnsclass, p, 2);
+    q->dnsclass = pj_ntohs(q->dnsclass);
+    p += 2;
+
+    *parsed_len = (int)(p - start);
+
+    return PJ_SUCCESS;
+}",short_<2k,4,42,0,method_disagreement,0,1,0,1,0,0,1,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,-0.001208961009979248,0.9533566236495972,273,0,1,0,1
+444900,0,1,FP,risky_pattern_false_alarm:error_handling,error_handling,cifs-utils,CWE-20,3041,4,7,"add_mtab(char *devname, char *mountpoint, unsigned long flags, const char *fstype)
+{
+	int rc = 0, tmprc, fd;
+	uid_t uid;
+	char *mount_user = NULL;
+	struct mntent mountent;
+	struct stat statbuf;
+	FILE *pmntfile;
+	sigset_t mask, oldmask;
+
+	uid = getuid();
+	if (uid != 0)
+		mount_user = getusername(uid);
+
+	/*
+	 * Set the real uid to the effective uid. This prevents unprivileged
+	 * users from sending signals to this process, though ^c on controlling
+	 * terminal should still work.
+	 */
+	rc = setreuid(geteuid(), -1);
+	if (rc != 0) {
+		fprintf(stderr, ""Unable to set real uid to effective uid: %s\n"",
+				strerror(errno));
+		return EX_FILEIO;
+	}
+
+	rc = sigfillset(&mask);
+	if (rc) {
+		fprintf(stderr, ""Unable to set filled signal mask\n"");
+		return EX_FILEIO;
+	}
+
+	rc = sigprocmask(SIG_SETMASK, &mask, &oldmask);
+	if (rc) {
+		fprintf(stderr, ""Unable to make process ignore signals\n"");
+		return EX_FILEIO;
+	}
+
+	rc = toggle_dac_capability(1, 1);
+	if (rc)
+		return EX_FILEIO;
+
+	atexit(unlock_mtab);
+	rc = lock_mtab();
+	if (rc) {
+		fprintf(stderr, ""cannot lock mtab"");
+		rc = EX_FILEIO;
+		goto add_mtab_exit;
+	}
+
+	pmntfile = setmntent(MOUNTED, ""a+"");
+	if (!pmntfile) {
+		fprintf(stderr, ""could not update mount table\n"");
+		unlock_mtab();
+		rc = EX_FILEIO;
+		goto add_mtab_exit;
+	}
+
+	fd = fileno(pmntfile);
+	if (fd < 0) {
+		fprintf(stderr, ""mntent does not appear to be valid\n"");
+		unlock_mtab();
+		rc = EX_FILEIO;
+		goto add_mtab_exit;
+	}
+
+	rc = fstat(fd, &statbuf);
+	if (rc != 0) {
+		fprintf(stderr, ""unable to fstat open mtab\n"");
+		endmntent(pmntfile);
+		unlock_mtab();
+		rc = EX_FILEIO;
+		goto add_mtab_exit;
+	}
+
+	mountent.mnt_fsname = devname;
+	mountent.mnt_dir = mountpoint;
+	mountent.mnt_type = (char *)(void *)fstype;
+	mountent.mnt_opts = (char *)calloc(MTAB_OPTIONS_LEN, 1);
+	if (mountent.mnt_opts) {
+		if (flags & MS_RDONLY)
+			strlcat(mountent.mnt_opts, ""ro"", MTAB_OPTIONS_LEN);
+		else
+			strlcat(mountent.mnt_opts, ""rw"", MTAB_OPTIONS_LEN);
+
+		if (flags & MS_MANDLOCK)
+			strlcat(mountent.mnt_opts, "",mand"", MTAB_OPTIONS_LEN);
+		if (flags & MS_NOEXEC)
+			strlcat(mountent.mnt_opts, "",noexec"", MTAB_OPTIONS_LEN);
+		if (flags & MS_NOSUID)
+			strlcat(mountent.mnt_opts, "",nosuid"", MTAB_OPTIONS_LEN);
+		if (flags & MS_NODEV)
+			strlcat(mountent.mnt_opts, "",nodev"", MTAB_OPTIONS_LEN);
+		if (flags & MS_SYNCHRONOUS)
+			strlcat(mountent.mnt_opts, "",sync"", MTAB_OPTIONS_LEN);
+		if (mount_user) {
+			strlcat(mountent.mnt_opts, "",user="", MTAB_OPTIONS_LEN);
+			strlcat(mountent.mnt_opts, mount_user,
+				MTAB_OPTIONS_LEN);
+		}
+	}
+	mountent.mnt_freq = 0;
+	mountent.mnt_passno = 0;
+	rc = addmntent(pmntfile, &mountent);
+	if (rc) {
+		fprintf(stderr, ""unable to add mount entry to mtab\n"");
+		ftruncate(fd, statbuf.st_size);
+		rc = EX_FILEIO;
+	}
+	tmprc = my_endmntent(pmntfile, statbuf.st_size);
+	if (tmprc) {
+		fprintf(stderr, ""error %d detected on close of mtab\n"", tmprc);
+		rc = EX_FILEIO;
+	}
+	unlock_mtab();
+	SAFE_FREE(mountent.mnt_opts);
+add_mtab_exit:
+	toggle_dac_capability(1, 0);
+	sigprocmask(SIG_SETMASK, &oldmask, NULL);
+
+	return rc;
+}",1,0,0,0,1,0,"mtab: handle ENOSPC/EFBIG condition properly when altering mtab
+
+It's possible that when mount.cifs goes to append the mtab that there
+won't be enough space to do so, and the mntent won't be appended to the
+file in its entirety.
+
+Add a my_endmntent routine that will fflush and then fsync the FILE if
+that succeeds. If either fails then it will truncate the file back to
+its provided size. It will then call endmntent unconditionally.
+
+Have add_mtab call fstat on the opened mtab file in order to get the
+size of the file before it has been appended. Assuming that that
+succeeds, use my_endmntent to ensure that the file is not corrupted
+before closing it. It's possible that we'll have a small race window
+where the mtab is incorrect, but it should be quickly corrected.
+
+This was reported some time ago as CVE-2011-1678:
+
+    http://openwall.com/lists/oss-security/2011/03/04/9
+
+...and it seems to fix the reproducer that I was able to come up with.
+
+Signed-off-by: Jeff Layton <jlayton@samba.org>
+Reviewed-by: Suresh Jayaraman <sjayaraman@suse.de>","smbfs in Samba 3.5.8 and earlier attempts to use (1) mount.cifs to append to the /etc/mtab file and (2) umount.cifs to append to the /etc/mtab.tmp file without first checking whether resource limits would interfere, which allows local users to trigger corruption of the /etc/mtab file via a process with a small RLIMIT_FSIZE value, a related issue to CVE-2011-1089.",15,"add_mtab(char *devname, char *mountpoint, unsigned long flags, const char *fstype)
+{
+	int rc = 0, tmprc, fd;
+	uid_t uid;
+	char *mount_user = NULL;
+	struct mntent mountent;
+	struct stat statbuf;
+	FILE *pmntfile;
+	sigset_t mask, oldmask;
+
+	uid = getuid();
+	if (uid != 0)
+		mount_user = getusername(uid);
+
+	/*
+	 * Set the real uid to the effective uid. This prevents unprivileged
+	 * users from sending signals to this process, though ^c on controlling
+	 * terminal should still work.
+	 */
+	rc = setreuid(geteuid(), -1);
+	if (rc != 0) {
+		fprintf(stderr, ""Unable to set real uid to effective uid: %s\n"",
+				strerror(errno));
+		return EX_FILEIO;
+	}
+
+	rc = sigfillset(&mask);
+	if (rc) {
+		fprintf(stderr, ""Unable to set filled signal mask\n"");
+		return EX_FILEIO;
+	}
+
+	rc = sigprocmask(SIG_SETMASK, &mask, &oldmask);
+	if (rc) {
+		fprintf(stderr, ""Unable to make process ignore signals\n"");
+		return EX_FILEIO;
+	}
+
+	rc = toggle_dac_capability(1, 1);
+	if (rc)
+		return EX_FILEIO;
+
+	atexit(unlock_mtab);
+	rc = lock_mtab();
+	if (rc) {
+		fprintf(stderr, ""cannot lock mtab"");
+		rc = EX_FILEIO;
+		goto add_mtab_exit;
+	}
+
+	pmntfile = setmntent(MOUNTED, ""a+"");
+	if (!pmntfile) {
+		fprintf(stderr, ""could not update mount table\n"");
+		unlock_mtab();
+		rc = EX_FILEIO;
+		goto add_mtab_exit;
+	}
+
+	fd = fileno(pmntfile);
+	if (fd < 0) {
+		fprintf(stderr, ""mntent does not appear to be valid\n"");
+		unlock_mtab();
+		rc = EX_FILEIO;
+		goto add_mtab_exit;
+	}
+
+	rc = fstat(fd, &statbuf);
+	if (rc != 0) {
+		fprintf(stderr, ""unable to fstat open mtab\n"");
+		endmntent(pmntfile);
+		unlock_mtab();
+		rc = EX_FILEIO;
+		goto add_mtab_exit;
+	}
+
+	mountent.mnt_fsname = devname;
+	mountent.mnt_dir = mountpoint;
+	mountent.mnt_type = (char *)(void *)fstype;
+	mountent.mnt_opts = (char *)calloc(MTAB_OPTIONS_LEN, 1);
+	if (mountent.mnt_opts) {
+		if (flags & MS_RDONLY)
+			strlcat(mountent.mnt_opts, ""ro"", MTAB_OPTIONS_LEN);
+		else
+			strlcat(mountent.mnt_opts, ""rw"", MTAB_OPTIONS_LEN);
+
+		if (flags & MS_MANDLOCK)
+			strlcat(mountent.mnt_opts, "",mand"", MTAB_OPTIONS_LEN);
+		if (flags & MS_NOEXEC)
+			strlcat(mountent.mnt_opts, "",noexec"", MTAB_OPTIONS_LEN);
+		if (flags & MS_NOSUID)
+			strlcat(mountent.mnt_opts, "",nosuid"", MTAB_OPTIONS_LEN);
+		if (flags & MS_NODEV)
+			strlcat(mountent.mnt_opts, "",nodev"", MTAB_OPTIONS_LEN);
+		if (flags & MS_SYNCHRONOUS)
+			strlcat(mountent.mnt_opts, "",sync"", MTAB_OPTIONS_LEN);
+		if (mount_user) {
+			strlcat(mountent.mnt_opts, "",user="", MTAB_OPTIONS_LEN);
+			strlcat(mountent.mnt_opts, mount_user,
+				MTAB_OPTIONS_LEN);
+		}
+	}
+	mountent.mnt_freq = 0;
+	mountent.mnt_passno = 0;
+	rc = addmntent(pmntfile, &mountent);
+	if (rc) {
+		fprintf(stderr, ""unable to add mount entry to mtab\n"");
+		ftruncate(fd, statbuf.st_size);
+		rc = EX_FILEIO;
+	}
+	tmprc = my_endmntent(pmntfile, statbuf.st_size);
+	if (tmprc) {
+		fprintf(stderr, ""error %d detected on close of mtab\n"", tmprc);
+		rc = EX_FILEIO;
+	}
+	unlock_mtab();
+	SAFE_FREE(mountent.mnt_opts);
+add_mtab_exit:
+	toggle_dac_capability(1, 0);
+	sigprocmask(SIG_SETMASK, &oldmask, NULL);
+
+	return rc;
+}",medium_2k_5k,1,122,1,method_disagreement,2,1,0,0,1,1,0,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,-0.0013346672058105469,0.9583010077476501,722,0,1,0,1
+405333,0,1,FP,risky_pattern_false_alarm:error_handling,error_handling,linux,CWE-703,954,5,7,"static int xfrm_expand_policies(const struct flowi *fl, u16 family,
+				struct xfrm_policy **pols,
+				int *num_pols, int *num_xfrms)
+{
+	int i;
+
+	if (*num_pols == 0 || !pols[0]) {
+		*num_pols = 0;
+		*num_xfrms = 0;
+		return 0;
+	}
+	if (IS_ERR(pols[0])) {
+		*num_pols = 0;
+		return PTR_ERR(pols[0]);
+	}
+
+	*num_xfrms = pols[0]->xfrm_nr;
+
+#ifdef CONFIG_XFRM_SUB_POLICY
+	if (pols[0]->action == XFRM_POLICY_ALLOW &&
+	    pols[0]->type != XFRM_POLICY_TYPE_MAIN) {
+		pols[1] = xfrm_policy_lookup_bytype(xp_net(pols[0]),
+						    XFRM_POLICY_TYPE_MAIN,
+						    fl, family,
+						    XFRM_POLICY_OUT,
+						    pols[0]->if_id);
+		if (pols[1]) {
+			if (IS_ERR(pols[1])) {
+				xfrm_pols_put(pols, *num_pols);
+				*num_pols = 0;
+				return PTR_ERR(pols[1]);
+			}
+			(*num_pols)++;
+			(*num_xfrms) += pols[1]->xfrm_nr;
+		}
+	}
+#endif
+	for (i = 0; i < *num_pols; i++) {
+		if (pols[i]->action != XFRM_POLICY_ALLOW) {
+			*num_xfrms = -1;
+			break;
+		}
+	}
+
+	return 0;
+
+}",0,1,0,0,1,0,"xfrm: xfrm_policy: fix a possible double xfrm_pols_put() in xfrm_bundle_lookup()
+
+xfrm_policy_lookup() will call xfrm_pol_hold_rcu() to get a refcount of
+pols[0]. This refcount can be dropped in xfrm_expand_policies() when
+xfrm_expand_policies() return error. pols[0]'s refcount is balanced in
+here. But xfrm_bundle_lookup() will also call xfrm_pols_put() with
+num_pols == 1 to drop this refcount when xfrm_expand_policies() return
+error.
+
+This patch also fix an illegal address access. pols[0] will save a error
+point when xfrm_policy_lookup fails. This lead to xfrm_pols_put to resolve
+an illegal address in xfrm_bundle_lookup's error path.
+
+Fix these by setting num_pols = 0 in xfrm_expand_policies()'s error path.
+
+Fixes: 80c802f3073e (""xfrm: cache bundles instead of policies for outgoing flows"")
+Signed-off-by: Hangyu Hua <hbh25y@gmail.com>
+Signed-off-by: Steffen Klassert <steffen.klassert@secunet.com>",An issue was discovered in the Linux kernel through 5.18.14. xfrm_expand_policies in net/xfrm/xfrm_policy.c can cause a refcount to be dropped twice.,4,"static int xfrm_expand_policies(const struct flowi *fl, u16 family,
+				struct xfrm_policy **pols,
+				int *num_pols, int *num_xfrms)
+{
+	int i;
+
+	if (*num_pols == 0 || !pols[0]) {
+		*num_pols = 0;
+		*num_xfrms = 0;
+		return 0;
+	}
+	if (IS_ERR(pols[0])) {
+		*num_pols = 0;
+		return PTR_ERR(pols[0]);
+	}
+
+	*num_xfrms = pols[0]->xfrm_nr;
+
+#ifdef CONFIG_XFRM_SUB_POLICY
+	if (pols[0]->action == XFRM_POLICY_ALLOW &&
+	    pols[0]->type != XFRM_POLICY_TYPE_MAIN) {
+		pols[1] = xfrm_policy_lookup_bytype(xp_net(pols[0]),
+						    XFRM_POLICY_TYPE_MAIN,
+						    fl, family,
+						    XFRM_POLICY_OUT,
+						    pols[0]->if_id);
+		if (pols[1]) {
+			if (IS_ERR(pols[1])) {
+				xfrm_pols_put(pols, *num_pols);
+				*num_pols = 0;
+				return PTR_ERR(pols[1]);
+			}
+			(*num_pols)++;
+			(*num_xfrms) += pols[1]->xfrm_nr;
+		}
+	}
+#endif
+	for (i = 0; i < *num_pols; i++) {
+		if (pols[i]->action != XFRM_POLICY_ALLOW) {
+			*num_xfrms = -1;
+			break;
+		}
+	}
+
+	return 0;
+
+}",short_<2k,0,47,0,method_disagreement,0,0,1,1,0,1,0,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,0.002516627311706543,0.9549126625061035,258,0,1,0,1
+417472,0,1,FP,risky_pattern_false_alarm:error_handling,error_handling,libvirt,CWE-119,636,2,7,"virNodeDeviceGetMdevTypesCaps(const char *sysfspath,
+                              virMediatedDeviceTypePtr **mdev_types,
+                              size_t *nmdev_types)
+{
+    virMediatedDeviceTypePtr *types = NULL;
+    size_t ntypes = 0;
+    size_t i;
+
+    /* this could be a refresh, so clear out the old data */
+    for (i = 0; i < *nmdev_types; i++)
+       virMediatedDeviceTypeFree((*mdev_types)[i]);
+    VIR_FREE(*mdev_types);
+    *nmdev_types = 0;
+
+    if (virMediatedDeviceGetMdevTypes(sysfspath, &types, &ntypes) < 0)
+        return -1;
+
+    *mdev_types = g_steal_pointer(&types);
+    *nmdev_types = ntypes;
+
+    return 0;
+}",1,0,0,0,1,0,"conf: Fix segfault when parsing mdev types
+
+Commit f1b0890 introduced a potential crash due to incorrect operator
+precedence when accessing an element from a pointer to an array.
+
+Backtrace below:
+
+  #0  virNodeDeviceGetMdevTypesCaps (sysfspath=0x7fff801661e0 ""/sys/devices/pci0000:00/0000:00:02.0"", mdev_types=0x7fff801c9b40, nmdev_types=0x7fff801c9b48) at ../src/conf/node_device_conf.c:2676
+  #1  0x00007ffff7caf53d in virNodeDeviceGetPCIDynamicCaps (sysfsPath=0x7fff801661e0 ""/sys/devices/pci0000:00/0000:00:02.0"", pci_dev=0x7fff801c9ac8) at ../src/conf/node_device_conf.c:2705
+  #2  0x00007ffff7cae38f in virNodeDeviceUpdateCaps (def=0x7fff80168a10) at ../src/conf/node_device_conf.c:2342
+  #3  0x00007ffff7cb11c0 in virNodeDeviceObjMatch (obj=0x7fff84002e50, flags=0) at ../src/conf/virnodedeviceobj.c:850
+  #4  0x00007ffff7cb153d in virNodeDeviceObjListExportCallback (payload=0x7fff84002e50, name=0x7fff801cbc20 ""pci_0000_00_02_0"", opaque=0x7fffe2ffc6a0) at ../src/conf/virnodedeviceobj.c:909
+  #5  0x00007ffff7b69146 in virHashForEach (table=0x7fff9814b700 = {...}, iter=0x7ffff7cb149e <virNodeDeviceObjListExportCallback>, opaque=0x7fffe2ffc6a0) at ../src/util/virhash.c:394
+  #6  0x00007ffff7cb1694 in virNodeDeviceObjListExport (conn=0x7fff98013170, devs=0x7fff98154430, devices=0x7fffe2ffc798, filter=0x7ffff7cf47a1 <virConnectListAllNodeDevicesCheckACL>, flags=0)
+          at ../src/conf/virnodedeviceobj.c:943
+  #7  0x00007fffe00694b2 in nodeConnectListAllNodeDevices (conn=0x7fff98013170, devices=0x7fffe2ffc798, flags=0) at ../src/node_device/node_device_driver.c:228
+  #8  0x00007ffff7e703aa in virConnectListAllNodeDevices (conn=0x7fff98013170, devices=0x7fffe2ffc798, flags=0) at ../src/libvirt-nodedev.c:130
+  #9  0x000055555557f796 in remoteDispatchConnectListAllNodeDevices (server=0x555555627080, client=0x5555556bf050, msg=0x5555556c0000, rerr=0x7fffe2ffc8a0, args=0x7fffd4008470, ret=0x7fffd40084e0)
+          at src/remote/remote_daemon_dispatch_stubs.h:1613
+  #10 0x000055555557f6f9 in remoteDispatchConnectListAllNodeDevicesHelper (server=0x555555627080, client=0x5555556bf050, msg=0x5555556c0000, rerr=0x7fffe2ffc8a0, args=0x7fffd4008470, ret=0x7fffd40084e0)
+          at src/remote/remote_daemon_dispatch_stubs.h:1591
+  #11 0x00007ffff7ce9542 in virNetServerProgramDispatchCall (prog=0x555555690c10, server=0x555555627080, client=0x5555556bf050, msg=0x5555556c0000) at ../src/rpc/virnetserverprogram.c:428
+  #12 0x00007ffff7ce90bd in virNetServerProgramDispatch (prog=0x555555690c10, server=0x555555627080, client=0x5555556bf050, msg=0x5555556c0000) at ../src/rpc/virnetserverprogram.c:302
+  #13 0x00007ffff7cf042b in virNetServerProcessMsg (srv=0x555555627080, client=0x5555556bf050, prog=0x555555690c10, msg=0x5555556c0000) at ../src/rpc/virnetserver.c:137
+  #14 0x00007ffff7cf04eb in virNetServerHandleJob (jobOpaque=0x5555556b66b0, opaque=0x555555627080) at ../src/rpc/virnetserver.c:154
+  #15 0x00007ffff7bd912f in virThreadPoolWorker (opaque=0x55555562bc70) at ../src/util/virthreadpool.c:163
+  #16 0x00007ffff7bd8645 in virThreadHelper (data=0x55555562bc90) at ../src/util/virthread.c:233
+  #17 0x00007ffff6d90432 in start_thread () at /lib64/libpthread.so.0
+  #18 0x00007ffff75c5913 in clone () at /lib64/libc.so.6
+
+Signed-off-by: Jonathon Jongsma <jjongsma@redhat.com>
+Reviewed-by: Ján Tomko <jtomko@redhat.com>
+Signed-off-by: Ján Tomko <jtomko@redhat.com>","A flaw was found in libvirt in the virConnectListAllNodeDevices API in versions before 7.0.0. It only affects hosts with a PCI device and driver that supports mediated devices (e.g., GRID driver). This flaw could be used by an unprivileged client with a read-only connection to crash the libvirt daemon by executing the 'nodedev-list' virsh command. The highest threat from this vulnerability is to system availability.",4,"virNodeDeviceGetMdevTypesCaps(const char *sysfspath,
+                              virMediatedDeviceTypePtr **mdev_types,
+                              size_t *nmdev_types)
+{
+    virMediatedDeviceTypePtr *types = NULL;
+    size_t ntypes = 0;
+    size_t i;
+
+    /* this could be a refresh, so clear out the old data */
+    for (i = 0; i < *nmdev_types; i++)
+       virMediatedDeviceTypeFree((*mdev_types)[i]);
+    VIR_FREE(*mdev_types);
+    *nmdev_types = 0;
+
+    if (virMediatedDeviceGetMdevTypes(sysfspath, &types, &ntypes) < 0)
+        return -1;
+
+    *mdev_types = g_steal_pointer(&types);
+    *nmdev_types = ntypes;
+
+    return 0;
+}",short_<2k,0,22,0,method_disagreement,1,1,0,0,1,1,0,repair_checked_absent_or_irrelevant:bounds_or_shape_check,retrieval_low_margin,0.0014722347259521484,0.938132107257843,121,1,0,1,0
+226029,0,1,FP,risky_pattern_false_alarm:error_handling,error_handling,gpac,CWE-476,279,5,7,"
+void gitn_box_del(GF_Box *s)
+{
+	u32 i;
+	GroupIdToNameBox *ptr = (GroupIdToNameBox *)s;
+	if (ptr == NULL) return;
+	if (ptr->entries) {
+		for (i=0; i<ptr->nb_entries; i++) {
+			if (ptr->entries[i].name) gf_free(ptr->entries[i].name);
+		}
+		gf_free(ptr->entries);
+	}
+	gf_free(ptr);",1,0,0,0,1,0,fixed #2092,NULL Pointer Dereference in GitHub repository gpac/gpac prior to 1.1.0.,3,"
+void gitn_box_del(GF_Box *s)
+{
+	u32 i;
+	GroupIdToNameBox *ptr = (GroupIdToNameBox *)s;
+	if (ptr == NULL) return;
+	if (ptr->entries) {
+		for (i=0; i<ptr->nb_entries; i++) {
+			if (ptr->entries[i].name) gf_free(ptr->entries[i].name);
+		}
+		gf_free(ptr->entries);
+	}
+	gf_free(ptr);",short_<2k,0,13,0,method_disagreement,1,0,1,1,0,0,1,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,0.002764403820037842,0.9431662559509277,90,0,1,0,1
+452994,0,1,FP,risky_pattern_false_alarm:error_handling,error_handling,nf,CWE-269,1137,3,7,"struct nft_flow_rule *nft_flow_rule_create(struct net *net,
+					   const struct nft_rule *rule)
+{
+	struct nft_offload_ctx *ctx;
+	struct nft_flow_rule *flow;
+	int num_actions = 0, err;
+	struct nft_expr *expr;
+
+	expr = nft_expr_first(rule);
+	while (nft_expr_more(rule, expr)) {
+		if (expr->ops->offload_action &&
+		    expr->ops->offload_action(expr))
+			num_actions++;
+
+		expr = nft_expr_next(expr);
+	}
+
+	if (num_actions == 0)
+		return ERR_PTR(-EOPNOTSUPP);
+
+	flow = nft_flow_rule_alloc(num_actions);
+	if (!flow)
+		return ERR_PTR(-ENOMEM);
+
+	expr = nft_expr_first(rule);
+
+	ctx = kzalloc(sizeof(struct nft_offload_ctx), GFP_KERNEL);
+	if (!ctx) {
+		err = -ENOMEM;
+		goto err_out;
+	}
+	ctx->net = net;
+	ctx->dep.type = NFT_OFFLOAD_DEP_UNSPEC;
+
+	while (nft_expr_more(rule, expr)) {
+		if (!expr->ops->offload) {
+			err = -EOPNOTSUPP;
+			goto err_out;
+		}
+		err = expr->ops->offload(ctx, flow, expr);
+		if (err < 0)
+			goto err_out;
+
+		expr = nft_expr_next(expr);
+	}
+	nft_flow_rule_transfer_vlan(ctx, flow);
+
+	flow->proto = ctx->dep.l3num;
+	kfree(ctx);
+
+	return flow;
+err_out:
+	kfree(ctx);
+	nft_flow_rule_destroy(flow);
+
+	return ERR_PTR(err);
+}",1,0,0,0,1,1,"netfilter: nf_tables_offload: incorrect flow offload action array size
+
+immediate verdict expression needs to allocate one slot in the flow offload
+action array, however, immediate data expression does not need to do so.
+
+fwd and dup expression need to allocate one slot, this is missing.
+
+Add a new offload_action interface to report if this expression needs to
+allocate one slot in the flow offload action array.
+
+Fixes: be2861dc36d7 (""netfilter: nft_{fwd,dup}_netdev: add offload support"")
+Reported-and-tested-by: Nick Gregory <Nick.Gregory@Sophos.com>
+Signed-off-by: Pablo Neira Ayuso <pablo@netfilter.org>",net/netfilter/nf_dup_netdev.c in the Linux kernel 5.4 through 5.6.10 allows local users to gain privileges because of a heap out-of-bounds write. This is related to nf_tables_offload.,13,"struct nft_flow_rule *nft_flow_rule_create(struct net *net,
+					   const struct nft_rule *rule)
+{
+	struct nft_offload_ctx *ctx;
+	struct nft_flow_rule *flow;
+	int num_actions = 0, err;
+	struct nft_expr *expr;
+
+	expr = nft_expr_first(rule);
+	while (nft_expr_more(rule, expr)) {
+		if (expr->ops->offload_action &&
+		    expr->ops->offload_action(expr))
+			num_actions++;
+
+		expr = nft_expr_next(expr);
+	}
+
+	if (num_actions == 0)
+		return ERR_PTR(-EOPNOTSUPP);
+
+	flow = nft_flow_rule_alloc(num_actions);
+	if (!flow)
+		return ERR_PTR(-ENOMEM);
+
+	expr = nft_expr_first(rule);
+
+	ctx = kzalloc(sizeof(struct nft_offload_ctx), GFP_KERNEL);
+	if (!ctx) {
+		err = -ENOMEM;
+		goto err_out;
+	}
+	ctx->net = net;
+	ctx->dep.type = NFT_OFFLOAD_DEP_UNSPEC;
+
+	while (nft_expr_more(rule, expr)) {
+		if (!expr->ops->offload) {
+			err = -EOPNOTSUPP;
+			goto err_out;
+		}
+		err = expr->ops->offload(ctx, flow, expr);
+		if (err < 0)
+			goto err_out;
+
+		expr = nft_expr_next(expr);
+	}
+	nft_flow_rule_transfer_vlan(ctx, flow);
+
+	flow->proto = ctx->dep.l3num;
+	kfree(ctx);
+
+	return flow;
+err_out:
+	kfree(ctx);
+	nft_flow_rule_destroy(flow);
+
+	return ERR_PTR(err);
+}",short_<2k,0,57,3,method_disagreement,0,1,0,0,1,1,0,no_repair_verifier_candidate,retrieval_low_margin,-0.000278472900390625,0.9436362385749817,272,1,0,0,1
+267357,0,1,FP,risky_pattern_false_alarm:error_handling,error_handling,crun,CWE-276,3362,4,7,"crun_command_exec (struct crun_global_arguments *global_args, int argc, char **argv, libcrun_error_t *err)
+{
+  int first_arg = 0, ret = 0;
+  libcrun_context_t crun_context = {
+    0,
+  };
+  cleanup_process_schema runtime_spec_schema_config_schema_process *process = NULL;
+  struct libcrun_container_exec_options_s exec_opts;
+
+  memset (&exec_opts, 0, sizeof (exec_opts));
+  exec_opts.struct_size = sizeof (exec_opts);
+
+  crun_context.preserve_fds = 0;
+  crun_context.listen_fds = 0;
+
+  argp_parse (&run_argp, argc, argv, ARGP_IN_ORDER, &first_arg, &exec_options);
+  crun_assert_n_args (argc - first_arg, exec_options.process ? 1 : 2, -1);
+
+  ret = init_libcrun_context (&crun_context, argv[first_arg], global_args, err);
+  if (UNLIKELY (ret < 0))
+    return ret;
+
+  crun_context.detach = exec_options.detach;
+  crun_context.console_socket = exec_options.console_socket;
+  crun_context.pid_file = exec_options.pid_file;
+  crun_context.preserve_fds = exec_options.preserve_fds;
+
+  if (getenv (""LISTEN_FDS""))
+    {
+      crun_context.listen_fds = strtoll (getenv (""LISTEN_FDS""), NULL, 10);
+      crun_context.preserve_fds += crun_context.listen_fds;
+    }
+
+  if (exec_options.process)
+    exec_opts.path = exec_options.process;
+  else
+    {
+      process = xmalloc0 (sizeof (*process));
+      int i;
+
+      process->args_len = argc;
+      process->args = xmalloc0 ((argc + 1) * sizeof (*process->args));
+      for (i = 0; i < argc - first_arg; i++)
+        process->args[i] = xstrdup (argv[first_arg + i + 1]);
+      process->args[i] = NULL;
+      if (exec_options.cwd)
+        process->cwd = exec_options.cwd;
+      process->terminal = exec_options.tty;
+      process->env = exec_options.env;
+      process->env_len = exec_options.env_size;
+      process->user = make_oci_process_user (exec_options.user);
+
+      if (exec_options.process_label != NULL)
+        process->selinux_label = exec_options.process_label;
+
+      if (exec_options.apparmor != NULL)
+        process->apparmor_profile = exec_options.apparmor;
+
+      if (exec_options.cap_size > 0)
+        {
+          runtime_spec_schema_config_schema_process_capabilities *capabilities
+              = xmalloc (sizeof (runtime_spec_schema_config_schema_process_capabilities));
+
+          capabilities->effective = exec_options.cap;
+          capabilities->effective_len = exec_options.cap_size;
+
+          capabilities->inheritable = NULL;
+          capabilities->inheritable_len = 0;
+
+          capabilities->bounding = dup_array (exec_options.cap, exec_options.cap_size);
+          capabilities->bounding_len = exec_options.cap_size;
+
+          capabilities->ambient = dup_array (exec_options.cap, exec_options.cap_size);
+          capabilities->ambient_len = exec_options.cap_size;
+
+          capabilities->permitted = dup_array (exec_options.cap, exec_options.cap_size);
+          capabilities->permitted_len = exec_options.cap_size;
+
+          process->capabilities = capabilities;
+        }
+
+      // noNewPriviledges will remain `false` if basespec has `false` unless specified
+      // Default is always `true` in generated basespec config
+      if (exec_options.no_new_privs)
+        process->no_new_privileges = 1;
+
+      exec_opts.process = process;
+    }
+
+  exec_opts.cgroup = exec_options.cgroup;
+
+  return libcrun_container_exec_with_options (&crun_context, argv[first_arg], &exec_opts, err);
+}",1,0,0,0,1,5,"exec: --cap do not set inheritable capabilities
+
+Closes: CVE-2022-27650
+
+Signed-off-by: Giuseppe Scrivano <gscrivan@redhat.com>",A flaw was found in crun where containers were incorrectly started with non-empty default permissions. A vulnerability was found in Moby (Docker Engine) where containers were started incorrectly with non-empty inheritable Linux process capabilities. This flaw allows an attacker with access to programs with inheritable file capabilities to elevate those capabilities to the permitted set when execve(2) runs.,17,"crun_command_exec (struct crun_global_arguments *global_args, int argc, char **argv, libcrun_error_t *err)
+{
+  int first_arg = 0, ret = 0;
+  libcrun_context_t crun_context = {
+    0,
+  };
+  cleanup_process_schema runtime_spec_schema_config_schema_process *process = NULL;
+  struct libcrun_container_exec_options_s exec_opts;
+
+  memset (&exec_opts, 0, sizeof (exec_opts));
+  exec_opts.struct_size = sizeof (exec_opts);
+
+  crun_context.preserve_fds = 0;
+  crun_context.listen_fds = 0;
+
+  argp_parse (&run_argp, argc, argv, ARGP_IN_ORDER, &first_arg, &exec_options);
+  crun_assert_n_args (argc - first_arg, exec_options.process ? 1 : 2, -1);
+
+  ret = init_libcrun_context (&crun_context, argv[first_arg], global_args, err);
+  if (UNLIKELY (ret < 0))
+    return ret;
+
+  crun_context.detach = exec_options.detach;
+  crun_context.console_socket = exec_options.console_socket;
+  crun_context.pid_file = exec_options.pid_file;
+  crun_context.preserve_fds = exec_options.preserve_fds;
+
+  if (getenv (""LISTEN_FDS""))
+    {
+      crun_context.listen_fds = strtoll (getenv (""LISTEN_FDS""), NULL, 10);
+      crun_context.preserve_fds += crun_context.listen_fds;
+    }
+
+  if (exec_options.process)
+    exec_opts.path = exec_options.process;
+  else
+    {
+      process = xmalloc0 (sizeof (*process));
+      int i;
+
+      process->args_len = argc;
+      process->args = xmalloc0 ((argc + 1) * sizeof (*process->args));
+      for (i = 0; i < argc - first_arg; i++)
+        process->args[i] = xstrdup (argv[first_arg + i + 1]);
+      process->args[i] = NULL;
+      if (exec_options.cwd)
+        process->cwd = exec_options.cwd;
+      process->terminal = exec_options.tty;
+      process->env = exec_options.env;
+      process->env_len = exec_options.env_size;
+      process->user = make_oci_process_user (exec_options.user);
+
+      if (exec_options.process_label != NULL)
+        process->selinux_label = exec_options.process_label;
+
+      if (exec_options.apparmor != NULL)
+        process->apparmor_profile = exec_options.apparmor;
+
+      if (exec_options.cap_size > 0)
+        {
+          runtime_spec_schema_config_schema_process_capabilities *capabilities
+              = xmalloc (sizeof (runtime_spec_schema_config_schema_process_capabilities));
+
+          capabilities->effective = exec_options.cap;
+          capabilities->effective_len = exec_options.cap_size;
+
+          capabilities->inheritable = NULL;
+          capabilities->inheritable_len = 0;
+
+          capabilities->bounding = dup_array (exec_options.cap, exec_options.cap_size);
+          capabilities->bounding_len = exec_options.cap_size;
+
+          capabilities->ambient = dup_array (exec_options.cap, exec_options.cap_size);
+          capabilities->ambient_len = exec_options.cap_size;
+
+          capabilities->permitted = dup_array (exec_options.cap, exec_options.cap_size);
+          capabilities->permitted_len = exec_options.cap_size;
+
+          process->capabilities = capabilities;
+        }
+
+      // noNewPriviledges will remain `false` if basespec has `false` unless specified
+      // Default is always `true` in generated basespec config
+      if (exec_options.no_new_privs)
+        process->no_new_privileges = 1;
+
+      exec_opts.process = process;
+    }
+
+  exec_opts.cgroup = exec_options.cgroup;
+
+  return libcrun_container_exec_with_options (&crun_context, argv[first_arg], &exec_opts, err);
+}",medium_2k_5k,0,93,1,method_disagreement,6,1,0,1,0,0,1,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,0.0033065080642700195,0.94010329246521,587,0,1,0,1
+221413,0,1,FP,risky_pattern_false_alarm:error_handling,error_handling,linux,CWE-862,1161,5,7,"void recalc_intercepts(struct vcpu_svm *svm)
+{
+	struct vmcb_control_area *c, *h, *g;
+	unsigned int i;
+
+	vmcb_mark_dirty(svm->vmcb, VMCB_INTERCEPTS);
+
+	if (!is_guest_mode(&svm->vcpu))
+		return;
+
+	c = &svm->vmcb->control;
+	h = &svm->vmcb01.ptr->control;
+	g = &svm->nested.ctl;
+
+	for (i = 0; i < MAX_INTERCEPT; i++)
+		c->intercepts[i] = h->intercepts[i];
+
+	if (g->int_ctl & V_INTR_MASKING_MASK) {
+		/* We only want the cr8 intercept bits of L1 */
+		vmcb_clr_intercept(c, INTERCEPT_CR8_READ);
+		vmcb_clr_intercept(c, INTERCEPT_CR8_WRITE);
+
+		/*
+		 * Once running L2 with HF_VINTR_MASK, EFLAGS.IF does not
+		 * affect any interrupt we may want to inject; therefore,
+		 * interrupt window vmexits are irrelevant to L0.
+		 */
+		vmcb_clr_intercept(c, INTERCEPT_VINTR);
+	}
+
+	/* We don't want to see VMMCALLs from a nested guest */
+	vmcb_clr_intercept(c, INTERCEPT_VMMCALL);
+
+	for (i = 0; i < MAX_INTERCEPT; i++)
+		c->intercepts[i] |= g->intercepts[i];
+
+	/* If SMI is not intercepted, ignore guest SMI intercept as well  */
+	if (!intercept_smi)
+		vmcb_clr_intercept(c, INTERCEPT_SMI);
+
+	vmcb_set_intercept(c, INTERCEPT_VMLOAD);
+	vmcb_set_intercept(c, INTERCEPT_VMSAVE);
+}",0,1,0,0,1,0,"KVM: nSVM: always intercept VMLOAD/VMSAVE when nested (CVE-2021-3656)
+
+If L1 disables VMLOAD/VMSAVE intercepts, and doesn't enable
+Virtual VMLOAD/VMSAVE (currently not supported for the nested hypervisor),
+then VMLOAD/VMSAVE must operate on the L1 physical memory, which is only
+possible by making L0 intercept these instructions.
+
+Failure to do so allowed the nested guest to run VMLOAD/VMSAVE unintercepted,
+and thus read/write portions of the host physical memory.
+
+Fixes: 89c8a4984fc9 (""KVM: SVM: Enable Virtual VMLOAD VMSAVE feature"")
+
+Suggested-by: Paolo Bonzini <pbonzini@redhat.com>
+Signed-off-by: Maxim Levitsky <mlevitsk@redhat.com>
+Signed-off-by: Paolo Bonzini <pbonzini@redhat.com>","A flaw was found in the KVM's AMD code for supporting SVM nested virtualization. The flaw occurs when processing the VMCB (virtual machine control block) provided by the L1 guest to spawn/handle a nested guest (L2). Due to improper validation of the ""virt_ext"" field, this issue could allow a malicious L1 to disable both VMLOAD/VMSAVE intercepts and VLS (Virtual VMLOAD/VMSAVE) for the L2 guest. As a result, the L2 guest would be allowed to read/write physical pages of the host, resulting in a crash of the entire system, leak of sensitive data or potential guest-to-host escape.",1,"void recalc_intercepts(struct vcpu_svm *svm)
+{
+	struct vmcb_control_area *c, *h, *g;
+	unsigned int i;
+
+	vmcb_mark_dirty(svm->vmcb, VMCB_INTERCEPTS);
+
+	if (!is_guest_mode(&svm->vcpu))
+		return;
+
+	c = &svm->vmcb->control;
+	h = &svm->vmcb01.ptr->control;
+	g = &svm->nested.ctl;
+
+	for (i = 0; i < MAX_INTERCEPT; i++)
+		c->intercepts[i] = h->intercepts[i];
+
+	if (g->int_ctl & V_INTR_MASKING_MASK) {
+		/* We only want the cr8 intercept bits of L1 */
+		vmcb_clr_intercept(c, INTERCEPT_CR8_READ);
+		vmcb_clr_intercept(c, INTERCEPT_CR8_WRITE);
+
+		/*
+		 * Once running L2 with HF_VINTR_MASK, EFLAGS.IF does not
+		 * affect any interrupt we may want to inject; therefore,
+		 * interrupt window vmexits are irrelevant to L0.
+		 */
+		vmcb_clr_intercept(c, INTERCEPT_VINTR);
+	}
+
+	/* We don't want to see VMMCALLs from a nested guest */
+	vmcb_clr_intercept(c, INTERCEPT_VMMCALL);
+
+	for (i = 0; i < MAX_INTERCEPT; i++)
+		c->intercepts[i] |= g->intercepts[i];
+
+	/* If SMI is not intercepted, ignore guest SMI intercept as well  */
+	if (!intercept_smi)
+		vmcb_clr_intercept(c, INTERCEPT_SMI);
+
+	vmcb_set_intercept(c, INTERCEPT_VMLOAD);
+	vmcb_set_intercept(c, INTERCEPT_VMSAVE);
+}",short_<2k,0,43,0,method_disagreement,0,0,1,0,1,1,0,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,0.005227863788604736,0.9523025155067444,278,1,0,0,1

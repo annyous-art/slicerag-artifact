@@ -1,0 +1,80 @@
+{
+  "total_records": 176,
+  "known_predictions": 176,
+  "unknown_predictions": 0,
+  "accuracy": 0.5227272727272727,
+  "precision": 0.5227272727272727,
+  "recall": 1.0,
+  "f1": 0.6865671641791045,
+  "yes_rate": 1.0,
+  "tp": 92,
+  "fp": 84,
+  "tn": 0,
+  "fn": 0,
+  "known_verdicts": 176,
+  "override_to_no_count": 0,
+  "keep_yes_count": 176,
+  "override_to_no_rate": 0.0,
+  "repair_present_known": 176,
+  "repair_present_count": 0,
+  "repair_present_rate": 0.0,
+  "category_metrics": {
+    "leakage_free_candidate": {
+      "total_records": 176,
+      "known_predictions": 176,
+      "unknown_predictions": 0,
+      "accuracy": 0.5227272727272727,
+      "precision": 0.5227272727272727,
+      "recall": 1.0,
+      "f1": 0.6865671641791045,
+      "yes_rate": 1.0,
+      "tp": 92,
+      "fp": 84,
+      "tn": 0,
+      "fn": 0,
+      "known_verdicts": 176,
+      "override_to_no_count": 0,
+      "keep_yes_count": 176,
+      "override_to_no_rate": 0.0,
+      "repair_present_known": 176,
+      "repair_present_count": 0,
+      "repair_present_rate": 0.0
+    }
+  },
+  "repair_signal_metrics": {
+    "retrieved_training_patch": {
+      "total_records": 176,
+      "known_predictions": 176,
+      "unknown_predictions": 0,
+      "accuracy": 0.5227272727272727,
+      "precision": 0.5227272727272727,
+      "recall": 1.0,
+      "f1": 0.6865671641791045,
+      "yes_rate": 1.0,
+      "tp": 92,
+      "fp": 84,
+      "tn": 0,
+      "fn": 0,
+      "known_verdicts": 176,
+      "override_to_no_count": 0,
+      "keep_yes_count": 176,
+      "override_to_no_rate": 0.0,
+      "repair_present_known": 176,
+      "repair_present_count": 0,
+      "repair_present_rate": 0.0
+    }
+  },
+  "repair_type_counts": {
+    "unknown": 166,
+    "added_guard": 5,
+    "bounds_or_shape_check": 3,
+    "state_or_lifetime_repair": 1,
+    "api_replacement": 1
+  },
+  "confidence_counts": {
+    "high": 149,
+    "low": 24,
+    "medium": 2,
+    "unknown": 1
+  }
+}

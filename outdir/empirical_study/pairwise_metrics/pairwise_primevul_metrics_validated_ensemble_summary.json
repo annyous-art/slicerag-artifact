@@ -1,0 +1,39 @@
+{
+  "data_jsonl": "data/primevul_test_paired_labeled.jsonl",
+  "predictions_csv": "outdir/ensemble_error_patch_contrast/per_sample_predictions.csv",
+  "num_data_rows": 870,
+  "num_adjacent_pairs": 433,
+  "pair_build_stats": {
+    "candidate_adjacent_pairs": 435,
+    "skipped_incomplete": 0,
+    "skipped_missing_target_pair": 0,
+    "skipped_project_mismatch": 0,
+    "skipped_commit_mismatch": 2,
+    "skipped_cve_mismatch": 0
+  },
+  "pair_filters": {
+    "require_same_project": true,
+    "require_same_commit": true,
+    "require_same_cve": true
+  },
+  "num_prediction_rows": 868,
+  "pred_columns": [
+    "best_ensemble_pred"
+  ],
+  "method_metrics": [
+    {
+      "method": "best_ensemble",
+      "known_pairs": 433,
+      "unknown_pairs": 0,
+      "P-C": 23,
+      "P-V": 368,
+      "P-B": 34,
+      "P-R": 8,
+      "P-C_rate": 0.053118,
+      "P-V_rate": 0.849885,
+      "P-B_rate": 0.078522,
+      "P-R_rate": 0.018476
+    }
+  ],
+  "pair_detail_csv": "outdir/empirical_study/pairwise_metrics/pairwise_primevul_metrics_validated_ensemble_pairs.csv"
+}

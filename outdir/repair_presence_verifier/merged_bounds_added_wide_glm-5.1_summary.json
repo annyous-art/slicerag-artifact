@@ -1,0 +1,37 @@
+{
+  "input_files": [
+    "${SLICERAG_ROOT}/outdir/repair_presence_verifier/bounds_path_variable_wide_glm-5.1.jsonl",
+    "${SLICERAG_ROOT}/outdir/repair_presence_verifier/added_guard_wide_glm-5.1.jsonl"
+  ],
+  "input_rows": 1161,
+  "unique_idx": 683,
+  "output_rows": 683,
+  "skipped_missing_idx": 0,
+  "conflict_idx_count": 34,
+  "selected_repair_type_counts": {
+    "added_guard": 506,
+    "bounds_or_shape_check": 177
+  },
+  "selected_pred_counts": {
+    "1": 627,
+    "0": 56
+  },
+  "selected_confidence_counts": {
+    "high": 660,
+    "medium": 14,
+    "low": 9
+  },
+  "source_counts": {
+    "added_guard_wide_glm-5.1.jsonl": 506,
+    "bounds_path_variable_wide_glm-5.1.jsonl": 177
+  },
+  "type_priority": {
+    "api_replacement": 100,
+    "state_or_lifetime_repair": 90,
+    "error_handling": 80,
+    "null_check": 75,
+    "added_guard": 70,
+    "bounds_or_shape_check": 60,
+    "unknown": 0
+  }
+}

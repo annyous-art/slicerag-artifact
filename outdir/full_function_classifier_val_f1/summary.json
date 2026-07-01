@@ -1,0 +1,125 @@
+{
+  "runs_root": "${SLICERAG_ROOT}/outdir/full_function_classifier_val_f1",
+  "num_runs": 3,
+  "runs": [
+    {
+      "run": "graphcodebert_fullfunc_val_f1_seed12345",
+      "seed": 12345,
+      "known": 870,
+      "known_pairs": 435,
+      "sample_accuracy": 0.5022988505747127,
+      "sample_precision": 0.5011682242990654,
+      "sample_recall": 0.9862068965517241,
+      "sample_specificity": 0.01839080459770115,
+      "sample_f1": 0.6646010844306739,
+      "sample_yes_rate": 0.9839080459770115,
+      "sample_directional_failure_index": 0.967816091954023,
+      "pair_P-C_rate": 0.006896551724137931,
+      "pair_P-V_rate": 0.9793103448275862,
+      "pair_P-B_rate": 0.011494252873563218,
+      "pair_P-R_rate": 0.0022988505747126436
+    },
+    {
+      "run": "graphcodebert_fullfunc_val_f1_seed23456",
+      "seed": 23456,
+      "known": 870,
+      "known_pairs": 435,
+      "sample_accuracy": 0.5045977011494253,
+      "sample_precision": 0.5023529411764706,
+      "sample_recall": 0.9816091954022989,
+      "sample_specificity": 0.027586206896551724,
+      "sample_f1": 0.6645914396887159,
+      "sample_yes_rate": 0.9770114942528736,
+      "sample_directional_failure_index": 0.9540229885057472,
+      "pair_P-C_rate": 0.013793103448275862,
+      "pair_P-V_rate": 0.967816091954023,
+      "pair_P-B_rate": 0.013793103448275862,
+      "pair_P-R_rate": 0.004597701149425287
+    },
+    {
+      "run": "graphcodebert_fullfunc_val_f1_seed34567",
+      "seed": 34567,
+      "known": 870,
+      "known_pairs": 435,
+      "sample_accuracy": 0.5011494252873563,
+      "sample_precision": 0.5005753739930955,
+      "sample_recall": 1.0,
+      "sample_specificity": 0.0022988505747126436,
+      "sample_f1": 0.6671779141104294,
+      "sample_yes_rate": 0.9988505747126437,
+      "sample_directional_failure_index": 0.9977011494252873,
+      "pair_P-C_rate": 0.0022988505747126436,
+      "pair_P-V_rate": 0.9977011494252873,
+      "pair_P-B_rate": 0.0,
+      "pair_P-R_rate": 0.0
+    }
+  ],
+  "aggregate": {
+    "pair_P-B_rate": {
+      "mean": 0.00842911877394636,
+      "std": 0.007389770698078893,
+      "min": 0.0,
+      "max": 0.013793103448275862
+    },
+    "pair_P-C_rate": {
+      "mean": 0.007662835249042145,
+      "std": 0.00578531374350249,
+      "min": 0.0022988505747126436,
+      "max": 0.013793103448275862
+    },
+    "pair_P-R_rate": {
+      "mean": 0.0022988505747126436,
+      "std": 0.0022988505747126436,
+      "min": 0.0,
+      "max": 0.004597701149425287
+    },
+    "pair_P-V_rate": {
+      "mean": 0.9816091954022989,
+      "std": 0.015074571320234478,
+      "min": 0.967816091954023,
+      "max": 0.9977011494252873
+    },
+    "sample_accuracy": {
+      "mean": 0.5026819923371647,
+      "std": 0.0017557761283355663,
+      "min": 0.5011494252873563,
+      "max": 0.5045977011494253
+    },
+    "sample_directional_failure_index": {
+      "mean": 0.9731800766283525,
+      "std": 0.0223276663361432,
+      "min": 0.9540229885057472,
+      "max": 0.9977011494252873
+    },
+    "sample_f1": {
+      "mean": 0.6654568127432731,
+      "std": 0.0014905253074947583,
+      "min": 0.6645914396887159,
+      "max": 0.6671779141104294
+    },
+    "sample_precision": {
+      "mean": 0.5013655131562105,
+      "std": 0.0009050571488686284,
+      "min": 0.5005753739930955,
+      "max": 0.5023529411764706
+    },
+    "sample_recall": {
+      "mean": 0.989272030651341,
+      "std": 0.009570878158464982,
+      "min": 0.9816091954022989,
+      "max": 1.0
+    },
+    "sample_specificity": {
+      "mean": 0.016091954022988506,
+      "std": 0.012799458305356372,
+      "min": 0.0022988505747126436,
+      "max": 0.027586206896551724
+    },
+    "sample_yes_rate": {
+      "mean": 0.9865900383141762,
+      "std": 0.011163833168071624,
+      "min": 0.9770114942528736,
+      "max": 0.9988505747126437
+    }
+  }
+}

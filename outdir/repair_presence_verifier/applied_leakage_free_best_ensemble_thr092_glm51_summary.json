@@ -1,0 +1,58 @@
+{
+  "base_pred_column": "best_ensemble_pred",
+  "min_confidence": "medium",
+  "require_repair_present": true,
+  "before": {
+    "known": 868,
+    "unknown": 0,
+    "accuracy": 0.518433,
+    "precision": 0.511053,
+    "recall": 0.903448,
+    "f1": 0.652824,
+    "yes_rate": 0.885945,
+    "tp": 393,
+    "fp": 376,
+    "tn": 57,
+    "fn": 42
+  },
+  "after": {
+    "known": 868,
+    "unknown": 0,
+    "accuracy": 0.518433,
+    "precision": 0.511053,
+    "recall": 0.903448,
+    "f1": 0.652824,
+    "yes_rate": 0.885945,
+    "tp": 393,
+    "fp": 376,
+    "tn": 57,
+    "fn": 42
+  },
+  "delta": {
+    "accuracy": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "yes_rate": 0.0
+  },
+  "verifier_rows": 176,
+  "rows_with_verifier": 176,
+  "override_count": 0,
+  "skipped_yes_with_verifier_count": 176,
+  "override_target_counts": {},
+  "override_repair_type_counts": {},
+  "override_confidence_counts": {},
+  "override_metrics_on_overridden_rows": {
+    "known": 0,
+    "unknown": 0,
+    "accuracy": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "yes_rate": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "tn": 0,
+    "fn": 0
+  }
+}

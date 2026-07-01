@@ -1,0 +1,181 @@
+{
+  "total_records": 43,
+  "known_predictions": 43,
+  "unknown_predictions": 0,
+  "accuracy": 0.5116279069767442,
+  "precision": 0.475,
+  "recall": 1.0,
+  "f1": 0.6440677966101694,
+  "yes_rate": 0.9302325581395349,
+  "tp": 19,
+  "fp": 21,
+  "tn": 3,
+  "fn": 0,
+  "repair_type": "added_guard",
+  "override_to_no_count": 3,
+  "override_to_no_rate": 0.06976744186046512,
+  "repair_present_count": 3,
+  "repair_present_rate": 0.06976744186046512,
+  "confidence_counts": {
+    "high": 41,
+    "medium": 2
+  },
+  "target_mapping_counts": {
+    "failure_blocks_path": {
+      "False": 34,
+      "True": 9
+    },
+    "guard_before_operation": {
+      "False": 34,
+      "True": 9
+    },
+    "primarily_bounds_or_shape": {
+      "True": 32,
+      "False": 11
+    },
+    "same_guard_condition": {
+      "False": 40,
+      "True": 3
+    },
+    "same_guarded_operation": {
+      "False": 38,
+      "True": 5
+    },
+    "same_guarded_variables_or_state": {
+      "False": 38,
+      "True": 5
+    },
+    "unguarded_alternate_path": {
+      "True": 37,
+      "False": 6
+    }
+  },
+  "project_metrics": {
+    "ImageMagick": {
+      "total_records": 1,
+      "known_predictions": 1,
+      "unknown_predictions": 0,
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "yes_rate": 1.0,
+      "tp": 0,
+      "fp": 1,
+      "tn": 0,
+      "fn": 0
+    },
+    "gpac": {
+      "total_records": 1,
+      "known_predictions": 1,
+      "unknown_predictions": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "linux": {
+      "total_records": 16,
+      "known_predictions": 16,
+      "unknown_predictions": 0,
+      "accuracy": 0.4375,
+      "precision": 0.4,
+      "recall": 1.0,
+      "f1": 0.5714285714285715,
+      "yes_rate": 0.9375,
+      "tp": 6,
+      "fp": 9,
+      "tn": 1,
+      "fn": 0
+    },
+    "linux-2.6": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 1,
+      "tn": 0,
+      "fn": 0
+    },
+    "openssl": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "yes_rate": 0.5,
+      "tp": 1,
+      "fp": 0,
+      "tn": 1,
+      "fn": 0
+    },
+    "php-src": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 1,
+      "tn": 0,
+      "fn": 0
+    },
+    "radare2": {
+      "total_records": 3,
+      "known_predictions": 3,
+      "unknown_predictions": 0,
+      "accuracy": 0.3333333333333333,
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1": 0.5,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 2,
+      "tn": 0,
+      "fn": 0
+    },
+    "tensorflow": {
+      "total_records": 12,
+      "known_predictions": 12,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "yes_rate": 1.0,
+      "tp": 6,
+      "fp": 6,
+      "tn": 0,
+      "fn": 0
+    },
+    "vim": {
+      "total_records": 4,
+      "known_predictions": 4,
+      "unknown_predictions": 0,
+      "accuracy": 0.75,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8,
+      "yes_rate": 0.75,
+      "tp": 2,
+      "fp": 1,
+      "tn": 1,
+      "fn": 0
+    }
+  }
+}

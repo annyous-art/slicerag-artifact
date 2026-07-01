@@ -1,0 +1,110 @@
+{
+  "data_jsonl": "data/primevul_test_paired_labeled.jsonl",
+  "predictions_csv": "outdir/ensemble_error_patch_contrast/per_sample_predictions.csv",
+  "num_data_rows": 870,
+  "num_adjacent_pairs": 435,
+  "num_prediction_rows": 868,
+  "pred_columns": [
+    "author_no_yes_pred",
+    "best_ensemble_pred",
+    "old_rag_pred",
+    "patch_contrast_pred",
+    "positive_weighted_rag_pred",
+    "yes_only_pred",
+    "zero_shot_pred"
+  ],
+  "method_metrics": [
+    {
+      "method": "author_no_yes",
+      "known_pairs": 435,
+      "unknown_pairs": 0,
+      "P-C": 36,
+      "P-V": 309,
+      "P-B": 66,
+      "P-R": 24,
+      "P-C_rate": 0.082759,
+      "P-V_rate": 0.710345,
+      "P-B_rate": 0.151724,
+      "P-R_rate": 0.055172
+    },
+    {
+      "method": "best_ensemble",
+      "known_pairs": 435,
+      "unknown_pairs": 0,
+      "P-C": 23,
+      "P-V": 370,
+      "P-B": 34,
+      "P-R": 8,
+      "P-C_rate": 0.052874,
+      "P-V_rate": 0.850575,
+      "P-B_rate": 0.078161,
+      "P-R_rate": 0.018391
+    },
+    {
+      "method": "old_rag",
+      "known_pairs": 435,
+      "unknown_pairs": 0,
+      "P-C": 37,
+      "P-V": 262,
+      "P-B": 108,
+      "P-R": 28,
+      "P-C_rate": 0.085057,
+      "P-V_rate": 0.602299,
+      "P-B_rate": 0.248276,
+      "P-R_rate": 0.064368
+    },
+    {
+      "method": "patch_contrast",
+      "known_pairs": 435,
+      "unknown_pairs": 0,
+      "P-C": 35,
+      "P-V": 272,
+      "P-B": 102,
+      "P-R": 26,
+      "P-C_rate": 0.08046,
+      "P-V_rate": 0.625287,
+      "P-B_rate": 0.234483,
+      "P-R_rate": 0.05977
+    },
+    {
+      "method": "positive_weighted_rag",
+      "known_pairs": 435,
+      "unknown_pairs": 0,
+      "P-C": 31,
+      "P-V": 241,
+      "P-B": 141,
+      "P-R": 22,
+      "P-C_rate": 0.071264,
+      "P-V_rate": 0.554023,
+      "P-B_rate": 0.324138,
+      "P-R_rate": 0.050575
+    },
+    {
+      "method": "yes_only",
+      "known_pairs": 435,
+      "unknown_pairs": 0,
+      "P-C": 39,
+      "P-V": 319,
+      "P-B": 63,
+      "P-R": 14,
+      "P-C_rate": 0.089655,
+      "P-V_rate": 0.733333,
+      "P-B_rate": 0.144828,
+      "P-R_rate": 0.032184
+    },
+    {
+      "method": "zero_shot",
+      "known_pairs": 435,
+      "unknown_pairs": 0,
+      "P-C": 29,
+      "P-V": 333,
+      "P-B": 61,
+      "P-R": 12,
+      "P-C_rate": 0.066667,
+      "P-V_rate": 0.765517,
+      "P-B_rate": 0.14023,
+      "P-R_rate": 0.027586
+    }
+  ],
+  "pair_detail_csv": "outdir/empirical_study/pairwise_metrics/pairwise_primevul_metrics_pairs.csv"
+}

@@ -1,0 +1,194 @@
+{
+  "total_records": 67,
+  "known_predictions": 67,
+  "unknown_predictions": 0,
+  "accuracy": 0.5223880597014925,
+  "precision": 0.5,
+  "recall": 0.96875,
+  "f1": 0.6595744680851063,
+  "yes_rate": 0.9253731343283582,
+  "tp": 31,
+  "fp": 31,
+  "tn": 4,
+  "fn": 1,
+  "override_to_no_count": 5,
+  "override_to_no_rate": 0.07462686567164178,
+  "repair_present_count": 5,
+  "repair_present_rate": 0.07462686567164178,
+  "confidence_counts": {
+    "high": 64,
+    "medium": 3
+  },
+  "target_mapping_counts": {
+    "same_checked_variable": {
+      "": 58,
+      "True": 9
+    },
+    "same_bound_variable": {
+      "": 56,
+      "True": 11
+    },
+    "same_sink_operation": {
+      "": 56,
+      "True": 11
+    },
+    "same_relation_or_stronger": {
+      "": 58,
+      "True": 9
+    },
+    "guard_before_sink": {
+      "True": 49,
+      "": 18
+    },
+    "failure_blocks_path": {
+      "True": 46,
+      "": 21
+    },
+    "unguarded_alternate_path": {
+      "": 42,
+      "True": 25
+    }
+  },
+  "project_metrics": {
+    "ImageMagick": {
+      "total_records": 3,
+      "known_predictions": 3,
+      "unknown_predictions": 0,
+      "accuracy": 0.3333333333333333,
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1": 0.5,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 2,
+      "tn": 0,
+      "fn": 0
+    },
+    "gpac": {
+      "total_records": 1,
+      "known_predictions": 1,
+      "unknown_predictions": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "linux": {
+      "total_records": 20,
+      "known_predictions": 20,
+      "unknown_predictions": 0,
+      "accuracy": 0.4,
+      "precision": 0.4,
+      "recall": 1.0,
+      "f1": 0.5714285714285715,
+      "yes_rate": 1.0,
+      "tp": 8,
+      "fp": 12,
+      "tn": 0,
+      "fn": 0
+    },
+    "linux-2.6": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 1,
+      "tn": 0,
+      "fn": 0
+    },
+    "openssl": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "yes_rate": 0.5,
+      "tp": 1,
+      "fp": 0,
+      "tn": 1,
+      "fn": 0
+    },
+    "php-src": {
+      "total_records": 4,
+      "known_predictions": 4,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "yes_rate": 1.0,
+      "tp": 2,
+      "fp": 2,
+      "tn": 0,
+      "fn": 0
+    },
+    "qemu": {
+      "total_records": 3,
+      "known_predictions": 3,
+      "unknown_predictions": 0,
+      "accuracy": 0.6666666666666666,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8,
+      "yes_rate": 1.0,
+      "tp": 2,
+      "fp": 1,
+      "tn": 0,
+      "fn": 0
+    },
+    "radare2": {
+      "total_records": 3,
+      "known_predictions": 3,
+      "unknown_predictions": 0,
+      "accuracy": 0.6666666666666666,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "yes_rate": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "tn": 2,
+      "fn": 1
+    },
+    "tensorflow": {
+      "total_records": 25,
+      "known_predictions": 25,
+      "unknown_predictions": 0,
+      "accuracy": 0.52,
+      "precision": 0.52,
+      "recall": 1.0,
+      "f1": 0.6842105263157895,
+      "yes_rate": 1.0,
+      "tp": 13,
+      "fp": 12,
+      "tn": 0,
+      "fn": 0
+    },
+    "vim": {
+      "total_records": 4,
+      "known_predictions": 4,
+      "unknown_predictions": 0,
+      "accuracy": 0.75,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8,
+      "yes_rate": 0.75,
+      "tp": 2,
+      "fp": 1,
+      "tn": 1,
+      "fn": 0
+    }
+  }
+}

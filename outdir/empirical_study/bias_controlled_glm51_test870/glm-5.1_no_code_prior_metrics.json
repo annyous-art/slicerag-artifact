@@ -1,0 +1,17 @@
+{
+  "known": 870,
+  "unknown": 0,
+  "accuracy": 0.5,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0,
+  "yes_rate": 0.0,
+  "tp": 0,
+  "fp": 0,
+  "tn": 435,
+  "fn": 435,
+  "input": "${SLICERAG_ROOT}/data/primevul_test_paired_labeled.jsonl",
+  "variant": "no_code_prior",
+  "model": "glm-5.1",
+  "total_records": 870
+}

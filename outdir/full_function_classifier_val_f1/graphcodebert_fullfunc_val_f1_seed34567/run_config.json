@@ -1,0 +1,39 @@
+{
+  "train": "${SLICERAG_ROOT}/data/primevul_train_paired_labeled.jsonl",
+  "test": "${SLICERAG_ROOT}/data/primevul_test_paired_labeled.jsonl",
+  "model": "${SLICERAG_EMBED_MODEL}",
+  "epochs": 5,
+  "batch_size": 8,
+  "eval_batch_size": 16,
+  "gradient_accumulation_steps": 1,
+  "lr": 2e-05,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.06,
+  "warmup_steps": 255,
+  "max_length": 512,
+  "val": "",
+  "val_ratio": 0.1,
+  "threshold_mode": "val_f1",
+  "selection_metric": "val_f1",
+  "threshold_min": 0.05,
+  "threshold_max": 0.95,
+  "threshold_step": 0.01,
+  "seed": 34567,
+  "device": "cuda",
+  "fp16": true,
+  "num_train_rows": 6820,
+  "num_val_rows": 758,
+  "num_test_rows": 870,
+  "train_label_counts": {
+    "1": 3410,
+    "0": 3410
+  },
+  "val_label_counts": {
+    "1": 379,
+    "0": 379
+  },
+  "test_label_counts": {
+    "1": 435,
+    "0": 435
+  }
+}

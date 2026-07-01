@@ -1,0 +1,4452 @@
+idx,target,base_pred,error_type,taxonomy,dominant_pattern,project,cwe,char_len,yes_vote_count,known_vote_count,func_excerpt,author_no_yes_correct,author_no_yes_pred,base_correct,best_ensemble_correct,best_ensemble_pred,bounds_keyword_count,commit_message,cve_desc,error_handling_keyword_count,func,length_bucket,lifecycle_keyword_count,line_count,memory_api_count,method_pattern,null_keyword_count,old_rag_correct,old_rag_pred,patch_contrast_correct,patch_contrast_pred,positive_weighted_rag_correct,positive_weighted_rag_pred,repair_signal,retrieval_bucket,retrieval_pos_neg_margin_max,retrieval_top1_score,token_len_approx,yes_only_correct,yes_only_pred,zero_shot_correct,zero_shot_pred
+263382,0,1,FP,yes_prior_consensus_false_positive,error_handling,tensorflow,CWE-703,2266,7,7,"Status TransposeShapeFn(InferenceContext* c) {
+  ShapeHandle input = c->input(0);
+  ShapeHandle perm_shape = c->input(1);
+  const Tensor* perm = c->input_tensor(1);
+  DimensionHandle perm_elems = c->NumElements(perm_shape);
+  // If we don't have rank information on the input or value information on
+  // perm we can't return any shape information, otherwise we have enough
+  // information to at least find the rank of the output.
+  if (!c->RankKnown(input) && !c->ValueKnown(perm_elems) && perm == nullptr) {
+    c->set_output(0, c->UnknownShape());
+    return Status::OK();
+  }
+
+  // Find our value of the rank.
+  int64_t rank;
+  if (c->RankKnown(input)) {
+    rank = c->Rank(input);
+  } else if (c->ValueKnown(perm_elems)) {
+    rank = c->Value(perm_elems);
+  } else {
+    rank = perm->NumElements();
+  }
+  if (!c->RankKnown(input) && rank < 2) {
+    // A permutation array containing a single element is ambiguous. It could
+    // indicate either a scalar or a 1-dimensional array, both of which the
+    // transpose op returns unchanged.
+    c->set_output(0, input);
+    return Status::OK();
+  }
+
+  std::vector<DimensionHandle> dims;
+  dims.resize(rank);
+  TF_RETURN_IF_ERROR(c->WithRank(input, rank, &input));
+  // Ensure that perm is a vector and has rank elements.
+  TF_RETURN_IF_ERROR(c->WithRank(perm_shape, 1, &perm_shape));
+  TF_RETURN_IF_ERROR(c->WithValue(perm_elems, rank, &perm_elems));
+
+  // If we know the rank of the input and the value of perm, we can return
+  // all shape information, otherwise we can only return rank information,
+  // but no information for the dimensions.
+  if (perm != nullptr) {
+    std::vector<int64_t> data;
+    if (perm->dtype() == DT_INT32) {
+      data = AsInt64<int32>(perm, rank);
+    } else {
+      data = AsInt64<int64_t>(perm, rank);
+    }
+
+    for (int32_t i = 0; i < rank; ++i) {
+      int64_t in_idx = data[i];
+      if (in_idx >= rank || in_idx <= -rank) {
+        return errors::InvalidArgument(""perm dim "", in_idx,
+                                       "" is out of range of input rank "", rank);
+      }
+      dims[i] = c->Dim(input, in_idx);
+    }
+  } else {
+    for (int i = 0; i < rank; ++i) {
+      dims[i] = c->UnknownDim();
+    }
+  }
+
+  c->set_output(0, c->MakeShape(dims));
+  return Status::OK();
+}",0,1,0,0,1,0,"Make Transpose's shape inference function validate that negative `perm` values are within the tensor's rank.
+
+PiperOrigin-RevId: 403252853
+Change-Id: Ia6b31b45b237312668bb31c2c3b3c7bbce2d2610","TensorFlow is an open source platform for machine learning. In affected versions the shape inference function for `Transpose` is vulnerable to a heap buffer overflow. This occurs whenever `perm` contains negative elements. The shape inference function does not validate that the indices in `perm` are all valid. The fix will be included in TensorFlow 2.7.0. We will also cherrypick this commit on TensorFlow 2.6.1, TensorFlow 2.5.2, and TensorFlow 2.4.4, as these are also affected and still in supported range.",9,"Status TransposeShapeFn(InferenceContext* c) {
+  ShapeHandle input = c->input(0);
+  ShapeHandle perm_shape = c->input(1);
+  const Tensor* perm = c->input_tensor(1);
+  DimensionHandle perm_elems = c->NumElements(perm_shape);
+  // If we don't have rank information on the input or value information on
+  // perm we can't return any shape information, otherwise we have enough
+  // information to at least find the rank of the output.
+  if (!c->RankKnown(input) && !c->ValueKnown(perm_elems) && perm == nullptr) {
+    c->set_output(0, c->UnknownShape());
+    return Status::OK();
+  }
+
+  // Find our value of the rank.
+  int64_t rank;
+  if (c->RankKnown(input)) {
+    rank = c->Rank(input);
+  } else if (c->ValueKnown(perm_elems)) {
+    rank = c->Value(perm_elems);
+  } else {
+    rank = perm->NumElements();
+  }
+  if (!c->RankKnown(input) && rank < 2) {
+    // A permutation array containing a single element is ambiguous. It could
+    // indicate either a scalar or a 1-dimensional array, both of which the
+    // transpose op returns unchanged.
+    c->set_output(0, input);
+    return Status::OK();
+  }
+
+  std::vector<DimensionHandle> dims;
+  dims.resize(rank);
+  TF_RETURN_IF_ERROR(c->WithRank(input, rank, &input));
+  // Ensure that perm is a vector and has rank elements.
+  TF_RETURN_IF_ERROR(c->WithRank(perm_shape, 1, &perm_shape));
+  TF_RETURN_IF_ERROR(c->WithValue(perm_elems, rank, &perm_elems));
+
+  // If we know the rank of the input and the value of perm, we can return
+  // all shape information, otherwise we can only return rank information,
+  // but no information for the dimensions.
+  if (perm != nullptr) {
+    std::vector<int64_t> data;
+    if (perm->dtype() == DT_INT32) {
+      data = AsInt64<int32>(perm, rank);
+    } else {
+      data = AsInt64<int64_t>(perm, rank);
+    }
+
+    for (int32_t i = 0; i < rank; ++i) {
+      int64_t in_idx = data[i];
+      if (in_idx >= rank || in_idx <= -rank) {
+        return errors::InvalidArgument(""perm dim "", in_idx,
+                                       "" is out of range of input rank "", rank);
+      }
+      dims[i] = c->Dim(input, in_idx);
+    }
+  } else {
+    for (int i = 0; i < rank; ++i) {
+      dims[i] = c->UnknownDim();
+    }
+  }
+
+  c->set_output(0, c->MakeShape(dims));
+  return Status::OK();
+}",medium_2k_5k,0,65,0,all_methods_yes,2,0,1,0,1,0,1,repair_present_override_candidate:added_guard,retrieval_low_margin,0.00047516822814941406,0.9510757923126221,578,0,1,0,1
+522438,0,1,FP,yes_prior_consensus_false_positive,bounds,elfspirit,CWE-125,37828,7,7,"int parse(char *elf) {
+    int fd;
+    struct stat st;
+    uint8_t *elf_map;
+    int count;
+    char *tmp;
+    char *name;
+    char flag[4];
+
+    MODE = get_elf_class(elf);
+
+    fd = open(elf, O_RDONLY);
+    if (fd < 0) {
+        perror(""open"");
+        return -1;
+    }
+
+    if (fstat(fd, &st) < 0) {
+        perror(""fstat"");
+        return -1;
+    }
+
+    elf_map = mmap(0, st.st_size, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0);
+    if (elf_map == MAP_FAILED) {
+        perror(""mmap"");
+        return -1;
+    }
+
+    /* 32bit */
+    if (MODE == ELFCLASS32) {
+        /* ELF Header Information */
+        Elf32_Ehdr *ehdr;
+        ehdr = (Elf32_Ehdr *)elf_map;
+
+        INFO(""ELF Header\n"");        
+        switch (ehdr->e_type) {
+            case ET_NONE:
+                tmp = ""An unknown type"";
+                break;
+
+            case ET_REL:
+                tmp = ""A relocatable file"";
+                break;
+
+            case ET_EXEC:
+                tmp = ""An executable file"";
+                break;
+
+            case ET_DYN:
+                tmp = ""A shared object"";
+                break;
+
+            case ET_CORE:
+                tmp = ""A core file"";
+                break;
+            
+            default:
+                tmp = ""An unknown type"";
+                break;
+        }
+        PRINT_HEADER_EXP(""e_type:"", ehdr->e_type, tmp);
+
+        switch (ehdr->e_type) {
+            case EM_NONE:
+                tmp = ""An unknown machine"";
+                break;
+
+            case EM_M32:
+                tmp = ""AT&T WE 32100"";
+                break;
+
+            case EM_SPARC:
+                tmp = ""Sun Microsystems SPARC"";
+                break;
+
+            case EM_386:
+                tmp = ""Intel 80386"";
+                break;
+
+            case EM_68K:
+                tmp = ""Motorola 68000"";
+                break;
+            
+            case EM_88K:
+                tmp = ""Motorola 88000"";
+                break;
+
+            case EM_860:
+                tmp = ""Intel 80860"";
+                break;
+
+            case EM_MIPS:
+                tmp = ""MIPS RS3000 (big-endian only)"";
+                break;
+
+            case EM_PARISC:
+                tmp = ""HP/PA"";
+                break;
+
+            case EM_SPARC32PLUS:
+                tmp = ""SPARC with enhanced instruction set"";
+                break;
+            
+            case EM_PPC:
+                tmp = ""PowerPC"";
+                break;
+
+            case EM_PPC64:
+                tmp = ""PowerPC 64-bit"";
+                break;
+
+            case EM_S390:
+                tmp = ""IBM S/390"";
+                break;
+
+            case EM_ARM:
+                tmp = ""Advanced RISC Machines"";
+                break;
+
+            case EM_SH:
+                tmp = ""Renesas SuperH"";
+                break;
+            
+            case EM_SPARCV9:
+                tmp = ""SPARC v9 64-bit"";
+                break;
+
+            case EM_IA_64:
+                tmp = ""Intel Itanium"";
+                break;
+
+            case EM_X86_64:
+                tmp = ""AMD x86-64"";
+                break;
+
+            case EM_VAX:
+                tmp = ""DEC Vax"";
+                break;
+            
+            default:
+                tmp = ""An unknown machine"";
+                break;
+        }
+        PRINT_HEADER_EXP(""e_machine:"", ehdr->e_machine, tmp);
+
+        switch (ehdr->e_version) {
+            case EV_NONE:
+                tmp = ""Invalid version"";
+                break;
+
+            case EV_CURRENT:
+                tmp = ""Current version"";
+                break;
+
+            default:
+                tmp = ""Known version"";
+                break;
+        }
+        PRINT_HEADER_EXP(""e_version:"", ehdr->e_version, tmp);
+        PRINT_HEADER(""e_entry:"", ehdr->e_entry);
+        PRINT_HEADER(""e_phoff:"", ehdr->e_phoff);
+        PRINT_HEADER(""e_shoff:"", ehdr->e_shoff);
+        PRINT_HEADER(""e_flags:"", ehdr->e_flags);
+        PRINT_HEADER(""e_ehsize:"", ehdr->e_ehsize);
+        PRINT_HEADER(""e_phentsize:"", ehdr->e_phentsize);
+        PRINT_HEADER(""e_phnum:"", ehdr->e_phnum);
+        PRINT_HEADER(""e_shentsize:"", ehdr->e_shentsize);
+        PRINT_HEADER(""e_shentsize:"", ehdr->e_shentsize);
+        PRINT_HEADER(""e_shstrndx:"", ehdr->e_shstrndx);
+
+        /* Section Information */
+        Elf32_Shdr *shdr;
+        Elf32_Phdr *phdr;
+        Elf32_Shdr shstrtab;
+
+        shdr = (Elf32_Shdr *)&elf_map[ehdr->e_shoff];
+        phdr = (Elf32_Phdr *)&elf_map[ehdr->e_phoff];
+        shstrtab = shdr[ehdr->e_shstrndx];
+
+        INFO(""Section Header Table\n"");
+        PRINT_SECTION_TITLE(""Nr"", ""Name"", ""Type"", ""Addr"", ""Off"", ""Size"", ""Es"", ""Flg"", ""Lk"", ""Inf"", ""Al"");
+        for (int i = 0; i < ehdr->e_shnum; i++) {
+            name = elf_map + shstrtab.sh_offset + shdr[i].sh_name;
+            if (validated_offset(name, elf_map, elf_map + st.st_size)) {
+                ERROR(""Corrupt file format\n"");
+                return -1;
+            }
+
+            switch (shdr[i].sh_type) {
+                case SHT_NULL:
+                    tmp = ""SHT_NULL"";
+                    break;
+                
+                case SHT_PROGBITS:
+                    tmp = ""SHT_PROGBITS"";
+                    break;
+
+                case SHT_SYMTAB:
+                    tmp = ""SHT_SYMTAB"";
+                    break;
+
+                case SHT_STRTAB:
+                    tmp = ""SHT_STRTAB"";
+                    break;
+
+                case SHT_RELA:
+                    tmp = ""SHT_RELA"";
+                    break;
+
+                case SHT_HASH:
+                    tmp = ""SHT_HASH"";
+                    break;
+
+                case SHT_DYNAMIC:
+                    tmp = ""SHT_DYNAMIC"";
+                    break;
+
+                case SHT_NOTE:
+                    tmp = ""SHT_NOTE"";
+                    break;
+
+                case SHT_NOBITS:
+                    tmp = ""SHT_NOBITS"";
+                    break;
+
+                case SHT_REL:
+                    tmp = ""SHT_REL"";
+                    break;
+
+                case SHT_SHLIB:
+
+/* ... truncated ... */",0,1,0,0,1,15,Fix #1 about out-of-bounds,"elfspirit is an ELF static analysis and injection framework that parses, manipulates, and camouflages ELF files. When analyzing the ELF file format in versions prior to 1.1, there is an out-of-bounds read bug, which can lead to application crashes or information leakage. By constructing a special format ELF file, the information of any address can be leaked. elfspirit version 1.1 contains a patch for this issue.",10,"int parse(char *elf) {
+    int fd;
+    struct stat st;
+    uint8_t *elf_map;
+    int count;
+    char *tmp;
+    char *name;
+    char flag[4];
+
+    MODE = get_elf_class(elf);
+
+    fd = open(elf, O_RDONLY);
+    if (fd < 0) {
+        perror(""open"");
+        return -1;
+    }
+
+    if (fstat(fd, &st) < 0) {
+        perror(""fstat"");
+        return -1;
+    }
+
+    elf_map = mmap(0, st.st_size, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0);
+    if (elf_map == MAP_FAILED) {
+        perror(""mmap"");
+        return -1;
+    }
+
+    /* 32bit */
+    if (MODE == ELFCLASS32) {
+        /* ELF Header Information */
+        Elf32_Ehdr *ehdr;
+        ehdr = (Elf32_Ehdr *)elf_map;
+
+        INFO(""ELF Header\n"");        
+        switch (ehdr->e_type) {
+            case ET_NONE:
+                tmp = ""An unknown type"";
+                break;
+
+            case ET_REL:
+                tmp = ""A relocatable file"";
+                break;
+
+            case ET_EXEC:
+                tmp = ""An executable file"";
+                break;
+
+            case ET_DYN:
+                tmp = ""A shared object"";
+                break;
+
+            case ET_CORE:
+                tmp = ""A core file"";
+                break;
+            
+            default:
+                tmp = ""An unknown type"";
+                break;
+        }
+        PRINT_HEADER_EXP(""e_type:"", ehdr->e_type, tmp);
+
+        switch (ehdr->e_type) {
+            case EM_NONE:
+                tmp = ""An unknown machine"";
+                break;
+
+            case EM_M32:
+                tmp = ""AT&T WE 32100"";
+                break;
+
+            case EM_SPARC:
+                tmp = ""Sun Microsystems SPARC"";
+                break;
+
+            case EM_386:
+                tmp = ""Intel 80386"";
+                break;
+
+            case EM_68K:
+                tmp = ""Motorola 68000"";
+                break;
+            
+            case EM_88K:
+                tmp = ""Motorola 88000"";
+                break;
+
+            case EM_860:
+                tmp = ""Intel 80860"";
+                break;
+
+            case EM_MIPS:
+                tmp = ""MIPS RS3000 (big-endian only)"";
+                break;
+
+            case EM_PARISC:
+                tmp = ""HP/PA"";
+                break;
+
+            case EM_SPARC32PLUS:
+                tmp = ""SPARC with enhanced instruction set"";
+                break;
+            
+            case EM_PPC:
+                tmp = ""PowerPC"";
+                break;
+
+            case EM_PPC64:
+                tmp = ""PowerPC 64-bit"";
+                break;
+
+            case EM_S390:
+                tmp = ""IBM S/390"";
+                break;
+
+            case EM_ARM:
+                tmp = ""Advanced RISC Machines"";
+                break;
+
+            case EM_SH:
+                tmp = ""Renesas SuperH"";
+                break;
+            
+            case EM_SPARCV9:
+                tmp = ""SPARC v9 64-bit"";
+                break;
+
+            case EM_IA_64:
+                tmp = ""Intel Itanium"";
+                break;
+
+            case EM_X86_64:
+                tmp = ""AMD x86-64"";
+                break;
+
+            case EM_VAX:
+                tmp = ""DEC Vax"";
+                break;
+            
+            default:
+                tmp = ""An unknown machine"";
+                break;
+        }
+        PRINT_HEADER_EXP(""e_machine:"", ehdr->e_machine, tmp);
+
+        switch (ehdr->e_version) {
+            case EV_NONE:
+                tmp = ""Invalid version"";
+                break;
+
+            case EV_CURRENT:
+                tmp = ""Current version"";
+                break;
+
+            default:
+                tmp = ""Known version"";
+                break;
+        }
+        PRINT_HEADER_EXP(""e_version:"", ehdr->e_version, tmp);
+        PRINT_HEADER(""e_entry:"", ehdr->e_entry);
+        PRINT_HEADER(""e_phoff:"", ehdr->e_phoff);
+        PRINT_HEADER(""e_shoff:"", ehdr->e_shoff);
+        PRINT_HEADER(""e_flags:"", ehdr->e_flags);
+        PRINT_HEADER(""e_ehsize:"", ehdr->e_ehsize);
+        PRINT_HEADER(""e_phentsize:"", ehdr->e_phentsize);
+        PRINT_HEADER(""e_phnum:"", ehdr->e_phnum);
+        PRINT_HEADER(""e_shentsize:"", ehdr->e_shentsize);
+        PRINT_HEADER(""e_shentsize:"", ehdr->e_shentsize);
+        PRINT_HEADER(""e_shstrndx:"", ehdr->e_shstrndx);
+
+        /* Section Information */
+        Elf32_Shdr *shdr;
+        Elf32_Phdr *phdr;
+        Elf32_Shdr shstrtab;
+
+        shdr = (Elf32_Shdr *)&elf_map[ehdr->e_shoff];
+        phdr = (Elf32_Phdr *)&elf_map[ehdr->e_phoff];
+        shstrtab = shdr[ehdr->e_shstrndx];
+
+        INFO(""Section Header Table\n"");
+        PRINT_SECTION_TITLE(""Nr"", ""Name"", ""Type"", ""Addr"", ""Off"", ""Size"", ""Es"", ""Flg"", ""Lk"", ""Inf"", ""Al"");
+        for (int i = 0; i < ehdr->e_shnum; i++) {
+            name = elf_map + shstrtab.sh_offset + shdr[i].sh_name;
+            if (validated_offset(name, elf_map, elf_map + st.st_size)) {
+                ERROR(""Corrupt file format\n"");
+                return -1;
+            }
+
+            switch (shdr[i].sh_type) {
+                case SHT_NULL:
+                    tmp = ""SHT_NULL"";
+                    break;
+                
+                case SHT_PROGBITS:
+                    tmp = ""SHT_PROGBITS"";
+                    break;
+
+                case SHT_SYMTAB:
+                    tmp = ""SHT_SYMTAB"";
+                    break;
+
+                case SHT_STRTAB:
+                    tmp = ""SHT_STRTAB"";
+                    break;
+
+                case SHT_RELA:
+                    tmp = ""SHT_RELA"";
+                    break;
+
+                case SHT_HASH:
+                    tmp = ""SHT_HASH"";
+                    break;
+
+                case SHT_DYNAMIC:
+                    tmp = ""SHT_DYNAMIC"";
+                    break;
+
+                case SHT_NOTE:
+                    tmp = ""SHT_NOTE"";
+                    break;
+
+                case SHT_NOBITS:
+                    tmp = ""SHT_NOBITS"";
+                    break;
+
+                case SHT_REL:
+                    tmp = ""SHT_REL"";
+                    break;
+
+                case SHT_SHLIB:
+                    tmp = ""SHT_SHLIB"";
+                    break;
+
+                case SHT_DYNSYM:
+                    tmp = ""SHT_DYNSYM"";
+                    break;
+
+                case SHT_LOPROC:
+                    tmp = ""SHT_LOPROC"";
+                    break;
+
+                case SHT_HIPROC:
+                    tmp = ""SHT_HIPROC"";
+                    break;
+
+                case SHT_LOUSER:
+                    tmp = ""SHT_LOUSER"";
+                    break;
+
+                case SHT_HIUSER:
+                    tmp = ""SHT_HIUSER"";
+                    break;
+                
+                default:
+                    break;
+            }
+
+            if (strlen(name) > 15) {
+                strcpy(&name[15 - 6], ""[...]"");
+            }
+            strcpy(flag, ""   "");
+            flag2str_sh(shdr[i].sh_flags, flag);
+            PRINT_SECTION(i, name, tmp, shdr[i].sh_addr, shdr[i].sh_offset, shdr[i].sh_size, shdr[i].sh_entsize, \
+                            flag, shdr[i].sh_link, shdr[i].sh_info, shdr[i].sh_addralign);
+        }
+
+        INFO(""Program Header Table\n"");
+        PRINT_PROGRAM_TITLE(""Nr"", ""Type"", ""Offset"", ""Virtaddr"", ""Physaddr"", ""Filesiz"", ""Memsiz"", ""Flg"", ""Align"");
+        for (int i = 0; i < ehdr->e_phnum; i++) {
+            switch (phdr[i].p_type) {
+                case PT_NULL:
+                    tmp = ""PT_NULL"";
+                    break;
+                
+                case PT_LOAD:
+                    tmp = ""PT_LOAD"";
+                    break;
+
+                case PT_DYNAMIC:
+                    tmp = ""PT_DYNAMIC"";
+                    break;
+
+                case PT_INTERP:
+                    tmp = ""PT_INTERP"";
+                    break;
+
+                case PT_NOTE:
+                    tmp = ""PT_NOTE"";
+                    break;
+
+                case PT_SHLIB:
+                    tmp = ""PT_SHLIB"";
+                    break;
+
+                case PT_PHDR:
+                    tmp = ""PT_PHDR"";
+                    break;
+
+                case PT_LOPROC:
+                    tmp = ""PT_LOPROC"";
+                    break;
+
+                case PT_HIPROC:
+                    tmp = ""PT_HIPROC"";
+                    break;
+
+                case PT_GNU_STACK:
+                    tmp = ""PT_GNU_STACK"";
+                    break;
+                
+                default:
+                    break;
+            }
+            strcpy(flag, ""   "");
+            flag2str(phdr[i].p_flags, flag);
+            PRINT_PROGRAM(i, tmp, phdr[i].p_offset, phdr[i].p_vaddr, phdr[i].p_paddr, phdr[i].p_filesz, phdr[i].p_memsz, flag, phdr[i].p_align); 
+        }
+
+        INFO(""Section to segment mapping\n"");
+        for (int i = 0; i < ehdr->e_phnum; i++) {
+            printf(""     [%2d]"", i);
+            for (int j = 0; j < ehdr->e_shnum; j++) {
+                name = elf_map + shstrtab.sh_offset + shdr[j].sh_name;
+                if (shdr[j].sh_addr >= phdr[i].p_vaddr && shdr[j].sh_addr + shdr[j].sh_size <= phdr[i].p_vaddr + phdr[i].p_memsz && shdr[j].sh_type != SHT_NULL) {
+                    if (shdr[j].sh_flags >> 1 & 0x1) {
+                        printf("" %s"", name);
+                    }
+                }    
+            }
+            printf(""\n"");
+        }
+
+        INFO(""Dynamic link information\n"");
+        int dynstr;
+        int dynamic;
+        Elf32_Dyn *dyn;
+        for (int i = 0; i < ehdr->e_shnum; i++) {
+            name = elf_map + shstrtab.sh_offset + shdr[i].sh_name;
+            if (!strcmp(name, "".dynstr"")) {
+                dynstr = i;
+            }
+            if (!strcmp(name, "".dynamic"")) {
+                dynamic = i;
+            }
+        }
+
+        char value[50];
+        name = """";
+        dyn = (Elf32_Dyn *)&elf_map[shdr[dynamic].sh_offset];
+        count = shdr[dynamic].sh_size / sizeof(Elf32_Dyn);
+        INFO(""Dynamic section at offset 0x%x contains %d entries\n"", shdr[dynamic].sh_offset, count);
+        PRINT_DYN_TITLE(""Tag"", ""Type"", ""Name/Value"");
+        
+        for(int i = 0; i < count; i++) {
+            tmp = """";
+            memset(value, 0, 50);
+            snprintf(value, 50, ""0x%x"", dyn[i].d_un.d_val);
+            switch (dyn[i].d_tag) {
+                /* Legal values for d_tag (dynamic entry type).  */
+                case DT_NULL:
+                    tmp = ""DT_NULL"";
+                    break;
+
+                case DT_NEEDED:
+                    tmp = ""DT_NEEDED"";
+                    name = elf_map + shdr[dynstr].sh_offset + dyn[i].d_un.d_val;
+                    snprintf(value, 50, ""Shared library: [%s]"", name);
+                    break;
+                
+                case DT_PLTRELSZ:
+                    tmp = ""DT_PLTRELSZ"";
+                    break;
+
+                case DT_PLTGOT:
+                    tmp = ""DT_PLTGOT"";
+                    break;
+
+                case DT_HASH:
+                    tmp = ""DT_HASH"";
+                    break;
+
+                case DT_STRTAB:
+                    tmp = ""DT_STRTAB"";
+                    break;
+
+                case DT_SYMTAB:
+                    tmp = ""DT_SYMTAB"";
+                    break;
+
+                case DT_RELA:
+                    tmp = ""DT_RELA"";
+                    break;
+
+                case DT_RELASZ:
+                    tmp = ""DT_RELASZ"";
+                    break;
+
+                case DT_RELAENT:
+                    tmp = ""DT_RELAENT"";
+                    break;
+
+                case DT_STRSZ:
+                    tmp = ""DT_STRSZ"";
+                    break;
+
+                case DT_SYMENT:
+                    tmp = ""DT_SYMENT"";
+                    break;
+
+                case DT_INIT:
+                    tmp = ""DT_INIT"";
+                    break;
+
+                case DT_FINI:
+                    tmp = ""DT_FINI"";
+                    break;
+
+                case DT_SONAME:
+                    tmp = ""DT_SONAME"";
+                    break;
+
+                case DT_RPATH:
+                    tmp = ""DT_RPATH"";
+                    break;
+
+                case DT_SYMBOLIC:
+                    tmp = ""DT_SYMBOLIC"";
+                    break;
+
+                case DT_REL:
+                    tmp = ""DT_REL"";
+                    break;
+
+                case DT_RELSZ:
+                    tmp = ""DT_RELSZ"";
+                    break;
+
+                case DT_RELENT:
+                    tmp = ""DT_RELENT"";
+                    break;
+                    
+                case DT_PLTREL:
+                    tmp = ""DT_PLTREL"";
+                    break;
+
+                case DT_DEBUG:
+                    tmp = ""DT_DEBUG"";
+                    break;
+
+                case DT_TEXTREL:
+                    tmp = ""DT_TEXTREL"";
+                    break;
+
+                case DT_JMPREL:
+                    tmp = ""DT_JMPREL"";
+                    break;
+
+                case DT_BIND_NOW:
+                    tmp = ""DT_BIND_NOW"";
+                    break;
+
+                case DT_INIT_ARRAY:
+                    tmp = ""DT_INIT_ARRAY"";
+                    break;
+
+                case DT_FINI_ARRAY:
+                    tmp = ""DT_FINI_ARRAY"";
+                    break;
+
+                case DT_INIT_ARRAYSZ:
+                    tmp = ""DT_INIT_ARRAYSZ"";
+                    break;
+                
+                case DT_FINI_ARRAYSZ:
+                    tmp = ""DT_FINI_ARRAYSZ"";
+                    break;
+
+                case DT_RUNPATH:
+                    tmp = ""DT_RUNPATH"";
+                    break;
+
+                case DT_FLAGS:
+                    tmp = ""DT_FLAGS"";
+                    snprintf(value, 50, ""Flags: %d"", dyn[i].d_un.d_val);
+                    break;
+                
+                case DT_ENCODING:
+                    tmp = ""DT_ENCODING"";
+                    break;
+
+                case DT_PREINIT_ARRAYSZ:
+                    tmp = ""DT_PREINIT_ARRAYSZ"";
+                    break;
+
+                case DT_SYMTAB_SHNDX:
+                    tmp = ""DT_SYMTAB_SHNDX"";
+                    break;
+                
+                case DT_NUM:
+                    tmp = ""DT_NUM"";
+                    break;
+
+                case DT_LOOS:
+                    tmp = ""DT_LOOS"";
+                    break;
+
+                case DT_HIOS:
+                    tmp = ""DT_HIOS"";
+                    break;
+
+                case DT_LOPROC:
+                    tmp = ""DT_LOPROC"";
+                    break;
+
+                case DT_HIPROC:
+                    tmp = ""DT_HIPROC"";
+                    break;
+
+                case DT_PROCNUM:
+                    tmp = ""DT_LOPROC"";
+                    break;
+
+                /* DT_* entries which fall between DT_VALRNGHI & DT_VALRNGLO use the
+                 * Dyn.d_un.d_val field of the Elf*_Dyn structure.  This follows Sun's
+                 * approach. */
+
+                case DT_VALRNGLO:
+                    tmp = ""DT_VALRNGLO"";
+                    break;
+
+                case DT_GNU_PRELINKED:
+                    tmp = ""DT_GNU_PRELINKED"";
+                    break;
+                
+                case DT_GNU_CONFLICTSZ:
+                    tmp = ""DT_GNU_CONFLICTSZ"";
+                    break;
+
+                case DT_GNU_LIBLISTSZ:
+                    tmp = ""DT_GNU_LIBLISTSZ"";
+                    break;
+
+                case DT_CHECKSUM:
+                    tmp = ""DT_CHECKSUM"";
+                    break;
+
+                case DT_PLTPADSZ:
+                    tmp = ""DT_PLTPADSZ"";
+                    break;
+
+                case DT_MOVEENT:
+                    tmp = ""DT_MOVEENT"";
+                    break;
+
+                case DT_MOVESZ:
+                    tmp = ""DT_MOVESZ"";
+                    break;
+
+                case DT_FEATURE_1:
+                    tmp = ""DT_FEATURE_1"";
+                    break;
+
+                case DT_POSFLAG_1:
+                    tmp = ""DT_POSFLAG_1"";
+                    break;
+
+                case DT_SYMINSZ:
+                    tmp = ""DT_SYMINSZ"";
+                    break;
+
+                case DT_SYMINENT:
+                    tmp = ""DT_SYMINENT"";
+                    break;
+
+                /* DT_* entries which fall between DT_ADDRRNGHI & DT_ADDRRNGLO use the
+                 * Dyn.d_un.d_ptr field of the Elf*_Dyn structure.
+                 * If any adjustment is made to the ELF object after it has been
+                 * built these entries will need to be adjusted.  */
+                case DT_ADDRRNGLO:
+                    tmp = ""DT_ADDRRNGLO"";
+                    break;
+
+                case DT_GNU_HASH:
+                    tmp = ""DT_GNU_HASH"";
+                    break;
+
+                case DT_TLSDESC_PLT:
+                    tmp = ""DT_TLSDESC_PLT"";
+                    break;
+
+                case DT_TLSDESC_GOT:
+                    tmp = ""DT_TLSDESC_GOT"";
+                    break;
+
+                case DT_GNU_CONFLICT:
+                    tmp = ""DT_GNU_CONFLICT"";
+                    break;
+
+                case DT_GNU_LIBLIST:
+                    tmp = ""DT_GNU_LIBLIST"";
+                    break;
+
+                case DT_CONFIG:
+                    tmp = ""DT_CONFIG"";
+                    break;
+
+                case DT_DEPAUDIT:
+                    tmp = ""DT_DEPAUDIT"";
+                    break;
+
+                case DT_AUDIT:
+                    tmp = ""DT_AUDIT"";
+                    break;
+
+                case DT_PLTPAD:
+                    tmp = ""DT_PLTPAD"";
+                    break;
+
+                case DT_MOVETAB:
+                    tmp = ""DT_MOVETAB"";
+                    break;
+
+                case DT_SYMINFO:
+                    tmp = ""DT_SYMINFO"";
+                    break;
+                    
+                /* The versioning entry types.  The next are defined as part of the
+                 * GNU extension.  */
+                case DT_VERSYM:
+                    tmp = ""DT_VERSYM"";
+                    break;
+
+                case DT_RELACOUNT:
+                    tmp = ""DT_RELACOUNT"";
+                    break;
+
+                case DT_RELCOUNT:
+                    tmp = ""DT_RELCOUNT"";
+                    break;
+                
+                /* These were chosen by Sun.  */
+                case DT_FLAGS_1:
+                    tmp = ""DT_FLAGS_1"";
+                    switch (dyn[i].d_un.d_val) {
+                        case DF_1_PIE:
+                            snprintf(value, 50, ""Flags: %s"", ""PIE"");
+                            break;
+                        
+                        default:
+                            snprintf(value, 50, ""Flags: %d"", dyn[i].d_un.d_val);
+                            break;
+                    }
+                    
+                    break;
+
+                case DT_VERDEF:
+                    tmp = ""DT_VERDEF"";
+                    break;
+
+                case DT_VERDEFNUM:
+                    tmp = ""DT_VERDEFNUM"";
+                    break;
+
+                case DT_VERNEED:
+                    tmp = ""DT_VERNEED"";
+                    break;
+
+                case DT_VERNEEDNUM:
+                    tmp = ""DT_VERNEEDNUM"";
+                    break;
+                
+                default:
+                    break;
+            }
+            PRINT_DYN(dyn[i].d_tag, tmp, value);
+        }        
+    }
+
+    /* 64bit */
+    if (MODE == ELFCLASS64) {
+        /* ELF Header Information */
+        Elf64_Ehdr *ehdr;
+        ehdr = (Elf64_Ehdr *)elf_map;
+
+        INFO(""ELF Header\n"");        
+        switch (ehdr->e_type) {
+            case ET_NONE:
+                tmp = ""An unknown type"";
+                break;
+
+            case ET_REL:
+                tmp = ""A relocatable file"";
+                break;
+
+            case ET_EXEC:
+                tmp = ""An executable file"";
+                break;
+
+            case ET_DYN:
+                tmp = ""A shared object"";
+                break;
+
+            case ET_CORE:
+                tmp = ""A core file"";
+                break;
+            
+            default:
+                tmp = ""An unknown type"";
+                break;
+        }
+        PRINT_HEADER_EXP(""e_type:"", ehdr->e_type, tmp);
+
+        switch (ehdr->e_type) {
+            case EM_NONE:
+                tmp = ""An unknown machine"";
+                break;
+
+            case EM_M32:
+                tmp = ""AT&T WE 32100"";
+                break;
+
+            case EM_SPARC:
+                tmp = ""Sun Microsystems SPARC"";
+                break;
+
+            case EM_386:
+                tmp = ""Intel 80386"";
+                break;
+
+            case EM_68K:
+                tmp = ""Motorola 68000"";
+                break;
+            
+            case EM_88K:
+                tmp = ""Motorola 88000"";
+                break;
+
+            case EM_860:
+                tmp = ""Intel 80860"";
+                break;
+
+            case EM_MIPS:
+                tmp = ""MIPS RS3000 (big-endian only)"";
+                break;
+
+            case EM_PARISC:
+                tmp = ""HP/PA"";
+                break;
+
+            case EM_SPARC32PLUS:
+                tmp = ""SPARC with enhanced instruction set"";
+                break;
+            
+            case EM_PPC:
+                tmp = ""PowerPC"";
+                break;
+
+            case EM_PPC64:
+                tmp = ""PowerPC 64-bit"";
+                break;
+
+            case EM_S390:
+                tmp = ""IBM S/390"";
+                break;
+
+            case EM_ARM:
+                tmp = ""Advanced RISC Machines"";
+                break;
+
+            case EM_SH:
+                tmp = ""Renesas SuperH"";
+                break;
+            
+            case EM_SPARCV9:
+                tmp = ""SPARC v9 64-bit"";
+                break;
+
+            case EM_IA_64:
+                tmp = ""Intel Itanium"";
+                break;
+
+            case EM_X86_64:
+                tmp = ""AMD x86-64"";
+                break;
+
+            case EM_VAX:
+                tmp = ""DEC Vax"";
+                break;
+            
+            default:
+                tmp = ""An unknown machine"";
+                break;
+        }
+        PRINT_HEADER_EXP(""e_machine:"", ehdr->e_machine, tmp);
+
+        switch (ehdr->e_version) {
+            case EV_NONE:
+                tmp = ""Invalid version"";
+                break;
+
+            case EV_CURRENT:
+                tmp = ""Current version"";
+                break;
+
+            default:
+                tmp = ""Known version"";
+                break;
+        }
+        PRINT_HEADER_EXP(""e_version:"", ehdr->e_version, tmp);
+        PRINT_HEADER(""e_entry:"", ehdr->e_entry);
+        PRINT_HEADER(""e_phoff:"", ehdr->e_phoff);
+        PRINT_HEADER(""e_shoff:"", ehdr->e_shoff);
+        PRINT_HEADER(""e_flags:"", ehdr->e_flags);
+        PRINT_HEADER(""e_ehsize:"", ehdr->e_ehsize);
+        PRINT_HEADER(""e_phentsize:"", ehdr->e_phentsize);
+        PRINT_HEADER(""e_phnum:"", ehdr->e_phnum);
+        PRINT_HEADER(""e_shentsize:"", ehdr->e_shentsize);
+        PRINT_HEADER(""e_shentsize:"", ehdr->e_shentsize);
+        PRINT_HEADER(""e_shstrndx:"", ehdr->e_shstrndx);
+
+        /* Section Information */
+        Elf64_Shdr *shdr;
+        Elf64_Phdr *phdr;
+        Elf64_Shdr shstrtab;
+
+        shdr = (Elf64_Shdr *)&elf_map[ehdr->e_shoff];
+        phdr = (Elf64_Phdr *)&elf_map[ehdr->e_phoff];
+        shstrtab = shdr[ehdr->e_shstrndx];
+
+        INFO(""Section Header Table\n"");
+        PRINT_SECTION_TITLE(""Nr"", ""Name"", ""Type"", ""Addr"", ""Off"", ""Size"", ""Es"", ""Flg"", ""Lk"", ""Inf"", ""Al"");
+        for (int i = 0; i < ehdr->e_shnum; i++) {
+            name = elf_map + shstrtab.sh_offset + shdr[i].sh_name;
+            if (validated_offset(name, elf_map, elf_map + st.st_size)) {
+                ERROR(""Corrupt file format\n"");
+                return -1;
+            }
+
+            switch (shdr[i].sh_type) {
+                case SHT_NULL:
+                    tmp = ""SHT_NULL"";
+                    break;
+                
+                case SHT_PROGBITS:
+                    tmp = ""SHT_PROGBITS"";
+                    break;
+
+                case SHT_SYMTAB:
+                    tmp = ""SHT_SYMTAB"";
+                    break;
+
+                case SHT_STRTAB:
+                    tmp = ""SHT_STRTAB"";
+                    break;
+
+                case SHT_RELA:
+                    tmp = ""SHT_RELA"";
+                    break;
+
+                case SHT_HASH:
+                    tmp = ""SHT_HASH"";
+                    break;
+
+                case SHT_DYNAMIC:
+                    tmp = ""SHT_DYNAMIC"";
+                    break;
+
+                case SHT_NOTE:
+                    tmp = ""SHT_NOTE"";
+                    break;
+
+                case SHT_NOBITS:
+                    tmp = ""SHT_NOBITS"";
+                    break;
+
+                case SHT_REL:
+                    tmp = ""SHT_REL"";
+                    break;
+
+                case SHT_SHLIB:
+                    tmp = ""SHT_SHLIB"";
+                    break;
+
+                case SHT_DYNSYM:
+                    tmp = ""SHT_DYNSYM"";
+                    break;
+
+                case SHT_LOPROC:
+                    tmp = ""SHT_LOPROC"";
+                    break;
+
+                case SHT_HIPROC:
+                    tmp = ""SHT_HIPROC"";
+                    break;
+
+                case SHT_LOUSER:
+                    tmp = ""SHT_LOUSER"";
+                    break;
+
+                case SHT_HIUSER:
+                    tmp = ""SHT_HIUSER"";
+                    break;
+                
+                default:
+                    break;
+            }
+
+            if (strlen(name) > 15) {
+                strcpy(&name[15 - 6], ""[...]"");
+            }
+            strcpy(flag, ""   "");
+            flag2str_sh(shdr[i].sh_flags, flag);
+            PRINT_SECTION(i, name, tmp, shdr[i].sh_addr, shdr[i].sh_offset, shdr[i].sh_size, shdr[i].sh_entsize, \
+                            flag, shdr[i].sh_link, shdr[i].sh_info, shdr[i].sh_addralign);
+        }
+
+        INFO(""Program Header Table\n"");
+        PRINT_PROGRAM_TITLE(""Nr"", ""Type"", ""Offset"", ""Virtaddr"", ""Physaddr"", ""Filesiz"", ""Memsiz"", ""Flg"", ""Align"");
+        for (int i = 0; i < ehdr->e_phnum; i++) {
+            switch (phdr[i].p_type) {
+                case PT_NULL:
+                    tmp = ""PT_NULL"";
+                    break;
+                
+                case PT_LOAD:
+                    tmp = ""PT_LOAD"";
+                    break;
+
+                case PT_DYNAMIC:
+                    tmp = ""PT_DYNAMIC"";
+                    break;
+
+                case PT_INTERP:
+                    tmp = ""PT_INTERP"";
+                    break;
+
+                case PT_NOTE:
+                    tmp = ""PT_NOTE"";
+                    break;
+
+                case PT_SHLIB:
+                    tmp = ""PT_SHLIB"";
+                    break;
+
+                case PT_PHDR:
+                    tmp = ""PT_PHDR"";
+                    break;
+
+                case PT_LOPROC:
+                    tmp = ""PT_LOPROC"";
+                    break;
+
+                case PT_HIPROC:
+                    tmp = ""PT_HIPROC"";
+                    break;
+
+                case PT_GNU_STACK:
+                    tmp = ""PT_GNU_STACK"";
+                    break;
+                
+                default:
+                    break;
+            }
+            strcpy(flag, ""   "");
+            flag2str(phdr[i].p_flags, flag);
+            PRINT_PROGRAM(i, tmp, phdr[i].p_offset, phdr[i].p_vaddr, phdr[i].p_paddr, phdr[i].p_filesz, phdr[i].p_memsz, flag, phdr[i].p_align); 
+        }
+
+        INFO(""Section to segment mapping\n"");
+        for (int i = 0; i < ehdr->e_phnum; i++) {
+            printf(""     [%2d]"", i);
+            for (int j = 0; j < ehdr->e_shnum; j++) {
+                name = elf_map + shstrtab.sh_offset + shdr[j].sh_name;
+                if (shdr[j].sh_addr >= phdr[i].p_vaddr && shdr[j].sh_addr + shdr[j].sh_size <= phdr[i].p_vaddr + phdr[i].p_memsz && shdr[j].sh_type != SHT_NULL) {
+                    if (shdr[j].sh_flags >> 1 & 0x1) {
+                        printf("" %s"", name);
+                    }
+                }    
+            }
+            printf(""\n"");
+        }
+
+        INFO(""Dynamic link information\n"");
+        int dynstr;
+        int dynamic;
+        Elf64_Dyn *dyn;
+        for (int i = 0; i < ehdr->e_shnum; i++) {
+            name = elf_map + shstrtab.sh_offset + shdr[i].sh_name;
+            if (!strcmp(name, "".dynstr"")) {
+                dynstr = i;
+            }
+            if (!strcmp(name, "".dynamic"")) {
+                dynamic = i;
+            }
+        }
+
+        char value[50];
+        name = """";
+        dyn = (Elf64_Dyn *)&elf_map[shdr[dynamic].sh_offset];
+        count = shdr[dynamic].sh_size / sizeof(Elf64_Dyn);
+        INFO(""Dynamic section at offset 0x%x contains %d entries\n"", shdr[dynamic].sh_offset, count);
+        PRINT_DYN_TITLE(""Tag"", ""Type"", ""Name/Value"");
+        
+        for(int i = 0; i < count; i++) {
+            tmp = """";
+            memset(value, 0, 50);
+            snprintf(value, 50, ""0x%x"", dyn[i].d_un.d_val);
+            switch (dyn[i].d_tag) {
+                /* Legal values for d_tag (dynamic entry type).  */
+                case DT_NULL:
+                    tmp = ""DT_NULL"";
+                    break;
+
+                case DT_NEEDED:
+                    tmp = ""DT_NEEDED"";
+                    name = elf_map + shdr[dynstr].sh_offset + dyn[i].d_un.d_val;
+                    snprintf(value, 50, ""Shared library: [%s]"", name);
+                    break;
+                
+                case DT_PLTRELSZ:
+                    tmp = ""DT_PLTRELSZ"";
+                    break;
+
+                case DT_PLTGOT:
+                    tmp = ""DT_PLTGOT"";
+                    break;
+
+                case DT_HASH:
+                    tmp = ""DT_HASH"";
+                    break;
+
+                case DT_STRTAB:
+                    tmp = ""DT_STRTAB"";
+                    break;
+
+                case DT_SYMTAB:
+                    tmp = ""DT_SYMTAB"";
+                    break;
+
+                case DT_RELA:
+                    tmp = ""DT_RELA"";
+                    break;
+
+                case DT_RELASZ:
+                    tmp = ""DT_RELASZ"";
+                    break;
+
+                case DT_RELAENT:
+                    tmp = ""DT_RELAENT"";
+                    break;
+
+                case DT_STRSZ:
+                    tmp = ""DT_STRSZ"";
+                    break;
+
+                case DT_SYMENT:
+                    tmp = ""DT_SYMENT"";
+                    break;
+
+                case DT_INIT:
+                    tmp = ""DT_INIT"";
+                    break;
+
+                case DT_FINI:
+                    tmp = ""DT_FINI"";
+                    break;
+
+                case DT_SONAME:
+                    tmp = ""DT_SONAME"";
+                    break;
+
+                case DT_RPATH:
+                    tmp = ""DT_RPATH"";
+                    break;
+
+                case DT_SYMBOLIC:
+                    tmp = ""DT_SYMBOLIC"";
+                    break;
+
+                case DT_REL:
+                    tmp = ""DT_REL"";
+                    break;
+
+                case DT_RELSZ:
+                    tmp = ""DT_RELSZ"";
+                    break;
+
+                case DT_RELENT:
+                    tmp = ""DT_RELENT"";
+                    break;
+                    
+                case DT_PLTREL:
+                    tmp = ""DT_PLTREL"";
+                    break;
+
+                case DT_DEBUG:
+                    tmp = ""DT_DEBUG"";
+                    break;
+
+                case DT_TEXTREL:
+                    tmp = ""DT_TEXTREL"";
+                    break;
+
+                case DT_JMPREL:
+                    tmp = ""DT_JMPREL"";
+                    break;
+
+                case DT_BIND_NOW:
+                    tmp = ""DT_BIND_NOW"";
+                    break;
+
+                case DT_INIT_ARRAY:
+                    tmp = ""DT_INIT_ARRAY"";
+                    break;
+
+                case DT_FINI_ARRAY:
+                    tmp = ""DT_FINI_ARRAY"";
+                    break;
+
+                case DT_INIT_ARRAYSZ:
+                    tmp = ""DT_INIT_ARRAYSZ"";
+                    break;
+                
+                case DT_FINI_ARRAYSZ:
+                    tmp = ""DT_FINI_ARRAYSZ"";
+                    break;
+
+                case DT_RUNPATH:
+                    tmp = ""DT_RUNPATH"";
+                    break;
+
+                case DT_FLAGS:
+                    tmp = ""DT_FLAGS"";
+                    snprintf(value, 50, ""Flags: %d"", dyn[i].d_un.d_val);
+                    break;
+                
+                case DT_ENCODING:
+                    tmp = ""DT_ENCODING"";
+                    break;
+
+                case DT_PREINIT_ARRAYSZ:
+                    tmp = ""DT_PREINIT_ARRAYSZ"";
+                    break;
+
+                case DT_SYMTAB_SHNDX:
+                    tmp = ""DT_SYMTAB_SHNDX"";
+                    break;
+                
+                case DT_NUM:
+                    tmp = ""DT_NUM"";
+                    break;
+
+                case DT_LOOS:
+                    tmp = ""DT_LOOS"";
+                    break;
+
+                case DT_HIOS:
+                    tmp = ""DT_HIOS"";
+                    break;
+
+                case DT_LOPROC:
+                    tmp = ""DT_LOPROC"";
+                    break;
+
+                case DT_HIPROC:
+                    tmp = ""DT_HIPROC"";
+                    break;
+
+                case DT_PROCNUM:
+                    tmp = ""DT_LOPROC"";
+                    break;
+
+                /* DT_* entries which fall between DT_VALRNGHI & DT_VALRNGLO use the
+                 * Dyn.d_un.d_val field of the Elf*_Dyn structure.  This follows Sun's
+                 * approach. */
+
+                case DT_VALRNGLO:
+                    tmp = ""DT_VALRNGLO"";
+                    break;
+
+                case DT_GNU_PRELINKED:
+                    tmp = ""DT_GNU_PRELINKED"";
+                    break;
+                
+                case DT_GNU_CONFLICTSZ:
+                    tmp = ""DT_GNU_CONFLICTSZ"";
+                    break;
+
+                case DT_GNU_LIBLISTSZ:
+                    tmp = ""DT_GNU_LIBLISTSZ"";
+                    break;
+
+                case DT_CHECKSUM:
+                    tmp = ""DT_CHECKSUM"";
+                    break;
+
+                case DT_PLTPADSZ:
+                    tmp = ""DT_PLTPADSZ"";
+                    break;
+
+                case DT_MOVEENT:
+                    tmp = ""DT_MOVEENT"";
+                    break;
+
+                case DT_MOVESZ:
+                    tmp = ""DT_MOVESZ"";
+                    break;
+
+                case DT_FEATURE_1:
+                    tmp = ""DT_FEATURE_1"";
+                    break;
+
+                case DT_POSFLAG_1:
+                    tmp = ""DT_POSFLAG_1"";
+                    break;
+
+                case DT_SYMINSZ:
+                    tmp = ""DT_SYMINSZ"";
+                    break;
+
+                case DT_SYMINENT:
+                    tmp = ""DT_SYMINENT"";
+                    break;
+
+                /* DT_* entries which fall between DT_ADDRRNGHI & DT_ADDRRNGLO use the
+                 * Dyn.d_un.d_ptr field of the Elf*_Dyn structure.
+                 * If any adjustment is made to the ELF object after it has been
+                 * built these entries will need to be adjusted.  */
+                case DT_ADDRRNGLO:
+                    tmp = ""DT_ADDRRNGLO"";
+                    break;
+
+                case DT_GNU_HASH:
+                    tmp = ""DT_GNU_HASH"";
+                    break;
+
+                case DT_TLSDESC_PLT:
+                    tmp = ""DT_TLSDESC_PLT"";
+                    break;
+
+                case DT_TLSDESC_GOT:
+                    tmp = ""DT_TLSDESC_GOT"";
+                    break;
+
+                case DT_GNU_CONFLICT:
+                    tmp = ""DT_GNU_CONFLICT"";
+                    break;
+
+                case DT_GNU_LIBLIST:
+                    tmp = ""DT_GNU_LIBLIST"";
+                    break;
+
+                case DT_CONFIG:
+                    tmp = ""DT_CONFIG"";
+                    break;
+
+                case DT_DEPAUDIT:
+                    tmp = ""DT_DEPAUDIT"";
+                    break;
+
+                case DT_AUDIT:
+                    tmp = ""DT_AUDIT"";
+                    break;
+
+                case DT_PLTPAD:
+                    tmp = ""DT_PLTPAD"";
+                    break;
+
+                case DT_MOVETAB:
+                    tmp = ""DT_MOVETAB"";
+                    break;
+
+                case DT_SYMINFO:
+                    tmp = ""DT_SYMINFO"";
+                    break;
+                    
+                /* The versioning entry types.  The next are defined as part of the
+                 * GNU extension.  */
+                case DT_VERSYM:
+                    tmp = ""DT_VERSYM"";
+                    break;
+
+                case DT_RELACOUNT:
+                    tmp = ""DT_RELACOUNT"";
+                    break;
+
+                case DT_RELCOUNT:
+                    tmp = ""DT_RELCOUNT"";
+                    break;
+                
+                /* These were chosen by Sun.  */
+                case DT_FLAGS_1:
+                    tmp = ""DT_FLAGS_1"";
+                    switch (dyn[i].d_un.d_val) {
+                        case DF_1_PIE:
+                            snprintf(value, 50, ""Flags: %s"", ""PIE"");
+                            break;
+                        
+                        default:
+                            snprintf(value, 50, ""Flags: %d"", dyn[i].d_un.d_val);
+                            break;
+                    }
+                    
+                    break;
+
+                case DT_VERDEF:
+                    tmp = ""DT_VERDEF"";
+                    break;
+
+                case DT_VERDEFNUM:
+                    tmp = ""DT_VERDEFNUM"";
+                    break;
+
+                case DT_VERNEED:
+                    tmp = ""DT_VERNEED"";
+                    break;
+
+                case DT_VERNEEDNUM:
+                    tmp = ""DT_VERNEEDNUM"";
+                    break;
+                
+                default:
+                    break;
+            }
+            PRINT_DYN(dyn[i].d_tag, tmp, value);
+        }        
+    }
+
+    return 0;
+}",very_long_10k_plus,0,1330,2,all_methods_yes,0,0,1,0,1,0,1,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,0.0013366937637329102,0.9409846067428589,5042,0,1,0,1
+353015,0,1,FP,yes_prior_consensus_false_positive,error_handling,openldap,CWE-617,3647,7,7,"issuerAndThisUpdateCheck(
+	struct berval *in,
+	struct berval *is,
+	struct berval *tu,
+	void *ctx )
+{
+	int numdquotes = 0;
+	struct berval x = *in;
+	struct berval ni = BER_BVNULL;
+	/* Parse GSER format */ 
+	enum {
+		HAVE_NONE = 0x0,
+		HAVE_ISSUER = 0x1,
+		HAVE_THISUPDATE = 0x2,
+		HAVE_ALL = ( HAVE_ISSUER | HAVE_THISUPDATE )
+	} have = HAVE_NONE;
+
+
+	if ( in->bv_len < STRLENOF( ""{issuer \""\"",thisUpdate \""YYMMDDhhmmssZ\""}"" ) ) return LDAP_INVALID_SYNTAX;
+
+	if ( in->bv_val[0] != '{' || in->bv_val[in->bv_len-1] != '}' ) {
+		return LDAP_INVALID_SYNTAX;
+	}
+
+	x.bv_val++;
+	x.bv_len -= STRLENOF(""{}"");
+
+	do {
+		/* eat leading spaces */
+		for ( ; (x.bv_val[0] == ' ') && x.bv_len; x.bv_val++, x.bv_len-- ) {
+			/* empty */;
+		}
+
+		/* should be at issuer or thisUpdate */
+		if ( strncasecmp( x.bv_val, ""issuer"", STRLENOF(""issuer"") ) == 0 ) {
+			if ( have & HAVE_ISSUER ) return LDAP_INVALID_SYNTAX;
+
+			/* parse issuer */
+			x.bv_val += STRLENOF(""issuer"");
+			x.bv_len -= STRLENOF(""issuer"");
+
+			if ( x.bv_val[0] != ' ' ) return LDAP_INVALID_SYNTAX;
+			x.bv_val++;
+			x.bv_len--;
+
+			/* eat leading spaces */
+			for ( ; (x.bv_val[0] == ' ') && x.bv_len; x.bv_val++, x.bv_len-- ) {
+				/* empty */;
+			}
+
+			/* For backward compatibility, this part is optional */
+			if ( strncasecmp( x.bv_val, ""rdnSequence:"", STRLENOF(""rdnSequence:"") ) != 0 ) {
+				return LDAP_INVALID_SYNTAX;
+			}
+			x.bv_val += STRLENOF(""rdnSequence:"");
+			x.bv_len -= STRLENOF(""rdnSequence:"");
+
+			if ( x.bv_val[0] != '""' ) return LDAP_INVALID_SYNTAX;
+			x.bv_val++;
+			x.bv_len--;
+
+			is->bv_val = x.bv_val;
+			is->bv_len = 0;
+
+			for ( ; is->bv_len < x.bv_len; ) {
+				if ( is->bv_val[is->bv_len] != '""' ) {
+					is->bv_len++;
+					continue;
+				}
+				if ( is->bv_val[is->bv_len+1] == '""' ) {
+					/* double dquote */
+					numdquotes++;
+					is->bv_len += 2;
+					continue;
+				}
+				break;
+			}
+			x.bv_val += is->bv_len + 1;
+			x.bv_len -= is->bv_len + 1;
+
+			have |= HAVE_ISSUER;
+
+		} else if ( strncasecmp( x.bv_val, ""thisUpdate"", STRLENOF(""thisUpdate"") ) == 0 )
+		{
+			if ( have & HAVE_THISUPDATE ) return LDAP_INVALID_SYNTAX;
+
+			/* parse thisUpdate */
+			x.bv_val += STRLENOF(""thisUpdate"");
+			x.bv_len -= STRLENOF(""thisUpdate"");
+
+			if ( x.bv_val[0] != ' ' ) return LDAP_INVALID_SYNTAX;
+			x.bv_val++;
+			x.bv_len--;
+
+			/* eat leading spaces */
+			for ( ; (x.bv_val[0] == ' ') && x.bv_len; x.bv_val++, x.bv_len-- ) {
+				/* empty */;
+			}
+
+			if ( !x.bv_len || x.bv_val[0] != '""' ) return LDAP_INVALID_SYNTAX;
+			x.bv_val++;
+			x.bv_len--;
+
+			tu->bv_val = x.bv_val;
+			tu->bv_len = 0;
+
+			for ( ; tu->bv_len < x.bv_len; tu->bv_len++ ) {
+				if ( tu->bv_val[tu->bv_len] == '""' ) {
+					break;
+				}
+			}
+			if ( tu->bv_len < STRLENOF(""YYYYmmddHHmmssZ"") ) return LDAP_INVALID_SYNTAX;
+
+			x.bv_val += tu->bv_len + 1;
+			x.bv_len -= tu->bv_len + 1;
+
+			have |= HAVE_THISUPDATE;
+
+		} else {
+			return LDAP_INVALID_SYNTAX;
+		}
+
+		/* eat leading spaces */
+		for ( ; (x.bv_val[0] == ' ') && x.bv_len; x.bv_val++, x.bv_len-- ) {
+			/* empty */;
+		}
+
+		if ( have == HAVE_ALL ) {
+			break;
+		}
+
+		if ( x.bv_val[0] != ',' ) {
+			return LDAP_INVALID_SYNTAX;
+		}
+
+		x.bv_val++;
+		x.bv_len--;
+	} while ( 1 );
+
+	/* should have no characters left... */
+	if ( x.bv_len ) return LDAP_INVALID_SYNTAX;
+
+	if ( numdquotes == 0 ) {
+		ber_dupbv_x( &ni, is, ctx );
+
+	} else {
+		ber_len_t src, dst;
+
+		ni.bv_len = is->bv_len - numdquotes;
+		ni.bv_val = slap_sl_malloc( ni.bv_len + 1, ctx );
+		for ( src = 0, dst = 0; src < is->bv_len; src++, dst++ ) {
+			if ( is->bv_val[src] == '""' ) {
+				src++;
+			}
+			ni.bv_val[dst] = is->bv_val[src];
+		}
+		ni.bv_val[dst] = '\0';
+	}
+		
+	*is = ni;
+
+	return 0;
+}",0,1,0,0,1,0,ITS#9454 fix issuerAndThisUpdateCheck,"In OpenLDAP through 2.4.57 and 2.5.x through 2.5.1alpha, an assertion failure in slapd can occur in the issuerAndThisUpdateCheck function via a crafted packet, resulting in a denial of service (daemon exit) via a short timestamp. This is related to schema_init.c and checkTime.",14,"issuerAndThisUpdateCheck(
+	struct berval *in,
+	struct berval *is,
+	struct berval *tu,
+	void *ctx )
+{
+	int numdquotes = 0;
+	struct berval x = *in;
+	struct berval ni = BER_BVNULL;
+	/* Parse GSER format */ 
+	enum {
+		HAVE_NONE = 0x0,
+		HAVE_ISSUER = 0x1,
+		HAVE_THISUPDATE = 0x2,
+		HAVE_ALL = ( HAVE_ISSUER | HAVE_THISUPDATE )
+	} have = HAVE_NONE;
+
+
+	if ( in->bv_len < STRLENOF( ""{issuer \""\"",thisUpdate \""YYMMDDhhmmssZ\""}"" ) ) return LDAP_INVALID_SYNTAX;
+
+	if ( in->bv_val[0] != '{' || in->bv_val[in->bv_len-1] != '}' ) {
+		return LDAP_INVALID_SYNTAX;
+	}
+
+	x.bv_val++;
+	x.bv_len -= STRLENOF(""{}"");
+
+	do {
+		/* eat leading spaces */
+		for ( ; (x.bv_val[0] == ' ') && x.bv_len; x.bv_val++, x.bv_len-- ) {
+			/* empty */;
+		}
+
+		/* should be at issuer or thisUpdate */
+		if ( strncasecmp( x.bv_val, ""issuer"", STRLENOF(""issuer"") ) == 0 ) {
+			if ( have & HAVE_ISSUER ) return LDAP_INVALID_SYNTAX;
+
+			/* parse issuer */
+			x.bv_val += STRLENOF(""issuer"");
+			x.bv_len -= STRLENOF(""issuer"");
+
+			if ( x.bv_val[0] != ' ' ) return LDAP_INVALID_SYNTAX;
+			x.bv_val++;
+			x.bv_len--;
+
+			/* eat leading spaces */
+			for ( ; (x.bv_val[0] == ' ') && x.bv_len; x.bv_val++, x.bv_len-- ) {
+				/* empty */;
+			}
+
+			/* For backward compatibility, this part is optional */
+			if ( strncasecmp( x.bv_val, ""rdnSequence:"", STRLENOF(""rdnSequence:"") ) != 0 ) {
+				return LDAP_INVALID_SYNTAX;
+			}
+			x.bv_val += STRLENOF(""rdnSequence:"");
+			x.bv_len -= STRLENOF(""rdnSequence:"");
+
+			if ( x.bv_val[0] != '""' ) return LDAP_INVALID_SYNTAX;
+			x.bv_val++;
+			x.bv_len--;
+
+			is->bv_val = x.bv_val;
+			is->bv_len = 0;
+
+			for ( ; is->bv_len < x.bv_len; ) {
+				if ( is->bv_val[is->bv_len] != '""' ) {
+					is->bv_len++;
+					continue;
+				}
+				if ( is->bv_val[is->bv_len+1] == '""' ) {
+					/* double dquote */
+					numdquotes++;
+					is->bv_len += 2;
+					continue;
+				}
+				break;
+			}
+			x.bv_val += is->bv_len + 1;
+			x.bv_len -= is->bv_len + 1;
+
+			have |= HAVE_ISSUER;
+
+		} else if ( strncasecmp( x.bv_val, ""thisUpdate"", STRLENOF(""thisUpdate"") ) == 0 )
+		{
+			if ( have & HAVE_THISUPDATE ) return LDAP_INVALID_SYNTAX;
+
+			/* parse thisUpdate */
+			x.bv_val += STRLENOF(""thisUpdate"");
+			x.bv_len -= STRLENOF(""thisUpdate"");
+
+			if ( x.bv_val[0] != ' ' ) return LDAP_INVALID_SYNTAX;
+			x.bv_val++;
+			x.bv_len--;
+
+			/* eat leading spaces */
+			for ( ; (x.bv_val[0] == ' ') && x.bv_len; x.bv_val++, x.bv_len-- ) {
+				/* empty */;
+			}
+
+			if ( !x.bv_len || x.bv_val[0] != '""' ) return LDAP_INVALID_SYNTAX;
+			x.bv_val++;
+			x.bv_len--;
+
+			tu->bv_val = x.bv_val;
+			tu->bv_len = 0;
+
+			for ( ; tu->bv_len < x.bv_len; tu->bv_len++ ) {
+				if ( tu->bv_val[tu->bv_len] == '""' ) {
+					break;
+				}
+			}
+			if ( tu->bv_len < STRLENOF(""YYYYmmddHHmmssZ"") ) return LDAP_INVALID_SYNTAX;
+
+			x.bv_val += tu->bv_len + 1;
+			x.bv_len -= tu->bv_len + 1;
+
+			have |= HAVE_THISUPDATE;
+
+		} else {
+			return LDAP_INVALID_SYNTAX;
+		}
+
+		/* eat leading spaces */
+		for ( ; (x.bv_val[0] == ' ') && x.bv_len; x.bv_val++, x.bv_len-- ) {
+			/* empty */;
+		}
+
+		if ( have == HAVE_ALL ) {
+			break;
+		}
+
+		if ( x.bv_val[0] != ',' ) {
+			return LDAP_INVALID_SYNTAX;
+		}
+
+		x.bv_val++;
+		x.bv_len--;
+	} while ( 1 );
+
+	/* should have no characters left... */
+	if ( x.bv_len ) return LDAP_INVALID_SYNTAX;
+
+	if ( numdquotes == 0 ) {
+		ber_dupbv_x( &ni, is, ctx );
+
+	} else {
+		ber_len_t src, dst;
+
+		ni.bv_len = is->bv_len - numdquotes;
+		ni.bv_val = slap_sl_malloc( ni.bv_len + 1, ctx );
+		for ( src = 0, dst = 0; src < is->bv_len; src++, dst++ ) {
+			if ( is->bv_val[src] == '""' ) {
+				src++;
+			}
+			ni.bv_val[dst] = is->bv_val[src];
+		}
+		ni.bv_val[dst] = '\0';
+	}
+		
+	*is = ni;
+
+	return 0;
+}",medium_2k_5k,0,163,0,all_methods_yes,0,0,1,0,1,0,1,repair_checked_absent_or_irrelevant:bounds_or_shape_check,retrieval_neg_margin,-0.032380104064941406,1.000000238418579,1010,0,1,0,1
+223089,0,1,FP,yes_prior_consensus_false_positive,error_handling,ImageMagick,CWE-190,8029,7,7,"static Image *ReadPCLImage(const ImageInfo *image_info,ExceptionInfo *exception)
+{
+#define CropBox  ""CropBox""
+#define DeviceCMYK  ""DeviceCMYK""
+#define MediaBox  ""MediaBox""
+#define RenderPCLText  ""  Rendering PCL...  ""
+
+  char
+    command[MagickPathExtent],
+    *density,
+    filename[MagickPathExtent],
+    geometry[MagickPathExtent],
+    *options,
+    input_filename[MagickPathExtent];
+
+  const DelegateInfo
+    *delegate_info;
+
+  Image
+    *image,
+    *next_image;
+
+  ImageInfo
+    *read_info;
+
+  MagickBooleanType
+    cmyk,
+    status;
+
+  PointInfo
+    delta;
+
+  RectangleInfo
+    bounding_box,
+    page;
+
+  char
+    *p;
+
+  ssize_t
+    c;
+
+  SegmentInfo
+    bounds;
+
+  size_t
+    height,
+    width;
+
+  ssize_t
+    count;
+
+  assert(image_info != (const ImageInfo *) NULL);
+  assert(image_info->signature == MagickCoreSignature);
+  if (image_info->debug != MagickFalse)
+    (void) LogMagickEvent(TraceEvent,GetMagickModule(),""%s"",
+      image_info->filename);
+  assert(exception != (ExceptionInfo *) NULL);
+  assert(exception->signature == MagickCoreSignature);
+  /*
+    Open image file.
+  */
+  image=AcquireImage(image_info,exception);
+  status=OpenBlob(image_info,image,ReadBinaryBlobMode,exception);
+  if (status == MagickFalse)
+    {
+      image=DestroyImageList(image);
+      return((Image *) NULL);
+    }
+  status=AcquireUniqueSymbolicLink(image_info->filename,input_filename);
+  if (status == MagickFalse)
+    {
+      ThrowFileException(exception,FileOpenError,""UnableToCreateTemporaryFile"",
+        image_info->filename);
+      image=DestroyImageList(image);
+      return((Image *) NULL);
+    }
+  /*
+    Set the page density.
+  */
+  delta.x=DefaultResolution;
+  delta.y=DefaultResolution;
+  if ((image->resolution.x == 0.0) || (image->resolution.y == 0.0))
+    {
+      GeometryInfo
+        geometry_info;
+
+      MagickStatusType
+        flags;
+
+      flags=ParseGeometry(PSDensityGeometry,&geometry_info);
+      if ((flags & RhoValue) != 0)
+        image->resolution.x=geometry_info.rho;
+      image->resolution.y=image->resolution.x;
+      if ((flags & SigmaValue) != 0)
+        image->resolution.y=geometry_info.sigma;
+    }
+  /*
+    Determine page geometry from the PCL media box.
+  */
+  cmyk=image->colorspace == CMYKColorspace ? MagickTrue : MagickFalse;
+  count=0;
+  (void) memset(&bounding_box,0,sizeof(bounding_box));
+  (void) memset(&bounds,0,sizeof(bounds));
+  (void) memset(&page,0,sizeof(page));
+  (void) memset(command,0,sizeof(command));
+  p=command;
+  for (c=ReadBlobByte(image); c != EOF; c=ReadBlobByte(image))
+  {
+    if (image_info->page != (char *) NULL)
+      continue;
+    /*
+      Note PCL elements.
+    */
+    *p++=(char) c;
+    if ((c != (int) '/') && (c != '\n') &&
+        ((size_t) (p-command) < (MagickPathExtent-1)))
+      continue;
+    *p='\0';
+    p=command;
+    /*
+      Is this a CMYK document?
+    */
+    if (LocaleNCompare(DeviceCMYK,command,strlen(DeviceCMYK)) == 0)
+      cmyk=MagickTrue;
+    if (LocaleNCompare(CropBox,command,strlen(CropBox)) == 0)
+      {
+        /*
+          Note region defined by crop box.
+        */
+        count=(ssize_t) sscanf(command,""CropBox [%lf %lf %lf %lf"",
+          &bounds.x1,&bounds.y1,&bounds.x2,&bounds.y2);
+        if (count != 4)
+          count=(ssize_t) sscanf(command,""CropBox[%lf %lf %lf %lf"",
+            &bounds.x1,&bounds.y1,&bounds.x2,&bounds.y2);
+      }
+    if (LocaleNCompare(MediaBox,command,strlen(MediaBox)) == 0)
+      {
+        /*
+          Note region defined by media box.
+        */
+        count=(ssize_t) sscanf(command,""MediaBox [%lf %lf %lf %lf"",
+          &bounds.x1,&bounds.y1,&bounds.x2,&bounds.y2);
+        if (count != 4)
+          count=(ssize_t) sscanf(command,""MediaBox[%lf %lf %lf %lf"",
+            &bounds.x1,&bounds.y1,&bounds.x2,&bounds.y2);
+      }
+    if (count != 4)
+      continue;
+    /*
+      Set PCL render geometry.
+    */
+    width=(size_t)CastDoubleToLong(floor(bounds.x2-bounds.x1+0.5));
+    height=(size_t)CastDoubleToLong(floor(bounds.y2-bounds.y1+0.5));
+    if (width > page.width)
+      page.width=width;
+    if (height > page.height)
+      page.height=height;
+  }
+  (void) CloseBlob(image);
+  /*
+    Render PCL with the GhostPCL delegate.
+  */
+  if ((page.width == 0) || (page.height == 0))
+    (void) ParseAbsoluteGeometry(PSPageGeometry,&page);
+  if (image_info->page != (char *) NULL)
+    (void) ParseAbsoluteGeometry(image_info->page,&page);
+  (void) FormatLocaleString(geometry,MagickPathExtent,""%.20gx%.20g"",(double)
+    page.width,(double) page.height);
+  if (image_info->monochrome != MagickFalse)
+    delegate_info=GetDelegateInfo(""pcl:mono"",(char *) NULL,exception);
+  else
+     if (cmyk != MagickFalse)
+       delegate_info=GetDelegateInfo(""pcl:cmyk"",(char *) NULL,exception);
+     else
+       delegate_info=GetDelegateInfo(""pcl:color"",(char *) NULL,exception);
+  if (delegate_info == (const DelegateInfo *) NULL)
+    {
+      image=DestroyImage(image);
+      return((Image *) NULL);
+    }
+  if ((page.width == 0) || (page.height == 0))
+    (void) ParseAbsoluteGeometry(PSPageGeometry,&page);
+  if (image_info->page != (char *) NULL)
+    (void) ParseAbsoluteGeometry(image_info->page,&page);
+  density=AcquireString("""");
+  options=AcquireString("""");
+  (void) FormatLocaleString(density,MagickPathExtent,""%gx%g"",
+    image->resolution.x,image->resolution.y);
+  if (image_info->ping != MagickFalse)
+    (void) FormatLocaleString(density,MagickPathExtent,""2.0x2.0"");
+  page.width=(size_t) floor(page.width*image->resolution.x/delta.x+0.5);
+  page.height=(size_t) floor(page.height*image->resolution.y/delta.y+0.5);
+  (void) FormatLocaleString(options,MagickPathExtent,""-g%.20gx%.20g "",(double)
+    page.width,(double) page.height);
+  image=DestroyImage(image);
+  read_info=CloneImageInfo(image_info);
+  *read_info->magick='\0';
+  if (read_info->number_scenes != 0)
+    {
+      if (read_info->number_scenes != 1)
+        (void) FormatLocaleString(options,MagickPathExtent,""-dLastPage=%.20g"",
+          (double) (read_info->scene+read_info->number_scenes))
+/* ... truncated ... */",0,1,0,0,1,38,"Fixes #4985: 4e+26 is outside the range of representable values of type 'unsigned long' at coders/pcl.c:299 (#4986)
+
+* fix Division by zero in XMenuWidget() of MagickCore/widget.c
+
+* Fix memory leak in AnimateImageCommand() of MagickWand/animate.c and DisplayImageCommand() of MagickWand/display.c
+
+* fix Division by zero in ReadEnhMetaFile() of coders/emf.c
+
+* Resolve conflicts
+
+* fix issue: outside the range of representable values of type 'unsigned char' at coders/psd.c:1025
+
+* fix error: 4e+26 is outside the range of representable values of type 'unsigned long' at coders/pcl.c:299
+
+Co-authored-by: zhailiangliang <zhailiangliang@loongson.cn>","A vulnerability was found in ImageMagick, causing an outside the range of representable values of type 'unsigned long' at coders/pcl.c, when crafted or untrusted input is processed. This leads to a negative impact to application availability or other problems related to undefined behavior.",52,"static Image *ReadPCLImage(const ImageInfo *image_info,ExceptionInfo *exception)
+{
+#define CropBox  ""CropBox""
+#define DeviceCMYK  ""DeviceCMYK""
+#define MediaBox  ""MediaBox""
+#define RenderPCLText  ""  Rendering PCL...  ""
+
+  char
+    command[MagickPathExtent],
+    *density,
+    filename[MagickPathExtent],
+    geometry[MagickPathExtent],
+    *options,
+    input_filename[MagickPathExtent];
+
+  const DelegateInfo
+    *delegate_info;
+
+  Image
+    *image,
+    *next_image;
+
+  ImageInfo
+    *read_info;
+
+  MagickBooleanType
+    cmyk,
+    status;
+
+  PointInfo
+    delta;
+
+  RectangleInfo
+    bounding_box,
+    page;
+
+  char
+    *p;
+
+  ssize_t
+    c;
+
+  SegmentInfo
+    bounds;
+
+  size_t
+    height,
+    width;
+
+  ssize_t
+    count;
+
+  assert(image_info != (const ImageInfo *) NULL);
+  assert(image_info->signature == MagickCoreSignature);
+  if (image_info->debug != MagickFalse)
+    (void) LogMagickEvent(TraceEvent,GetMagickModule(),""%s"",
+      image_info->filename);
+  assert(exception != (ExceptionInfo *) NULL);
+  assert(exception->signature == MagickCoreSignature);
+  /*
+    Open image file.
+  */
+  image=AcquireImage(image_info,exception);
+  status=OpenBlob(image_info,image,ReadBinaryBlobMode,exception);
+  if (status == MagickFalse)
+    {
+      image=DestroyImageList(image);
+      return((Image *) NULL);
+    }
+  status=AcquireUniqueSymbolicLink(image_info->filename,input_filename);
+  if (status == MagickFalse)
+    {
+      ThrowFileException(exception,FileOpenError,""UnableToCreateTemporaryFile"",
+        image_info->filename);
+      image=DestroyImageList(image);
+      return((Image *) NULL);
+    }
+  /*
+    Set the page density.
+  */
+  delta.x=DefaultResolution;
+  delta.y=DefaultResolution;
+  if ((image->resolution.x == 0.0) || (image->resolution.y == 0.0))
+    {
+      GeometryInfo
+        geometry_info;
+
+      MagickStatusType
+        flags;
+
+      flags=ParseGeometry(PSDensityGeometry,&geometry_info);
+      if ((flags & RhoValue) != 0)
+        image->resolution.x=geometry_info.rho;
+      image->resolution.y=image->resolution.x;
+      if ((flags & SigmaValue) != 0)
+        image->resolution.y=geometry_info.sigma;
+    }
+  /*
+    Determine page geometry from the PCL media box.
+  */
+  cmyk=image->colorspace == CMYKColorspace ? MagickTrue : MagickFalse;
+  count=0;
+  (void) memset(&bounding_box,0,sizeof(bounding_box));
+  (void) memset(&bounds,0,sizeof(bounds));
+  (void) memset(&page,0,sizeof(page));
+  (void) memset(command,0,sizeof(command));
+  p=command;
+  for (c=ReadBlobByte(image); c != EOF; c=ReadBlobByte(image))
+  {
+    if (image_info->page != (char *) NULL)
+      continue;
+    /*
+      Note PCL elements.
+    */
+    *p++=(char) c;
+    if ((c != (int) '/') && (c != '\n') &&
+        ((size_t) (p-command) < (MagickPathExtent-1)))
+      continue;
+    *p='\0';
+    p=command;
+    /*
+      Is this a CMYK document?
+    */
+    if (LocaleNCompare(DeviceCMYK,command,strlen(DeviceCMYK)) == 0)
+      cmyk=MagickTrue;
+    if (LocaleNCompare(CropBox,command,strlen(CropBox)) == 0)
+      {
+        /*
+          Note region defined by crop box.
+        */
+        count=(ssize_t) sscanf(command,""CropBox [%lf %lf %lf %lf"",
+          &bounds.x1,&bounds.y1,&bounds.x2,&bounds.y2);
+        if (count != 4)
+          count=(ssize_t) sscanf(command,""CropBox[%lf %lf %lf %lf"",
+            &bounds.x1,&bounds.y1,&bounds.x2,&bounds.y2);
+      }
+    if (LocaleNCompare(MediaBox,command,strlen(MediaBox)) == 0)
+      {
+        /*
+          Note region defined by media box.
+        */
+        count=(ssize_t) sscanf(command,""MediaBox [%lf %lf %lf %lf"",
+          &bounds.x1,&bounds.y1,&bounds.x2,&bounds.y2);
+        if (count != 4)
+          count=(ssize_t) sscanf(command,""MediaBox[%lf %lf %lf %lf"",
+            &bounds.x1,&bounds.y1,&bounds.x2,&bounds.y2);
+      }
+    if (count != 4)
+      continue;
+    /*
+      Set PCL render geometry.
+    */
+    width=(size_t)CastDoubleToLong(floor(bounds.x2-bounds.x1+0.5));
+    height=(size_t)CastDoubleToLong(floor(bounds.y2-bounds.y1+0.5));
+    if (width > page.width)
+      page.width=width;
+    if (height > page.height)
+      page.height=height;
+  }
+  (void) CloseBlob(image);
+  /*
+    Render PCL with the GhostPCL delegate.
+  */
+  if ((page.width == 0) || (page.height == 0))
+    (void) ParseAbsoluteGeometry(PSPageGeometry,&page);
+  if (image_info->page != (char *) NULL)
+    (void) ParseAbsoluteGeometry(image_info->page,&page);
+  (void) FormatLocaleString(geometry,MagickPathExtent,""%.20gx%.20g"",(double)
+    page.width,(double) page.height);
+  if (image_info->monochrome != MagickFalse)
+    delegate_info=GetDelegateInfo(""pcl:mono"",(char *) NULL,exception);
+  else
+     if (cmyk != MagickFalse)
+       delegate_info=GetDelegateInfo(""pcl:cmyk"",(char *) NULL,exception);
+     else
+       delegate_info=GetDelegateInfo(""pcl:color"",(char *) NULL,exception);
+  if (delegate_info == (const DelegateInfo *) NULL)
+    {
+      image=DestroyImage(image);
+      return((Image *) NULL);
+    }
+  if ((page.width == 0) || (page.height == 0))
+    (void) ParseAbsoluteGeometry(PSPageGeometry,&page);
+  if (image_info->page != (char *) NULL)
+    (void) ParseAbsoluteGeometry(image_info->page,&page);
+  density=AcquireString("""");
+  options=AcquireString("""");
+  (void) FormatLocaleString(density,MagickPathExtent,""%gx%g"",
+    image->resolution.x,image->resolution.y);
+  if (image_info->ping != MagickFalse)
+    (void) FormatLocaleString(density,MagickPathExtent,""2.0x2.0"");
+  page.width=(size_t) floor(page.width*image->resolution.x/delta.x+0.5);
+  page.height=(size_t) floor(page.height*image->resolution.y/delta.y+0.5);
+  (void) FormatLocaleString(options,MagickPathExtent,""-g%.20gx%.20g "",(double)
+    page.width,(double) page.height);
+  image=DestroyImage(image);
+  read_info=CloneImageInfo(image_info);
+  *read_info->magick='\0';
+  if (read_info->number_scenes != 0)
+    {
+      if (read_info->number_scenes != 1)
+        (void) FormatLocaleString(options,MagickPathExtent,""-dLastPage=%.20g"",
+          (double) (read_info->scene+read_info->number_scenes));
+      else
+        (void) FormatLocaleString(options,MagickPathExtent,
+          ""-dFirstPage=%.20g -dLastPage=%.20g"",(double) read_info->scene+1,
+          (double) (read_info->scene+read_info->number_scenes));
+      read_info->number_scenes=0;
+      if (read_info->scenes != (char *) NULL)
+        *read_info->scenes='\0';
+    }
+  (void) CopyMagickString(filename,read_info->filename,MagickPathExtent);
+  (void) AcquireUniqueFilename(read_info->filename);
+  (void) FormatLocaleString(command,MagickPathExtent,
+    GetDelegateCommands(delegate_info),
+    read_info->antialias != MagickFalse ? 4 : 1,
+    read_info->antialias != MagickFalse ? 4 : 1,density,options,
+    read_info->filename,input_filename);
+  options=DestroyString(options);
+  density=DestroyString(density);
+  status=ExternalDelegateCommand(MagickFalse,read_info->verbose,command,
+    (char *) NULL,exception) != 0 ? MagickTrue : MagickFalse;
+  image=ReadImage(read_info,exception);
+  (void) RelinquishUniqueFileResource(read_info->filename);
+  (void) RelinquishUniqueFileResource(input_filename);
+  read_info=DestroyImageInfo(read_info);
+  if (image == (Image *) NULL)
+    ThrowReaderException(DelegateError,""PCLDelegateFailed"");
+  if (LocaleCompare(image->magick,""BMP"") == 0)
+    {
+      Image
+        *cmyk_image;
+
+      cmyk_image=ConsolidateCMYKImages(image,exception);
+      if (cmyk_image != (Image *) NULL)
+        {
+          image=DestroyImageList(image);
+          image=cmyk_image;
+        }
+    }
+  do
+  {
+    (void) CopyMagickString(image->filename,filename,MagickPathExtent);
+    image->page=page;
+    if (image_info->ping != MagickFalse)
+      {
+        image->magick_columns*=image->resolution.x/2.0;
+        image->magick_rows*=image->resolution.y/2.0;
+        image->columns*=image->resolution.x/2.0;
+        image->rows*=image->resolution.y/2.0;
+      }
+    next_image=SyncNextImageInList(image);
+    if (next_image != (Image *) NULL)
+      image=next_image;
+  } while (next_image != (Image *) NULL);
+  return(GetFirstImageInList(image));
+}",long_5k_10k,0,257,4,all_methods_yes,18,0,1,0,1,0,1,no_repair_verifier_candidate,retrieval_pos_margin,0.011409521102905273,1.0,1847,0,1,0,1
+477946,0,1,FP,yes_prior_consensus_false_positive,error_handling,clamav-devel,CWE-20,5230,7,7,"int qtm_decompress(struct qtm_stream *qtm, off_t out_bytes) {
+  unsigned int frame_start, frame_end, window_posn, match_offset, range;
+  unsigned char *window, *i_ptr, *i_end, *runsrc, *rundest;
+  int i, j, selector, extra, sym, match_length, ret;
+  unsigned short H, L, C, symf;
+
+  register unsigned int bit_buffer;
+  register unsigned char bits_left;
+  unsigned char bits_needed, bit_run;
+
+  /* easy answers */
+  if (!qtm || (out_bytes < 0)) return CL_ENULLARG;
+  if (qtm->error) return qtm->error;
+
+  /* flush out any stored-up bytes before we begin */
+  i = qtm->o_end - qtm->o_ptr;
+  if ((off_t) i > out_bytes) i = (int) out_bytes;
+  if (i) {
+    if (qtm->wflag && (ret = mspack_write(qtm->ofd, qtm->o_ptr, i, qtm->file)) != CL_SUCCESS) {
+      return qtm->error = ret;
+    }
+    qtm->o_ptr  += i;
+    out_bytes   -= i;
+  }
+  if (out_bytes == 0) return CL_SUCCESS;
+
+  /* restore local state */
+  QTM_RESTORE_BITS;
+  window = qtm->window;
+  window_posn = qtm->window_posn;
+  frame_start = qtm->frame_start;
+  H = qtm->H;
+  L = qtm->L;
+  C = qtm->C;
+
+  /* while we do not have enough decoded bytes in reserve: */
+  while ((qtm->o_end - qtm->o_ptr) < out_bytes) {
+
+    /* read header if necessary. Initialises H, L and C */
+    if (!qtm->header_read) {
+      H = 0xFFFF; L = 0; QTM_READ_BITS(C, 16);
+      qtm->header_read = 1;
+    }
+
+    /* decode more, at most up to to frame boundary */
+    frame_end = window_posn + (out_bytes - (qtm->o_end - qtm->o_ptr));
+    if ((frame_start + QTM_FRAME_SIZE) < frame_end) {
+      frame_end = frame_start + QTM_FRAME_SIZE;
+    }
+
+    while (window_posn < frame_end) {
+      QTM_GET_SYMBOL(qtm->model7, selector);
+      if (selector < 4) {
+	struct qtm_model *mdl = (selector == 0) ? &qtm->model0 :
+	                        ((selector == 1) ? &qtm->model1 :
+				((selector == 2) ? &qtm->model2 :
+                                                   &qtm->model3));
+	QTM_GET_SYMBOL((*mdl), sym);
+	window[window_posn++] = sym;
+      }
+      else {
+	switch (selector) {
+	case 4: /* selector 4 = fixed length match (3 bytes) */
+	  QTM_GET_SYMBOL(qtm->model4, sym);
+	  QTM_READ_BITS(extra, qtm->extra_bits[sym]);
+	  match_offset = qtm->position_base[sym] + extra + 1;
+	  match_length = 3;
+	  break;
+
+	case 5: /* selector 5 = fixed length match (4 bytes) */
+	  QTM_GET_SYMBOL(qtm->model5, sym);
+	  QTM_READ_BITS(extra, qtm->extra_bits[sym]);
+	  match_offset = qtm->position_base[sym] + extra + 1;
+	  match_length = 4;
+	  break;
+
+	case 6: /* selector 6 = variable length match */
+	  QTM_GET_SYMBOL(qtm->model6len, sym);
+	  QTM_READ_BITS(extra, qtm->length_extra[sym]);
+	  match_length = qtm->length_base[sym] + extra + 5;
+
+	  QTM_GET_SYMBOL(qtm->model6, sym);
+	  QTM_READ_BITS(extra, qtm->extra_bits[sym]);
+	  match_offset = qtm->position_base[sym] + extra + 1;
+	  break;
+
+	default:
+	  /* should be impossible, model7 can only return 0-6 */
+	  return qtm->error = CL_EFORMAT;
+	}
+
+	if (window_posn + match_length > qtm->window_size) {
+	  cli_dbgmsg(""qtm_decompress: match ran over window wrap\n"");
+	  return qtm->error = CL_EFORMAT;
+	}
+
+	rundest = &window[window_posn];
+	i = match_length;
+	/* does match offset wrap the window? */
+	if (match_offset > window_posn) {
+	  /* j = length from match offset to end of window */
+	  j = match_offset - window_posn;
+	  if (j > (int) qtm->window_size) {
+	    cli_dbgmsg(""qtm_decompress: match offset beyond window boundaries\n"");
+	    return qtm->error = CL_EFORMAT;
+	  }
+	  runsrc = &window[qtm->window_size - j];
+	  if (j < i) {
+	    /* if match goes over the window edge, do two copy runs */
+	    i -= j; while (j-- > 0) *rundest++ = *runsrc++;
+	    runsrc = window;
+	  }
+	  while (i-- > 0) *rundest++ = *runsrc++;
+	}
+	else {
+	  runsrc = rundest - match_offset;
+	  if(i > (int) (qtm->window_size - window_posn))
+	    i = qtm->window_size - window_posn;
+	  while (i-- > 0) *rundest++ = *runsrc++;
+	}
+	window_posn += match_length;
+      }
+    } /* while (window_posn < frame_end) */
+
+    qtm->o_end = &window[window_posn];
+
+    /* another frame completed? */
+    if ((window_posn - frame_start) >= QTM_FRAME_SIZE) {
+      if ((window_posn - frame_start) != QTM_FRAME_SIZE) {
+	cli_dbgmsg(""qtm_decompress: overshot frame alignment\n"");
+	return qtm->error = CL_EFORMAT;
+      }
+
+      /* re-align input */
+      if (bits_left & 7) QTM_REMOVE_BITS(bits_left & 7);
+      do { QTM_READ_BITS(i, 8); } while (i != 0xFF);
+      qtm->header_read = 0;
+
+      /* window wrap? */
+      if (window_posn == qtm->window_size) {
+	/* flush all currently stored data */
+	i = (qtm->o_end - qtm->o_ptr);
+	if (qtm->wflag && (ret = mspack_write(qtm->ofd, qtm->o_ptr, i, qtm->file)) != CL_SUCCESS) {
+	  return qtm->error = ret;
+	}
+	out_bytes -= i;
+	qtm->o_ptr = &window[0];
+	qtm->o_end = &window[0];
+	window_posn = 0;
+      }
+
+      frame_start = window_posn;
+    }
+
+  } /* while (more bytes needed) */
+
+  if (out_bytes) {
+    i = (int) out_bytes;
+    if (qtm->wflag && (ret = mspack_write(qtm->ofd, qtm->o_ptr, i, qtm->file)) != CL_SUCCESS) {
+      return qtm->error = ret;
+    }
+    qtm->o_ptr += i;
+  }
+
+  /* store local state */
+  QTM_STORE_BITS;
+  qtm->window_posn = window_posn;
+  qtm->frame_start = frame_start;
+  qtm->H = H;
+  qtm->L = L;
+  qtm->C = C;
+
+  return CL_SUCCESS;
+}",0,1,0,0,1,7,libclamav/mspack.c: fix Quantum decompressor (bb#1771),The qtm_decompress function in libclamav/mspack.c in ClamAV before 0.96 allows remote attackers to cause a denial of service (memory corruption and application crash) via a crafted CAB archive that uses the Quantum (aka .Q) compression format.  NOTE: some of these details are obtained from third party information.,21,"int qtm_decompress(struct qtm_stream *qtm, off_t out_bytes) {
+  unsigned int frame_start, frame_end, window_posn, match_offset, range;
+  unsigned char *window, *i_ptr, *i_end, *runsrc, *rundest;
+  int i, j, selector, extra, sym, match_length, ret;
+  unsigned short H, L, C, symf;
+
+  register unsigned int bit_buffer;
+  register unsigned char bits_left;
+  unsigned char bits_needed, bit_run;
+
+  /* easy answers */
+  if (!qtm || (out_bytes < 0)) return CL_ENULLARG;
+  if (qtm->error) return qtm->error;
+
+  /* flush out any stored-up bytes before we begin */
+  i = qtm->o_end - qtm->o_ptr;
+  if ((off_t) i > out_bytes) i = (int) out_bytes;
+  if (i) {
+    if (qtm->wflag && (ret = mspack_write(qtm->ofd, qtm->o_ptr, i, qtm->file)) != CL_SUCCESS) {
+      return qtm->error = ret;
+    }
+    qtm->o_ptr  += i;
+    out_bytes   -= i;
+  }
+  if (out_bytes == 0) return CL_SUCCESS;
+
+  /* restore local state */
+  QTM_RESTORE_BITS;
+  window = qtm->window;
+  window_posn = qtm->window_posn;
+  frame_start = qtm->frame_start;
+  H = qtm->H;
+  L = qtm->L;
+  C = qtm->C;
+
+  /* while we do not have enough decoded bytes in reserve: */
+  while ((qtm->o_end - qtm->o_ptr) < out_bytes) {
+
+    /* read header if necessary. Initialises H, L and C */
+    if (!qtm->header_read) {
+      H = 0xFFFF; L = 0; QTM_READ_BITS(C, 16);
+      qtm->header_read = 1;
+    }
+
+    /* decode more, at most up to to frame boundary */
+    frame_end = window_posn + (out_bytes - (qtm->o_end - qtm->o_ptr));
+    if ((frame_start + QTM_FRAME_SIZE) < frame_end) {
+      frame_end = frame_start + QTM_FRAME_SIZE;
+    }
+
+    while (window_posn < frame_end) {
+      QTM_GET_SYMBOL(qtm->model7, selector);
+      if (selector < 4) {
+	struct qtm_model *mdl = (selector == 0) ? &qtm->model0 :
+	                        ((selector == 1) ? &qtm->model1 :
+				((selector == 2) ? &qtm->model2 :
+                                                   &qtm->model3));
+	QTM_GET_SYMBOL((*mdl), sym);
+	window[window_posn++] = sym;
+      }
+      else {
+	switch (selector) {
+	case 4: /* selector 4 = fixed length match (3 bytes) */
+	  QTM_GET_SYMBOL(qtm->model4, sym);
+	  QTM_READ_BITS(extra, qtm->extra_bits[sym]);
+	  match_offset = qtm->position_base[sym] + extra + 1;
+	  match_length = 3;
+	  break;
+
+	case 5: /* selector 5 = fixed length match (4 bytes) */
+	  QTM_GET_SYMBOL(qtm->model5, sym);
+	  QTM_READ_BITS(extra, qtm->extra_bits[sym]);
+	  match_offset = qtm->position_base[sym] + extra + 1;
+	  match_length = 4;
+	  break;
+
+	case 6: /* selector 6 = variable length match */
+	  QTM_GET_SYMBOL(qtm->model6len, sym);
+	  QTM_READ_BITS(extra, qtm->length_extra[sym]);
+	  match_length = qtm->length_base[sym] + extra + 5;
+
+	  QTM_GET_SYMBOL(qtm->model6, sym);
+	  QTM_READ_BITS(extra, qtm->extra_bits[sym]);
+	  match_offset = qtm->position_base[sym] + extra + 1;
+	  break;
+
+	default:
+	  /* should be impossible, model7 can only return 0-6 */
+	  return qtm->error = CL_EFORMAT;
+	}
+
+	if (window_posn + match_length > qtm->window_size) {
+	  cli_dbgmsg(""qtm_decompress: match ran over window wrap\n"");
+	  return qtm->error = CL_EFORMAT;
+	}
+
+	rundest = &window[window_posn];
+	i = match_length;
+	/* does match offset wrap the window? */
+	if (match_offset > window_posn) {
+	  /* j = length from match offset to end of window */
+	  j = match_offset - window_posn;
+	  if (j > (int) qtm->window_size) {
+	    cli_dbgmsg(""qtm_decompress: match offset beyond window boundaries\n"");
+	    return qtm->error = CL_EFORMAT;
+	  }
+	  runsrc = &window[qtm->window_size - j];
+	  if (j < i) {
+	    /* if match goes over the window edge, do two copy runs */
+	    i -= j; while (j-- > 0) *rundest++ = *runsrc++;
+	    runsrc = window;
+	  }
+	  while (i-- > 0) *rundest++ = *runsrc++;
+	}
+	else {
+	  runsrc = rundest - match_offset;
+	  if(i > (int) (qtm->window_size - window_posn))
+	    i = qtm->window_size - window_posn;
+	  while (i-- > 0) *rundest++ = *runsrc++;
+	}
+	window_posn += match_length;
+      }
+    } /* while (window_posn < frame_end) */
+
+    qtm->o_end = &window[window_posn];
+
+    /* another frame completed? */
+    if ((window_posn - frame_start) >= QTM_FRAME_SIZE) {
+      if ((window_posn - frame_start) != QTM_FRAME_SIZE) {
+	cli_dbgmsg(""qtm_decompress: overshot frame alignment\n"");
+	return qtm->error = CL_EFORMAT;
+      }
+
+      /* re-align input */
+      if (bits_left & 7) QTM_REMOVE_BITS(bits_left & 7);
+      do { QTM_READ_BITS(i, 8); } while (i != 0xFF);
+      qtm->header_read = 0;
+
+      /* window wrap? */
+      if (window_posn == qtm->window_size) {
+	/* flush all currently stored data */
+	i = (qtm->o_end - qtm->o_ptr);
+	if (qtm->wflag && (ret = mspack_write(qtm->ofd, qtm->o_ptr, i, qtm->file)) != CL_SUCCESS) {
+	  return qtm->error = ret;
+	}
+	out_bytes -= i;
+	qtm->o_ptr = &window[0];
+	qtm->o_end = &window[0];
+	window_posn = 0;
+      }
+
+      frame_start = window_posn;
+    }
+
+  } /* while (more bytes needed) */
+
+  if (out_bytes) {
+    i = (int) out_bytes;
+    if (qtm->wflag && (ret = mspack_write(qtm->ofd, qtm->o_ptr, i, qtm->file)) != CL_SUCCESS) {
+      return qtm->error = ret;
+    }
+    qtm->o_ptr += i;
+  }
+
+  /* store local state */
+  QTM_STORE_BITS;
+  qtm->window_posn = window_posn;
+  qtm->frame_start = frame_start;
+  qtm->H = H;
+  qtm->L = L;
+  qtm->C = C;
+
+  return CL_SUCCESS;
+}",long_5k_10k,0,174,0,all_methods_yes,0,0,1,0,1,0,1,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,-0.0005177855491638184,0.9380680322647095,1299,0,1,0,1
+267917,0,1,FP,yes_prior_consensus_false_positive,bounds,tensorflow,CWE-703,2873,7,7,"  void Compute(OpKernelContext* context) override {
+    const Tensor& input = context->input(0);
+    const TensorShape& input_shape = input.shape();
+    const int32 input_dims = input_shape.dims();
+
+    const Tensor& segment_id = context->input(1);
+    const TensorShape& segment_id_shape = segment_id.shape();
+    const int32 segment_dims = segment_id_shape.dims();
+
+    const Tensor& num_segments_tensor = context->input(2);
+    OP_REQUIRES(context, num_segments_tensor.NumElements() != 0,
+                errors::InvalidArgument(""Number of segments cannot be empty.""));
+    auto num_segments = num_segments_tensor.scalar<NUM_SEGMENTS_TYPE>()();
+
+    OP_REQUIRES(context, segment_dims != 0,
+                errors::InvalidArgument(""Segment_id cannot have rank 0""));
+
+    OP_REQUIRES(
+        context, segment_dims <= input_dims,
+        errors::OutOfRange(""Invalid segment_id rank "", segment_dims,
+                           "" for input with "", input_dims, "" dimension(s)""));
+    for (auto i = 0; i < segment_dims; i++) {
+      OP_REQUIRES(
+          context, segment_id_shape.dim_size(i) == input_shape.dim_size(i),
+          errors::InvalidArgument(
+              ""Segment dimension is "", segment_id_shape.dim_size(i),
+              "" while input dimension is "", input_dims, "" in rank "", i));
+    }
+
+    // Making output tensor.
+    Tensor* output_tensor = nullptr;
+    TensorShape output_shape =
+        GetOutputShape(input_shape, segment_id_shape, num_segments);
+    OP_REQUIRES_OK(context, context->allocate_output(""output"", output_shape,
+                                                     &output_tensor));
+
+    // Preparating flat tensors.
+    auto output_flat = output_tensor->flat<tstring>();
+    auto flat_segment_id = segment_id.flat<INDICES_TYPE>();
+    auto flat_input = input.flat<tstring>();
+
+    for (int i = 0; i < flat_segment_id.size(); i++) {
+      OP_REQUIRES(
+          context,
+          ((flat_segment_id(i) < num_segments) && (flat_segment_id(i) >= 0)),
+          errors::InvalidArgument(
+              ""segment_ids are not allowed to exceed num_segments or""
+              "" to have negative values.""));
+    }
+
+    int64 big_stride;
+    int64 small_stride;
+    std::tie(big_stride, small_stride) =
+        GetStrides<INDICES_TYPE>(input_shape, segment_id_shape);
+    auto relative_offset_set =
+        GetFlattenedRelativeOffsets<INDICES_TYPE>(small_stride, big_stride);
+    for (auto start_offset = 0; start_offset < big_stride; start_offset++) {
+      for (auto i = 0; i < relative_offset_set.size(); i++) {
+        auto output_index = start_offset + flat_segment_id(i) * big_stride;
+        auto offset = start_offset + relative_offset_set[i];
+        if (output_flat(output_index).length() != 0)
+          output_flat(output_index).append(separator_.c_str());
+        output_flat(output_index).append(flat_input(offset));
+      }
+    }
+  }",0,1,0,0,1,5,"Fix overflow CHECK issue with `tf.raw_ops.UnsortedSegmentJoin`.
+
+PiperOrigin-RevId: 370766155
+Change-Id: I33e7c6626224e1060a8a4ab51ad5d861c6d4c63e","TensorFlow is an end-to-end open source platform for machine learning. An attacker can cause a denial of service by controlling the values of `num_segments` tensor argument for `UnsortedSegmentJoin`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/a2a607db15c7cd01d754d37e5448d72a13491bdb/tensorflow/core/kernels/unsorted_segment_join_op.cc#L92-L93) assumes that the `num_segments` tensor is a valid scalar. Since the tensor is empty the `CHECK` involved in `.scalar<T>()()` that checks that the number of elements is exactly 1 will be invalidated and this would result in process termination. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",2,"  void Compute(OpKernelContext* context) override {
+    const Tensor& input = context->input(0);
+    const TensorShape& input_shape = input.shape();
+    const int32 input_dims = input_shape.dims();
+
+    const Tensor& segment_id = context->input(1);
+    const TensorShape& segment_id_shape = segment_id.shape();
+    const int32 segment_dims = segment_id_shape.dims();
+
+    const Tensor& num_segments_tensor = context->input(2);
+    OP_REQUIRES(context, num_segments_tensor.NumElements() != 0,
+                errors::InvalidArgument(""Number of segments cannot be empty.""));
+    auto num_segments = num_segments_tensor.scalar<NUM_SEGMENTS_TYPE>()();
+
+    OP_REQUIRES(context, segment_dims != 0,
+                errors::InvalidArgument(""Segment_id cannot have rank 0""));
+
+    OP_REQUIRES(
+        context, segment_dims <= input_dims,
+        errors::OutOfRange(""Invalid segment_id rank "", segment_dims,
+                           "" for input with "", input_dims, "" dimension(s)""));
+    for (auto i = 0; i < segment_dims; i++) {
+      OP_REQUIRES(
+          context, segment_id_shape.dim_size(i) == input_shape.dim_size(i),
+          errors::InvalidArgument(
+              ""Segment dimension is "", segment_id_shape.dim_size(i),
+              "" while input dimension is "", input_dims, "" in rank "", i));
+    }
+
+    // Making output tensor.
+    Tensor* output_tensor = nullptr;
+    TensorShape output_shape =
+        GetOutputShape(input_shape, segment_id_shape, num_segments);
+    OP_REQUIRES_OK(context, context->allocate_output(""output"", output_shape,
+                                                     &output_tensor));
+
+    // Preparating flat tensors.
+    auto output_flat = output_tensor->flat<tstring>();
+    auto flat_segment_id = segment_id.flat<INDICES_TYPE>();
+    auto flat_input = input.flat<tstring>();
+
+    for (int i = 0; i < flat_segment_id.size(); i++) {
+      OP_REQUIRES(
+          context,
+          ((flat_segment_id(i) < num_segments) && (flat_segment_id(i) >= 0)),
+          errors::InvalidArgument(
+              ""segment_ids are not allowed to exceed num_segments or""
+              "" to have negative values.""));
+    }
+
+    int64 big_stride;
+    int64 small_stride;
+    std::tie(big_stride, small_stride) =
+        GetStrides<INDICES_TYPE>(input_shape, segment_id_shape);
+    auto relative_offset_set =
+        GetFlattenedRelativeOffsets<INDICES_TYPE>(small_stride, big_stride);
+    for (auto start_offset = 0; start_offset < big_stride; start_offset++) {
+      for (auto i = 0; i < relative_offset_set.size(); i++) {
+        auto output_index = start_offset + flat_segment_id(i) * big_stride;
+        auto offset = start_offset + relative_offset_set[i];
+        if (output_flat(output_index).length() != 0)
+          output_flat(output_index).append(separator_.c_str());
+        output_flat(output_index).append(flat_input(offset));
+      }
+    }
+  }",medium_2k_5k,0,66,0,all_methods_yes,1,0,1,0,1,0,1,no_repair_verifier_candidate,retrieval_low_margin,0.008209466934204102,0.9963209629058838,536,0,1,0,1
+230394,0,1,FP,yes_prior_consensus_false_positive,error_handling,pjproject,CWE-703,3343,7,7,"static pj_xml_node *xml_parse_node( pj_pool_t *pool, pj_scanner *scanner)
+{
+    pj_xml_node *node;
+    pj_str_t end_name;
+
+    PJ_CHECK_STACK();
+
+    if (*scanner->curptr != '<')
+	on_syntax_error(scanner);
+
+    /* Handle Processing Instructino (PI) construct (i.e. ""<?"") */
+    if (*scanner->curptr == '<' && *(scanner->curptr+1) == '?') {
+	pj_scan_advance_n(scanner, 2, PJ_FALSE);
+	for (;;) {
+	    pj_str_t dummy;
+	    pj_scan_get_until_ch(scanner, '?', &dummy);
+	    if (*scanner->curptr=='?' && *(scanner->curptr+1)=='>') {
+		pj_scan_advance_n(scanner, 2, PJ_TRUE);
+		break;
+	    } else {
+		pj_scan_advance_n(scanner, 1, PJ_FALSE);
+	    }
+	}
+	return xml_parse_node(pool, scanner);
+    }
+
+    /* Handle comments construct (i.e. ""<!"") */
+    if (pj_scan_strcmp(scanner, ""<!"", 2) == 0) {
+	pj_scan_advance_n(scanner, 2, PJ_FALSE);
+	for (;;) {
+	    pj_str_t dummy;
+	    pj_scan_get_until_ch(scanner, '>', &dummy);
+	    if (pj_scan_strcmp(scanner, "">"", 1) == 0) {
+		pj_scan_advance_n(scanner, 1, PJ_TRUE);
+		break;
+	    } else {
+		pj_scan_advance_n(scanner, 1, PJ_FALSE);
+	    }
+	}
+	return xml_parse_node(pool, scanner);
+    }
+
+    /* Alloc node. */
+    node = alloc_node(pool);
+
+    /* Get '<' */
+    pj_scan_get_char(scanner);
+
+    /* Get node name. */
+    pj_scan_get_until_chr( scanner, "" />\t\r\n"", &node->name);
+
+    /* Get attributes. */
+    while (*scanner->curptr != '>' && *scanner->curptr != '/') {
+	pj_xml_attr *attr = alloc_attr(pool);
+	
+	pj_scan_get_until_chr( scanner, ""=> \t\r\n"", &attr->name);
+	if (*scanner->curptr == '=') {
+	    pj_scan_get_char( scanner );
+            pj_scan_get_quotes(scanner, ""\""'"", ""\""'"", 2, &attr->value);
+	    /* remove quote characters */
+	    ++attr->value.ptr;
+	    attr->value.slen -= 2;
+	}
+	
+	pj_list_push_back( &node->attr_head, attr );
+    }
+
+    if (*scanner->curptr == '/') {
+	pj_scan_get_char(scanner);
+	if (pj_scan_get_char(scanner) != '>')
+	    on_syntax_error(scanner);
+	return node;
+    }
+
+    /* Enclosing bracket. */
+    if (pj_scan_get_char(scanner) != '>')
+	on_syntax_error(scanner);
+
+    /* Sub nodes. */
+    while (*scanner->curptr == '<' && *(scanner->curptr+1) != '/'
+				   && *(scanner->curptr+1) != '!')
+    {
+	pj_xml_node *sub_node = xml_parse_node(pool, scanner);
+	pj_list_push_back( &node->node_head, sub_node );
+    }
+
+    /* Content. */
+    if (!pj_scan_is_eof(scanner) && *scanner->curptr != '<') {
+	pj_scan_get_until_ch(scanner, '<', &node->content);
+    }
+
+    /* CDATA content. */
+    if (*scanner->curptr == '<' && *(scanner->curptr+1) == '!' &&
+	pj_scan_strcmp(scanner, ""<![CDATA["", 9) == 0)
+    {
+	pj_scan_advance_n(scanner, 9, PJ_FALSE);
+	pj_scan_get_until_ch(scanner, ']', &node->content);
+	while (pj_scan_strcmp(scanner, ""]]>"", 3)) {
+	    pj_str_t dummy;
+
+	    pj_scan_advance_n(scanner, 1, PJ_FALSE);
+	    pj_scan_get_until_ch(scanner, ']', &dummy);
+	}
+	node->content.slen = scanner->curptr - node->content.ptr;
+	pj_scan_advance_n(scanner, 3, PJ_TRUE);
+    }
+
+    /* Enclosing node. */
+    if (pj_scan_get_char(scanner) != '<' || pj_scan_get_char(scanner) != '/')
+	on_syntax_error(scanner);
+
+    pj_scan_get_until_chr(scanner, "" \t>"", &end_name);
+
+    /* Compare name. */
+    if (pj_stricmp(&node->name, &end_name) != 0)
+	on_syntax_error(scanner);
+
+    /* Enclosing '>' */
+    if (pj_scan_get_char(scanner) != '>')
+	on_syntax_error(scanner);
+
+    return node;
+}",0,1,0,0,1,0,"Merge pull request from GHSA-5x45-qp78-g4p4
+
+* Prevent infinite loop in scanning xml content
+
+* Simplify scanning method
+
+* Optimization",PJSIP is a free and open source multimedia communication library written in the C language. Versions 2.12 and prior contain a denial-of-service vulnerability that affects PJSIP users that consume PJSIP's XML parsing in their apps. Users are advised to update. There are no known workarounds.,4,"static pj_xml_node *xml_parse_node( pj_pool_t *pool, pj_scanner *scanner)
+{
+    pj_xml_node *node;
+    pj_str_t end_name;
+
+    PJ_CHECK_STACK();
+
+    if (*scanner->curptr != '<')
+	on_syntax_error(scanner);
+
+    /* Handle Processing Instructino (PI) construct (i.e. ""<?"") */
+    if (*scanner->curptr == '<' && *(scanner->curptr+1) == '?') {
+	pj_scan_advance_n(scanner, 2, PJ_FALSE);
+	for (;;) {
+	    pj_str_t dummy;
+	    pj_scan_get_until_ch(scanner, '?', &dummy);
+	    if (*scanner->curptr=='?' && *(scanner->curptr+1)=='>') {
+		pj_scan_advance_n(scanner, 2, PJ_TRUE);
+		break;
+	    } else {
+		pj_scan_advance_n(scanner, 1, PJ_FALSE);
+	    }
+	}
+	return xml_parse_node(pool, scanner);
+    }
+
+    /* Handle comments construct (i.e. ""<!"") */
+    if (pj_scan_strcmp(scanner, ""<!"", 2) == 0) {
+	pj_scan_advance_n(scanner, 2, PJ_FALSE);
+	for (;;) {
+	    pj_str_t dummy;
+	    pj_scan_get_until_ch(scanner, '>', &dummy);
+	    if (pj_scan_strcmp(scanner, "">"", 1) == 0) {
+		pj_scan_advance_n(scanner, 1, PJ_TRUE);
+		break;
+	    } else {
+		pj_scan_advance_n(scanner, 1, PJ_FALSE);
+	    }
+	}
+	return xml_parse_node(pool, scanner);
+    }
+
+    /* Alloc node. */
+    node = alloc_node(pool);
+
+    /* Get '<' */
+    pj_scan_get_char(scanner);
+
+    /* Get node name. */
+    pj_scan_get_until_chr( scanner, "" />\t\r\n"", &node->name);
+
+    /* Get attributes. */
+    while (*scanner->curptr != '>' && *scanner->curptr != '/') {
+	pj_xml_attr *attr = alloc_attr(pool);
+	
+	pj_scan_get_until_chr( scanner, ""=> \t\r\n"", &attr->name);
+	if (*scanner->curptr == '=') {
+	    pj_scan_get_char( scanner );
+            pj_scan_get_quotes(scanner, ""\""'"", ""\""'"", 2, &attr->value);
+	    /* remove quote characters */
+	    ++attr->value.ptr;
+	    attr->value.slen -= 2;
+	}
+	
+	pj_list_push_back( &node->attr_head, attr );
+    }
+
+    if (*scanner->curptr == '/') {
+	pj_scan_get_char(scanner);
+	if (pj_scan_get_char(scanner) != '>')
+	    on_syntax_error(scanner);
+	return node;
+    }
+
+    /* Enclosing bracket. */
+    if (pj_scan_get_char(scanner) != '>')
+	on_syntax_error(scanner);
+
+    /* Sub nodes. */
+    while (*scanner->curptr == '<' && *(scanner->curptr+1) != '/'
+				   && *(scanner->curptr+1) != '!')
+    {
+	pj_xml_node *sub_node = xml_parse_node(pool, scanner);
+	pj_list_push_back( &node->node_head, sub_node );
+    }
+
+    /* Content. */
+    if (!pj_scan_is_eof(scanner) && *scanner->curptr != '<') {
+	pj_scan_get_until_ch(scanner, '<', &node->content);
+    }
+
+    /* CDATA content. */
+    if (*scanner->curptr == '<' && *(scanner->curptr+1) == '!' &&
+	pj_scan_strcmp(scanner, ""<![CDATA["", 9) == 0)
+    {
+	pj_scan_advance_n(scanner, 9, PJ_FALSE);
+	pj_scan_get_until_ch(scanner, ']', &node->content);
+	while (pj_scan_strcmp(scanner, ""]]>"", 3)) {
+	    pj_str_t dummy;
+
+	    pj_scan_advance_n(scanner, 1, PJ_FALSE);
+	    pj_scan_get_until_ch(scanner, ']', &dummy);
+	}
+	node->content.slen = scanner->curptr - node->content.ptr;
+	pj_scan_advance_n(scanner, 3, PJ_TRUE);
+    }
+
+    /* Enclosing node. */
+    if (pj_scan_get_char(scanner) != '<' || pj_scan_get_char(scanner) != '/')
+	on_syntax_error(scanner);
+
+    pj_scan_get_until_chr(scanner, "" \t>"", &end_name);
+
+    /* Compare name. */
+    if (pj_stricmp(&node->name, &end_name) != 0)
+	on_syntax_error(scanner);
+
+    /* Enclosing '>' */
+    if (pj_scan_get_char(scanner) != '>')
+	on_syntax_error(scanner);
+
+    return node;
+}",medium_2k_5k,3,123,0,all_methods_yes,0,0,1,0,1,0,1,repair_checked_absent_or_irrelevant:bounds_or_shape_check,retrieval_low_margin,0.0013625621795654297,0.93860924243927,807,0,1,0,1
+359843,0,1,FP,yes_prior_consensus_false_positive,error_handling,ImageMagick,CWE-617,16656,6,7,"WandPrivate void CLINoImageOperator(MagickCLI *cli_wand,
+  const char *option,const char *arg1n,const char *arg2n)
+{
+  const char    /* percent escaped versions of the args */
+    *arg1,
+    *arg2;
+
+#define _image_info     (cli_wand->wand.image_info)
+#define _images         (cli_wand->wand.images)
+#define _exception      (cli_wand->wand.exception)
+#define _process_flags  (cli_wand->process_flags)
+#define _option_type    ((CommandOptionFlags) cli_wand->command->flags)
+#define IfNormalOp      (*option=='-')
+#define IfPlusOp        (*option!='-')
+
+  assert(cli_wand != (MagickCLI *) NULL);
+  assert(cli_wand->signature == MagickWandSignature);
+  assert(cli_wand->wand.signature == MagickWandSignature);
+
+  if (cli_wand->wand.debug != MagickFalse)
+    (void) CLILogEvent(cli_wand,CommandEvent,GetMagickModule(),
+      ""- NoImage Operator: %s \""%s\"" \""%s\"""", option,
+      arg1n != (char *) NULL ? arg1n : """",
+      arg2n != (char *) NULL ? arg2n : """");
+
+  arg1 = arg1n;
+  arg2 = arg2n;
+
+  /* Interpret Percent Escapes in Arguments - using first image */
+  if ( (((_process_flags & ProcessInterpretProperities) != 0 )
+        || ((_option_type & AlwaysInterpretArgsFlag) != 0)
+       )  && ((_option_type & NeverInterpretArgsFlag) == 0) ) {
+    /* Interpret Percent escapes in argument 1 */
+    if (arg1n != (char *) NULL) {
+      arg1=InterpretImageProperties(_image_info,_images,arg1n,_exception);
+      if (arg1 == (char *) NULL) {
+        CLIWandException(OptionWarning,""InterpretPropertyFailure"",option);
+        arg1=arg1n;  /* use the given argument as is */
+      }
+    }
+    if (arg2n != (char *) NULL) {
+      arg2=InterpretImageProperties(_image_info,_images,arg2n,_exception);
+      if (arg2 == (char *) NULL) {
+        CLIWandException(OptionWarning,""InterpretPropertyFailure"",option);
+        arg2=arg2n;  /* use the given argument as is */
+      }
+    }
+  }
+#undef _process_flags
+#undef _option_type
+
+  do {  /* break to exit code */
+    /*
+      No-op options  (ignore these)
+    */
+    if (LocaleCompare(""noop"",option+1) == 0)   /* zero argument */
+      break;
+    if (LocaleCompare(""sans"",option+1) == 0)   /* one argument */
+      break;
+    if (LocaleCompare(""sans0"",option+1) == 0)  /* zero argument */
+      break;
+    if (LocaleCompare(""sans1"",option+1) == 0)  /* one argument */
+      break;
+    if (LocaleCompare(""sans2"",option+1) == 0)  /* two arguments */
+      break;
+    /*
+      Image Reading
+    */
+    if ( ( LocaleCompare(""read"",option+1) == 0 ) ||
+      ( LocaleCompare(""--"",option) == 0 ) ) {
+      /* Do Glob filename Expansion for 'arg1' then read all images.
+      *
+      * Expansion handles '@', '~', '*', and '?' meta-characters while ignoring
+      * (but attaching to the filenames in the generated argument list) any
+      * [...] read modifiers that may be present.
+      *
+      * For example: It will expand '*.gif[20x20]' into a list such as
+      * 'abc.gif[20x20]',  'foobar.gif[20x20]',  'xyzzy.gif[20x20]'
+      *
+      * NOTE: In IMv6 this was done globally across all images. This
+      * meant you could include IM options in '@filename' lists, but you
+      * could not include comments.   Doing it only for image read makes
+      * it far more secure.
+      *
+      * Note: arguments do not have percent escapes expanded for security
+      * reasons.
+      */
+      int      argc;
+      char     **argv;
+      ssize_t  i;
+
+      argc = 1;
+      argv = (char **) &arg1;
+
+      /* Expand 'glob' expressions in the given filename.
+        Expansion handles any 'coder:' prefix, or read modifiers attached
+        to the filename, including them in the resulting expanded list.
+      */
+      if (ExpandFilenames(&argc,&argv) == MagickFalse)
+        CLIWandExceptArgBreak(ResourceLimitError,""MemoryAllocationFailed"",
+            option,GetExceptionMessage(errno));
+
+      /* loop over expanded filename list, and read then all in */
+      for (i=0; i < (ssize_t) argc; i++) {
+        Image *
+          new_images;
+        if (_image_info->ping != MagickFalse)
+          new_images=PingImages(_image_info,argv[i],_exception);
+        else
+          new_images=ReadImages(_image_info,argv[i],_exception);
+        AppendImageToList(&_images, new_images);
+        argv[i]=DestroyString(argv[i]);
+      }
+      argv=(char **) RelinquishMagickMemory(argv);
+      break;
+    }
+    /*
+      Image Writing
+      Note: Writing a empty image list is valid in specific cases
+    */
+    if (LocaleCompare(""write"",option+1) == 0) {
+      /* Note: arguments do not have percent escapes expanded */
+      char
+        key[MagickPathExtent];
+
+      Image
+        *write_images;
+
+      ImageInfo
+        *write_info;
+
+      /* Need images, unless a ""null:"" output coder is used */
+      if ( _images == (Image *) NULL ) {
+        if ( LocaleCompare(arg1,""null:"") == 0 )
+          break;
+        CLIWandExceptArgBreak(OptionError,""NoImagesForWrite"",option,arg1);
+      }
+
+      (void) FormatLocaleString(key,MagickPathExtent,""cache:%s"",arg1);
+      (void) DeleteImageRegistry(key);
+      write_images=CloneImageList(_images,_exception);
+      write_info=CloneImageInfo(_image_info);
+      if (write_images != (Image *) NULL)
+        (void) WriteImages(write_info,write_images,arg1,_exception);
+      write_info=DestroyImageInfo(write_info);
+      write_images=DestroyImageList(write_images);
+      break;
+    }
+    /*
+      Parenthesis and Brace operations
+    */
+    if (LocaleCompare(""("",option) == 0) {
+      /* stack 'push' images */
+      Stack
+        *node;
+
+      size_t
+        size;
+
+      size=0;
+      node=cli_wand->image_list_stack;
+      for ( ; node != (Stack *) NULL; node=node->next)
+        size++;
+      if ( size >= MAX_STACK_DEPTH )
+        CLIWandExceptionBreak(OptionError,""ParenthesisNestedTooDeeply"",option);
+      node=(Stack *) AcquireMagickMemory(sizeof(*node));
+      if (node == (Stack *) NULL)
+        CLIWandExceptionBreak(ResourceLimitFatalError,
+            ""MemoryAllocationFailed"",option);
+      node->data = (void *)cli_wand->
+/* ... truncated ... */",0,1,0,0,1,10,do not attempt to write a null image list (thanks to Vinay Rohila),"In ImageMagick, a crafted file could trigger an assertion failure when a call to WriteImages was made in MagickWand/operation.c, due to a NULL image list. This could potentially cause a denial of service. This was fixed in upstream ImageMagick version 7.1.0-30.",92,"WandPrivate void CLINoImageOperator(MagickCLI *cli_wand,
+  const char *option,const char *arg1n,const char *arg2n)
+{
+  const char    /* percent escaped versions of the args */
+    *arg1,
+    *arg2;
+
+#define _image_info     (cli_wand->wand.image_info)
+#define _images         (cli_wand->wand.images)
+#define _exception      (cli_wand->wand.exception)
+#define _process_flags  (cli_wand->process_flags)
+#define _option_type    ((CommandOptionFlags) cli_wand->command->flags)
+#define IfNormalOp      (*option=='-')
+#define IfPlusOp        (*option!='-')
+
+  assert(cli_wand != (MagickCLI *) NULL);
+  assert(cli_wand->signature == MagickWandSignature);
+  assert(cli_wand->wand.signature == MagickWandSignature);
+
+  if (cli_wand->wand.debug != MagickFalse)
+    (void) CLILogEvent(cli_wand,CommandEvent,GetMagickModule(),
+      ""- NoImage Operator: %s \""%s\"" \""%s\"""", option,
+      arg1n != (char *) NULL ? arg1n : """",
+      arg2n != (char *) NULL ? arg2n : """");
+
+  arg1 = arg1n;
+  arg2 = arg2n;
+
+  /* Interpret Percent Escapes in Arguments - using first image */
+  if ( (((_process_flags & ProcessInterpretProperities) != 0 )
+        || ((_option_type & AlwaysInterpretArgsFlag) != 0)
+       )  && ((_option_type & NeverInterpretArgsFlag) == 0) ) {
+    /* Interpret Percent escapes in argument 1 */
+    if (arg1n != (char *) NULL) {
+      arg1=InterpretImageProperties(_image_info,_images,arg1n,_exception);
+      if (arg1 == (char *) NULL) {
+        CLIWandException(OptionWarning,""InterpretPropertyFailure"",option);
+        arg1=arg1n;  /* use the given argument as is */
+      }
+    }
+    if (arg2n != (char *) NULL) {
+      arg2=InterpretImageProperties(_image_info,_images,arg2n,_exception);
+      if (arg2 == (char *) NULL) {
+        CLIWandException(OptionWarning,""InterpretPropertyFailure"",option);
+        arg2=arg2n;  /* use the given argument as is */
+      }
+    }
+  }
+#undef _process_flags
+#undef _option_type
+
+  do {  /* break to exit code */
+    /*
+      No-op options  (ignore these)
+    */
+    if (LocaleCompare(""noop"",option+1) == 0)   /* zero argument */
+      break;
+    if (LocaleCompare(""sans"",option+1) == 0)   /* one argument */
+      break;
+    if (LocaleCompare(""sans0"",option+1) == 0)  /* zero argument */
+      break;
+    if (LocaleCompare(""sans1"",option+1) == 0)  /* one argument */
+      break;
+    if (LocaleCompare(""sans2"",option+1) == 0)  /* two arguments */
+      break;
+    /*
+      Image Reading
+    */
+    if ( ( LocaleCompare(""read"",option+1) == 0 ) ||
+      ( LocaleCompare(""--"",option) == 0 ) ) {
+      /* Do Glob filename Expansion for 'arg1' then read all images.
+      *
+      * Expansion handles '@', '~', '*', and '?' meta-characters while ignoring
+      * (but attaching to the filenames in the generated argument list) any
+      * [...] read modifiers that may be present.
+      *
+      * For example: It will expand '*.gif[20x20]' into a list such as
+      * 'abc.gif[20x20]',  'foobar.gif[20x20]',  'xyzzy.gif[20x20]'
+      *
+      * NOTE: In IMv6 this was done globally across all images. This
+      * meant you could include IM options in '@filename' lists, but you
+      * could not include comments.   Doing it only for image read makes
+      * it far more secure.
+      *
+      * Note: arguments do not have percent escapes expanded for security
+      * reasons.
+      */
+      int      argc;
+      char     **argv;
+      ssize_t  i;
+
+      argc = 1;
+      argv = (char **) &arg1;
+
+      /* Expand 'glob' expressions in the given filename.
+        Expansion handles any 'coder:' prefix, or read modifiers attached
+        to the filename, including them in the resulting expanded list.
+      */
+      if (ExpandFilenames(&argc,&argv) == MagickFalse)
+        CLIWandExceptArgBreak(ResourceLimitError,""MemoryAllocationFailed"",
+            option,GetExceptionMessage(errno));
+
+      /* loop over expanded filename list, and read then all in */
+      for (i=0; i < (ssize_t) argc; i++) {
+        Image *
+          new_images;
+        if (_image_info->ping != MagickFalse)
+          new_images=PingImages(_image_info,argv[i],_exception);
+        else
+          new_images=ReadImages(_image_info,argv[i],_exception);
+        AppendImageToList(&_images, new_images);
+        argv[i]=DestroyString(argv[i]);
+      }
+      argv=(char **) RelinquishMagickMemory(argv);
+      break;
+    }
+    /*
+      Image Writing
+      Note: Writing a empty image list is valid in specific cases
+    */
+    if (LocaleCompare(""write"",option+1) == 0) {
+      /* Note: arguments do not have percent escapes expanded */
+      char
+        key[MagickPathExtent];
+
+      Image
+        *write_images;
+
+      ImageInfo
+        *write_info;
+
+      /* Need images, unless a ""null:"" output coder is used */
+      if ( _images == (Image *) NULL ) {
+        if ( LocaleCompare(arg1,""null:"") == 0 )
+          break;
+        CLIWandExceptArgBreak(OptionError,""NoImagesForWrite"",option,arg1);
+      }
+
+      (void) FormatLocaleString(key,MagickPathExtent,""cache:%s"",arg1);
+      (void) DeleteImageRegistry(key);
+      write_images=CloneImageList(_images,_exception);
+      write_info=CloneImageInfo(_image_info);
+      if (write_images != (Image *) NULL)
+        (void) WriteImages(write_info,write_images,arg1,_exception);
+      write_info=DestroyImageInfo(write_info);
+      write_images=DestroyImageList(write_images);
+      break;
+    }
+    /*
+      Parenthesis and Brace operations
+    */
+    if (LocaleCompare(""("",option) == 0) {
+      /* stack 'push' images */
+      Stack
+        *node;
+
+      size_t
+        size;
+
+      size=0;
+      node=cli_wand->image_list_stack;
+      for ( ; node != (Stack *) NULL; node=node->next)
+        size++;
+      if ( size >= MAX_STACK_DEPTH )
+        CLIWandExceptionBreak(OptionError,""ParenthesisNestedTooDeeply"",option);
+      node=(Stack *) AcquireMagickMemory(sizeof(*node));
+      if (node == (Stack *) NULL)
+        CLIWandExceptionBreak(ResourceLimitFatalError,
+            ""MemoryAllocationFailed"",option);
+      node->data = (void *)cli_wand->wand.images;
+      node->next = cli_wand->image_list_stack;
+      cli_wand->image_list_stack = node;
+      cli_wand->wand.images = NewImageList();
+
+      /* handle respect-parenthesis */
+      if (IsStringTrue(GetImageOption(cli_wand->wand.image_info,
+                    ""respect-parenthesis"")) != MagickFalse)
+        option=""{""; /* fall-thru so as to push image settings too */
+      else
+        break;
+      /* fall thru to operation */
+    }
+    if (LocaleCompare(""{"",option) == 0) {
+      /* stack 'push' of image_info settings */
+      Stack
+        *node;
+
+      size_t
+        size;
+
+      size=0;
+      node=cli_wand->image_info_stack;
+      for ( ; node != (Stack *) NULL; node=node->next)
+        size++;
+      if ( size >= MAX_STACK_DEPTH )
+        CLIWandExceptionBreak(OptionError,""CurlyBracesNestedTooDeeply"",option);
+      node=(Stack *) AcquireMagickMemory(sizeof(*node));
+      if (node == (Stack *) NULL)
+        CLIWandExceptionBreak(ResourceLimitFatalError,
+            ""MemoryAllocationFailed"",option);
+
+      node->data = (void *)cli_wand->wand.image_info;
+      node->next = cli_wand->image_info_stack;
+
+      cli_wand->image_info_stack = node;
+      cli_wand->wand.image_info = CloneImageInfo(cli_wand->wand.image_info);
+      if (cli_wand->wand.image_info == (ImageInfo *) NULL) {
+        CLIWandException(ResourceLimitFatalError,""MemoryAllocationFailed"",
+            option);
+        cli_wand->wand.image_info = (ImageInfo *)node->data;
+        node = (Stack *)RelinquishMagickMemory(node);
+        break;
+      }
+
+      break;
+    }
+    if (LocaleCompare("")"",option) == 0) {
+      /* pop images from stack */
+      Stack
+        *node;
+
+      node = (Stack *)cli_wand->image_list_stack;
+      if ( node == (Stack *) NULL)
+        CLIWandExceptionBreak(OptionError,""UnbalancedParenthesis"",option);
+      cli_wand->image_list_stack = node->next;
+
+      AppendImageToList((Image **)&node->data,cli_wand->wand.images);
+      cli_wand->wand.images= (Image *)node->data;
+      node = (Stack *)RelinquishMagickMemory(node);
+
+      /* handle respect-parenthesis - of the previous 'pushed' settings */
+      node = cli_wand->image_info_stack;
+      if ( node != (Stack *) NULL)
+        {
+          if (IsStringTrue(GetImageOption(
+                cli_wand->wand.image_info,""respect-parenthesis"")) != MagickFalse)
+            option=""}""; /* fall-thru so as to pop image settings too */
+          else
+            break;
+        }
+      else
+        break;
+      /* fall thru to next if */
+    }
+    if (LocaleCompare(""}"",option) == 0) {
+      /* pop image_info settings from stack */
+      Stack
+        *node;
+
+      node = (Stack *)cli_wand->image_info_stack;
+      if ( node == (Stack *) NULL)
+        CLIWandExceptionBreak(OptionError,""UnbalancedCurlyBraces"",option);
+      cli_wand->image_info_stack = node->next;
+
+      (void) DestroyImageInfo(cli_wand->wand.image_info);
+      cli_wand->wand.image_info = (ImageInfo *)node->data;
+      node = (Stack *)RelinquishMagickMemory(node);
+
+      GetDrawInfo(cli_wand->wand.image_info, cli_wand->draw_info);
+      cli_wand->quantize_info=DestroyQuantizeInfo(cli_wand->quantize_info);
+      cli_wand->quantize_info=AcquireQuantizeInfo(cli_wand->wand.image_info);
+
+      break;
+    }
+      if (LocaleCompare(""print"",option+1) == 0)
+        {
+          (void) FormatLocaleFile(stdout,""%s"",arg1);
+          break;
+        }
+    if (LocaleCompare(""set"",option+1) == 0)
+      {
+        /* Settings are applied to each image in memory in turn (if any).
+           While a option: only need to be applied once globally.
+
+           NOTE: rguments have not been automatically percent expaneded
+        */
+
+        /* escape the 'key' once only, using first image. */
+        arg1=InterpretImageProperties(_image_info,_images,arg1n,_exception);
+        if (arg1 == (char *) NULL)
+          CLIWandExceptionBreak(OptionWarning,""InterpretPropertyFailure"",
+                option);
+
+        if (LocaleNCompare(arg1,""registry:"",9) == 0)
+          {
+            if (IfPlusOp)
+              {
+                (void) DeleteImageRegistry(arg1+9);
+                arg1=DestroyString((char *)arg1);
+                break;
+              }
+            arg2=InterpretImageProperties(_image_info,_images,arg2n,_exception);
+            if (arg2 == (char *) NULL) {
+              arg1=DestroyString((char *)arg1);
+              CLIWandExceptionBreak(OptionWarning,""InterpretPropertyFailure"",
+                    option);
+            }
+            (void) SetImageRegistry(StringRegistryType,arg1+9,arg2,_exception);
+            arg1=DestroyString((char *)arg1);
+            arg2=DestroyString((char *)arg2);
+            break;
+          }
+        if (LocaleNCompare(arg1,""option:"",7) == 0)
+          {
+            /* delete equivelent artifact from all images (if any) */
+            if (_images != (Image *) NULL)
+              {
+                MagickResetIterator(&cli_wand->wand);
+                while (MagickNextImage(&cli_wand->wand) != MagickFalse)
+                  (void) DeleteImageArtifact(_images,arg1+7);
+                MagickResetIterator(&cli_wand->wand);
+              }
+            /* now set/delete the global option as needed */
+            /* FUTURE: make escapes in a global 'option:' delayed */
+            arg2=(char *) NULL;
+            if (IfNormalOp)
+              {
+                arg2=InterpretImageProperties(_image_info,_images,arg2n,_exception);
+                if (arg2 == (char *) NULL)
+                  CLIWandExceptionBreak(OptionWarning,
+                       ""InterpretPropertyFailure"",option);
+              }
+            (void) SetImageOption(_image_info,arg1+7,arg2);
+            arg1=DestroyString((char *)arg1);
+            arg2=DestroyString((char *)arg2);
+            break;
+          }
+        /* Set Artifacts/Properties/Attributes all images (required) */
+        if ( _images == (Image *) NULL )
+          CLIWandExceptArgBreak(OptionWarning,""NoImageForProperty"",option,arg1);
+
+        MagickResetIterator(&cli_wand->wand);
+        while (MagickNextImage(&cli_wand->wand) != MagickFalse)
+          {
+            arg2=(char *) NULL;
+            if (IfNormalOp)
+              {
+                arg2=InterpretImageProperties(_image_info,_images,arg2n,_exception);
+                if (arg2 == (char *) NULL)
+                  CLIWandExceptionBreak(OptionWarning,
+                       ""InterpretPropertyFailure"",option);
+              }
+            if (LocaleNCompare(arg1,""artifact:"",9) == 0)
+              (void) SetImageArtifact(_images,arg1+9,arg2);
+            else if (LocaleNCompare(arg1,""property:"",9) == 0)
+              (void) SetImageProperty(_images,arg1+9,arg2,_exception);
+            else
+              (void) SetImageProperty(_images,arg1,arg2,_exception);
+            arg2=DestroyString((char *)arg2);
+          }
+        MagickResetIterator(&cli_wand->wand);
+        arg1=DestroyString((char *)arg1);
+        break;
+     }
+    if (LocaleCompare(""clone"",option+1) == 0) {
+        Image
+          *new_images;
+
+        if (*option == '+')
+          arg1=AcquireString(""-1"");
+        if (IsSceneGeometry(arg1,MagickFalse) == MagickFalse)
+          CLIWandExceptionBreak(OptionError,""InvalidArgument"",option);
+        if ( cli_wand->image_list_stack == (Stack *) NULL)
+          CLIWandExceptionBreak(OptionError,""UnableToCloneImage"",option);
+        new_images = (Image *)cli_wand->image_list_stack->data;
+        if (new_images == (Image *) NULL)
+          CLIWandExceptionBreak(OptionError,""UnableToCloneImage"",option);
+        new_images=CloneImages(new_images,arg1,_exception);
+        if (new_images == (Image *) NULL)
+          CLIWandExceptionBreak(OptionError,""NoSuchImage"",option);
+        AppendImageToList(&_images,new_images);
+        break;
+      }
+    /*
+       Informational Operations.
+
+       Note that these do not require either a cli-wand or images!
+       Though currently a cli-wand much be provided regardless.
+    */
+    if (LocaleCompare(""version"",option+1) == 0)
+      {
+        ListMagickVersion(stdout);
+        break;
+      }
+    if (LocaleCompare(""list"",option+1) == 0) {
+      /*
+         FUTURE: This 'switch' should really be part of MagickCore
+      */
+      ssize_t
+        list;
+
+      list=ParseCommandOption(MagickListOptions,MagickFalse,arg1);
+      if ( list < 0 ) {
+        CLIWandExceptionArg(OptionError,""UnrecognizedListType"",option,arg1);
+        break;
+      }
+      switch (list)
+      {
+        case MagickCoderOptions:
+        {
+          (void) ListCoderInfo((FILE *) NULL,_exception);
+          break;
+        }
+        case MagickColorOptions:
+        {
+          (void) ListColorInfo((FILE *) NULL,_exception);
+          break;
+        }
+        case MagickConfigureOptions:
+        {
+          (void) ListConfigureInfo((FILE *) NULL,_exception);
+          break;
+        }
+        case MagickDelegateOptions:
+        {
+          (void) ListDelegateInfo((FILE *) NULL,_exception);
+          break;
+        }
+        case MagickFontOptions:
+        {
+          (void) ListTypeInfo((FILE *) NULL,_exception);
+          break;
+        }
+        case MagickFormatOptions:
+          (void) ListMagickInfo((FILE *) NULL,_exception);
+          break;
+        case MagickLocaleOptions:
+          (void) ListLocaleInfo((FILE *) NULL,_exception);
+          break;
+        case MagickLogOptions:
+          (void) ListLogInfo((FILE *) NULL,_exception);
+          break;
+        case MagickMagicOptions:
+          (void) ListMagicInfo((FILE *) NULL,_exception);
+          break;
+        case MagickMimeOptions:
+          (void) ListMimeInfo((FILE *) NULL,_exception);
+          break;
+        case MagickModuleOptions:
+          (void) ListModuleInfo((FILE *) NULL,_exception);
+          break;
+        case MagickPolicyOptions:
+          (void) ListPolicyInfo((FILE *) NULL,_exception);
+          break;
+        case MagickResourceOptions:
+          (void) ListMagickResourceInfo((FILE *) NULL,_exception);
+          break;
+        case MagickThresholdOptions:
+          (void) ListThresholdMaps((FILE *) NULL,_exception);
+          break;
+        default:
+          (void) ListCommandOptions((FILE *) NULL,(CommandOption) list,
+            _exception);
+          break;
+      }
+      break;
+    }
+
+    CLIWandException(OptionError,""UnrecognizedOption"",option);
+
+DisableMSCWarning(4127)
+  } while (0);  /* break to exit code. */
+RestoreMSCWarning
+
+  /* clean up percent escape interpreted strings */
+  if (arg1 != arg1n )
+    arg1=DestroyString((char *)arg1);
+  if (arg2 != arg2n )
+    arg2=DestroyString((char *)arg2);
+
+#undef _image_info
+#undef _images
+#undef _exception
+#undef IfNormalOp
+#undef IfPlusOp
+}",very_long_10k_plus,2,476,2,near_consensus_yes,45,1,0,0,1,0,1,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,0.006154060363769531,0.9475723505020142,3170,0,1,0,1
+484732,0,1,FP,yes_prior_consensus_false_positive,bounds,libmobi,CWE-787,737,7,7,"void mobi_buffer_move(MOBIBuffer *buf, const int offset, const size_t len) {
+    size_t aoffset = (size_t) abs(offset);
+    unsigned char *source = buf->data + buf->offset;
+    if (offset >= 0) {
+        if (buf->offset + aoffset + len > buf->maxlen) {
+            debug_print(""%s"", ""End of buffer\n"");
+            buf->error = MOBI_BUFFER_END;
+            return;
+        }
+        source += aoffset;
+    } else {
+        if ( (buf->offset < aoffset) || (buf->offset + len > buf->maxlen) ) {
+            debug_print(""%s"", ""Beyond start/end of buffer\n"");
+            buf->error = MOBI_BUFFER_END;
+            return;
+        }
+        source -= aoffset;
+    }
+    memmove(buf->data + buf->offset, source, len);
+    buf->offset += len;
+}",0,1,0,0,1,14,fix oob write bug inside libmobi,libmobi is vulnerable to Out-of-bounds Write,4,"void mobi_buffer_move(MOBIBuffer *buf, const int offset, const size_t len) {
+    size_t aoffset = (size_t) abs(offset);
+    unsigned char *source = buf->data + buf->offset;
+    if (offset >= 0) {
+        if (buf->offset + aoffset + len > buf->maxlen) {
+            debug_print(""%s"", ""End of buffer\n"");
+            buf->error = MOBI_BUFFER_END;
+            return;
+        }
+        source += aoffset;
+    } else {
+        if ( (buf->offset < aoffset) || (buf->offset + len > buf->maxlen) ) {
+            debug_print(""%s"", ""Beyond start/end of buffer\n"");
+            buf->error = MOBI_BUFFER_END;
+            return;
+        }
+        source -= aoffset;
+    }
+    memmove(buf->data + buf->offset, source, len);
+    buf->offset += len;
+}",short_<2k,0,21,1,all_methods_yes,0,0,1,0,1,0,1,repair_checked_absent_or_irrelevant:added_guard,retrieval_low_margin,0.002485334873199463,0.9607822895050049,166,0,1,0,1
+267985,0,1,FP,yes_prior_consensus_false_positive,error_handling,radare2,CWE-125,7883,7,7,"static int string_scan_range(RList *list, RBinFile *bf, int min,
+			      const ut64 from, const ut64 to, int type, int raw, RBinSection *section) {
+	RBin *bin = bf->rbin;
+	ut8 tmp[R_STRING_SCAN_BUFFER_SIZE];
+	ut64 str_start, needle = from;
+	int count = 0, i, rc, runes;
+	int str_type = R_STRING_TYPE_DETECT;
+
+	// if list is null it means its gonna dump
+	r_return_val_if_fail (bf, -1);
+
+	if (type == -1) {
+		type = R_STRING_TYPE_DETECT;
+	}
+	if (from == to) {
+		return 0;
+	}
+	if (from > to) {
+		eprintf (""Invalid range to find strings 0x%""PFMT64x"" .. 0x%""PFMT64x""\n"", from, to);
+		return -1;
+	}
+	st64 len = (st64)(to - from);
+	if (len < 1 || len > ST32_MAX) {
+		eprintf (""String scan range is invalid (%""PFMT64d"" bytes)\n"", len);
+		return -1;
+	}
+	ut8 *buf = calloc (len, 1);
+	if (!buf || !min) {
+		free (buf);
+		return -1;
+	}
+	st64 vdelta = 0, pdelta = 0;
+	RBinSection *s = NULL;
+	bool ascii_only = false;
+	PJ *pj = NULL;
+	if (bf->strmode == R_MODE_JSON && !list) {
+		pj = pj_new ();
+		if (pj) {
+			pj_a (pj);
+		}
+	}
+	r_buf_read_at (bf->buf, from, buf, len);
+	char *charset = r_sys_getenv (""RABIN2_CHARSET"");
+	if (!R_STR_ISEMPTY (charset)) {
+		RCharset *ch = r_charset_new ();
+		if (r_charset_use (ch, charset)) {
+			int outlen = len * 4;
+			ut8 *out = calloc (len, 4);
+			if (out) {
+				int res = r_charset_encode_str (ch, out, outlen, buf, len);
+				int i;
+				// TODO unknown chars should be translated to null bytes
+				for (i = 0; i < res; i++) {
+					if (out[i] == '?') {
+						out[i] = 0;
+					}
+				}
+				len = res;
+				free (buf);
+				buf = out;
+			} else {
+				eprintf (""Cannot allocate\n"");
+			}
+		} else {
+			eprintf (""Invalid value for RABIN2_CHARSET.\n"");
+		}
+		r_charset_free (ch);
+	}
+	free (charset);
+	RConsIsBreaked is_breaked = (bin && bin->consb.is_breaked)? bin->consb.is_breaked: NULL;
+	// may oobread
+	while (needle < to && needle < UT64_MAX - 4) {
+		if (is_breaked && is_breaked ()) {
+			break;
+		}
+		// smol optimization
+		if (needle < to - 4) {
+			ut32 n1 = r_read_le32 (buf + (needle - from));
+			if (!n1) {
+				needle += 4;
+				continue;
+			}
+		}
+		rc = r_utf8_decode (buf + (needle - from), to - needle, NULL);
+		if (!rc) {
+			needle++;
+			continue;
+		}
+		bool addr_aligned = !(needle % 4);
+
+		if (type == R_STRING_TYPE_DETECT) {
+			char *w = (char *)buf + (needle + rc - from);
+			if (((to - needle) > 8 + rc)) {
+				// TODO: support le and be
+				bool is_wide32le = (needle + rc + 2 < to) && (!w[0] && !w[1] && !w[2] && w[3] && !w[4]);
+				// reduce false positives
+				if (is_wide32le) {
+					if (!w[5] && !w[6] && w[7] && w[8]) {
+						is_wide32le = false;
+					}
+				}
+				if (!addr_aligned) {
+					is_wide32le = false;
+				}
+				///is_wide32be &= (n1 < 0xff && n11 < 0xff); // false; // n11 < 0xff;
+				if (is_wide32le  && addr_aligned) {
+					str_type = R_STRING_TYPE_WIDE32; // asume big endian,is there little endian w32?
+				} else {
+					// bool is_wide = (n1 && n2 && n1 < 0xff && (!n2 || n2 < 0xff));
+					bool is_wide = needle + rc + 4 < to && !w[0] && w[1] && !w[2] && w[3] && !w[4];
+					str_type = is_wide? R_STRING_TYPE_WIDE: R_STRING_TYPE_ASCII;
+				}
+			} else {
+				if (rc > 1) {
+					str_type = R_STRING_TYPE_UTF8; // could be charset if set :?
+				} else {
+					str_type = R_STRING_TYPE_ASCII;
+				}
+			}
+		} else if (type == R_STRING_TYPE_UTF8) {
+			str_type = R_STRING_TYPE_ASCII; // initial assumption
+		} else {
+			str_type = type;
+		}
+		runes = 0;
+		str_start = needle;
+
+		/* Eat a whole C string */
+		for (i = 0; i < sizeof (tmp) - 4 && needle < to; i += rc) {
+			RRune r = {0};
+			if (str_type == R_STRING_TYPE_WIDE32) {
+				rc = r_utf32le_decode (buf + needle - from, to - needle, &r);
+				if (rc) {
+					rc = 4;
+				}
+			} else if (str_type == R_STRING_TYPE_WIDE) {
+				rc = r_utf16le_decode (buf + needle - from, to - needle, &r);
+				if (rc == 1) {
+					rc = 2;
+				}
+			} else {
+				rc = r_utf8_decode (buf + (needle - from), to - needle, &r);
+				if (rc > 1) {
+					str_type = R_STRING_TYPE_UTF8;
+				}
+			}
+
+			/* Invalid sequence detected */
+			if (!rc || (ascii_only && r > 0x7f)) {
+				needle++;
+				break;
+			}
+
+			needle += rc;
+
+			if (r_isprint (r) && r != '\\') {
+				if (str_type == R_STRING_TYPE_WIDE32) {
+					if (r == 0xff) {
+						r = 0;
+					}
+				}
+				rc = r_utf8_encode (tmp + i, r);
+				runes++;
+				/* Print the escape code */
+			} else if (r && r < 0x100 && strchr (""\b\v\f\n\r\t\a\033\\"", (char)r)) {
+				if ((i + 32) < sizeof (tmp) && r < 93) {
+					tmp[i + 0] = '\\';
+					tmp[i + 1] = ""       abtnvfr             e  ""
+					             ""                              ""
+					             ""                              ""
+					             ""  \\""[r];
+				} else {
+					// string too long
+					break;
+				}
+				rc = 2;
+				runes++;
+			} else {
+				/* \0 marks the end of C-strings */
+				break;
+			}
+		}
+
+		tmp[i++] = '\0';
+
+		if (runes < min && runes >= 2 && str_type == R_STRING_TYPE_ASCII && needle < to) {
+			// back up past the \0 to the last char just in case it starts a wide string
+			needle -= 2;
+		}
+		if (runes >= min) {
+			// reduce false positives
+			int j, num_blocks, *block_list;
+			int *freq_list = NULL, expected_ascii, actual_ascii, num_chars;
+			if (str_type == R_STRING_TYPE_ASCII) {
+				for (j = 0; j < i; j++) {
+					char ch = tmp[j];
+					if (ch != '\n' && ch != '\r' && ch != '\t') {
+						if (!IS_PRINTABLE (tmp[j])) {
+							continue;
+						}
+					}
+				}
+			}
+			switch (str_type) {
+			case R_STRING_TYPE_UTF8:
+			case R_STRING_TYPE_WIDE:
+			case R_STRING_TYPE_WIDE32:
+				num_blocks = 0;
+				block_list = r_utf_block_list ((const ut8*)tmp, i - 1,
+						str_type == R_STRING_TYPE_WIDE? &freq_list: NULL);
+				if (block_list) {
+					for (j = 0; block_list[j] != -1; j++) {
+						num_blocks++;
+					}
+				}
+				if (freq_list) {
+					num_chars = 0;
+					actual_ascii = 0;
+					for (j = 0; freq_list[j] != -1; j++) {
+						num_chars += freq_list[j];
+						if (!block_list[j]) { // ASCII
+							actual_ascii = freq_list[j];
+						}
+					}
+					free (freq_list);
+					expected_ascii = num_block
+/* ... truncated ... */",0,1,0,0,1,18,"Fix integer overflow in string search causing oobread ##crash
+
+* Reported by @greatergoodest via huntrdev
+* BountyID: 8a3dc5cb-08b3-4807-82b2-77f08c137a04
+* Reproducer bfileovf",Out-of-bounds Read in GitHub repository radareorg/radare2 prior to 5.7.0.,27,"static int string_scan_range(RList *list, RBinFile *bf, int min,
+			      const ut64 from, const ut64 to, int type, int raw, RBinSection *section) {
+	RBin *bin = bf->rbin;
+	ut8 tmp[R_STRING_SCAN_BUFFER_SIZE];
+	ut64 str_start, needle = from;
+	int count = 0, i, rc, runes;
+	int str_type = R_STRING_TYPE_DETECT;
+
+	// if list is null it means its gonna dump
+	r_return_val_if_fail (bf, -1);
+
+	if (type == -1) {
+		type = R_STRING_TYPE_DETECT;
+	}
+	if (from == to) {
+		return 0;
+	}
+	if (from > to) {
+		eprintf (""Invalid range to find strings 0x%""PFMT64x"" .. 0x%""PFMT64x""\n"", from, to);
+		return -1;
+	}
+	st64 len = (st64)(to - from);
+	if (len < 1 || len > ST32_MAX) {
+		eprintf (""String scan range is invalid (%""PFMT64d"" bytes)\n"", len);
+		return -1;
+	}
+	ut8 *buf = calloc (len, 1);
+	if (!buf || !min) {
+		free (buf);
+		return -1;
+	}
+	st64 vdelta = 0, pdelta = 0;
+	RBinSection *s = NULL;
+	bool ascii_only = false;
+	PJ *pj = NULL;
+	if (bf->strmode == R_MODE_JSON && !list) {
+		pj = pj_new ();
+		if (pj) {
+			pj_a (pj);
+		}
+	}
+	r_buf_read_at (bf->buf, from, buf, len);
+	char *charset = r_sys_getenv (""RABIN2_CHARSET"");
+	if (!R_STR_ISEMPTY (charset)) {
+		RCharset *ch = r_charset_new ();
+		if (r_charset_use (ch, charset)) {
+			int outlen = len * 4;
+			ut8 *out = calloc (len, 4);
+			if (out) {
+				int res = r_charset_encode_str (ch, out, outlen, buf, len);
+				int i;
+				// TODO unknown chars should be translated to null bytes
+				for (i = 0; i < res; i++) {
+					if (out[i] == '?') {
+						out[i] = 0;
+					}
+				}
+				len = res;
+				free (buf);
+				buf = out;
+			} else {
+				eprintf (""Cannot allocate\n"");
+			}
+		} else {
+			eprintf (""Invalid value for RABIN2_CHARSET.\n"");
+		}
+		r_charset_free (ch);
+	}
+	free (charset);
+	RConsIsBreaked is_breaked = (bin && bin->consb.is_breaked)? bin->consb.is_breaked: NULL;
+	// may oobread
+	while (needle < to && needle < UT64_MAX - 4) {
+		if (is_breaked && is_breaked ()) {
+			break;
+		}
+		// smol optimization
+		if (needle < to - 4) {
+			ut32 n1 = r_read_le32 (buf + (needle - from));
+			if (!n1) {
+				needle += 4;
+				continue;
+			}
+		}
+		rc = r_utf8_decode (buf + (needle - from), to - needle, NULL);
+		if (!rc) {
+			needle++;
+			continue;
+		}
+		bool addr_aligned = !(needle % 4);
+
+		if (type == R_STRING_TYPE_DETECT) {
+			char *w = (char *)buf + (needle + rc - from);
+			if (((to - needle) > 8 + rc)) {
+				// TODO: support le and be
+				bool is_wide32le = (needle + rc + 2 < to) && (!w[0] && !w[1] && !w[2] && w[3] && !w[4]);
+				// reduce false positives
+				if (is_wide32le) {
+					if (!w[5] && !w[6] && w[7] && w[8]) {
+						is_wide32le = false;
+					}
+				}
+				if (!addr_aligned) {
+					is_wide32le = false;
+				}
+				///is_wide32be &= (n1 < 0xff && n11 < 0xff); // false; // n11 < 0xff;
+				if (is_wide32le  && addr_aligned) {
+					str_type = R_STRING_TYPE_WIDE32; // asume big endian,is there little endian w32?
+				} else {
+					// bool is_wide = (n1 && n2 && n1 < 0xff && (!n2 || n2 < 0xff));
+					bool is_wide = needle + rc + 4 < to && !w[0] && w[1] && !w[2] && w[3] && !w[4];
+					str_type = is_wide? R_STRING_TYPE_WIDE: R_STRING_TYPE_ASCII;
+				}
+			} else {
+				if (rc > 1) {
+					str_type = R_STRING_TYPE_UTF8; // could be charset if set :?
+				} else {
+					str_type = R_STRING_TYPE_ASCII;
+				}
+			}
+		} else if (type == R_STRING_TYPE_UTF8) {
+			str_type = R_STRING_TYPE_ASCII; // initial assumption
+		} else {
+			str_type = type;
+		}
+		runes = 0;
+		str_start = needle;
+
+		/* Eat a whole C string */
+		for (i = 0; i < sizeof (tmp) - 4 && needle < to; i += rc) {
+			RRune r = {0};
+			if (str_type == R_STRING_TYPE_WIDE32) {
+				rc = r_utf32le_decode (buf + needle - from, to - needle, &r);
+				if (rc) {
+					rc = 4;
+				}
+			} else if (str_type == R_STRING_TYPE_WIDE) {
+				rc = r_utf16le_decode (buf + needle - from, to - needle, &r);
+				if (rc == 1) {
+					rc = 2;
+				}
+			} else {
+				rc = r_utf8_decode (buf + (needle - from), to - needle, &r);
+				if (rc > 1) {
+					str_type = R_STRING_TYPE_UTF8;
+				}
+			}
+
+			/* Invalid sequence detected */
+			if (!rc || (ascii_only && r > 0x7f)) {
+				needle++;
+				break;
+			}
+
+			needle += rc;
+
+			if (r_isprint (r) && r != '\\') {
+				if (str_type == R_STRING_TYPE_WIDE32) {
+					if (r == 0xff) {
+						r = 0;
+					}
+				}
+				rc = r_utf8_encode (tmp + i, r);
+				runes++;
+				/* Print the escape code */
+			} else if (r && r < 0x100 && strchr (""\b\v\f\n\r\t\a\033\\"", (char)r)) {
+				if ((i + 32) < sizeof (tmp) && r < 93) {
+					tmp[i + 0] = '\\';
+					tmp[i + 1] = ""       abtnvfr             e  ""
+					             ""                              ""
+					             ""                              ""
+					             ""  \\""[r];
+				} else {
+					// string too long
+					break;
+				}
+				rc = 2;
+				runes++;
+			} else {
+				/* \0 marks the end of C-strings */
+				break;
+			}
+		}
+
+		tmp[i++] = '\0';
+
+		if (runes < min && runes >= 2 && str_type == R_STRING_TYPE_ASCII && needle < to) {
+			// back up past the \0 to the last char just in case it starts a wide string
+			needle -= 2;
+		}
+		if (runes >= min) {
+			// reduce false positives
+			int j, num_blocks, *block_list;
+			int *freq_list = NULL, expected_ascii, actual_ascii, num_chars;
+			if (str_type == R_STRING_TYPE_ASCII) {
+				for (j = 0; j < i; j++) {
+					char ch = tmp[j];
+					if (ch != '\n' && ch != '\r' && ch != '\t') {
+						if (!IS_PRINTABLE (tmp[j])) {
+							continue;
+						}
+					}
+				}
+			}
+			switch (str_type) {
+			case R_STRING_TYPE_UTF8:
+			case R_STRING_TYPE_WIDE:
+			case R_STRING_TYPE_WIDE32:
+				num_blocks = 0;
+				block_list = r_utf_block_list ((const ut8*)tmp, i - 1,
+						str_type == R_STRING_TYPE_WIDE? &freq_list: NULL);
+				if (block_list) {
+					for (j = 0; block_list[j] != -1; j++) {
+						num_blocks++;
+					}
+				}
+				if (freq_list) {
+					num_chars = 0;
+					actual_ascii = 0;
+					for (j = 0; freq_list[j] != -1; j++) {
+						num_chars += freq_list[j];
+						if (!block_list[j]) { // ASCII
+							actual_ascii = freq_list[j];
+						}
+					}
+					free (freq_list);
+					expected_ascii = num_blocks ? num_chars / num_blocks : 0;
+					if (actual_ascii > expected_ascii) {
+						ascii_only = true;
+						needle = str_start;
+						free (block_list);
+						continue;
+					}
+				}
+				free (block_list);
+				if (num_blocks > R_STRING_MAX_UNI_BLOCKS) {
+					needle++;
+					continue;
+				}
+			}
+			RBinString *bs = R_NEW0 (RBinString);
+			if (!bs) {
+				break;
+			}
+			bs->type = str_type;
+			bs->length = runes;
+			bs->size = needle - str_start;
+			bs->ordinal = count++;
+			// TODO: move into adjust_offset
+			switch (str_type) {
+			case R_STRING_TYPE_WIDE:
+				if (str_start - from > 1) {
+					const ut8 *p = buf + str_start - 2 - from;
+					if (p[0] == 0xff && p[1] == 0xfe) {
+						str_start -= 2; // \xff\xfe
+					}
+				}
+				break;
+			case R_STRING_TYPE_WIDE32:
+				if (str_start - from > 3) {
+					const ut8 *p = buf + str_start - 4 - from;
+					if (p[0] == 0xff && p[1] == 0xfe) {
+						str_start -= 4; // \xff\xfe\x00\x00
+					}
+				}
+				break;
+			}
+			if (!s) {
+				if (section) {
+					s = section;
+				} else if (bf->o) {
+					s = r_bin_get_section_at (bf->o, str_start, false);
+				}
+				if (s) {
+					vdelta = s->vaddr;
+					pdelta = s->paddr;
+				}
+			}
+			ut64 baddr = bf->loadaddr && bf->o? bf->o->baddr: bf->loadaddr;
+			bs->paddr = str_start + baddr;
+			bs->vaddr = str_start - pdelta + vdelta + baddr;
+			bs->string = r_str_ndup ((const char *)tmp, i);
+			if (list) {
+				r_list_append (list, bs);
+				if (bf->o) {
+					ht_up_insert (bf->o->strings_db, bs->vaddr, bs);
+				}
+			} else {
+				print_string (bf, bs, raw, pj);
+				r_bin_string_free (bs);
+			}
+			if (from == 0 && to == bf->size) {
+				/* force lookup section at the next one */
+				s = NULL;
+			}
+		}
+		ascii_only = false;
+	}
+	free (buf);
+	if (pj) {
+		pj_end (pj);
+		if (bin) {
+			RIO *io = bin->iob.io;
+			if (io) {
+				io->cb_printf (""%s"", pj_string (pj));
+			}
+		}
+		pj_free (pj);
+	}
+	return count;
+}",long_5k_10k,7,310,9,all_methods_yes,9,0,1,0,1,0,1,repair_checked_absent_or_irrelevant:added_guard,retrieval_pos_margin,0.01122128963470459,0.9741929173469543,2105,0,1,0,1

@@ -1,0 +1,13 @@
+{
+  "total_records": 868,
+  "known_predictions": 868,
+  "unknown_predictions": 0,
+  "accuracy": 0.5241935483870968,
+  "precision": 0.5225409836065574,
+  "recall": 0.5862068965517241,
+  "f1": 0.552546045503792,
+  "tp": 255,
+  "fp": 233,
+  "tn": 200,
+  "fn": 180
+}

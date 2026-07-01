@@ -1,0 +1,2 @@
+method,known_pairs,unknown_pairs,P-C,P-V,P-B,P-R,P-C_rate,P-V_rate,P-B_rate,P-R_rate
+fine_tuned_full_function_classifier,10,0,0,10,0,0,0.0,1.0,0.0,0.0

@@ -1,0 +1,19 @@
+{
+  "known": 869,
+  "unknown": 1,
+  "accuracy": 0.4994246260069045,
+  "precision": 0.5,
+  "recall": 0.9839080459770115,
+  "specificity": 0.013824884792626729,
+  "f1": 0.6630518977536793,
+  "directional_failure_index": 0.9700831611843848,
+  "yes_rate": 0.9850402761795167,
+  "tp": 428,
+  "fp": 428,
+  "tn": 6,
+  "fn": 7,
+  "input": "${SLICERAG_ROOT}/data/primevul_test_paired_labeled.jsonl",
+  "variant": "cwe_only",
+  "model": "gemini-3.1-pro-preview",
+  "total_records": 870
+}

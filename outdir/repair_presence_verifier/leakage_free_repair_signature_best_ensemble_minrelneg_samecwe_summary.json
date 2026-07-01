@@ -1,0 +1,58 @@
+{
+  "predictions_csv": "outdir/ensemble_error_patch_contrast/per_sample_predictions.csv",
+  "query_results": "outdir/query_patch_repair_signature_test870/query_patch_contrast_results.jsonl",
+  "base_pred_column": "best_ensemble_pred",
+  "mode": "fixed_closer",
+  "max_pairs": 3,
+  "min_relevance": -100000.0,
+  "min_abs_margin": 0.0,
+  "require_real_repair": true,
+  "require_fixed_added_lines": false,
+  "require_same_cwe": true,
+  "require_same_project": false,
+  "min_repair_token_overlap": 1,
+  "exclude_same_idx": true,
+  "num_query_rows": 868,
+  "num_prediction_rows": 868,
+  "num_candidates": 286,
+  "candidate_target_counts_for_evaluation_only": {
+    "1": 146,
+    "0": 140
+  },
+  "skip_counts": {
+    "no_trigger_pair": 483,
+    "base_not_yes": 99
+  },
+  "trigger_top_closer_side_counts": {
+    "fixed": 286
+  },
+  "top_pair_same_project_counts": {
+    "False": 191,
+    "True": 95
+  },
+  "top_pair_same_cwe_counts": {
+    "True": 286
+  },
+  "top_pair_repair_signal_counts": {
+    "added_guard|bounds_or_shape_check|error_handling": 53,
+    "added_guard|bounds_or_shape_check|error_handling|api_replacement": 37,
+    "bounds_or_shape_check": 32,
+    "added_guard|bounds_or_shape_check|null_check|api_replacement": 23,
+    "added_guard|bounds_or_shape_check|null_check|error_handling|api_replacement": 21,
+    "added_guard|bounds_or_shape_check|null_check|error_handling": 20,
+    "added_guard|bounds_or_shape_check": 17,
+    "bounds_or_shape_check|api_replacement": 14,
+    "added_guard|bounds_or_shape_check|null_check|error_handling|state_or_lifetime_repair": 11,
+    "unknown": 9,
+    "added_guard|bounds_or_shape_check|api_replacement": 9,
+    "added_guard|null_check|error_handling": 6,
+    "added_guard|error_handling|state_or_lifetime_repair": 6,
+    "added_guard|error_handling|api_replacement": 5,
+    "added_guard|bounds_or_shape_check|null_check": 4,
+    "api_replacement": 3,
+    "bounds_or_shape_check|error_handling": 3,
+    "added_guard|bounds_or_shape_check|error_handling|state_or_lifetime_repair": 3,
+    "added_guard": 2,
+    "added_guard|null_check|api_replacement": 2
+  }
+}

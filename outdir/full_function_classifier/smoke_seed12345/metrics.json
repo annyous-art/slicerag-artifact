@@ -1,0 +1,61 @@
+{
+  "run_config": {
+    "train": "${SLICERAG_ROOT}/data/primevul_train_paired_labeled.jsonl",
+    "test": "${SLICERAG_ROOT}/data/primevul_test_paired_labeled.jsonl",
+    "model": "${SLICERAG_EMBED_MODEL}",
+    "epochs": 1,
+    "batch_size": 4,
+    "eval_batch_size": 8,
+    "gradient_accumulation_steps": 1,
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.06,
+    "warmup_steps": 0,
+    "max_length": 512,
+    "seed": 12345,
+    "device": "cuda",
+    "fp16": true,
+    "num_train_rows": 64,
+    "num_test_rows": 20,
+    "train_label_counts": {
+      "1": 32,
+      "0": 32
+    },
+    "test_label_counts": {
+      "1": 10,
+      "0": 10
+    }
+  },
+  "sample_metrics": {
+    "known": 20,
+    "accuracy": 0.5,
+    "precision": 0.5,
+    "recall": 1.0,
+    "specificity": 0.0,
+    "f1": 0.6666666666666666,
+    "yes_rate": 1.0,
+    "directional_failure_index": 1.0,
+    "tp": 10,
+    "fp": 10,
+    "tn": 0,
+    "fn": 0
+  },
+  "pairwise_metrics": {
+    "num_data_rows": 20,
+    "candidate_adjacent_pairs": 10,
+    "known_pairs": 10,
+    "unknown_pairs": 0,
+    "skip_counts": {},
+    "P-C": 0,
+    "P-V": 10,
+    "P-B": 0,
+    "P-R": 0,
+    "P-C_rate": 0.0,
+    "P-V_rate": 1.0,
+    "P-B_rate": 0.0,
+    "P-R_rate": 0.0
+  },
+  "predictions_csv": "${SLICERAG_ROOT}/outdir/full_function_classifier/smoke_seed12345/predictions.csv",
+  "pairwise_pairs_csv": "${SLICERAG_ROOT}/outdir/full_function_classifier/smoke_seed12345/pairwise_pairs.csv",
+  "pairwise_metrics_csv": "${SLICERAG_ROOT}/outdir/full_function_classifier/smoke_seed12345/pairwise_metrics.csv"
+}

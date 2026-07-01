@@ -1,0 +1,14 @@
+{
+  "total_records": 20,
+  "known_predictions": 20,
+  "unknown_predictions": 0,
+  "accuracy": 0.9,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0,
+  "yes_rate": 0.1,
+  "tp": 0,
+  "fp": 2,
+  "tn": 18,
+  "fn": 0
+}

@@ -1,0 +1,10 @@
+author_no_yes_correct,author_no_yes_pred,best_ensemble_correct,best_ensemble_pred,bounds_keyword_count,char_len,cwe,error_handling_keyword_count,idx,lifecycle_keyword_count,line_count,memory_api_count,null_keyword_count,old_rag_correct,old_rag_pred,patch_contrast_correct,patch_contrast_pred,positive_weighted_rag_correct,positive_weighted_rag_pred,project,retrieval_pos_neg_margin_max,retrieval_top1_score,target,token_len_approx,yes_only_correct,yes_only_pred,zero_shot_correct,zero_shot_pred
+0,0,1,1,1,1007,CWE-284,10,196611,0,50,0,2,0,0,0,0,0,0,booth,0.001924753189086914,0.9564363956451416,1,263,1,1,0,0
+0,0,1,1,21,2523,CWE-369,5,197247,0,63,1,0,0,0,0,0,0,0,tensorflow,0.006406426429748535,0.9360512495040894,1,501,1,1,0,0
+0,0,1,1,2,6235,CWE-122,11,206676,4,242,0,4,0,0,0,0,0,0,vim,0.0018655657768249512,0.9562565088272095,1,1325,1,1,0,0
+0,0,1,1,0,148,CWE-415,3,208535,0,5,0,1,0,0,0,0,0,0,rizin,-0.006289303302764893,0.9389716386795044,1,41,1,1,0,0
+0,0,1,1,2,1312,CWE-310,0,215948,0,60,0,0,0,0,0,0,0,0,nettle,0.012684822082519531,0.9552356004714966,1,470,1,1,0,0
+0,1,0,1,1,3181,CWE-476,1,226433,0,59,2,0,0,1,0,1,0,1,tensorflow,-0.0016922950744628906,0.9583321213722229,0,647,1,0,0,1
+0,1,0,1,26,3684,CWE-125,2,269323,0,82,0,0,0,1,0,1,0,1,tensorflow,0.005492687225341797,0.9519917964935303,0,828,1,0,0,1
+0,1,0,1,4,1388,CWE-200,14,270767,1,65,2,2,0,1,0,1,0,1,barebox,0.003004133701324463,0.9476161599159241,0,299,1,0,0,1
+0,1,0,1,4,1859,CWE-369,0,270922,1,39,0,0,0,1,0,1,0,1,tensorflow,0.02632439136505127,0.9604015350341797,0,308,1,0,0,1

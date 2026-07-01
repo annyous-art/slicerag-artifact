@@ -1,0 +1,37 @@
+{
+  "data_jsonl": "data/primevul_test_paired_labeled.jsonl",
+  "num_data_rows": 870,
+  "num_adjacent_pairs": 435,
+  "methods": [
+    {
+      "method": "gpt55_baseline",
+      "input": "data/gpt-5.5_std_cls_logprobsFalse_fewshotegTrue1_baseline_870.jsonl",
+      "known_pairs": 435,
+      "unknown_pairs": 0,
+      "row_idx_mismatches": 0,
+      "P-C": 49,
+      "P-V": 311,
+      "P-B": 52,
+      "P-R": 23,
+      "P-C_rate": 0.112644,
+      "P-V_rate": 0.714943,
+      "P-B_rate": 0.11954,
+      "P-R_rate": 0.052874
+    },
+    {
+      "method": "gpt55_rag",
+      "input": "data/gpt-5.5_std_cls_fewshotegFalse1_RAG_870.jsonl",
+      "known_pairs": 435,
+      "unknown_pairs": 0,
+      "row_idx_mismatches": 0,
+      "P-C": 75,
+      "P-V": 170,
+      "P-B": 162,
+      "P-R": 28,
+      "P-C_rate": 0.172414,
+      "P-V_rate": 0.390805,
+      "P-B_rate": 0.372414,
+      "P-R_rate": 0.064368
+    }
+  ]
+}

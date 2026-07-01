@@ -1,0 +1,35 @@
+{
+  "predictions_csv": "${SLICERAG_ROOT}/outdir/ensemble_error_patch_contrast/per_sample_predictions.csv",
+  "base_pred_column": "best_ensemble_pred",
+  "repair_verifier_jsonl": "${SLICERAG_ROOT}/outdir/repair_presence_verifier/merged_bounds_added_wide_glm-5.1.jsonl",
+  "n": 868,
+  "error_type_counts": {
+    "correct": 450,
+    "FP": 376,
+    "FN": 42
+  },
+  "taxonomy_counts": {
+    "correct": 450,
+    "yes_prior_consensus_false_positive": 258,
+    "risky_pattern_false_alarm:error_handling": 76,
+    "conservative_consensus_false_negative": 42,
+    "risky_pattern_false_alarm:bounds": 31,
+    "repair_present_but_not_applied_or_policy_blocked": 5,
+    "retrieval_misleading_or_ambiguous:retrieval_low_margin": 3,
+    "risky_pattern_false_alarm:lifecycle": 2,
+    "risky_pattern_false_alarm:memory_api": 1
+  },
+  "method_pattern_counts": {
+    "all_methods_yes": 419,
+    "method_disagreement": 231,
+    "near_consensus_yes": 121,
+    "all_methods_no": 82,
+    "near_consensus_no": 15
+  },
+  "retrieval_bucket_counts": {
+    "retrieval_low_margin": 762,
+    "retrieval_pos_margin": 94,
+    "retrieval_neg_margin": 10,
+    "retrieval_missing": 2
+  }
+}

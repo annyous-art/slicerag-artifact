@@ -1,0 +1,775 @@
+idx,paired_idx,target,project,cwe,group,primary_category,categories,repair_signal,has_added_guard,has_added_error_handling,has_api_replacement,has_state_or_lifetime_repair,changed_line_count,changed_region_count,char_len,line_count,patch_margin,patch_closer_side,added_lines,changed_line_ratio,changed_lines,diff_excerpt,has_bounds_or_shape_repair,patch_pair_cwe,patch_pair_project,pred_pattern,removed_lines
+195059,220909,1,tensorflow,CWE-617,target1_all_wrong_semantic,assert_dos,assert_dos|null_check|error_handling,added_guard|added_error_handling|api_replacement,1,1,1,0,2,1,1177,40,0.9030621647834778,vulnerable,"if (input == nullptr) {
+VLOG(1) << ""node = "" << node.name() << "" input = "" << node.input(0);
+return false;
+}",0.05,"L20: CHECK(input != nullptr) << ""node = "" << node.name()
+L21: << "" input = "" << node.input(0);","--- vuln 195059
++++ fixed 220909
+@@ -18,6 +18,8 @@
+ 
+   const NodeDef* input = node_map_->GetNode(NodeName(node.input(0)));
+-  CHECK(input != nullptr) << ""node = "" << node.name()
+-                          << "" input = "" << node.input(0);
++  if (input == nullptr) {
++    VLOG(1) << ""node = "" << node.name() << "" input = "" << node.input(0);
++    return false;
++  }
+   // Don't remove Identity nodes corresponding to Variable reads or following
+   // Recv.",0,CWE-190,mysql-server,0|0|0|0|0|0,"CHECK(input != nullptr) << ""node = "" << node.name()
+<< "" input = "" << node.input(0);"
+195091,221631,1,tensorflow,CWE-754,target1_all_wrong_semantic,shape_invariant,shape_invariant|bounds_size|null_check|error_handling,added_guard|added_error_handling|bounds_or_shape_repair,1,1,0,0,1,1,2597,57,0.015608787536621094,vulnerable,"}
+if (maxRank == 0) {
+return Value(builder->create<tensor::FromElementsOp>(
+loc, shapes[0].getType(), SmallVector<Value>()));",0.017544,"L11: maxRank = std::max(maxRank, found_shape->size());","--- vuln 195091
++++ fixed 221631
+@@ -10,4 +10,8 @@
+     shapes_found.push_back(*found_shape);
+     maxRank = std::max(maxRank, found_shape->size());
++  }
++  if (maxRank == 0) {
++    return Value(builder->create<tensor::FromElementsOp>(
++        loc, shapes[0].getType(), SmallVector<Value>()));
+   }
+ ",1,CWE-703,radare2,0|0|0|0|0|0,
+195092,221651,1,hermes,CWE-843,target1_all_wrong_semantic,error_handling,error_handling,added_guard|added_error_handling|api_replacement,1,1,1,0,1,1,2070,64,0.0038169026374816895,vulnerable,break;,0.015625,"L43: llvm_unreachable(""Invalid literal kind."");","--- vuln 195092
++++ fixed 221651
+@@ -41,5 +41,5 @@
+           return builder.getLiteralString(""string"");
+         default:
+-          llvm_unreachable(""Invalid literal kind."");
++          break;
+       }
+       break;",0,CWE-755,detect-character-encoding,0|0|0|0|0|0,"llvm_unreachable(""Invalid literal kind."");"
+195233,222906,1,tensorflow,CWE-787,target1_all_wrong_semantic,bounds_size,bounds_size|error_handling,added_guard|added_error_handling|bounds_or_shape_repair,1,1,0,0,1,1,360,10,-0.893547773361206,fixed,"return errors::InvalidArgument(""SetUnknownShape: Missing context"");
+}
+if (output_port < 0 || output_port >= ctx->num_outputs()) {
+return errors::InvalidArgument(
+""SetUnknownShape: output_port must be in [0, "", ctx->num_outputs(),
+"") but was "", output_port);",0.1,"L6: return errors::InvalidArgument(""Missing context"");","--- vuln 195233
++++ fixed 222906
+@@ -4,5 +4,10 @@
+     InferenceContext* ctx = GetContext(node);
+     if (ctx == nullptr) {
+-      return errors::InvalidArgument(""Missing context"");
++      return errors::InvalidArgument(""SetUnknownShape: Missing context"");
++    }
++    if (output_port < 0 || output_port >= ctx->num_outputs()) {
++      return errors::InvalidArgument(
++          ""SetUnknownShape: output_port must be in [0, "", ctx->num_outputs(),
++          "") but was "", output_port);
+     }
+     ctx->set_output(output_port, shape);",1,CWE-617,bind9,0|0|0|0|0|0,"return errors::InvalidArgument(""Missing context"");"
+195234,222925,1,tensorflow,CWE-617,target1_all_wrong_semantic,shape_invariant,shape_invariant|bounds_size|error_handling,added_guard|added_error_handling|api_replacement|bounds_or_shape_repair,1,1,1,0,1,1,1873,45,-0.0004571676254272461,fixed,"if (arg_index != result_.nodes.size()) {
+return errors::Internal(
+""Expected arg_index to be equal to the number of nodes in result."",
+"" Got "", arg_index, "" and "", result_.nodes.size());
+}",0.022222,"L19: DCHECK_EQ(arg_index, result_.nodes.size());","--- vuln 195234
++++ fixed 222925
+@@ -17,5 +17,9 @@
+       TF_RETURN_IF_ERROR(AddItem(strings::StrCat(arg_def.name(), "":"", i),
+                                  {true, arg_index, 0, false, {dtypes[i]}}));
+-      DCHECK_EQ(arg_index, result_.nodes.size());
++      if (arg_index != result_.nodes.size()) {
++        return errors::Internal(
++            ""Expected arg_index to be equal to the number of nodes in result."",
++            "" Got "", arg_index, "" and "", result_.nodes.size());
++      }
+       string name = arg_def.name();
+       if (dtypes.size() > 1) {",1,CWE-119,php-src,0|0|0|0|0|0,"DCHECK_EQ(arg_index, result_.nodes.size());"
+195388,225062,1,postgres,CWE-522,target1_all_wrong_semantic,state_flag,state_flag|error_handling,added_guard|added_error_handling,1,1,0,0,4,4,46206,1597,0.014642119407653809,vulnerable,"/*
+* At this point we should have no data already buffered.
+* If we do, it was received before we performed the SSL
+* handshake, so it wasn't encrypted and indeed may have
+* been injected by a man-in-the-middle.
+*/
+if (conn->inCursor != conn->inEnd)
+{
+appendPQExpBufferStr(&conn->errorMessage,
+libpq_gettext(""received unencrypted data after SSL response\n""));
+goto error_return;
+}
+
+/*
+* At this point we should have no data already buffered.
+* If we do, it was received before we performed the GSS
+* handshake, so it wasn't encrypted and indeed may have
+* been injected by a man-in-the-middle.
+*/
+if (conn->inCursor != conn->inEnd)
+{
+appendPQExpBufferStr(&conn->errorMessage,
+libpq_gettext(""received unencrypted data after GSSAPI encryption response\n""));
+goto error_return;
+}
+",0.002505,"L853: if (pollres == PGRES_POLLING_OK)
+L856: conn->status = CONNECTION_MADE;
+L952: if (pollres == PGRES_POLLING_OK)
+L955: conn->status = CONNECTION_MADE;","--- vuln 195388
++++ fixed 225062
+@@ -853,4 +853,17 @@
+ 				if (pollres == PGRES_POLLING_OK)
+ 				{
++					/*
++					 * At this point we should have no data already buffered.
++					 * If we do, it was received before we performed the SSL
++					 * handshake, so it wasn't encrypted and indeed may have
++					 * been injected by a man-in-the-middle.
++					 */
++					if (conn->inCursor != conn->inEnd)
++					{
++						appendPQExpBufferStr(&conn->errorMessage,
++											 libpq_gettext(""received unencrypted data after SSL response\n""));
++						goto error_return;
++					}
++
+ 					/* SSL handshake done, ready to send startup packet */
+ 					conn->status = CONNECTION_MADE;
+@@ -952,4 +965,17 @@
+ 				if (pollres == PGRES_POLLING_OK)
+ 				{
++					/*
++					 * At this point we should have no data already buffered.
++					 * If we do, it was received before we performed the GSS
++					 * handshake, so it wasn't encrypted and indeed may have
++					 * been injected by a man-in-the-middle.
++					 */
++					if (conn->inCursor != conn->inEnd)
++					{
++						appendPQExpBufferStr(&conn->errorMessage,
++											 libpq_gettext(""received unencrypted data after GSSAPI encryption response\n""));
++						goto error_return;
++					}
++
+ 					/* All set for startup packet */
+ 					conn->status = CONNECTION_MADE;",0,CWE-200,linux-2.6,0|0|0|0|0|0,
+195389,225086,1,tensorflow,CWE-617,target1_all_wrong_semantic,assert_dos,assert_dos|error_handling,added_guard|added_error_handling|api_replacement,1,1,1,0,3,1,699,19,0.01659572124481201,vulnerable,"if (a1_set.find(def.name()) != a1_set.end()) {
+LOG(ERROR) << ""AttrDef names must be unique, but '"" << def.name()
+<< ""' appears more than once"";
+}",0.157895,"L6: DCHECK(a1_set.find(def.name()) == a1_set.end())
+L7: << ""AttrDef names must be unique, but '"" << def.name()
+L8: << ""' appears more than once"";","--- vuln 195389
++++ fixed 225086
+@@ -4,7 +4,8 @@
+   std::unordered_map<string, const OpDef::AttrDef*> a1_set;
+   for (const OpDef::AttrDef& def : a1) {
+-    DCHECK(a1_set.find(def.name()) == a1_set.end())
+-        << ""AttrDef names must be unique, but '"" << def.name()
+-        << ""' appears more than once"";
++    if (a1_set.find(def.name()) != a1_set.end()) {
++      LOG(ERROR) << ""AttrDef names must be unique, but '"" << def.name()
++                 << ""' appears more than once"";
++    }
+     a1_set[def.name()] = &def;
+   }",0,CWE-125,libevent,0|0|0|0|0|0,"DCHECK(a1_set.find(def.name()) == a1_set.end())
+<< ""AttrDef names must be unique, but '"" << def.name()
+<< ""' appears more than once"";"
+195403,225552,1,tensorflow,CWE-190,target1_all_wrong_semantic,shape_invariant,shape_invariant|bounds_size,bounds_or_shape_repair,0,0,0,0,1,1,260,8,-0.8995012044906616,fixed,size_t alloc_size = TfLiteIntArrayGetSizeInBytes(size);,0.125,L2: int alloc_size = TfLiteIntArrayGetSizeInBytes(size);,"--- vuln 195403
++++ fixed 225552
+@@ -1,4 +1,4 @@
+ TfLiteIntArray* TfLiteIntArrayCreate(int size) {
+-  int alloc_size = TfLiteIntArrayGetSizeInBytes(size);
++  size_t alloc_size = TfLiteIntArrayGetSizeInBytes(size);
+   if (alloc_size <= 0) return NULL;
+   TfLiteIntArray* ret = (TfLiteIntArray*)malloc(alloc_size);",1,CWE-20,stb,0|0|0|0|0|0,int alloc_size = TfLiteIntArrayGetSizeInBytes(size);
+196276,237885,1,lsquic,CWE-269,target1_all_wrong_semantic,other,other,added_guard,1,0,0,0,2,1,1227,33,-0.9330348372459412,fixed,"if (QENC_MIN_DYN_TABLE_SIZE > dyn_table_size)
+dyn_table_size = 0;",0.060606,"L16: qeh->qeh_tsu_sz = sizeof(qeh->qeh_tsu_buf);
+L17: if (0 != lsqpack_enc_init(&qeh->qeh_encoder, (void *) qeh->qeh_conn,","--- vuln 196276
++++ fixed 237885
+@@ -15,4 +15,6 @@
+              | (server ? LSQPACK_ENC_OPT_SERVER : 0);
+     qeh->qeh_tsu_sz = sizeof(qeh->qeh_tsu_buf);
++    if (QENC_MIN_DYN_TABLE_SIZE > dyn_table_size)
++        dyn_table_size = 0;
+     if (0 != lsqpack_enc_init(&qeh->qeh_encoder, (void *) qeh->qeh_conn,
+                 max_table_size, dyn_table_size, max_risked_streams, enc_opts,",0,CWE-415,linux,0|0|0|0|0|0,
+196621,241311,1,mruby,CWE-787,target1_all_wrong_semantic,error_handling,error_handling,added_guard|added_error_handling,1,1,0,0,1,1,228,10,0.911151111125946,vulnerable,"if (h && mt_del(mrb, h, mid)) {
+mrb_mc_clear_by_class(mrb, c);
+return;
+}",0.1,"L8: if (h && mt_del(mrb, h, mid)) return;","--- vuln 196621
++++ fixed 241311
+@@ -6,5 +6,8 @@
+   h = c->mt;
+ 
+-  if (h && mt_del(mrb, h, mid)) return;
++  if (h && mt_del(mrb, h, mid)) {
++    mrb_mc_clear_by_class(mrb, c);
++    return;
++  }
+   mrb_name_error(mrb, mid, ""method '%n' not defined in %C"", mid, c);
+ }",0,CWE-362,linux,0|0|0|0|0|0,"if (h && mt_del(mrb, h, mid)) return;"
+197128,253515,1,mruby,CWE-125,target1_all_wrong_semantic,bounds_size,bounds_size,added_guard|bounds_or_shape_repair,1,0,0,0,1,1,3787,174,-0.9216361045837402,fixed,"if (n < 15) {
+if (n == 15) {
+pop_n(14);
+genop_2(s, OP_ARRAY, cursp(), 15);
+}",0.005747,L140: if (n < 14) {,"--- vuln 197128
++++ fixed 253515
+@@ -138,6 +138,10 @@
+         gen_move(s, top, cursp(), 1);
+       }
+-      if (n < 14) {
++      if (n < 15) {
+         n++;
++        if (n == 15) {
++          pop_n(14);
++          genop_2(s, OP_ARRAY, cursp(), 15);
++        }
+       }
+       else {",1,CWE-476,openldap,0|0|0|0|0|0,if (n < 14) {
+197318,256587,1,tensorflow,CWE-703,target1_all_wrong_semantic,shape_invariant,shape_invariant|error_handling,added_guard|added_error_handling|bounds_or_shape_repair,1,1,0,0,2,1,418,9,-0.903065025806427,fixed,"OP_REQUIRES(ctx, TensorShapeUtils::IsScalar(handle.shape()),
+errors::InvalidArgument(""`handle` must be scalar""));",0.222222,"L2: const Tensor& handle = ctx->input(0);
+L3: const string& name = handle.scalar<tstring>()();","--- vuln 197318
++++ fixed 256587
+@@ -1,4 +1,6 @@
+   void Compute(OpKernelContext* ctx) override {
+     const Tensor& handle = ctx->input(0);
++    OP_REQUIRES(ctx, TensorShapeUtils::IsScalar(handle.shape()),
++                errors::InvalidArgument(""`handle` must be scalar""));
+     const string& name = handle.scalar<tstring>()();
+     auto session_state = ctx->session_state();",1,CWE-416,linux,0|0|0|0|0|0,
+197826,264715,1,tensorflow,CWE-824,target1_all_wrong_semantic,error_handling,error_handling,added_guard|added_error_handling,1,1,0,0,1,1,2329,70,-0.9192160964012146,fixed,"// Skip constant folding resources as they cannot be deep copied.
+return n->output_type(0) != DT_RESOURCE;",0.014286,L10: return true;,"--- vuln 197826
++++ fixed 264715
+@@ -8,5 +8,6 @@
+         shape_replacement_map) {
+   if (n->IsConstant()) {
+-    return true;
++    // Skip constant folding resources as they cannot be deep copied.
++    return n->output_type(0) != DT_RESOURCE;
+   }
+   if (MaybeReplaceShapeOp(n, shape_map, shape_replacement_map)) {",0,CWE-189,linux,0|0|0|0|0|0,return true;
+199712,291761,1,linux,CWE-415,target1_all_wrong_semantic,lifetime_ownership,lifetime_ownership,state_or_lifetime_repair,0,0,0,1,1,1,152,7,-0.04652297496795654,fixed,"mutex_destroy(&clt->paths_ev_mutex);
+mutex_destroy(&clt->paths_mutex);",0.142857,L6: kfree(clt);,"--- vuln 199712
++++ fixed 291761
+@@ -4,4 +4,6 @@
+ 						 dev);
+ 
++	mutex_destroy(&clt->paths_ev_mutex);
++	mutex_destroy(&clt->paths_mutex);
+ 	kfree(clt);
+ }",0,CWE-415,linux,0|0|0|0|0|0,
+200934,313134,1,libvirt,CWE-212,target1_all_wrong_semantic,bounds_size,bounds_size|null_check,added_guard|bounds_or_shape_repair,1,0,0,0,1,1,1308,43,0.9082047343254089,vulnerable,"unsigned int xmlformatflags = VIR_DOMAIN_DEF_FORMAT_SECURE;
+if (virDomainDiskSourceFormat(&buf, src, ""source"", 0, false, xmlformatflags, true, NULL) < 0 ||",0.023256,"L28: if (virDomainDiskSourceFormat(&buf, src, ""source"", 0, false, 0, true, NULL) < 0 ||","--- vuln 200934
++++ fixed 313134
+@@ -7,4 +7,5 @@
+     int rc;
+     int erc = data->rv;
++    unsigned int xmlformatflags = VIR_DOMAIN_DEF_FORMAT_SECURE;
+ 
+     /* expect failure return code with NULL expected data */
+@@ -26,5 +27,5 @@
+     }
+ 
+-    if (virDomainDiskSourceFormat(&buf, src, ""source"", 0, false, 0, true, NULL) < 0 ||
++    if (virDomainDiskSourceFormat(&buf, src, ""source"", 0, false, xmlformatflags, true, NULL) < 0 ||
+         !(xml = virBufferContentAndReset(&buf))) {
+         fprintf(stderr, ""failed to format disk source xml\n"");",1,CWE-200,linux-2.6,0|0|0|0|0|0,"if (virDomainDiskSourceFormat(&buf, src, ""source"", 0, false, 0, true, NULL) < 0 ||"
+202943,344242,1,lua,CWE-787,target1_all_wrong_semantic,bounds_size,bounds_size,added_guard|bounds_or_shape_repair,1,0,0,0,1,1,434,12,-0.9056589007377625,fixed,"if (isLua(ci)) {  /* if Lua function, add source:line information */
+setobjs2s(L, L->top - 2, L->top - 1);  /* remove 'msg' from the stack */
+L->top--;
+}",0.083333,"L9: if (isLua(ci))  /* if Lua function, add source:line information */","--- vuln 202943
++++ fixed 344242
+@@ -7,6 +7,9 @@
+   msg = luaO_pushvfstring(L, fmt, argp);  /* format message */
+   va_end(argp);
+-  if (isLua(ci))  /* if Lua function, add source:line information */
++  if (isLua(ci)) {  /* if Lua function, add source:line information */
+     luaG_addinfo(L, msg, ci_func(ci)->p->source, getcurrentline(ci));
++    setobjs2s(L, L->top - 2, L->top - 1);  /* remove 'msg' from the stack */
++    L->top--;
++  }
+   luaG_errormsg(L);
+ }",1,CWE-200,linux,0|0|0|0|0|0,"if (isLua(ci))  /* if Lua function, add source:line information */"
+204243,355649,1,vim,CWE-787,target1_all_wrong_semantic,bounds_size,bounds_size|error_handling,added_guard|added_error_handling|bounds_or_shape_repair,1,1,0,0,3,2,6093,271,-0.9143257737159729,fixed,"static	int recurse = 0;
+
+// Limit recursion to 1000 levels.  At least at 10000 we run out of stack
+// and crash.
+if (recurse == 1000)
+{
+semsg(_(e_expression_too_recursive_str), *arg);
+return FAIL;
+}
+++recurse;
+
+--recurse;",0.01107,"L14: char_u	*alias;
+L269: ret = eval7_leader(rettv, FALSE, start_leader, &end_leader);
+L270: return ret;","--- vuln 204243
++++ fixed 355649
+@@ -13,4 +13,5 @@
+     int		ret = OK;
+     char_u	*alias;
++    static	int recurse = 0;
+ 
+     /*
+@@ -38,4 +39,13 @@
+ 	return FAIL;
+     }
++
++    // Limit recursion to 1000 levels.  At least at 10000 we run out of stack
++    // and crash.
++    if (recurse == 1000)
++    {
++	semsg(_(e_expression_too_recursive_str), *arg);
++	return FAIL;
++    }
++    ++recurse;
+ 
+     switch (**arg)
+@@ -268,4 +278,6 @@
+     if (ret == OK && evaluate && end_leader > start_leader)
+ 	ret = eval7_leader(rettv, FALSE, start_leader, &end_leader);
++
++    --recurse;
+     return ret;
+ }",1,CWE-476,openldap,0|0|0|0|0|0,
+205630,369215,1,linux,CWE-94,target1_all_wrong_semantic,null_check,null_check,added_guard,1,0,0,0,1,1,1193,42,-0.9243149757385254,fixed,kiocb->private = NULL;,0.02381,L32: kiocb->ki_flags |= IOCB_HIPRI | IOCB_ALLOC_CACHE;,"--- vuln 205630
++++ fixed 369215
+@@ -30,4 +30,5 @@
+ 			return -EOPNOTSUPP;
+ 
++		kiocb->private = NULL;
+ 		kiocb->ki_flags |= IOCB_HIPRI | IOCB_ALLOC_CACHE;
+ 		kiocb->ki_complete = io_complete_rw_iopoll;",0,CWE-200,linux,0|0|0|0|0|0,
+205736,371226,1,linux,CWE-834,target1_all_wrong_semantic,state_flag,state_flag,weak_or_unknown,0,0,0,0,1,1,110,4,-0.8927550911903381,fixed,remove_inode_hash(inode);,0.25,"L3: set_bit(FUSE_I_BAD, &get_fuse_inode(inode)->state);","--- vuln 205736
++++ fixed 371226
+@@ -1,4 +1,5 @@
+ static inline void fuse_make_bad(struct inode *inode)
+ {
++	remove_inode_hash(inode);
+ 	set_bit(FUSE_I_BAD, &get_fuse_inode(inode)->state);
+ }",0,CWE-20,linux,0|0|0|0|0|0,
+206025,376350,1,evolution-data-server,CWE-200,target1_all_wrong_semantic,null_check,null_check,added_guard,1,0,0,0,1,1,295,11,-0.02186596393585205,fixed,"gchar *safe_keyid;
+
+g_return_if_fail (keyid != NULL);
+
+/* If the recipient looks like an email address,
+* enclose it in brackets to ensure an exact match. */
+if (strchr (keyid, '@') != NULL) {
+safe_keyid = g_strdup_printf (""<%s>"", keyid);
+} else {
+safe_keyid = g_strdup (keyid);
+}
+
+g_ptr_array_add (gpg->recipients, safe_keyid);",0.090909,"L10: g_ptr_array_add (gpg->recipients, g_strdup (keyid));","--- vuln 206025
++++ fixed 376350
+@@ -2,4 +2,6 @@
+                        const gchar *keyid)
+ {
++	gchar *safe_keyid;
++
+ 	if (gpg->mode != GPG_CTX_MODE_ENCRYPT && gpg->mode != GPG_CTX_MODE_EXPORT)
+ 		return;
+@@ -8,4 +10,14 @@
+ 		gpg->recipients = g_ptr_array_new ();
+ 
+-	g_ptr_array_add (gpg->recipients, g_strdup (keyid));
++	g_return_if_fail (keyid != NULL);
++
++	/* If the recipient looks like an email address,
++	 * enclose it in brackets to ensure an exact match. */
++	if (strchr (keyid, '@') != NULL) {
++		safe_keyid = g_strdup_printf (""<%s>"", keyid);
++	} else {
++		safe_keyid = g_strdup (keyid);
++	}
++
++	g_ptr_array_add (gpg->recipients, safe_keyid);
+ }",0,CWE-20,openssh-portable,0|0|0|0|0|0,"g_ptr_array_add (gpg->recipients, g_strdup (keyid));"
+206845,387593,1,linux,CWE-125,target1_all_wrong_semantic,bounds_size,bounds_size,bounds_or_shape_repair,0,0,0,0,1,1,352,14,-0.9194929003715515,fixed,for (i = 0; i < SNDRV_CTL_ELEM_ID_NAME_MAXLEN && id->name[i]; i++),0.071429,L9: for (i = 0; id->name[i] && i < SNDRV_CTL_ELEM_ID_NAME_MAXLEN; i++),"--- vuln 206845
++++ fixed 387593
+@@ -7,5 +7,5 @@
+ 	h = MULTIPLIER * h + id->device;
+ 	h = MULTIPLIER * h + id->subdevice;
+-	for (i = 0; id->name[i] && i < SNDRV_CTL_ELEM_ID_NAME_MAXLEN; i++)
++	for (i = 0; i < SNDRV_CTL_ELEM_ID_NAME_MAXLEN && id->name[i]; i++)
+ 		h = MULTIPLIER * h + id->name[i];
+ 	h = MULTIPLIER * h + id->index;",1,CWE-200,linux,0|0|0|0|0|0,for (i = 0; id->name[i] && i < SNDRV_CTL_ELEM_ID_NAME_MAXLEN; i++)
+207803,401579,1,linux,CWE-200,target1_all_wrong_semantic,other,other,weak_or_unknown,0,0,0,0,1,1,1703,64,-0.00010567903518676758,fixed,"this_cpu_add(net_rand_state.s1, fast_pool->pool[cycles & 3]);",0.015625,L25: add_interrupt_bench(cycles);,"--- vuln 207803
++++ fixed 401579
+@@ -24,4 +24,5 @@
+ 	fast_mix(fast_pool);
+ 	add_interrupt_bench(cycles);
++	this_cpu_add(net_rand_state.s1, fast_pool->pool[cycles & 3]);
+ 
+ 	if (unlikely(crng_init == 0)) {",0,CWE-415,gpac,0|0|0|0|0|0,
+207804,401525,1,linux,CWE-200,target1_all_wrong_semantic,randomness_entropy,randomness_entropy,weak_or_unknown,0,0,0,0,1,1,384,16,0.010110795497894287,vulnerable,"
+/* The current CPU might make use of net randoms without receiving IRQs
+* to renew them often enough. Let's update the net_rand_state from a
+* non-constant value that's not affine to the number of calls to make
+* sure it's updated when there's some activity (we don't care in idle).
+*/
+this_cpu_add(net_rand_state.s1, rol32(jiffies, 24) + user_tick);",0.0625,L15: run_posix_cpu_timers();,"--- vuln 207804
++++ fixed 401525
+@@ -14,3 +14,10 @@
+ 	if (IS_ENABLED(CONFIG_POSIX_TIMERS))
+ 		run_posix_cpu_timers();
++
++	/* The current CPU might make use of net randoms without receiving IRQs
++	 * to renew them often enough. Let's update the net_rand_state from a
++	 * non-constant value that's not affine to the number of calls to make
++	 * sure it's updated when there's some activity (we don't care in idle).
++	 */
++	this_cpu_add(net_rand_state.s1, rol32(jiffies, 24) + user_tick);
+ }",0,CWE-416,linux,0|0|0|0|0|0,
+208140,406206,1,util-linux,CWE-200,target1_all_wrong_semantic,other,other,added_guard,1,0,0,0,1,1,7619,310,-0.9185095429420471,fixed,"if (mnt_context_is_restricted(cxt))
+sanitize_paths(cxt);
+",0.003226,L293: if (oper) {,"--- vuln 208140
++++ fixed 406206
+@@ -291,4 +291,7 @@
+ 		usage(stderr);
+ 
++	if (mnt_context_is_restricted(cxt))
++		sanitize_paths(cxt);
++
+ 	if (oper) {
+ 		/* MS_PROPAGATION operations, let's set the mount flags */",0,CWE-17,php,0|0|0|0|0|0,
+208525,412190,1,vim,CWE-787,target1_all_wrong_semantic,other,other,weak_or_unknown,0,0,0,0,0,0,1598,70,0.8876430988311768,vulnerable,"int		save_new_cmdpos = new_cmdpos;
+new_cmdpos = save_new_cmdpos;
+",0.0,,"--- vuln 208525
++++ fixed 412190
+@@ -3,4 +3,5 @@
+     int		i;
+     int		c;
++    int		save_new_cmdpos = new_cmdpos;
+ 
+ #ifdef USE_ON_FLY_SCROLL
+@@ -21,6 +22,4 @@
+     /*
+      * Insert the result of an expression.
+-     * Need to save the current command line, to be able to enter
+-     * a new one...
+      */
+     new_cmdpos = -1;
+@@ -63,4 +62,6 @@
+ #endif
+     }
++    new_cmdpos = save_new_cmdpos;
++
+     // remove the double quote
+     redrawcmd();",0,CWE-200,linux,0|0|0|0|0|0,"* Need to save the current command line, to be able to enter
+* a new one..."
+208654,413339,1,php-src,CWE-416,target1_all_wrong_semantic,other,other,weak_or_unknown,0,0,0,0,1,1,4635,85,0.9130544066429138,vulnerable,php_snmp_object_handlers.get_gc = php_snmp_get_gc;,0.011765,L26: php_snmp_object_handlers.get_properties = php_snmp_get_properties;,"--- vuln 208654
++++ fixed 413339
+@@ -25,4 +25,5 @@
+ 	php_snmp_object_handlers.has_property = php_snmp_has_property;
+ 	php_snmp_object_handlers.get_properties = php_snmp_get_properties;
++	php_snmp_object_handlers.get_gc = php_snmp_get_gc;
+ 
+ 	/* Register SNMP Class */",0,CWE-601,mod_auth_openidc,0|0|0|0|0|0,
+208912,416366,1,vim,CWE-416,target1_all_wrong_semantic,state_flag,state_flag|null_check,added_guard|state_or_lifetime_repair,1,0,0,1,2,2,25369,1011,-0.9111117720603943,fixed,"buf_T	*b_im_ptr_buf = NULL;	// buffer where b_im_ptr is valid
+b_im_ptr_buf = curbuf;
+cmdline_toggle_langmap(
+buf_valid(b_im_ptr_buf) ? b_im_ptr : NULL);
+if (b_im_ptr != NULL && buf_valid(b_im_ptr_buf)
+&& *b_im_ptr != B_IMODE_LMAP)",0.001978,"L480: cmdline_toggle_langmap(b_im_ptr);
+L990: if (b_im_ptr != NULL && *b_im_ptr != B_IMODE_LMAP)","--- vuln 208912
++++ fixed 416366
+@@ -31,4 +31,5 @@
+     expand_T	xpc;
+     long	*b_im_ptr = NULL;
++    buf_T	*b_im_ptr_buf = NULL;	// buffer where b_im_ptr is valid
+     cmdline_info_T save_ccline;
+     int		did_save_ccline = FALSE;
+@@ -127,4 +128,5 @@
+ 	else
+ 	    b_im_ptr = &curbuf->b_p_imsearch;
++	b_im_ptr_buf = curbuf;
+ 	if (*b_im_ptr == B_IMODE_LMAP)
+ 	    State |= MODE_LANGMAP;
+@@ -478,5 +480,6 @@
+ 
+ 	case Ctrl_HAT:
+-		cmdline_toggle_langmap(b_im_ptr);
++		cmdline_toggle_langmap(
++				    buf_valid(b_im_ptr_buf) ? b_im_ptr : NULL);
+ 		goto cmdline_not_changed;
+ 
+@@ -988,5 +991,6 @@
+ 
+ #ifdef HAVE_INPUT_METHOD
+-    if (b_im_ptr != NULL && *b_im_ptr != B_IMODE_LMAP)
++    if (b_im_ptr != NULL && buf_valid(b_im_ptr_buf)
++						  && *b_im_ptr != B_IMODE_LMAP)
+ 	im_save_status(b_im_ptr);
+     im_set_active(FALSE);",0,CWE-362,linux,0|0|0|0|0|0,"cmdline_toggle_langmap(b_im_ptr);
+if (b_im_ptr != NULL && *b_im_ptr != B_IMODE_LMAP)"
+209955,424969,1,linux,CWE-476,target1_all_wrong_semantic,null_check,null_check|error_handling,added_guard|added_error_handling,1,1,0,0,3,1,5021,182,0.9317487478256226,vulnerable,"
+trans_pcie->rba.alloc_wq = alloc_workqueue(""rb_allocator"",
+WQ_HIGHPRI | WQ_UNBOUND, 1);
+if (!trans_pcie->rba.alloc_wq) {
+ret = -ENOMEM;
+goto out_free_trans;
+}
+INIT_WORK(&trans_pcie->rba.rx_alloc, iwl_pcie_rx_allocator_work);
+
+destroy_workqueue(trans_pcie->rba.alloc_wq);
+out_free_trans:",0.016484,"L165: trans_pcie->rba.alloc_wq = alloc_workqueue(""rb_allocator"",
+L166: WQ_HIGHPRI | WQ_UNBOUND, 1);
+L167: INIT_WORK(&trans_pcie->rba.rx_alloc, iwl_pcie_rx_allocator_work);","--- vuln 209955
++++ fixed 424969
+@@ -29,4 +29,13 @@
+ 	mutex_init(&trans_pcie->mutex);
+ 	init_waitqueue_head(&trans_pcie->ucode_write_waitq);
++
++	trans_pcie->rba.alloc_wq = alloc_workqueue(""rb_allocator"",
++						   WQ_HIGHPRI | WQ_UNBOUND, 1);
++	if (!trans_pcie->rba.alloc_wq) {
++		ret = -ENOMEM;
++		goto out_free_trans;
++	}
++	INIT_WORK(&trans_pcie->rba.rx_alloc, iwl_pcie_rx_allocator_work);
++
+ 	trans_pcie->tso_hdr_page = alloc_percpu(struct iwl_tso_hdr_page);
+ 	if (!trans_pcie->tso_hdr_page) {
+@@ -163,8 +172,4 @@
+ 	 }
+ 
+-	trans_pcie->rba.alloc_wq = alloc_workqueue(""rb_allocator"",
+-						   WQ_HIGHPRI | WQ_UNBOUND, 1);
+-	INIT_WORK(&trans_pcie->rba.rx_alloc, iwl_pcie_rx_allocator_work);
+-
+ #ifdef CONFIG_IWLWIFI_DEBUGFS
+ 	trans_pcie->fw_mon_data.state = IWL_FW_MON_DBGFS_STATE_CLOSED;
+@@ -178,4 +183,6 @@
+ out_no_pci:
+ 	free_percpu(trans_pcie->tso_hdr_page);
++	destroy_workqueue(trans_pcie->rba.alloc_wq);
++out_free_trans:
+ 	iwl_trans_free(trans);
+ 	return ERR_PTR(ret);",0,CWE-476,linux,0|0|0|0|0|0,"trans_pcie->rba.alloc_wq = alloc_workqueue(""rb_allocator"",
+WQ_HIGHPRI | WQ_UNBOUND, 1);
+INIT_WORK(&trans_pcie->rba.rx_alloc, iwl_pcie_rx_allocator_work);
+"
+210050,427153,1,lua,CWE-125,target1_all_wrong_semantic,auth_config,auth_config,weak_or_unknown,0,0,0,0,2,1,467,12,-0.9038133025169373,fixed,"luaK_exp2anyregup(fs, var);  /* but could be a constant */",0.166667,"L8: lua_assert(var->k != VVOID);  /* this one must exist */
+L9: codestring(&key, varname);  /* key is variable name */","--- vuln 210050
++++ fixed 427153
+@@ -7,4 +7,5 @@
+     singlevaraux(fs, ls->envn, var, 1);  /* get environment variable */
+     lua_assert(var->k != VVOID);  /* this one must exist */
++    luaK_exp2anyregup(fs, var);  /* but could be a constant */
+     codestring(&key, varname);  /* key is variable name */
+     luaK_indexed(fs, var, &key);  /* env[varname] */",0,CWE-200,linux,0|0|0|0|0|0,
+210203,430335,1,linux,CWE-787,target1_all_wrong_semantic,shape_invariant,shape_invariant|bounds_size|null_check|error_handling,added_guard|added_error_handling|bounds_or_shape_repair,1,1,0,0,1,1,94,4,-0.8887380957603455,fixed,"if (unlikely(size > MAX_RW_COUNT))
+return NULL;
+",0.25,"L3: return kvmalloc(size, GFP_KERNEL_ACCOUNT);","--- vuln 210203
++++ fixed 430335
+@@ -1,4 +1,7 @@
+ static void *seq_buf_alloc(unsigned long size)
+ {
++	if (unlikely(size > MAX_RW_COUNT))
++		return NULL;
++
+ 	return kvmalloc(size, GFP_KERNEL_ACCOUNT);
+ }",1,CWE-416,linux,0|0|0|0|0|0,
+210273,432152,1,mongo,CWE-617,target1_all_wrong_semantic,null_check,null_check,added_guard,1,0,0,0,5,2,10193,171,0.8944410085678101,vulnerable,"if (auto css = CollectionShardingState::get(opCtx, coll->ns());
+css->getCollectionDescription(opCtx).isSharded() &&
+!expCtx->ns.isTimeseriesBucketsCollection()) {
+// Since the incoming operation is sharded, use the CSS to infer the filtering metadata for
+// the collection. We get the shard ownership filter after checking to see if the collection
+// is sharded to avoid an invariant from being fired in this call.
+auto collectionFilter = css->getOwnershipFilter(
+opCtx, CollectionShardingState::OrphanCleanupPolicy::kDisallowOrphanCleanup);",0.02924,"L48: auto collectionFilter =
+L49: CollectionShardingState::get(opCtx, coll->ns())
+L50: ->getOwnershipFilter(
+L51: opCtx, CollectionShardingState::OrphanCleanupPolicy::kDisallowOrphanCleanup);
+L60: if (collectionFilter.isSharded() && !expCtx->ns.isTimeseriesBucketsCollection()) {","--- vuln 210273
++++ fixed 432152
+@@ -44,11 +44,4 @@
+     static_cast<MultiIteratorStage*>(root.get())->addIterator(std::move(rsRandCursor));
+ 
+-    // If the incoming operation is sharded, use the CSS to infer the filtering metadata for the
+-    // collection, otherwise treat it as unsharded
+-    auto collectionFilter =
+-        CollectionShardingState::get(opCtx, coll->ns())
+-            ->getOwnershipFilter(
+-                opCtx, CollectionShardingState::OrphanCleanupPolicy::kDisallowOrphanCleanup);
+-
+     TrialStage* trialStage = nullptr;
+ 
+@@ -58,5 +51,7 @@
+     // 100 works() is such that we would have chosen not to optimize.
+     static const size_t kMaxPresampleSize = 100;
+-    if (collectionFilter.isSharded() && !expCtx->ns.isTimeseriesBucketsCollection()) {
++    if (auto css = CollectionShardingState::get(opCtx, coll->ns());
++        css->getCollectionDescription(opCtx).isSharded() &&
++        !expCtx->ns.isTimeseriesBucketsCollection()) {
+         // The ratio of owned to orphaned documents must be at least equal to the ratio between the
+         // requested sampleSize and the maximum permitted sampleSize for the original constraints to
+@@ -66,4 +61,9 @@
+         const auto minAdvancedToWorkRatio = std::max(
+             sampleSize / (numRecords * kMaxSampleRatioForRandCursor), kMaxSampleRatioForRandCursor);
++        // Since the incoming operation is sharded, use the CSS to infer the filtering metadata for
++        // the collection. We get the shard ownership filter after checking to see if the collection
++        // is sharded to avoid an invariant from being fired in this call.
++        auto collectionFilter = css->getOwnershipFilter(
++            opCtx, CollectionShardingState::OrphanCleanupPolicy::kDisallowOrphanCleanup);
+         // The trial plan is SHARDING_FILTER-MULTI_ITERATOR.
+         auto randomCursorPlan = std::make_unique<ShardFilterStage>(",0,CWE-119,w3m,0|0|0|0|0|0,"// If the incoming operation is sharded, use the CSS to infer the filtering metadata for the
+// collection, otherwise treat it as unsharded
+auto collectionFilter =
+CollectionShardingState::get(opCtx, coll->ns())
+->getOwnershipFilter(
+opCtx, CollectionShardingState::OrphanCleanupPolicy::kDisallowOrphanCleanup);
+
+if (collectionFilter.isSharded() && !expCtx->ns.isTimeseriesBucketsCollection()) {"
+210944,443298,1,vim,CWE-416,target1_all_wrong_semantic,null_check,null_check,added_guard,1,0,0,0,1,1,22933,761,-0.9320205450057983,fixed,if (breakpoint != NULL && lines_ga.ga_len > current_line),0.001314,L453: if (breakpoint != NULL),"--- vuln 210944
++++ fixed 443298
+@@ -451,5 +451,5 @@
+ 		    // Check for the next breakpoint at or after the "":while""
+ 		    // or "":for"".
+-		    if (breakpoint != NULL)
++		    if (breakpoint != NULL && lines_ga.ga_len > current_line)
+ 		    {
+ 			*breakpoint = dbg_find_breakpoint(",0,CWE-415,linux,0|0|0|0|0|0,if (breakpoint != NULL)
+211563,449294,1,vim,CWE-122,target1_all_wrong_semantic,other,other,weak_or_unknown,0,0,0,0,1,1,1349,47,0.8860520124435425,vulnerable,trigger_modechanged();,0.021277,L11: trigger_modechanged();,"--- vuln 211563
++++ fixed 449294
+@@ -9,5 +9,4 @@
+     VIsual_active = TRUE;
+     VIsual_reselect = TRUE;
+-    trigger_modechanged();
+ 
+     // Corner case: the 0 position in a tab may change when going into
+@@ -24,4 +23,5 @@
+ #endif
+ 
++    trigger_modechanged();
+     setmouse();
+ #ifdef FEAT_CONCEAL",0,CWE-862,linux,0|0|0|0|0|0,trigger_modechanged();
+211695,450764,1,vim,CWE-416,target1_all_wrong_semantic,other,other,weak_or_unknown,0,0,0,0,2,2,1662,73,0.019993484020233154,vulnerable,"col = (colnr_T)(rex.input - rex.line);
+
+// getvvcol() flushes rex.line, need to get it again
+rex.line = reg_getline(rex.lnum);
+rex.input = rex.line + col;
+
+cols = win_linetabsize(wp, rex.line, col);",0.027397,"L53: col = (colnr_T)(rex.input - rex.line);
+L68: cols = win_linetabsize(wp, rex.line, (colnr_T)(rex.input - rex.line));","--- vuln 211695
++++ fixed 450764
+@@ -49,7 +49,7 @@
+ 	return FALSE;
+ 
++    col = (colnr_T)(rex.input - rex.line);
+     if (mode == 'v')
+     {
+-	col = (colnr_T)(rex.input - rex.line);
+ 	if ((lnum == top.lnum && col < top.col)
+ 		|| (lnum == bot.lnum && col >= bot.col + (*p_sel != 'e')))
+@@ -66,5 +66,10 @@
+ 	if (top.col == MAXCOL || bot.col == MAXCOL || curswant == MAXCOL)
+ 	    end = MAXCOL;
+-	cols = win_linetabsize(wp, rex.line, (colnr_T)(rex.input - rex.line));
++
++	// getvvcol() flushes rex.line, need to get it again
++	rex.line = reg_getline(rex.lnum);
++	rex.input = rex.line + col;
++
++	cols = win_linetabsize(wp, rex.line, col);
+ 	if (cols < start || cols > end - (*p_sel == 'e'))
+ 	    return FALSE;",0,CWE-190,haproxy,0|0|0|0|0|0,"col = (colnr_T)(rex.input - rex.line);
+cols = win_linetabsize(wp, rex.line, (colnr_T)(rex.input - rex.line));"
+215103,483469,1,mongo,CWE-617,target1_all_wrong_semantic,null_check,null_check,added_guard,1,0,0,0,5,2,9585,161,0.8944410085678101,vulnerable,"if (auto css = CollectionShardingState::get(opCtx, coll->ns());
+css->getCollectionDescription(opCtx).isSharded() &&
+!expCtx->ns.isTimeseriesBucketsCollection()) {
+// Since the incoming operation is sharded, use the CSS to infer the filtering metadata for
+// the collection. We get the shard ownership filter after checking to see if the collection
+// is sharded to avoid an invariant from being fired in this call.
+auto collectionFilter = css->getOwnershipFilter(
+opCtx, CollectionShardingState::OrphanCleanupPolicy::kDisallowOrphanCleanup);",0.031056,"L48: auto collectionFilter =
+L49: CollectionShardingState::get(opCtx, coll->ns())
+L50: ->getOwnershipFilter(
+L51: opCtx, CollectionShardingState::OrphanCleanupPolicy::kDisallowOrphanCleanup);
+L60: if (collectionFilter.isSharded() && !expCtx->ns.isTimeseriesBucketsCollection()) {","--- vuln 215103
++++ fixed 483469
+@@ -44,11 +44,4 @@
+     static_cast<MultiIteratorStage*>(root.get())->addIterator(std::move(rsRandCursor));
+ 
+-    // If the incoming operation is sharded, use the CSS to infer the filtering metadata for the
+-    // collection, otherwise treat it as unsharded
+-    auto collectionFilter =
+-        CollectionShardingState::get(opCtx, coll->ns())
+-            ->getOwnershipFilter(
+-                opCtx, CollectionShardingState::OrphanCleanupPolicy::kDisallowOrphanCleanup);
+-
+     TrialStage* trialStage = nullptr;
+ 
+@@ -58,5 +51,7 @@
+     // 100 works() is such that we would have chosen not to optimize.
+     static const size_t kMaxPresampleSize = 100;
+-    if (collectionFilter.isSharded() && !expCtx->ns.isTimeseriesBucketsCollection()) {
++    if (auto css = CollectionShardingState::get(opCtx, coll->ns());
++        css->getCollectionDescription(opCtx).isSharded() &&
++        !expCtx->ns.isTimeseriesBucketsCollection()) {
+         // The ratio of owned to orphaned documents must be at least equal to the ratio between the
+         // requested sampleSize and the maximum permitted sampleSize for the original constraints to
+@@ -66,4 +61,9 @@
+         const auto minAdvancedToWorkRatio = std::max(
+             sampleSize / (numRecords * kMaxSampleRatioForRandCursor), kMaxSampleRatioForRandCursor);
++        // Since the incoming operation is sharded, use the CSS to infer the filtering metadata for
++        // the collection. We get the shard ownership filter after checking to see if the collection
++        // is sharded to avoid an invariant from being fired in this call.
++        auto collectionFilter = css->getOwnershipFilter(
++            opCtx, CollectionShardingState::OrphanCleanupPolicy::kDisallowOrphanCleanup);
+         // The trial plan is SHARDING_FILTER-MULTI_ITERATOR.
+         auto randomCursorPlan = std::make_unique<ShardFilterStage>(",0,CWE-119,w3m,0|0|0|0|0|0,"// If the incoming operation is sharded, use the CSS to infer the filtering metadata for the
+// collection, otherwise treat it as unsharded
+auto collectionFilter =
+CollectionShardingState::get(opCtx, coll->ns())
+->getOwnershipFilter(
+opCtx, CollectionShardingState::OrphanCleanupPolicy::kDisallowOrphanCleanup);
+
+if (collectionFilter.isSharded() && !expCtx->ns.isTimeseriesBucketsCollection()) {"
+215142,484063,1,open62541,CWE-703,target1_all_wrong_semantic,other,other,weak_or_unknown,0,0,0,0,1,1,500,11,-0.897403359413147,fixed,"testingConnection =
+createDummyConnection(UA_ConnectionConfig_default.sendBufferSize, &sentData);",0.090909,"L6: testingConnection = createDummyConnection(65535, &sentData);","--- vuln 215142
++++ fixed 484063
+@@ -4,5 +4,6 @@
+     UA_SecureChannel_setSecurityPolicy(&testChannel, &dummyPolicy, &dummyCertificate);
+ 
+-    testingConnection = createDummyConnection(65535, &sentData);
++    testingConnection =
++        createDummyConnection(UA_ConnectionConfig_default.sendBufferSize, &sentData);
+     UA_Connection_attachSecureChannel(&testingConnection, &testChannel);
+     testChannel.connection = &testingConnection;",0,CWE-119,Chrome,0|0|0|0|0|0,"testingConnection = createDummyConnection(65535, &sentData);"
+216812,506696,1,openssl,CWE-476,target1_all_wrong_semantic,error_handling,error_handling,weak_or_unknown,0,0,0,0,2,1,95,5,-0.8678557872772217,fixed,ADD_TEST(test_GENERAL_NAME_cmp);,0.4,"L3: ADD_ALL_TESTS(call_run_cert, OSSL_NELEM(name_fns));
+L4: return 1;","--- vuln 216812
++++ fixed 506696
+@@ -2,4 +2,5 @@
+ {
+     ADD_ALL_TESTS(call_run_cert, OSSL_NELEM(name_fns));
++    ADD_TEST(test_GENERAL_NAME_cmp);
+     return 1;
+ }",0,CWE-20,openssh-portable,0|0|0|0|0|0,
+216903,508874,1,server,CWE-476,target1_all_wrong_semantic,lifetime_ownership,state_flag|lifetime_ownership|null_check,added_guard|state_or_lifetime_repair,1,0,0,1,1,1,3525,115,-0.8891378045082092,fixed,"
+if (is_correlated_unit)
+{
+/*
+Some parts of UNION are not correlated. This means we will need to
+re-execute the whole UNION every time. Mark all parts of the UNION
+as correlated so that they are prepared to be executed multiple
+times (if we don't do that, some part of the UNION may free its
+execution data at the end of first execution and crash on the second
+execution)
+*/
+for (SELECT_LEX *sl= un->first_select(); sl; sl= sl->next_select())
+sl->uncacheable |= UNCACHEABLE_DEPENDENT;
+}
+else",0.008696,L109: if (!is_correlated_unit),"--- vuln 216903
++++ fixed 508874
+@@ -107,5 +107,19 @@
+       if (empty_union_result)
+         subquery_predicate->no_rows_in_result();
+-      if (!is_correlated_unit)
++
++      if (is_correlated_unit)
++      {
++        /*
++          Some parts of UNION are not correlated. This means we will need to
++          re-execute the whole UNION every time. Mark all parts of the UNION
++          as correlated so that they are prepared to be executed multiple
++          times (if we don't do that, some part of the UNION may free its
++          execution data at the end of first execution and crash on the second
++          execution)
++        */
++        for (SELECT_LEX *sl= un->first_select(); sl; sl= sl->next_select())
++          sl->uncacheable |= UNCACHEABLE_DEPENDENT;
++      }
++      else
+         un->uncacheable&= ~UNCACHEABLE_DEPENDENT;
+       subquery_predicate->is_correlated= is_correlated_unit;",0,CWE-189,linux,0|0|0|0|0|0,if (!is_correlated_unit)

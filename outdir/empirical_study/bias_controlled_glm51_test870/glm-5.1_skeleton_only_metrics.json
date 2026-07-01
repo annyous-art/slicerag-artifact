@@ -1,0 +1,17 @@
+{
+  "known": 870,
+  "unknown": 0,
+  "accuracy": 0.5011494252873563,
+  "precision": 0.5026178010471204,
+  "recall": 0.2206896551724138,
+  "f1": 0.30670926517571884,
+  "yes_rate": 0.21954022988505748,
+  "tp": 96,
+  "fp": 95,
+  "tn": 340,
+  "fn": 339,
+  "input": "${SLICERAG_ROOT}/data/primevul_test_paired_labeled.jsonl",
+  "variant": "skeleton_only",
+  "model": "glm-5.1",
+  "total_records": 870
+}

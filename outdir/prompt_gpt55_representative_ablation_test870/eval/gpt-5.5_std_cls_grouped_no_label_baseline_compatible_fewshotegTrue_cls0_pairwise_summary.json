@@ -1,0 +1,39 @@
+{
+  "data_jsonl": "${SLICERAG_ROOT}/data/primevul_test_paired_labeled.jsonl",
+  "predictions_csv": "${SLICERAG_ROOT}/outdir/prompt_gpt55_representative_ablation_test870/eval/gpt-5.5_std_cls_grouped_no_label_baseline_compatible_fewshotegTrue_cls0_predictions.csv",
+  "num_data_rows": 870,
+  "num_adjacent_pairs": 435,
+  "pair_build_stats": {
+    "candidate_adjacent_pairs": 435,
+    "skipped_incomplete": 0,
+    "skipped_missing_target_pair": 0,
+    "skipped_project_mismatch": 0,
+    "skipped_commit_mismatch": 0,
+    "skipped_cve_mismatch": 0
+  },
+  "pair_filters": {
+    "require_same_project": false,
+    "require_same_commit": false,
+    "require_same_cve": false
+  },
+  "num_prediction_rows": 868,
+  "pred_columns": [
+    "prediction"
+  ],
+  "method_metrics": [
+    {
+      "method": "prediction",
+      "known_pairs": 435,
+      "unknown_pairs": 0,
+      "P-C": 58,
+      "P-V": 310,
+      "P-B": 53,
+      "P-R": 14,
+      "P-C_rate": 0.133333,
+      "P-V_rate": 0.712644,
+      "P-B_rate": 0.121839,
+      "P-R_rate": 0.032184
+    }
+  ],
+  "pair_detail_csv": "${SLICERAG_ROOT}/outdir/prompt_gpt55_representative_ablation_test870/eval/gpt-5.5_std_cls_grouped_no_label_baseline_compatible_fewshotegTrue_cls0_pairwise_pairs.csv"
+}

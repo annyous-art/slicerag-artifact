@@ -1,0 +1,871 @@
+idx,target,prediction,correct,variant,project,cwe,file_name,func_char_len,prompt_tokens,completion_tokens,total_tokens,response
+187732,0,1,0,code_author_flipped_fewshot,qemu,['CWE-264'],vnc.c,4695,1693,1,1694,YES
+194963,1,1,1,code_author_flipped_fewshot,ImageMagick6,['CWE-704'],property.c,28188,9727,1,9728,YES
+194989,1,1,1,code_author_flipped_fewshot,ImageMagick6,['CWE-190'],psd.c,1693,927,1,928,YES
+194994,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-401'],immutable_executor_state.cc,6738,2120,1,2121,NO
+194996,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-476'],loader_util.cc,1226,760,1,761,NO
+194998,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-617'],constant_folding.cc,2726,1121,4,1125,(1) YES
+195017,1,1,1,code_author_flipped_fewshot,gpac,['CWE-476'],hint_track.c,455,623,1,624,YES
+195019,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-617'],constant_folding.cc,2808,1090,1,1091,NO
+195022,1,1,1,code_author_flipped_fewshot,glewlwyd,['CWE-287'],webservice.c,10298,2859,1,2860,YES
+195023,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-190'],sparse_tensors_map_ops.cc,5831,1772,4,1776,(1) YES
+195026,1,1,1,code_author_flipped_fewshot,linux,['CWE-909'],nfs4file.c,1703,976,4,980,(1) YES
+195028,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-401'],decode_image_op.cc,4634,1529,4,1533,(1) YES
+195029,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-125'],graph.cc,2052,984,4,988,(1) YES
+195038,1,1,1,code_author_flipped_fewshot,mruby,['CWE-476'],array.c,877,771,1,772,YES
+195039,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-354'],conv_ops.cc,3831,1398,4,1402,(1) YES
+195040,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],xla_platform_info.cc,2726,1036,1,1037,YES
+195055,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-787'],count_ops.cc,3819,1281,4,1285,(1) YES
+195056,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],common.h,2670,1375,1,1376,NO
+195059,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-617'],dependency_optimizer.cc,1177,767,1,768,NO
+195063,1,1,1,code_author_flipped_fewshot,gpac,['CWE-476'],reframe_mpgvid.c,16506,5798,1,5799,YES
+195069,1,1,1,code_author_flipped_fewshot,gpac,['CWE-120'],av_parsers.c,1715,1094,4,1098,(1) YES
+195073,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-416'],decode_image_op.cc,4701,1551,1,1552,YES
+195074,1,1,1,code_author_flipped_fewshot,gpac,['CWE-415'],descriptors.c,2689,1388,4,1392,(1) YES
+195082,1,1,1,code_author_flipped_fewshot,linux,['CWE-862'],None,1076,807,1,808,YES
+195083,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-617'],tensor.cc,1232,763,1,764,YES
+195091,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-754'],tf_cpurt_symbolic_shape_optimization.cc,2597,1079,1,1080,NO
+195092,1,0,0,code_author_flipped_fewshot,hermes,['CWE-843'],IREval.cpp,2070,901,1,902,NO
+195095,1,1,1,code_author_flipped_fewshot,e2guardian,['CWE-295'],Socket.cpp,3786,1440,1,1441,YES
+195220,1,1,1,code_author_flipped_fewshot,tmate-ssh-server,['CWE-362'],tmate-main.c,1780,997,1,998,YES
+195230,1,1,1,code_author_flipped_fewshot,pjproject,['CWE-125'],rtcp_xr.c,7256,3007,1,3008,YES
+195231,1,1,1,code_author_flipped_fewshot,gpac,['CWE-476'],av_parsers.c,4464,2168,1,2169,YES
+195233,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-787'],graph_properties.cc,360,548,1,549,NO
+195234,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-617'],function.cc,1873,945,1,946,NO
+195237,1,1,1,code_author_flipped_fewshot,ImageMagick,['CWE-190'],pcl.c,7995,2675,1,2676,YES
+195264,1,0,0,code_author_flipped_fewshot,pcre2,['CWE-125'],pcre2_jit_compile.c,22734,8515,1,8516,NO
+195274,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-476'],constant_folding.cc,4637,1634,1,1635,NO
+195291,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-908'],assign_op.h,3667,1263,1,1264,YES
+195293,1,0,0,code_author_flipped_fewshot,mruby,['CWE-476'],codegen.c,1302,875,3,878,(2)
+195294,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-843'],map_stage_op.cc,967,714,1,715,NO
+195295,1,0,0,code_author_flipped_fewshot,mruby,['CWE-125'],codegen.c,3885,1673,4,1677,(2) NO
+195296,1,1,1,code_author_flipped_fewshot,uWebSockets,['CWE-787'],TopicTree.h,2354,946,1,947,YES
+195308,1,0,0,code_author_flipped_fewshot,flatpak,['CWE-20'],flatpak-run.c,10440,3490,1,3491,NO
+195309,1,1,1,code_author_flipped_fewshot,squid,['CWE-400'],gopher.cc,11823,2968,4,2972,(1) YES
+195328,1,1,1,code_author_flipped_fewshot,gpac,['CWE-415'],load_text.c,1840,1173,1,1174,YES
+195331,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-843'],common_shape_fns.cc,3246,1350,1,1351,YES
+195334,1,1,1,code_author_flipped_fewshot,gpac,['CWE-415'],box_code_meta.c,2502,1242,1,1243,YES
+195340,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-190'],sparse_dense_binary_op_shared.cc,6813,1902,1,1903,YES
+195343,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-125'],fractional_avg_pool_op.cc,7263,2139,1,2140,YES
+195385,1,0,0,code_author_flipped_fewshot,flatpak,['CWE-276'],flatpak-dir.c,3354,1122,1,1123,NO
+195388,1,0,0,code_author_flipped_fewshot,postgres,['CWE-522'],fe-connect.c,46206,12810,1,12811,NO
+195389,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-617'],op_def_util.cc,699,674,1,675,NO
+195391,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-190'],string_ngrams_op.cc,4681,1619,4,1623,(1) YES
+195398,1,1,1,code_author_flipped_fewshot,v4l2loopback,['CWE-134'],v4l2loopback.c,1512,936,1,937,YES
+195399,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],mutable_graph_view.cc,449,572,1,573,YES
+195402,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-190'],common.c,312,547,1,548,NO
+195403,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-190'],common.c,260,540,1,541,NO
+195404,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-369'],fractional_max_pool_op.cc,4646,1630,3,1633,(1)
+195405,1,1,1,code_author_flipped_fewshot,ImageMagick6,['CWE-190'],pcl.c,7979,2671,1,2672,YES
+195409,1,0,0,code_author_flipped_fewshot,gpac,['CWE-476'],box_code_base.c,269,558,1,559,NO
+195410,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2921,1102,1,1103,NO
+195471,1,1,1,code_author_flipped_fewshot,weechat,['CWE-476'],irc-protocol.c,3200,1321,4,1325,(1) YES
+195565,1,1,1,code_author_flipped_fewshot,hhvm,['CWE-119'],zend-string.cpp,3314,1420,1,1421,YES
+195626,1,1,1,code_author_flipped_fewshot,qemu,['CWE-787'],virtio-serial-bus.c,410,595,1,596,YES
+195629,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-476'],execute.cc,1859,905,1,906,NO
+195665,1,1,1,code_author_flipped_fewshot,njs,['CWE-703'],njs_array.c,4339,1620,1,1621,YES
+195670,1,1,1,code_author_flipped_fewshot,pjproject,['CWE-703'],xml.c,3296,1416,4,1420,(1) YES
+195691,1,1,1,code_author_flipped_fewshot,mruby,['CWE-703'],vm.c,51274,15097,1,15098,YES
+195692,1,0,0,code_author_flipped_fewshot,FreeRTOS-Kernel,['CWE-200'],queue.c,2805,1078,1,1079,NO
+195720,1,0,0,code_author_flipped_fewshot,mvfst,['CWE-703'],ServerStateMachine.cpp,3323,1324,1,1325,NO
+195740,1,1,1,code_author_flipped_fewshot,libjpeg,['CWE-703'],None,6317,2099,4,2103,(1) YES
+195741,1,1,1,code_author_flipped_fewshot,libjpeg,['CWE-703'],None,5436,1837,1,1838,YES
+195742,1,1,1,code_author_flipped_fewshot,gpac,['CWE-476'],None,15815,5621,1,5622,YES
+195752,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2398,995,1,996,NO
+195768,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],quantile_ops.cc,1049,711,1,712,NO
+195800,1,1,1,code_author_flipped_fewshot,deark,['CWE-369'],fmtutil.c,1444,1009,1,1010,YES
+195801,1,1,1,code_author_flipped_fewshot,php-src,['CWE-476'],wddx.c,3632,1640,1,1641,YES
+195908,1,0,0,code_author_flipped_fewshot,linux,['CWE-703'],volumes.c,4198,1579,1,1580,NO
+195909,1,1,1,code_author_flipped_fewshot,ImageMagick,['CWE-125'],png.c,79137,18176,1,18177,YES
+195954,1,1,1,code_author_flipped_fewshot,pjproject,['CWE-787'],dns.c,983,766,1,767,YES
+195965,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-787'],edit_distance_op.cc,7615,2152,1,2153,YES
+195984,1,1,1,code_author_flipped_fewshot,gpac,['CWE-703'],box_code_3gpp.c,313,579,1,580,YES
+196276,1,0,0,code_author_flipped_fewshot,lsquic,['CWE-269'],None,1227,825,1,826,NO
+196316,1,1,1,code_author_flipped_fewshot,barebox,['CWE-200'],digest.c,292,545,1,546,YES
+196328,1,1,1,code_author_flipped_fewshot,vim,['CWE-416'],search.c,18096,6026,1,6027,YES
+196578,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],register.c,803,739,1,740,YES
+196587,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],resource_variable_ops.cc,3420,1200,1,1201,NO
+196611,1,0,0,code_author_flipped_fewshot,booth,['CWE-284'],main.c,1007,775,1,776,NO
+196621,1,0,0,code_author_flipped_fewshot,mruby,['CWE-787'],None,228,547,1,548,NO
+196629,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-354'],matrix_solve_op.cc,10045,2801,1,2802,NO
+196689,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],stage_op.cc,602,625,1,626,YES
+196691,1,1,1,code_author_flipped_fewshot,gpac,['CWE-703'],isoffin_read.c,11818,4125,1,4126,YES
+196698,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-125'],sparse_fill_empty_rows_op.cc,2261,935,1,936,NO
+196705,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-20'],sparse_tensor_dense_add_op.cc,1242,770,1,771,NO
+196790,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],sdca_internal.cc,3832,1212,1,1213,NO
+196801,1,1,1,code_author_flipped_fewshot,gpac,['CWE-703'],isom_hinter.c,6017,2532,4,2536,(1) YES
+196829,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-476'],session_ops.cc,869,670,1,671,NO
+196834,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-125'],count_ops.cc,338,570,1,571,NO
+196841,1,1,1,code_author_flipped_fewshot,furnace,['CWE-703'],pattern.cpp,12844,4052,1,4053,YES
+196846,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],div.cc,1159,774,1,775,NO
+196860,1,1,1,code_author_flipped_fewshot,gpac,['CWE-787'],None,1878,1119,4,1123,(1) YES
+196885,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],mkl_requantization_range_per_channel_op.cc,3259,1282,4,1286,(2) NO
+196889,1,0,0,code_author_flipped_fewshot,rpm,['CWE-284'],rpmpgp.c,744,725,1,726,NO
+196893,1,0,0,code_author_flipped_fewshot,envoy,['CWE-362'],default_validator.cc,1618,803,1,804,NO
+196894,1,0,0,code_author_flipped_fewshot,cryptopp,['CWE-399'],rw.cpp,1059,809,1,810,NO
+196993,1,1,1,code_author_flipped_fewshot,libjxl,['CWE-369'],codec_apng.cc,7391,2496,1,2497,YES
+197015,1,1,1,code_author_flipped_fewshot,gpac,['CWE-476'],isom_store.c,2728,1291,1,1292,YES
+197057,1,1,1,code_author_flipped_fewshot,drogon,['CWE-552'],None,883,676,1,677,YES
+197095,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],optimized_ops.h,4283,1577,1,1578,NO
+197111,1,1,1,code_author_flipped_fewshot,tinyexr,['CWE-20'],tinyexr.h,10037,3055,1,3056,YES
+197128,1,0,0,code_author_flipped_fewshot,mruby,['CWE-125'],codegen.c,3787,1641,1,1642,NO
+197135,1,1,1,code_author_flipped_fewshot,linux,['CWE-703'],ccp-ops.c,6867,2739,1,2740,YES
+197142,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],quantize_op.cc,2320,1049,1,1050,YES
+197185,1,1,1,code_author_flipped_fewshot,FFmpeg,['CWE-252'],None,1566,960,1,961,YES
+197223,1,1,1,code_author_flipped_fewshot,njs,['CWE-787'],njs_module.c,1138,814,1,815,YES
+197239,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-20'],mkl_requantize_per_channel_op.cc,5096,1660,4,1664,(1) YES
+197242,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-908'],svdf.cc,9667,2804,1,2805,YES
+197247,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],None,2523,1062,1,1063,NO
+197262,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-125'],sparse_matmul_op.cc,4354,1550,1,1551,NO
+197305,1,1,1,code_author_flipped_fewshot,pjproject,['CWE-200'],rtcp_fb.c,839,767,1,768,YES
+197318,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],session_ops.cc,418,554,1,555,NO
+197326,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],einsum_op_impl.h,2300,1005,3,1008,(2)
+197359,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],auto_parallel.cc,4992,1595,4,1599,(1) YES
+197395,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],reverse_op.cc,1647,824,1,825,NO
+197466,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-476'],save_restore_tensor.cc,3703,1224,1,1225,NO
+197499,1,1,1,code_author_flipped_fewshot,gpac,['CWE-416'],field_decode.c,3101,1456,4,1460,(1) YES
+197511,1,1,1,code_author_flipped_fewshot,libjpeg,['CWE-787'],hierarchicalbitmaprequester.cpp,1103,771,1,772,YES
+197517,1,1,1,code_author_flipped_fewshot,glewlwyd,['CWE-787'],webauthn.c,7137,2380,3,2383,(1)
+197518,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],quantize_and_dequantize_op.cc,3191,1215,1,1216,YES
+197565,1,0,0,code_author_flipped_fewshot,wolfMQTT,['CWE-787'],mqtt_client.c,7554,2178,1,2179,NO
+197593,1,1,1,code_author_flipped_fewshot,njs,['CWE-416'],njs_function.c,1335,825,1,826,YES
+197666,1,0,0,code_author_flipped_fewshot,njs,['CWE-703'],njs_iterator.c,4494,1519,4,1523,(2) NO
+197719,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-125'],ragged_tensor_to_variant_op.cc,2111,933,1,934,YES
+197748,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],array_ops.cc,2247,1089,1,1090,YES
+197760,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-125'],gather_nd.cc,1030,730,1,731,NO
+197796,1,1,1,code_author_flipped_fewshot,qemu,['CWE-703'],vnc.c,4407,1631,3,1634,(1)
+197801,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-345'],tensor_slice_reader.h,1688,903,1,904,YES
+197824,1,1,1,code_author_flipped_fewshot,gpac,['CWE-416'],memory_decoder.c,1090,797,1,798,YES
+197826,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-824'],constant_folding.cc,2329,1074,1,1075,NO
+197893,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],gather.cc,568,591,1,592,NO
+197973,1,1,1,code_author_flipped_fewshot,crun,['CWE-276'],exec.c,3429,1287,1,1288,YES
+197998,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],unsorted_segment_join_op.cc,2727,1074,1,1075,YES
+198010,1,1,1,code_author_flipped_fewshot,radare2,['CWE-125'],bfile.c,7850,3220,4,3224,(1) YES
+198013,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],load_and_remap_matrix_op.cc,11099,2959,4,2963,(1) YES
+198116,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-125'],sparse_reduce_op.cc,3054,1238,1,1239,YES
+198117,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],fractional_avg_pool_op.cc,6758,2016,1,2017,YES
+198161,1,1,1,code_author_flipped_fewshot,ImageMagick,['CWE-125'],mat.c,16319,4875,1,4876,YES
+198169,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-369'],kernel_util.cc,237,519,1,520,YES
+198239,1,1,1,code_author_flipped_fewshot,barebox,['CWE-200'],password.c,1384,905,1,906,YES
+198259,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],ragged_gather_op.cc,1647,819,1,820,NO
+198282,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],reshape_util.cc,4587,1364,3,1367,(2)
+198350,1,1,1,code_author_flipped_fewshot,owntone-server,['CWE-416'],misc.c,2487,1225,1,1226,YES
+198374,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],lstm_ops.cc,5377,1722,1,1723,YES
+198399,1,1,1,code_author_flipped_fewshot,uftpd,['CWE-787'],ftpcmd.c,890,748,1,749,YES
+198439,1,1,1,code_author_flipped_fewshot,mruby,['CWE-288'],vm.c,50746,14954,1,14955,YES
+198449,1,1,1,code_author_flipped_fewshot,pjproject,['CWE-787'],stun_simple.c,1767,1012,1,1013,YES
+198452,1,0,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],comparisons.cc,1722,862,1,863,NO
+198476,1,1,1,code_author_flipped_fewshot,njs,['CWE-416'],njs_async.c,2245,1100,1,1101,YES
+198499,1,1,1,code_author_flipped_fewshot,micro-ecc,['CWE-415'],uECC.c,2725,1342,4,1346,(1) YES
+198523,1,1,1,code_author_flipped_fewshot,tensorflow,['CWE-416'],resource_ops.cc,1155,723,1,724,YES
+198545,1,1,1,code_author_flipped_fewshot,u-boot,['CWE-787'],i2c.c,2210,1204,1,1205,YES
+198556,1,1,1,code_author_flipped_fewshot,mruby,['CWE-703'],fiber.c,1634,1004,1,1005,YES
+198566,1,1,1,code_author_flipped_fewshot,libmobi,['CWE-787'],index.c,2248,1040,1,1041,YES
+198662,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],ex_cmds.c,1308,883,1,884,YES
+198692,1,1,1,code_author_flipped_fewshot,ipsec,['CWE-125'],xfrm_policy.c,1471,963,1,964,YES
+198695,1,1,1,code_author_flipped_fewshot,MilkyTracker,['CWE-787'],LoaderS3M.cpp,8477,3288,1,3289,YES
+198703,1,1,1,code_author_flipped_fewshot,LibRaw,['CWE-189'],dcraw.c,1410,1087,1,1088,YES
+198736,1,1,1,code_author_flipped_fewshot,linux,['CWE-401'],rsi_91x_mgmt.c,638,659,1,660,YES
+198743,1,0,0,code_author_flipped_fewshot,LuaJIT,['CWE-125'],lj_err.c,1384,879,1,880,NO
+198927,1,1,1,code_author_flipped_fewshot,radare2,['CWE-125'],ne.c,1947,1114,1,1115,YES
+198983,1,1,1,code_author_flipped_fewshot,swtpm,['CWE-125'],swtpm_nvfile.c,1134,732,1,733,YES
+199159,1,1,1,code_author_flipped_fewshot,linux,['CWE-362'],None,2961,1317,1,1318,YES
+199712,1,0,0,code_author_flipped_fewshot,linux,['CWE-415'],rtrs-clt.c,152,507,1,508,NO
+199767,1,1,1,code_author_flipped_fewshot,hexchat,['CWE-22'],inbound.c,2721,1296,1,1297,YES
+199778,1,1,1,code_author_flipped_fewshot,puma,['CWE-444'],http11_parser.c,19279,8030,1,8031,YES
+199833,1,1,1,code_author_flipped_fewshot,chafa,['CWE-476'],libnsgif.c,15134,3234,1,3235,YES
+199836,1,0,0,code_author_flipped_fewshot,pjproject,['CWE-125'],None,308,553,4,557,(2) NO
+199841,1,1,1,code_author_flipped_fewshot,radare2,['CWE-476'],bin_xnu_kernelcache.c,1665,1010,1,1011,YES
+199851,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],indent.c,5582,2291,1,2292,YES
+199952,1,1,1,code_author_flipped_fewshot,MilkyTracker,['CWE-787'],None,19139,7434,1,7435,YES
+199984,1,1,1,code_author_flipped_fewshot,vim,['CWE-416'],ex_cmds.c,31245,9792,1,9793,YES
+200113,1,1,1,code_author_flipped_fewshot,ImageMagick,['CWE-787'],mat.c,6670,2280,1,2281,YES
+200157,1,1,1,code_author_flipped_fewshot,exim,['CWE-264'],readconf.c,13171,4125,1,4126,YES
+200163,1,1,1,code_author_flipped_fewshot,linux,['CWE-200'],hid-elo.c,875,714,1,715,YES
+200287,1,0,0,code_author_flipped_fewshot,linux,['CWE-200'],socket.c,3449,1578,1,1579,NO
+200305,1,1,1,code_author_flipped_fewshot,ghostpdl,['CWE-787'],gdevpcx.c,1184,742,1,743,YES
+200320,1,1,1,code_author_flipped_fewshot,samba,['CWE-665'],vfs_default.c,8888,3146,1,3147,YES
+200323,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],spellsuggest.c,39409,13329,1,13330,YES
+200379,1,1,1,code_author_flipped_fewshot,radare2,['CWE-476'],ne.c,761,728,1,729,YES
+200695,1,1,1,code_author_flipped_fewshot,linux,['CWE-401'],fastrpc.c,674,656,1,657,YES
+200781,1,1,1,code_author_flipped_fewshot,ncurses,['CWE-787'],None,1139,869,4,873,(1) YES
+200895,1,0,0,code_author_flipped_fewshot,vim,['CWE-703'],None,1117,855,1,856,NO
+200934,1,0,0,code_author_flipped_fewshot,libvirt,['CWE-212'],virstoragetest.c,1308,809,1,810,NO
+200976,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],None,895,780,1,781,YES
+201007,1,1,1,code_author_flipped_fewshot,pjproject,['CWE-787'],sdp.c,1492,980,1,981,YES
+201343,1,0,0,code_author_flipped_fewshot,linux,['CWE-416'],None,204,515,1,516,NO
+201353,1,1,1,code_author_flipped_fewshot,wireless-drivers,['CWE-415'],rsi_91x_usb.c,1417,870,4,874,(1) YES
+201382,1,1,1,code_author_flipped_fewshot,gerbv,['CWE-787'],drill.c,7874,2710,3,2713,(1)
+201384,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],None,762,731,1,732,YES
+201451,1,1,1,code_author_flipped_fewshot,ImageMagick6,['CWE-787'],cin.c,15672,4493,1,4494,YES
+201872,1,1,1,code_author_flipped_fewshot,gnutls,['CWE-310'],gnutls_handshake.c,4749,1859,1,1860,YES
+201885,1,1,1,code_author_flipped_fewshot,vim,['CWE-416'],regexp_bt.c,34450,11347,4,11351,(1) YES
+201913,1,0,0,code_author_flipped_fewshot,libarchive,['CWE-59'],None,2210,1119,1,1120,NO
+201925,1,1,1,code_author_flipped_fewshot,linux,['CWE-476'],vidtv_s302m.c,1188,851,4,855,(1) YES
+202081,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],register.c,19946,6804,1,6805,YES
+202082,1,1,1,code_author_flipped_fewshot,radare2,['CWE-125'],class.c,1105,789,3,792,(1)
+202125,1,1,1,code_author_flipped_fewshot,cairo,['CWE-787'],None,2943,1543,1,1544,YES
+202256,1,1,1,code_author_flipped_fewshot,qtbase,['CWE-787'],qpaintengineex.cpp,9164,2474,4,2478,(1) YES
+202276,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],None,3371,1571,1,1572,YES
+202304,1,1,1,code_author_flipped_fewshot,vim,['CWE-122'],None,1179,871,1,872,YES
+202392,1,1,1,code_author_flipped_fewshot,php-src,['CWE-119'],gd_interpolation.c,978,744,1,745,YES
+202659,1,1,1,code_author_flipped_fewshot,net,['CWE-125'],ip6_gre.c,2044,1178,1,1179,YES
+202677,1,1,1,code_author_flipped_fewshot,qemu,['CWE-369'],None,1213,822,1,823,YES
+202688,1,1,1,code_author_flipped_fewshot,ghostpdl,['CWE-787'],gdevlprn.c,522,678,1,679,YES
+202708,1,0,0,code_author_flipped_fewshot,vim,['CWE-476'],buffer.c,576,647,1,648,NO
+202719,1,1,1,code_author_flipped_fewshot,linux,['CWE-704'],sm_make_chunk.c,1222,828,1,829,YES
+202748,1,1,1,code_author_flipped_fewshot,ImageMagick,['CWE-772'],tga.c,13504,3964,3,3967,(1)
+202783,1,1,1,code_author_flipped_fewshot,php-src,['CWE-119'],zend_strtod.c,349,590,1,591,YES
+202822,1,1,1,code_author_flipped_fewshot,ghostpdl,['CWE-787'],zstring.c,1080,806,1,807,YES
+202888,1,1,1,code_author_flipped_fewshot,linux,['CWE-787'],esp4.c,1898,1081,1,1082,YES
+202889,1,1,1,code_author_flipped_fewshot,linux,['CWE-787'],esp6.c,1844,1068,1,1069,YES
+202892,1,1,1,code_author_flipped_fewshot,pure-ftpd,['CWE-434'],ftpd.c,7610,2538,1,2539,YES
+202943,1,0,0,code_author_flipped_fewshot,lua,['CWE-787'],ldebug.c,434,603,1,604,NO
+203614,1,1,1,code_author_flipped_fewshot,linux,['CWE-703'],pxa3xx-gcu.c,1582,927,1,928,YES
+203902,1,1,1,code_author_flipped_fewshot,vim,['CWE-703'],scriptfile.c,2749,1400,1,1401,YES
+204016,1,1,1,code_author_flipped_fewshot,squashfs-tools,['CWE-200'],None,3355,1462,4,1466,(1) YES
+204017,1,1,1,code_author_flipped_fewshot,squashfs-tools,['CWE-200'],None,3363,1467,4,1471,(1) YES
+204019,1,1,1,code_author_flipped_fewshot,squashfs-tools,['CWE-200'],None,3071,1345,4,1349,(1) YES
+204032,1,1,1,code_author_flipped_fewshot,linux,['CWE-772'],virtio_bt.c,348,576,1,577,YES
+204036,1,1,1,code_author_flipped_fewshot,net,['CWE-787'],hw_atl_utils.c,1016,806,1,807,YES
+204073,1,1,1,code_author_flipped_fewshot,shapelib,['CWE-415'],shpsort.c,737,685,4,689,(1) YES
+204115,1,1,1,code_author_flipped_fewshot,openldap,['CWE-617'],schema_init.c,3567,1778,1,1779,YES
+204137,1,1,1,code_author_flipped_fewshot,poppler,['CWE-369'],None,6800,3022,1,3023,YES
+204195,1,1,1,code_author_flipped_fewshot,pjproject,['CWE-125'],None,558,633,1,634,YES
+204243,1,0,0,code_author_flipped_fewshot,vim,['CWE-787'],eval.c,6093,2361,1,2362,NO
+204278,1,1,1,code_author_flipped_fewshot,firejail,['CWE-94'],None,876,755,1,756,YES
+204351,1,1,1,code_author_flipped_fewshot,squirrel,['CWE-125'],sqclass.cpp,1824,902,1,903,YES
+204412,1,1,1,code_author_flipped_fewshot,bpf,['CWE-787'],ringbuf.c,1123,799,1,800,YES
+204425,1,1,1,code_author_flipped_fewshot,frr,['CWE-125'],bgp_packet.c,2808,1298,1,1299,YES
+204438,1,1,1,code_author_flipped_fewshot,ImageMagick,['CWE-617'],operation.c,16612,4564,1,4565,YES
+204495,1,1,1,code_author_flipped_fewshot,linux,['CWE-193'],cancel.c,636,652,1,653,YES
+204534,1,1,1,code_author_flipped_fewshot,admesh,['CWE-125'],connect.c,2388,1240,4,1244,(1) YES
+204535,1,1,1,code_author_flipped_fewshot,admesh,['CWE-125'],connect.c,620,671,1,672,YES
+204544,1,1,1,code_author_flipped_fewshot,linux,['CWE-416'],em28xx-cards.c,8029,3009,1,3010,YES
+204814,1,0,0,code_author_flipped_fewshot,linux,['CWE-703'],None,827,690,1,691,NO
+204830,1,0,0,code_author_flipped_fewshot,linux,['CWE-200'],namespace.c,422,589,1,590,NO
+205630,1,0,0,code_author_flipped_fewshot,linux,['CWE-94'],io_uring.c,1193,858,1,859,NO
+205734,1,1,1,code_author_flipped_fewshot,rizin,['CWE-787'],marshal.c,1196,909,1,910,YES
+205736,1,0,0,code_author_flipped_fewshot,linux,['CWE-834'],fuse_i.h,110,493,1,494,NO
+205806,1,1,1,code_author_flipped_fewshot,Singular,['CWE-269'],None,1794,988,1,989,YES
+205823,1,0,0,code_author_flipped_fewshot,ovs,['CWE-401'],ipf.c,991,710,1,711,NO
+206025,1,0,0,code_author_flipped_fewshot,evolution-data-server,['CWE-200'],None,295,554,1,555,NO
+206043,1,1,1,code_author_flipped_fewshot,gimp,['CWE-125'],file-gbr.c,7841,2453,4,2457,(1) YES
+206044,1,1,1,code_author_flipped_fewshot,tigervnc,['CWE-672'],None,2972,1337,1,1338,YES
+206262,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],ex_docmd.c,9072,3484,1,3485,YES
+206273,1,0,0,code_author_flipped_fewshot,radare2,['CWE-416'],None,5477,2407,1,2408,NO
+206417,1,0,0,code_author_flipped_fewshot,vim,['CWE-787'],edit.c,10082,3499,1,3500,NO
+206555,1,0,0,code_author_flipped_fewshot,php-src,['CWE-119'],gd_io_dp.c,400,606,1,607,NO
+206588,1,1,1,code_author_flipped_fewshot,php-src,['CWE-119'],None,1594,1013,1,1014,YES
+206625,1,1,1,code_author_flipped_fewshot,raptor,['CWE-787'],raptor_xml_writer.c,8295,2342,1,2343,YES
+206639,1,1,1,code_author_flipped_fewshot,linux,['CWE-703'],nf_tables_api.c,1465,918,1,919,YES
+206670,1,1,1,code_author_flipped_fewshot,nbdkit,['CWE-924'],protocol-handshake-newstyle.c,18843,4984,1,4985,YES
+206676,1,0,0,code_author_flipped_fewshot,vim,['CWE-122'],move.c,6235,2380,1,2381,NO
+206677,1,1,1,code_author_flipped_fewshot,vim,['CWE-703'],filepath.c,5339,2150,1,2151,YES
+206771,1,1,1,code_author_flipped_fewshot,qcad,['CWE-191'],dl_dxf.cpp,1260,804,4,808,(1) YES
+206781,1,1,1,code_author_flipped_fewshot,linux,['CWE-476'],inode.c,2044,1107,1,1108,YES
+206815,1,1,1,code_author_flipped_fewshot,ImageMagick,['CWE-125'],quantize.c,5146,1752,1,1753,YES
+206845,1,0,0,code_author_flipped_fewshot,linux,['CWE-125'],control.c,352,576,4,580,(2) NO
+206942,1,1,1,code_author_flipped_fewshot,vim,['CWE-125'],typval.c,3520,1656,1,1657,YES
+206946,1,1,1,code_author_flipped_fewshot,jasper,['CWE-703'],jasper.c,4177,1987,1,1988,YES
+207068,1,1,1,code_author_flipped_fewshot,linux,['CWE-120'],rpadlpar_sysfs.c,422,591,3,594,(1)
+207069,1,1,1,code_author_flipped_fewshot,linux,['CWE-120'],rpadlpar_sysfs.c,415,590,1,591,YES
+207150,1,1,1,code_author_flipped_fewshot,squirrel,['CWE-703'],sqbaselib.cpp,600,639,1,640,YES
+207461,1,1,1,code_author_flipped_fewshot,autotrace,['CWE-787'],input-bmp.c,10784,3927,3,3930,(1)
+207520,1,1,1,code_author_flipped_fewshot,rizin,['CWE-787'],dwarf.c,1456,892,1,893,YES
+207700,1,1,1,code_author_flipped_fewshot,EternalTerminal,['CWE-362'],UserTerminalRouter.cpp,225,527,1,528,YES
+207703,1,1,1,code_author_flipped_fewshot,EternalTerminal,['CWE-362'],PipeSocketHandler.cpp,823,682,1,683,YES
+207719,1,0,0,code_author_flipped_fewshot,vim,['CWE-787'],edit.c,569,639,1,640,NO
+207753,1,1,1,code_author_flipped_fewshot,linux,['CWE-284'],iov_iter.c,988,766,1,767,YES
+207754,1,1,1,code_author_flipped_fewshot,linux,['CWE-284'],iov_iter.c,1062,805,1,806,YES
+207755,1,1,1,code_author_flipped_fewshot,php-src,['CWE-200'],openssl.c,2116,1111,1,1112,YES
+207780,1,1,1,code_author_flipped_fewshot,radare2,['CWE-703'],None,4121,1826,1,1827,YES
+207803,1,0,0,code_author_flipped_fewshot,linux,['CWE-200'],random.c,1703,998,1,999,NO
+207804,1,0,0,code_author_flipped_fewshot,linux,['CWE-200'],timer.c,384,559,1,560,NO
+207990,1,0,0,code_author_flipped_fewshot,pcre2,['CWE-703'],pcre2_jit_compile.c,4749,1872,1,1873,NO
+208107,1,1,1,code_author_flipped_fewshot,linux,['CWE-703'],xfrm_policy.c,913,807,4,811,(1) YES
+208115,1,1,1,code_author_flipped_fewshot,linux,['CWE-703'],xilinx_emaclite.c,2285,1203,1,1204,YES
+208140,1,0,0,code_author_flipped_fewshot,util-linux,['CWE-200'],mount.c,7619,3059,1,3060,NO
+208370,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],edit.c,2208,1152,1,1153,YES
+208411,1,0,0,code_author_flipped_fewshot,vim,['CWE-787'],term.c,16023,5558,1,5559,NO
+208505,1,1,1,code_author_flipped_fewshot,tor,['CWE-399'],routerparse.c,17737,5327,1,5328,YES
+208506,1,1,1,code_author_flipped_fewshot,heimdal,['CWE-476'],None,31845,9586,1,9587,YES
+208522,1,1,1,code_author_flipped_fewshot,unbound,['CWE-190'],dnscrypt.c,2520,1122,1,1123,YES
+208525,1,0,0,code_author_flipped_fewshot,vim,['CWE-787'],ex_getln.c,1598,936,1,937,NO
+208535,1,0,0,code_author_flipped_fewshot,rizin,['CWE-415'],bin_qnx.c,148,519,1,520,NO
+208654,1,0,0,code_author_flipped_fewshot,php-src,['CWE-416'],snmp.c,4635,1754,1,1755,NO
+208680,1,1,1,code_author_flipped_fewshot,radare2,['CWE-416'],None,13139,4958,1,4959,YES
+208912,1,0,0,code_author_flipped_fewshot,vim,['CWE-416'],ex_getln.c,25369,8036,1,8037,NO
+208987,1,1,1,code_author_flipped_fewshot,MilkyTracker,['CWE-416'],PlayerGeneric.cpp,240,529,1,530,YES
+209026,1,1,1,code_author_flipped_fewshot,libvirt,['CWE-119'],node_device_conf.c,634,647,1,648,YES
+209102,1,0,0,code_author_flipped_fewshot,vim,['CWE-703'],mouse.c,22314,6980,1,6981,NO
+209801,1,1,1,code_author_flipped_fewshot,mujs,['CWE-476'],jsdump.c,205,542,1,543,YES
+209931,1,0,0,code_author_flipped_fewshot,FreeRDP,['CWE-190'],video_main.c,1581,884,4,888,(2) NO
+209955,1,0,0,code_author_flipped_fewshot,linux,['CWE-476'],trans.c,5021,2004,1,2005,NO
+210050,1,0,0,code_author_flipped_fewshot,lua,['CWE-125'],lparser.c,467,614,1,615,NO
+210090,1,1,1,code_author_flipped_fewshot,file,['CWE-787'],cdf.c,3962,1842,1,1843,YES
+210203,1,0,0,code_author_flipped_fewshot,linux,['CWE-787'],seq_file.c,94,485,1,486,NO
+210204,1,1,1,code_author_flipped_fewshot,linux,['CWE-362'],flow_netlink.c,1036,771,1,772,YES
+210206,1,1,1,code_author_flipped_fewshot,squid,['CWE-400'],gopher.cc,11324,2863,1,2864,YES
+210252,1,1,1,code_author_flipped_fewshot,ImageMagick,['CWE-787'],cin.c,15720,4493,1,4494,1
+210271,1,1,1,code_author_flipped_fewshot,vim,['CWE-787'],spellfile.c,2143,1183,1,1184,YES
+210273,1,0,0,code_author_flipped_fewshot,mongo,['CWE-617'],pipeline_d.cpp,10193,2667,1,2668,NO
+210278,1,0,0,code_author_flipped_fewshot,unicorn,['CWE-476'],exec.c,402,577,1,578,NO
+210282,1,1,1,code_author_flipped_fewshot,qemu,['CWE-125'],i2c-ddc.c,156,528,1,529,YES
+210283,1,1,1,code_author_flipped_fewshot,dpdk,['CWE-703'],vhost_user.c,3022,1412,1,1413,YES
+210284,1,1,1,code_author_flipped_fewshot,dpdk,['CWE-703'],vhost_user.c,3121,1430,3,1433,(1)
+210393,1,1,1,code_author_flipped_fewshot,vim,['CWE-416'],arglist.c,7558,2795,1,2796,YES
+210420,1,1,1,code_author_flipped_fewshot,ghostpdl,['CWE-119'],gxht_thresh.c,758,659,1,660,YES
+210453,1,1,1,code_author_flipped_fewshot,ghostpdl,['CWE-120'],gdev3852.c,4521,1565,1,1566,YES
+210484,1,0,0,code_author_flipped_fewshot,linux,['CWE-125'],io_uring.c,2805,1363,1,1364,NO
+210520,1,1,1,code_author_flipped_fewshot,vim,['CWE-125'],indent.c,3834,1707,4,1711,(1) YES
+210527,1,1,1,code_author_flipped_fewshot,linux,['CWE-415'],mcba_usb.c,1600,1032,1,1033,YES
+210551,1,1,1,code_author_flipped_fewshot,oniguruma,['CWE-125'],regcomp.c,3190,1385,4,1389,(1) YES
+210570,1,1,1,code_author_flipped_fewshot,radare2,['CWE-787'],bin_symbols.c,2594,1574,1,1575,YES
+210571,1,1,1,code_author_flipped_fewshot,linux,['CWE-401'],cx23888-ir.c,1324,871,1,872,YES
+210620,1,0,0,code_author_flipped_fewshot,linux,['CWE-415'],virtio_rpmsg_bus.c,751,689,1,690,NO
+210636,1,1,1,code_author_flipped_fewshot,linux,['CWE-416'],mkiss.c,702,658,1,659,YES
+210669,1,1,1,code_author_flipped_fewshot,ImageMagick6,['CWE-401'],bmp.c,34566,8920,1,8921,YES
+210692,1,1,1,code_author_flipped_fewshot,ImageMagick6,['CWE-835'],bmp.c,34742,8960,1,8961,YES
+210700,1,1,1,code_author_flipped_fewshot,squashfs-tools,['CWE-22'],None,3282,1441,1,1442,YES
+210701,1,1,1,code_author_flipped_fewshot,squashfs-tools,['CWE-22'],None,3285,1443,3,1446,(1)
+210702,1,1,1,code_author_flipped_fewshot,squashfs-tools,['CWE-22'],None,2982,1318,1,1319,YES
+210834,1,1,1,code_author_flipped_fewshot,xserver,['CWE-863'],log.c,1122,733,1,734,YES
+210866,1,1,1,code_author_flipped_fewshot,xserver,['CWE-191'],xkbSwap.c,2399,1060,1,1061,YES
+210887,1,0,0,code_author_flipped_fewshot,qemu,['CWE-835'],e1000.c,491,621,1,622,NO
+210896,1,1,1,code_author_flipped_fewshot,spice,['CWE-193'],memslot.c,1191,769,1,770,YES
+210904,1,1,1,code_author_flipped_fewshot,curl,['CWE-125'],main.c,789,683,1,684,YES
+210910,1,0,0,code_author_flipped_fewshot,vim,['CWE-200'],drawscreen.c,3475,1618,1,1619,NO
+210928,1,0,0,code_author_flipped_fewshot,linux,['CWE-476'],inode.c,900,744,1,745,NO
+210944,1,0,0,code_author_flipped_fewshot,vim,['CWE-416'],ex_docmd.c,22933,6821,1,6822,NO
+211090,1,1,1,code_author_flipped_fewshot,cifs-utils,['CWE-20'],mount.cifs.c,2509,1272,4,1276,(1) YES
+211102,1,1,1,code_author_flipped_fewshot,file-roller,['CWE-22'],None,7299,2401,1,2402,YES
+211103,1,1,1,code_author_flipped_fewshot,file-roller,['CWE-22'],None,1690,888,1,889,YES
+211110,1,1,1,code_author_flipped_fewshot,libtiff,['CWE-787'],tif_lzw.c,5119,2169,1,2170,YES
+211113,1,1,1,code_author_flipped_fewshot,linux,['CWE-416'],atusb.c,534,636,1,637,YES
+211126,1,1,1,code_author_flipped_fewshot,libmobi,['CWE-125'],index.c,6639,2086,1,2087,YES
+211136,1,1,1,code_author_flipped_fewshot,rizin,['CWE-787'],dyldcache.c,2717,1376,4,1380,(1) YES
+211179,1,1,1,code_author_flipped_fewshot,exiv2,['CWE-125'],image.cpp,8217,2266,3,2269,(1)
+211181,1,1,1,code_author_flipped_fewshot,php-src,['CWE-17'],apprentice.c,2835,1449,4,1453,(1) YES
+211471,1,1,1,code_author_flipped_fewshot,frr,['CWE-125'],bgp_packet.c,2993,1406,1,1407,YES
+211473,1,1,1,code_author_flipped_fewshot,gdk-pixbuf,['CWE-189'],io-xbm.c,2983,1426,4,1430,(1) YES
+211506,1,1,1,code_author_flipped_fewshot,zlib,['CWE-787'],inflate.c,25995,6252,1,6253,YES
+211563,1,0,0,code_author_flipped_fewshot,vim,['CWE-122'],None,1349,847,1,848,NO
+211567,1,1,1,code_author_flipped_fewshot,clamav-devel,['CWE-189'],sis.c,466,633,4,637,(1) YES
+211695,1,0,0,code_author_flipped_fewshot,vim,['CWE-416'],regexp.c,1662,1027,1,1028,NO
+211699,1,1,1,code_author_flipped_fewshot,gnulib,['CWE-119'],glob.c,28165,7119,1,7120,YES
+211700,1,1,1,code_author_flipped_fewshot,linux,['CWE-120'],se.c,1407,890,1,891,YES
+211773,1,1,1,code_author_flipped_fewshot,ntp,['CWE-20'],ntpq.c,2313,1252,4,1256,(1) YES
+211785,1,1,1,code_author_flipped_fewshot,jasper,['CWE-20'],jpc_enc.c,11802,4660,4,4664,(1) YES
+211842,1,0,0,code_author_flipped_fewshot,vim,['CWE-787'],indent.c,5974,2188,1,2189,NO
+211845,1,1,1,code_author_flipped_fewshot,ImageMagick6,['CWE-787'],tiff.c,34484,9018,1,9019,YES
+211868,1,0,0,code_author_flipped_fewshot,nf,['CWE-269'],nf_tables_offload.c,1118,807,1,808,NO
+211877,1,1,1,code_author_flipped_fewshot,libexpat,['CWE-668'],xmlparse.c,5086,1902,1,1903,YES
+211915,1,1,1,code_author_flipped_fewshot,jasper,['CWE-125'],jp2_dec.c,9385,3696,1,3697,YES
+212083,1,1,1,code_author_flipped_fewshot,linux,['CWE-703'],i2c-ismt.c,6487,2627,1,2628,YES
+212144,1,1,1,code_author_flipped_fewshot,libmobi,['CWE-119'],read.c,1932,1028,3,1031,(1)
+212152,1,1,1,code_author_flipped_fewshot,bash,['CWE-787'],shell.c,494,611,1,612,YES
+212339,1,1,1,code_author_flipped_fewshot,icecast-server,['CWE-119'],auth_url.c,1092,775,1,776,YES
+212407,1,0,0,code_author_flipped_fewshot,varnish-cache,['CWE-703'],cache_http.c,295,561,1,562,NO
+212414,1,1,1,code_author_flipped_fewshot,linux,['CWE-416'],cls_api.c,5619,2258,4,2262,(1) YES
+212433,1,1,1,code_author_flipped_fewshot,vim,['CWE-416'],tag.c,16686,5565,1,5566,YES
+212436,1,1,1,code_author_flipped_fewshot,linux,['CWE-787'],stackmap.c,532,618,4,622,(1) YES
+212818,1,1,1,code_author_flipped_fewshot,pjproject,['CWE-191'],None,698,664,1,665,YES
+212822,1,0,0,code_author_flipped_fewshot,ghostpdl,['CWE-787'],None,501,591,1,592,NO
+212829,1,1,1,code_author_flipped_fewshot,php-src,['CWE-476'],wddx.c,3806,1704,1,1705,YES
+212834,1,1,1,code_author_flipped_fewshot,rsyslog,['CWE-190'],imptcp.c,4516,1989,1,1990,YES
+212857,1,0,0,code_author_flipped_fewshot,vim,['CWE-416'],quickfix.c,2622,1326,1,1327,NO
+212871,1,1,1,code_author_flipped_fewshot,newsbeuter,['CWE-787'],controller.cpp,1385,792,1,793,YES
+212927,1,1,1,code_author_flipped_fewshot,qemu,['CWE-835'],sungem.c,320,559,1,560,YES
+212934,1,0,0,code_author_flipped_fewshot,cyrus-imapd,['CWE-732'],annotate.c,3456,1332,4,1336,(2) NO
+212955,1,1,1,code_author_flipped_fewshot,linux,['CWE-476'],af_ax25.c,1838,1050,3,1053,(1)
+213037,1,1,1,code_author_flipped_fewshot,php-src,['CWE-125'],mbfilter_big5.c,2277,1446,4,1450,(1) YES
+213075,1,1,1,code_author_flipped_fewshot,linux,['CWE-416'],main.c,369,577,1,578,YES
+213370,1,0,0,code_author_flipped_fewshot,glib,['CWE-754'],gsocketclient.c,3733,1295,1,1296,NO
+213515,1,0,0,code_author_flipped_fewshot,vim,['CWE-787'],spellsuggest.c,6540,2568,1,2569,NO
+213528,1,1,1,code_author_flipped_fewshot,linux,['CWE-416'],cgroup-v1.c,2176,1116,4,1120,(1) YES
+213998,1,0,0,code_author_flipped_fewshot,libtpms,['CWE-119'],Object.c,482,590,1,591,NO
+214003,1,1,1,code_author_flipped_fewshot,libvncserver,['CWE-787'],corre.c,836,760,1,761,YES
+214124,1,1,1,code_author_flipped_fewshot,chafa,['CWE-125'],lzw.c,2279,1101,1,1102,YES
+214160,1,1,1,code_author_flipped_fewshot,linux,['CWE-476'],composite.c,11322,3961,1,3962,YES
+214276,1,1,1,code_author_flipped_fewshot,linux,['CWE-20'],crypto.c,1300,882,1,883,YES
+214282,1,1,1,code_author_flipped_fewshot,radare2,['CWE-787'],None,2479,1225,4,1229,(1) YES
+214335,1,0,0,code_author_flipped_fewshot,ceph,['CWE-79'],rgw_rest_s3.cc,7013,2386,1,2387,NO
+214336,1,1,1,code_author_flipped_fewshot,linux,['CWE-362'],af_key.c,745,703,1,704,YES
+214339,1,1,1,code_author_flipped_fewshot,linux,['CWE-787'],book3s_rtas.c,1527,953,1,954,YES
+214358,1,1,1,code_author_flipped_fewshot,clamav-devel,['CWE-20'],mspack.c,5074,2088,1,2089,YES
+214364,1,1,1,code_author_flipped_fewshot,php-src,['CWE-119'],simplestring.c,833,681,1,682,YES
+214909,1,1,1,code_author_flipped_fewshot,linux,['CWE-401'],conn.c,2338,1351,1,1352,YES
+214948,1,0,0,code_author_flipped_fewshot,nagioscore,['CWE-476'],query-handler.c,776,723,1,724,NO
+214997,1,1,1,code_author_flipped_fewshot,liblouis,['CWE-787'],compileTranslationTable.c,49196,15114,4,15118,(1) YES
+215038,1,1,1,code_author_flipped_fewshot,gst-plugins-good,['CWE-125'],gstflxdec.c,5721,2139,1,2140,YES
+215073,1,0,0,code_author_flipped_fewshot,linux,['CWE-269'],cgroup-v1.c,503,603,1,604,NO
+215103,1,0,0,code_author_flipped_fewshot,mongo,['CWE-617'],None,9585,2527,1,2528,NO
+215142,1,0,0,code_author_flipped_fewshot,open62541,['CWE-703'],check_securechannel.c,500,575,1,576,NO
+215188,1,1,1,code_author_flipped_fewshot,libmobi,['CWE-787'],None,683,646,1,647,YES
+215262,1,1,1,code_author_flipped_fewshot,qemu,['CWE-835'],cadence_gem.c,6042,1785,4,1789,(1) YES
+215264,1,1,1,code_author_flipped_fewshot,perl5,['CWE-120'],regcomp.c,81477,19375,1,19376,YES
+215312,1,1,1,code_author_flipped_fewshot,linux-2.6,['CWE-20'],None,1821,1008,1,1009,YES
+215374,1,1,1,code_author_flipped_fewshot,linux-2.6,['CWE-189'],None,751,698,1,699,YES
+215391,1,1,1,code_author_flipped_fewshot,linux-2.6,['CWE-20'],None,403,564,1,565,YES
+215399,1,1,1,code_author_flipped_fewshot,linux-2.6,['CWE-119'],None,592,639,1,640,YES
+215400,1,1,1,code_author_flipped_fewshot,linux-2.6,['CWE-20'],None,2869,1444,4,1448,(1) YES
+215549,1,1,1,code_author_flipped_fewshot,gzip,['CWE-189'],None,4759,2048,4,2052,(1) YES
+215921,1,0,0,code_author_flipped_fewshot,grep,['CWE-119'],None,2320,1170,1,1171,NO
+215948,1,0,0,code_author_flipped_fewshot,nettle,['CWE-310'],None,1312,1016,1,1017,NO
+216027,1,1,1,code_author_flipped_fewshot,tar,['CWE-476'],None,3123,1102,1,1103,YES
+216126,1,1,1,code_author_flipped_fewshot,openssl,['CWE-20'],None,1641,932,1,933,YES
+216202,1,1,1,code_author_flipped_fewshot,libssh,['CWE-399'],None,2415,1105,1,1106,YES
+216515,1,1,1,code_author_flipped_fewshot,openssl,['CWE-362'],None,2379,1096,3,1099,(1)
+216637,1,1,1,code_author_flipped_fewshot,guile,['CWE-275'],None,729,689,4,693,(1) YES
+216654,1,1,1,code_author_flipped_fewshot,core,['CWE-20'],None,4342,1672,1,1673,YES
+216701,1,1,1,code_author_flipped_fewshot,libtiff,['CWE-770'],None,2050,1126,1,1127,YES
+216726,1,1,1,code_author_flipped_fewshot,openssl,['CWE-327'],None,3458,1467,4,1471,(1) YES
+216767,1,1,1,code_author_flipped_fewshot,core,['CWE-835'],None,1865,1013,4,1017,(1) YES
+216800,1,0,0,code_author_flipped_fewshot,core,['CWE-125'],None,330,564,1,565,NO
+216812,1,0,0,code_author_flipped_fewshot,openssl,['CWE-476'],None,95,492,1,493,NO
+216861,1,1,1,code_author_flipped_fewshot,openssl,['CWE-125'],None,10741,3274,1,3275,YES
+216903,1,0,0,code_author_flipped_fewshot,server,['CWE-476'],None,3525,1305,1,1306,NO
+216906,1,0,0,code_author_flipped_fewshot,server,['CWE-400'],None,155,512,1,513,NO
+216938,1,0,0,code_author_flipped_fewshot,server,['CWE-416'],None,15070,4090,1,4091,NO
+216945,1,0,0,code_author_flipped_fewshot,server,['CWE-617'],None,1828,886,1,887,NO
+216946,1,1,1,code_author_flipped_fewshot,server,['CWE-416'],None,402,595,1,596,YES
+216965,1,0,0,code_author_flipped_fewshot,server,['CWE-617'],None,5013,1702,1,1703,NO
+217176,1,1,1,code_author_flipped_fewshot,monit,['CWE-79'],None,1566,773,1,774,YES
+217459,1,1,1,code_author_flipped_fewshot,JUCE,['CWE-59'],None,2024,906,1,907,YES
+217547,1,1,1,code_author_flipped_fewshot,libMeshb,['CWE-120'],None,6479,2502,3,2505,(1)
+217551,1,1,1,code_author_flipped_fewshot,elfspirit,['CWE-125'],None,37504,8388,1,8389,YES
+217569,0,1,0,code_author_flipped_fewshot,ImageMagick6,['CWE-704'],property.c,28274,9741,1,9742,YES
+218785,0,1,0,code_author_flipped_fewshot,ImageMagick6,['CWE-190'],psd.c,1718,932,4,936,(1) YES
+218852,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-401'],immutable_executor_state.cc,6781,2129,1,2130,NO
+218933,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],loader_util.cc,1491,820,1,821,NO
+219032,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-617'],constant_folding.cc,2762,1135,4,1139,(1) YES
+219912,0,1,0,code_author_flipped_fewshot,gpac,['CWE-476'],hint_track.c,466,627,4,631,(1) YES
+219931,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-617'],constant_folding.cc,3008,1131,1,1132,NO
+219947,0,1,0,code_author_flipped_fewshot,glewlwyd,['CWE-287'],webservice.c,9884,2763,4,2767,(1) YES
+220021,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-190'],sparse_tensors_map_ops.cc,5527,1685,1,1686,YES
+220100,0,1,0,code_author_flipped_fewshot,linux,['CWE-909'],nfs4file.c,1686,971,1,972,YES
+220168,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-401'],decode_image_op.cc,5125,1652,1,1653,YES
+220201,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-125'],graph.cc,2328,1029,1,1030,NO
+220442,0,1,0,code_author_flipped_fewshot,mruby,['CWE-476'],array.c,878,771,1,772,YES
+220449,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-354'],conv_ops.cc,4232,1456,4,1460,(1) YES
+220463,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-476'],xla_platform_info.cc,2769,1048,4,1052,(1) YES
+220804,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-787'],count_ops.cc,2361,1003,1,1004,YES
+220841,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],common.h,2700,1386,1,1387,YES
+220909,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-617'],None,1185,780,1,781,NO
+220924,0,1,0,code_author_flipped_fewshot,gpac,['CWE-476'],None,16655,5843,1,5844,YES
+221079,0,1,0,code_author_flipped_fewshot,gpac,['CWE-120'],av_parsers.c,1731,1101,1,1102,YES
+221123,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-416'],decode_image_op.cc,4663,1542,4,1546,(1) YES
+221160,0,1,0,code_author_flipped_fewshot,gpac,['CWE-415'],descriptors.c,2707,1394,4,1398,(1) YES
+221413,0,1,0,code_author_flipped_fewshot,linux,['CWE-862'],None,1161,832,1,833,YES
+221428,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-617'],tensor.cc,1679,869,1,870,NO
+221631,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-754'],tf_cpurt_symbolic_shape_optimization.cc,2739,1118,1,1119,NO
+221651,0,0,1,code_author_flipped_fewshot,hermes,['CWE-843'],IREval.cpp,2034,895,1,896,NO
+221678,0,1,0,code_author_flipped_fewshot,e2guardian,['CWE-295'],Socket.cpp,3911,1481,4,1485,(1) YES
+222666,0,1,0,code_author_flipped_fewshot,tmate-ssh-server,['CWE-362'],tmate-main.c,2025,1067,4,1071,(1) YES
+222737,0,1,0,code_author_flipped_fewshot,pjproject,['CWE-125'],rtcp_xr.c,7585,3122,1,3123,YES
+222739,0,1,0,code_author_flipped_fewshot,gpac,['CWE-476'],av_parsers.c,4475,2174,1,2175,YES
+222906,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-787'],graph_properties.cc,601,607,1,608,NO
+222925,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-617'],None,2055,985,1,986,NO
+223089,0,1,0,code_author_flipped_fewshot,ImageMagick,['CWE-190'],pcl.c,8029,2683,1,2684,YES
+223368,0,0,1,code_author_flipped_fewshot,pcre2,['CWE-125'],pcre2_jit_compile.c,22737,8517,1,8518,NO
+223728,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],constant_folding.cc,4724,1656,1,1657,NO
+224153,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-908'],assign_op.h,3946,1317,1,1318,YES
+224154,0,0,1,code_author_flipped_fewshot,mruby,['CWE-476'],None,1318,880,1,881,NO
+224181,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-843'],map_stage_op.cc,1181,758,1,759,NO
+224192,0,0,1,code_author_flipped_fewshot,mruby,['CWE-125'],codegen.c,3896,1678,4,1682,(2) NO
+224208,0,1,0,code_author_flipped_fewshot,uWebSockets,['CWE-787'],TopicTree.h,2571,980,1,981,YES
+224277,0,1,0,code_author_flipped_fewshot,flatpak,['CWE-20'],flatpak-run.c,10472,3503,1,3504,YES
+224281,0,1,0,code_author_flipped_fewshot,squid,['CWE-400'],gopher.cc,11400,2877,4,2881,(1) YES
+224472,0,1,0,code_author_flipped_fewshot,gpac,['CWE-415'],load_text.c,1840,1173,4,1177,(1) YES
+224570,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-843'],common_shape_fns.cc,3248,1351,4,1355,(1) YES
+224728,0,1,0,code_author_flipped_fewshot,gpac,['CWE-415'],box_code_meta.c,2479,1239,4,1243,(1) YES
+224862,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-190'],sparse_dense_binary_op_shared.cc,6906,1925,1,1926,YES
+224891,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-125'],fractional_avg_pool_op.cc,7747,2231,1,2232,YES
+224964,0,0,1,code_author_flipped_fewshot,flatpak,['CWE-276'],flatpak-dir.c,3627,1188,1,1189,NO
+225062,0,0,1,code_author_flipped_fewshot,postgres,['CWE-522'],fe-connect.c,47132,13032,1,13033,NO
+225086,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-617'],op_def_util.cc,722,681,1,682,NO
+225125,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-190'],string_ngrams_op.cc,5193,1723,4,1727,(1) YES
+225383,0,0,1,code_author_flipped_fewshot,v4l2loopback,['CWE-134'],v4l2loopback.c,1518,939,1,940,NO
+225473,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],mutable_graph_view.cc,508,587,1,588,NO
+225547,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-190'],common.c,318,549,1,550,NO
+225552,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-190'],common.c,263,541,1,542,NO
+225563,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],fractional_max_pool_op.cc,5009,1692,4,1696,(1) YES
+225566,0,1,0,code_author_flipped_fewshot,ImageMagick6,['CWE-190'],pcl.c,8015,2679,4,2683,(1) YES
+226029,0,0,1,code_author_flipped_fewshot,gpac,['CWE-476'],box_code_base.c,279,565,1,566,NO
+226433,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,3181,1176,1,1177,NO
+227022,0,1,0,code_author_flipped_fewshot,weechat,['CWE-476'],irc-protocol.c,3216,1328,4,1332,(1) YES
+228563,0,1,0,code_author_flipped_fewshot,hhvm,['CWE-119'],zend-string.cpp,3598,1487,1,1488,YES
+229165,0,1,0,code_author_flipped_fewshot,qemu,['CWE-787'],virtio-serial-bus.c,486,616,1,617,YES
+229337,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],execute.cc,1966,931,1,932,NO
+230147,0,1,0,code_author_flipped_fewshot,glewlwyd,['CWE-787'],webauthn.c,7404,2451,1,2452,YES
+230302,0,0,1,code_author_flipped_fewshot,njs,['CWE-703'],njs_array.c,4486,1647,4,1651,(2) NO
+230394,0,1,0,code_author_flipped_fewshot,pjproject,['CWE-703'],xml.c,3343,1429,4,1433,(1) YES
+231012,0,1,0,code_author_flipped_fewshot,mruby,['CWE-703'],vm.c,51202,15080,4,15084,(1) YES
+231048,0,0,1,code_author_flipped_fewshot,FreeRTOS-Kernel,['CWE-200'],queue.c,2940,1111,1,1112,NO
+231710,0,1,0,code_author_flipped_fewshot,mvfst,['CWE-703'],ServerStateMachine.cpp,3434,1351,4,1355,(1) YES
+232287,0,1,0,code_author_flipped_fewshot,libjpeg,['CWE-703'],None,5449,1841,4,1845,(1) YES
+232289,0,1,0,code_author_flipped_fewshot,libjpeg,['CWE-703'],None,6336,2105,1,2106,YES
+232329,0,1,0,code_author_flipped_fewshot,gpac,['CWE-476'],None,15893,5644,1,5645,YES
+232405,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2915,1099,1,1100,NO
+232839,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],quantile_ops.cc,1205,740,1,741,NO
+233862,0,1,0,code_author_flipped_fewshot,deark,['CWE-369'],fmtutil.c,1471,1022,4,1026,(1) YES
+233867,0,1,0,code_author_flipped_fewshot,php-src,['CWE-476'],wddx.c,3633,1640,1,1641,YES
+234731,0,0,1,code_author_flipped_fewshot,linux,['CWE-703'],volumes.c,4213,1582,1,1583,NO
+234875,0,1,0,code_author_flipped_fewshot,ImageMagick,['CWE-125'],png.c,79225,18197,1,18198,YES
+235642,0,1,0,code_author_flipped_fewshot,pjproject,['CWE-787'],dns.c,1097,799,1,800,YES
+235765,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-787'],edit_distance_op.cc,7660,2172,1,2173,YES
+236125,0,1,0,code_author_flipped_fewshot,gpac,['CWE-703'],box_code_3gpp.c,339,572,1,573,YES
+237885,0,0,1,code_author_flipped_fewshot,lsquic,['CWE-269'],None,1305,848,1,849,NO
+238322,0,0,1,code_author_flipped_fewshot,barebox,['CWE-200'],digest.c,305,552,1,553,NO
+238803,0,1,0,code_author_flipped_fewshot,vim,['CWE-416'],search.c,18162,6041,1,6042,YES
+240276,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],register.c,803,738,1,739,YES
+240595,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],resource_variable_ops.cc,3658,1258,4,1262,(1) YES
+241040,0,1,0,code_author_flipped_fewshot,booth,['CWE-284'],main.c,1025,784,1,785,YES
+241311,0,0,1,code_author_flipped_fewshot,mruby,['CWE-787'],None,273,562,1,563,NO
+241369,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-354'],matrix_solve_op.cc,10312,2864,1,2865,NO
+242619,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],stage_op.cc,517,599,1,600,NO
+242637,0,1,0,code_author_flipped_fewshot,gpac,['CWE-703'],isoffin_read.c,12031,4193,1,4194,YES
+242899,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-125'],None,2578,1006,1,1007,NO
+242926,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-20'],sparse_tensor_dense_add_op.cc,2303,1055,4,1059,(2) NO
+245140,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],sdca_internal.cc,4067,1250,1,1251,NO
+245434,0,1,0,code_author_flipped_fewshot,gpac,['CWE-703'],isom_hinter.c,6039,2540,1,2541,YES
+245921,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],session_ops.cc,1071,707,1,708,NO
+246207,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-125'],count_ops.cc,420,596,1,597,NO
+246237,0,0,1,code_author_flipped_fewshot,furnace,['CWE-703'],pattern.cpp,12980,4058,4,4062,(2) NO
+246495,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],div.cc,1915,982,3,985,(1)
+246693,0,1,0,code_author_flipped_fewshot,gpac,['CWE-787'],None,1877,1119,1,1120,YES
+247290,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],mkl_requantization_range_per_channel_op.cc,3983,1438,4,1442,(1) YES
+247337,0,1,0,code_author_flipped_fewshot,rpm,['CWE-284'],rpmpgp.c,1625,1006,4,1010,(1) YES
+247550,0,1,0,code_author_flipped_fewshot,envoy,['CWE-362'],default_validator.cc,2972,1134,4,1138,(1) YES
+247755,0,0,1,code_author_flipped_fewshot,cryptopp,['CWE-399'],rw.cpp,1215,857,1,858,NO
+249510,0,1,0,code_author_flipped_fewshot,libjxl,['CWE-369'],codec_apng.cc,7435,2508,1,2509,YES
+249989,0,1,0,code_author_flipped_fewshot,gpac,['CWE-476'],isom_store.c,2973,1369,1,1370,YES
+250692,0,1,0,code_author_flipped_fewshot,drogon,['CWE-552'],None,959,664,1,665,YES
+251946,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-369'],optimized_ops.h,4315,1586,1,1587,NO
+252437,0,1,0,code_author_flipped_fewshot,tinyexr,['CWE-20'],tinyexr.h,10240,3114,1,3115,YES
+253515,0,0,1,code_author_flipped_fewshot,mruby,['CWE-125'],None,3886,1674,4,1678,(2) NO
+253699,0,1,0,code_author_flipped_fewshot,linux,['CWE-703'],ccp-ops.c,6915,2760,1,2761,YES
+253970,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-476'],quantize_op.cc,4946,1561,1,1562,NO
+255032,0,1,0,code_author_flipped_fewshot,FFmpeg,['CWE-252'],None,1611,974,1,975,YES
+255574,0,1,0,code_author_flipped_fewshot,njs,['CWE-787'],njs_module.c,1139,814,4,818,(1) YES
+255787,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-20'],mkl_requantize_per_channel_op.cc,5427,1717,1,1718,YES
+255807,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-908'],None,10123,2913,1,2914,YES
+255932,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-369'],None,3318,1238,1,1239,NO
+256138,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-125'],sparse_matmul_op.cc,4710,1641,1,1642,NO
+256441,0,1,0,code_author_flipped_fewshot,pjproject,['CWE-200'],rtcp_fb.c,1449,949,4,953,(1) YES
+256587,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],session_ops.cc,552,581,1,582,NO
+256947,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],einsum_op_impl.h,2375,1026,4,1030,(2) NO
+257461,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],auto_parallel.cc,5002,1597,1,1598,YES
+258082,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-369'],reverse_op.cc,1900,888,1,889,NO
+259081,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-476'],save_restore_tensor.cc,3979,1284,3,1287,(1)
+259515,0,1,0,code_author_flipped_fewshot,gpac,['CWE-416'],field_decode.c,3091,1461,1,1462,YES
+259619,0,0,1,code_author_flipped_fewshot,libjpeg,['CWE-787'],hierarchicalbitmaprequester.cpp,1217,775,1,776,NO
+259732,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],quantize_and_dequantize_op.cc,3595,1291,1,1292,YES
+261220,0,1,0,code_author_flipped_fewshot,wolfMQTT,['CWE-787'],mqtt_client.c,7575,2180,1,2181,YES
+261769,0,1,0,code_author_flipped_fewshot,njs,['CWE-416'],njs_function.c,1410,849,1,850,YES
+262721,0,1,0,code_author_flipped_fewshot,njs,['CWE-703'],njs_iterator.c,4564,1534,4,1538,(1) YES
+262803,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-125'],ragged_tensor_to_variant_op.cc,2419,999,1,1000,YES
+263382,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],array_ops.cc,2266,1095,4,1099,(1) YES
+263521,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-125'],gather_nd.cc,1424,831,1,832,YES
+264367,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-345'],tensor_slice_reader.h,2392,1081,1,1082,YES
+264657,0,1,0,code_author_flipped_fewshot,gpac,['CWE-416'],memory_decoder.c,1309,859,1,860,YES
+264715,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-824'],constant_folding.cc,2427,1096,1,1097,NO
+265432,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],gather.cc,1006,699,1,700,YES
+267357,0,0,1,code_author_flipped_fewshot,crun,['CWE-276'],exec.c,3362,1275,1,1276,NO
+267917,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],unsorted_segment_join_op.cc,2873,1103,1,1104,YES
+267985,0,1,0,code_author_flipped_fewshot,radare2,['CWE-125'],bfile.c,7883,3233,4,3237,(1) YES
+268104,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],load_and_remap_matrix_op.cc,11370,3017,1,3018,YES
+269323,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-125'],sparse_reduce_op.cc,3684,1355,1,1356,NO
+269330,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-476'],fractional_avg_pool_op.cc,7257,2136,1,2137,YES
+269941,0,1,0,code_author_flipped_fewshot,ImageMagick,['CWE-125'],mat.c,16370,4888,1,4889,YES
+270119,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-369'],kernel_util.cc,278,529,1,530,NO
+270767,0,0,1,code_author_flipped_fewshot,barebox,['CWE-200'],password.c,1388,903,4,907,(2) NO
+270922,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-369'],ragged_gather_op.cc,1859,864,1,865,NO
+271526,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-369'],reshape_util.cc,4881,1429,3,1432,(1)
+273091,0,0,1,code_author_flipped_fewshot,owntone-server,['CWE-416'],misc.c,2738,1295,1,1296,NO
+273407,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-703'],lstm_ops.cc,8690,2448,1,2449,YES
+273880,0,1,0,code_author_flipped_fewshot,uftpd,['CWE-787'],ftpcmd.c,905,751,1,752,YES
+274773,0,1,0,code_author_flipped_fewshot,mruby,['CWE-288'],vm.c,50746,14954,1,14955,1
+274814,0,1,0,code_author_flipped_fewshot,pjproject,['CWE-787'],stun_simple.c,1988,1074,1,1075,YES
+274865,0,0,1,code_author_flipped_fewshot,tensorflow,['CWE-703'],comparisons.cc,1608,850,1,851,NO
+275525,0,1,0,code_author_flipped_fewshot,njs,['CWE-416'],njs_async.c,2071,1060,1,1061,YES
+275987,0,1,0,code_author_flipped_fewshot,micro-ecc,['CWE-415'],uECC.c,3068,1431,4,1435,(1) YES
+276447,0,1,0,code_author_flipped_fewshot,tensorflow,['CWE-416'],resource_ops.cc,1233,745,1,746,YES
+276921,0,1,0,code_author_flipped_fewshot,u-boot,['CWE-787'],i2c.c,2212,1204,1,1205,YES
+276993,0,1,0,code_author_flipped_fewshot,mruby,['CWE-703'],fiber.c,1845,1069,1,1070,YES
+277489,0,1,0,code_author_flipped_fewshot,libmobi,['CWE-787'],index.c,2092,1010,1,1011,YES
+279948,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],ex_cmds.c,1360,901,1,902,YES
+281119,0,1,0,code_author_flipped_fewshot,ipsec,['CWE-125'],xfrm_policy.c,1566,995,1,996,YES
+281247,0,1,0,code_author_flipped_fewshot,MilkyTracker,['CWE-787'],LoaderS3M.cpp,8590,3324,1,3325,YES
+281662,0,1,0,code_author_flipped_fewshot,LibRaw,['CWE-189'],None,1419,1089,4,1093,(1) YES
+282862,0,1,0,code_author_flipped_fewshot,linux,['CWE-401'],rsi_91x_mgmt.c,660,666,1,667,YES
+282984,0,0,1,code_author_flipped_fewshot,LuaJIT,['CWE-125'],lj_err.c,1412,887,1,888,NO
+285157,0,1,0,code_author_flipped_fewshot,radare2,['CWE-125'],ne.c,2155,1180,1,1181,YES
+286739,0,1,0,code_author_flipped_fewshot,swtpm,['CWE-125'],swtpm_nvstore.c,1391,795,3,798,(1)
+289293,0,1,0,code_author_flipped_fewshot,linux,['CWE-362'],None,2969,1318,1,1319,YES
+291761,0,0,1,code_author_flipped_fewshot,linux,['CWE-415'],rtrs-clt.c,225,526,1,527,NO
+292205,0,1,0,code_author_flipped_fewshot,hexchat,['CWE-22'],inbound.c,1809,991,1,992,YES
+292609,0,1,0,code_author_flipped_fewshot,puma,['CWE-444'],http11_parser.c,19424,8095,1,8096,YES
+293496,0,1,0,code_author_flipped_fewshot,chafa,['CWE-476'],libnsgif.c,15337,3279,1,3280,YES
+293522,0,0,1,code_author_flipped_fewshot,pjproject,['CWE-125'],None,393,584,1,585,NO
+293750,0,1,0,code_author_flipped_fewshot,radare2,['CWE-476'],bin_xnu_kernelcache.c,1681,1018,1,1019,YES
+293939,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],indent.c,5668,2320,1,2321,YES
+295887,0,1,0,code_author_flipped_fewshot,MilkyTracker,['CWE-787'],None,19161,7442,1,7443,YES
+296226,0,0,1,code_author_flipped_fewshot,vim,['CWE-416'],ex_cmds.c,31465,9854,1,9855,NO
+299319,0,1,0,code_author_flipped_fewshot,ImageMagick,['CWE-787'],mat.c,6690,2287,4,2291,(1) YES
+299905,0,1,0,code_author_flipped_fewshot,exim,['CWE-264'],readconf.c,13109,4113,1,4114,YES
+299976,0,1,0,code_author_flipped_fewshot,linux,['CWE-200'],hid-elo.c,895,721,1,722,YES
+300731,0,0,1,code_author_flipped_fewshot,linux,['CWE-200'],socket.c,3487,1590,1,1591,NO
+301016,0,1,0,code_author_flipped_fewshot,ghostpdl,['CWE-787'],gdevpcx.c,1184,742,1,743,YES
+301429,0,1,0,code_author_flipped_fewshot,samba,['CWE-665'],None,8880,3140,1,3141,YES
+301481,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],spellsuggest.c,39439,13340,1,13341,YES
+302095,0,1,0,code_author_flipped_fewshot,radare2,['CWE-476'],None,786,734,1,735,YES
+308163,0,0,1,code_author_flipped_fewshot,linux,['CWE-401'],fastrpc.c,686,660,1,661,NO
+309831,0,1,0,code_author_flipped_fewshot,ncurses,['CWE-787'],None,1187,891,4,895,(1) YES
+312399,0,1,0,code_author_flipped_fewshot,vim,['CWE-703'],quickfix.c,1303,899,1,900,YES
+313134,0,0,1,code_author_flipped_fewshot,libvirt,['CWE-212'],virstoragetest.c,1385,823,1,824,NO
+313850,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],normal.c,996,829,1,830,YES
+314536,0,1,0,code_author_flipped_fewshot,pjproject,['CWE-787'],sdp.c,1617,1027,1,1028,YES
+317271,0,0,1,code_author_flipped_fewshot,linux,['CWE-416'],None,203,514,1,515,NO
+318099,0,1,0,code_author_flipped_fewshot,wireless-drivers,['CWE-415'],rsi_91x_usb.c,1400,865,1,866,YES
+318781,0,1,0,code_author_flipped_fewshot,gerbv,['CWE-787'],drill.c,7886,2714,1,2715,YES
+318962,0,0,1,code_author_flipped_fewshot,vim,['CWE-787'],testing.c,763,732,1,733,NO
+319422,0,1,0,code_author_flipped_fewshot,ImageMagick6,['CWE-787'],cin.c,15774,4520,4,4524,(1) YES
+325821,0,1,0,code_author_flipped_fewshot,gnutls,['CWE-310'],gnutls_handshake.c,4790,1871,4,1875,(1) YES
+326119,0,1,0,code_author_flipped_fewshot,vim,['CWE-416'],regexp_bt.c,34649,11410,1,11411,YES
+326629,0,0,1,code_author_flipped_fewshot,libarchive,['CWE-59'],None,2229,1125,1,1126,NO
+326914,0,1,0,code_author_flipped_fewshot,linux,['CWE-476'],vidtv_s302m.c,1317,888,4,892,(1) YES
+328807,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],register.c,20005,6821,1,6822,YES
+328836,0,1,0,code_author_flipped_fewshot,radare2,['CWE-125'],class.c,1167,813,1,814,YES
+329925,0,1,0,code_author_flipped_fewshot,cairo,['CWE-787'],None,2984,1554,4,1558,(1) YES
+331760,0,0,1,code_author_flipped_fewshot,qtbase,['CWE-787'],qpaintengineex.cpp,9188,2482,4,2486,(2) NO
+332375,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],None,3119,1489,1,1490,YES
+333041,0,1,0,code_author_flipped_fewshot,vim,['CWE-122'],None,1239,891,1,892,YES
+333503,0,1,0,code_author_flipped_fewshot,php-src,['CWE-119'],gd_interpolation.c,1008,755,1,756,YES
+336106,0,1,0,code_author_flipped_fewshot,net,['CWE-125'],ip6_gre.c,2085,1170,1,1171,YES
+336484,0,1,0,code_author_flipped_fewshot,qemu,['CWE-369'],None,1354,861,1,862,YES
+336807,0,1,0,code_author_flipped_fewshot,ghostpdl,['CWE-787'],gdevlprn.c,920,780,1,781,YES
+337374,0,0,1,code_author_flipped_fewshot,vim,['CWE-476'],buffer.c,602,656,1,657,NO
+337848,0,1,0,code_author_flipped_fewshot,linux,['CWE-704'],sm_make_chunk.c,1244,837,1,838,YES
+338747,0,1,0,code_author_flipped_fewshot,ImageMagick,['CWE-772'],tga.c,13644,3998,4,4002,(1) YES
+339712,0,1,0,code_author_flipped_fewshot,php-src,['CWE-119'],zend_strtod.c,562,651,1,652,YES
+341817,0,1,0,code_author_flipped_fewshot,ghostpdl,['CWE-787'],zstring.c,1279,872,1,873,YES
+343158,0,1,0,code_author_flipped_fewshot,linux,['CWE-787'],esp6.c,1975,1108,1,1109,YES
+343175,0,1,0,code_author_flipped_fewshot,linux,['CWE-787'],esp4.c,2029,1121,1,1122,YES
+343298,0,1,0,code_author_flipped_fewshot,pure-ftpd,['CWE-434'],ftpd.c,7569,2525,1,2526,YES
+344242,0,0,1,code_author_flipped_fewshot,lua,['CWE-787'],None,531,642,1,643,NO
+345131,0,1,0,code_author_flipped_fewshot,linux,['CWE-703'],pxa3xx-gcu.c,1585,928,1,929,YES
+346415,0,0,1,code_author_flipped_fewshot,vim,['CWE-703'],scriptfile.c,2775,1408,1,1409,NO
+349251,0,1,0,code_author_flipped_fewshot,squashfs-tools,['CWE-200'],None,3267,1387,1,1388,YES
+349259,0,1,0,code_author_flipped_fewshot,squashfs-tools,['CWE-200'],None,3559,1509,3,1512,(1)
+349259,0,1,0,code_author_flipped_fewshot,squashfs-tools,['CWE-200'],None,3559,1509,3,1512,(1)
+349528,0,0,1,code_author_flipped_fewshot,linux,['CWE-772'],virtio_bt.c,385,586,1,587,NO
+349888,0,1,0,code_author_flipped_fewshot,net,['CWE-787'],hw_atl_utils.c,1284,890,4,894,(1) YES
+351182,0,1,0,code_author_flipped_fewshot,shapelib,['CWE-415'],shpsort.c,719,681,1,682,YES
+353015,0,1,0,code_author_flipped_fewshot,openldap,['CWE-617'],schema_init.c,3647,1806,4,1810,(1) YES
+353124,0,1,0,code_author_flipped_fewshot,poppler,['CWE-369'],None,6992,3087,1,3088,YES
+355014,0,1,0,code_author_flipped_fewshot,pjproject,['CWE-125'],None,784,690,1,691,YES
+355649,0,0,1,code_author_flipped_fewshot,vim,['CWE-787'],eval.c,6349,2438,1,2439,NO
+356170,0,1,0,code_author_flipped_fewshot,firejail,['CWE-94'],None,970,786,1,787,YES
+357668,0,1,0,code_author_flipped_fewshot,squirrel,['CWE-125'],sqclass.cpp,1893,921,1,922,YES
+359206,0,0,1,code_author_flipped_fewshot,bpf,['CWE-787'],ringbuf.c,1164,814,1,815,NO
+359365,0,1,0,code_author_flipped_fewshot,frr,['CWE-125'],bgp_packet.c,3211,1291,3,1294,(1)
+359843,0,1,0,code_author_flipped_fewshot,ImageMagick,['CWE-617'],operation.c,16656,4575,4,4579,(1) YES
+360829,0,0,1,code_author_flipped_fewshot,linux,['CWE-193'],cancel.c,637,652,1,653,NO
+361298,0,0,1,code_author_flipped_fewshot,admesh,['CWE-125'],connect.c,650,681,1,682,NO
+361303,0,1,0,code_author_flipped_fewshot,admesh,['CWE-125'],connect.c,2431,1253,4,1257,(1) YES
+361755,0,1,0,code_author_flipped_fewshot,linux,['CWE-416'],em28xx-cards.c,8029,3009,1,3010,YES
+365760,0,0,1,code_author_flipped_fewshot,linux,['CWE-703'],None,827,690,1,691,NO
+366223,0,0,1,code_author_flipped_fewshot,linux,['CWE-200'],namespace.c,637,644,1,645,NO
+369215,0,0,1,code_author_flipped_fewshot,linux,['CWE-94'],io_uring.c,1218,868,1,869,NO
+371185,0,1,0,code_author_flipped_fewshot,rizin,['CWE-787'],marshal.c,1209,921,1,922,YES
+371226,0,0,1,code_author_flipped_fewshot,linux,['CWE-834'],fuse_i.h,137,498,1,499,NO
+372352,0,1,0,code_author_flipped_fewshot,Singular,['CWE-269'],None,1744,977,4,981,(1) YES
+373535,0,0,1,code_author_flipped_fewshot,ovs,['CWE-401'],ipf.c,1051,720,1,721,NO
+376350,0,0,1,code_author_flipped_fewshot,evolution-data-server,['CWE-200'],None,583,642,1,643,NO
+376678,0,1,0,code_author_flipped_fewshot,gimp,['CWE-125'],file-gbr.c,7880,2466,4,2470,(1) YES
+376682,0,1,0,code_author_flipped_fewshot,tigervnc,['CWE-672'],None,3002,1349,1,1350,YES
+379334,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],ex_docmd.c,9168,3510,4,3514,(1) YES
+379671,0,1,0,code_author_flipped_fewshot,radare2,['CWE-416'],None,5476,2407,1,2408,YES
+380955,0,0,1,code_author_flipped_fewshot,vim,['CWE-787'],edit.c,10110,3509,1,3510,NO
+382797,0,1,0,code_author_flipped_fewshot,php-src,['CWE-119'],gd_io_dp.c,400,606,1,607,YES
+383316,0,1,0,code_author_flipped_fewshot,php-src,['CWE-119'],None,1467,1015,4,1019,(1) YES
+384124,0,1,0,code_author_flipped_fewshot,raptor,['CWE-787'],raptor_xml_writer.c,8301,2344,1,2345,YES
+384201,0,1,0,code_author_flipped_fewshot,linux,['CWE-703'],nf_tables_api.c,1517,933,1,934,YES
+384677,0,0,1,code_author_flipped_fewshot,nbdkit,['CWE-924'],protocol-handshake-newstyle.c,19005,5018,4,5022,(2) NO
+384767,0,0,1,code_author_flipped_fewshot,vim,['CWE-122'],move.c,6183,2363,1,2364,NO
+384803,0,1,0,code_author_flipped_fewshot,vim,['CWE-703'],filepath.c,5340,2151,1,2152,YES
+386565,0,1,0,code_author_flipped_fewshot,qcad,['CWE-191'],dl_dxf.cpp,1296,814,4,818,(1) YES
+386750,0,1,0,code_author_flipped_fewshot,linux,['CWE-476'],inode.c,2081,1120,1,1121,YES
+387149,0,1,0,code_author_flipped_fewshot,ImageMagick,['CWE-125'],quantize.c,5182,1766,1,1767,YES
+387593,0,0,1,code_author_flipped_fewshot,linux,['CWE-125'],control.c,352,575,1,576,NO
+389676,0,1,0,code_author_flipped_fewshot,vim,['CWE-125'],typval.c,3822,1758,1,1759,YES
+389760,0,1,0,code_author_flipped_fewshot,jasper,['CWE-703'],jasper.c,4234,2001,4,2005,(1) YES
+391627,0,0,1,code_author_flipped_fewshot,linux,['CWE-120'],rpadlpar_sysfs.c,400,587,1,588,NO
+391628,0,0,1,code_author_flipped_fewshot,linux,['CWE-120'],rpadlpar_sysfs.c,393,586,1,587,NO
+393528,0,1,0,code_author_flipped_fewshot,squirrel,['CWE-703'],sqbaselib.cpp,650,655,1,656,YES
+397644,0,1,0,code_author_flipped_fewshot,autotrace,['CWE-787'],input-bmp.c,10785,3927,1,3928,YES
+398518,0,0,1,code_author_flipped_fewshot,rizin,['CWE-787'],dwarf.c,1498,903,1,904,NO
+400103,0,1,0,code_author_flipped_fewshot,EternalTerminal,['CWE-362'],PipeSocketHandler.cpp,848,687,4,691,(1) YES
+400109,0,1,0,code_author_flipped_fewshot,EternalTerminal,['CWE-362'],UserTerminalRouter.cpp,275,538,1,539,YES
+400409,0,0,1,code_author_flipped_fewshot,vim,['CWE-787'],edit.c,618,658,1,659,NO
+400735,0,1,0,code_author_flipped_fewshot,linux,['CWE-284'],iov_iter.c,1005,773,1,774,YES
+400743,0,1,0,code_author_flipped_fewshot,linux,['CWE-284'],iov_iter.c,1080,813,1,814,YES
+400779,0,1,0,code_author_flipped_fewshot,php-src,['CWE-200'],openssl.c,2044,1088,1,1089,YES
+401034,0,1,0,code_author_flipped_fewshot,radare2,['CWE-703'],None,4229,1866,4,1870,(1) YES
+401525,0,0,1,code_author_flipped_fewshot,linux,['CWE-200'],timer.c,746,654,1,655,NO
+401579,0,0,1,code_author_flipped_fewshot,linux,['CWE-200'],random.c,1766,1017,1,1018,NO
+404192,0,0,1,code_author_flipped_fewshot,pcre2,['CWE-703'],pcre2_jit_compile.c,6323,2247,1,2248,NO
+405333,0,0,1,code_author_flipped_fewshot,linux,['CWE-703'],xfrm_policy.c,954,828,1,829,NO
+405698,0,1,0,code_author_flipped_fewshot,linux,['CWE-703'],xilinx_emaclite.c,2256,1193,4,1197,(1) YES
+406206,0,0,1,code_author_flipped_fewshot,util-linux,['CWE-200'],mount.c,7680,3076,1,3077,NO
+408968,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],edit.c,2270,1170,1,1171,YES
+409515,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],term.c,16039,5565,1,5566,YES
+411896,0,0,1,code_author_flipped_fewshot,tor,['CWE-399'],routerparse.c,17737,5327,1,5328,NO
+411926,0,1,0,code_author_flipped_fewshot,heimdal,['CWE-476'],None,31969,9628,1,9629,YES
+412117,0,1,0,code_author_flipped_fewshot,unbound,['CWE-190'],dnscrypt.c,2728,1185,1,1186,YES
+412190,0,0,1,code_author_flipped_fewshot,vim,['CWE-787'],ex_getln.c,1586,936,1,937,NO
+412332,0,0,1,code_author_flipped_fewshot,rizin,['CWE-415'],bin_qnx.c,144,517,1,518,NO
+413339,0,0,1,code_author_flipped_fewshot,php-src,['CWE-416'],snmp.c,4687,1769,1,1770,NO
+413623,0,1,0,code_author_flipped_fewshot,radare2,['CWE-416'],None,13253,4997,1,4998,YES
+416366,0,0,1,code_author_flipped_fewshot,vim,['CWE-416'],ex_getln.c,25536,8086,1,8087,NO
+417093,0,0,1,code_author_flipped_fewshot,MilkyTracker,['CWE-416'],PlayerGeneric.cpp,251,532,1,533,NO
+417472,0,1,0,code_author_flipped_fewshot,libvirt,['CWE-119'],node_device_conf.c,636,648,4,652,(1) YES
+418795,0,0,1,code_author_flipped_fewshot,vim,['CWE-703'],mouse.c,22413,7004,1,7005,NO
+421378,0,0,1,code_author_flipped_fewshot,mujs,['CWE-476'],jsdump.c,227,552,1,553,NO
+424522,0,1,0,code_author_flipped_fewshot,FreeRDP,['CWE-190'],video_main.c,1645,907,1,908,YES
+424969,0,0,1,code_author_flipped_fewshot,linux,['CWE-476'],trans.c,5161,2049,1,2050,NO
+427153,0,0,1,code_author_flipped_fewshot,lua,['CWE-125'],lparser.c,530,634,1,635,NO
+427707,0,1,0,code_author_flipped_fewshot,file,['CWE-787'],cdf.c,3963,1840,4,1844,(1) YES
+430335,0,0,1,code_author_flipped_fewshot,linux,['CWE-787'],seq_file.c,146,498,1,499,NO
+430380,0,1,0,code_author_flipped_fewshot,linux,['CWE-362'],flow_netlink.c,1036,771,1,772,YES
+430470,0,1,0,code_author_flipped_fewshot,squid,['CWE-400'],gopher.cc,11220,2836,4,2840,(1) YES
+431633,0,1,0,code_author_flipped_fewshot,ImageMagick,['CWE-787'],cin.c,15822,4520,1,4521,YES
+432093,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],spellfile.c,2227,1208,1,1209,YES
+432152,0,0,1,code_author_flipped_fewshot,mongo,['CWE-617'],pipeline_d.cpp,10351,2699,1,2700,NO
+432247,0,0,1,code_author_flipped_fewshot,unicorn,['CWE-476'],exec.c,406,579,1,580,NO
+432346,0,0,1,code_author_flipped_fewshot,qemu,['CWE-125'],i2c-ddc.c,179,535,1,536,NO
+432351,0,1,0,code_author_flipped_fewshot,dpdk,['CWE-703'],vhost_user.c,3099,1437,1,1438,YES
+432352,0,1,0,code_author_flipped_fewshot,dpdk,['CWE-703'],vhost_user.c,3198,1455,4,1459,(1) YES
+434093,0,1,0,code_author_flipped_fewshot,vim,['CWE-416'],arglist.c,7674,2824,4,2828,(1) YES
+434902,0,1,0,code_author_flipped_fewshot,ghostpdl,['CWE-119'],gxht_thresh.c,757,658,1,659,YES
+435409,0,1,0,code_author_flipped_fewshot,ghostpdl,['CWE-120'],gdev3852.c,4557,1580,1,1581,YES
+436066,0,0,1,code_author_flipped_fewshot,linux,['CWE-125'],io_uring.c,2863,1380,1,1381,NO
+436990,0,0,1,code_author_flipped_fewshot,vim,['CWE-125'],indent.c,3868,1720,1,1721,NO
+437003,0,1,0,code_author_flipped_fewshot,linux,['CWE-415'],mcba_usb.c,1579,1026,4,1030,(1) YES
+437291,0,1,0,code_author_flipped_fewshot,oniguruma,['CWE-125'],regcomp.c,4381,1729,1,1730,YES
+437671,0,1,0,code_author_flipped_fewshot,radare2,['CWE-787'],bin_symbols.c,2630,1587,1,1588,YES
+437708,0,0,1,code_author_flipped_fewshot,linux,['CWE-401'],cx23888-ir.c,1348,880,1,881,NO
+438686,0,0,1,code_author_flipped_fewshot,linux,['CWE-415'],virtio_rpmsg_bus.c,795,701,1,702,NO
+438876,0,1,0,code_author_flipped_fewshot,linux,['CWE-416'],mkiss.c,702,658,1,659,YES
+439114,0,1,0,code_author_flipped_fewshot,ImageMagick6,['CWE-401'],bmp.c,34604,8931,1,8932,YES
+439266,0,1,0,code_author_flipped_fewshot,ImageMagick6,['CWE-835'],bmp.c,34707,8949,1,8950,YES
+439495,0,1,0,code_author_flipped_fewshot,squashfs-tools,['CWE-22'],None,3490,1499,1,1500,YES
+439495,0,1,0,code_author_flipped_fewshot,squashfs-tools,['CWE-22'],None,3490,1499,1,1500,YES
+439500,0,1,0,code_author_flipped_fewshot,squashfs-tools,['CWE-22'],None,3190,1376,1,1377,YES
+440872,0,1,0,code_author_flipped_fewshot,xserver,['CWE-863'],log.c,1248,756,1,757,YES
+441822,0,1,0,code_author_flipped_fewshot,xserver,['CWE-191'],xkbSwap.c,2401,1061,1,1062,YES
+442189,0,0,1,code_author_flipped_fewshot,qemu,['CWE-835'],e1000.c,493,619,1,620,NO
+442587,0,1,0,code_author_flipped_fewshot,spice,['CWE-193'],memslot.c,1193,769,1,770,YES
+442815,0,1,0,code_author_flipped_fewshot,curl,['CWE-125'],main.c,954,722,1,723,YES
+442959,0,0,1,code_author_flipped_fewshot,vim,['CWE-200'],drawscreen.c,3513,1627,1,1628,NO
+443152,0,0,1,code_author_flipped_fewshot,linux,['CWE-476'],inode.c,960,764,1,765,NO
+443298,0,0,1,code_author_flipped_fewshot,vim,['CWE-416'],ex_docmd.c,22967,6830,1,6831,NO
+444900,0,1,0,code_author_flipped_fewshot,cifs-utils,['CWE-20'],mount.cifs.c,3041,1454,4,1458,(1) YES
+445881,0,0,1,code_author_flipped_fewshot,file-roller,['CWE-22'],None,1868,930,3,933,(2)
+445995,0,1,0,code_author_flipped_fewshot,file-roller,['CWE-22'],None,7667,2492,1,2493,YES
+446058,0,1,0,code_author_flipped_fewshot,libtiff,['CWE-787'],tif_lzw.c,5176,2192,1,2193,YES
+446096,0,0,1,code_author_flipped_fewshot,linux,['CWE-416'],atusb.c,535,636,1,637,NO
+446279,0,1,0,code_author_flipped_fewshot,libmobi,['CWE-125'],index.c,6806,2129,4,2133,(1) YES
+446416,0,1,0,code_author_flipped_fewshot,rizin,['CWE-787'],dyldcache.c,2834,1409,4,1413,(1) YES
+447053,0,1,0,code_author_flipped_fewshot,exiv2,['CWE-125'],image.cpp,8454,2315,4,2319,(1) YES
+447231,0,0,1,code_author_flipped_fewshot,php-src,['CWE-17'],apprentice.c,2818,1442,4,1446,(2) NO
+448562,0,1,0,code_author_flipped_fewshot,frr,['CWE-125'],bgp_packet.c,3275,1477,1,1478,YES
+448584,0,1,0,code_author_flipped_fewshot,gdk-pixbuf,['CWE-189'],io-xbm.c,3351,1477,1,1478,YES
+448912,0,1,0,code_author_flipped_fewshot,zlib,['CWE-787'],inflate.c,26047,6262,1,6263,YES
+449294,0,0,1,code_author_flipped_fewshot,vim,['CWE-122'],None,1349,847,1,848,NO
+449321,0,1,0,code_author_flipped_fewshot,clamav-devel,['CWE-189'],sis.c,468,635,1,636,YES
+450764,0,0,1,code_author_flipped_fewshot,vim,['CWE-416'],regexp.c,1757,1057,1,1058,NO
+450812,0,1,0,code_author_flipped_fewshot,gnulib,['CWE-119'],glob.c,28169,7122,1,7123,YES
+450830,0,1,0,code_author_flipped_fewshot,linux,['CWE-120'],se.c,1715,971,1,972,YES
+451731,0,0,1,code_author_flipped_fewshot,ntp,['CWE-20'],ntpq.c,2436,1296,1,1297,NO
+451888,0,1,0,code_author_flipped_fewshot,jasper,['CWE-20'],jpc_enc.c,11947,4710,3,4713,(1)
+452377,0,0,1,code_author_flipped_fewshot,vim,['CWE-787'],indent.c,6020,2203,1,2204,NO
+452391,0,1,0,code_author_flipped_fewshot,ImageMagick6,['CWE-787'],tiff.c,34505,9026,1,9027,YES
+452994,0,0,1,code_author_flipped_fewshot,nf,['CWE-269'],nf_tables_offload.c,1137,810,1,811,NO
+453109,0,1,0,code_author_flipped_fewshot,libexpat,['CWE-668'],xmlparse.c,5684,2042,1,2043,YES
+453265,0,1,0,code_author_flipped_fewshot,jasper,['CWE-125'],jp2_dec.c,9401,3702,3,3705,(1)
+454759,0,1,0,code_author_flipped_fewshot,linux,['CWE-703'],i2c-ismt.c,6551,2651,1,2652,YES
+455177,0,1,0,code_author_flipped_fewshot,libmobi,['CWE-119'],read.c,2146,1096,1,1097,YES
+455356,0,1,0,code_author_flipped_fewshot,bash,['CWE-787'],shell.c,720,683,1,684,YES
+457772,0,1,0,code_author_flipped_fewshot,icecast-server,['CWE-119'],auth_url.c,1913,953,1,954,YES
+459029,0,1,0,code_author_flipped_fewshot,varnish-cache,['CWE-703'],cache_http.c,334,574,1,575,YES
+459107,0,1,0,code_author_flipped_fewshot,linux,['CWE-416'],cls_api.c,5631,2263,1,2264,YES
+459400,0,0,1,code_author_flipped_fewshot,vim,['CWE-416'],None,17024,5651,1,5652,NO
+459524,0,1,0,code_author_flipped_fewshot,linux,['CWE-787'],stackmap.c,540,622,1,623,YES
+462278,0,1,0,code_author_flipped_fewshot,pjproject,['CWE-191'],None,792,692,1,693,YES
+462316,0,0,1,code_author_flipped_fewshot,ghostpdl,['CWE-787'],None,536,599,1,600,NO
+462395,0,1,0,code_author_flipped_fewshot,php-src,['CWE-476'],wddx.c,3878,1729,1,1730,YES
+462409,0,1,0,code_author_flipped_fewshot,rsyslog,['CWE-190'],imptcp.c,4889,2131,1,2132,YES
+462511,0,0,1,code_author_flipped_fewshot,vim,['CWE-416'],quickfix.c,2647,1335,1,1336,NO
+462566,0,1,0,code_author_flipped_fewshot,newsbeuter,['CWE-787'],controller.cpp,1406,800,1,801,YES
+463051,0,0,1,code_author_flipped_fewshot,qemu,['CWE-835'],sungem.c,322,557,1,558,NO
+463134,0,0,1,code_author_flipped_fewshot,cyrus-imapd,['CWE-732'],annotate.c,3416,1332,1,1333,NO
+463476,0,1,0,code_author_flipped_fewshot,linux,['CWE-476'],af_ax25.c,2008,1108,1,1109,YES
+464942,0,1,0,code_author_flipped_fewshot,php-src,['CWE-125'],mbfilter_big5.c,2059,1324,4,1328,(1) YES
+465854,0,1,0,code_author_flipped_fewshot,linux,['CWE-416'],main.c,369,577,1,578,YES
+468349,0,0,1,code_author_flipped_fewshot,glib,['CWE-754'],gsocketclient.c,3727,1292,1,1293,NO
+471902,0,1,0,code_author_flipped_fewshot,vim,['CWE-787'],spellsuggest.c,6730,2626,1,2627,YES
+472123,0,0,1,code_author_flipped_fewshot,linux,['CWE-416'],cgroup-v1.c,2262,1139,1,1140,NO
+474434,0,0,1,code_author_flipped_fewshot,libtpms,['CWE-119'],Object.c,576,614,1,615,NO
+474462,0,1,0,code_author_flipped_fewshot,libvncserver,['CWE-787'],corre.c,836,760,1,761,YES
+475987,0,1,0,code_author_flipped_fewshot,chafa,['CWE-125'],lzw.c,2382,1135,1,1136,YES
+476103,0,1,0,code_author_flipped_fewshot,linux,['CWE-476'],composite.c,11424,3985,4,3989,(1) YES
+477273,0,1,0,code_author_flipped_fewshot,linux,['CWE-20'],crypto.c,1682,983,1,984,YES
+477380,0,1,0,code_author_flipped_fewshot,radare2,['CWE-787'],None,2596,1258,1,1259,YES
+477800,0,0,1,code_author_flipped_fewshot,ceph,['CWE-79'],rgw_rest_s3.cc,7565,2505,1,2506,NO
+477803,0,1,0,code_author_flipped_fewshot,linux,['CWE-362'],af_key.c,802,717,1,718,YES
+477811,0,1,0,code_author_flipped_fewshot,linux,['CWE-787'],book3s_rtas.c,2315,1165,4,1169,(1) YES
+477946,0,1,0,code_author_flipped_fewshot,clamav-devel,['CWE-20'],mspack.c,5230,2134,1,2135,YES
+477975,0,1,0,code_author_flipped_fewshot,php-src,['CWE-119'],simplestring.c,1227,784,1,785,YES
+481267,0,0,1,code_author_flipped_fewshot,linux,['CWE-401'],conn.c,2357,1360,1,1361,NO
+481787,0,0,1,code_author_flipped_fewshot,nagioscore,['CWE-476'],query-handler.c,782,724,1,725,NO
+482533,0,1,0,code_author_flipped_fewshot,liblouis,['CWE-787'],compileTranslationTable.c,49195,15133,4,15137,(1) YES
+482692,0,1,0,code_author_flipped_fewshot,gst-plugins-good,['CWE-125'],gstflxdec.c,5690,2130,1,2131,YES
+483053,0,1,0,code_author_flipped_fewshot,linux,['CWE-269'],cgroup-v1.c,713,659,1,660,YES
+483469,0,0,1,code_author_flipped_fewshot,mongo,['CWE-617'],None,9743,2559,1,2560,NO
+484063,0,0,1,code_author_flipped_fewshot,open62541,['CWE-703'],check_securechannel.c,545,579,1,580,NO
+484732,0,1,0,code_author_flipped_fewshot,libmobi,['CWE-787'],None,737,663,1,664,YES
+486796,0,1,0,code_author_flipped_fewshot,qemu,['CWE-835'],cadence_gem.c,6058,1786,1,1787,YES
+486837,0,1,0,code_author_flipped_fewshot,perl5,['CWE-120'],regcomp.c,82226,19528,1,19529,YES
+487618,0,1,0,code_author_flipped_fewshot,linux-2.6,['CWE-20'],None,1857,1017,1,1018,YES
+488919,0,1,0,code_author_flipped_fewshot,linux-2.6,['CWE-189'],None,781,705,1,706,YES
+489124,0,1,0,code_author_flipped_fewshot,linux-2.6,['CWE-20'],None,397,563,1,564,YES
+489215,0,1,0,code_author_flipped_fewshot,linux-2.6,['CWE-119'],None,724,677,3,680,(1)
+489221,0,1,0,code_author_flipped_fewshot,linux-2.6,['CWE-20'],None,3033,1502,1,1503,YES
+491979,0,1,0,code_author_flipped_fewshot,gzip,['CWE-189'],None,4781,2058,1,2059,YES
+497809,0,0,1,code_author_flipped_fewshot,grep,['CWE-119'],None,2383,1180,1,1181,NO
+498160,0,0,1,code_author_flipped_fewshot,nettle,['CWE-310'],None,1552,1110,1,1111,NO
+498918,0,1,0,code_author_flipped_fewshot,tar,['CWE-476'],None,3339,1147,1,1148,YES
+500044,0,0,1,code_author_flipped_fewshot,openssl,['CWE-20'],None,1670,943,1,944,NO
+500663,0,0,1,code_author_flipped_fewshot,libssh,['CWE-399'],None,2430,1110,1,1111,NO
+502735,0,1,0,code_author_flipped_fewshot,openssl,['CWE-362'],None,3459,1334,4,1338,(1) YES
+503867,0,0,1,code_author_flipped_fewshot,guile,['CWE-275'],None,654,674,1,675,NO
+503985,0,1,0,code_author_flipped_fewshot,core,['CWE-20'],None,4359,1672,4,1676,(1) YES
+504608,0,1,0,code_author_flipped_fewshot,libtiff,['CWE-770'],None,2542,1309,4,1313,(1) YES
+505463,0,1,0,code_author_flipped_fewshot,openssl,['CWE-327'],None,3470,1472,1,1473,YES
+505654,0,1,0,code_author_flipped_fewshot,core,['CWE-835'],None,1902,1030,4,1034,(1) YES
+506428,0,0,1,code_author_flipped_fewshot,core,['CWE-125'],None,342,569,1,570,NO
+506696,0,0,1,code_author_flipped_fewshot,openssl,['CWE-476'],None,132,500,1,501,NO
+507778,0,1,0,code_author_flipped_fewshot,openssl,['CWE-125'],None,10827,3293,1,3294,YES
+508874,0,0,1,code_author_flipped_fewshot,server,['CWE-476'],None,4104,1435,1,1436,NO
+509510,0,0,1,code_author_flipped_fewshot,server,['CWE-400'],None,164,515,1,516,NO
+511472,0,0,1,code_author_flipped_fewshot,server,['CWE-416'],None,15074,4091,1,4092,NO
+512825,0,0,1,code_author_flipped_fewshot,server,['CWE-617'],None,2230,973,4,977,(2) NO
+513202,0,0,1,code_author_flipped_fewshot,server,['CWE-416'],None,435,604,1,605,NO
+514292,0,1,0,code_author_flipped_fewshot,server,['CWE-617'],None,5121,1737,1,1738,YES
+517437,0,1,0,code_author_flipped_fewshot,monit,['CWE-79'],None,1551,770,4,774,(1) YES
+521488,0,1,0,code_author_flipped_fewshot,JUCE,['CWE-59'],None,2458,1002,1,1003,YES
+522329,0,1,0,code_author_flipped_fewshot,libMeshb,['CWE-120'],None,6485,2504,1,2505,YES
+522438,0,1,0,code_author_flipped_fewshot,elfspirit,['CWE-125'],None,37828,8456,4,8460,(1) YES

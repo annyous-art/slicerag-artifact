@@ -1,0 +1,73 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Local secrets and provider configuration
+.env
+.env.*
+*.key
+*.pem
+
+# Runtime logs and generated process output
+*.log
+nohup.out
+
+# Large model/checkpoint artifacts
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.faiss
+**/model/
+**/best_model/
+checkpoint*/
+wandb/
+
+# Old draft/template material not used by the anonymous artifact
+ICSE2026/
+GITHUB_SUBMISSION_CHECKLIST.md
+skills/
+build_chunk_pdg_slice.py
+
+# Paper draft is intentionally excluded from the first anonymous code artifact.
+# Add it later after the manuscript is finalized.
+paper/
+
+# Large/raw benchmark inputs. The artifact keeps compact summaries and the
+# labeled test file needed by the analysis scripts; full raw training/index
+# inputs can be regenerated from the public benchmark.
+data/primevul_train_paired*.jsonl
+data/primevul_test_paired.jsonl
+data/primevul_test_paired_sample*.jsonl
+data/pdg_diff_lines.jsonl
+data/diff_lines.jsonl
+data/gpt-5.5_*.jsonl
+icl/primevul_test_ccpp_with_similar_top5.jsonl
+paper/2606.20502v1.pdf
+
+# Large raw prompt/retrieval outputs. Keep compact CSV/JSON summaries in the
+# artifact, and share full raw JSONL files via an external archive if needed.
+outdir/**/*.jsonl
+outdir/**/query_patch_chunk_metadata.jsonl
+outdir/**/query_results.jsonl
+outdir/empirical_study/error_taxonomy/manual_samples/*README.md
+outdir/empirical_study/error_taxonomy/manual_samples/*GUIDE.md
+outdir/empirical_study/error_taxonomy/manual_samples/*_labeled.csv
+outdir/empirical_study/error_taxonomy/manual_samples/*_annotator*.csv
+outdir/empirical_study/error_taxonomy/manual_samples/manual_label_summary.json
+label/*_old.csv
+label/*.xlsx
+query_balanced_chunk6_stride2_test870/query_results.jsonl
+data/gpt-5.5_std_cls_fewshotegFalse1_RAG_870.jsonl
+data/gpt-5.5_std_cls_fewshotegFalse_cls5000.jsonl
+data/gpt-5.5_std_cls_fewshotegFalse_RAG_100.jsonl
+
+# LaTeX generated files
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.out
+*.synctex.gz

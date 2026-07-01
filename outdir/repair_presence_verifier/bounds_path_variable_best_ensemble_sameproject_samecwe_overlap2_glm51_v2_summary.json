@@ -1,0 +1,203 @@
+{
+  "total_records": 64,
+  "known_predictions": 64,
+  "unknown_predictions": 0,
+  "accuracy": 0.546875,
+  "precision": 0.5166666666666667,
+  "recall": 1.0,
+  "f1": 0.6813186813186815,
+  "yes_rate": 0.9375,
+  "tp": 31,
+  "fp": 29,
+  "tn": 4,
+  "fn": 0,
+  "override_to_no_count": 4,
+  "override_to_no_rate": 0.0625,
+  "repair_present_count": 4,
+  "repair_present_rate": 0.0625,
+  "confidence_counts": {
+    "high": 59,
+    "medium": 4,
+    "low": 1
+  },
+  "target_mapping_counts": {
+    "same_checked_variable": {
+      "False": 56,
+      "True": 8
+    },
+    "same_bound_variable": {
+      "False": 56,
+      "True": 8
+    },
+    "same_sink_operation": {
+      "False": 57,
+      "True": 7
+    },
+    "same_relation_or_stronger": {
+      "False": 57,
+      "True": 7
+    },
+    "guard_before_sink": {
+      "True": 47,
+      "False": 17
+    },
+    "failure_blocks_path": {
+      "True": 45,
+      "False": 19
+    },
+    "unguarded_alternate_path": {
+      "False": 41,
+      "True": 23
+    },
+    "relation_arithmetic_compatible": {
+      "True": 58,
+      "False": 6
+    },
+    "strict_structured_repair_present": {
+      "False": 60,
+      "True": 4
+    }
+  },
+  "project_metrics": {
+    "ImageMagick": {
+      "total_records": 3,
+      "known_predictions": 3,
+      "unknown_predictions": 0,
+      "accuracy": 0.3333333333333333,
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1": 0.5,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 2,
+      "tn": 0,
+      "fn": 0
+    },
+    "gpac": {
+      "total_records": 1,
+      "known_predictions": 1,
+      "unknown_predictions": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0
+    },
+    "linux": {
+      "total_records": 20,
+      "known_predictions": 20,
+      "unknown_predictions": 0,
+      "accuracy": 0.4,
+      "precision": 0.4,
+      "recall": 1.0,
+      "f1": 0.5714285714285715,
+      "yes_rate": 1.0,
+      "tp": 8,
+      "fp": 12,
+      "tn": 0,
+      "fn": 0
+    },
+    "linux-2.6": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 1,
+      "tn": 0,
+      "fn": 0
+    },
+    "openssl": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "yes_rate": 0.5,
+      "tp": 1,
+      "fp": 0,
+      "tn": 1,
+      "fn": 0
+    },
+    "php-src": {
+      "total_records": 4,
+      "known_predictions": 4,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "yes_rate": 1.0,
+      "tp": 2,
+      "fp": 2,
+      "tn": 0,
+      "fn": 0
+    },
+    "qemu": {
+      "total_records": 3,
+      "known_predictions": 3,
+      "unknown_predictions": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "yes_rate": 0.6666666666666666,
+      "tp": 2,
+      "fp": 0,
+      "tn": 1,
+      "fn": 0
+    },
+    "radare2": {
+      "total_records": 3,
+      "known_predictions": 3,
+      "unknown_predictions": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "yes_rate": 0.3333333333333333,
+      "tp": 1,
+      "fp": 0,
+      "tn": 2,
+      "fn": 0
+    },
+    "tensorflow": {
+      "total_records": 24,
+      "known_predictions": 24,
+      "unknown_predictions": 0,
+      "accuracy": 0.5416666666666666,
+      "precision": 0.5416666666666666,
+      "recall": 1.0,
+      "f1": 0.7027027027027027,
+      "yes_rate": 1.0,
+      "tp": 13,
+      "fp": 11,
+      "tn": 0,
+      "fn": 0
+    },
+    "vim": {
+      "total_records": 2,
+      "known_predictions": 2,
+      "unknown_predictions": 0,
+      "accuracy": 0.5,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "yes_rate": 1.0,
+      "tp": 1,
+      "fp": 1,
+      "tn": 0,
+      "fn": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "known": 870,
+  "unknown": 0,
+  "accuracy": 0.4850574712643678,
+  "precision": 0.4688995215311005,
+  "recall": 0.22528735632183908,
+  "specificity": 0.7448275862068966,
+  "f1": 0.30434782608695654,
+  "directional_failure_index": -0.5195402298850575,
+  "yes_rate": 0.24022988505747125,
+  "tp": 98,
+  "fp": 111,
+  "tn": 324,
+  "fn": 337,
+  "input": "${SLICERAG_ROOT}/data/primevul_test_paired_labeled.jsonl",
+  "variant": "cwe_only",
+  "model": "gpt-5.5",
+  "total_records": 870
+}

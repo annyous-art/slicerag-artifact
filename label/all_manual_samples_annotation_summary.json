@@ -1,0 +1,92 @@
+{
+  "annotator1_source": "label/all_manual_samples_annotator1_new.xlsx",
+  "annotator1_files": [
+    "label/all_manual_samples_annotator1.csv",
+    "label/all_manual_samples_annotator1_compact.csv"
+  ],
+  "annotator2_files": [
+    "label/all_manual_samples_annotator2.csv",
+    "label/all_manual_samples_annotator2_cleaned.csv",
+    "label/all_manual_samples_annotator2_compact.csv"
+  ],
+  "annotator1": {
+    "total": 51,
+    "manual_taxonomy_valid_counts": {
+      "yes": 31,
+      "partial": 20
+    },
+    "manual_refined_category_counts": {
+      "bounds_false_alarm": 10,
+      "yes_prior_consensus_false_positive": 1,
+      "state_machine_or_invariant_error": 8,
+      "allocation_or_size_accounting": 7,
+      "lifecycle_or_refcount_false_alarm": 11,
+      "policy_or_permission_false_alarm": 5,
+      "pointer_array_precedence": 1,
+      "semantic_context_required_false_negative": 7,
+      "repair_present_but_not_used": 1
+    },
+    "taxonomy_counts": {
+      "yes_prior_consensus_false_positive": 10,
+      "risky_pattern_false_alarm:error_handling": 10,
+      "conservative_consensus_false_negative": 10,
+      "risky_pattern_false_alarm:bounds": 10,
+      "repair_present_but_not_applied_or_policy_blocked": 5,
+      "retrieval_misleading_or_ambiguous:retrieval_low_margin": 3,
+      "risky_pattern_false_alarm:lifecycle": 2,
+      "risky_pattern_false_alarm:memory_api": 1
+    },
+    "dominant_pattern_counts": {
+      "error_handling": 25,
+      "bounds": 20,
+      "low_keyword_signal": 3,
+      "lifecycle": 2,
+      "memory_api": 1
+    }
+  },
+  "annotator2": {
+    "total": 51,
+    "manual_taxonomy_valid_counts": {
+      "yes": 35,
+      "partial": 16
+    },
+    "manual_refined_category_counts": {
+      "bounds_false_alarm": 19,
+      "yes_prior_consensus_false_positive": 1,
+      "state_machine_or_invariant_false_alarm": 1,
+      "lifecycle_or_refcount_false_alarm": 7,
+      "resource_lifecycle_false_alarm": 3,
+      "integer_overflow_false_alarm": 1,
+      "policy_or_privilege_boundary_false_alarm": 1,
+      "semantic_context_required_false_negative": 10,
+      "shape_or_arithmetic_invariant_false_alarm": 1,
+      "pointer_array_or_memory_layout_false_alarm": 1,
+      "repair_present_but_not_applied_or_policy_blocked": 1,
+      "semantic_state_false_alarm": 4,
+      "divide_by_zero_or_arithmetic_safety_false_alarm": 1
+    },
+    "taxonomy_counts": {
+      "yes_prior_consensus_false_positive": 10,
+      "risky_pattern_false_alarm:error_handling": 10,
+      "conservative_consensus_false_negative": 10,
+      "risky_pattern_false_alarm:bounds": 10,
+      "repair_present_but_not_applied_or_policy_blocked": 5,
+      "retrieval_misleading_or_ambiguous:retrieval_low_margin": 3,
+      "risky_pattern_false_alarm:lifecycle": 2,
+      "risky_pattern_false_alarm:memory_api": 1
+    },
+    "dominant_pattern_counts": {
+      "error_handling": 25,
+      "bounds": 20,
+      "low_keyword_signal": 3,
+      "lifecycle": 2,
+      "memory_api": 1
+    }
+  },
+  "interpretation": "The labels validate whether the automatic error taxonomy is a plausible explanation of model failure modes; they do not relabel PrimeVul ground truth.",
+  "annotator1_recovery_note": "The xlsx export contains long-function row breaks; two rows (522438, 326119) had empty manual columns in the xlsx and retain the previous annotator1 labels.",
+  "annotator1_missing_manual_rows_in_xlsx": [
+    "326119",
+    "522438"
+  ]
+}

@@ -1,0 +1,871 @@
+idx,target,prediction,correct,variant,project,cwe,file_name,func_char_len,prompt_tokens,completion_tokens,total_tokens,response
+187732,0,1,0,cwe_only,qemu,['CWE-264'],vnc.c,4695,107,109,216,(1) YES: A security vulnerability detected.
+194963,1,1,1,cwe_only,ImageMagick6,['CWE-704'],property.c,28188,107,157,264,(1) YES: A security vulnerability detected.
+194989,1,1,1,cwe_only,ImageMagick6,['CWE-190'],psd.c,1693,107,103,210,(1) YES
+194994,1,1,1,cwe_only,tensorflow,['CWE-401'],immutable_executor_state.cc,6738,107,110,217,(1) YES
+194996,1,1,1,cwe_only,tensorflow,['CWE-476'],loader_util.cc,1226,107,123,230,(1) YES: A security vulnerability detected.
+194998,1,1,1,cwe_only,tensorflow,['CWE-617'],constant_folding.cc,2726,107,138,245,(1) YES: A security vulnerability detected.
+195017,1,1,1,cwe_only,gpac,['CWE-476'],hint_track.c,455,107,157,264,(1) YES: A security vulnerability detected.
+195019,1,1,1,cwe_only,tensorflow,['CWE-617'],constant_folding.cc,2808,107,94,201,(1) YES: A security vulnerability detected.
+195022,1,1,1,cwe_only,glewlwyd,['CWE-287'],webservice.c,10298,107,102,209,(1) YES: A security vulnerability detected.
+195023,1,1,1,cwe_only,tensorflow,['CWE-190'],sparse_tensors_map_ops.cc,5831,107,103,210,(1) YES
+195026,1,1,1,cwe_only,linux,['CWE-909'],nfs4file.c,1703,107,97,204,(1) YES: A security vulnerability detected.
+195028,1,1,1,cwe_only,tensorflow,['CWE-401'],decode_image_op.cc,4634,107,99,206,(1) YES: A security vulnerability detected.
+195029,1,1,1,cwe_only,tensorflow,['CWE-125'],graph.cc,2052,107,141,248,(1) YES
+195038,1,1,1,cwe_only,mruby,['CWE-476'],array.c,877,107,100,207,(1) YES: A security vulnerability detected.
+195039,1,1,1,cwe_only,tensorflow,['CWE-354'],conv_ops.cc,3831,107,127,234,(1) YES: A security vulnerability detected.
+195040,1,1,1,cwe_only,tensorflow,['CWE-476'],xla_platform_info.cc,2726,107,98,205,(1) YES: A security vulnerability detected.
+195055,1,1,1,cwe_only,tensorflow,['CWE-787'],count_ops.cc,3819,107,364,471,(1) YES: A security vulnerability detected.
+195056,1,1,1,cwe_only,tensorflow,['CWE-369'],common.h,2670,107,119,226,(1) YES
+195059,1,1,1,cwe_only,tensorflow,['CWE-617'],dependency_optimizer.cc,1177,107,104,211,(1) YES: A security vulnerability detected.
+195063,1,1,1,cwe_only,gpac,['CWE-476'],reframe_mpgvid.c,16506,107,100,207,(1) YES: A security vulnerability detected.
+195069,1,1,1,cwe_only,gpac,['CWE-120'],av_parsers.c,1715,107,206,313,(1) YES: A security vulnerability detected.
+195073,1,1,1,cwe_only,tensorflow,['CWE-416'],decode_image_op.cc,4701,107,125,232,(1) YES: A security vulnerability detected.
+195074,1,1,1,cwe_only,gpac,['CWE-415'],descriptors.c,2689,107,103,210,(1) YES: A security vulnerability detected.
+195082,1,1,1,cwe_only,linux,['CWE-862'],None,1076,107,103,210,(1) YES
+195083,1,1,1,cwe_only,tensorflow,['CWE-617'],tensor.cc,1232,107,104,211,(1) YES: A security vulnerability detected.
+195091,1,1,1,cwe_only,tensorflow,['CWE-754'],tf_cpurt_symbolic_shape_optimization.cc,2597,107,126,233,(1) YES: A security vulnerability detected.
+195092,1,1,1,cwe_only,hermes,['CWE-843'],IREval.cpp,2070,107,98,205,(1) YES
+195095,1,1,1,cwe_only,e2guardian,['CWE-295'],Socket.cpp,3786,107,105,212,(1) YES
+195220,1,1,1,cwe_only,tmate-ssh-server,['CWE-362'],tmate-main.c,1780,107,108,215,(1) YES: A security vulnerability detected.
+195230,1,1,1,cwe_only,pjproject,['CWE-125'],rtcp_xr.c,7256,107,101,208,(1) YES: A security vulnerability detected.
+195231,1,1,1,cwe_only,gpac,['CWE-476'],av_parsers.c,4464,107,100,207,(1) YES: A security vulnerability detected.
+195233,1,1,1,cwe_only,tensorflow,['CWE-787'],graph_properties.cc,360,107,282,389,(1) YES: A security vulnerability detected.
+195234,1,1,1,cwe_only,tensorflow,['CWE-617'],function.cc,1873,107,104,211,(1) YES: A security vulnerability detected.
+195237,1,1,1,cwe_only,ImageMagick,['CWE-190'],pcl.c,7995,107,103,210,(1) YES
+195264,1,1,1,cwe_only,pcre2,['CWE-125'],pcre2_jit_compile.c,22734,107,171,278,(1) YES: A security vulnerability detected.
+195274,1,1,1,cwe_only,tensorflow,['CWE-476'],constant_folding.cc,4637,107,98,205,(1) YES: A security vulnerability detected.
+195291,1,1,1,cwe_only,tensorflow,['CWE-908'],assign_op.h,3667,107,142,249,(1) YES: A security vulnerability detected.
+195293,1,1,1,cwe_only,mruby,['CWE-476'],codegen.c,1302,107,100,207,(1) YES: A security vulnerability detected.
+195294,1,1,1,cwe_only,tensorflow,['CWE-843'],map_stage_op.cc,967,107,109,216,(1) YES
+195295,1,1,1,cwe_only,mruby,['CWE-125'],codegen.c,3885,107,138,245,YES
+195296,1,1,1,cwe_only,uWebSockets,['CWE-787'],TopicTree.h,2354,107,282,389,(1) YES: A security vulnerability detected.
+195308,1,1,1,cwe_only,flatpak,['CWE-20'],flatpak-run.c,10440,106,102,208,(1) YES
+195309,1,1,1,cwe_only,squid,['CWE-400'],gopher.cc,11823,107,109,216,(1) YES: A security vulnerability detected.
+195328,1,1,1,cwe_only,gpac,['CWE-415'],load_text.c,1840,107,100,207,(1) YES
+195331,1,1,1,cwe_only,tensorflow,['CWE-843'],common_shape_fns.cc,3246,107,109,216,(1) YES
+195334,1,1,1,cwe_only,gpac,['CWE-415'],box_code_meta.c,2502,107,221,328,(1) YES
+195340,1,1,1,cwe_only,tensorflow,['CWE-190'],sparse_dense_binary_op_shared.cc,6813,107,123,230,(1) YES
+195343,1,1,1,cwe_only,tensorflow,['CWE-125'],fractional_avg_pool_op.cc,7263,107,101,208,(1) YES: A security vulnerability detected.
+195385,1,1,1,cwe_only,flatpak,['CWE-276'],flatpak-dir.c,3354,107,118,225,(1) YES
+195388,1,1,1,cwe_only,postgres,['CWE-522'],fe-connect.c,46206,107,138,245,(1) YES
+195389,1,1,1,cwe_only,tensorflow,['CWE-617'],op_def_util.cc,699,107,91,198,(1) YES: A security vulnerability detected.
+195391,1,1,1,cwe_only,tensorflow,['CWE-190'],string_ngrams_op.cc,4681,107,103,210,(1) YES
+195398,1,1,1,cwe_only,v4l2loopback,['CWE-134'],v4l2loopback.c,1512,107,106,213,(1) YES: A security vulnerability detected.
+195399,1,1,1,cwe_only,tensorflow,['CWE-476'],mutable_graph_view.cc,449,107,100,207,(1) YES: A security vulnerability detected.
+195402,1,1,1,cwe_only,tensorflow,['CWE-190'],common.c,312,107,103,210,(1) YES
+195403,1,1,1,cwe_only,tensorflow,['CWE-190'],common.c,260,107,113,220,(1) YES: A security vulnerability detected.
+195404,1,1,1,cwe_only,tensorflow,['CWE-369'],fractional_max_pool_op.cc,4646,107,127,234,(1) YES: A security vulnerability detected.
+195405,1,1,1,cwe_only,ImageMagick6,['CWE-190'],pcl.c,7979,107,103,210,(1) YES
+195409,1,1,1,cwe_only,gpac,['CWE-476'],box_code_base.c,269,107,100,207,(1) YES: A security vulnerability detected.
+195410,1,1,1,cwe_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2921,107,100,207,(1) YES: A security vulnerability detected.
+195471,1,1,1,cwe_only,weechat,['CWE-476'],irc-protocol.c,3200,107,98,205,(1) YES: A security vulnerability detected.
+195565,1,1,1,cwe_only,hhvm,['CWE-119'],zend-string.cpp,3314,107,202,309,(1) YES: A security vulnerability detected.
+195626,1,1,1,cwe_only,qemu,['CWE-787'],virtio-serial-bus.c,410,107,334,441,(1) YES
+195629,1,1,1,cwe_only,tensorflow,['CWE-476'],execute.cc,1859,107,98,205,(1) YES: A security vulnerability detected.
+195665,1,1,1,cwe_only,njs,['CWE-703'],njs_array.c,4339,107,102,209,(1) YES: A security vulnerability detected.
+195670,1,1,1,cwe_only,pjproject,['CWE-703'],xml.c,3296,107,118,225,(1) YES: A security vulnerability detected.
+195691,1,1,1,cwe_only,mruby,['CWE-703'],vm.c,51274,107,102,209,(1) YES: A security vulnerability detected.
+195692,1,0,0,cwe_only,FreeRTOS-Kernel,['CWE-200'],queue.c,2805,107,333,440,(2) NO: No security vulnerability.
+195720,1,1,1,cwe_only,mvfst,['CWE-703'],ServerStateMachine.cpp,3323,107,102,209,(1) YES: A security vulnerability detected.
+195740,1,1,1,cwe_only,libjpeg,['CWE-703'],None,6317,107,150,257,(1) YES
+195741,1,1,1,cwe_only,libjpeg,['CWE-703'],None,5436,107,102,209,(1) YES: A security vulnerability detected.
+195742,1,1,1,cwe_only,gpac,['CWE-476'],None,15815,107,98,205,(1) YES: A security vulnerability detected.
+195752,1,1,1,cwe_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2398,107,98,205,(1) YES: A security vulnerability detected.
+195768,1,1,1,cwe_only,tensorflow,['CWE-703'],quantile_ops.cc,1049,107,118,225,(1) YES: A security vulnerability detected.
+195800,1,1,1,cwe_only,deark,['CWE-369'],fmtutil.c,1444,107,119,226,(1) YES
+195801,1,1,1,cwe_only,php-src,['CWE-476'],wddx.c,3632,107,100,207,(1) YES: A security vulnerability detected.
+195908,1,1,1,cwe_only,linux,['CWE-703'],volumes.c,4198,107,118,225,(1) YES: A security vulnerability detected.
+195909,1,1,1,cwe_only,ImageMagick,['CWE-125'],png.c,79137,107,171,278,(1) YES: A security vulnerability detected.
+195954,1,1,1,cwe_only,pjproject,['CWE-787'],dns.c,983,107,282,389,(1) YES: A security vulnerability detected.
+195965,1,1,1,cwe_only,tensorflow,['CWE-787'],edit_distance_op.cc,7615,107,364,471,(1) YES: A security vulnerability detected.
+195984,1,1,1,cwe_only,gpac,['CWE-703'],box_code_3gpp.c,313,107,118,225,(1) YES: A security vulnerability detected.
+196276,1,1,1,cwe_only,lsquic,['CWE-269'],None,1227,107,104,211,(1) YES: A security vulnerability detected.
+196316,1,1,1,cwe_only,barebox,['CWE-200'],digest.c,292,107,313,420,(1) YES
+196328,1,1,1,cwe_only,vim,['CWE-416'],search.c,18096,107,125,232,(1) YES: A security vulnerability detected.
+196578,1,1,1,cwe_only,vim,['CWE-787'],register.c,803,107,282,389,(1) YES: A security vulnerability detected.
+196587,1,1,1,cwe_only,tensorflow,['CWE-369'],resource_variable_ops.cc,3420,107,149,256,(1) YES: A security vulnerability detected.
+196611,1,1,1,cwe_only,booth,['CWE-284'],main.c,1007,107,102,209,(1) YES
+196621,1,1,1,cwe_only,mruby,['CWE-787'],None,228,107,254,361,(1) YES: A security vulnerability detected.
+196629,1,1,1,cwe_only,tensorflow,['CWE-354'],matrix_solve_op.cc,10045,107,127,234,(1) YES: A security vulnerability detected.
+196689,1,1,1,cwe_only,tensorflow,['CWE-703'],stage_op.cc,602,107,208,315,(1) YES: A security vulnerability detected.
+196691,1,1,1,cwe_only,gpac,['CWE-703'],isoffin_read.c,11818,107,118,225,(1) YES: A security vulnerability detected.
+196698,1,1,1,cwe_only,tensorflow,['CWE-125'],sparse_fill_empty_rows_op.cc,2261,107,141,248,(1) YES
+196705,1,1,1,cwe_only,tensorflow,['CWE-20'],sparse_tensor_dense_add_op.cc,1242,106,102,208,(1) YES
+196790,1,1,1,cwe_only,tensorflow,['CWE-703'],sdca_internal.cc,3832,107,102,209,(1) YES: A security vulnerability detected.
+196801,1,1,1,cwe_only,gpac,['CWE-703'],isom_hinter.c,6017,107,118,225,(1) YES: A security vulnerability detected.
+196829,1,1,1,cwe_only,tensorflow,['CWE-476'],session_ops.cc,869,107,98,205,(1) YES: A security vulnerability detected.
+196834,1,1,1,cwe_only,tensorflow,['CWE-125'],count_ops.cc,338,107,101,208,(1) YES: A security vulnerability detected.
+196841,1,1,1,cwe_only,furnace,['CWE-703'],pattern.cpp,12844,107,118,225,(1) YES: A security vulnerability detected.
+196846,1,1,1,cwe_only,tensorflow,['CWE-369'],div.cc,1159,107,127,234,(1) YES: A security vulnerability detected.
+196860,1,1,1,cwe_only,gpac,['CWE-787'],None,1878,107,364,471,(1) YES: A security vulnerability detected.
+196885,1,1,1,cwe_only,tensorflow,['CWE-703'],mkl_requantization_range_per_channel_op.cc,3259,107,118,225,(1) YES: A security vulnerability detected.
+196889,1,1,1,cwe_only,rpm,['CWE-284'],rpmpgp.c,744,107,102,209,(1) YES
+196893,1,1,1,cwe_only,envoy,['CWE-362'],default_validator.cc,1618,107,101,208,(1) YES: A security vulnerability detected.
+196894,1,1,1,cwe_only,cryptopp,['CWE-399'],rw.cpp,1059,107,154,261,(1) YES: A security vulnerability detected.
+196993,1,1,1,cwe_only,libjxl,['CWE-369'],codec_apng.cc,7391,107,119,226,(1) YES
+197015,1,1,1,cwe_only,gpac,['CWE-476'],isom_store.c,2728,107,100,207,(1) YES: A security vulnerability detected.
+197057,1,1,1,cwe_only,drogon,['CWE-552'],None,883,107,102,209,(1) YES: A security vulnerability detected.
+197095,1,1,1,cwe_only,tensorflow,['CWE-369'],optimized_ops.h,4283,107,119,226,(1) YES
+197111,1,1,1,cwe_only,tinyexr,['CWE-20'],tinyexr.h,10037,106,89,195,(1) YES
+197128,1,1,1,cwe_only,mruby,['CWE-125'],codegen.c,3787,107,141,248,(1) YES
+197135,1,1,1,cwe_only,linux,['CWE-703'],ccp-ops.c,6867,107,150,257,(1) YES
+197142,1,1,1,cwe_only,tensorflow,['CWE-476'],quantize_op.cc,2320,107,98,205,(1) YES: A security vulnerability detected.
+197185,1,1,1,cwe_only,FFmpeg,['CWE-252'],None,1566,107,185,292,(1) YES: A security vulnerability detected.
+197223,1,1,1,cwe_only,njs,['CWE-787'],njs_module.c,1138,107,282,389,(1) YES: A security vulnerability detected.
+197239,1,1,1,cwe_only,tensorflow,['CWE-20'],mkl_requantize_per_channel_op.cc,5096,106,89,195,(1) YES
+197242,1,1,1,cwe_only,tensorflow,['CWE-908'],svdf.cc,9667,107,156,263,(1) YES
+197247,1,1,1,cwe_only,tensorflow,['CWE-369'],None,2523,107,127,234,(1) YES: A security vulnerability detected.
+197262,1,1,1,cwe_only,tensorflow,['CWE-125'],sparse_matmul_op.cc,4354,107,141,248,(1) YES
+197305,1,1,1,cwe_only,pjproject,['CWE-200'],rtcp_fb.c,839,107,284,391,(1) YES: A security vulnerability detected.
+197318,1,1,1,cwe_only,tensorflow,['CWE-703'],session_ops.cc,418,107,118,225,(1) YES: A security vulnerability detected.
+197326,1,1,1,cwe_only,tensorflow,['CWE-703'],einsum_op_impl.h,2300,107,102,209,(1) YES: A security vulnerability detected.
+197359,1,1,1,cwe_only,tensorflow,['CWE-703'],auto_parallel.cc,4992,107,118,225,(1) YES: A security vulnerability detected.
+197395,1,1,1,cwe_only,tensorflow,['CWE-369'],reverse_op.cc,1647,107,119,226,(1) YES
+197466,1,1,1,cwe_only,tensorflow,['CWE-476'],save_restore_tensor.cc,3703,107,100,207,(1) YES: A security vulnerability detected.
+197499,1,1,1,cwe_only,gpac,['CWE-416'],field_decode.c,3101,107,125,232,(1) YES: A security vulnerability detected.
+197511,1,1,1,cwe_only,libjpeg,['CWE-787'],hierarchicalbitmaprequester.cpp,1103,107,282,389,(1) YES: A security vulnerability detected.
+197517,1,1,1,cwe_only,glewlwyd,['CWE-787'],webauthn.c,7137,107,364,471,(1) YES: A security vulnerability detected.
+197518,1,1,1,cwe_only,tensorflow,['CWE-703'],quantize_and_dequantize_op.cc,3191,107,118,225,(1) YES: A security vulnerability detected.
+197565,1,1,1,cwe_only,wolfMQTT,['CWE-787'],mqtt_client.c,7554,107,282,389,(1) YES: A security vulnerability detected.
+197593,1,1,1,cwe_only,njs,['CWE-416'],njs_function.c,1335,107,99,206,(1) YES: A security vulnerability detected.
+197666,1,1,1,cwe_only,njs,['CWE-703'],njs_iterator.c,4494,107,133,240,(1) YES
+197719,1,1,1,cwe_only,tensorflow,['CWE-125'],ragged_tensor_to_variant_op.cc,2111,107,141,248,(1) YES
+197748,1,1,1,cwe_only,tensorflow,['CWE-703'],array_ops.cc,2247,107,118,225,(1) YES: A security vulnerability detected.
+197760,1,1,1,cwe_only,tensorflow,['CWE-125'],gather_nd.cc,1030,107,101,208,(1) YES: A security vulnerability detected.
+197796,1,1,1,cwe_only,qemu,['CWE-703'],vnc.c,4407,107,102,209,(1) YES: A security vulnerability detected.
+197801,1,1,1,cwe_only,tensorflow,['CWE-345'],tensor_slice_reader.h,1688,107,123,230,(1) YES: A security vulnerability detected.
+197824,1,1,1,cwe_only,gpac,['CWE-416'],memory_decoder.c,1090,107,102,209,(1) YES
+197826,1,1,1,cwe_only,tensorflow,['CWE-824'],constant_folding.cc,2329,107,106,213,(1) YES: A security vulnerability detected.
+197893,1,1,1,cwe_only,tensorflow,['CWE-703'],gather.cc,568,107,102,209,(1) YES: A security vulnerability detected.
+197973,1,1,1,cwe_only,crun,['CWE-276'],exec.c,3429,107,90,197,(1) YES
+197998,1,1,1,cwe_only,tensorflow,['CWE-703'],unsorted_segment_join_op.cc,2727,107,102,209,(1) YES: A security vulnerability detected.
+198010,1,1,1,cwe_only,radare2,['CWE-125'],bfile.c,7850,107,141,248,(1) YES
+198013,1,1,1,cwe_only,tensorflow,['CWE-703'],load_and_remap_matrix_op.cc,11099,107,118,225,(1) YES: A security vulnerability detected.
+198116,1,1,1,cwe_only,tensorflow,['CWE-125'],sparse_reduce_op.cc,3054,107,141,248,(1) YES
+198117,1,1,1,cwe_only,tensorflow,['CWE-476'],fractional_avg_pool_op.cc,6758,107,100,207,(1) YES: A security vulnerability detected.
+198161,1,1,1,cwe_only,ImageMagick,['CWE-125'],mat.c,16319,107,141,248,(1) YES
+198169,1,1,1,cwe_only,tensorflow,['CWE-369'],kernel_util.cc,237,107,127,234,(1) YES: A security vulnerability detected.
+198239,1,1,1,cwe_only,barebox,['CWE-200'],password.c,1384,107,284,391,(1) YES: A security vulnerability detected.
+198259,1,1,1,cwe_only,tensorflow,['CWE-369'],ragged_gather_op.cc,1647,107,119,226,(1) YES
+198282,1,1,1,cwe_only,tensorflow,['CWE-369'],reshape_util.cc,4587,107,119,226,(1) YES
+198350,1,1,1,cwe_only,owntone-server,['CWE-416'],misc.c,2487,107,125,232,(1) YES: A security vulnerability detected.
+198374,1,1,1,cwe_only,tensorflow,['CWE-703'],lstm_ops.cc,5377,107,102,209,(1) YES: A security vulnerability detected.
+198399,1,1,1,cwe_only,uftpd,['CWE-787'],ftpcmd.c,890,107,254,361,(1) YES: A security vulnerability detected.
+198439,1,1,1,cwe_only,mruby,['CWE-288'],vm.c,50746,107,109,216,(1) YES
+198449,1,1,1,cwe_only,pjproject,['CWE-787'],stun_simple.c,1767,107,282,389,(1) YES: A security vulnerability detected.
+198452,1,1,1,cwe_only,tensorflow,['CWE-703'],comparisons.cc,1722,107,118,225,(1) YES: A security vulnerability detected.
+198476,1,1,1,cwe_only,njs,['CWE-416'],njs_async.c,2245,107,125,232,(1) YES: A security vulnerability detected.
+198499,1,1,1,cwe_only,micro-ecc,['CWE-415'],uECC.c,2725,107,100,207,(1) YES
+198523,1,1,1,cwe_only,tensorflow,['CWE-416'],resource_ops.cc,1155,107,102,209,(1) YES
+198545,1,1,1,cwe_only,u-boot,['CWE-787'],i2c.c,2210,107,334,441,(1) YES
+198556,1,1,1,cwe_only,mruby,['CWE-703'],fiber.c,1634,107,118,225,(1) YES: A security vulnerability detected.
+198566,1,1,1,cwe_only,libmobi,['CWE-787'],index.c,2248,107,282,389,(1) YES: A security vulnerability detected.
+198662,1,1,1,cwe_only,vim,['CWE-787'],ex_cmds.c,1308,107,364,471,(1) YES: A security vulnerability detected.
+198692,1,1,1,cwe_only,ipsec,['CWE-125'],xfrm_policy.c,1471,107,101,208,(1) YES: A security vulnerability detected.
+198695,1,1,1,cwe_only,MilkyTracker,['CWE-787'],LoaderS3M.cpp,8477,107,254,361,(1) YES: A security vulnerability detected.
+198703,1,1,1,cwe_only,LibRaw,['CWE-189'],dcraw.c,1410,107,97,204,(1) YES: A security vulnerability detected.
+198736,1,1,1,cwe_only,linux,['CWE-401'],rsi_91x_mgmt.c,638,107,103,210,(1) YES: A security vulnerability detected.
+198743,1,1,1,cwe_only,LuaJIT,['CWE-125'],lj_err.c,1384,107,141,248,(1) YES
+198927,1,1,1,cwe_only,radare2,['CWE-125'],ne.c,1947,107,141,248,(1) YES
+198983,1,1,1,cwe_only,swtpm,['CWE-125'],swtpm_nvfile.c,1134,107,101,208,(1) YES: A security vulnerability detected.
+199159,1,1,1,cwe_only,linux,['CWE-362'],None,2961,107,108,215,(1) YES: A security vulnerability detected.
+199712,1,1,1,cwe_only,linux,['CWE-415'],rtrs-clt.c,152,107,103,210,(1) YES: A security vulnerability detected.
+199767,1,1,1,cwe_only,hexchat,['CWE-22'],inbound.c,2721,106,174,280,(1) YES
+199778,1,1,1,cwe_only,puma,['CWE-444'],http11_parser.c,19279,107,204,311,(1) YES
+199833,1,1,1,cwe_only,chafa,['CWE-476'],libnsgif.c,15134,107,98,205,(1) YES: A security vulnerability detected.
+199836,1,1,1,cwe_only,pjproject,['CWE-125'],None,308,107,136,243,YES
+199841,1,1,1,cwe_only,radare2,['CWE-476'],bin_xnu_kernelcache.c,1665,107,98,205,(1) YES: A security vulnerability detected.
+199851,1,1,1,cwe_only,vim,['CWE-787'],indent.c,5582,107,364,471,(1) YES: A security vulnerability detected.
+199952,1,1,1,cwe_only,MilkyTracker,['CWE-787'],None,19139,107,282,389,(1) YES: A security vulnerability detected.
+199984,1,1,1,cwe_only,vim,['CWE-416'],ex_cmds.c,31245,107,100,207,(1) YES: A security vulnerability detected.
+200113,1,1,1,cwe_only,ImageMagick,['CWE-787'],mat.c,6670,107,282,389,(1) YES: A security vulnerability detected.
+200157,1,1,1,cwe_only,exim,['CWE-264'],readconf.c,13171,107,134,241,(1) YES
+200163,1,1,1,cwe_only,linux,['CWE-200'],hid-elo.c,875,107,313,420,(1) YES
+200287,1,1,1,cwe_only,linux,['CWE-200'],socket.c,3449,107,313,420,(1) YES
+200305,1,1,1,cwe_only,ghostpdl,['CWE-787'],gdevpcx.c,1184,107,364,471,(1) YES: A security vulnerability detected.
+200320,1,1,1,cwe_only,samba,['CWE-665'],vfs_default.c,8888,107,110,217,(1) YES: A security vulnerability detected.
+200323,1,1,1,cwe_only,vim,['CWE-787'],spellsuggest.c,39409,107,282,389,(1) YES: A security vulnerability detected.
+200379,1,1,1,cwe_only,radare2,['CWE-476'],ne.c,761,107,98,205,(1) YES: A security vulnerability detected.
+200695,1,1,1,cwe_only,linux,['CWE-401'],fastrpc.c,674,107,99,206,(1) YES: A security vulnerability detected.
+200781,1,1,1,cwe_only,ncurses,['CWE-787'],None,1139,107,282,389,(1) YES: A security vulnerability detected.
+200895,1,1,1,cwe_only,vim,['CWE-703'],None,1117,107,118,225,(1) YES: A security vulnerability detected.
+200934,1,1,1,cwe_only,libvirt,['CWE-212'],virstoragetest.c,1308,107,104,211,(1) YES
+200976,1,1,1,cwe_only,vim,['CWE-787'],None,895,107,364,471,(1) YES: A security vulnerability detected.
+201007,1,0,0,cwe_only,pjproject,['CWE-787'],sdp.c,1492,107,410,517,(2) NO: No security vulnerability.
+201343,1,1,1,cwe_only,linux,['CWE-416'],None,204,107,125,232,(1) YES: A security vulnerability detected.
+201353,1,1,1,cwe_only,wireless-drivers,['CWE-415'],rsi_91x_usb.c,1417,107,96,203,(1) YES: A security vulnerability detected.
+201382,1,1,1,cwe_only,gerbv,['CWE-787'],drill.c,7874,107,391,498,(1) YES: A security vulnerability detected.
+201384,1,1,1,cwe_only,vim,['CWE-787'],None,762,107,364,471,(1) YES: A security vulnerability detected.
+201451,1,1,1,cwe_only,ImageMagick6,['CWE-787'],cin.c,15672,107,364,471,(1) YES: A security vulnerability detected.
+201872,1,1,1,cwe_only,gnutls,['CWE-310'],gnutls_handshake.c,4749,107,91,198,(1) YES
+201885,1,1,1,cwe_only,vim,['CWE-416'],regexp_bt.c,34450,107,102,209,(1) YES
+201913,1,1,1,cwe_only,libarchive,['CWE-59'],None,2210,106,162,268,(1) YES: A security vulnerability detected.
+201925,1,1,1,cwe_only,linux,['CWE-476'],vidtv_s302m.c,1188,107,100,207,(1) YES: A security vulnerability detected.
+202081,1,1,1,cwe_only,vim,['CWE-787'],register.c,19946,107,282,389,(1) YES: A security vulnerability detected.
+202082,1,1,1,cwe_only,radare2,['CWE-125'],class.c,1105,107,101,208,(1) YES: A security vulnerability detected.
+202125,1,0,0,cwe_only,cairo,['CWE-787'],None,2943,107,410,517,(2) NO: No security vulnerability.
+202256,1,1,1,cwe_only,qtbase,['CWE-787'],qpaintengineex.cpp,9164,107,334,441,(1) YES
+202276,1,1,1,cwe_only,vim,['CWE-787'],None,3371,107,282,389,(1) YES: A security vulnerability detected.
+202304,1,1,1,cwe_only,vim,['CWE-122'],None,1179,107,142,249,(1) YES
+202392,1,1,1,cwe_only,php-src,['CWE-119'],gd_interpolation.c,978,107,202,309,(1) YES: A security vulnerability detected.
+202659,1,1,1,cwe_only,net,['CWE-125'],ip6_gre.c,2044,107,171,278,(1) YES: A security vulnerability detected.
+202677,1,1,1,cwe_only,qemu,['CWE-369'],None,1213,107,136,243,(1) YES
+202688,1,1,1,cwe_only,ghostpdl,['CWE-787'],gdevlprn.c,522,107,282,389,(1) YES: A security vulnerability detected.
+202708,1,1,1,cwe_only,vim,['CWE-476'],buffer.c,576,107,98,205,(1) YES: A security vulnerability detected.
+202719,1,1,1,cwe_only,linux,['CWE-704'],sm_make_chunk.c,1222,107,131,238,(1) YES: A security vulnerability detected.
+202748,1,1,1,cwe_only,ImageMagick,['CWE-772'],tga.c,13504,107,99,206,(1) YES: A security vulnerability detected.
+202783,1,1,1,cwe_only,php-src,['CWE-119'],zend_strtod.c,349,107,142,249,(1) YES: A security vulnerability detected.
+202822,1,1,1,cwe_only,ghostpdl,['CWE-787'],zstring.c,1080,107,282,389,(1) YES: A security vulnerability detected.
+202888,1,1,1,cwe_only,linux,['CWE-787'],esp4.c,1898,107,282,389,(1) YES: A security vulnerability detected.
+202889,1,1,1,cwe_only,linux,['CWE-787'],esp6.c,1844,107,364,471,(1) YES: A security vulnerability detected.
+202892,1,1,1,cwe_only,pure-ftpd,['CWE-434'],ftpd.c,7610,107,166,273,(1) YES
+202943,1,1,1,cwe_only,lua,['CWE-787'],ldebug.c,434,107,254,361,(1) YES: A security vulnerability detected.
+203614,1,1,1,cwe_only,linux,['CWE-703'],pxa3xx-gcu.c,1582,107,102,209,(1) YES: A security vulnerability detected.
+203902,1,1,1,cwe_only,vim,['CWE-703'],scriptfile.c,2749,107,102,209,(1) YES: A security vulnerability detected.
+204016,1,1,1,cwe_only,squashfs-tools,['CWE-200'],None,3355,107,313,420,(1) YES
+204017,1,1,1,cwe_only,squashfs-tools,['CWE-200'],None,3363,107,284,391,(1) YES: A security vulnerability detected.
+204019,1,1,1,cwe_only,squashfs-tools,['CWE-200'],None,3071,107,104,211,(1) YES: A security vulnerability detected.
+204032,1,1,1,cwe_only,linux,['CWE-772'],virtio_bt.c,348,107,93,200,(1) YES
+204036,1,1,1,cwe_only,net,['CWE-787'],hw_atl_utils.c,1016,107,323,430,(1) YES
+204073,1,1,1,cwe_only,shapelib,['CWE-415'],shpsort.c,737,107,103,210,(1) YES: A security vulnerability detected.
+204115,1,1,1,cwe_only,openldap,['CWE-617'],schema_init.c,3567,107,104,211,(1) YES: A security vulnerability detected.
+204137,1,1,1,cwe_only,poppler,['CWE-369'],None,6800,107,119,226,(1) YES
+204195,1,1,1,cwe_only,pjproject,['CWE-125'],None,558,107,141,248,(1) YES
+204243,1,1,1,cwe_only,vim,['CWE-787'],eval.c,6093,107,282,389,(1) YES: A security vulnerability detected.
+204278,1,1,1,cwe_only,firejail,['CWE-94'],None,876,106,114,220,(1) YES: A security vulnerability detected.
+204351,1,1,1,cwe_only,squirrel,['CWE-125'],sqclass.cpp,1824,107,141,248,(1) YES
+204412,1,1,1,cwe_only,bpf,['CWE-787'],ringbuf.c,1123,107,364,471,(1) YES: A security vulnerability detected.
+204425,1,1,1,cwe_only,frr,['CWE-125'],bgp_packet.c,2808,107,141,248,(1) YES
+204438,1,1,1,cwe_only,ImageMagick,['CWE-617'],operation.c,16612,107,138,245,(1) YES: A security vulnerability detected.
+204495,1,1,1,cwe_only,linux,['CWE-193'],cancel.c,636,107,119,226,(1) YES: A security vulnerability detected.
+204534,1,1,1,cwe_only,admesh,['CWE-125'],connect.c,2388,107,171,278,(1) YES: A security vulnerability detected.
+204535,1,1,1,cwe_only,admesh,['CWE-125'],connect.c,620,107,141,248,(1) YES
+204544,1,1,1,cwe_only,linux,['CWE-416'],em28xx-cards.c,8029,107,99,206,(1) YES: A security vulnerability detected.
+204814,1,1,1,cwe_only,linux,['CWE-703'],None,827,107,118,225,(1) YES: A security vulnerability detected.
+204830,1,1,1,cwe_only,linux,['CWE-200'],namespace.c,422,107,313,420,(1) YES
+205630,1,1,1,cwe_only,linux,['CWE-94'],io_uring.c,1193,106,101,207,(1) YES: A security vulnerability detected.
+205734,1,1,1,cwe_only,rizin,['CWE-787'],marshal.c,1196,107,282,389,(1) YES: A security vulnerability detected.
+205736,1,1,1,cwe_only,linux,['CWE-834'],fuse_i.h,110,107,106,213,(1) YES: A security vulnerability detected.
+205806,1,1,1,cwe_only,Singular,['CWE-269'],None,1794,107,112,219,(1) YES: A security vulnerability detected.
+205823,1,1,1,cwe_only,ovs,['CWE-401'],ipf.c,991,107,103,210,(1) YES: A security vulnerability detected.
+206025,1,1,1,cwe_only,evolution-data-server,['CWE-200'],None,295,107,284,391,(1) YES: A security vulnerability detected.
+206043,1,1,1,cwe_only,gimp,['CWE-125'],file-gbr.c,7841,107,101,208,(1) YES: A security vulnerability detected.
+206044,1,1,1,cwe_only,tigervnc,['CWE-672'],None,2972,107,150,257,(1) YES
+206262,1,1,1,cwe_only,vim,['CWE-787'],ex_docmd.c,9072,107,364,471,(1) YES: A security vulnerability detected.
+206273,1,1,1,cwe_only,radare2,['CWE-416'],None,5477,107,99,206,(1) YES: A security vulnerability detected.
+206417,1,1,1,cwe_only,vim,['CWE-787'],edit.c,10082,107,364,471,(1) YES: A security vulnerability detected.
+206555,1,1,1,cwe_only,php-src,['CWE-119'],gd_io_dp.c,400,107,169,276,(1) YES: A security vulnerability detected.
+206588,1,1,1,cwe_only,php-src,['CWE-119'],None,1594,107,103,210,(1) YES
+206625,1,1,1,cwe_only,raptor,['CWE-787'],raptor_xml_writer.c,8295,107,282,389,(1) YES: A security vulnerability detected.
+206639,1,1,1,cwe_only,linux,['CWE-703'],nf_tables_api.c,1465,107,118,225,(1) YES: A security vulnerability detected.
+206670,1,1,1,cwe_only,nbdkit,['CWE-924'],protocol-handshake-newstyle.c,18843,107,165,272,(1) YES: A security vulnerability detected.
+206676,1,1,1,cwe_only,vim,['CWE-122'],move.c,6235,107,101,208,(1) YES: A security vulnerability detected.
+206677,1,1,1,cwe_only,vim,['CWE-703'],filepath.c,5339,107,177,284,(1) YES: A security vulnerability detected.
+206771,1,1,1,cwe_only,qcad,['CWE-191'],dl_dxf.cpp,1260,107,144,251,(1) YES: A security vulnerability detected.
+206781,1,1,1,cwe_only,linux,['CWE-476'],inode.c,2044,107,124,231,(1) YES: A security vulnerability detected.
+206815,1,1,1,cwe_only,ImageMagick,['CWE-125'],quantize.c,5146,107,101,208,(1) YES: A security vulnerability detected.
+206845,1,1,1,cwe_only,linux,['CWE-125'],control.c,352,107,101,208,(1) YES: A security vulnerability detected.
+206942,1,1,1,cwe_only,vim,['CWE-125'],typval.c,3520,107,101,208,(1) YES: A security vulnerability detected.
+206946,1,1,1,cwe_only,jasper,['CWE-703'],jasper.c,4177,107,118,225,(1) YES: A security vulnerability detected.
+207068,1,1,1,cwe_only,linux,['CWE-120'],rpadlpar_sysfs.c,422,107,330,437,(1) YES: A security vulnerability detected.
+207069,1,1,1,cwe_only,linux,['CWE-120'],rpadlpar_sysfs.c,415,107,291,398,(1) YES: A security vulnerability detected.
+207150,1,1,1,cwe_only,squirrel,['CWE-703'],sqbaselib.cpp,600,107,208,315,(1) YES: A security vulnerability detected.
+207461,1,0,0,cwe_only,autotrace,['CWE-787'],input-bmp.c,10784,107,410,517,(2) NO: No security vulnerability.
+207520,1,1,1,cwe_only,rizin,['CWE-787'],dwarf.c,1456,107,282,389,(1) YES: A security vulnerability detected.
+207700,1,1,1,cwe_only,EternalTerminal,['CWE-362'],UserTerminalRouter.cpp,225,107,109,216,(1) YES: A security vulnerability detected.
+207703,1,1,1,cwe_only,EternalTerminal,['CWE-362'],PipeSocketHandler.cpp,823,107,101,208,(1) YES: A security vulnerability detected.
+207719,1,0,0,cwe_only,vim,['CWE-787'],edit.c,569,107,410,517,(2) NO: No security vulnerability.
+207753,1,1,1,cwe_only,linux,['CWE-284'],iov_iter.c,988,107,102,209,(1) YES
+207754,1,1,1,cwe_only,linux,['CWE-284'],iov_iter.c,1062,107,96,203,(1) YES
+207755,1,0,0,cwe_only,php-src,['CWE-200'],openssl.c,2116,107,370,477,(2) NO: No security vulnerability.
+207780,1,1,1,cwe_only,radare2,['CWE-703'],None,4121,107,102,209,(1) YES: A security vulnerability detected.
+207803,1,1,1,cwe_only,linux,['CWE-200'],random.c,1703,107,313,420,(1) YES
+207804,1,0,0,cwe_only,linux,['CWE-200'],timer.c,384,107,333,440,(2) NO: No security vulnerability.
+207990,1,1,1,cwe_only,pcre2,['CWE-703'],pcre2_jit_compile.c,4749,107,118,225,(1) YES: A security vulnerability detected.
+208107,1,1,1,cwe_only,linux,['CWE-703'],xfrm_policy.c,913,107,150,257,(1) YES
+208115,1,1,1,cwe_only,linux,['CWE-703'],xilinx_emaclite.c,2285,107,102,209,(1) YES: A security vulnerability detected.
+208140,1,1,1,cwe_only,util-linux,['CWE-200'],mount.c,7619,107,313,420,(1) YES
+208370,1,1,1,cwe_only,vim,['CWE-787'],edit.c,2208,107,364,471,(1) YES: A security vulnerability detected.
+208411,1,1,1,cwe_only,vim,['CWE-787'],term.c,16023,106,103,209,(1) YES: A security vulnerability detected.
+208505,1,1,1,cwe_only,tor,['CWE-399'],routerparse.c,17737,106,112,218,(1) YES: A security vulnerability detected.
+208506,1,1,1,cwe_only,heimdal,['CWE-476'],None,31845,107,157,264,(1) YES: A security vulnerability detected.
+208522,1,1,1,cwe_only,unbound,['CWE-190'],dnscrypt.c,2520,106,144,250,(1) YES: A security vulnerability detected.
+208525,1,1,1,cwe_only,vim,['CWE-787'],ex_getln.c,1598,107,282,389,(1) YES: A security vulnerability detected.
+208535,1,1,1,cwe_only,rizin,['CWE-415'],bin_qnx.c,148,106,91,197,(1) YES: A security vulnerability detected.
+208654,1,1,1,cwe_only,php-src,['CWE-416'],snmp.c,4635,106,99,205,(1) YES: A security vulnerability detected.
+208680,1,1,1,cwe_only,radare2,['CWE-416'],None,13139,106,99,205,(1) YES: A security vulnerability detected.
+208912,1,1,1,cwe_only,vim,['CWE-416'],ex_getln.c,25369,106,96,202,(1) YES
+208987,1,1,1,cwe_only,MilkyTracker,['CWE-416'],PlayerGeneric.cpp,240,106,96,202,(1) YES
+209026,1,1,1,cwe_only,libvirt,['CWE-119'],node_device_conf.c,634,106,166,272,(1) YES
+209102,1,1,1,cwe_only,vim,['CWE-703'],mouse.c,22314,106,122,228,(1) YES: A security vulnerability detected.
+209801,1,1,1,cwe_only,mujs,['CWE-476'],jsdump.c,205,107,100,207,(1) YES: A security vulnerability detected.
+209931,1,1,1,cwe_only,FreeRDP,['CWE-190'],video_main.c,1581,106,154,260,(1) YES
+209955,1,1,1,cwe_only,linux,['CWE-476'],trans.c,5021,106,100,206,(1) YES: A security vulnerability detected.
+210050,1,1,1,cwe_only,lua,['CWE-125'],lparser.c,467,106,130,236,(1) YES: A security vulnerability detected.
+210090,1,1,1,cwe_only,file,['CWE-787'],cdf.c,3962,106,103,209,(1) YES: A security vulnerability detected.
+210203,1,1,1,cwe_only,linux,['CWE-787'],seq_file.c,94,106,96,202,(1) YES: A security vulnerability detected.
+210204,1,1,1,cwe_only,linux,['CWE-362'],flow_netlink.c,1036,106,101,207,(1) YES: A security vulnerability detected.
+210206,1,1,1,cwe_only,squid,['CWE-400'],gopher.cc,11324,107,129,236,(1) YES: A security vulnerability detected.
+210252,1,1,1,cwe_only,ImageMagick,['CWE-787'],cin.c,15720,107,334,441,(1) YES
+210271,1,1,1,cwe_only,vim,['CWE-787'],spellfile.c,2143,107,364,471,(1) YES: A security vulnerability detected.
+210273,1,1,1,cwe_only,mongo,['CWE-617'],pipeline_d.cpp,10193,106,103,209,(1) YES
+210278,1,1,1,cwe_only,unicorn,['CWE-476'],exec.c,402,107,98,205,(1) YES: A security vulnerability detected.
+210282,1,1,1,cwe_only,qemu,['CWE-125'],i2c-ddc.c,156,106,128,234,(1) YES: A security vulnerability detected.
+210283,1,1,1,cwe_only,dpdk,['CWE-703'],vhost_user.c,3022,107,102,209,(1) YES: A security vulnerability detected.
+210284,1,1,1,cwe_only,dpdk,['CWE-703'],vhost_user.c,3121,106,122,228,(1) YES: A security vulnerability detected.
+210393,1,1,1,cwe_only,vim,['CWE-416'],arglist.c,7558,106,91,197,(1) YES: A security vulnerability detected.
+210420,1,1,1,cwe_only,ghostpdl,['CWE-119'],gxht_thresh.c,758,106,121,227,(1) YES
+210453,1,1,1,cwe_only,ghostpdl,['CWE-120'],gdev3852.c,4521,107,100,207,(1) YES
+210484,1,1,1,cwe_only,linux,['CWE-125'],io_uring.c,2805,107,141,248,(1) YES
+210520,1,1,1,cwe_only,vim,['CWE-125'],indent.c,3834,106,103,209,(1) YES: A security vulnerability detected.
+210527,1,1,1,cwe_only,linux,['CWE-415'],mcba_usb.c,1600,106,156,262,(1) YES
+210551,1,1,1,cwe_only,oniguruma,['CWE-125'],regcomp.c,3190,107,141,248,(1) YES
+210570,1,1,1,cwe_only,radare2,['CWE-787'],bin_symbols.c,2594,107,254,361,(1) YES: A security vulnerability detected.
+210571,1,1,1,cwe_only,linux,['CWE-401'],cx23888-ir.c,1324,107,99,206,(1) YES: A security vulnerability detected.
+210620,1,1,1,cwe_only,linux,['CWE-415'],virtio_rpmsg_bus.c,751,106,156,262,(1) YES
+210636,1,1,1,cwe_only,linux,['CWE-416'],mkiss.c,702,107,102,209,(1) YES
+210669,1,1,1,cwe_only,ImageMagick6,['CWE-401'],bmp.c,34566,107,99,206,(1) YES: A security vulnerability detected.
+210692,1,1,1,cwe_only,ImageMagick6,['CWE-835'],bmp.c,34742,107,110,217,(1) YES
+210700,1,1,1,cwe_only,squashfs-tools,['CWE-22'],None,3282,106,106,212,(1) YES
+210701,1,1,1,cwe_only,squashfs-tools,['CWE-22'],None,3285,106,106,212,(1) YES
+210702,1,1,1,cwe_only,squashfs-tools,['CWE-22'],None,2982,106,138,244,(1) YES
+210834,1,1,1,cwe_only,xserver,['CWE-863'],log.c,1122,107,169,276,(1) YES: A security vulnerability detected.
+210866,1,1,1,cwe_only,xserver,['CWE-191'],xkbSwap.c,2399,107,144,251,(1) YES: A security vulnerability detected.
+210887,1,1,1,cwe_only,qemu,['CWE-835'],e1000.c,491,107,136,243,(1) YES
+210896,1,1,1,cwe_only,spice,['CWE-193'],memslot.c,1191,107,119,226,(1) YES: A security vulnerability detected.
+210904,1,1,1,cwe_only,curl,['CWE-125'],main.c,789,107,101,208,(1) YES: A security vulnerability detected.
+210910,1,1,1,cwe_only,vim,['CWE-200'],drawscreen.c,3475,107,104,211,(1) YES: A security vulnerability detected.
+210928,1,1,1,cwe_only,linux,['CWE-476'],inode.c,900,107,100,207,(1) YES: A security vulnerability detected.
+210944,1,1,1,cwe_only,vim,['CWE-416'],ex_docmd.c,22933,107,125,232,(1) YES: A security vulnerability detected.
+211090,1,1,1,cwe_only,cifs-utils,['CWE-20'],mount.cifs.c,2509,105,123,228,(1) YES: A security vulnerability detected.
+211102,1,1,1,cwe_only,file-roller,['CWE-22'],None,7299,105,100,205,(1) YES
+211103,1,1,1,cwe_only,file-roller,['CWE-22'],None,1690,106,100,206,(1) YES
+211110,1,1,1,cwe_only,libtiff,['CWE-787'],tif_lzw.c,5119,106,103,209,(1) YES: A security vulnerability detected.
+211113,1,1,1,cwe_only,linux,['CWE-416'],atusb.c,534,107,100,207,(1) YES: A security vulnerability detected.
+211126,1,1,1,cwe_only,libmobi,['CWE-125'],index.c,6639,106,130,236,(1) YES: A security vulnerability detected.
+211136,1,1,1,cwe_only,rizin,['CWE-787'],dyldcache.c,2717,106,114,220,(1) YES: A security vulnerability detected.
+211179,1,1,1,cwe_only,exiv2,['CWE-125'],image.cpp,8217,107,138,245,YES
+211181,1,1,1,cwe_only,php-src,['CWE-17'],apprentice.c,2835,106,123,229,(1) YES
+211471,1,1,1,cwe_only,frr,['CWE-125'],bgp_packet.c,2993,107,141,248,(1) YES
+211473,1,1,1,cwe_only,gdk-pixbuf,['CWE-189'],io-xbm.c,2983,106,122,228,(1) YES: A security vulnerability detected.
+211506,1,1,1,cwe_only,zlib,['CWE-787'],inflate.c,25995,106,103,209,(1) YES: A security vulnerability detected.
+211563,1,1,1,cwe_only,vim,['CWE-122'],None,1349,107,102,209,(1) YES: A security vulnerability detected.
+211567,1,1,1,cwe_only,clamav-devel,['CWE-189'],sis.c,466,107,97,204,(1) YES: A security vulnerability detected.
+211695,1,1,1,cwe_only,vim,['CWE-416'],regexp.c,1662,107,102,209,(1) YES
+211699,1,1,1,cwe_only,gnulib,['CWE-119'],glob.c,28165,107,170,277,(1) YES: A security vulnerability detected.
+211700,1,1,1,cwe_only,linux,['CWE-120'],se.c,1407,107,419,526,(1) YES
+211773,1,1,1,cwe_only,ntp,['CWE-20'],ntpq.c,2313,106,171,277,(1) YES
+211785,1,1,1,cwe_only,jasper,['CWE-20'],jpc_enc.c,11802,106,125,231,(1) YES: A security vulnerability detected.
+211842,1,1,1,cwe_only,vim,['CWE-787'],indent.c,5974,107,254,361,(1) YES: A security vulnerability detected.
+211845,1,1,1,cwe_only,ImageMagick6,['CWE-787'],tiff.c,34484,107,334,441,(1) YES
+211868,1,1,1,cwe_only,nf,['CWE-269'],nf_tables_offload.c,1118,107,112,219,(1) YES: A security vulnerability detected.
+211877,1,1,1,cwe_only,libexpat,['CWE-668'],xmlparse.c,5086,107,204,311,(1) YES
+211915,1,1,1,cwe_only,jasper,['CWE-125'],jp2_dec.c,9385,107,171,278,(1) YES: A security vulnerability detected.
+212083,1,1,1,cwe_only,linux,['CWE-703'],i2c-ismt.c,6487,107,118,225,(1) YES: A security vulnerability detected.
+212144,1,1,1,cwe_only,libmobi,['CWE-119'],read.c,1932,106,109,215,(1) YES: A security vulnerability detected.
+212152,1,1,1,cwe_only,bash,['CWE-787'],shell.c,494,106,103,209,(1) YES: A security vulnerability detected.
+212339,1,1,1,cwe_only,icecast-server,['CWE-119'],auth_url.c,1092,107,202,309,(1) YES: A security vulnerability detected.
+212407,1,1,1,cwe_only,varnish-cache,['CWE-703'],cache_http.c,295,106,122,228,(1) YES: A security vulnerability detected.
+212414,1,1,1,cwe_only,linux,['CWE-416'],cls_api.c,5619,106,99,205,(1) YES: A security vulnerability detected.
+212433,1,1,1,cwe_only,vim,['CWE-416'],tag.c,16686,107,102,209,(1) YES
+212436,1,1,1,cwe_only,linux,['CWE-787'],stackmap.c,532,107,282,389,(1) YES: A security vulnerability detected.
+212818,1,1,1,cwe_only,pjproject,['CWE-191'],None,698,106,131,237,(1) YES: A security vulnerability detected.
+212822,1,1,1,cwe_only,ghostpdl,['CWE-787'],None,501,107,334,441,(1) YES
+212829,1,1,1,cwe_only,php-src,['CWE-476'],wddx.c,3806,106,143,249,(1) YES: A security vulnerability detected.
+212834,1,1,1,cwe_only,rsyslog,['CWE-190'],imptcp.c,4516,106,144,250,(1) YES: A security vulnerability detected.
+212857,1,1,1,cwe_only,vim,['CWE-416'],quickfix.c,2622,107,125,232,(1) YES: A security vulnerability detected.
+212871,1,1,1,cwe_only,newsbeuter,['CWE-787'],controller.cpp,1385,107,282,389,(1) YES: A security vulnerability detected.
+212927,1,1,1,cwe_only,qemu,['CWE-835'],sungem.c,320,106,111,217,(1) YES: A security vulnerability detected.
+212934,1,1,1,cwe_only,cyrus-imapd,['CWE-732'],annotate.c,3456,107,102,209,(1) YES: A security vulnerability detected.
+212955,1,1,1,cwe_only,linux,['CWE-476'],af_ax25.c,1838,106,192,298,(1) YES: A security vulnerability detected.
+213037,1,1,1,cwe_only,php-src,['CWE-125'],mbfilter_big5.c,2277,107,101,208,(1) YES: A security vulnerability detected.
+213075,1,1,1,cwe_only,linux,['CWE-416'],main.c,369,107,99,206,(1) YES: A security vulnerability detected.
+213370,1,1,1,cwe_only,glib,['CWE-754'],gsocketclient.c,3733,107,103,210,(1) YES: A security vulnerability detected.
+213515,1,1,1,cwe_only,vim,['CWE-787'],spellsuggest.c,6540,107,364,471,(1) YES: A security vulnerability detected.
+213528,1,1,1,cwe_only,linux,['CWE-416'],cgroup-v1.c,2176,106,100,206,(1) YES: A security vulnerability detected.
+213998,1,1,1,cwe_only,libtpms,['CWE-119'],Object.c,482,107,202,309,(1) YES: A security vulnerability detected.
+214003,1,1,1,cwe_only,libvncserver,['CWE-787'],corre.c,836,106,118,224,(1) YES: A security vulnerability detected.
+214124,1,1,1,cwe_only,chafa,['CWE-125'],lzw.c,2279,107,141,248,(1) YES
+214160,1,1,1,cwe_only,linux,['CWE-476'],composite.c,11322,106,149,255,(1) YES
+214276,1,1,1,cwe_only,linux,['CWE-20'],crypto.c,1300,105,164,269,YES
+214282,1,1,1,cwe_only,radare2,['CWE-787'],None,2479,107,254,361,(1) YES: A security vulnerability detected.
+214335,1,1,1,cwe_only,ceph,['CWE-79'],rgw_rest_s3.cc,7013,106,216,322,(1) YES: A security vulnerability detected.
+214336,1,1,1,cwe_only,linux,['CWE-362'],af_key.c,745,106,101,207,(1) YES: A security vulnerability detected.
+214339,1,1,1,cwe_only,linux,['CWE-787'],book3s_rtas.c,1527,106,96,202,(1) YES: A security vulnerability detected.
+214358,1,1,1,cwe_only,clamav-devel,['CWE-20'],mspack.c,5074,106,169,275,(1) YES
+214364,1,1,1,cwe_only,php-src,['CWE-119'],simplestring.c,833,106,166,272,(1) YES
+214909,1,1,1,cwe_only,linux,['CWE-401'],conn.c,2338,107,99,206,(1) YES: A security vulnerability detected.
+214948,1,1,1,cwe_only,nagioscore,['CWE-476'],query-handler.c,776,107,100,207,(1) YES: A security vulnerability detected.
+214997,1,1,1,cwe_only,liblouis,['CWE-787'],compileTranslationTable.c,49196,106,114,220,(1) YES: A security vulnerability detected.
+215038,1,1,1,cwe_only,gst-plugins-good,['CWE-125'],gstflxdec.c,5721,106,130,236,(1) YES: A security vulnerability detected.
+215073,1,1,1,cwe_only,linux,['CWE-269'],cgroup-v1.c,503,106,104,210,(1) YES
+215103,1,1,1,cwe_only,mongo,['CWE-617'],None,9585,107,104,211,(1) YES: A security vulnerability detected.
+215142,1,1,1,cwe_only,open62541,['CWE-703'],check_securechannel.c,500,107,150,257,(1) YES
+215188,1,1,1,cwe_only,libmobi,['CWE-787'],None,683,106,114,220,(1) YES: A security vulnerability detected.
+215262,1,1,1,cwe_only,qemu,['CWE-835'],cadence_gem.c,6042,107,136,243,(1) YES
+215264,1,1,1,cwe_only,perl5,['CWE-120'],regcomp.c,81477,107,285,392,(1) YES
+215312,1,1,1,cwe_only,linux-2.6,['CWE-20'],None,1821,105,123,228,(1) YES: A security vulnerability detected.
+215374,1,1,1,cwe_only,linux-2.6,['CWE-189'],None,751,107,140,247,(1) YES: A security vulnerability detected.
+215391,1,1,1,cwe_only,linux-2.6,['CWE-20'],None,403,106,102,208,(1) YES
+215399,1,1,1,cwe_only,linux-2.6,['CWE-119'],None,592,106,121,227,(1) YES
+215400,1,1,1,cwe_only,linux-2.6,['CWE-20'],None,2869,105,134,239,(1) YES
+215549,1,1,1,cwe_only,gzip,['CWE-189'],None,4759,106,122,228,(1) YES: A security vulnerability detected.
+215921,1,1,1,cwe_only,grep,['CWE-119'],None,2320,107,103,210,(1) YES
+215948,1,1,1,cwe_only,nettle,['CWE-310'],None,1312,107,91,198,(1) YES
+216027,1,1,1,cwe_only,tar,['CWE-476'],None,3123,107,100,207,(1) YES: A security vulnerability detected.
+216126,1,1,1,cwe_only,openssl,['CWE-20'],None,1641,105,164,269,YES
+216202,1,1,1,cwe_only,libssh,['CWE-399'],None,2415,107,166,273,(1) YES: A security vulnerability detected.
+216515,1,1,1,cwe_only,openssl,['CWE-362'],None,2379,107,108,215,(1) YES: A security vulnerability detected.
+216637,1,1,1,cwe_only,guile,['CWE-275'],None,729,106,118,224,(1) YES: A security vulnerability detected.
+216654,1,1,1,cwe_only,core,['CWE-20'],None,4342,105,120,225,(1) YES: A security vulnerability detected.
+216701,1,1,1,cwe_only,libtiff,['CWE-770'],None,2050,106,140,246,(1) YES
+216726,1,1,1,cwe_only,openssl,['CWE-327'],None,3458,107,95,202,(1) YES
+216767,1,1,1,cwe_only,core,['CWE-835'],None,1865,107,92,199,(1) YES
+216800,1,1,1,cwe_only,core,['CWE-125'],None,330,107,101,208,(1) YES: A security vulnerability detected.
+216812,1,1,1,cwe_only,openssl,['CWE-476'],None,95,106,143,249,(1) YES: A security vulnerability detected.
+216861,1,1,1,cwe_only,openssl,['CWE-125'],None,10741,107,101,208,(1) YES: A security vulnerability detected.
+216903,1,1,1,cwe_only,server,['CWE-476'],None,3525,106,192,298,(1) YES: A security vulnerability detected.
+216906,1,1,1,cwe_only,server,['CWE-400'],None,155,106,163,269,(1) YES: A security vulnerability detected.
+216938,1,1,1,cwe_only,server,['CWE-416'],None,15070,107,125,232,(1) YES: A security vulnerability detected.
+216945,1,1,1,cwe_only,server,['CWE-617'],None,1828,106,141,247,(1) YES: A security vulnerability detected.
+216946,1,1,1,cwe_only,server,['CWE-416'],None,402,106,100,206,(1) YES: A security vulnerability detected.
+216965,1,1,1,cwe_only,server,['CWE-617'],None,5013,106,138,244,(1) YES: A security vulnerability detected.
+217176,1,1,1,cwe_only,monit,['CWE-79'],None,1566,105,152,257,(1) YES: A security vulnerability detected.
+217459,1,1,1,cwe_only,JUCE,['CWE-59'],None,2024,106,158,264,(1) YES: A security vulnerability detected.
+217547,1,1,1,cwe_only,libMeshb,['CWE-120'],None,6479,107,206,313,(1) YES: A security vulnerability detected.
+217551,1,1,1,cwe_only,elfspirit,['CWE-125'],None,37504,107,141,248,(1) YES
+217569,0,1,0,cwe_only,ImageMagick6,['CWE-704'],property.c,28274,107,155,262,(1) YES
+218785,0,1,0,cwe_only,ImageMagick6,['CWE-190'],psd.c,1718,107,123,230,(1) YES
+218852,0,1,0,cwe_only,tensorflow,['CWE-401'],immutable_executor_state.cc,6781,107,110,217,(1) YES
+218933,0,1,0,cwe_only,tensorflow,['CWE-476'],loader_util.cc,1491,107,100,207,(1) YES: A security vulnerability detected.
+219032,0,1,0,cwe_only,tensorflow,['CWE-617'],constant_folding.cc,2762,107,104,211,(1) YES: A security vulnerability detected.
+219912,0,1,0,cwe_only,gpac,['CWE-476'],hint_track.c,466,107,100,207,(1) YES: A security vulnerability detected.
+219931,0,1,0,cwe_only,tensorflow,['CWE-617'],constant_folding.cc,3008,107,138,245,(1) YES: A security vulnerability detected.
+219947,0,1,0,cwe_only,glewlwyd,['CWE-287'],webservice.c,9884,107,108,215,(1) YES
+220021,0,1,0,cwe_only,tensorflow,['CWE-190'],sparse_tensors_map_ops.cc,5527,107,123,230,(1) YES
+220100,0,1,0,cwe_only,linux,['CWE-909'],nfs4file.c,1686,107,125,232,(1) YES: A security vulnerability detected.
+220168,0,1,0,cwe_only,tensorflow,['CWE-401'],decode_image_op.cc,5125,107,103,210,(1) YES: A security vulnerability detected.
+220201,0,1,0,cwe_only,tensorflow,['CWE-125'],graph.cc,2328,107,101,208,(1) YES: A security vulnerability detected.
+220442,0,1,0,cwe_only,mruby,['CWE-476'],array.c,878,107,98,205,(1) YES: A security vulnerability detected.
+220449,0,1,0,cwe_only,tensorflow,['CWE-354'],conv_ops.cc,4232,107,127,234,(1) YES: A security vulnerability detected.
+220463,0,1,0,cwe_only,tensorflow,['CWE-476'],xla_platform_info.cc,2769,107,100,207,(1) YES: A security vulnerability detected.
+220804,0,1,0,cwe_only,tensorflow,['CWE-787'],count_ops.cc,2361,107,364,471,(1) YES: A security vulnerability detected.
+220841,0,1,0,cwe_only,tensorflow,['CWE-369'],common.h,2700,107,119,226,(1) YES
+220909,0,1,0,cwe_only,tensorflow,['CWE-617'],None,1185,107,138,245,(1) YES: A security vulnerability detected.
+220924,0,1,0,cwe_only,gpac,['CWE-476'],None,16655,107,98,205,(1) YES: A security vulnerability detected.
+221079,0,1,0,cwe_only,gpac,['CWE-120'],av_parsers.c,1731,107,330,437,(1) YES: A security vulnerability detected.
+221123,0,1,0,cwe_only,tensorflow,['CWE-416'],decode_image_op.cc,4663,107,102,209,(1) YES
+221160,0,1,0,cwe_only,gpac,['CWE-415'],descriptors.c,2707,107,103,210,(1) YES: A security vulnerability detected.
+221413,0,1,0,cwe_only,linux,['CWE-862'],None,1161,107,103,210,(1) YES
+221428,0,1,0,cwe_only,tensorflow,['CWE-617'],tensor.cc,1679,107,104,211,(1) YES: A security vulnerability detected.
+221631,0,1,0,cwe_only,tensorflow,['CWE-754'],tf_cpurt_symbolic_shape_optimization.cc,2739,107,126,233,(1) YES: A security vulnerability detected.
+221651,0,1,0,cwe_only,hermes,['CWE-843'],IREval.cpp,2034,107,109,216,(1) YES
+221678,0,1,0,cwe_only,e2guardian,['CWE-295'],Socket.cpp,3911,107,115,222,(1) YES
+222666,0,1,0,cwe_only,tmate-ssh-server,['CWE-362'],tmate-main.c,2025,107,108,215,(1) YES: A security vulnerability detected.
+222737,0,1,0,cwe_only,pjproject,['CWE-125'],rtcp_xr.c,7585,107,141,248,(1) YES
+222739,0,1,0,cwe_only,gpac,['CWE-476'],av_parsers.c,4475,107,100,207,(1) YES: A security vulnerability detected.
+222906,0,1,0,cwe_only,tensorflow,['CWE-787'],graph_properties.cc,601,107,364,471,(1) YES: A security vulnerability detected.
+222925,0,1,0,cwe_only,tensorflow,['CWE-617'],None,2055,107,138,245,(1) YES: A security vulnerability detected.
+223089,0,1,0,cwe_only,ImageMagick,['CWE-190'],pcl.c,8029,107,103,210,(1) YES
+223368,0,1,0,cwe_only,pcre2,['CWE-125'],pcre2_jit_compile.c,22737,107,101,208,(1) YES: A security vulnerability detected.
+223728,0,1,0,cwe_only,tensorflow,['CWE-476'],constant_folding.cc,4724,107,100,207,(1) YES: A security vulnerability detected.
+224153,0,1,0,cwe_only,tensorflow,['CWE-908'],assign_op.h,3946,107,156,263,(1) YES
+224154,0,1,0,cwe_only,mruby,['CWE-476'],None,1318,107,100,207,(1) YES: A security vulnerability detected.
+224181,0,1,0,cwe_only,tensorflow,['CWE-843'],map_stage_op.cc,1181,107,98,205,(1) YES
+224192,0,1,0,cwe_only,mruby,['CWE-125'],codegen.c,3896,107,101,208,(1) YES: A security vulnerability detected.
+224208,0,1,0,cwe_only,uWebSockets,['CWE-787'],TopicTree.h,2571,107,364,471,(1) YES: A security vulnerability detected.
+224277,0,1,0,cwe_only,flatpak,['CWE-20'],flatpak-run.c,10472,106,98,204,(1) YES: A security vulnerability detected.
+224281,0,1,0,cwe_only,squid,['CWE-400'],gopher.cc,11400,107,100,207,(1) YES
+224472,0,1,0,cwe_only,gpac,['CWE-415'],load_text.c,1840,107,100,207,(1) YES
+224570,0,1,0,cwe_only,tensorflow,['CWE-843'],common_shape_fns.cc,3248,107,98,205,(1) YES
+224728,0,1,0,cwe_only,gpac,['CWE-415'],box_code_meta.c,2479,107,403,510,(1) YES
+224862,0,1,0,cwe_only,tensorflow,['CWE-190'],sparse_dense_binary_op_shared.cc,6906,107,113,220,(1) YES: A security vulnerability detected.
+224891,0,1,0,cwe_only,tensorflow,['CWE-125'],fractional_avg_pool_op.cc,7747,107,101,208,(1) YES: A security vulnerability detected.
+224964,0,1,0,cwe_only,flatpak,['CWE-276'],flatpak-dir.c,3627,107,90,197,(1) YES
+225062,0,1,0,cwe_only,postgres,['CWE-522'],fe-connect.c,47132,107,111,218,(1) YES: A security vulnerability detected.
+225086,0,1,0,cwe_only,tensorflow,['CWE-617'],op_def_util.cc,722,107,94,201,(1) YES: A security vulnerability detected.
+225125,0,1,0,cwe_only,tensorflow,['CWE-190'],string_ngrams_op.cc,5193,107,113,220,(1) YES: A security vulnerability detected.
+225383,0,1,0,cwe_only,v4l2loopback,['CWE-134'],v4l2loopback.c,1518,107,102,209,(1) YES: A security vulnerability detected.
+225473,0,1,0,cwe_only,tensorflow,['CWE-476'],mutable_graph_view.cc,508,107,157,264,(1) YES: A security vulnerability detected.
+225547,0,1,0,cwe_only,tensorflow,['CWE-190'],common.c,318,107,123,230,(1) YES
+225552,0,1,0,cwe_only,tensorflow,['CWE-190'],common.c,263,107,123,230,(1) YES
+225563,0,1,0,cwe_only,tensorflow,['CWE-369'],fractional_max_pool_op.cc,5009,107,149,256,(1) YES: A security vulnerability detected.
+225566,0,1,0,cwe_only,ImageMagick6,['CWE-190'],pcl.c,8015,107,138,245,(1) YES
+226029,0,1,0,cwe_only,gpac,['CWE-476'],box_code_base.c,279,107,100,207,(1) YES: A security vulnerability detected.
+226433,0,1,0,cwe_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,3181,107,98,205,(1) YES: A security vulnerability detected.
+227022,0,1,0,cwe_only,weechat,['CWE-476'],irc-protocol.c,3216,107,100,207,(1) YES: A security vulnerability detected.
+228563,0,1,0,cwe_only,hhvm,['CWE-119'],zend-string.cpp,3598,107,151,258,(1) YES: A security vulnerability detected.
+229165,0,1,0,cwe_only,qemu,['CWE-787'],virtio-serial-bus.c,486,107,282,389,(1) YES: A security vulnerability detected.
+229337,0,1,0,cwe_only,tensorflow,['CWE-476'],execute.cc,1966,107,157,264,(1) YES: A security vulnerability detected.
+230147,0,1,0,cwe_only,glewlwyd,['CWE-787'],webauthn.c,7404,107,282,389,(1) YES: A security vulnerability detected.
+230302,0,1,0,cwe_only,njs,['CWE-703'],njs_array.c,4486,107,102,209,(1) YES: A security vulnerability detected.
+230394,0,1,0,cwe_only,pjproject,['CWE-703'],xml.c,3343,107,118,225,(1) YES: A security vulnerability detected.
+231012,0,1,0,cwe_only,mruby,['CWE-703'],vm.c,51202,107,118,225,(1) YES: A security vulnerability detected.
+231048,0,0,1,cwe_only,FreeRTOS-Kernel,['CWE-200'],queue.c,2940,107,315,422,(2) NO: No security vulnerability.
+231710,0,1,0,cwe_only,mvfst,['CWE-703'],ServerStateMachine.cpp,3434,107,102,209,(1) YES: A security vulnerability detected.
+232287,0,1,0,cwe_only,libjpeg,['CWE-703'],None,5449,107,118,225,(1) YES: A security vulnerability detected.
+232289,0,1,0,cwe_only,libjpeg,['CWE-703'],None,6336,107,102,209,(1) YES: A security vulnerability detected.
+232329,0,1,0,cwe_only,gpac,['CWE-476'],None,15893,107,98,205,(1) YES: A security vulnerability detected.
+232405,0,1,0,cwe_only,tensorflow,['CWE-476'],sparse_tensor_slice_dataset_op.cc,2915,107,98,205,(1) YES: A security vulnerability detected.
+232839,0,1,0,cwe_only,tensorflow,['CWE-703'],quantile_ops.cc,1205,107,118,225,(1) YES: A security vulnerability detected.
+233862,0,1,0,cwe_only,deark,['CWE-369'],fmtutil.c,1471,107,119,226,(1) YES
+233867,0,1,0,cwe_only,php-src,['CWE-476'],wddx.c,3633,107,98,205,(1) YES: A security vulnerability detected.
+234731,0,1,0,cwe_only,linux,['CWE-703'],volumes.c,4213,107,208,315,(1) YES: A security vulnerability detected.
+234875,0,1,0,cwe_only,ImageMagick,['CWE-125'],png.c,79225,107,141,248,(1) YES
+235642,0,1,0,cwe_only,pjproject,['CWE-787'],dns.c,1097,107,282,389,(1) YES: A security vulnerability detected.
+235765,0,1,0,cwe_only,tensorflow,['CWE-787'],edit_distance_op.cc,7660,107,364,471,(1) YES: A security vulnerability detected.
+236125,0,1,0,cwe_only,gpac,['CWE-703'],box_code_3gpp.c,339,107,118,225,(1) YES: A security vulnerability detected.
+237885,0,1,0,cwe_only,lsquic,['CWE-269'],None,1305,107,104,211,(1) YES: A security vulnerability detected.
+238322,0,1,0,cwe_only,barebox,['CWE-200'],digest.c,305,107,313,420,(1) YES
+238803,0,1,0,cwe_only,vim,['CWE-416'],search.c,18162,107,102,209,(1) YES
+240276,0,1,0,cwe_only,vim,['CWE-787'],register.c,803,107,282,389,(1) YES: A security vulnerability detected.
+240595,0,1,0,cwe_only,tensorflow,['CWE-369'],resource_variable_ops.cc,3658,107,127,234,(1) YES: A security vulnerability detected.
+241040,0,1,0,cwe_only,booth,['CWE-284'],main.c,1025,107,139,246,(1) YES: A security vulnerability detected.
+241311,0,1,0,cwe_only,mruby,['CWE-787'],None,273,107,364,471,(1) YES: A security vulnerability detected.
+241369,0,1,0,cwe_only,tensorflow,['CWE-354'],matrix_solve_op.cc,10312,107,127,234,(1) YES: A security vulnerability detected.
+242619,0,1,0,cwe_only,tensorflow,['CWE-703'],stage_op.cc,517,107,118,225,(1) YES: A security vulnerability detected.
+242637,0,1,0,cwe_only,gpac,['CWE-703'],isoffin_read.c,12031,107,208,315,(1) YES: A security vulnerability detected.
+242899,0,1,0,cwe_only,tensorflow,['CWE-125'],None,2578,107,101,208,(1) YES: A security vulnerability detected.
+242926,0,1,0,cwe_only,tensorflow,['CWE-20'],sparse_tensor_dense_add_op.cc,2303,106,89,195,(1) YES
+245140,0,1,0,cwe_only,tensorflow,['CWE-703'],sdca_internal.cc,4067,107,102,209,(1) YES: A security vulnerability detected.
+245434,0,1,0,cwe_only,gpac,['CWE-703'],isom_hinter.c,6039,107,102,209,(1) YES: A security vulnerability detected.
+245921,0,1,0,cwe_only,tensorflow,['CWE-476'],session_ops.cc,1071,107,98,205,(1) YES: A security vulnerability detected.
+246207,0,1,0,cwe_only,tensorflow,['CWE-125'],count_ops.cc,420,107,101,208,(1) YES: A security vulnerability detected.
+246237,0,1,0,cwe_only,furnace,['CWE-703'],pattern.cpp,12980,107,102,209,(1) YES: A security vulnerability detected.
+246495,0,1,0,cwe_only,tensorflow,['CWE-369'],div.cc,1915,107,119,226,(1) YES
+246693,0,1,0,cwe_only,gpac,['CWE-787'],None,1877,107,282,389,(1) YES: A security vulnerability detected.
+247290,0,1,0,cwe_only,tensorflow,['CWE-703'],mkl_requantization_range_per_channel_op.cc,3983,107,102,209,(1) YES: A security vulnerability detected.
+247337,0,1,0,cwe_only,rpm,['CWE-284'],rpmpgp.c,1625,107,102,209,(1) YES
+247550,0,1,0,cwe_only,envoy,['CWE-362'],default_validator.cc,2972,107,108,215,(1) YES: A security vulnerability detected.
+247755,0,1,0,cwe_only,cryptopp,['CWE-399'],rw.cpp,1215,107,185,292,(1) YES: A security vulnerability detected.
+249510,0,1,0,cwe_only,libjxl,['CWE-369'],codec_apng.cc,7435,107,127,234,(1) YES: A security vulnerability detected.
+249989,0,1,0,cwe_only,gpac,['CWE-476'],isom_store.c,2973,107,98,205,(1) YES: A security vulnerability detected.
+250692,0,1,0,cwe_only,drogon,['CWE-552'],None,959,107,109,216,(1) YES: A security vulnerability detected.
+251946,0,1,0,cwe_only,tensorflow,['CWE-369'],optimized_ops.h,4315,107,119,226,(1) YES
+252437,0,1,0,cwe_only,tinyexr,['CWE-20'],tinyexr.h,10240,106,89,195,(1) YES
+253515,0,1,0,cwe_only,mruby,['CWE-125'],None,3886,107,101,208,(1) YES: A security vulnerability detected.
+253699,0,1,0,cwe_only,linux,['CWE-703'],ccp-ops.c,6915,107,102,209,(1) YES: A security vulnerability detected.
+253970,0,1,0,cwe_only,tensorflow,['CWE-476'],quantize_op.cc,4946,107,100,207,(1) YES: A security vulnerability detected.
+255032,0,1,0,cwe_only,FFmpeg,['CWE-252'],None,1611,107,113,220,(1) YES: A security vulnerability detected.
+255574,0,1,0,cwe_only,njs,['CWE-787'],njs_module.c,1139,107,282,389,(1) YES: A security vulnerability detected.
+255787,0,1,0,cwe_only,tensorflow,['CWE-20'],mkl_requantize_per_channel_op.cc,5427,106,89,195,(1) YES
+255807,0,1,0,cwe_only,tensorflow,['CWE-908'],None,10123,107,156,263,(1) YES
+255932,0,1,0,cwe_only,tensorflow,['CWE-369'],None,3318,107,119,226,(1) YES
+256138,0,1,0,cwe_only,tensorflow,['CWE-125'],sparse_matmul_op.cc,4710,107,101,208,(1) YES: A security vulnerability detected.
+256441,0,1,0,cwe_only,pjproject,['CWE-200'],rtcp_fb.c,1449,107,313,420,(1) YES
+256587,0,1,0,cwe_only,tensorflow,['CWE-703'],session_ops.cc,552,107,102,209,(1) YES: A security vulnerability detected.
+256947,0,1,0,cwe_only,tensorflow,['CWE-703'],einsum_op_impl.h,2375,107,118,225,(1) YES: A security vulnerability detected.
+257461,0,1,0,cwe_only,tensorflow,['CWE-703'],auto_parallel.cc,5002,107,102,209,(1) YES: A security vulnerability detected.
+258082,0,1,0,cwe_only,tensorflow,['CWE-369'],reverse_op.cc,1900,107,127,234,(1) YES: A security vulnerability detected.
+259081,0,1,0,cwe_only,tensorflow,['CWE-476'],save_restore_tensor.cc,3979,107,157,264,(1) YES: A security vulnerability detected.
+259515,0,1,0,cwe_only,gpac,['CWE-416'],field_decode.c,3091,107,99,206,(1) YES: A security vulnerability detected.
+259619,0,,,cwe_only,libjpeg,['CWE-787'],hierarchicalbitmaprequester.cpp,1217,107,512,619,producingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducingproducing
+259732,0,1,0,cwe_only,tensorflow,['CWE-703'],quantize_and_dequantize_op.cc,3595,107,118,225,(1) YES: A security vulnerability detected.
+261220,0,1,0,cwe_only,wolfMQTT,['CWE-787'],mqtt_client.c,7575,107,282,389,(1) YES: A security vulnerability detected.
+261769,0,1,0,cwe_only,njs,['CWE-416'],njs_function.c,1410,107,125,232,(1) YES: A security vulnerability detected.
+262721,0,1,0,cwe_only,njs,['CWE-703'],njs_iterator.c,4564,107,118,225,(1) YES: A security vulnerability detected.
+262803,0,1,0,cwe_only,tensorflow,['CWE-125'],ragged_tensor_to_variant_op.cc,2419,107,141,248,(1) YES
+263382,0,1,0,cwe_only,tensorflow,['CWE-703'],array_ops.cc,2266,107,118,225,(1) YES: A security vulnerability detected.
+263521,0,1,0,cwe_only,tensorflow,['CWE-125'],gather_nd.cc,1424,107,141,248,(1) YES
+264367,0,1,0,cwe_only,tensorflow,['CWE-345'],tensor_slice_reader.h,2392,107,190,297,(1) YES
+264657,0,1,0,cwe_only,gpac,['CWE-416'],memory_decoder.c,1309,107,102,209,(1) YES
+264715,0,1,0,cwe_only,tensorflow,['CWE-824'],constant_folding.cc,2427,107,106,213,(1) YES: A security vulnerability detected.
+265432,0,1,0,cwe_only,tensorflow,['CWE-703'],gather.cc,1006,107,118,225,(1) YES: A security vulnerability detected.
+267357,0,1,0,cwe_only,crun,['CWE-276'],exec.c,3362,107,90,197,(1) YES
+267917,0,1,0,cwe_only,tensorflow,['CWE-703'],unsorted_segment_join_op.cc,2873,107,102,209,(1) YES: A security vulnerability detected.
+267985,0,1,0,cwe_only,radare2,['CWE-125'],bfile.c,7883,107,101,208,(1) YES: A security vulnerability detected.
+268104,0,1,0,cwe_only,tensorflow,['CWE-703'],load_and_remap_matrix_op.cc,11370,107,118,225,(1) YES: A security vulnerability detected.
+269323,0,1,0,cwe_only,tensorflow,['CWE-125'],sparse_reduce_op.cc,3684,107,101,208,(1) YES: A security vulnerability detected.
+269330,0,1,0,cwe_only,tensorflow,['CWE-476'],fractional_avg_pool_op.cc,7257,107,98,205,(1) YES: A security vulnerability detected.
+269941,0,1,0,cwe_only,ImageMagick,['CWE-125'],mat.c,16370,107,171,278,(1) YES: A security vulnerability detected.
+270119,0,1,0,cwe_only,tensorflow,['CWE-369'],kernel_util.cc,278,107,119,226,(1) YES
+270767,0,1,0,cwe_only,barebox,['CWE-200'],password.c,1388,107,284,391,(1) YES: A security vulnerability detected.
+270922,0,1,0,cwe_only,tensorflow,['CWE-369'],ragged_gather_op.cc,1859,107,127,234,(1) YES: A security vulnerability detected.
+271526,0,1,0,cwe_only,tensorflow,['CWE-369'],reshape_util.cc,4881,107,127,234,(1) YES: A security vulnerability detected.
+273091,0,1,0,cwe_only,owntone-server,['CWE-416'],misc.c,2738,107,125,232,(1) YES: A security vulnerability detected.
+273407,0,1,0,cwe_only,tensorflow,['CWE-703'],lstm_ops.cc,8690,107,208,315,(1) YES: A security vulnerability detected.
+273880,0,1,0,cwe_only,uftpd,['CWE-787'],ftpcmd.c,905,107,282,389,(1) YES: A security vulnerability detected.
+274773,0,1,0,cwe_only,mruby,['CWE-288'],vm.c,50746,107,109,216,(1) YES
+274814,0,1,0,cwe_only,pjproject,['CWE-787'],stun_simple.c,1988,107,364,471,(1) YES: A security vulnerability detected.
+274865,0,1,0,cwe_only,tensorflow,['CWE-703'],comparisons.cc,1608,107,150,257,(1) YES
+275525,0,1,0,cwe_only,njs,['CWE-416'],njs_async.c,2071,107,125,232,(1) YES: A security vulnerability detected.
+275987,0,1,0,cwe_only,micro-ecc,['CWE-415'],uECC.c,3068,107,403,510,(1) YES
+276447,0,1,0,cwe_only,tensorflow,['CWE-416'],resource_ops.cc,1233,107,125,232,(1) YES: A security vulnerability detected.
+276921,0,1,0,cwe_only,u-boot,['CWE-787'],i2c.c,2212,107,364,471,(1) YES: A security vulnerability detected.
+276993,0,1,0,cwe_only,mruby,['CWE-703'],fiber.c,1845,107,102,209,(1) YES: A security vulnerability detected.
+277489,0,1,0,cwe_only,libmobi,['CWE-787'],index.c,2092,107,364,471,(1) YES: A security vulnerability detected.
+279948,0,1,0,cwe_only,vim,['CWE-787'],ex_cmds.c,1360,107,364,471,(1) YES: A security vulnerability detected.
+281119,0,1,0,cwe_only,ipsec,['CWE-125'],xfrm_policy.c,1566,107,101,208,(1) YES: A security vulnerability detected.
+281247,0,1,0,cwe_only,MilkyTracker,['CWE-787'],LoaderS3M.cpp,8590,107,282,389,(1) YES: A security vulnerability detected.
+281662,0,1,0,cwe_only,LibRaw,['CWE-189'],None,1419,107,109,216,(1) YES: A security vulnerability detected.
+282862,0,1,0,cwe_only,linux,['CWE-401'],rsi_91x_mgmt.c,660,107,110,217,(1) YES
+282984,0,1,0,cwe_only,LuaJIT,['CWE-125'],lj_err.c,1412,107,141,248,(1) YES
+285157,0,1,0,cwe_only,radare2,['CWE-125'],ne.c,2155,107,101,208,(1) YES: A security vulnerability detected.
+286739,0,1,0,cwe_only,swtpm,['CWE-125'],swtpm_nvstore.c,1391,107,171,278,(1) YES: A security vulnerability detected.
+289293,0,1,0,cwe_only,linux,['CWE-362'],None,2969,107,108,215,(1) YES: A security vulnerability detected.
+291761,0,1,0,cwe_only,linux,['CWE-415'],rtrs-clt.c,225,107,97,204,(1) YES: A security vulnerability detected.
+292205,0,1,0,cwe_only,hexchat,['CWE-22'],inbound.c,1809,106,106,212,(1) YES
+292609,0,1,0,cwe_only,puma,['CWE-444'],http11_parser.c,19424,107,139,246,(1) YES: A security vulnerability detected.
+293496,0,1,0,cwe_only,chafa,['CWE-476'],libnsgif.c,15337,107,123,230,(1) YES: A security vulnerability detected.
+293522,0,1,0,cwe_only,pjproject,['CWE-125'],None,393,107,101,208,(1) YES: A security vulnerability detected.
+293750,0,1,0,cwe_only,radare2,['CWE-476'],bin_xnu_kernelcache.c,1681,107,114,221,(1) YES: A security vulnerability detected.
+293939,0,1,0,cwe_only,vim,['CWE-787'],indent.c,5668,107,254,361,(1) YES: A security vulnerability detected.
+295887,0,1,0,cwe_only,MilkyTracker,['CWE-787'],None,19161,107,282,389,(1) YES: A security vulnerability detected.
+296226,0,1,0,cwe_only,vim,['CWE-416'],ex_cmds.c,31465,107,125,232,(1) YES: A security vulnerability detected.
+299319,0,1,0,cwe_only,ImageMagick,['CWE-787'],mat.c,6690,107,282,389,(1) YES: A security vulnerability detected.
+299905,0,1,0,cwe_only,exim,['CWE-264'],readconf.c,13109,107,134,241,(1) YES
+299976,0,1,0,cwe_only,linux,['CWE-200'],hid-elo.c,895,107,313,420,(1) YES
+300731,0,1,0,cwe_only,linux,['CWE-200'],socket.c,3487,107,284,391,(1) YES: A security vulnerability detected.
+301016,0,1,0,cwe_only,ghostpdl,['CWE-787'],gdevpcx.c,1184,107,282,389,(1) YES: A security vulnerability detected.
+301429,0,1,0,cwe_only,samba,['CWE-665'],None,8880,107,198,305,(1) YES
+301481,0,1,0,cwe_only,vim,['CWE-787'],spellsuggest.c,39439,107,254,361,(1) YES: A security vulnerability detected.
+302095,0,1,0,cwe_only,radare2,['CWE-476'],None,786,107,98,205,(1) YES: A security vulnerability detected.
+308163,0,1,0,cwe_only,linux,['CWE-401'],fastrpc.c,686,107,117,224,(1) YES: A security vulnerability detected.
+309831,0,1,0,cwe_only,ncurses,['CWE-787'],None,1187,107,282,389,(1) YES: A security vulnerability detected.
+312399,0,1,0,cwe_only,vim,['CWE-703'],quickfix.c,1303,107,102,209,(1) YES: A security vulnerability detected.
+313134,0,1,0,cwe_only,libvirt,['CWE-212'],virstoragetest.c,1385,107,116,223,(1) YES: A security vulnerability detected.
+313850,0,1,0,cwe_only,vim,['CWE-787'],normal.c,996,107,364,471,(1) YES: A security vulnerability detected.
+314536,0,1,0,cwe_only,pjproject,['CWE-787'],sdp.c,1617,107,364,471,(1) YES: A security vulnerability detected.
+317271,0,1,0,cwe_only,linux,['CWE-416'],None,203,107,102,209,(1) YES
+318099,0,1,0,cwe_only,wireless-drivers,['CWE-415'],rsi_91x_usb.c,1400,107,103,210,(1) YES: A security vulnerability detected.
+318781,0,1,0,cwe_only,gerbv,['CWE-787'],drill.c,7886,107,364,471,(1) YES: A security vulnerability detected.
+318962,0,1,0,cwe_only,vim,['CWE-787'],testing.c,763,107,282,389,(1) YES: A security vulnerability detected.
+319422,0,1,0,cwe_only,ImageMagick6,['CWE-787'],cin.c,15774,107,364,471,(1) YES: A security vulnerability detected.
+325821,0,1,0,cwe_only,gnutls,['CWE-310'],gnutls_handshake.c,4790,107,106,213,(1) YES: A security vulnerability detected.
+326119,0,1,0,cwe_only,vim,['CWE-416'],regexp_bt.c,34649,107,125,232,(1) YES: A security vulnerability detected.
+326629,0,1,0,cwe_only,libarchive,['CWE-59'],None,2229,106,159,265,(1) YES: A security vulnerability detected.
+326914,0,1,0,cwe_only,linux,['CWE-476'],vidtv_s302m.c,1317,107,98,205,(1) YES: A security vulnerability detected.
+328807,0,1,0,cwe_only,vim,['CWE-787'],register.c,20005,107,282,389,(1) YES: A security vulnerability detected.
+328836,0,1,0,cwe_only,radare2,['CWE-125'],class.c,1167,107,141,248,(1) YES
+329925,0,1,0,cwe_only,cairo,['CWE-787'],None,2984,107,282,389,(1) YES: A security vulnerability detected.
+331760,0,1,0,cwe_only,qtbase,['CWE-787'],qpaintengineex.cpp,9188,107,364,471,(1) YES: A security vulnerability detected.
+332375,0,1,0,cwe_only,vim,['CWE-787'],None,3119,107,364,471,(1) YES: A security vulnerability detected.
+333041,0,1,0,cwe_only,vim,['CWE-122'],None,1239,107,102,209,(1) YES: A security vulnerability detected.
+333503,0,1,0,cwe_only,php-src,['CWE-119'],gd_interpolation.c,1008,107,202,309,(1) YES: A security vulnerability detected.
+336106,0,1,0,cwe_only,net,['CWE-125'],ip6_gre.c,2085,107,101,208,(1) YES: A security vulnerability detected.
+336484,0,1,0,cwe_only,qemu,['CWE-369'],None,1354,107,119,226,(1) YES
+336807,0,1,0,cwe_only,ghostpdl,['CWE-787'],gdevlprn.c,920,107,364,471,(1) YES: A security vulnerability detected.
+337374,0,1,0,cwe_only,vim,['CWE-476'],buffer.c,602,107,98,205,(1) YES: A security vulnerability detected.
+337848,0,1,0,cwe_only,linux,['CWE-704'],sm_make_chunk.c,1244,107,157,264,(1) YES: A security vulnerability detected.
+338747,0,1,0,cwe_only,ImageMagick,['CWE-772'],tga.c,13644,107,99,206,(1) YES: A security vulnerability detected.
+339712,0,1,0,cwe_only,php-src,['CWE-119'],zend_strtod.c,562,107,202,309,(1) YES: A security vulnerability detected.
+341817,0,1,0,cwe_only,ghostpdl,['CWE-787'],zstring.c,1279,107,364,471,(1) YES: A security vulnerability detected.
+343158,0,1,0,cwe_only,linux,['CWE-787'],esp6.c,1975,107,282,389,(1) YES: A security vulnerability detected.
+343175,0,1,0,cwe_only,linux,['CWE-787'],esp4.c,2029,107,364,471,(1) YES: A security vulnerability detected.
+343298,0,1,0,cwe_only,pure-ftpd,['CWE-434'],ftpd.c,7569,107,173,280,(1) YES: A security vulnerability detected.
+344242,0,1,0,cwe_only,lua,['CWE-787'],None,531,107,254,361,(1) YES: A security vulnerability detected.
+345131,0,1,0,cwe_only,linux,['CWE-703'],pxa3xx-gcu.c,1585,107,150,257,(1) YES
+346415,0,1,0,cwe_only,vim,['CWE-703'],scriptfile.c,2775,107,102,209,(1) YES: A security vulnerability detected.
+349251,0,1,0,cwe_only,squashfs-tools,['CWE-200'],None,3267,107,284,391,(1) YES: A security vulnerability detected.
+349259,0,1,0,cwe_only,squashfs-tools,['CWE-200'],None,3559,107,104,211,(1) YES: A security vulnerability detected.
+349259,0,1,0,cwe_only,squashfs-tools,['CWE-200'],None,3559,107,284,391,(1) YES: A security vulnerability detected.
+349528,0,1,0,cwe_only,linux,['CWE-772'],virtio_bt.c,385,107,99,206,(1) YES: A security vulnerability detected.
+349888,0,1,0,cwe_only,net,['CWE-787'],hw_atl_utils.c,1284,107,364,471,(1) YES: A security vulnerability detected.
+351182,0,1,0,cwe_only,shapelib,['CWE-415'],shpsort.c,719,107,103,210,(1) YES: A security vulnerability detected.
+353015,0,1,0,cwe_only,openldap,['CWE-617'],schema_init.c,3647,107,104,211,(1) YES: A security vulnerability detected.
+353124,0,1,0,cwe_only,poppler,['CWE-369'],None,6992,107,119,226,(1) YES
+355014,0,1,0,cwe_only,pjproject,['CWE-125'],None,784,107,171,278,(1) YES: A security vulnerability detected.
+355649,0,1,0,cwe_only,vim,['CWE-787'],eval.c,6349,107,364,471,(1) YES: A security vulnerability detected.
+356170,0,1,0,cwe_only,firejail,['CWE-94'],None,970,106,114,220,(1) YES: A security vulnerability detected.
+357668,0,1,0,cwe_only,squirrel,['CWE-125'],sqclass.cpp,1893,107,171,278,(1) YES: A security vulnerability detected.
+359206,0,1,0,cwe_only,bpf,['CWE-787'],ringbuf.c,1164,107,364,471,(1) YES: A security vulnerability detected.
+359365,0,1,0,cwe_only,frr,['CWE-125'],bgp_packet.c,3211,107,141,248,(1) YES
+359843,0,1,0,cwe_only,ImageMagick,['CWE-617'],operation.c,16656,107,138,245,(1) YES: A security vulnerability detected.
+360829,0,1,0,cwe_only,linux,['CWE-193'],cancel.c,637,107,119,226,(1) YES: A security vulnerability detected.
+361298,0,1,0,cwe_only,admesh,['CWE-125'],connect.c,650,107,138,245,YES
+361303,0,1,0,cwe_only,admesh,['CWE-125'],connect.c,2431,107,141,248,(1) YES
+361755,0,1,0,cwe_only,linux,['CWE-416'],em28xx-cards.c,8029,107,102,209,(1) YES
+365760,0,1,0,cwe_only,linux,['CWE-703'],None,827,107,177,284,(1) YES: A security vulnerability detected.
+366223,0,1,0,cwe_only,linux,['CWE-200'],namespace.c,637,107,313,420,(1) YES
+369215,0,1,0,cwe_only,linux,['CWE-94'],io_uring.c,1218,106,111,217,(1) YES
+371185,0,1,0,cwe_only,rizin,['CWE-787'],marshal.c,1209,107,254,361,(1) YES: A security vulnerability detected.
+371226,0,1,0,cwe_only,linux,['CWE-834'],fuse_i.h,137,107,104,211,(1) YES: A security vulnerability detected.
+372352,0,1,0,cwe_only,Singular,['CWE-269'],None,1744,107,100,207,(1) YES: A security vulnerability detected.
+373535,0,1,0,cwe_only,ovs,['CWE-401'],ipf.c,1051,107,99,206,(1) YES: A security vulnerability detected.
+376350,0,0,1,cwe_only,evolution-data-server,['CWE-200'],None,583,107,323,430,(2) NO: No security vulnerability.
+376678,0,1,0,cwe_only,gimp,['CWE-125'],file-gbr.c,7880,107,141,248,(1) YES
+376682,0,1,0,cwe_only,tigervnc,['CWE-672'],None,3002,107,129,236,(1) YES: A security vulnerability detected.
+379334,0,1,0,cwe_only,vim,['CWE-787'],ex_docmd.c,9168,107,254,361,(1) YES: A security vulnerability detected.
+379671,0,1,0,cwe_only,radare2,['CWE-416'],None,5476,107,99,206,(1) YES: A security vulnerability detected.
+380955,0,1,0,cwe_only,vim,['CWE-787'],edit.c,10110,107,254,361,(1) YES: A security vulnerability detected.
+382797,0,1,0,cwe_only,php-src,['CWE-119'],gd_io_dp.c,400,107,170,277,(1) YES: A security vulnerability detected.
+383316,0,1,0,cwe_only,php-src,['CWE-119'],None,1467,107,103,210,(1) YES
+384124,0,1,0,cwe_only,raptor,['CWE-787'],raptor_xml_writer.c,8301,107,254,361,(1) YES: A security vulnerability detected.
+384201,0,1,0,cwe_only,linux,['CWE-703'],nf_tables_api.c,1517,107,208,315,(1) YES: A security vulnerability detected.
+384677,0,1,0,cwe_only,nbdkit,['CWE-924'],protocol-handshake-newstyle.c,19005,107,113,220,(1) YES: A security vulnerability detected.
+384767,0,1,0,cwe_only,vim,['CWE-122'],move.c,6183,107,102,209,(1) YES: A security vulnerability detected.
+384803,0,1,0,cwe_only,vim,['CWE-703'],filepath.c,5340,107,102,209,(1) YES: A security vulnerability detected.
+386565,0,1,0,cwe_only,qcad,['CWE-191'],dl_dxf.cpp,1296,107,144,251,(1) YES: A security vulnerability detected.
+386750,0,1,0,cwe_only,linux,['CWE-476'],inode.c,2081,107,100,207,(1) YES: A security vulnerability detected.
+387149,0,1,0,cwe_only,ImageMagick,['CWE-125'],quantize.c,5182,107,171,278,(1) YES: A security vulnerability detected.
+387593,0,1,0,cwe_only,linux,['CWE-125'],control.c,352,107,138,245,YES
+389676,0,1,0,cwe_only,vim,['CWE-125'],typval.c,3822,107,136,243,YES
+389760,0,1,0,cwe_only,jasper,['CWE-703'],jasper.c,4234,107,102,209,(1) YES: A security vulnerability detected.
+391627,0,1,0,cwe_only,linux,['CWE-120'],rpadlpar_sysfs.c,400,107,256,363,(1) YES: A security vulnerability detected.
+391628,0,1,0,cwe_only,linux,['CWE-120'],rpadlpar_sysfs.c,393,107,330,437,(1) YES: A security vulnerability detected.
+393528,0,1,0,cwe_only,squirrel,['CWE-703'],sqbaselib.cpp,650,107,208,315,(1) YES: A security vulnerability detected.
+397644,0,1,0,cwe_only,autotrace,['CWE-787'],input-bmp.c,10785,107,364,471,(1) YES: A security vulnerability detected.
+398518,0,0,1,cwe_only,rizin,['CWE-787'],dwarf.c,1498,107,410,517,(2) NO: No security vulnerability.
+400103,0,1,0,cwe_only,EternalTerminal,['CWE-362'],PipeSocketHandler.cpp,848,107,108,215,(1) YES: A security vulnerability detected.
+400109,0,1,0,cwe_only,EternalTerminal,['CWE-362'],UserTerminalRouter.cpp,275,107,108,215,(1) YES: A security vulnerability detected.
+400409,0,1,0,cwe_only,vim,['CWE-787'],edit.c,618,107,282,389,(1) YES: A security vulnerability detected.
+400735,0,1,0,cwe_only,linux,['CWE-284'],iov_iter.c,1005,107,102,209,(1) YES
+400743,0,1,0,cwe_only,linux,['CWE-284'],iov_iter.c,1080,107,107,214,(1) YES: A security vulnerability detected.
+400779,0,1,0,cwe_only,php-src,['CWE-200'],openssl.c,2044,107,284,391,(1) YES: A security vulnerability detected.
+401034,0,1,0,cwe_only,radare2,['CWE-703'],None,4229,107,102,209,(1) YES: A security vulnerability detected.
+401525,0,0,1,cwe_only,linux,['CWE-200'],timer.c,746,107,315,422,(2) NO: No security vulnerability.
+401579,0,1,0,cwe_only,linux,['CWE-200'],random.c,1766,107,103,210,(1) YES: A security vulnerability detected.
+404192,0,1,0,cwe_only,pcre2,['CWE-703'],pcre2_jit_compile.c,6323,107,208,315,(1) YES: A security vulnerability detected.
+405333,0,1,0,cwe_only,linux,['CWE-703'],xfrm_policy.c,954,107,208,315,(1) YES: A security vulnerability detected.
+405698,0,1,0,cwe_only,linux,['CWE-703'],xilinx_emaclite.c,2256,107,102,209,(1) YES: A security vulnerability detected.
+406206,0,1,0,cwe_only,util-linux,['CWE-200'],mount.c,7680,107,284,391,(1) YES: A security vulnerability detected.
+408968,0,1,0,cwe_only,vim,['CWE-787'],edit.c,2270,106,96,202,(1) YES: A security vulnerability detected.
+409515,0,1,0,cwe_only,vim,['CWE-787'],term.c,16039,107,357,464,(1) YES: A security vulnerability detected.
+411896,0,1,0,cwe_only,tor,['CWE-399'],routerparse.c,17737,106,114,220,(1) YES: A security vulnerability detected.
+411926,0,1,0,cwe_only,heimdal,['CWE-476'],None,31969,106,192,298,(1) YES: A security vulnerability detected.
+412117,0,1,0,cwe_only,unbound,['CWE-190'],dnscrypt.c,2728,107,123,230,(1) YES
+412190,0,1,0,cwe_only,vim,['CWE-787'],ex_getln.c,1586,107,364,471,(1) YES: A security vulnerability detected.
+412332,0,1,0,cwe_only,rizin,['CWE-415'],bin_qnx.c,144,106,92,198,(1) YES: A security vulnerability detected.
+413339,0,1,0,cwe_only,php-src,['CWE-416'],snmp.c,4687,106,100,206,(1) YES: A security vulnerability detected.
+413623,0,1,0,cwe_only,radare2,['CWE-416'],None,13253,106,96,202,(1) YES
+416366,0,1,0,cwe_only,vim,['CWE-416'],ex_getln.c,25536,106,100,206,(1) YES: A security vulnerability detected.
+417093,0,1,0,cwe_only,MilkyTracker,['CWE-416'],PlayerGeneric.cpp,251,106,96,202,(1) YES
+417472,0,1,0,cwe_only,libvirt,['CWE-119'],node_device_conf.c,636,107,202,309,(1) YES: A security vulnerability detected.
+418795,0,1,0,cwe_only,vim,['CWE-703'],mouse.c,22413,107,102,209,(1) YES: A security vulnerability detected.
+421378,0,1,0,cwe_only,mujs,['CWE-476'],jsdump.c,227,107,100,207,(1) YES: A security vulnerability detected.
+424522,0,1,0,cwe_only,FreeRDP,['CWE-190'],video_main.c,1645,107,104,211,(1) YES
+424969,0,1,0,cwe_only,linux,['CWE-476'],trans.c,5161,106,149,255,(1) YES
+427153,0,1,0,cwe_only,lua,['CWE-125'],lparser.c,530,106,103,209,(1) YES: A security vulnerability detected.
+427707,0,1,0,cwe_only,file,['CWE-787'],cdf.c,3963,107,282,389,(1) YES: A security vulnerability detected.
+430335,0,1,0,cwe_only,linux,['CWE-787'],seq_file.c,146,106,114,220,(1) YES: A security vulnerability detected.
+430380,0,1,0,cwe_only,linux,['CWE-362'],flow_netlink.c,1036,106,101,207,(1) YES: A security vulnerability detected.
+430470,0,1,0,cwe_only,squid,['CWE-400'],gopher.cc,11220,107,100,207,(1) YES
+431633,0,1,0,cwe_only,ImageMagick,['CWE-787'],cin.c,15822,107,282,389,(1) YES: A security vulnerability detected.
+432093,0,1,0,cwe_only,vim,['CWE-787'],spellfile.c,2227,107,254,361,(1) YES: A security vulnerability detected.
+432152,0,1,0,cwe_only,mongo,['CWE-617'],pipeline_d.cpp,10351,106,141,247,(1) YES: A security vulnerability detected.
+432247,0,1,0,cwe_only,unicorn,['CWE-476'],exec.c,406,106,149,255,(1) YES
+432346,0,1,0,cwe_only,qemu,['CWE-125'],i2c-ddc.c,179,107,141,248,(1) YES
+432351,0,1,0,cwe_only,dpdk,['CWE-703'],vhost_user.c,3099,107,102,209,(1) YES: A security vulnerability detected.
+432352,0,1,0,cwe_only,dpdk,['CWE-703'],vhost_user.c,3198,106,164,270,(1) YES: A security vulnerability detected.
+434093,0,1,0,cwe_only,vim,['CWE-416'],arglist.c,7674,107,102,209,(1) YES
+434902,0,1,0,cwe_only,ghostpdl,['CWE-119'],gxht_thresh.c,757,107,202,309,(1) YES: A security vulnerability detected.
+435409,0,1,0,cwe_only,ghostpdl,['CWE-120'],gdev3852.c,4557,106,134,240,(1) YES
+436066,0,1,0,cwe_only,linux,['CWE-125'],io_uring.c,2863,106,106,212,(1) YES
+436990,0,1,0,cwe_only,vim,['CWE-125'],indent.c,3868,107,171,278,(1) YES: A security vulnerability detected.
+437003,0,1,0,cwe_only,linux,['CWE-415'],mcba_usb.c,1579,107,103,210,(1) YES: A security vulnerability detected.
+437291,0,1,0,cwe_only,oniguruma,['CWE-125'],regcomp.c,4381,107,101,208,(1) YES: A security vulnerability detected.
+437671,0,0,1,cwe_only,radare2,['CWE-787'],bin_symbols.c,2630,107,424,531,(2) NO: No security vulnerability.
+437708,0,1,0,cwe_only,linux,['CWE-401'],cx23888-ir.c,1348,107,110,217,(1) YES
+438686,0,1,0,cwe_only,linux,['CWE-415'],virtio_rpmsg_bus.c,795,107,96,203,(1) YES: A security vulnerability detected.
+438876,0,1,0,cwe_only,linux,['CWE-416'],mkiss.c,702,107,125,232,(1) YES: A security vulnerability detected.
+439114,0,1,0,cwe_only,ImageMagick6,['CWE-401'],bmp.c,34604,107,103,210,(1) YES: A security vulnerability detected.
+439266,0,1,0,cwe_only,ImageMagick6,['CWE-835'],bmp.c,34707,107,92,199,(1) YES
+439495,0,1,0,cwe_only,squashfs-tools,['CWE-22'],None,3490,106,100,206,(1) YES
+439495,0,1,0,cwe_only,squashfs-tools,['CWE-22'],None,3490,106,174,280,(1) YES
+439500,0,1,0,cwe_only,squashfs-tools,['CWE-22'],None,3190,106,100,206,(1) YES
+440872,0,1,0,cwe_only,xserver,['CWE-863'],log.c,1248,107,94,201,(1) YES
+441822,0,1,0,cwe_only,xserver,['CWE-191'],xkbSwap.c,2401,106,144,250,(1) YES: A security vulnerability detected.
+442189,0,1,0,cwe_only,qemu,['CWE-835'],e1000.c,493,107,136,243,(1) YES
+442587,0,1,0,cwe_only,spice,['CWE-193'],memslot.c,1193,106,211,317,(1) YES: A security vulnerability detected.
+442815,0,1,0,cwe_only,curl,['CWE-125'],main.c,954,107,141,248,(1) YES
+442959,0,1,0,cwe_only,vim,['CWE-200'],drawscreen.c,3513,106,102,208,(1) YES: A security vulnerability detected.
+443152,0,1,0,cwe_only,linux,['CWE-476'],inode.c,960,107,124,231,(1) YES: A security vulnerability detected.
+443298,0,1,0,cwe_only,vim,['CWE-416'],ex_docmd.c,22967,107,102,209,(1) YES
+444900,0,1,0,cwe_only,cifs-utils,['CWE-20'],mount.cifs.c,3041,106,89,195,(1) YES
+445881,0,1,0,cwe_only,file-roller,['CWE-22'],None,1868,106,100,206,(1) YES
+445995,0,1,0,cwe_only,file-roller,['CWE-22'],None,7667,105,112,217,(1) YES: A security vulnerability detected.
+446058,0,1,0,cwe_only,libtiff,['CWE-787'],tif_lzw.c,5176,106,114,220,(1) YES: A security vulnerability detected.
+446096,0,1,0,cwe_only,linux,['CWE-416'],atusb.c,535,106,99,205,(1) YES: A security vulnerability detected.
+446279,0,1,0,cwe_only,libmobi,['CWE-125'],index.c,6806,106,106,212,(1) YES
+446416,0,1,0,cwe_only,rizin,['CWE-787'],dyldcache.c,2834,106,114,220,(1) YES: A security vulnerability detected.
+447053,0,1,0,cwe_only,exiv2,['CWE-125'],image.cpp,8454,107,141,248,(1) YES
+447231,0,1,0,cwe_only,php-src,['CWE-17'],apprentice.c,2818,106,218,324,(1) YES
+448562,0,1,0,cwe_only,frr,['CWE-125'],bgp_packet.c,3275,106,103,209,(1) YES: A security vulnerability detected.
+448584,0,1,0,cwe_only,gdk-pixbuf,['CWE-189'],io-xbm.c,3351,106,114,220,(1) YES: A security vulnerability detected.
+448912,0,1,0,cwe_only,zlib,['CWE-787'],inflate.c,26047,107,364,471,(1) YES: A security vulnerability detected.
+449294,0,1,0,cwe_only,vim,['CWE-122'],None,1349,107,101,208,(1) YES: A security vulnerability detected.
+449321,0,1,0,cwe_only,clamav-devel,['CWE-189'],sis.c,468,107,97,204,(1) YES: A security vulnerability detected.
+450764,0,1,0,cwe_only,vim,['CWE-416'],regexp.c,1757,107,100,207,(1) YES: A security vulnerability detected.
+450812,0,1,0,cwe_only,gnulib,['CWE-119'],glob.c,28169,107,202,309,(1) YES: A security vulnerability detected.
+450830,0,1,0,cwe_only,linux,['CWE-120'],se.c,1715,107,206,313,(1) YES: A security vulnerability detected.
+451731,0,1,0,cwe_only,ntp,['CWE-20'],ntpq.c,2436,106,89,195,(1) YES
+451888,0,1,0,cwe_only,jasper,['CWE-20'],jpc_enc.c,11947,106,102,208,(1) YES
+452377,0,1,0,cwe_only,vim,['CWE-787'],indent.c,6020,107,282,389,(1) YES: A security vulnerability detected.
+452391,0,1,0,cwe_only,ImageMagick6,['CWE-787'],tiff.c,34505,107,334,441,(1) YES
+452994,0,1,0,cwe_only,nf,['CWE-269'],nf_tables_offload.c,1137,107,112,219,(1) YES: A security vulnerability detected.
+453109,0,1,0,cwe_only,libexpat,['CWE-668'],xmlparse.c,5684,107,106,213,(1) YES
+453265,0,1,0,cwe_only,jasper,['CWE-125'],jp2_dec.c,9401,107,101,208,(1) YES: A security vulnerability detected.
+454759,0,1,0,cwe_only,linux,['CWE-703'],i2c-ismt.c,6551,107,102,209,(1) YES: A security vulnerability detected.
+455177,0,1,0,cwe_only,libmobi,['CWE-119'],read.c,2146,107,151,258,(1) YES: A security vulnerability detected.
+455356,0,1,0,cwe_only,bash,['CWE-787'],shell.c,720,107,254,361,(1) YES: A security vulnerability detected.
+457772,0,1,0,cwe_only,icecast-server,['CWE-119'],auth_url.c,1913,106,121,227,(1) YES
+459029,0,1,0,cwe_only,varnish-cache,['CWE-703'],cache_http.c,334,106,164,270,(1) YES: A security vulnerability detected.
+459107,0,1,0,cwe_only,linux,['CWE-416'],cls_api.c,5631,106,91,197,(1) YES: A security vulnerability detected.
+459400,0,1,0,cwe_only,vim,['CWE-416'],None,17024,106,99,205,(1) YES: A security vulnerability detected.
+459524,0,1,0,cwe_only,linux,['CWE-787'],stackmap.c,540,107,282,389,(1) YES: A security vulnerability detected.
+462278,0,1,0,cwe_only,pjproject,['CWE-191'],None,792,106,170,276,(1) YES
+462316,0,1,0,cwe_only,ghostpdl,['CWE-787'],None,536,106,103,209,(1) YES: A security vulnerability detected.
+462395,0,1,0,cwe_only,php-src,['CWE-476'],wddx.c,3878,106,143,249,(1) YES: A security vulnerability detected.
+462409,0,1,0,cwe_only,rsyslog,['CWE-190'],imptcp.c,4889,106,154,260,(1) YES
+462511,0,1,0,cwe_only,vim,['CWE-416'],quickfix.c,2647,107,125,232,(1) YES: A security vulnerability detected.
+462566,0,0,1,cwe_only,newsbeuter,['CWE-787'],controller.cpp,1406,107,410,517,(2) NO: No security vulnerability.
+463051,0,1,0,cwe_only,qemu,['CWE-835'],sungem.c,322,106,95,201,(1) YES
+463134,0,1,0,cwe_only,cyrus-imapd,['CWE-732'],annotate.c,3416,106,103,209,(1) YES: A security vulnerability detected.
+463476,0,1,0,cwe_only,linux,['CWE-476'],af_ax25.c,2008,106,100,206,(1) YES: A security vulnerability detected.
+464942,0,1,0,cwe_only,php-src,['CWE-125'],mbfilter_big5.c,2059,106,106,212,(1) YES
+465854,0,1,0,cwe_only,linux,['CWE-416'],main.c,369,106,96,202,(1) YES
+468349,0,1,0,cwe_only,glib,['CWE-754'],gsocketclient.c,3727,107,116,223,(1) YES: A security vulnerability detected.
+471902,0,1,0,cwe_only,vim,['CWE-787'],spellsuggest.c,6730,106,92,198,(1) YES: A security vulnerability detected.
+472123,0,1,0,cwe_only,linux,['CWE-416'],cgroup-v1.c,2262,106,99,205,(1) YES: A security vulnerability detected.
+474434,0,1,0,cwe_only,libtpms,['CWE-119'],Object.c,576,107,202,309,(1) YES: A security vulnerability detected.
+474462,0,1,0,cwe_only,libvncserver,['CWE-787'],corre.c,836,106,96,202,(1) YES: A security vulnerability detected.
+475987,0,1,0,cwe_only,chafa,['CWE-125'],lzw.c,2382,106,103,209,(1) YES: A security vulnerability detected.
+476103,0,1,0,cwe_only,linux,['CWE-476'],composite.c,11424,107,114,221,(1) YES: A security vulnerability detected.
+477273,0,1,0,cwe_only,linux,['CWE-20'],crypto.c,1682,105,164,269,YES
+477380,0,1,0,cwe_only,radare2,['CWE-787'],None,2596,106,103,209,(1) YES: A security vulnerability detected.
+477800,0,1,0,cwe_only,ceph,['CWE-79'],rgw_rest_s3.cc,7565,105,113,218,(1) YES: A security vulnerability detected.
+477803,0,1,0,cwe_only,linux,['CWE-362'],af_key.c,802,106,101,207,(1) YES: A security vulnerability detected.
+477811,0,1,0,cwe_only,linux,['CWE-787'],book3s_rtas.c,2315,107,282,389,(1) YES: A security vulnerability detected.
+477946,0,1,0,cwe_only,clamav-devel,['CWE-20'],mspack.c,5230,105,134,239,(1) YES
+477975,0,1,0,cwe_only,php-src,['CWE-119'],simplestring.c,1227,106,121,227,(1) YES
+481267,0,1,0,cwe_only,linux,['CWE-401'],conn.c,2357,107,110,217,(1) YES
+481787,0,1,0,cwe_only,nagioscore,['CWE-476'],query-handler.c,782,107,100,207,(1) YES: A security vulnerability detected.
+482533,0,1,0,cwe_only,liblouis,['CWE-787'],compileTranslationTable.c,49195,106,96,202,(1) YES: A security vulnerability detected.
+482692,0,1,0,cwe_only,gst-plugins-good,['CWE-125'],gstflxdec.c,5690,107,138,245,YES
+483053,0,1,0,cwe_only,linux,['CWE-269'],cgroup-v1.c,713,107,151,258,(1) YES: A security vulnerability detected.
+483469,0,1,0,cwe_only,mongo,['CWE-617'],None,9743,107,104,211,(1) YES: A security vulnerability detected.
+484063,0,1,0,cwe_only,open62541,['CWE-703'],check_securechannel.c,545,106,164,270,(1) YES: A security vulnerability detected.
+484732,0,1,0,cwe_only,libmobi,['CWE-787'],None,737,106,114,220,(1) YES: A security vulnerability detected.
+486796,0,1,0,cwe_only,qemu,['CWE-835'],cadence_gem.c,6058,107,136,243,(1) YES
+486837,0,1,0,cwe_only,perl5,['CWE-120'],regcomp.c,82226,106,134,240,(1) YES
+487618,0,1,0,cwe_only,linux-2.6,['CWE-20'],None,1857,106,125,231,(1) YES: A security vulnerability detected.
+488919,0,1,0,cwe_only,linux-2.6,['CWE-189'],None,781,107,140,247,(1) YES: A security vulnerability detected.
+489124,0,1,0,cwe_only,linux-2.6,['CWE-20'],None,397,106,102,208,(1) YES
+489215,0,1,0,cwe_only,linux-2.6,['CWE-119'],None,724,107,202,309,(1) YES: A security vulnerability detected.
+489221,0,1,0,cwe_only,linux-2.6,['CWE-20'],None,3033,106,125,231,(1) YES: A security vulnerability detected.
+491979,0,1,0,cwe_only,gzip,['CWE-189'],None,4781,107,97,204,(1) YES: A security vulnerability detected.
+497809,0,1,0,cwe_only,grep,['CWE-119'],None,2383,106,121,227,(1) YES
+498160,0,1,0,cwe_only,nettle,['CWE-310'],None,1552,107,89,196,(1) YES
+498918,0,1,0,cwe_only,tar,['CWE-476'],None,3339,106,100,206,(1) YES: A security vulnerability detected.
+500044,0,1,0,cwe_only,openssl,['CWE-20'],None,1670,105,120,225,(1) YES: A security vulnerability detected.
+500663,0,1,0,cwe_only,libssh,['CWE-399'],None,2430,106,112,218,(1) YES: A security vulnerability detected.
+502735,0,1,0,cwe_only,openssl,['CWE-362'],None,3459,106,151,257,(1) YES: A security vulnerability detected.
+503867,0,1,0,cwe_only,guile,['CWE-275'],None,654,107,113,220,(1) YES: A security vulnerability detected.
+503985,0,1,0,cwe_only,core,['CWE-20'],None,4359,105,164,269,YES
+504608,0,1,0,cwe_only,libtiff,['CWE-770'],None,2542,107,109,216,(1) YES: A security vulnerability detected.
+505463,0,1,0,cwe_only,openssl,['CWE-327'],None,3470,106,100,206,(1) YES: A security vulnerability detected.
+505654,0,1,0,cwe_only,core,['CWE-835'],None,1902,107,109,216,(1) YES
+506428,0,1,0,cwe_only,core,['CWE-125'],None,342,106,130,236,(1) YES: A security vulnerability detected.
+506696,0,1,0,cwe_only,openssl,['CWE-476'],None,132,106,123,229,(1) YES: A security vulnerability detected.
+507778,0,1,0,cwe_only,openssl,['CWE-125'],None,10827,107,101,208,(1) YES: A security vulnerability detected.
+508874,0,1,0,cwe_only,server,['CWE-476'],None,4104,107,100,207,(1) YES: A security vulnerability detected.
+509510,0,1,0,cwe_only,server,['CWE-400'],None,164,107,109,216,(1) YES: A security vulnerability detected.
+511472,0,1,0,cwe_only,server,['CWE-416'],None,15074,106,100,206,(1) YES: A security vulnerability detected.
+512825,0,1,0,cwe_only,server,['CWE-617'],None,2230,107,138,245,(1) YES: A security vulnerability detected.
+513202,0,1,0,cwe_only,server,['CWE-416'],None,435,106,96,202,(1) YES
+514292,0,1,0,cwe_only,server,['CWE-617'],None,5121,106,128,234,(1) YES: A security vulnerability detected.
+517437,0,1,0,cwe_only,monit,['CWE-79'],None,1551,106,230,336,(1) YES: A security vulnerability detected.
+521488,0,1,0,cwe_only,JUCE,['CWE-59'],None,2458,106,158,264,(1) YES: A security vulnerability detected.
+522329,0,1,0,cwe_only,libMeshb,['CWE-120'],None,6485,107,330,437,(1) YES: A security vulnerability detected.
+522438,0,1,0,cwe_only,elfspirit,['CWE-125'],None,37828,107,141,248,(1) YES

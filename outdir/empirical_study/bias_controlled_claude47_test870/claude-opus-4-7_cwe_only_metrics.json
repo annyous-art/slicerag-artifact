@@ -1,0 +1,19 @@
+{
+  "known": 870,
+  "unknown": 0,
+  "accuracy": 0.5011494252873563,
+  "precision": 0.5005753739930955,
+  "recall": 1.0,
+  "specificity": 0.0022988505747126436,
+  "f1": 0.6671779141104294,
+  "directional_failure_index": 0.9977011494252873,
+  "yes_rate": 0.9988505747126437,
+  "tp": 435,
+  "fp": 434,
+  "tn": 1,
+  "fn": 0,
+  "input": "${SLICERAG_ROOT}/data/primevul_test_paired_labeled.jsonl",
+  "variant": "cwe_only",
+  "model": "claude-opus-4-7",
+  "total_records": 870
+}

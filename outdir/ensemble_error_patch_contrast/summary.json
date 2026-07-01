@@ -1,0 +1,113 @@
+{
+  "num_common_indices": 868,
+  "methods": [
+    "zero_shot",
+    "yes_only",
+    "author_no_yes",
+    "old_rag",
+    "positive_weighted_rag",
+    "patch_contrast"
+  ],
+  "method_metrics": [
+    {
+      "name": "zero_shot",
+      "known": 868,
+      "unknown": 0,
+      "accuracy": 0.520737,
+      "precision": 0.513475,
+      "recall": 0.832184,
+      "f1": 0.635088,
+      "yes_rate": 0.812212,
+      "tp": 362,
+      "fp": 343,
+      "tn": 90,
+      "fn": 73
+    },
+    {
+      "name": "yes_only",
+      "known": 868,
+      "unknown": 0,
+      "accuracy": 0.529954,
+      "precision": 0.519594,
+      "recall": 0.822989,
+      "f1": 0.637011,
+      "yes_rate": 0.793779,
+      "tp": 358,
+      "fp": 331,
+      "tn": 102,
+      "fn": 77
+    },
+    {
+      "name": "author_no_yes",
+      "known": 868,
+      "unknown": 0,
+      "accuracy": 0.514977,
+      "precision": 0.510355,
+      "recall": 0.793103,
+      "f1": 0.621062,
+      "yes_rate": 0.778802,
+      "tp": 345,
+      "fp": 331,
+      "tn": 102,
+      "fn": 90
+    },
+    {
+      "name": "old_rag",
+      "known": 868,
+      "unknown": 0,
+      "accuracy": 0.511521,
+      "precision": 0.50937,
+      "recall": 0.687356,
+      "f1": 0.585127,
+      "yes_rate": 0.676267,
+      "tp": 299,
+      "fp": 288,
+      "tn": 145,
+      "fn": 136
+    },
+    {
+      "name": "positive_weighted_rag",
+      "known": 868,
+      "unknown": 0,
+      "accuracy": 0.511521,
+      "precision": 0.510319,
+      "recall": 0.625287,
+      "f1": 0.561983,
+      "yes_rate": 0.614055,
+      "tp": 272,
+      "fp": 261,
+      "tn": 172,
+      "fn": 163
+    },
+    {
+      "name": "patch_contrast",
+      "known": 868,
+      "unknown": 0,
+      "accuracy": 0.511521,
+      "precision": 0.509121,
+      "recall": 0.705747,
+      "f1": 0.591522,
+      "yes_rate": 0.6947,
+      "tp": 307,
+      "fp": 296,
+      "tn": 137,
+      "fn": 128
+    }
+  ],
+  "best_ensemble": {
+    "name": "zero_shot+yes_only+positive_weighted_rag+patch_contrast",
+    "strategy": "or",
+    "methods": "zero_shot|yes_only|positive_weighted_rag|patch_contrast",
+    "known": 868,
+    "unknown": 0,
+    "accuracy": 0.518433,
+    "precision": 0.511053,
+    "recall": 0.903448,
+    "f1": 0.652824,
+    "yes_rate": 0.885945,
+    "tp": 393,
+    "fp": 376,
+    "tn": 57,
+    "fn": 42
+  }
+}

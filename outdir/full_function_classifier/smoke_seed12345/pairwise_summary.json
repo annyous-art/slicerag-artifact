@@ -1,0 +1,15 @@
+{
+  "num_data_rows": 20,
+  "candidate_adjacent_pairs": 10,
+  "known_pairs": 10,
+  "unknown_pairs": 0,
+  "skip_counts": {},
+  "P-C": 0,
+  "P-V": 10,
+  "P-B": 0,
+  "P-R": 0,
+  "P-C_rate": 0.0,
+  "P-V_rate": 1.0,
+  "P-B_rate": 0.0,
+  "P-R_rate": 0.0
+}

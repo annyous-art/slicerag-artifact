@@ -1,0 +1,6 @@
+base,method,both_correct,base_only,method_only,both_wrong,oracle_accuracy
+yes_only,zero_shot,409,51,43,365,0.579493
+yes_only,author_no_yes,407,53,40,368,0.576037
+yes_only,old_rag,363,97,81,327,0.623272
+yes_only,positive_weighted_rag,353,107,91,317,0.634793
+yes_only,patch_contrast,358,102,86,322,0.629032

@@ -1,0 +1,10 @@
+error_type,taxonomy,avg_char_len,avg_yes_vote_count,n,pred_0,pred_1,target_0,target_1
+correct,correct,5137.55,5.22,450,57,393,57,393
+FP,yes_prior_consensus_false_positive,6232.14,6.78,258,0,258,258,0
+FP,risky_pattern_false_alarm:error_handling,4345.76,3.91,76,0,76,76,0
+FN,conservative_consensus_false_negative,4775.05,0.1,42,42,0,0,42
+FP,risky_pattern_false_alarm:bounds,3589.45,3.97,31,0,31,31,0
+FP,repair_present_but_not_applied_or_policy_blocked,8000.4,4.6,5,0,5,5,0
+FP,retrieval_misleading_or_ambiguous:retrieval_low_margin,1234.33,2.33,3,0,3,3,0
+FP,risky_pattern_false_alarm:lifecycle,605.5,4.5,2,0,2,2,0
+FP,risky_pattern_false_alarm:memory_api,2915.0,4.0,1,0,1,1,0

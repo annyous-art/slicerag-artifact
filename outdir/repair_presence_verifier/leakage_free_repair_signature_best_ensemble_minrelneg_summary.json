@@ -1,0 +1,59 @@
+{
+  "predictions_csv": "outdir/ensemble_error_patch_contrast/per_sample_predictions.csv",
+  "query_results": "outdir/query_patch_repair_signature_test870/query_patch_contrast_results.jsonl",
+  "base_pred_column": "best_ensemble_pred",
+  "mode": "fixed_closer",
+  "max_pairs": 3,
+  "min_relevance": -100000.0,
+  "min_abs_margin": 0.0,
+  "require_real_repair": true,
+  "require_fixed_added_lines": false,
+  "require_same_cwe": false,
+  "require_same_project": false,
+  "min_repair_token_overlap": 1,
+  "exclude_same_idx": true,
+  "num_query_rows": 868,
+  "num_prediction_rows": 868,
+  "num_candidates": 756,
+  "candidate_target_counts_for_evaluation_only": {
+    "1": 386,
+    "0": 370
+  },
+  "skip_counts": {
+    "base_not_yes": 99,
+    "no_trigger_pair": 13
+  },
+  "trigger_top_closer_side_counts": {
+    "fixed": 756
+  },
+  "top_pair_same_project_counts": {
+    "False": 472,
+    "True": 284
+  },
+  "top_pair_same_cwe_counts": {
+    "False": 470,
+    "True": 286
+  },
+  "top_pair_repair_signal_counts": {
+    "added_guard|bounds_or_shape_check|error_handling": 118,
+    "added_guard|bounds_or_shape_check|error_handling|api_replacement": 97,
+    "bounds_or_shape_check": 62,
+    "added_guard|bounds_or_shape_check|null_check|error_handling|api_replacement": 52,
+    "added_guard|bounds_or_shape_check|null_check|api_replacement": 49,
+    "bounds_or_shape_check|api_replacement": 48,
+    "added_guard|bounds_or_shape_check|null_check|error_handling": 48,
+    "added_guard|bounds_or_shape_check": 45,
+    "unknown": 38,
+    "added_guard|bounds_or_shape_check|api_replacement": 27,
+    "added_guard|bounds_or_shape_check|null_check|error_handling|state_or_lifetime_repair": 23,
+    "added_guard|null_check|error_handling": 23,
+    "added_guard|bounds_or_shape_check|null_check": 11,
+    "added_guard|error_handling|api_replacement": 11,
+    "added_guard|error_handling|state_or_lifetime_repair": 10,
+    "api_replacement": 9,
+    "error_handling": 9,
+    "added_guard|null_check|error_handling|api_replacement": 8,
+    "null_check|error_handling": 7,
+    "added_guard|null_check": 7
+  }
+}
